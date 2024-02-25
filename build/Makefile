@@ -129,318 +129,6 @@ VectorVertex/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/build
 .PHONY : VectorVertex/fast
 
-Core/Keyboard_inputs.o: Core/Keyboard_inputs.cpp.o
-.PHONY : Core/Keyboard_inputs.o
-
-# target to build an object file
-Core/Keyboard_inputs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Core/Keyboard_inputs.cpp.o
-.PHONY : Core/Keyboard_inputs.cpp.o
-
-Core/Keyboard_inputs.i: Core/Keyboard_inputs.cpp.i
-.PHONY : Core/Keyboard_inputs.i
-
-# target to preprocess a source file
-Core/Keyboard_inputs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Core/Keyboard_inputs.cpp.i
-.PHONY : Core/Keyboard_inputs.cpp.i
-
-Core/Keyboard_inputs.s: Core/Keyboard_inputs.cpp.s
-.PHONY : Core/Keyboard_inputs.s
-
-# target to generate assembly for a file
-Core/Keyboard_inputs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Core/Keyboard_inputs.cpp.s
-.PHONY : Core/Keyboard_inputs.cpp.s
-
-Core/MainApp.o: Core/MainApp.cpp.o
-.PHONY : Core/MainApp.o
-
-# target to build an object file
-Core/MainApp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Core/MainApp.cpp.o
-.PHONY : Core/MainApp.cpp.o
-
-Core/MainApp.i: Core/MainApp.cpp.i
-.PHONY : Core/MainApp.i
-
-# target to preprocess a source file
-Core/MainApp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Core/MainApp.cpp.i
-.PHONY : Core/MainApp.cpp.i
-
-Core/MainApp.s: Core/MainApp.cpp.s
-.PHONY : Core/MainApp.s
-
-# target to generate assembly for a file
-Core/MainApp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Core/MainApp.cpp.s
-.PHONY : Core/MainApp.cpp.s
-
-Render/lve_buffer.o: Render/lve_buffer.cpp.o
-.PHONY : Render/lve_buffer.o
-
-# target to build an object file
-Render/lve_buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_buffer.cpp.o
-.PHONY : Render/lve_buffer.cpp.o
-
-Render/lve_buffer.i: Render/lve_buffer.cpp.i
-.PHONY : Render/lve_buffer.i
-
-# target to preprocess a source file
-Render/lve_buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_buffer.cpp.i
-.PHONY : Render/lve_buffer.cpp.i
-
-Render/lve_buffer.s: Render/lve_buffer.cpp.s
-.PHONY : Render/lve_buffer.s
-
-# target to generate assembly for a file
-Render/lve_buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_buffer.cpp.s
-.PHONY : Render/lve_buffer.cpp.s
-
-Render/lve_camera.o: Render/lve_camera.cpp.o
-.PHONY : Render/lve_camera.o
-
-# target to build an object file
-Render/lve_camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_camera.cpp.o
-.PHONY : Render/lve_camera.cpp.o
-
-Render/lve_camera.i: Render/lve_camera.cpp.i
-.PHONY : Render/lve_camera.i
-
-# target to preprocess a source file
-Render/lve_camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_camera.cpp.i
-.PHONY : Render/lve_camera.cpp.i
-
-Render/lve_camera.s: Render/lve_camera.cpp.s
-.PHONY : Render/lve_camera.s
-
-# target to generate assembly for a file
-Render/lve_camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_camera.cpp.s
-.PHONY : Render/lve_camera.cpp.s
-
-Render/lve_descriptors.o: Render/lve_descriptors.cpp.o
-.PHONY : Render/lve_descriptors.o
-
-# target to build an object file
-Render/lve_descriptors.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_descriptors.cpp.o
-.PHONY : Render/lve_descriptors.cpp.o
-
-Render/lve_descriptors.i: Render/lve_descriptors.cpp.i
-.PHONY : Render/lve_descriptors.i
-
-# target to preprocess a source file
-Render/lve_descriptors.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_descriptors.cpp.i
-.PHONY : Render/lve_descriptors.cpp.i
-
-Render/lve_descriptors.s: Render/lve_descriptors.cpp.s
-.PHONY : Render/lve_descriptors.s
-
-# target to generate assembly for a file
-Render/lve_descriptors.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_descriptors.cpp.s
-.PHONY : Render/lve_descriptors.cpp.s
-
-Render/lve_device.o: Render/lve_device.cpp.o
-.PHONY : Render/lve_device.o
-
-# target to build an object file
-Render/lve_device.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_device.cpp.o
-.PHONY : Render/lve_device.cpp.o
-
-Render/lve_device.i: Render/lve_device.cpp.i
-.PHONY : Render/lve_device.i
-
-# target to preprocess a source file
-Render/lve_device.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_device.cpp.i
-.PHONY : Render/lve_device.cpp.i
-
-Render/lve_device.s: Render/lve_device.cpp.s
-.PHONY : Render/lve_device.s
-
-# target to generate assembly for a file
-Render/lve_device.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_device.cpp.s
-.PHONY : Render/lve_device.cpp.s
-
-Render/lve_game_object.o: Render/lve_game_object.cpp.o
-.PHONY : Render/lve_game_object.o
-
-# target to build an object file
-Render/lve_game_object.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_game_object.cpp.o
-.PHONY : Render/lve_game_object.cpp.o
-
-Render/lve_game_object.i: Render/lve_game_object.cpp.i
-.PHONY : Render/lve_game_object.i
-
-# target to preprocess a source file
-Render/lve_game_object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_game_object.cpp.i
-.PHONY : Render/lve_game_object.cpp.i
-
-Render/lve_game_object.s: Render/lve_game_object.cpp.s
-.PHONY : Render/lve_game_object.s
-
-# target to generate assembly for a file
-Render/lve_game_object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_game_object.cpp.s
-.PHONY : Render/lve_game_object.cpp.s
-
-Render/lve_model.o: Render/lve_model.cpp.o
-.PHONY : Render/lve_model.o
-
-# target to build an object file
-Render/lve_model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_model.cpp.o
-.PHONY : Render/lve_model.cpp.o
-
-Render/lve_model.i: Render/lve_model.cpp.i
-.PHONY : Render/lve_model.i
-
-# target to preprocess a source file
-Render/lve_model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_model.cpp.i
-.PHONY : Render/lve_model.cpp.i
-
-Render/lve_model.s: Render/lve_model.cpp.s
-.PHONY : Render/lve_model.s
-
-# target to generate assembly for a file
-Render/lve_model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_model.cpp.s
-.PHONY : Render/lve_model.cpp.s
-
-Render/lve_pipeline.o: Render/lve_pipeline.cpp.o
-.PHONY : Render/lve_pipeline.o
-
-# target to build an object file
-Render/lve_pipeline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_pipeline.cpp.o
-.PHONY : Render/lve_pipeline.cpp.o
-
-Render/lve_pipeline.i: Render/lve_pipeline.cpp.i
-.PHONY : Render/lve_pipeline.i
-
-# target to preprocess a source file
-Render/lve_pipeline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_pipeline.cpp.i
-.PHONY : Render/lve_pipeline.cpp.i
-
-Render/lve_pipeline.s: Render/lve_pipeline.cpp.s
-.PHONY : Render/lve_pipeline.s
-
-# target to generate assembly for a file
-Render/lve_pipeline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_pipeline.cpp.s
-.PHONY : Render/lve_pipeline.cpp.s
-
-Render/lve_render_system.o: Render/lve_render_system.cpp.o
-.PHONY : Render/lve_render_system.o
-
-# target to build an object file
-Render/lve_render_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_render_system.cpp.o
-.PHONY : Render/lve_render_system.cpp.o
-
-Render/lve_render_system.i: Render/lve_render_system.cpp.i
-.PHONY : Render/lve_render_system.i
-
-# target to preprocess a source file
-Render/lve_render_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_render_system.cpp.i
-.PHONY : Render/lve_render_system.cpp.i
-
-Render/lve_render_system.s: Render/lve_render_system.cpp.s
-.PHONY : Render/lve_render_system.s
-
-# target to generate assembly for a file
-Render/lve_render_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_render_system.cpp.s
-.PHONY : Render/lve_render_system.cpp.s
-
-Render/lve_renderer.o: Render/lve_renderer.cpp.o
-.PHONY : Render/lve_renderer.o
-
-# target to build an object file
-Render/lve_renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_renderer.cpp.o
-.PHONY : Render/lve_renderer.cpp.o
-
-Render/lve_renderer.i: Render/lve_renderer.cpp.i
-.PHONY : Render/lve_renderer.i
-
-# target to preprocess a source file
-Render/lve_renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_renderer.cpp.i
-.PHONY : Render/lve_renderer.cpp.i
-
-Render/lve_renderer.s: Render/lve_renderer.cpp.s
-.PHONY : Render/lve_renderer.s
-
-# target to generate assembly for a file
-Render/lve_renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_renderer.cpp.s
-.PHONY : Render/lve_renderer.cpp.s
-
-Render/lve_swap_chain.o: Render/lve_swap_chain.cpp.o
-.PHONY : Render/lve_swap_chain.o
-
-# target to build an object file
-Render/lve_swap_chain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_swap_chain.cpp.o
-.PHONY : Render/lve_swap_chain.cpp.o
-
-Render/lve_swap_chain.i: Render/lve_swap_chain.cpp.i
-.PHONY : Render/lve_swap_chain.i
-
-# target to preprocess a source file
-Render/lve_swap_chain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_swap_chain.cpp.i
-.PHONY : Render/lve_swap_chain.cpp.i
-
-Render/lve_swap_chain.s: Render/lve_swap_chain.cpp.s
-.PHONY : Render/lve_swap_chain.s
-
-# target to generate assembly for a file
-Render/lve_swap_chain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_swap_chain.cpp.s
-.PHONY : Render/lve_swap_chain.cpp.s
-
-Render/lve_window.o: Render/lve_window.cpp.o
-.PHONY : Render/lve_window.o
-
-# target to build an object file
-Render/lve_window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_window.cpp.o
-.PHONY : Render/lve_window.cpp.o
-
-Render/lve_window.i: Render/lve_window.cpp.i
-.PHONY : Render/lve_window.i
-
-# target to preprocess a source file
-Render/lve_window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_window.cpp.i
-.PHONY : Render/lve_window.cpp.i
-
-Render/lve_window.s: Render/lve_window.cpp.s
-.PHONY : Render/lve_window.s
-
-# target to generate assembly for a file
-Render/lve_window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/Render/lve_window.cpp.s
-.PHONY : Render/lve_window.cpp.s
-
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -465,6 +153,342 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Core/Keyboard_inputs.o: src/Core/Keyboard_inputs.cpp.o
+.PHONY : src/Core/Keyboard_inputs.o
+
+# target to build an object file
+src/Core/Keyboard_inputs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o
+.PHONY : src/Core/Keyboard_inputs.cpp.o
+
+src/Core/Keyboard_inputs.i: src/Core/Keyboard_inputs.cpp.i
+.PHONY : src/Core/Keyboard_inputs.i
+
+# target to preprocess a source file
+src/Core/Keyboard_inputs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.i
+.PHONY : src/Core/Keyboard_inputs.cpp.i
+
+src/Core/Keyboard_inputs.s: src/Core/Keyboard_inputs.cpp.s
+.PHONY : src/Core/Keyboard_inputs.s
+
+# target to generate assembly for a file
+src/Core/Keyboard_inputs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.s
+.PHONY : src/Core/Keyboard_inputs.cpp.s
+
+src/Core/MainApp.o: src/Core/MainApp.cpp.o
+.PHONY : src/Core/MainApp.o
+
+# target to build an object file
+src/Core/MainApp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.o
+.PHONY : src/Core/MainApp.cpp.o
+
+src/Core/MainApp.i: src/Core/MainApp.cpp.i
+.PHONY : src/Core/MainApp.i
+
+# target to preprocess a source file
+src/Core/MainApp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.i
+.PHONY : src/Core/MainApp.cpp.i
+
+src/Core/MainApp.s: src/Core/MainApp.cpp.s
+.PHONY : src/Core/MainApp.s
+
+# target to generate assembly for a file
+src/Core/MainApp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.s
+.PHONY : src/Core/MainApp.cpp.s
+
+src/Render/Render_Systems/lve_point_light_system.o: src/Render/Render_Systems/lve_point_light_system.cpp.o
+.PHONY : src/Render/Render_Systems/lve_point_light_system.o
+
+# target to build an object file
+src/Render/Render_Systems/lve_point_light_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_point_light_system.cpp.o
+.PHONY : src/Render/Render_Systems/lve_point_light_system.cpp.o
+
+src/Render/Render_Systems/lve_point_light_system.i: src/Render/Render_Systems/lve_point_light_system.cpp.i
+.PHONY : src/Render/Render_Systems/lve_point_light_system.i
+
+# target to preprocess a source file
+src/Render/Render_Systems/lve_point_light_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_point_light_system.cpp.i
+.PHONY : src/Render/Render_Systems/lve_point_light_system.cpp.i
+
+src/Render/Render_Systems/lve_point_light_system.s: src/Render/Render_Systems/lve_point_light_system.cpp.s
+.PHONY : src/Render/Render_Systems/lve_point_light_system.s
+
+# target to generate assembly for a file
+src/Render/Render_Systems/lve_point_light_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_point_light_system.cpp.s
+.PHONY : src/Render/Render_Systems/lve_point_light_system.cpp.s
+
+src/Render/Render_Systems/lve_render_system.o: src/Render/Render_Systems/lve_render_system.cpp.o
+.PHONY : src/Render/Render_Systems/lve_render_system.o
+
+# target to build an object file
+src/Render/Render_Systems/lve_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_render_system.cpp.o
+.PHONY : src/Render/Render_Systems/lve_render_system.cpp.o
+
+src/Render/Render_Systems/lve_render_system.i: src/Render/Render_Systems/lve_render_system.cpp.i
+.PHONY : src/Render/Render_Systems/lve_render_system.i
+
+# target to preprocess a source file
+src/Render/Render_Systems/lve_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_render_system.cpp.i
+.PHONY : src/Render/Render_Systems/lve_render_system.cpp.i
+
+src/Render/Render_Systems/lve_render_system.s: src/Render/Render_Systems/lve_render_system.cpp.s
+.PHONY : src/Render/Render_Systems/lve_render_system.s
+
+# target to generate assembly for a file
+src/Render/Render_Systems/lve_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_render_system.cpp.s
+.PHONY : src/Render/Render_Systems/lve_render_system.cpp.s
+
+src/Render/lve_buffer.o: src/Render/lve_buffer.cpp.o
+.PHONY : src/Render/lve_buffer.o
+
+# target to build an object file
+src/Render/lve_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_buffer.cpp.o
+.PHONY : src/Render/lve_buffer.cpp.o
+
+src/Render/lve_buffer.i: src/Render/lve_buffer.cpp.i
+.PHONY : src/Render/lve_buffer.i
+
+# target to preprocess a source file
+src/Render/lve_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_buffer.cpp.i
+.PHONY : src/Render/lve_buffer.cpp.i
+
+src/Render/lve_buffer.s: src/Render/lve_buffer.cpp.s
+.PHONY : src/Render/lve_buffer.s
+
+# target to generate assembly for a file
+src/Render/lve_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_buffer.cpp.s
+.PHONY : src/Render/lve_buffer.cpp.s
+
+src/Render/lve_camera.o: src/Render/lve_camera.cpp.o
+.PHONY : src/Render/lve_camera.o
+
+# target to build an object file
+src/Render/lve_camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_camera.cpp.o
+.PHONY : src/Render/lve_camera.cpp.o
+
+src/Render/lve_camera.i: src/Render/lve_camera.cpp.i
+.PHONY : src/Render/lve_camera.i
+
+# target to preprocess a source file
+src/Render/lve_camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_camera.cpp.i
+.PHONY : src/Render/lve_camera.cpp.i
+
+src/Render/lve_camera.s: src/Render/lve_camera.cpp.s
+.PHONY : src/Render/lve_camera.s
+
+# target to generate assembly for a file
+src/Render/lve_camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_camera.cpp.s
+.PHONY : src/Render/lve_camera.cpp.s
+
+src/Render/lve_descriptors.o: src/Render/lve_descriptors.cpp.o
+.PHONY : src/Render/lve_descriptors.o
+
+# target to build an object file
+src/Render/lve_descriptors.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_descriptors.cpp.o
+.PHONY : src/Render/lve_descriptors.cpp.o
+
+src/Render/lve_descriptors.i: src/Render/lve_descriptors.cpp.i
+.PHONY : src/Render/lve_descriptors.i
+
+# target to preprocess a source file
+src/Render/lve_descriptors.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_descriptors.cpp.i
+.PHONY : src/Render/lve_descriptors.cpp.i
+
+src/Render/lve_descriptors.s: src/Render/lve_descriptors.cpp.s
+.PHONY : src/Render/lve_descriptors.s
+
+# target to generate assembly for a file
+src/Render/lve_descriptors.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_descriptors.cpp.s
+.PHONY : src/Render/lve_descriptors.cpp.s
+
+src/Render/lve_device.o: src/Render/lve_device.cpp.o
+.PHONY : src/Render/lve_device.o
+
+# target to build an object file
+src/Render/lve_device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_device.cpp.o
+.PHONY : src/Render/lve_device.cpp.o
+
+src/Render/lve_device.i: src/Render/lve_device.cpp.i
+.PHONY : src/Render/lve_device.i
+
+# target to preprocess a source file
+src/Render/lve_device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_device.cpp.i
+.PHONY : src/Render/lve_device.cpp.i
+
+src/Render/lve_device.s: src/Render/lve_device.cpp.s
+.PHONY : src/Render/lve_device.s
+
+# target to generate assembly for a file
+src/Render/lve_device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_device.cpp.s
+.PHONY : src/Render/lve_device.cpp.s
+
+src/Render/lve_game_object.o: src/Render/lve_game_object.cpp.o
+.PHONY : src/Render/lve_game_object.o
+
+# target to build an object file
+src/Render/lve_game_object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_game_object.cpp.o
+.PHONY : src/Render/lve_game_object.cpp.o
+
+src/Render/lve_game_object.i: src/Render/lve_game_object.cpp.i
+.PHONY : src/Render/lve_game_object.i
+
+# target to preprocess a source file
+src/Render/lve_game_object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_game_object.cpp.i
+.PHONY : src/Render/lve_game_object.cpp.i
+
+src/Render/lve_game_object.s: src/Render/lve_game_object.cpp.s
+.PHONY : src/Render/lve_game_object.s
+
+# target to generate assembly for a file
+src/Render/lve_game_object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_game_object.cpp.s
+.PHONY : src/Render/lve_game_object.cpp.s
+
+src/Render/lve_model.o: src/Render/lve_model.cpp.o
+.PHONY : src/Render/lve_model.o
+
+# target to build an object file
+src/Render/lve_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_model.cpp.o
+.PHONY : src/Render/lve_model.cpp.o
+
+src/Render/lve_model.i: src/Render/lve_model.cpp.i
+.PHONY : src/Render/lve_model.i
+
+# target to preprocess a source file
+src/Render/lve_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_model.cpp.i
+.PHONY : src/Render/lve_model.cpp.i
+
+src/Render/lve_model.s: src/Render/lve_model.cpp.s
+.PHONY : src/Render/lve_model.s
+
+# target to generate assembly for a file
+src/Render/lve_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_model.cpp.s
+.PHONY : src/Render/lve_model.cpp.s
+
+src/Render/lve_pipeline.o: src/Render/lve_pipeline.cpp.o
+.PHONY : src/Render/lve_pipeline.o
+
+# target to build an object file
+src/Render/lve_pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_pipeline.cpp.o
+.PHONY : src/Render/lve_pipeline.cpp.o
+
+src/Render/lve_pipeline.i: src/Render/lve_pipeline.cpp.i
+.PHONY : src/Render/lve_pipeline.i
+
+# target to preprocess a source file
+src/Render/lve_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_pipeline.cpp.i
+.PHONY : src/Render/lve_pipeline.cpp.i
+
+src/Render/lve_pipeline.s: src/Render/lve_pipeline.cpp.s
+.PHONY : src/Render/lve_pipeline.s
+
+# target to generate assembly for a file
+src/Render/lve_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_pipeline.cpp.s
+.PHONY : src/Render/lve_pipeline.cpp.s
+
+src/Render/lve_renderer.o: src/Render/lve_renderer.cpp.o
+.PHONY : src/Render/lve_renderer.o
+
+# target to build an object file
+src/Render/lve_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_renderer.cpp.o
+.PHONY : src/Render/lve_renderer.cpp.o
+
+src/Render/lve_renderer.i: src/Render/lve_renderer.cpp.i
+.PHONY : src/Render/lve_renderer.i
+
+# target to preprocess a source file
+src/Render/lve_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_renderer.cpp.i
+.PHONY : src/Render/lve_renderer.cpp.i
+
+src/Render/lve_renderer.s: src/Render/lve_renderer.cpp.s
+.PHONY : src/Render/lve_renderer.s
+
+# target to generate assembly for a file
+src/Render/lve_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_renderer.cpp.s
+.PHONY : src/Render/lve_renderer.cpp.s
+
+src/Render/lve_swap_chain.o: src/Render/lve_swap_chain.cpp.o
+.PHONY : src/Render/lve_swap_chain.o
+
+# target to build an object file
+src/Render/lve_swap_chain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_swap_chain.cpp.o
+.PHONY : src/Render/lve_swap_chain.cpp.o
+
+src/Render/lve_swap_chain.i: src/Render/lve_swap_chain.cpp.i
+.PHONY : src/Render/lve_swap_chain.i
+
+# target to preprocess a source file
+src/Render/lve_swap_chain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_swap_chain.cpp.i
+.PHONY : src/Render/lve_swap_chain.cpp.i
+
+src/Render/lve_swap_chain.s: src/Render/lve_swap_chain.cpp.s
+.PHONY : src/Render/lve_swap_chain.s
+
+# target to generate assembly for a file
+src/Render/lve_swap_chain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_swap_chain.cpp.s
+.PHONY : src/Render/lve_swap_chain.cpp.s
+
+src/Render/lve_window.o: src/Render/lve_window.cpp.o
+.PHONY : src/Render/lve_window.o
+
+# target to build an object file
+src/Render/lve_window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_window.cpp.o
+.PHONY : src/Render/lve_window.cpp.o
+
+src/Render/lve_window.i: src/Render/lve_window.cpp.i
+.PHONY : src/Render/lve_window.i
+
+# target to preprocess a source file
+src/Render/lve_window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_window.cpp.i
+.PHONY : src/Render/lve_window.cpp.i
+
+src/Render/lve_window.s: src/Render/lve_window.cpp.s
+.PHONY : src/Render/lve_window.s
+
+# target to generate assembly for a file
+src/Render/lve_window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/lve_window.cpp.s
+.PHONY : src/Render/lve_window.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -474,48 +498,51 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... VectorVertex"
-	@echo "... Core/Keyboard_inputs.o"
-	@echo "... Core/Keyboard_inputs.i"
-	@echo "... Core/Keyboard_inputs.s"
-	@echo "... Core/MainApp.o"
-	@echo "... Core/MainApp.i"
-	@echo "... Core/MainApp.s"
-	@echo "... Render/lve_buffer.o"
-	@echo "... Render/lve_buffer.i"
-	@echo "... Render/lve_buffer.s"
-	@echo "... Render/lve_camera.o"
-	@echo "... Render/lve_camera.i"
-	@echo "... Render/lve_camera.s"
-	@echo "... Render/lve_descriptors.o"
-	@echo "... Render/lve_descriptors.i"
-	@echo "... Render/lve_descriptors.s"
-	@echo "... Render/lve_device.o"
-	@echo "... Render/lve_device.i"
-	@echo "... Render/lve_device.s"
-	@echo "... Render/lve_game_object.o"
-	@echo "... Render/lve_game_object.i"
-	@echo "... Render/lve_game_object.s"
-	@echo "... Render/lve_model.o"
-	@echo "... Render/lve_model.i"
-	@echo "... Render/lve_model.s"
-	@echo "... Render/lve_pipeline.o"
-	@echo "... Render/lve_pipeline.i"
-	@echo "... Render/lve_pipeline.s"
-	@echo "... Render/lve_render_system.o"
-	@echo "... Render/lve_render_system.i"
-	@echo "... Render/lve_render_system.s"
-	@echo "... Render/lve_renderer.o"
-	@echo "... Render/lve_renderer.i"
-	@echo "... Render/lve_renderer.s"
-	@echo "... Render/lve_swap_chain.o"
-	@echo "... Render/lve_swap_chain.i"
-	@echo "... Render/lve_swap_chain.s"
-	@echo "... Render/lve_window.o"
-	@echo "... Render/lve_window.i"
-	@echo "... Render/lve_window.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/Core/Keyboard_inputs.o"
+	@echo "... src/Core/Keyboard_inputs.i"
+	@echo "... src/Core/Keyboard_inputs.s"
+	@echo "... src/Core/MainApp.o"
+	@echo "... src/Core/MainApp.i"
+	@echo "... src/Core/MainApp.s"
+	@echo "... src/Render/Render_Systems/lve_point_light_system.o"
+	@echo "... src/Render/Render_Systems/lve_point_light_system.i"
+	@echo "... src/Render/Render_Systems/lve_point_light_system.s"
+	@echo "... src/Render/Render_Systems/lve_render_system.o"
+	@echo "... src/Render/Render_Systems/lve_render_system.i"
+	@echo "... src/Render/Render_Systems/lve_render_system.s"
+	@echo "... src/Render/lve_buffer.o"
+	@echo "... src/Render/lve_buffer.i"
+	@echo "... src/Render/lve_buffer.s"
+	@echo "... src/Render/lve_camera.o"
+	@echo "... src/Render/lve_camera.i"
+	@echo "... src/Render/lve_camera.s"
+	@echo "... src/Render/lve_descriptors.o"
+	@echo "... src/Render/lve_descriptors.i"
+	@echo "... src/Render/lve_descriptors.s"
+	@echo "... src/Render/lve_device.o"
+	@echo "... src/Render/lve_device.i"
+	@echo "... src/Render/lve_device.s"
+	@echo "... src/Render/lve_game_object.o"
+	@echo "... src/Render/lve_game_object.i"
+	@echo "... src/Render/lve_game_object.s"
+	@echo "... src/Render/lve_model.o"
+	@echo "... src/Render/lve_model.i"
+	@echo "... src/Render/lve_model.s"
+	@echo "... src/Render/lve_pipeline.o"
+	@echo "... src/Render/lve_pipeline.i"
+	@echo "... src/Render/lve_pipeline.s"
+	@echo "... src/Render/lve_renderer.o"
+	@echo "... src/Render/lve_renderer.i"
+	@echo "... src/Render/lve_renderer.s"
+	@echo "... src/Render/lve_swap_chain.o"
+	@echo "... src/Render/lve_swap_chain.i"
+	@echo "... src/Render/lve_swap_chain.s"
+	@echo "... src/Render/lve_window.o"
+	@echo "... src/Render/lve_window.i"
+	@echo "... src/Render/lve_window.s"
 .PHONY : help
 
 

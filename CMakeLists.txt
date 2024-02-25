@@ -9,10 +9,11 @@ include_directories(${GLFW_INCLUDE_DIRS})
 # Add Vulkan library
 find_package(Vulkan REQUIRED)
 include_directories(${Vulkan_INCLUDE_DIRS})
-include_directories("Render/Model_Loaders")
+include_directories("src/Render/Model_Loaders")
+include_directories("src/Render/Render_Systems")
 
 # Collect all .cpp, .h, and .hpp files in the source directory
-file(GLOB_RECURSE SOURCES "Render/*.cpp" "Render/*.hpp" "Render/*.h" "Core/*.hpp" "Core/*.cpp")
+file(GLOB_RECURSE SOURCES "src/Render/*.cpp" "src/Render/*.hpp" "src/Render/*.h" "src/Core/*.hpp" "src/Core/*.cpp")
 
 # Add executable and link libraries
 add_executable(VectorVertex main.cpp ${SOURCES})
