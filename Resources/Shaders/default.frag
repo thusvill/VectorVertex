@@ -32,7 +32,7 @@ void main(){
 
     for(int i= 0; i < ubo.num_lights; i++){
         PointLight light = ubo.point_lights[i];
-        vec3 direction_to_light = light.position.xyz * fragPosWorld;
+        vec3 direction_to_light = light.position.xyz - fragPosWorld;
         float attenuation = 1.0 / dot(direction_to_light, direction_to_light); // distance ^ 2
         float cos_ang_incidence = max(dot(surface_normal, normalize(direction_to_light)), 0.0);
         vec3 intensity = light.color.xyz * light.color.w * attenuation;
