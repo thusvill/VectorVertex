@@ -161,8 +161,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/bios/CLionProjects/2DEngine/build",
-		"source" : "/home/bios/CLionProjects/2DEngine"
+		"build" : "/home/bios/CLionProjects/VectorVertex/3DEngine/build",
+		"source" : "/home/bios/CLionProjects/VectorVertex/3DEngine"
 	},
 	"version" : 
 	{

@@ -1,7 +1,7 @@
 CMakeFiles/VectorVertex.dir/src/Render/lve_camera.cpp.o: \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_camera.cpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_camera.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_camera.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_camera.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

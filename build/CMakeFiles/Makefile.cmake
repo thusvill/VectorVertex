@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/bios/CLionProjects/2DEngine/CMakeLists.txt"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/CMakeLists.txt"
   "CMakeFiles/3.27.5/CMakeCCompiler.cmake"
   "CMakeFiles/3.27.5/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.5/CMakeSystem.cmake"

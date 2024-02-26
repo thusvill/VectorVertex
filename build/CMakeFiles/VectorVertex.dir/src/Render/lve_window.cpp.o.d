@@ -1,7 +1,7 @@
 CMakeFiles/VectorVertex.dir/src/Render/lve_window.cpp.o: \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_window.cpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_window.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_window.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_window.hpp \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \

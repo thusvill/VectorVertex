@@ -1,6 +1,7 @@
 #include "MainApp.hpp"
-#include "../Render/Render_Systems/lve_render_system.hpp"
+
 #include "../Render/Render_Systems/lve_point_light_system.hpp"
+#include "../Render/Render_Systems/lve_render_system.hpp"
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
 namespace lve
@@ -81,6 +82,7 @@ namespace lve
                 GlobalUBO ubo{};
                 ubo.view = camera.GetView();
                 ubo.projection = camera.GetProjection();
+                pointLightSystem.Update(frameInfo, ubo);
                 ubo_buffers[frame_index]->writeToBuffer(&ubo);
                 ubo_buffers[frame_index]->flush();
                 // render
@@ -97,26 +99,49 @@ namespace lve
 
     void VectorVetrex::loadGameobjects()
     {
-        std::shared_ptr<LveModel> flat_vase = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/2DEngine/Resources/Models/flat_vase.obj");
-        auto flat_vase_object = LveGameObject::CreateGameObject();
-        flat_vase_object.model = flat_vase;
-        flat_vase_object.transform.translation = {-.5f, .5f, .0f};
-        flat_vase_object.transform.scale = glm::vec3{3.f};
-        gameObjects.emplace(flat_vase_object.getId(), std::move(flat_vase_object));
+        // std::shared_ptr<LveModel> flat_vase = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/flat_vase.obj");
+        // auto flat_vase_object = LveGameObject::CreateGameObject();
+        // flat_vase_object.model = flat_vase;
+        // flat_vase_object.transform.translation = {-0.5f, .5f, .0f};
+        // flat_vase_object.transform.scale = glm::vec3{3.f};
+        // gameObjects.emplace(flat_vase_object.getId(), std::move(flat_vase_object));
 
-        std::shared_ptr<LveModel> smooth_vase = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/2DEngine/Resources/Models/smooth_vase.obj");
+        std::shared_ptr<LveModel> smooth_vase = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/smooth_vase.obj");
         auto smooth_vase_object = LveGameObject::CreateGameObject();
         smooth_vase_object.model = smooth_vase;
-        smooth_vase_object.transform.translation = {.5f, .5f, .0f};
+        smooth_vase_object.transform.translation = {.0f, .5f, .0f};
         smooth_vase_object.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(smooth_vase_object.getId(), std::move(smooth_vase_object));
 
-        std::shared_ptr<LveModel> quad_model = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/2DEngine/Resources/Models/quad.obj");
+        std::shared_ptr<LveModel> quad_model = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = LveGameObject::CreateGameObject();
         quad.model = quad_model;
         quad.transform.translation = {.0f, .5f, .0f};
         quad.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(quad.getId(), std::move(quad));
+
+        {
+            std::vector<glm::vec3> lightColors{
+            {1.f, .1f, .1f},
+            {.1f, .1f, 1.f},
+            {.1f, 1.f, .1f},
+            {1.f, 1.f, .1f},
+            {.1f, 1.f, 1.f},
+            {1.f, 1.f, 1.f} //
+        };
+
+        for (int i = 0; i < lightColors.size(); i++)
+        {
+            auto pointLight = LveGameObject::MakePointLight(0.02f);
+            pointLight.color = lightColors[i];
+            auto rotateLight = glm::rotate(
+                glm::mat4(1.f),
+                (i * glm::two_pi<float>()) / lightColors.size(),
+                {0.f, -1.f, 0.f});
+            pointLight.transform.translation = glm::vec3(rotateLight * glm::vec4(-1.f, -1.f, -1.f, 1.f));
+            gameObjects.emplace(pointLight.getId(), std::move(pointLight));
+        }
+        }
     }
 
 } // namespace lve

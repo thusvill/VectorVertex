@@ -54,10 +54,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bios/CLionProjects/2DEngine
+CMAKE_SOURCE_DIR = /home/bios/CLionProjects/VectorVertex/3DEngine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bios/CLionProjects/2DEngine/build
+CMAKE_BINARY_DIR = /home/bios/CLionProjects/VectorVertex/3DEngine/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/VectorVertex.dir/clean
 CMakeFiles/VectorVertex.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bios/CLionProjects/2DEngine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target VectorVertex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target VectorVertex"
 .PHONY : CMakeFiles/VectorVertex.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VectorVertex.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bios/CLionProjects/2DEngine/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/VectorVertex.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bios/CLionProjects/2DEngine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles 0
 .PHONY : CMakeFiles/VectorVertex.dir/rule
 
 # Convenience name for target.

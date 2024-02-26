@@ -47,7 +47,7 @@ namespace lve
         LvePipeline::defaultPipelineConfigInfo(pipelineConfig);
         pipelineConfig.renderPass = renderPass;
         pipelineConfig.pipelineLayout = pipelineLayout;
-        lvePipeline = std::make_unique<LvePipeline>(lveDevice, pipelineConfig, "/home/bios/CLionProjects/2DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/2DEngine/Resources/Shaders/default.frag.spv");
+        lvePipeline = std::make_unique<LvePipeline>(lveDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
     }
 
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info)
@@ -57,13 +57,14 @@ namespace lve
         for (auto &kv : frame_info.game_objects)
         {
             auto &obj = kv.second;
-            // if (obj.model == nullptr) //Preformance drop when go through all objects
-            //     continue;
+             if (obj.model == nullptr) //Preformance drop when go through all objects
+              continue;
             SimplePushConstantData push{};
             push.modelMatrix = obj.transform.mat4();
             push.normalMatrix = obj.transform.normalMatrix();
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
+            
             obj.model->Bind(frame_info.command_buffer);
             obj.model->Draw(frame_info.command_buffer);
         }

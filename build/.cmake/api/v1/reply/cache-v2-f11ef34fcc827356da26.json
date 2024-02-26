@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bios/CLionProjects/2DEngine/build"
+			"value" : "/home/bios/CLionProjects/VectorVertex/3DEngine/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -559,7 +559,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bios/CLionProjects/2DEngine/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -619,7 +619,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bios/CLionProjects/2DEngine"
+			"value" : "/home/bios/CLionProjects/VectorVertex/3DEngine"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1183,7 +1183,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bios/CLionProjects/2DEngine/build"
+			"value" : "/home/bios/CLionProjects/VectorVertex/3DEngine/build"
 		},
 		{
 			"name" : "VectorVertex_IS_TOP_LEVEL",
@@ -1207,7 +1207,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bios/CLionProjects/2DEngine"
+			"value" : "/home/bios/CLionProjects/VectorVertex/3DEngine"
 		},
 		{
 			"name" : "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE",

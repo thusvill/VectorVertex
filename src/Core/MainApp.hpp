@@ -20,14 +20,7 @@
 
 namespace lve
 {
-    struct GlobalUBO
-    {
-        glm::mat4 projection{1.f};
-        glm::mat4 view{1.f};
-        glm::vec4 ambient_color{1.f, 1.f, 1.f, .02f};
-        glm::vec3 light_position{-1.f};
-        alignas(16) glm::vec4 light_color{1.f};
-    };
+    
 
     class VectorVetrex
     {

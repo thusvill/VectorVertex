@@ -1,8 +1,8 @@
 CMakeFiles/VectorVertex.dir/src/Render/lve_renderer.cpp.o: \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_renderer.cpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_renderer.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_renderer.hpp \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_window.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_window.hpp \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
@@ -142,12 +142,12 @@ CMakeFiles/VectorVertex.dir/src/Render/lve_renderer.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_device.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_device.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/bios/CLionProjects/2DEngine/src/Render/lve_swap_chain.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/lve_swap_chain.hpp \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \

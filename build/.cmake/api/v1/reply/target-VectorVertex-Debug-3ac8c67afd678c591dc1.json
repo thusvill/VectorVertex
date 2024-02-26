@@ -52,15 +52,21 @@
 	"compileGroups" : 
 	[
 		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				}
+			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/bios/CLionProjects/2DEngine/src/Render/Model_Loaders"
+					"path" : "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/bios/CLionProjects/2DEngine/src/Render/Render_Systems"
+					"path" : "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems"
 				}
 			],
 			"language" : "CXX",
@@ -89,6 +95,10 @@
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
 			{
 				"fragment" : "",
 				"role" : "flags"
