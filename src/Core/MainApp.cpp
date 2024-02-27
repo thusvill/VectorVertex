@@ -99,23 +99,26 @@ namespace lve
 
     void VectorVetrex::loadGameobjects()
     {
-        // std::shared_ptr<LveModel> flat_vase = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/flat_vase.obj");
-        // auto flat_vase_object = LveGameObject::CreateGameObject();
-        // flat_vase_object.model = flat_vase;
-        // flat_vase_object.transform.translation = {-0.5f, .5f, .0f};
-        // flat_vase_object.transform.scale = glm::vec3{3.f};
-        // gameObjects.emplace(flat_vase_object.getId(), std::move(flat_vase_object));
+        std::shared_ptr<LveModel> lveModel = nullptr;
 
-        std::shared_ptr<LveModel> smooth_vase = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/smooth_vase.obj");
+        lveModel = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/smooth_vase.obj");
         auto smooth_vase_object = LveGameObject::CreateGameObject();
-        smooth_vase_object.model = smooth_vase;
-        smooth_vase_object.transform.translation = {.0f, .5f, .0f};
+        smooth_vase_object.model = lveModel;
+        smooth_vase_object.transform.translation = {.5f, .5f, .0f};
         smooth_vase_object.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(smooth_vase_object.getId(), std::move(smooth_vase_object));
 
-        std::shared_ptr<LveModel> quad_model = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
+        lveModel =  LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/flat_vase.obj");
+        auto flat_vase_object = LveGameObject::CreateGameObject();
+        flat_vase_object.model = lveModel;
+        flat_vase_object.transform.translation = {-0.5f, .5f, .0f};
+        flat_vase_object.transform.scale = glm::vec3{3.f};
+        gameObjects.emplace(flat_vase_object.getId(), std::move(flat_vase_object));
+
+
+        lveModel = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = LveGameObject::CreateGameObject();
-        quad.model = quad_model;
+        quad.model = lveModel;
         quad.transform.translation = {.0f, .5f, .0f};
         quad.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(quad.getId(), std::move(quad));
