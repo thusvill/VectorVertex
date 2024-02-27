@@ -340,4 +340,6 @@ CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/lve_point_light_system.cpp
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/../lve_frame_info.hpp \
- /usr/include/c++/11/stdexcept
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/stdexcept

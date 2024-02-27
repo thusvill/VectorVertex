@@ -347,5 +347,8 @@ CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/lve_point_light_system.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../lve_pipeline.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../lve_frame_info.hpp \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/lve_render_system.hpp \
  /usr/include/c++/11/stdexcept

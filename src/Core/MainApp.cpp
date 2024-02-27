@@ -88,7 +88,9 @@ namespace lve
                 ubo_buffers[frame_index]->flush();
                 // render
                 lveRenderer.BeginSwapchainRenderPass(commandBuffer);
+                // should correctly ordered
                 renderSystem.renderGameobjects(frameInfo);
+
                 pointLightSystem.render(frameInfo);
                 lveRenderer.EndSwapchainRenderPass(commandBuffer);
                 lveRenderer.EndFrame();
@@ -108,7 +110,6 @@ namespace lve
         smooth_vase_object.transform.translation = {.5f, .5f, .0f};
         smooth_vase_object.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(smooth_vase_object.getId(), std::move(smooth_vase_object));
-
 
         lveModel = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = LveGameObject::CreateGameObject();
