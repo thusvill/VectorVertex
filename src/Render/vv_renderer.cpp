@@ -1,68 +1,72 @@
 #include "vv_renderer.hpp"
-
+#include <Log.h>
 #include <stdexcept>
+#include <Assert.h>
 namespace VectorVertex
 {
-    LveRenderer::LveRenderer(LveWindow &window, LveDevice &device)
-        : lveWindow{window}, lveDevice{device}
+    VVRenderer::VVRenderer(VVWindow &window, VVDevice &device)
+        : vvWindow{window}, vvDevice{device}
     {
 
         recreateSwapChain();
         CreateCommandBuffers();
     }
 
-    LveRenderer::~LveRenderer()
+    VVRenderer::~VVRenderer()
     {
         FreeCommandBuffers();
     }
 
-    void LveRenderer::CreateCommandBuffers()
+    void VVRenderer::CreateCommandBuffers()
     {
-        commandBuffers.resize(LveSwapChain::MAX_FRAMES_IN_FLIGHT);
+        commandBuffers.resize(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
         VkCommandBufferAllocateInfo allocInfo{};
         allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
         allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-        allocInfo.commandPool = lveDevice.getCommandPool();
+        allocInfo.commandPool = vvDevice.getCommandPool();
         allocInfo.commandBufferCount = static_cast<uint32_t>(commandBuffers.size());
 
-        if (vkAllocateCommandBuffers(lveDevice.device(), &allocInfo, commandBuffers.data()) != VK_SUCCESS)
+        if (vkAllocateCommandBuffers(vvDevice.device(), &allocInfo, commandBuffers.data()) != VK_SUCCESS)
         {
+            VV_CORE_ERROR("Failed to allocate command buffers");
             throw std::runtime_error("Failed to create commandbuffers");
         }
     }
-    void LveRenderer::FreeCommandBuffers()
+    void VVRenderer::FreeCommandBuffers()
     {
-        vkFreeCommandBuffers(lveDevice.device(), lveDevice.getCommandPool(), static_cast<uint32_t>(commandBuffers.size()), commandBuffers.data());
+        vkFreeCommandBuffers(vvDevice.device(), vvDevice.getCommandPool(), static_cast<uint32_t>(commandBuffers.size()), commandBuffers.data());
         commandBuffers.clear();
     }
-    void LveRenderer::recreateSwapChain()
+    void VVRenderer::recreateSwapChain()
     {
-        auto extent = lveWindow.getExtent();
+        auto extent = vvWindow.getExtent();
         while (extent.width == 0 || extent.height == 0)
         {
-            extent = lveWindow.getExtent();
+            extent = vvWindow.getExtent();
             glfwWaitEvents();
         }
 
-        vkDeviceWaitIdle(lveDevice.device());
+        vkDeviceWaitIdle(vvDevice.device());
         if (lveSwapChain == nullptr)
         {
-            lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent);
+            lveSwapChain = std::make_unique<VVSwapChain>(vvDevice, extent);
         }
         else
         {
-            std::shared_ptr<LveSwapChain> oldSwapChain = std::move(lveSwapChain);
-            lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent, oldSwapChain);
+            std::shared_ptr<VVSwapChain> oldSwapChain = std::move(lveSwapChain);
+            lveSwapChain = std::make_unique<VVSwapChain>(vvDevice, extent, oldSwapChain);
             if (!oldSwapChain->compareSwapFormats(*lveSwapChain.get()))
             {
+                VV_CORE_ERROR("Swap chain image(or depth) format does not match!");
                 throw std::runtime_error("Swap chain image(or depth) format does not match!");
             }
         }
     }
 
-    VkCommandBuffer LveRenderer::BeginFrame()
+    VkCommandBuffer VVRenderer::BeginFrame()
     {
-        assert(!isFrameStarted && "Can't call EndFrame while frame is in progress!");
+        // assert(!isFrameStarted && "Can't call EndFrame while frame is in progress!");
+        VV_CORE_ASSERT(lveSwapChain != nullptr, "lveSwapChain is nullptr");
 
         auto result = lveSwapChain->acquireNextImage(&currentImageIndex);
 
@@ -74,6 +78,7 @@ namespace VectorVertex
 
         if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR)
         {
+            VV_CORE_ERROR("Failed to acquire swap chain image!");
             throw std::runtime_error("Failed to acquire swap chain image!");
         }
         isFrameStarted = true;
@@ -83,35 +88,39 @@ namespace VectorVertex
 
         if (vkBeginCommandBuffer(commandBuffer, &beginInfo) != VK_SUCCESS)
         {
+            VV_CORE_ERROR("Failed to begin recording command buffer!");
             throw std::runtime_error("Failed to begin recording command buffer!");
         }
         return commandBuffer;
     }
-    void LveRenderer::EndFrame()
+    void VVRenderer::EndFrame()
     {
-        assert(isFrameStarted && "Can't call EndFrame while frame is not in progress!");
+        // assert(isFrameStarted && "Can't call EndFrame while frame is not in progress!");
         auto commandBuffer = GetCurrentCommandBuffer();
         if (vkEndCommandBuffer(commandBuffer) != VK_SUCCESS)
         {
+            VV_CORE_ERROR("Failed to record command buffer!");
             throw std::runtime_error("Failed to record command buffer!");
         }
         auto result = lveSwapChain->submitCommandBuffers(&commandBuffer, &currentImageIndex);
-        if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || lveWindow.wasWindowResized())
+        if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || vvWindow.wasWindowResized())
         {
-            lveWindow.resetWindowResizedFlag();
+            vvWindow.resetWindowResizedFlag();
             recreateSwapChain();
         }
         else if (result != VK_SUCCESS)
         {
+            VV_CORE_ERROR("Failed to present swap chain image!");
             throw std::runtime_error("Failed to present swap chain image!");
         }
         isFrameStarted = false;
-        currentFrameIndex = (currentFrameIndex + 1) % LveSwapChain::MAX_FRAMES_IN_FLIGHT;
+        currentFrameIndex = (currentFrameIndex + 1) % VVSwapChain::MAX_FRAMES_IN_FLIGHT;
     }
-    void LveRenderer::BeginSwapchainRenderPass(VkCommandBuffer commandBuffer)
+    void VVRenderer::BeginSwapchainRenderPass(VkCommandBuffer commandBuffer)
     {
         assert(isFrameStarted && "Can't call BeginSwapchainRenderPass if frame is not in progress!");
         assert(commandBuffer == GetCurrentCommandBuffer() && "Can't begin render pass on command buffer from a different frame");
+
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
         renderPassInfo.renderPass = lveSwapChain->getRenderPass();
@@ -139,7 +148,7 @@ namespace VectorVertex
         vkCmdSetViewport(commandBuffer, 0, 1, &viewport);
         vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
     }
-    void LveRenderer::EndSwapchainRenderPass(VkCommandBuffer commandBuffer)
+    void VVRenderer::EndSwapchainRenderPass(VkCommandBuffer commandBuffer)
     {
         assert(isFrameStarted && "Can't call EndSwapchainRenderPass if frame is not in progress!");
         assert(commandBuffer == GetCurrentCommandBuffer() && "Can't end render pass on command buffer from a different frame");

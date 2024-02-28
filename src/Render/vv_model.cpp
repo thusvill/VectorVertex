@@ -13,9 +13,9 @@
 namespace std
 {
     template <>
-    struct hash<VectorVertex::LveModel::Vertex>
+    struct hash<VectorVertex::VVModel::Vertex>
     {
-        size_t operator()(VectorVertex::LveModel::Vertex const &vertex) const
+        size_t operator()(VectorVertex::VVModel::Vertex const &vertex) const
         {
             size_t seed = 0;
             VectorVertex::hashCombine(seed, vertex.position, vertex.color, vertex.normal, vertex.uv);
@@ -26,23 +26,23 @@ namespace std
 
 namespace VectorVertex
 {
-    LveModel::LveModel(LveDevice &device, const Builder &builder) : lveDevice{device}
+    VVModel::VVModel(VVDevice &device, const Builder &builder) : vvDevice{device}
     {
         CreateVertexBuffers(builder.vertices);
         CreateIndexBuffers(builder.indices);
     }
 
-    LveModel::~LveModel()
+    VVModel::~VVModel()
     {
     }
 
-    std::unique_ptr<LveModel> LveModel::createModelFromFile(LveDevice &device, const std::string &filepath)
+    std::unique_ptr<VVModel> VVModel::createModelFromFile(VVDevice &device, const std::string &filepath)
     {
         Builder builder{};
         builder.loadModel(filepath);
-        return std::make_unique<LveModel>(device, builder);
+        return std::make_unique<VVModel>(device, builder);
     }
-    void LveModel::Bind(VkCommandBuffer commandBuffer)
+    void VVModel::Bind(VkCommandBuffer commandBuffer)
     {
         VkBuffer buffers[] = {vertexBuffer->getBuffer()};
         VkDeviceSize offsets[] = {0};
@@ -52,7 +52,7 @@ namespace VectorVertex
             vkCmdBindIndexBuffer(commandBuffer, indexBuffer->getBuffer(), 0, VK_INDEX_TYPE_UINT32);
         }
     }
-    void LveModel::Draw(VkCommandBuffer commandBuffer)
+    void VVModel::Draw(VkCommandBuffer commandBuffer)
     {
         if (hasIndexBuffer)
         {
@@ -63,7 +63,7 @@ namespace VectorVertex
             vkCmdDraw(commandBuffer, vertexCount, 1, 0, 0);
         }
     }
-    void LveModel::CreateVertexBuffers(const std::vector<Vertex> &vertices)
+    void VVModel::CreateVertexBuffers(const std::vector<Vertex> &vertices)
     {
         vertexCount = static_cast<uint32_t>(vertices.size());
         assert(vertexCount >= 3 && "Vertex count must be at least 3");
@@ -71,21 +71,21 @@ namespace VectorVertex
 
         uint32_t vertexSize = sizeof(vertices[0]);
 
-        LveBuffer stagingBuffer{
-            lveDevice, vertexSize, vertexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+        VVBuffer stagingBuffer{
+            vvDevice, vertexSize, vertexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT};
 
         stagingBuffer.map();
         stagingBuffer.writeToBuffer((void *)vertices.data());
 
-        vertexBuffer = std::make_unique<LveBuffer>(
-            lveDevice, vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+        vertexBuffer = std::make_unique<VVBuffer>(
+            vvDevice, vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        lveDevice.copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
+        vvDevice.copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
     }
 
-    void LveModel::CreateIndexBuffers(const std::vector<uint32_t> &indices)
+    void VVModel::CreateIndexBuffers(const std::vector<uint32_t> &indices)
     {
         indexCount = static_cast<uint32_t>(indices.size());
         hasIndexBuffer = indexCount > 0;
@@ -95,19 +95,19 @@ namespace VectorVertex
         }
         VkDeviceSize bufferSize = sizeof(indices[0]) * indexCount;
         uint32_t indexSize = sizeof(indices[0]);
-        LveBuffer stagingBuffer{
-            lveDevice, indexSize, indexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+        VVBuffer stagingBuffer{
+            vvDevice, indexSize, indexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT};
         stagingBuffer.map();
         stagingBuffer.writeToBuffer((void *)indices.data());
 
-        indexBuffer = std::make_unique<LveBuffer>(
-            lveDevice, indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+        indexBuffer = std::make_unique<VVBuffer>(
+            vvDevice, indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        lveDevice.copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
+        vvDevice.copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
     }
-    std::vector<VkVertexInputAttributeDescription> LveModel::Vertex::getAttributeDescriptions()
+    std::vector<VkVertexInputAttributeDescription> VVModel::Vertex::getAttributeDescriptions()
     {
         std::vector<VkVertexInputAttributeDescription> attributeDescriptions{};
 
@@ -118,7 +118,7 @@ namespace VectorVertex
 
         return attributeDescriptions;
     }
-    std::vector<VkVertexInputBindingDescription> LveModel::Vertex::getBindingDescriptions()
+    std::vector<VkVertexInputBindingDescription> VVModel::Vertex::getBindingDescriptions()
     {
         std::vector<VkVertexInputBindingDescription> bindingDescriptions(1);
         bindingDescriptions[0].binding = 0;
@@ -126,7 +126,7 @@ namespace VectorVertex
         bindingDescriptions[0].inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
         return bindingDescriptions;
     }
-    void LveModel::Builder::loadModel(const std::string &filepath)
+    void VVModel::Builder::loadModel(const std::string &filepath)
     {
         tinyobj::attrib_t attrib;
         std::vector<tinyobj::shape_t> shapes;

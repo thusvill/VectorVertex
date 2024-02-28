@@ -5,14 +5,15 @@
 #include <string>
 namespace VectorVertex
 {
-    class LveWindow
+    class VVWindow
     {
     public:
-        LveWindow(int w, int h, std::string name);
-        ~LveWindow();
+        VVWindow() = default;
+        VVWindow(int w, int h, std::string name);
+        ~VVWindow();
 
-        LveWindow(const LveWindow &) = delete;
-        LveWindow &operator=(const LveWindow &) = delete;
+        VVWindow(const VVWindow &) = delete;
+        VVWindow &operator=(const VVWindow &) = delete;
         bool
         shouldClose()
         {

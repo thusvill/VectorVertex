@@ -1,35 +1,38 @@
 #include "vv_window.hpp"
 #include <stdexcept>
+#include <Log.h>
 namespace VectorVertex
 {
-    LveWindow::LveWindow(int w, int h, std::string name) : width{w}, height{h}, windowName{name}
+    VVWindow::VVWindow(int w, int h, std::string name) : width{w}, height{h}, windowName{name}
     {
         initWindow();
     }
 
-    LveWindow::~LveWindow()
+    VVWindow::~VVWindow()
     {
         glfwDestroyWindow(window);
         glfwTerminate();
     }
 
-    void LveWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR *surface)
+    void VVWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR *surface)
     {
         if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS)
         {
+            VV_CORE_ERROR("failed to create window surface!");
             throw std::runtime_error("failed to create window surface!");
         }
+        //VV_CORE_INFO("Window surface created successfully!");
     }
 
-    void LveWindow::framebufferResizeCallback(GLFWwindow *window, int width, int height)
+    void VVWindow::framebufferResizeCallback(GLFWwindow *window, int width, int height)
     {
-        auto lveWindow = reinterpret_cast<LveWindow *>(glfwGetWindowUserPointer(window));
-        lveWindow->framebufferResized = true;
-        lveWindow->width = width;
-        lveWindow->height = height;
+        auto vvWindow = reinterpret_cast<VVWindow *>(glfwGetWindowUserPointer(window));
+        vvWindow->framebufferResized = true;
+        vvWindow->width = width;
+        vvWindow->height = height;
     }
 
-    void LveWindow::initWindow()
+    void VVWindow::initWindow()
     {
         glfwInit();
         glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);

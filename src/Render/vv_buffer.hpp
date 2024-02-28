@@ -5,20 +5,20 @@
 namespace VectorVertex
 {
 
-    class LveBuffer
+    class VVBuffer
     {
     public:
-        LveBuffer(
-            LveDevice &device,
+        VVBuffer(
+            VVDevice &device,
             VkDeviceSize instanceSize,
             uint32_t instanceCount,
             VkBufferUsageFlags usageFlags,
             VkMemoryPropertyFlags memoryPropertyFlags,
             VkDeviceSize minOffsetAlignment = 1);
-        ~LveBuffer();
+        ~VVBuffer();
 
-        LveBuffer(const LveBuffer &) = delete;
-        LveBuffer &operator=(const LveBuffer &) = delete;
+        VVBuffer(const VVBuffer &) = delete;
+        VVBuffer &operator=(const VVBuffer &) = delete;
 
         VkResult map(VkDeviceSize size = VK_WHOLE_SIZE, VkDeviceSize offset = 0);
         void unmap();
@@ -45,7 +45,7 @@ namespace VectorVertex
     private:
         static VkDeviceSize getAlignment(VkDeviceSize instanceSize, VkDeviceSize minOffsetAlignment);
 
-        LveDevice &lveDevice;
+        VVDevice &vvDevice;
         void *mapped = nullptr;
         VkBuffer buffer = VK_NULL_HANDLE;
         VkDeviceMemory memory = VK_NULL_HANDLE;

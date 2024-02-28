@@ -4,7 +4,7 @@
 #include <glm/glm.hpp>
 namespace VectorVertex
 {
-    class LveCamera
+    class VVCamera
     {
     public:
         void SetOrthographicProjection(float left, float right, float top, float bottom, float near, float far);

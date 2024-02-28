@@ -11,14 +11,15 @@
 
 namespace VectorVertex
 {
-    class LveRenderer
+    class VVRenderer
     {
     public:
-        LveRenderer(LveWindow &window, LveDevice &device);
-        ~LveRenderer();
+        VVRenderer() = default;
+        VVRenderer(VVWindow &window, VVDevice &device);
+        ~VVRenderer();
 
-        LveRenderer(const LveRenderer &) = delete;
-        LveRenderer &operator=(const LveRenderer &) = delete;
+        VVRenderer(const VVRenderer &) = delete;
+        VVRenderer &operator=(const VVRenderer &) = delete;
 
         VkRenderPass GetSwapchainRenderPass() const
         {
@@ -53,9 +54,9 @@ namespace VectorVertex
 
         void recreateSwapChain();
 
-        LveWindow &lveWindow;
-        LveDevice &lveDevice;
-        std::unique_ptr<LveSwapChain> lveSwapChain;
+        VVWindow &vvWindow;
+        VVDevice &vvDevice;
+        std::unique_ptr<VVSwapChain> lveSwapChain;
 
         std::vector<VkCommandBuffer> commandBuffers;
 

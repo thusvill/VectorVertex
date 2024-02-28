@@ -16,7 +16,7 @@ namespace VectorVertex
         class Builder
         {
         public:
-            Builder(LveDevice &lveDevice) : lveDevice{lveDevice} {}
+            Builder(VVDevice &vvDevice) : vvDevice{vvDevice} {}
 
             Builder &addBinding(
                 uint32_t binding,
@@ -26,12 +26,12 @@ namespace VectorVertex
             std::unique_ptr<LveDescriptorSetLayout> build() const;
 
         private:
-            LveDevice &lveDevice;
+            VVDevice &vvDevice;
             std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings{};
         };
 
         LveDescriptorSetLayout(
-            LveDevice &lveDevice, std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings);
+            VVDevice &vvDevice, std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings);
         ~LveDescriptorSetLayout();
         LveDescriptorSetLayout(const LveDescriptorSetLayout &) = delete;
         LveDescriptorSetLayout &operator=(const LveDescriptorSetLayout &) = delete;
@@ -39,41 +39,41 @@ namespace VectorVertex
         VkDescriptorSetLayout getDescriptorSetLayout() const { return descriptorSetLayout; }
 
     private:
-        LveDevice &lveDevice;
+        VVDevice &vvDevice;
         VkDescriptorSetLayout descriptorSetLayout;
         std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings;
 
         friend class LveDescriptorWriter;
     };
 
-    class LveDescriptorPool
+    class VVDescriptorPool
     {
     public:
         class Builder
         {
         public:
-            Builder(LveDevice &lveDevice) : lveDevice{lveDevice} {}
+            Builder(VVDevice &vvDevice) : vvDevice{vvDevice} {}
 
             Builder &addPoolSize(VkDescriptorType descriptorType, uint32_t count);
             Builder &setPoolFlags(VkDescriptorPoolCreateFlags flags);
             Builder &setMaxSets(uint32_t count);
-            std::unique_ptr<LveDescriptorPool> build() const;
+            std::unique_ptr<VVDescriptorPool> build() const;
 
         private:
-            LveDevice &lveDevice;
+            VVDevice &vvDevice;
             std::vector<VkDescriptorPoolSize> poolSizes{};
             uint32_t maxSets = 1000;
             VkDescriptorPoolCreateFlags poolFlags = 0;
         };
 
-        LveDescriptorPool(
-            LveDevice &lveDevice,
+        VVDescriptorPool(
+            VVDevice &VVDevice,
             uint32_t maxSets,
             VkDescriptorPoolCreateFlags poolFlags,
             const std::vector<VkDescriptorPoolSize> &poolSizes);
-        ~LveDescriptorPool();
-        LveDescriptorPool(const LveDescriptorPool &) = delete;
-        LveDescriptorPool &operator=(const LveDescriptorPool &) = delete;
+        ~VVDescriptorPool();
+        VVDescriptorPool(const VVDescriptorPool &) = delete;
+        VVDescriptorPool &operator=(const VVDescriptorPool &) = delete;
 
         bool allocateDescriptor(
             const VkDescriptorSetLayout descriptorSetLayout, VkDescriptorSet &descriptor) const;
@@ -83,7 +83,7 @@ namespace VectorVertex
         void resetPool();
 
     private:
-        LveDevice &lveDevice;
+        VVDevice &vvDevice;
         VkDescriptorPool descriptorPool;
 
         friend class LveDescriptorWriter;
@@ -92,7 +92,7 @@ namespace VectorVertex
     class LveDescriptorWriter
     {
     public:
-        LveDescriptorWriter(LveDescriptorSetLayout &setLayout, LveDescriptorPool &pool);
+        LveDescriptorWriter(LveDescriptorSetLayout &setLayout, VVDescriptorPool &pool);
 
         LveDescriptorWriter &writeBuffer(uint32_t binding, VkDescriptorBufferInfo *bufferInfo);
         LveDescriptorWriter &writeImage(uint32_t binding, VkDescriptorImageInfo *imageInfo);
@@ -102,7 +102,7 @@ namespace VectorVertex
 
     private:
         LveDescriptorSetLayout &setLayout;
-        LveDescriptorPool &pool;
+        VVDescriptorPool &pool;
         std::vector<VkWriteDescriptorSet> writes;
     };
 

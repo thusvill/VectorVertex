@@ -28,8 +28,8 @@ namespace VectorVertex
         int frame_index;
         float frame_time;
         VkCommandBuffer command_buffer;
-        LveCamera &camera;
+        VVCamera &camera;
         VkDescriptorSet global_descriptor_set;
-        LveGameObject::Map &game_objects;
+        VVGameObject::Map &game_objects;
     };
 } // namespace VectorVertex

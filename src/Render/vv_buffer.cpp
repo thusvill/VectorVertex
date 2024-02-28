@@ -23,7 +23,7 @@ namespace VectorVertex
      *
      * @return VkResult of the buffer mapping call
      */
-    VkDeviceSize LveBuffer::getAlignment(VkDeviceSize instanceSize, VkDeviceSize minOffsetAlignment)
+    VkDeviceSize VVBuffer::getAlignment(VkDeviceSize instanceSize, VkDeviceSize minOffsetAlignment)
     {
         if (minOffsetAlignment > 0)
         {
@@ -32,14 +32,14 @@ namespace VectorVertex
         return instanceSize;
     }
 
-    LveBuffer::LveBuffer(
-        LveDevice &device,
+    VVBuffer::VVBuffer(
+        VVDevice &device,
         VkDeviceSize instanceSize,
         uint32_t instanceCount,
         VkBufferUsageFlags usageFlags,
         VkMemoryPropertyFlags memoryPropertyFlags,
         VkDeviceSize minOffsetAlignment)
-        : lveDevice{device},
+        : vvDevice{device},
           instanceSize{instanceSize},
           instanceCount{instanceCount},
           usageFlags{usageFlags},
@@ -50,11 +50,11 @@ namespace VectorVertex
         device.createBuffer(bufferSize, usageFlags, memoryPropertyFlags, buffer, memory);
     }
 
-    LveBuffer::~LveBuffer()
+    VVBuffer::~VVBuffer()
     {
         unmap();
-        vkDestroyBuffer(lveDevice.device(), buffer, nullptr);
-        vkFreeMemory(lveDevice.device(), memory, nullptr);
+        vkDestroyBuffer(vvDevice.device(), buffer, nullptr);
+        vkFreeMemory(vvDevice.device(), memory, nullptr);
     }
 
     /**
@@ -66,10 +66,10 @@ namespace VectorVertex
      *
      * @return VkResult of the buffer mapping call
      */
-    VkResult LveBuffer::map(VkDeviceSize size, VkDeviceSize offset)
+    VkResult VVBuffer::map(VkDeviceSize size, VkDeviceSize offset)
     {
         assert(buffer && memory && "Called map on buffer before create");
-        return vkMapMemory(lveDevice.device(), memory, offset, size, 0, &mapped);
+        return vkMapMemory(vvDevice.device(), memory, offset, size, 0, &mapped);
     }
 
     /**
@@ -77,11 +77,11 @@ namespace VectorVertex
      *
      * @note Does not return a result as vkUnmapMemory can't fail
      */
-    void LveBuffer::unmap()
+    void VVBuffer::unmap()
     {
         if (mapped)
         {
-            vkUnmapMemory(lveDevice.device(), memory);
+            vkUnmapMemory(vvDevice.device(), memory);
             mapped = nullptr;
         }
     }
@@ -95,7 +95,7 @@ namespace VectorVertex
      * @param offset (Optional) Byte offset from beginning of mapped region
      *
      */
-    void LveBuffer::writeToBuffer(void *data, VkDeviceSize size, VkDeviceSize offset)
+    void VVBuffer::writeToBuffer(void *data, VkDeviceSize size, VkDeviceSize offset)
     {
         assert(mapped && "Cannot copy to unmapped buffer");
 
@@ -122,14 +122,14 @@ namespace VectorVertex
      *
      * @return VkResult of the flush call
      */
-    VkResult LveBuffer::flush(VkDeviceSize size, VkDeviceSize offset)
+    VkResult VVBuffer::flush(VkDeviceSize size, VkDeviceSize offset)
     {
         VkMappedMemoryRange mappedRange = {};
         mappedRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
         mappedRange.memory = memory;
         mappedRange.offset = offset;
         mappedRange.size = size;
-        return vkFlushMappedMemoryRanges(lveDevice.device(), 1, &mappedRange);
+        return vkFlushMappedMemoryRanges(vvDevice.device(), 1, &mappedRange);
     }
 
     /**
@@ -143,14 +143,14 @@ namespace VectorVertex
      *
      * @return VkResult of the invalidate call
      */
-    VkResult LveBuffer::invalidate(VkDeviceSize size, VkDeviceSize offset)
+    VkResult VVBuffer::invalidate(VkDeviceSize size, VkDeviceSize offset)
     {
         VkMappedMemoryRange mappedRange = {};
         mappedRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
         mappedRange.memory = memory;
         mappedRange.offset = offset;
         mappedRange.size = size;
-        return vkInvalidateMappedMemoryRanges(lveDevice.device(), 1, &mappedRange);
+        return vkInvalidateMappedMemoryRanges(vvDevice.device(), 1, &mappedRange);
     }
 
     /**
@@ -161,7 +161,7 @@ namespace VectorVertex
      *
      * @return VkDescriptorBufferInfo of specified offset and range
      */
-    VkDescriptorBufferInfo LveBuffer::descriptorInfo(VkDeviceSize size, VkDeviceSize offset)
+    VkDescriptorBufferInfo VVBuffer::descriptorInfo(VkDeviceSize size, VkDeviceSize offset)
     {
         return VkDescriptorBufferInfo{
             buffer,
@@ -177,7 +177,7 @@ namespace VectorVertex
      * @param index Used in offset calculation
      *
      */
-    void LveBuffer::writeToIndex(void *data, int index)
+    void VVBuffer::writeToIndex(void *data, int index)
     {
         writeToBuffer(data, instanceSize, index * alignmentSize);
     }
@@ -188,7 +188,7 @@ namespace VectorVertex
      * @param index Used in offset calculation
      *
      */
-    VkResult LveBuffer::flushIndex(int index) { return flush(alignmentSize, index * alignmentSize); }
+    VkResult VVBuffer::flushIndex(int index) { return flush(alignmentSize, index * alignmentSize); }
 
     /**
      * Create a buffer info descriptor
@@ -197,7 +197,7 @@ namespace VectorVertex
      *
      * @return VkDescriptorBufferInfo for instance at index
      */
-    VkDescriptorBufferInfo LveBuffer::descriptorInfoForIndex(int index)
+    VkDescriptorBufferInfo VVBuffer::descriptorInfoForIndex(int index)
     {
         return descriptorInfo(alignmentSize, index * alignmentSize);
     }
@@ -211,7 +211,7 @@ namespace VectorVertex
      *
      * @return VkResult of the invalidate call
      */
-    VkResult LveBuffer::invalidateIndex(int index)
+    VkResult VVBuffer::invalidateIndex(int index)
     {
         return invalidate(alignmentSize, index * alignmentSize);
     }

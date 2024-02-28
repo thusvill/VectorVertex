@@ -28,14 +28,14 @@ namespace VectorVertex
         VkRenderPass renderPass = nullptr;
         uint32_t subpass = 0;
     };
-    class LvePipeline
+    class VVPipeline
     {
     public:
-        LvePipeline(LveDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source);
-        ~LvePipeline();
+        VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source);
+        ~VVPipeline();
 
-        LvePipeline(const LvePipeline &) = delete;
-        LvePipeline &operator=(const LvePipeline &) = delete;
+        VVPipeline(const VVPipeline &) = delete;
+        VVPipeline &operator=(const VVPipeline &) = delete;
 
         void Bind(VkCommandBuffer commandBUffer);
 
@@ -46,7 +46,7 @@ namespace VectorVertex
         static std::vector<char> readFile(const std::string &file_path);
         void CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source);
         void CreateShaderModule(const std::vector<char> &code, VkShaderModule *shaderModule);
-        LveDevice &lveDevice;
+        VVDevice &vvDevice;
         VkPipeline graphiscPipeline;
         VkShaderModule vertShaderModule;
         VkShaderModule fragShaderModule;

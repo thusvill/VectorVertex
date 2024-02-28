@@ -1,11 +1,17 @@
-#include "src/Core/MainApp.hpp"
+#include "src/Core/VectorVertex.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
+#include <Log.h>
 
 int main()
 {
-    VectorVertex::VectorVetrex app{};
+    VectorVertex::Log::Init();
+    VectorVertex::ProjectInfo info{};
+    info.height = 800;
+    info.width = 800;
+    info.title = "VectorVertex";
+    VectorVertex::VectorVetrex app{info};
     try
     {
         app.run();

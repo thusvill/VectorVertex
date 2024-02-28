@@ -59,9 +59,9 @@ namespace VectorVertex
                 invScale.z * (c1 * c2),
             }};
     }
-    LveGameObject LveGameObject::MakePointLight(float intensity, float radius, glm::vec3 color)
+    VVGameObject VVGameObject::MakePointLight(float intensity, float radius, glm::vec3 color)
     {
-        LveGameObject _object = LveGameObject::CreateGameObject();
+        VVGameObject _object = VVGameObject::CreateGameObject();
         _object.color = color;
         _object.transform.scale.x = radius;
         _object.point_light = std::make_unique<PointLightComponent>();

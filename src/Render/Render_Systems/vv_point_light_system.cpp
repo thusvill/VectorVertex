@@ -11,7 +11,7 @@ namespace VectorVertex
         float radius;
     };
 
-    PointLightSystem::PointLightSystem(LveDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : lveDevice{device}
+    PointLightSystem::PointLightSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
     {
         CreatePipelineLayout(global_set_layout);
         CreatePipeline(renderPass);
@@ -19,7 +19,7 @@ namespace VectorVertex
 
     PointLightSystem::~PointLightSystem()
     {
-        vkDestroyPipelineLayout(lveDevice.device(), pipelineLayout, nullptr);
+        vkDestroyPipelineLayout(vvDevice.device(), pipelineLayout, nullptr);
     }
 
     void PointLightSystem::CreatePipelineLayout(VkDescriptorSetLayout global_set_layout)
@@ -37,7 +37,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(lveDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -47,13 +47,13 @@ namespace VectorVertex
 
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
-        LvePipeline::defaultPipelineConfigInfo(pipelineConfig);
-        LvePipeline::enableAlphaBlending(pipelineConfig);
+        VVPipeline::defaultPipelineConfigInfo(pipelineConfig);
+        VVPipeline::enableAlphaBlending(pipelineConfig);
         pipelineConfig.attribute_descriptions.clear();
         pipelineConfig.bind_descriptions.clear();
         pipelineConfig.renderPass = renderPass;
         pipelineConfig.pipelineLayout = pipelineLayout;
-        lvePipeline = std::make_unique<LvePipeline>(lveDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
+        pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
     }
 
     void PointLightSystem::Update(FrameInfo &frame_info, GlobalUBO &ubo)
@@ -82,7 +82,7 @@ namespace VectorVertex
 
     void PointLightSystem::render(FrameInfo &frame_info)
     {
-        std::map<float, LveGameObject::id_t> sorted;
+        std::map<float, VVGameObject::id_t> sorted;
         for (auto &kv : frame_info.game_objects)
         {
             auto &_object = kv.second;
@@ -94,7 +94,7 @@ namespace VectorVertex
             sorted[disSquared] = _object.getId();
         }
 
-        lvePipeline->Bind(frame_info.command_buffer);
+        pipeline->Bind(frame_info.command_buffer);
         vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &frame_info.global_descriptor_set, 0, nullptr);
 
         // render with revserse of sorted order

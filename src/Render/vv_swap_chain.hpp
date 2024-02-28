@@ -13,17 +13,17 @@
 namespace VectorVertex
 {
 
-  class LveSwapChain
+  class VVSwapChain
   {
   public:
     static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
 
-    LveSwapChain(LveDevice &deviceRef, VkExtent2D windowExtent);
-    LveSwapChain(LveDevice &deviceRef, VkExtent2D windowExtent, std::shared_ptr<LveSwapChain> previous);
-    ~LveSwapChain();
+    VVSwapChain(VVDevice &deviceRef, VkExtent2D windowExtent);
+    VVSwapChain(VVDevice &deviceRef, VkExtent2D windowExtent, std::shared_ptr<VVSwapChain> previous);
+    ~VVSwapChain();
 
-    LveSwapChain(const LveSwapChain &) = delete;
-    LveSwapChain &operator=(const LveSwapChain &) = delete;
+    VVSwapChain(const VVSwapChain &) = delete;
+    VVSwapChain &operator=(const VVSwapChain &) = delete;
 
     VkFramebuffer getFrameBuffer(int index) { return swapChainFramebuffers[index]; }
     VkRenderPass getRenderPass() { return renderPass; }
@@ -43,7 +43,7 @@ namespace VectorVertex
     VkResult acquireNextImage(uint32_t *imageIndex);
     VkResult submitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex);
 
-    bool compareSwapFormats(const LveSwapChain &swapChain) const
+    bool compareSwapFormats(const VVSwapChain &swapChain) const
     {
       return swapChain.swapChainDepthFormat == swapChainDepthFormat && swapChain.swapChainImageFormat == swapChainImageFormat;
     }
@@ -78,11 +78,11 @@ namespace VectorVertex
     std::vector<VkImage> swapChainImages;
     std::vector<VkImageView> swapChainImageViews;
 
-    LveDevice &device;
+    VVDevice &device;
     VkExtent2D windowExtent;
 
     VkSwapchainKHR swapChain;
-    std::shared_ptr<LveSwapChain> oldSwapChain;
+    std::shared_ptr<VVSwapChain> oldSwapChain;
 
     std::vector<VkSemaphore> imageAvailableSemaphores;
     std::vector<VkSemaphore> renderFinishedSemaphores;

@@ -27,14 +27,14 @@ namespace VectorVertex
 
     std::unique_ptr<LveDescriptorSetLayout> LveDescriptorSetLayout::Builder::build() const
     {
-        return std::make_unique<LveDescriptorSetLayout>(lveDevice, bindings);
+        return std::make_unique<LveDescriptorSetLayout>(vvDevice, bindings);
     }
 
     // *************** Descriptor Set Layout *********************
 
     LveDescriptorSetLayout::LveDescriptorSetLayout(
-        LveDevice &lveDevice, std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings)
-        : lveDevice{lveDevice}, bindings{bindings}
+        VVDevice &vvDevice, std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings)
+        : vvDevice{vvDevice}, bindings{bindings}
     {
         std::vector<VkDescriptorSetLayoutBinding> setLayoutBindings{};
         for (auto kv : bindings)
@@ -48,7 +48,7 @@ namespace VectorVertex
         descriptorSetLayoutInfo.pBindings = setLayoutBindings.data();
 
         if (vkCreateDescriptorSetLayout(
-                lveDevice.device(),
+                vvDevice.device(),
                 &descriptorSetLayoutInfo,
                 nullptr,
                 &descriptorSetLayout) != VK_SUCCESS)
@@ -59,43 +59,43 @@ namespace VectorVertex
 
     LveDescriptorSetLayout::~LveDescriptorSetLayout()
     {
-        vkDestroyDescriptorSetLayout(lveDevice.device(), descriptorSetLayout, nullptr);
+        vkDestroyDescriptorSetLayout(vvDevice.device(), descriptorSetLayout, nullptr);
     }
 
     // *************** Descriptor Pool Builder *********************
 
-    LveDescriptorPool::Builder &LveDescriptorPool::Builder::addPoolSize(
+    VVDescriptorPool::Builder &VVDescriptorPool::Builder::addPoolSize(
         VkDescriptorType descriptorType, uint32_t count)
     {
         poolSizes.push_back({descriptorType, count});
         return *this;
     }
 
-    LveDescriptorPool::Builder &LveDescriptorPool::Builder::setPoolFlags(
+    VVDescriptorPool::Builder &VVDescriptorPool::Builder::setPoolFlags(
         VkDescriptorPoolCreateFlags flags)
     {
         poolFlags = flags;
         return *this;
     }
-    LveDescriptorPool::Builder &LveDescriptorPool::Builder::setMaxSets(uint32_t count)
+    VVDescriptorPool::Builder &VVDescriptorPool::Builder::setMaxSets(uint32_t count)
     {
         maxSets = count;
         return *this;
     }
 
-    std::unique_ptr<LveDescriptorPool> LveDescriptorPool::Builder::build() const
+    std::unique_ptr<VVDescriptorPool> VVDescriptorPool::Builder::build() const
     {
-        return std::make_unique<LveDescriptorPool>(lveDevice, maxSets, poolFlags, poolSizes);
+        return std::make_unique<VVDescriptorPool>(vvDevice, maxSets, poolFlags, poolSizes);
     }
 
     // *************** Descriptor Pool *********************
 
-    LveDescriptorPool::LveDescriptorPool(
-        LveDevice &lveDevice,
+    VVDescriptorPool::VVDescriptorPool(
+        VVDevice &vvDevice,
         uint32_t maxSets,
         VkDescriptorPoolCreateFlags poolFlags,
         const std::vector<VkDescriptorPoolSize> &poolSizes)
-        : lveDevice{lveDevice}
+        : vvDevice{vvDevice}
     {
         VkDescriptorPoolCreateInfo descriptorPoolInfo{};
         descriptorPoolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
@@ -104,19 +104,19 @@ namespace VectorVertex
         descriptorPoolInfo.maxSets = maxSets;
         descriptorPoolInfo.flags = poolFlags;
 
-        if (vkCreateDescriptorPool(lveDevice.device(), &descriptorPoolInfo, nullptr, &descriptorPool) !=
+        if (vkCreateDescriptorPool(vvDevice.device(), &descriptorPoolInfo, nullptr, &descriptorPool) !=
             VK_SUCCESS)
         {
             throw std::runtime_error("failed to create descriptor pool!");
         }
     }
 
-    LveDescriptorPool::~LveDescriptorPool()
+    VVDescriptorPool::~VVDescriptorPool()
     {
-        vkDestroyDescriptorPool(lveDevice.device(), descriptorPool, nullptr);
+        vkDestroyDescriptorPool(vvDevice.device(), descriptorPool, nullptr);
     }
 
-    bool LveDescriptorPool::allocateDescriptor(
+    bool VVDescriptorPool::allocateDescriptor(
         const VkDescriptorSetLayout descriptorSetLayout, VkDescriptorSet &descriptor) const
     {
         VkDescriptorSetAllocateInfo allocInfo{};
@@ -127,30 +127,30 @@ namespace VectorVertex
 
         // Might want to create a "DescriptorPoolManager" class that handles this case, and builds
         // a new pool whenever an old pool fills up. But this is beyond our current scope
-        if (vkAllocateDescriptorSets(lveDevice.device(), &allocInfo, &descriptor) != VK_SUCCESS)
+        if (vkAllocateDescriptorSets(vvDevice.device(), &allocInfo, &descriptor) != VK_SUCCESS)
         {
             return false;
         }
         return true;
     }
 
-    void LveDescriptorPool::freeDescriptors(std::vector<VkDescriptorSet> &descriptors) const
+    void VVDescriptorPool::freeDescriptors(std::vector<VkDescriptorSet> &descriptors) const
     {
         vkFreeDescriptorSets(
-            lveDevice.device(),
+            vvDevice.device(),
             descriptorPool,
             static_cast<uint32_t>(descriptors.size()),
             descriptors.data());
     }
 
-    void LveDescriptorPool::resetPool()
+    void VVDescriptorPool::resetPool()
     {
-        vkResetDescriptorPool(lveDevice.device(), descriptorPool, 0);
+        vkResetDescriptorPool(vvDevice.device(), descriptorPool, 0);
     }
 
     // *************** Descriptor Writer *********************
 
-    LveDescriptorWriter::LveDescriptorWriter(LveDescriptorSetLayout &setLayout, LveDescriptorPool &pool)
+    LveDescriptorWriter::LveDescriptorWriter(LveDescriptorSetLayout &setLayout, VVDescriptorPool &pool)
         : setLayout{setLayout}, pool{pool} {}
 
     LveDescriptorWriter &LveDescriptorWriter::writeBuffer(
@@ -214,7 +214,7 @@ namespace VectorVertex
         {
             write.dstSet = set;
         }
-        vkUpdateDescriptorSets(pool.lveDevice.device(), writes.size(), writes.data(), 0, nullptr);
+        vkUpdateDescriptorSets(pool.vvDevice.device(), writes.size(), writes.data(), 0, nullptr);
     }
 
 } // namespace VectorVertex

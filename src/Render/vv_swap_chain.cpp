@@ -8,21 +8,22 @@
 #include <limits>
 #include <set>
 #include <stdexcept>
+#include <Log.h>
 
 namespace VectorVertex
 {
 
-  LveSwapChain::LveSwapChain(LveDevice &deviceRef, VkExtent2D extent)
+  VVSwapChain::VVSwapChain(VVDevice &deviceRef, VkExtent2D extent)
       : device{deviceRef}, windowExtent{extent}
   {
     init();
   }
-  LveSwapChain::LveSwapChain(LveDevice &deviceRef, VkExtent2D windowExtent, std::shared_ptr<LveSwapChain> previous) : device{deviceRef}, windowExtent{windowExtent}, oldSwapChain{previous}
+  VVSwapChain::VVSwapChain(VVDevice &deviceRef, VkExtent2D windowExtent, std::shared_ptr<VVSwapChain> previous) : device{deviceRef}, windowExtent{windowExtent}, oldSwapChain{previous}
   {
     init();
     oldSwapChain = nullptr;
   }
-  void LveSwapChain::init()
+  void VVSwapChain::init()
   {
     createSwapChain();
     createImageViews();
@@ -32,7 +33,7 @@ namespace VectorVertex
     createSyncObjects();
   }
 
-  LveSwapChain::~LveSwapChain()
+  VVSwapChain::~VVSwapChain()
   {
     for (auto imageView : swapChainImageViews)
     {
@@ -69,7 +70,7 @@ namespace VectorVertex
     }
   }
 
-  VkResult LveSwapChain::acquireNextImage(uint32_t *imageIndex)
+  VkResult VVSwapChain::acquireNextImage(uint32_t *imageIndex)
   {
     vkWaitForFences(
         device.device(),
@@ -89,7 +90,7 @@ namespace VectorVertex
     return result;
   }
 
-  VkResult LveSwapChain::submitCommandBuffers(
+  VkResult VVSwapChain::submitCommandBuffers(
       const VkCommandBuffer *buffers, uint32_t *imageIndex)
   {
     if (imagesInFlight[*imageIndex] != VK_NULL_HANDLE)
@@ -118,6 +119,7 @@ namespace VectorVertex
     if (vkQueueSubmit(device.graphicsQueue(), 1, &submitInfo, inFlightFences[currentFrame]) !=
         VK_SUCCESS)
     {
+      VV_CORE_ERROR("failed to submit draw command buffer!");
       throw std::runtime_error("failed to submit draw command buffer!");
     }
 
@@ -140,7 +142,7 @@ namespace VectorVertex
     return result;
   }
 
-  void LveSwapChain::createSwapChain()
+  void VVSwapChain::createSwapChain()
   {
     SwapChainSupportDetails swapChainSupport = device.getSwapChainSupport();
 
@@ -192,6 +194,7 @@ namespace VectorVertex
 
     if (vkCreateSwapchainKHR(device.device(), &createInfo, nullptr, &swapChain) != VK_SUCCESS)
     {
+      VV_CORE_ERROR("failed to create swap chain!");
       throw std::runtime_error("failed to create swap chain!");
     }
 
@@ -207,7 +210,7 @@ namespace VectorVertex
     swapChainExtent = extent;
   }
 
-  void LveSwapChain::createImageViews()
+  void VVSwapChain::createImageViews()
   {
     swapChainImageViews.resize(swapChainImages.size());
     for (size_t i = 0; i < swapChainImages.size(); i++)
@@ -226,12 +229,13 @@ namespace VectorVertex
       if (vkCreateImageView(device.device(), &viewInfo, nullptr, &swapChainImageViews[i]) !=
           VK_SUCCESS)
       {
+        VV_CORE_ERROR("failed to create texture image view!");
         throw std::runtime_error("failed to create texture image view!");
       }
     }
   }
 
-  void LveSwapChain::createRenderPass()
+  void VVSwapChain::createRenderPass()
   {
     VkAttachmentDescription depthAttachment{};
     depthAttachment.format = findDepthFormat();
@@ -290,11 +294,12 @@ namespace VectorVertex
 
     if (vkCreateRenderPass(device.device(), &renderPassInfo, nullptr, &renderPass) != VK_SUCCESS)
     {
+      VV_CORE_ERROR("failed to create render pass!");
       throw std::runtime_error("failed to create render pass!");
     }
   }
 
-  void LveSwapChain::createFramebuffers()
+  void VVSwapChain::createFramebuffers()
   {
     swapChainFramebuffers.resize(imageCount());
     for (size_t i = 0; i < imageCount(); i++)
@@ -317,12 +322,13 @@ namespace VectorVertex
               nullptr,
               &swapChainFramebuffers[i]) != VK_SUCCESS)
       {
+        VV_CORE_ERROR("failed to create framebuffer!");
         throw std::runtime_error("failed to create framebuffer!");
       }
     }
   }
 
-  void LveSwapChain::createDepthResources()
+  void VVSwapChain::createDepthResources()
   {
     VkFormat depthFormat = findDepthFormat();
     swapChainDepthFormat = depthFormat;
@@ -369,12 +375,13 @@ namespace VectorVertex
 
       if (vkCreateImageView(device.device(), &viewInfo, nullptr, &depthImageViews[i]) != VK_SUCCESS)
       {
+        VV_CORE_ERROR("failed to create texture image view!");
         throw std::runtime_error("failed to create texture image view!");
       }
     }
   }
 
-  void LveSwapChain::createSyncObjects()
+  void VVSwapChain::createSyncObjects()
   {
     imageAvailableSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
     renderFinishedSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
@@ -396,12 +403,13 @@ namespace VectorVertex
               VK_SUCCESS ||
           vkCreateFence(device.device(), &fenceInfo, nullptr, &inFlightFences[i]) != VK_SUCCESS)
       {
+        VV_CORE_ERROR("failed to create synchronization objects for a frame!");
         throw std::runtime_error("failed to create synchronization objects for a frame!");
       }
     }
   }
 
-  VkSurfaceFormatKHR LveSwapChain::chooseSwapSurfaceFormat(
+  VkSurfaceFormatKHR VVSwapChain::chooseSwapSurfaceFormat(
       const std::vector<VkSurfaceFormatKHR> &availableFormats)
   {
     for (const auto &availableFormat : availableFormats)
@@ -416,7 +424,7 @@ namespace VectorVertex
     return availableFormats[0];
   }
 
-  VkPresentModeKHR LveSwapChain::chooseSwapPresentMode(
+  VkPresentModeKHR VVSwapChain::chooseSwapPresentMode(
       const std::vector<VkPresentModeKHR> &availablePresentModes)
   {
     for (const auto &availablePresentMode : availablePresentModes)
@@ -439,7 +447,7 @@ namespace VectorVertex
     return VK_PRESENT_MODE_FIFO_KHR;
   }
 
-  VkExtent2D LveSwapChain::chooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities)
+  VkExtent2D VVSwapChain::chooseSwapExtent(const VkSurfaceCapabilitiesKHR &capabilities)
   {
     if (capabilities.currentExtent.width != std::numeric_limits<uint32_t>::max())
     {
@@ -459,7 +467,7 @@ namespace VectorVertex
     }
   }
 
-  VkFormat LveSwapChain::findDepthFormat()
+  VkFormat VVSwapChain::findDepthFormat()
   {
     return device.findSupportedFormat(
         {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},

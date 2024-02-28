@@ -25,7 +25,7 @@ namespace VectorVertex
     bool isComplete() { return graphicsFamilyHasValue && presentFamilyHasValue; }
   };
 
-  class LveDevice
+  class VVDevice
   {
   public:
 #ifdef NDEBUG
@@ -33,21 +33,22 @@ namespace VectorVertex
 #else
     const bool enableValidationLayers = true;
 #endif
-
-    LveDevice(LveWindow &window);
-    ~LveDevice();
+    VVDevice(VVWindow &window);
+    ~VVDevice();
 
     // Not copyable or movable
-    LveDevice(const LveDevice &) = delete;
-    LveDevice &operator=(const LveDevice &) = delete;
-    LveDevice(LveDevice &&) = delete;
-    LveDevice &operator=(LveDevice &&) = delete;
+    VVDevice(const VVDevice &) = delete;
+    VVDevice &operator=(const VVDevice &) = delete;
+    VVDevice(VVDevice &&) = delete;
+    VVDevice &operator=(VVDevice &&) = delete;
 
     VkCommandPool getCommandPool() { return commandPool; }
     VkDevice device() { return device_; }
     VkSurfaceKHR surface() { return surface_; }
     VkQueue graphicsQueue() { return graphicsQueue_; }
     VkQueue presentQueue() { return presentQueue_; }
+    VkInstance getInstance() { return instance; }
+    VkPhysicalDevice getPhysicalDevice() { return physicalDevice; }
 
     SwapChainSupportDetails getSwapChainSupport() { return querySwapChainSupport(physicalDevice); }
     uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
@@ -97,7 +98,7 @@ namespace VectorVertex
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-    LveWindow &window;
+    VVWindow &window;
     VkCommandPool commandPool;
 
     VkDevice device_;
@@ -107,6 +108,7 @@ namespace VectorVertex
 
     const std::vector<const char *> validationLayers = {"VK_LAYER_KHRONOS_validation"};
     const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+
   };
 
 } // namespace VectorVertex

@@ -5,24 +5,24 @@
 #include <iostream>
 namespace VectorVertex
 {
-    LvePipeline::LvePipeline(LveDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source) : lveDevice{device}
+    VVPipeline::VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source) : vvDevice{device}
     {
         CreateGraphicsPipeline(config_info, vertex_source, fragment_source);
     }
 
-    LvePipeline::~LvePipeline()
+    VVPipeline::~VVPipeline()
     {
-        vkDestroyShaderModule(lveDevice.device(), vertShaderModule, nullptr);
-        vkDestroyShaderModule(lveDevice.device(), fragShaderModule, nullptr);
-        vkDestroyPipeline(lveDevice.device(), graphiscPipeline, nullptr);
+        vkDestroyShaderModule(vvDevice.device(), vertShaderModule, nullptr);
+        vkDestroyShaderModule(vvDevice.device(), fragShaderModule, nullptr);
+        vkDestroyPipeline(vvDevice.device(), graphiscPipeline, nullptr);
     }
 
-    void LvePipeline::Bind(VkCommandBuffer commandBUffer)
+    void VVPipeline::Bind(VkCommandBuffer commandBUffer)
     {
         vkCmdBindPipeline(commandBUffer, VK_PIPELINE_BIND_POINT_GRAPHICS, graphiscPipeline);
     }
 
-    void LvePipeline::defaultPipelineConfigInfo(PipelineConfigInfo &configInfo)
+    void VVPipeline::defaultPipelineConfigInfo(PipelineConfigInfo &configInfo)
     {
 
         configInfo.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
@@ -94,11 +94,11 @@ namespace VectorVertex
         configInfo.dynamicStateInfo.pDynamicStates = configInfo.dynamicStateEnables.data();
         configInfo.dynamicStateInfo.flags = 0;
 
-        configInfo.attribute_descriptions = LveModel::Vertex::getAttributeDescriptions();
-        configInfo.bind_descriptions = LveModel::Vertex::getBindingDescriptions();
+        configInfo.attribute_descriptions = VVModel::Vertex::getAttributeDescriptions();
+        configInfo.bind_descriptions = VVModel::Vertex::getBindingDescriptions();
     }
 
-    void LvePipeline::enableAlphaBlending(PipelineConfigInfo &configInfo)
+    void VVPipeline::enableAlphaBlending(PipelineConfigInfo &configInfo)
     {
 
         configInfo.colorBlendAttachment.blendEnable = VK_TRUE;
@@ -113,7 +113,7 @@ namespace VectorVertex
         configInfo.colorBlendAttachment.alphaBlendOp = VK_BLEND_OP_ADD;
     }
 
-    std::vector<char> LvePipeline::readFile(const std::string &file_path)
+    std::vector<char> VVPipeline::readFile(const std::string &file_path)
     {
         std::ifstream file{file_path, std::ios::ate | std::ios::binary};
         if (!file.is_open())
@@ -130,7 +130,7 @@ namespace VectorVertex
         return buffer;
     }
 
-    void LvePipeline::CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source)
+    void VVPipeline::CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source)
     {
         assert(config_info.pipelineLayout != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Pipelinelayout provided in config");
         assert(config_info.renderPass != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Renderpass provided in config");
@@ -186,20 +186,20 @@ namespace VectorVertex
         pipelineInfo.basePipelineIndex = -1;
         pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-        if (vkCreateGraphicsPipelines(lveDevice.device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphiscPipeline) != VK_SUCCESS)
+        if (vkCreateGraphicsPipelines(vvDevice.device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphiscPipeline) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create graphics pipeline");
         }
     }
 
-    void LvePipeline::CreateShaderModule(const std::vector<char> &code, VkShaderModule *shaderModule)
+    void VVPipeline::CreateShaderModule(const std::vector<char> &code, VkShaderModule *shaderModule)
     {
         VkShaderModuleCreateInfo createInfo{};
         createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
         createInfo.codeSize = code.size();
         createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
 
-        if (vkCreateShaderModule(lveDevice.device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS)
+        if (vkCreateShaderModule(vvDevice.device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to create shader module!");
         }

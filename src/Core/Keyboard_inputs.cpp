@@ -3,7 +3,7 @@
 
 namespace VectorVertex
 {
-    void KeyboardInputs::moveInPlaneXZ(GLFWwindow *window, float dt, LveGameObject &gameObject)
+    void KeyboardInputs::moveInPlaneXZ(GLFWwindow *window, float dt, VVGameObject &gameObject)
     {
         moveSpeed = originalSpeed;
 

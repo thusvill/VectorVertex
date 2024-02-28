@@ -22,34 +22,34 @@ namespace VectorVertex
         float light_intensity = 1.0f;
     };
 
-    class LveGameObject
+    class VVGameObject
     {
     public:
         using id_t = unsigned int;
-        using Map = std::unordered_map<id_t, LveGameObject>;
-        static LveGameObject CreateGameObject()
+        using Map = std::unordered_map<id_t, VVGameObject>;
+        static VVGameObject CreateGameObject()
         {
             static id_t current_id = 0;
-            return LveGameObject{current_id++};
+            return VVGameObject{current_id++};
         }
 
-        static LveGameObject MakePointLight(float intensity = 1.0f, float radius = 0.1f, glm::vec3 color = glm::vec3(1.0f));
+        static VVGameObject MakePointLight(float intensity = 1.0f, float radius = 0.1f, glm::vec3 color = glm::vec3(1.0f));
 
-        LveGameObject(const LveGameObject &) = delete;
-        LveGameObject &operator=(const LveGameObject &) = delete;
-        LveGameObject(LveGameObject &&) = default;
-        LveGameObject &operator=(LveGameObject &&) = default;
+        VVGameObject(const VVGameObject &) = delete;
+        VVGameObject &operator=(const VVGameObject &) = delete;
+        VVGameObject(VVGameObject &&) = default;
+        VVGameObject &operator=(VVGameObject &&) = default;
 
         const id_t getId() { return id; }
 
-        std::shared_ptr<LveModel> model{};
+        std::shared_ptr<VVModel> model{};
         glm::vec3 color{};
         TransformComponent transform;
 
         std::unique_ptr<PointLightComponent> point_light = nullptr;
 
     private:
-        LveGameObject(id_t id) : id{id}
+        VVGameObject(id_t id) : id{id}
         {
         }
         id_t id;

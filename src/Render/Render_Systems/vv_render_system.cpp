@@ -8,7 +8,7 @@ namespace VectorVertex
         glm::mat4 modelMatrix{1.0f};
         glm::mat4 normalMatrix{1.f};
     };
-    LveRenderSystem::LveRenderSystem(LveDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : lveDevice{device}
+    LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
     {
         CreatePipelineLayout(global_set_layout);
         CreatePipeline(renderPass);
@@ -16,7 +16,7 @@ namespace VectorVertex
 
     LveRenderSystem::~LveRenderSystem()
     {
-        vkDestroyPipelineLayout(lveDevice.device(), pipelineLayout, nullptr);
+        vkDestroyPipelineLayout(vvDevice.device(), pipelineLayout, nullptr);
     }
 
     void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout global_set_layout)
@@ -34,7 +34,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(lveDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -44,15 +44,15 @@ namespace VectorVertex
 
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
-        LvePipeline::defaultPipelineConfigInfo(pipelineConfig);
+        VVPipeline::defaultPipelineConfigInfo(pipelineConfig);
         pipelineConfig.renderPass = renderPass;
         pipelineConfig.pipelineLayout = pipelineLayout;
-        lvePipeline = std::make_unique<LvePipeline>(lveDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
+        pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
     }
 
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info)
     {
-        lvePipeline->Bind(frame_info.command_buffer);
+        pipeline->Bind(frame_info.command_buffer);
         vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &frame_info.global_descriptor_set, 0, nullptr);
         for (auto &kv : frame_info.game_objects)
         {

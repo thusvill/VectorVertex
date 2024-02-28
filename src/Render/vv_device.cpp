@@ -55,7 +55,7 @@ namespace VectorVertex
   }
 
   // class member functions
-  LveDevice::LveDevice(LveWindow &window) : window{window}
+  VVDevice::VVDevice(VVWindow &window) : window{window}
   {
     createInstance();
     setupDebugMessenger();
@@ -65,7 +65,7 @@ namespace VectorVertex
     createCommandPool();
   }
 
-  LveDevice::~LveDevice()
+  VVDevice::~VVDevice()
   {
     vkDestroyCommandPool(device_, commandPool, nullptr);
     vkDestroyDevice(device_, nullptr);
@@ -79,7 +79,7 @@ namespace VectorVertex
     vkDestroyInstance(instance, nullptr);
   }
 
-  void LveDevice::createInstance()
+  void VVDevice::createInstance()
   {
     if (enableValidationLayers && !checkValidationLayerSupport())
     {
@@ -88,9 +88,9 @@ namespace VectorVertex
 
     VkApplicationInfo appInfo = {};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-    appInfo.pApplicationName = "LittleVulkanEngine App";
+    appInfo.pApplicationName = "VectorVertex Project";
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-    appInfo.pEngineName = "No Engine";
+    appInfo.pEngineName = "VectorVertex Engine";
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
     appInfo.apiVersion = VK_API_VERSION_1_0;
 
@@ -125,7 +125,7 @@ namespace VectorVertex
     hasGflwRequiredInstanceExtensions();
   }
 
-  void LveDevice::pickPhysicalDevice()
+  void VVDevice::pickPhysicalDevice()
   {
     uint32_t deviceCount = 0;
     vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
@@ -166,7 +166,7 @@ namespace VectorVertex
     std::cout << "physical device: " << properties.deviceName << std::endl;
   }
 
-  void LveDevice::createLogicalDevice()
+  void VVDevice::createLogicalDevice()
   {
     QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
@@ -218,7 +218,7 @@ namespace VectorVertex
     vkGetDeviceQueue(device_, indices.presentFamily, 0, &presentQueue_);
   }
 
-  void LveDevice::createCommandPool()
+  void VVDevice::createCommandPool()
   {
     QueueFamilyIndices queueFamilyIndices = findPhysicalQueueFamilies();
 
@@ -234,9 +234,9 @@ namespace VectorVertex
     }
   }
 
-  void LveDevice::createSurface() { window.createWindowSurface(instance, &surface_); }
+  void VVDevice::createSurface() { window.createWindowSurface(instance, &surface_); }
 
-  bool LveDevice::isDeviceSuitable(VkPhysicalDevice device)
+  bool VVDevice::isDeviceSuitable(VkPhysicalDevice device)
   {
     QueueFamilyIndices indices = findQueueFamilies(device);
 
@@ -256,7 +256,7 @@ namespace VectorVertex
            supportedFeatures.samplerAnisotropy;
   }
 
-  void LveDevice::populateDebugMessengerCreateInfo(
+  void VVDevice::populateDebugMessengerCreateInfo(
       VkDebugUtilsMessengerCreateInfoEXT &createInfo)
   {
     createInfo = {};
@@ -270,7 +270,7 @@ namespace VectorVertex
     createInfo.pUserData = nullptr; // Optional
   }
 
-  void LveDevice::setupDebugMessenger()
+  void VVDevice::setupDebugMessenger()
   {
     if (!enableValidationLayers)
       return;
@@ -282,7 +282,7 @@ namespace VectorVertex
     }
   }
 
-  bool LveDevice::checkValidationLayerSupport()
+  bool VVDevice::checkValidationLayerSupport()
   {
     uint32_t layerCount;
     vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
@@ -312,7 +312,7 @@ namespace VectorVertex
     return true;
   }
 
-  std::vector<const char *> LveDevice::getRequiredExtensions()
+  std::vector<const char *> VVDevice::getRequiredExtensions()
   {
     uint32_t glfwExtensionCount = 0;
     const char **glfwExtensions;
@@ -328,7 +328,7 @@ namespace VectorVertex
     return extensions;
   }
 
-  void LveDevice::hasGflwRequiredInstanceExtensions()
+  void VVDevice::hasGflwRequiredInstanceExtensions()
   {
     uint32_t extensionCount = 0;
     vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
@@ -355,7 +355,7 @@ namespace VectorVertex
     }
   }
 
-  bool LveDevice::checkDeviceExtensionSupport(VkPhysicalDevice device)
+  bool VVDevice::checkDeviceExtensionSupport(VkPhysicalDevice device)
   {
     uint32_t extensionCount;
     vkEnumerateDeviceExtensionProperties(device, nullptr, &extensionCount, nullptr);
@@ -377,7 +377,7 @@ namespace VectorVertex
     return requiredExtensions.empty();
   }
 
-  QueueFamilyIndices LveDevice::findQueueFamilies(VkPhysicalDevice device)
+  QueueFamilyIndices VVDevice::findQueueFamilies(VkPhysicalDevice device)
   {
     QueueFamilyIndices indices;
 
@@ -413,7 +413,7 @@ namespace VectorVertex
     return indices;
   }
 
-  SwapChainSupportDetails LveDevice::querySwapChainSupport(VkPhysicalDevice device)
+  SwapChainSupportDetails VVDevice::querySwapChainSupport(VkPhysicalDevice device)
   {
     SwapChainSupportDetails details;
     vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, surface_, &details.capabilities);
@@ -442,7 +442,7 @@ namespace VectorVertex
     return details;
   }
 
-  VkFormat LveDevice::findSupportedFormat(
+  VkFormat VVDevice::findSupportedFormat(
       const std::vector<VkFormat> &candidates, VkImageTiling tiling, VkFormatFeatureFlags features)
   {
     for (VkFormat format : candidates)
@@ -463,7 +463,7 @@ namespace VectorVertex
     throw std::runtime_error("failed to find supported format!");
   }
 
-  uint32_t LveDevice::findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties)
+  uint32_t VVDevice::findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties)
   {
     VkPhysicalDeviceMemoryProperties memProperties;
     vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memProperties);
@@ -479,7 +479,7 @@ namespace VectorVertex
     throw std::runtime_error("failed to find suitable memory type!");
   }
 
-  void LveDevice::createBuffer(
+  void VVDevice::createBuffer(
       VkDeviceSize size,
       VkBufferUsageFlags usage,
       VkMemoryPropertyFlags properties,
@@ -513,7 +513,7 @@ namespace VectorVertex
     vkBindBufferMemory(device_, buffer, bufferMemory, 0);
   }
 
-  VkCommandBuffer LveDevice::beginSingleTimeCommands()
+  VkCommandBuffer VVDevice::beginSingleTimeCommands()
   {
     VkCommandBufferAllocateInfo allocInfo{};
     allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
@@ -532,7 +532,7 @@ namespace VectorVertex
     return commandBuffer;
   }
 
-  void LveDevice::endSingleTimeCommands(VkCommandBuffer commandBuffer)
+  void VVDevice::endSingleTimeCommands(VkCommandBuffer commandBuffer)
   {
     vkEndCommandBuffer(commandBuffer);
 
@@ -547,7 +547,7 @@ namespace VectorVertex
     vkFreeCommandBuffers(device_, commandPool, 1, &commandBuffer);
   }
 
-  void LveDevice::copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size)
+  void VVDevice::copyBuffer(VkBuffer srcBuffer, VkBuffer dstBuffer, VkDeviceSize size)
   {
     VkCommandBuffer commandBuffer = beginSingleTimeCommands();
 
@@ -560,7 +560,7 @@ namespace VectorVertex
     endSingleTimeCommands(commandBuffer);
   }
 
-  void LveDevice::copyBufferToImage(
+  void VVDevice::copyBufferToImage(
       VkBuffer buffer, VkImage image, uint32_t width, uint32_t height, uint32_t layerCount)
   {
     VkCommandBuffer commandBuffer = beginSingleTimeCommands();
@@ -588,7 +588,7 @@ namespace VectorVertex
     endSingleTimeCommands(commandBuffer);
   }
 
-  void LveDevice::createImageWithInfo(
+  void VVDevice::createImageWithInfo(
       const VkImageCreateInfo &imageInfo,
       VkMemoryPropertyFlags properties,
       VkImage &image,

@@ -11,7 +11,7 @@
 namespace VectorVertex
 {
 
-    class LveModel
+    class VVModel
     {
     public:
         struct Vertex
@@ -35,14 +35,14 @@ namespace VectorVertex
 
             void loadModel(const std::string &filepath);
         };
-        LveModel(LveDevice &device, const Builder &builder);
-        ~LveModel();
+        VVModel(VVDevice &device, const Builder &builder);
+        ~VVModel();
 
-        LveModel(const LveModel &) = delete;
-        LveModel &operator=(const LveModel &) = delete;
+        VVModel(const VVModel &) = delete;
+        VVModel &operator=(const VVModel &) = delete;
 
-        static std::unique_ptr<LveModel>
-        createModelFromFile(LveDevice &device, const std::string &filepath);
+        static std::unique_ptr<VVModel>
+        createModelFromFile(VVDevice &device, const std::string &filepath);
 
         void
         Bind(VkCommandBuffer commandBuffer);
@@ -51,12 +51,12 @@ namespace VectorVertex
     private:
         void CreateVertexBuffers(const std::vector<Vertex> &vertices);
         void CreateIndexBuffers(const std::vector<uint32_t> &indices);
-        LveDevice &lveDevice;
-        std::unique_ptr<LveBuffer> vertexBuffer;
+        VVDevice &vvDevice;
+        std::unique_ptr<VVBuffer> vertexBuffer;
         uint32_t vertexCount;
 
         bool hasIndexBuffer = false;
-        std::unique_ptr<LveBuffer> indexBuffer;
+        std::unique_ptr<VVBuffer> indexBuffer;
         uint32_t indexCount;
     };
 } // namespace VectorVertex
