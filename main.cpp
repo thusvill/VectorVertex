@@ -5,7 +5,7 @@
 
 int main()
 {
-    lve::VectorVetrex app{};
+    VectorVertex::VectorVetrex app{};
     try
     {
         app.run();

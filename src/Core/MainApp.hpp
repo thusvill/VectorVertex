@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../Render/lve_window.hpp"
-#include "../Render/lve_device.hpp"
-#include "../Render/lve_renderer.hpp"
-#include "../Render/lve_buffer.hpp"
-#include "../Render/lve_game_object.hpp"
-#include "../Render/lve_camera.hpp"
-#include "../Render/lve_descriptors.hpp"
+#include "../Render/vv_window.hpp"
+#include "../Render/vv_device.hpp"
+#include "../Render/vv_renderer.hpp"
+#include "../Render/vv_buffer.hpp"
+#include "../Render/vv_game_object.hpp"
+#include "../Render/vv_camera.hpp"
+#include "../Render/vv_descriptors.hpp"
 #include "Keyboard_inputs.hpp"
 
 #define GLM_FORCE_RADIANS
@@ -18,9 +18,8 @@
 #include <chrono>
 #include <array>
 
-namespace lve
+namespace VectorVertex
 {
-    
 
     class VectorVetrex
     {
@@ -31,8 +30,8 @@ namespace lve
         VectorVetrex(const VectorVetrex &) = delete;
         VectorVetrex &operator=(const VectorVetrex &) = delete;
 
-        static constexpr int WIDTH = 600;
-        static constexpr int HEIGHT = 800;
+        static constexpr int WIDTH = 1980;
+        static constexpr int HEIGHT = 1080;
         void run();
 
     private:
@@ -45,4 +44,4 @@ namespace lve
         std::unique_ptr<LveDescriptorPool> global_pool{};
         LveGameObject::Map gameObjects;
     };
-} // namespace lve
+} // namespace VectorVertex

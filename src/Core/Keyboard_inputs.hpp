@@ -1,8 +1,8 @@
 #pragma once
-#include "../Render/lve_game_object.hpp"
-#include "../Render/lve_window.hpp"
+#include "../Render/vv_game_object.hpp"
+#include "../Render/vv_window.hpp"
 
-namespace lve
+namespace VectorVertex
 {
     class KeyboardInputs
     {
@@ -29,4 +29,4 @@ namespace lve
         float moveSpeed;
         float lookSpeed{1.f};
     };
-} // namespace lve
+} // namespace VectorVertex

@@ -1,16 +1,18 @@
 #include "Keyboard_inputs.hpp"
+#include <iostream>
 
-namespace lve
+namespace VectorVertex
 {
     void KeyboardInputs::moveInPlaneXZ(GLFWwindow *window, float dt, LveGameObject &gameObject)
     {
         moveSpeed = originalSpeed;
 
-        if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS){
+        if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS)
+        {
             moveSpeed = originalSpeed * speed_multiplier;
         }
 
-            glm::vec3 rotate{0};
+        glm::vec3 rotate{0};
         if (glfwGetKey(window, keys.lookRight) == GLFW_PRESS)
             rotate.y += 1.f;
         if (glfwGetKey(window, keys.lookLeft) == GLFW_PRESS)
@@ -74,6 +76,8 @@ namespace lve
         {
             gameObject.transform.translation += moveSpeed * dt * glm::normalize(moveDir);
         }
+        // std::cout << "Camera | position x:" << gameObject.transform.translation.x << " y:" << gameObject.transform.translation.y << " z:" << gameObject.transform.translation.z << "\n Camera| rotation x:" << gameObject.transform.rotation.x << " y:" << gameObject.transform.rotation.y << " z:" << gameObject.transform.rotation.z << std::endl;
+        // std::cout<<moveDir.x<<" "<<moveDir.y<<" "<<moveDir.z<<std::endl;
     }
 
-} // namespace lve
+} // namespace VectorVertex

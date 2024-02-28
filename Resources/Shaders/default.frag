@@ -7,9 +7,15 @@ layout(location = 1) in vec3 fragPosWorld;
 layout(location = 2) in vec3 fragNormalWorld;
 
 
+
 struct PointLight{
     vec4 position;
     vec4 color;
+};
+
+struct DirectionalLight {
+    vec3 direction;
+    vec3 color;
 };
 
 layout(set = 0, binding =0) uniform globalUbo{
@@ -26,8 +32,34 @@ layout(push_constant) uniform Push{
     mat4 normalMatrix;
 } push;
 
-void main(){
+vec3 calculateDiffuse(vec3 normal, vec3 lightDir, vec3 lightColor) {
+    float lambertian = max(dot(normal, lightDir), 0.0);
+    return lambertian * lightColor;
+}
 
+vec3 calculateSpecular(vec3 normal, vec3 lightDir, vec3 viewDir, float roughness, vec3 lightColor) {
+    vec3 halfwayDir = normalize(lightDir + viewDir);
+    float NdotH = max(dot(normal, halfwayDir), 0.0);
+    float roughnessSq = roughness * roughness;
+    float denom = (NdotH * NdotH * (roughnessSq - 1.0) + 1.0);
+    float specular = ((2.0 * NdotH) / denom) * exp((NdotH * NdotH - 1.0) / (roughnessSq * NdotH * NdotH));
+    return specular * lightColor;
+}
+
+
+vec3 calculateDirectionalLight(DirectionalLight dirLight, vec3 normal, vec3 viewDir) {
+    vec3 lightDir = normalize(-dirLight.direction);
+    vec3 diffuse = calculateDiffuse(normal, lightDir, dirLight.color);
+    vec3 specular = calculateSpecular(normal, lightDir, viewDir, 0.5, dirLight.color);
+    return diffuse + specular;
+}
+
+vec3 lightDirection = vec3(0.0f, 0.5f, 0.0f);  // Direction of the directional light
+vec3 lightColor = vec3(1.0,1.0,1.0); 
+
+
+vec4 point_light(){
+    
     vec3 diffuse_light = ubo.ambient_color.xyz * ubo.ambient_color.w;
     vec3 specular_light = vec3(0.0);
     vec3 surface_normal = normalize(fragNormalWorld);
@@ -54,7 +86,19 @@ void main(){
 
         specular_light += intensity * blinn_term;
     }
+return vec4(diffuse_light *  fragColor + specular_light * fragColor, 1.0);
+}
 
-    outColor = vec4(diffuse_light * fragColor + specular_light * fragColor, 1.0);
+
+
+void main(){
+
+    //outColor = point_light();
+
+    DirectionalLight d_light;
+    d_light.direction = lightDirection;
+    d_light.color = lightColor;
+
+    outColor = vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0);
 
 }

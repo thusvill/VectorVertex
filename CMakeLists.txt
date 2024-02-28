@@ -11,6 +11,7 @@ find_package(Vulkan REQUIRED)
 include_directories(${Vulkan_INCLUDE_DIRS})
 include_directories("src/Render/Model_Loaders")
 include_directories("src/Render/Render_Systems")
+include_directories("src/Render/vendor")
 
 # Collect all .cpp, .h, and .hpp files in the source directory
 file(GLOB_RECURSE SOURCES "src/Render/*.cpp" "src/Render/*.hpp" "src/Render/*.h" "src/Core/*.hpp" "src/Core/*.cpp")

@@ -2,7 +2,7 @@ CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/MainApp.cpp \
  /usr/include/stdc-predef.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/MainApp.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_window.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_window.hpp \
  /usr/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
@@ -142,13 +142,13 @@ CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_device.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_device.hpp \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_renderer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_swap_chain.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_swap_chain.hpp \
  /usr/include/c++/11/memory /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
@@ -172,15 +172,15 @@ CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.o: \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/cassert \
  /usr/include/assert.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_game_object.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_game_object.hpp \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_model.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_model.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -339,16 +339,33 @@ CMakeFiles/VectorVertex.dir/src/Core/MainApp.cpp.o: \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_camera.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/lve_descriptors.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_camera.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/lve_point_light_system.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../lve_pipeline.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../lve_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/vv_point_light_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../vv_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../vv_frame_info.hpp \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/lve_render_system.hpp \
- /usr/include/c++/11/stdexcept
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/vv_render_system.hpp \
+ /usr/include/c++/11/stdexcept /usr/include/c++/11/iostream \
+ /usr/include/c++/11/ostream /usr/include/c++/11/ios \
+ /usr/include/c++/11/bits/ios_base.h \
+ /usr/include/c++/11/bits/locale_classes.h \
+ /usr/include/c++/11/bits/locale_classes.tcc \
+ /usr/include/c++/11/system_error \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h \
+ /usr/include/c++/11/streambuf /usr/include/c++/11/bits/streambuf.tcc \
+ /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+ /usr/include/c++/11/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/basic_ios.tcc \
+ /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc

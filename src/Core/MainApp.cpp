@@ -1,10 +1,12 @@
 #include "MainApp.hpp"
 
-#include "../Render/Render_Systems/lve_point_light_system.hpp"
-#include "../Render/Render_Systems/lve_render_system.hpp"
+#include "../Render/Render_Systems/vv_point_light_system.hpp"
+#include "../Render/Render_Systems/vv_render_system.hpp"
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
-namespace lve
+#include <iostream>
+
+namespace VectorVertex
 {
     VectorVetrex::VectorVetrex()
     {
@@ -48,13 +50,15 @@ namespace lve
         LveCamera camera{};
 
         auto viewerObject = LveGameObject::CreateGameObject();
-        viewerObject.transform.translation.z = -2.5f;
+        viewerObject.transform.translation = glm::vec3(-1.48, -0.77, -2.17);
+        viewerObject.transform.rotation = glm::vec3(-0.41, 0.87, 0.0f);
         KeyboardInputs camControl{};
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
         while (!lveWindow.shouldClose())
         {
+            // std::cout << "Camera | position x:" << viewerObject.transform.translation.x << " y:" << viewerObject.transform.translation.y << " z:" << viewerObject.transform.translation.z << "\n Camera| rotation x:" << viewerObject.transform.rotation.x << " y:" << viewerObject.transform.rotation.y << " z:" << viewerObject.transform.rotation.z << std::endl;
             auto newTime = std::chrono::high_resolution_clock::now();
             float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
@@ -104,12 +108,14 @@ namespace lve
     {
         std::shared_ptr<LveModel> lveModel = nullptr;
 
-        lveModel = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/smooth_vase.obj");
-        auto smooth_vase_object = LveGameObject::CreateGameObject();
-        smooth_vase_object.model = lveModel;
-        smooth_vase_object.transform.translation = {.5f, .5f, .0f};
-        smooth_vase_object.transform.scale = glm::vec3{3.f};
-        gameObjects.emplace(smooth_vase_object.getId(), std::move(smooth_vase_object));
+        lveModel = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
+        auto supra_object = LveGameObject::CreateGameObject();
+        supra_object.model = lveModel;
+        supra_object.color = {.1f, .0f, .0f};
+        supra_object.transform.translation = {.5f, .5f, .0f};
+        supra_object.transform.scale = glm::vec3{0.2f};
+        // supra_object.transform.rotation.z = 1 * 3.15;
+        gameObjects.emplace(supra_object.getId(), std::move(supra_object));
 
         lveModel = LveModel::createModelFromFile(lveDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = LveGameObject::CreateGameObject();
@@ -142,4 +148,4 @@ namespace lve
         }
     }
 
-} // namespace lve
+} // namespace VectorVertex
