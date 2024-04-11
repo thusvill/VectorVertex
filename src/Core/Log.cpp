@@ -1,6 +1,3 @@
-//
-// Created by bios on 9/13/23.
-//
 
 #include "Log.h"
 #include <spdlog/sinks/stdout_color_sinks.h>

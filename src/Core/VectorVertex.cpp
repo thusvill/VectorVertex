@@ -15,8 +15,6 @@ namespace VectorVertex
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
         loadGameobjects();
-
-        layers = CreateScope<LayerStack>();
     }
 
     VectorVetrex::~VectorVetrex()
@@ -59,8 +57,21 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
+        ImguiConfig imgui_config{
+            .PhysicalDevice = vvDevice.getPhysicalDevice(),
+            .Device = vvDevice.device(),
+            .renderer = &renderer,
+            .renderPass = renderer.GetSwapchainRenderPass(),
+            .instance = vvDevice.getInstance(),
+            .graphicsQueue = vvDevice.graphicsQueue(),
+        };
+        //imgui_layer = new VectorVertex::Imgui_Layer();
+        //imgui_layer->InitializeImgui(imgui_config, vvWindow.getGLFWwindow());
+        //layers.PushLayer(imgui_layer);
+
         while (!vvWindow.shouldClose())
         {
+
             // std::cout << "Camera | position x:" << viewerObject.transform.translation.x << " y:" << viewerObject.transform.translation.y << " z:" << viewerObject.transform.translation.z << "\n Camera| rotation x:" << viewerObject.transform.rotation.x << " y:" << viewerObject.transform.rotation.y << " z:" << viewerObject.transform.rotation.z << std::endl;
             auto newTime = std::chrono::high_resolution_clock::now();
             float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
@@ -96,6 +107,8 @@ namespace VectorVertex
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
                 // should correctly ordered
+               ///ImGui::Text("test");
+               // imgui_layer->End();
                 renderSystem.renderGameobjects(frameInfo);
 
                 pointLightSystem.render(frameInfo);
@@ -111,14 +124,23 @@ namespace VectorVertex
     {
         std::shared_ptr<VVModel> VVModel = nullptr;
 
-        VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
-        auto supra_object = VVGameObject::CreateGameObject();
-        supra_object.model = VVModel;
-        supra_object.color = {.1f, .0f, .0f};
-        supra_object.transform.translation = {.5f, .5f, .0f};
-        supra_object.transform.scale = glm::vec3{0.2f};
+        VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/Rubik.fbx");
+        auto supra5_object = VVGameObject::CreateGameObject();
+        supra5_object.model = VVModel;
+        supra5_object.color = {.1f, .0f, .0f};
+        supra5_object.transform.translation = {1.0f, .0f, .0f};
+        supra5_object.transform.scale = glm::vec3{0.1f};
         // supra_object.transform.rotation.z = 1 * 3.15;
-        gameObjects.emplace(supra_object.getId(), std::move(supra_object));
+        gameObjects.emplace(supra5_object.getId(), std::move(supra5_object));
+
+        // VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
+        // auto supra_object = VVGameObject::CreateGameObject();
+        // supra_object.model = VVModel;
+        // supra_object.color = {.1f, .0f, .0f};
+        // supra_object.transform.translation = {.5f, .5f, .0f};
+        // supra_object.transform.scale = glm::vec3{0.2f};
+        // // supra_object.transform.rotation.z = 1 * 3.15;
+        // gameObjects.emplace(supra_object.getId(), std::move(supra_object));
 
         VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = VVGameObject::CreateGameObject();

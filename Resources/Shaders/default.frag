@@ -54,8 +54,8 @@ vec3 calculateDirectionalLight(DirectionalLight dirLight, vec3 normal, vec3 view
     return diffuse + specular;
 }
 
-vec3 lightDirection = vec3(0.0f, 0.5f, 0.0f);  // Direction of the directional light
-vec3 lightColor = vec3(1.0,1.0,1.0); 
+vec3 lightDirection = vec3(0.0f, 0.1f, 0.0f);  // Direction of the directional light
+vec3 lightColor = vec3(0.01); 
 
 
 vec4 point_light(){
@@ -99,6 +99,6 @@ void main(){
     d_light.direction = lightDirection;
     d_light.color = lightColor;
 
-    outColor = vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0);
+    outColor = vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light();
 
 }

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render
+CXX_INCLUDES = -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render
 
 CXX_FLAGS = -g -g
 

@@ -7,6 +7,7 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include <memory>
+#include <fbx/include/fbxsdk.h>
 #include <vector>
 namespace VectorVertex
 {
@@ -32,8 +33,11 @@ namespace VectorVertex
         {
             std::vector<Vertex> vertices;
             std::vector<uint32_t> indices;
+            FbxManager *sdkManager;
 
-            void loadModel(const std::string &filepath);
+            void
+            loadModel(const std::string &filepath);
+            void loadFBX(const std::string &fbx_path);
         };
         VVModel(VVDevice &device, const Builder &builder);
         ~VVModel();

@@ -3,12 +3,15 @@
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #define GLM_ENABLE_EXPERIMENTAL
-
+#include <algorithm>
 #include <glm/gtx/hash.hpp>
 #include <unordered_map>
 #include <tiny_obj_loader.h>
 #include <cassert>
 #include <cstring>
+#include <Log.h>
+
+#include <iostream>
 
 namespace std
 {
@@ -126,64 +129,159 @@ namespace VectorVertex
         bindingDescriptions[0].inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
         return bindingDescriptions;
     }
+
+    
+
     void VVModel::Builder::loadModel(const std::string &filepath)
     {
-        tinyobj::attrib_t attrib;
-        std::vector<tinyobj::shape_t> shapes;
-        std::vector<tinyobj::material_t> materials;
-        std::string warn, err;
+        std::string lowerPath = filepath;
+        std::transform(lowerPath.begin(), lowerPath.end(), lowerPath.begin(), ::tolower);
 
-        if (!tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, filepath.c_str()))
+        if (lowerPath.substr(lowerPath.length() - 4) == ".obj")
         {
-            throw std::runtime_error(warn + err);
-        }
+            VV_CORE_INFO("Loading OBJ file: {0}", filepath);
+            tinyobj::attrib_t attrib;
+            std::vector<tinyobj::shape_t> shapes;
+            std::vector<tinyobj::material_t> materials;
+            std::string warn, err;
 
-        vertices.clear();
-        indices.clear();
-
-        std::unordered_map<Vertex, uint32_t> uniqueVertex{};
-
-        for (const auto &shape : shapes)
-        {
-            for (const auto &index : shape.mesh.indices)
+            if (!tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, filepath.c_str()))
             {
-                Vertex vertex{};
+                throw std::runtime_error(warn + err);
+            }
 
-                if (index.vertex_index >= 0)
+            vertices.clear();
+            indices.clear();
+
+            std::unordered_map<Vertex, uint32_t> uniqueVertex{};
+
+            for (const auto &shape : shapes)
+            {
+                for (const auto &index : shape.mesh.indices)
                 {
-                    vertex.position = {
-                        attrib.vertices[3 * index.vertex_index + 0],
-                        attrib.vertices[3 * index.vertex_index + 1],
-                        attrib.vertices[3 * index.vertex_index + 2]};
+                    Vertex vertex{};
 
-                    vertex.color = {
-                        attrib.colors[3 * index.vertex_index + 0],
-                        attrib.colors[3 * index.vertex_index + 1],
-                        attrib.colors[3 * index.vertex_index + 2]};
-                }
+                    if (index.vertex_index >= 0)
+                    {
+                        vertex.position = {
+                            attrib.vertices[3 * index.vertex_index + 0],
+                            attrib.vertices[3 * index.vertex_index + 1],
+                            attrib.vertices[3 * index.vertex_index + 2]};
 
-                if (index.normal_index >= 0)
-                {
-                    vertex.normal = {
-                        attrib.normals[3 * index.normal_index + 0],
-                        attrib.normals[3 * index.normal_index + 1],
-                        attrib.normals[3 * index.normal_index + 2]};
-                }
+                        vertex.color = {
+                            attrib.colors[3 * index.vertex_index + 0],
+                            attrib.colors[3 * index.vertex_index + 1],
+                            attrib.colors[3 * index.vertex_index + 2]};
+                    }
 
-                if (index.texcoord_index >= 0)
-                {
-                    vertex.uv = {
-                        attrib.texcoords[2 * index.texcoord_index + 0],
-                        attrib.texcoords[2 * index.texcoord_index + 1]};
-                }
+                    if (index.normal_index >= 0)
+                    {
+                        vertex.normal = {
+                            attrib.normals[3 * index.normal_index + 0],
+                            attrib.normals[3 * index.normal_index + 1],
+                            attrib.normals[3 * index.normal_index + 2]};
+                    }
 
-                if (uniqueVertex.count(vertex) == 0)
-                {
-                    uniqueVertex[vertex] = static_cast<uint32_t>(vertices.size());
-                    vertices.push_back(vertex);
+                    if (index.texcoord_index >= 0)
+                    {
+                        vertex.uv = {
+                            attrib.texcoords[2 * index.texcoord_index + 0],
+                            attrib.texcoords[2 * index.texcoord_index + 1]};
+                    }
+
+                    if (uniqueVertex.count(vertex) == 0)
+                    {
+                        uniqueVertex[vertex] = static_cast<uint32_t>(vertices.size());
+                        vertices.push_back(vertex);
+                    }
+                    indices.push_back(uniqueVertex[vertex]);
                 }
-                indices.push_back(uniqueVertex[vertex]);
             }
         }
+        else if (lowerPath.substr(lowerPath.length() - 4) == ".fbx")
+        {
+            VV_CORE_INFO("Loading FBX model: " + filepath);
+
+            loadFBX(filepath);
+        }
     }
+
+    void VVModel::Builder::loadFBX(const std::string &fbx_path)
+    {
+        sdkManager = FbxManager::Create();
+        if (!sdkManager)
+        {
+            throw std::runtime_error("Failed to create FBX SDK manager.");
+        }
+
+        fbxsdk::FbxIOSettings *ios = fbxsdk::FbxIOSettings::Create(sdkManager, IOSROOT);
+        sdkManager->SetIOSettings(ios);
+
+        fbxsdk::FbxImporter *importer = fbxsdk::FbxImporter::Create(sdkManager, "");
+
+        if (!importer->Initialize(fbx_path.c_str(), -1, sdkManager->GetIOSettings()))
+        {
+            throw std::runtime_error("Failed to initialize FBX importer: " + std::string(importer->GetStatus().GetErrorString()));
+        }
+
+        FbxScene *scene = FbxScene::Create(sdkManager, "LoadScene");
+
+        if (!importer->Import(scene))
+        {
+            throw std::runtime_error("Failed to import FBX file: " + std::string(importer->GetStatus().GetErrorString()));
+        }
+
+        importer->Destroy();
+
+        fbxsdk::FbxNode *rootNode = scene->GetRootNode();
+        if (rootNode)
+        {
+            for (int i = 0; i < rootNode->GetChildCount(); i++)
+            {
+                fbxsdk::FbxNode *childNode = rootNode->GetChild(i);
+                if (childNode->GetNodeAttribute() && childNode->GetNodeAttribute()->GetAttributeType() == FbxNodeAttribute::eMesh)
+                {
+                    fbxsdk::FbxMesh *mesh = (fbxsdk::FbxMesh *)childNode->GetNodeAttribute();
+
+                    for (int polygonIndex = 0; polygonIndex < mesh->GetPolygonCount(); ++polygonIndex)
+                    {
+                        int numVertices = mesh->GetPolygonSize(polygonIndex);
+
+                        for (int vertexIndex = 0; vertexIndex < numVertices; ++vertexIndex)
+                        {
+                            
+                            int controlPointIndex = mesh->GetPolygonVertex(polygonIndex, vertexIndex);
+
+                            fbxsdk::FbxVector4 fbxPosition = mesh->GetControlPointAt(controlPointIndex);
+                            vertices[vertexIndex].position = glm::vec3(fbxPosition[0], fbxPosition[1], fbxPosition[2]);
+
+                            fbxsdk::FbxVector4 fbxNormal;
+                            mesh->GetPolygonVertexNormal(polygonIndex, vertexIndex, fbxNormal);
+                            vertices[vertexIndex].normal = glm::vec3(fbxNormal[0], fbxNormal[1], fbxNormal[2]);
+
+                            fbxsdk::FbxVector2 fbxUV;
+                            bool unmappedUV;
+                            mesh->GetPolygonVertexUV(polygonIndex, vertexIndex, "UVChannel_0", fbxUV, unmappedUV);
+                            vertices[vertexIndex].uv = glm::vec2(fbxUV[0], fbxUV[1]);
+
+                            // fbxsdk::FbxColor fbxColor;
+                            // int vertexId = polygonIndex * numVertices + vertexIndex;
+                            // bool mappedColor;
+                            // mesh->GetPolygonVertexColor(vertexId, fbxColor);
+                            // glm::vec3 color(fbxColor.mRed, fbxColor.mGreen, fbxColor.mBlue);
+                            
+
+                            VV_CORE_WARN("Vertex Counrt {0}", vertices.size());
+                            
+
+                        }
+                    }
+                }
+            }
+        }
+
+        scene->Destroy();
+        sdkManager->Destroy();
+    }
+
 } // namespace VectorVertex

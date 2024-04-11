@@ -1,7 +1,3 @@
-//
-// Created by bios on 10/3/23.
-//
-
 #ifndef GAMEENGINE_LAYERSTACK_H
 #define GAMEENGINE_LAYERSTACK_H
 #pragma once

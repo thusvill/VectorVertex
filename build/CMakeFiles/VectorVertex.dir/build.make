@@ -153,19 +153,19 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/VectorVertex.cpp -o CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s
 
-CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
-CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/ImguiLayer.cpp
-CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o: CMakeFiles/VectorVertex.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o -MF CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o.d -o CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/ImguiLayer.cpp
+CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
+CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.cpp
+CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: CMakeFiles/VectorVertex.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o -MF CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o.d -o CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.cpp
 
-CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/ImguiLayer.cpp > CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.i
+CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.cpp > CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.i
 
-CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/ImguiLayer.cpp -o CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.s
+CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.cpp -o CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.s
 
 CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
 CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_point_light_system.cpp
@@ -441,7 +441,7 @@ VectorVertex_OBJECTS = \
 "CMakeFiles/VectorVertex.dir/src/Core/LayerStack.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o" \
-"CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o" \
+"CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui.cpp.o" \
@@ -471,7 +471,7 @@ VectorVertex: CMakeFiles/VectorVertex.dir/src/Core/Layer.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Core/LayerStack.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o
-VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o
+VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui.cpp.o
@@ -494,6 +494,7 @@ VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/build.make
 VectorVertex: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 VectorVertex: /usr/lib/x86_64-linux-gnu/libvulkan.so
+VectorVertex: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/lib/debug/libfbxsdk.so
 VectorVertex: CMakeFiles/VectorVertex.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable VectorVertex"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VectorVertex.dir/link.txt --verbose=$(VERBOSE)

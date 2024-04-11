@@ -54,6 +54,20 @@
     "set": "cpp",
     "unordered_set": "cpp",
     "fstream": "cpp",
-    "map": "cpp"
-  }
+    "map": "cpp",
+    "filesystem": "cpp",
+    "bitset": "cpp",
+    "codecvt": "cpp",
+    "condition_variable": "cpp",
+    "future": "cpp",
+    "iomanip": "cpp",
+    "mutex": "cpp",
+    "semaphore": "cpp",
+    "stop_token": "cpp",
+    "thread": "cpp"
+  },
+  "cmake.configureOnOpen": true,
+  "terminal.explorerKind": "external",
+  "terminal.integrated.automationProfile.linux": {},
+  "terminal.sourceControlRepositoriesKind": "external"
 }

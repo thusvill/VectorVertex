@@ -273,29 +273,29 @@ src/Core/VectorVertex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s
 .PHONY : src/Core/VectorVertex.cpp.s
 
-src/Render/Layers/ImguiLayer.o: src/Render/Layers/ImguiLayer.cpp.o
-.PHONY : src/Render/Layers/ImguiLayer.o
+src/Render/Layers/Imgui_Layer.o: src/Render/Layers/Imgui_Layer.cpp.o
+.PHONY : src/Render/Layers/Imgui_Layer.o
 
 # target to build an object file
-src/Render/Layers/ImguiLayer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.o
-.PHONY : src/Render/Layers/ImguiLayer.cpp.o
+src/Render/Layers/Imgui_Layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o
+.PHONY : src/Render/Layers/Imgui_Layer.cpp.o
 
-src/Render/Layers/ImguiLayer.i: src/Render/Layers/ImguiLayer.cpp.i
-.PHONY : src/Render/Layers/ImguiLayer.i
+src/Render/Layers/Imgui_Layer.i: src/Render/Layers/Imgui_Layer.cpp.i
+.PHONY : src/Render/Layers/Imgui_Layer.i
 
 # target to preprocess a source file
-src/Render/Layers/ImguiLayer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.i
-.PHONY : src/Render/Layers/ImguiLayer.cpp.i
+src/Render/Layers/Imgui_Layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.i
+.PHONY : src/Render/Layers/Imgui_Layer.cpp.i
 
-src/Render/Layers/ImguiLayer.s: src/Render/Layers/ImguiLayer.cpp.s
-.PHONY : src/Render/Layers/ImguiLayer.s
+src/Render/Layers/Imgui_Layer.s: src/Render/Layers/Imgui_Layer.cpp.s
+.PHONY : src/Render/Layers/Imgui_Layer.s
 
 # target to generate assembly for a file
-src/Render/Layers/ImguiLayer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/ImguiLayer.cpp.s
-.PHONY : src/Render/Layers/ImguiLayer.cpp.s
+src/Render/Layers/Imgui_Layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.s
+.PHONY : src/Render/Layers/Imgui_Layer.cpp.s
 
 src/Render/Render_Systems/vv_point_light_system.o: src/Render/Render_Systems/vv_point_light_system.cpp.o
 .PHONY : src/Render/Render_Systems/vv_point_light_system.o
@@ -780,9 +780,9 @@ help:
 	@echo "... src/Core/VectorVertex.o"
 	@echo "... src/Core/VectorVertex.i"
 	@echo "... src/Core/VectorVertex.s"
-	@echo "... src/Render/Layers/ImguiLayer.o"
-	@echo "... src/Render/Layers/ImguiLayer.i"
-	@echo "... src/Render/Layers/ImguiLayer.s"
+	@echo "... src/Render/Layers/Imgui_Layer.o"
+	@echo "... src/Render/Layers/Imgui_Layer.i"
+	@echo "... src/Render/Layers/Imgui_Layer.s"
 	@echo "... src/Render/Render_Systems/vv_point_light_system.o"
 	@echo "... src/Render/Render_Systems/vv_point_light_system.i"
 	@echo "... src/Render/Render_Systems/vv_point_light_system.s"
