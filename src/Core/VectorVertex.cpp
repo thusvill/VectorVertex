@@ -19,26 +19,13 @@ namespace VectorVertex
                           .build();
         
 
-        VkInstance vulkanInstance;
+        editor_layer = new EditorLayer();
+        editor_layer->SetupImgui(&vvDevice, &renderer, &vvWindow);
+        layers.PushLayer(editor_layer);
 
-        vulkanInstance = vvDevice.getInstance();
+        editor_layer->OnAttach();
 
         
-
-        VV_CORE_ASSERT(vulkanInstance, "Vulkan Instance should not be null!");
-
-        ImguiConfig imguiConfig;
-        imguiConfig.instance = vulkanInstance; // Assign Vulkan instance handle
-        imguiConfig.Device = vvDevice.device();
-        imguiConfig.renderer = &renderer;
-        imguiConfig.renderPass = renderer.GetSwapchainRenderPass();
-        imguiConfig.PhysicalDevice = vvDevice.getPhysicalDevice();
-        imguiConfig.graphicsQueue = vvDevice.graphicsQueue();
-        imguiConfig.imageCount = static_cast<uint32_t>(renderer.GetSwapchainImageCount());
-
-        // Initialize ImGui layer
-        imgui_layer.InitializeImgui(imguiConfig, vvWindow.getGLFWwindow());
-        layers.PushLayer(&imgui_layer);
 
         VV_CORE_WARN("Initialized!");
 
@@ -136,12 +123,8 @@ namespace VectorVertex
                 renderSystem.renderGameobjects(frameInfo);
 
                 pointLightSystem.render(frameInfo);
-
-                imgui_layer.Begin();
-
-                ImGui::ShowDemoWindow();
-
-                imgui_layer.End(commandBuffer);
+                editor_layer->OnRender(commandBuffer);
+                editor_layer->OnImGuiRender(commandBuffer);
 
                 renderer.EndSwapchainRenderPass(commandBuffer);
                 renderer.EndFrame();

@@ -24,7 +24,7 @@ include_directories(${FBX_SDK_DIR}/include)
 file(GLOB IMGUI_SOURCES "src/Render/vendor/imgui/*.cpp")
 
 # Collect all .cpp, .h, and .hpp files in the source directory
-file(GLOB_RECURSE SOURCES ${IMGUI_SOURCES} "src/Render/*.cpp" "src/Core/*.cpp" "src/Render/Layers/*.cpp" "src/Render/Layers/Imgui_Layer.cpp" "src/Render/Layers/Imgui_Layer.hpp" )
+file(GLOB_RECURSE SOURCES ${IMGUI_SOURCES} "src/Render/*.cpp" "src/Core/*.cpp" "src/Render/Layers/*.cpp" "src/Render/Layers/Editor_Layer.cpp" "src/Render/Layers/Editor_Layer.hpp" "src/Render/Layers/Imgui_Layer.cpp" "src/Render/Layers/Imgui_Layer.hpp" )
 
 # Add executable
 add_executable(VectorVertex main.cpp ${SOURCES})

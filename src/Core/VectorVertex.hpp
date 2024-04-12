@@ -7,7 +7,7 @@
 #include "../Render/vv_game_object.hpp"
 #include "../Render/vv_camera.hpp"
 #include "../Render/vv_descriptors.hpp"
-#include "../Render/Layers/Imgui_Layer.hpp"
+#include "../Render/Layers/Editor_Layer.hpp"
 #include "Keyboard_inputs.hpp"
 #include "LayerStack.h"
 
@@ -51,9 +51,10 @@ namespace VectorVertex
 
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};
-        VVRenderer renderer{vvWindow, vvDevice};
+        VVRenderer renderer{vvWindow, vvDevice};    
 
-        Imgui_Layer imgui_layer;
+        EditorLayer* editor_layer;
+
 
         LayerStack layers{};
         Scope<VVDescriptorPool> global_pool{};
