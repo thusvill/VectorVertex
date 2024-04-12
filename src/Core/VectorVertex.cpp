@@ -10,11 +10,43 @@ namespace VectorVertex
 {
     VectorVetrex::VectorVetrex(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
     {
+        VV_CORE_WARN("Application is Started!");
+        VV_CORE_WARN("Initializing ...");
+
         global_pool = VVDescriptorPool::Builder(vvDevice)
                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
+        
+
+        VkInstance vulkanInstance;
+
+        vulkanInstance = vvDevice.getInstance();
+
+        
+
+        VV_CORE_ASSERT(vulkanInstance, "Vulkan Instance should not be null!");
+
+        ImguiConfig imguiConfig;
+        imguiConfig.instance = vulkanInstance; // Assign Vulkan instance handle
+        imguiConfig.Device = vvDevice.device();
+        imguiConfig.renderer = &renderer;
+        imguiConfig.renderPass = renderer.GetSwapchainRenderPass();
+        imguiConfig.PhysicalDevice = vvDevice.getPhysicalDevice();
+        imguiConfig.graphicsQueue = vvDevice.graphicsQueue();
+        imguiConfig.imageCount = static_cast<uint32_t>(renderer.GetSwapchainImageCount());
+
+        // Initialize ImGui layer
+        imgui_layer.InitializeImgui(imguiConfig, vvWindow.getGLFWwindow());
+        layers.PushLayer(&imgui_layer);
+
+        VV_CORE_WARN("Initialized!");
+
+
+        //TODO: implement Asset system
+        VV_CORE_WARN("Loading Gameobjects ...");
         loadGameobjects();
+        VV_CORE_WARN("Gameobjects Loaded!");
     }
 
     VectorVetrex::~VectorVetrex()
@@ -23,7 +55,7 @@ namespace VectorVertex
 
     void VectorVetrex::run()
     {
-        VV_CORE_INFO("Application is Started!");
+        
         std::vector<std::unique_ptr<VVBuffer>> ubo_buffers(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < ubo_buffers.size(); i++)
         {
@@ -57,17 +89,7 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        ImguiConfig imgui_config{
-            .PhysicalDevice = vvDevice.getPhysicalDevice(),
-            .Device = vvDevice.device(),
-            .renderer = &renderer,
-            .renderPass = renderer.GetSwapchainRenderPass(),
-            .instance = vvDevice.getInstance(),
-            .graphicsQueue = vvDevice.graphicsQueue(),
-        };
-        //imgui_layer = new VectorVertex::Imgui_Layer();
-        //imgui_layer->InitializeImgui(imgui_config, vvWindow.getGLFWwindow());
-        //layers.PushLayer(imgui_layer);
+
 
         while (!vvWindow.shouldClose())
         {
@@ -106,9 +128,15 @@ namespace VectorVertex
                 ubo_buffers[frame_index]->flush();
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
-                // should correctly ordered
-               ///ImGui::Text("test");
-               // imgui_layer->End();
+
+                imgui_layer.Begin();
+
+                ImGui::ShowDemoWindow();
+
+                imgui_layer.End(commandBuffer);
+
+                //renderSystem.renderImGui(commandBuffer);
+
                 renderSystem.renderGameobjects(frameInfo);
 
                 pointLightSystem.render(frameInfo);
@@ -124,14 +152,14 @@ namespace VectorVertex
     {
         std::shared_ptr<VVModel> VVModel = nullptr;
 
-        VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/Rubik.fbx");
-        auto supra5_object = VVGameObject::CreateGameObject();
-        supra5_object.model = VVModel;
-        supra5_object.color = {.1f, .0f, .0f};
-        supra5_object.transform.translation = {1.0f, .0f, .0f};
-        supra5_object.transform.scale = glm::vec3{0.1f};
-        // supra_object.transform.rotation.z = 1 * 3.15;
-        gameObjects.emplace(supra5_object.getId(), std::move(supra5_object));
+        // VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/Rubik.fbx");
+        // auto supra5_object = VVGameObject::CreateGameObject();
+        // supra5_object.model = VVModel;
+        // supra5_object.color = {.1f, .0f, .0f};
+        // supra5_object.transform.translation = {1.0f, .0f, .0f};
+        // supra5_object.transform.scale = glm::vec3{0.1f};
+        // // supra_object.transform.rotation.z = 1 * 3.15;
+        // gameObjects.emplace(supra5_object.getId(), std::move(supra5_object));
 
         // VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
         // auto supra_object = VVGameObject::CreateGameObject();

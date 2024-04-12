@@ -69,4 +69,43 @@ namespace VectorVertex
             obj.model->Draw(frame_info.command_buffer);
         }
     }
+    void LveRenderSystem::renderImGui(VkCommandBuffer commandBuffer)
+    {
+        // Bind ImGui descriptor sets if needed
+        // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &imguiDescriptorSet, 0, nullptr);
+
+        // Render ImGui draw commands
+        ImGui::Render();
+        ImDrawData *draw_data = ImGui::GetDrawData();
+
+        // Check if there are any ImGui draw commands
+        if (draw_data->CmdListsCount > 0)
+        {
+            // Iterate over each command list
+            for (int32_t i = 0; i < draw_data->CmdListsCount; ++i)
+            {
+                const ImDrawList *cmd_list = draw_data->CmdLists[i];
+
+                // Iterate over each command in the command list
+                for (int32_t j = 0; j < cmd_list->CmdBuffer.Size; ++j)
+                {
+                    const ImDrawCmd *pcmd = &cmd_list->CmdBuffer[j];
+
+                    // Example code to execute ImGui draw commands
+                    // Bind ImGui textures if needed
+                    // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &imguiTextureDescriptorSet, 0, nullptr);
+
+                    // Set scissor rectangle
+                    VkRect2D scissorRect;
+                    scissorRect.offset = {static_cast<int32_t>(pcmd->ClipRect.x), static_cast<int32_t>(pcmd->ClipRect.y)};
+                    scissorRect.extent = {static_cast<uint32_t>(pcmd->ClipRect.z - pcmd->ClipRect.x), static_cast<uint32_t>(pcmd->ClipRect.w - pcmd->ClipRect.y)};
+                    vkCmdSetScissor(commandBuffer, 0, 1, &scissorRect);
+
+                    // Draw indexed
+                    vkCmdDrawIndexed(commandBuffer, pcmd->ElemCount, 1, pcmd->IdxOffset, pcmd->VtxOffset, 0);
+                }
+            }
+        }
+    }
+
 } // namespace VectorVertex

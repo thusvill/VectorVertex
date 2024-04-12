@@ -121,6 +121,12 @@ namespace VectorVertex
     {
       throw std::runtime_error("failed to create instance!");
     }
+    if(!instance)
+    {
+      throw std::runtime_error("VkInstance is NULL!!");
+    }else{
+      instance_ = instance;
+    }
 
     hasGflwRequiredInstanceExtensions();
   }

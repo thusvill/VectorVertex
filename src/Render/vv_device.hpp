@@ -47,7 +47,7 @@ namespace VectorVertex
     VkSurfaceKHR surface() { return surface_; }
     VkQueue graphicsQueue() { return graphicsQueue_; }
     VkQueue presentQueue() { return presentQueue_; }
-    VkInstance getInstance() { return instance; }
+    VkInstance getInstance() const { return instance_; }
     VkPhysicalDevice getPhysicalDevice() { return physicalDevice; }
 
     SwapChainSupportDetails getSwapChainSupport() { return querySwapChainSupport(physicalDevice); }
@@ -76,6 +76,7 @@ namespace VectorVertex
         VkDeviceMemory &imageMemory);
 
     VkPhysicalDeviceProperties properties;
+    VkInstance instance_;
 
   private:
     void createInstance();

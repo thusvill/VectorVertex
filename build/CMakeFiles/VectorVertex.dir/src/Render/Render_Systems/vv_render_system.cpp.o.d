@@ -570,4 +570,6 @@ CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.o: \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/../vv_frame_info.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/../vv_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h

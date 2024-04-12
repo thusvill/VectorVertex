@@ -1,2 +1,9 @@
-[22:57:24] [info] VV-CORE: DEBUGGING STARTED!
-[22:57:25] [info] VV-CORE: Loading FBX model: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/Rubik.fbx
+[12:17:34] [info] VV-CORE: DEBUGGING STARTED!
+[12:17:34] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[12:17:34] [warning] VV-CORE: Application is Started!
+[12:17:34] [warning] VV-CORE: Initializing ...
+[12:17:34] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[12:17:34] [warning] VV-CORE: Initialized!
+[12:17:34] [warning] VV-CORE: Loading Gameobjects ...
+[12:17:34] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
+[12:17:35] [warning] VV-CORE: Gameobjects Loaded!

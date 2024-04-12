@@ -52,7 +52,8 @@ namespace VectorVertex
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};
         VVRenderer renderer{vvWindow, vvDevice};
-        //Imgui_Layer* imgui_layer;
+
+        Imgui_Layer imgui_layer;
 
         LayerStack layers{};
         Scope<VVDescriptorPool> global_pool{};

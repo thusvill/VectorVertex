@@ -24,6 +24,7 @@ namespace VectorVertex
         VkRenderPass renderPass;
         VkInstance instance;
         VkQueue graphicsQueue;
+        uint32_t imageCount;
     };
     class Imgui_Layer : public Layer
     {
@@ -35,11 +36,10 @@ namespace VectorVertex
         virtual void OnDetach() override;
 
         void Begin();
-        void End();
-        void ShowDockSpace(bool *open);
+        void End(VkCommandBuffer vkCommandBuffer);
+         void ShowDockSpace(bool *open);
 
     private:
-        void InitImgui(GLFWwindow *window);
         ImguiConfig config;
         GLFWwindow *window;
         ImGui_ImplVulkan_InitInfo init_info{};

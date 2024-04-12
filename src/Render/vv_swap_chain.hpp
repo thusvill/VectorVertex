@@ -48,6 +48,8 @@ namespace VectorVertex
       return swapChain.swapChainDepthFormat == swapChainDepthFormat && swapChain.swapChainImageFormat == swapChainImageFormat;
     }
 
+    uint32_t getImageCount() const { return static_cast<uint32_t>(swapChainImages.size()); }
+
   private:
     void
     init();

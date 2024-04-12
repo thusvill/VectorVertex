@@ -4940,6 +4940,8 @@ CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_render_system.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h
  /usr/include/GLFW/glfw3.h

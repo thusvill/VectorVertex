@@ -46,6 +46,7 @@ namespace VectorVertex
         void EndFrame();
         void BeginSwapchainRenderPass(VkCommandBuffer commandBuffer);
         void EndSwapchainRenderPass(VkCommandBuffer commandBuffer);
+        uint32_t GetSwapchainImageCount() const { return lveSwapChain->getImageCount(); }
 
     private:
         void
