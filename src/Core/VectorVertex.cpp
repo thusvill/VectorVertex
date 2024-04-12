@@ -129,17 +129,20 @@ namespace VectorVertex
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
 
-                imgui_layer.Begin();
-
-                ImGui::ShowDemoWindow();
-
-                imgui_layer.End(commandBuffer);
+                
 
                 //renderSystem.renderImGui(commandBuffer);
 
                 renderSystem.renderGameobjects(frameInfo);
 
                 pointLightSystem.render(frameInfo);
+
+                imgui_layer.Begin();
+
+                ImGui::ShowDemoWindow();
+
+                imgui_layer.End(commandBuffer);
+
                 renderer.EndSwapchainRenderPass(commandBuffer);
                 renderer.EndFrame();
             }

@@ -1,9 +1,9 @@
-[12:17:34] [info] VV-CORE: DEBUGGING STARTED!
-[12:17:34] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[12:17:34] [warning] VV-CORE: Application is Started!
-[12:17:34] [warning] VV-CORE: Initializing ...
-[12:17:34] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[12:17:34] [warning] VV-CORE: Initialized!
-[12:17:34] [warning] VV-CORE: Loading Gameobjects ...
-[12:17:34] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
-[12:17:35] [warning] VV-CORE: Gameobjects Loaded!
+[12:21:13] [info] VV-CORE: DEBUGGING STARTED!
+[12:21:14] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[12:21:14] [warning] VV-CORE: Application is Started!
+[12:21:14] [warning] VV-CORE: Initializing ...
+[12:21:14] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[12:21:14] [warning] VV-CORE: Initialized!
+[12:21:14] [warning] VV-CORE: Loading Gameobjects ...
+[12:21:14] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
+[12:21:14] [warning] VV-CORE: Gameobjects Loaded!
