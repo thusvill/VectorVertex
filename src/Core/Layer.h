@@ -7,6 +7,8 @@
 
 #pragma once
 #include "Base.h"
+#include "../Render/vv_frame_info.hpp"
+
 namespace VectorVertex {
     class Layer {
     public:
@@ -16,8 +18,8 @@ namespace VectorVertex {
         virtual void OnAttach(){}
         virtual void OnDetach(){}
         virtual void OnUpdate(){}
-        virtual void OnRender(){}
-        virtual void OnImGuiRender() {}
+        virtual void OnRender(FrameInfo &frameInfo) {}
+        virtual void OnImGuiRender(FrameInfo &frameInfo) {}
         const std::string& GetName() const {return m_DebugName;}
 
     private:

@@ -80,6 +80,7 @@ namespace VectorVertex
 
         while (!vvWindow.shouldClose())
         {
+            layers.UpdateAll();
 
             // std::cout << "Camera | position x:" << viewerObject.transform.translation.x << " y:" << viewerObject.transform.translation.y << " z:" << viewerObject.transform.translation.z << "\n Camera| rotation x:" << viewerObject.transform.rotation.x << " y:" << viewerObject.transform.rotation.y << " z:" << viewerObject.transform.rotation.z << std::endl;
             auto newTime = std::chrono::high_resolution_clock::now();
@@ -116,21 +117,18 @@ namespace VectorVertex
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
 
-                
-
-                //renderSystem.renderImGui(commandBuffer);
-
                 renderSystem.renderGameobjects(frameInfo);
 
                 pointLightSystem.render(frameInfo);
-                editor_layer->OnRender(commandBuffer);
-                editor_layer->OnImGuiRender(commandBuffer);
+                editor_layer->OnRender(frameInfo);
+                editor_layer->OnImGuiRender(frameInfo);
 
                 renderer.EndSwapchainRenderPass(commandBuffer);
                 renderer.EndFrame();
             }
         }
 
+        
         vkDeviceWaitIdle(vvDevice.device());
     }
 

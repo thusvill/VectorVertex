@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o.d"
+  "CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o"
+  "CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o"

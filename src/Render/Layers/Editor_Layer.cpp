@@ -33,11 +33,16 @@ void EditorLayer::OnUpdate()
 {
 }
 
-void EditorLayer::OnImGuiRender(VkCommandBuffer command_buffer)
+void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
 {
+    imgui_layer.Begin();
+
+    ImGui::ShowDemoWindow();
+
+    imgui_layer.End(frameInfo.command_buffer);
 }
 
-void EditorLayer::OnRender(VkCommandBuffer command_buffer)
+void EditorLayer::OnRender(FrameInfo &frameInfo)
 {
 }
 

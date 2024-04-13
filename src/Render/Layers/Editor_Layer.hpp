@@ -8,11 +8,11 @@ class EditorLayer: public Layer{
         EditorLayer();
         void SetupImgui(VVDevice* vv_device, VVRenderer* vv_renderer, VVWindow* vv_window);
         ~EditorLayer() = default;
-        void OnAttach();
-        void OnDetach();
-        void OnUpdate();
-        void OnRender(VkCommandBuffer command_buffer);
-        void OnImGuiRender(VkCommandBuffer command_buffer);
+        virtual void OnAttach() override;
+        virtual void OnDetach() override;
+        virtual void OnUpdate() override;
+        virtual void OnRender(FrameInfo &frameInfo) override;
+        virtual void OnImGuiRender(FrameInfo &frameInfo) override;
 
         private:
             Imgui_Layer imgui_layer;

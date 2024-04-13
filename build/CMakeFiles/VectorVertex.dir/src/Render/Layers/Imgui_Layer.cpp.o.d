@@ -285,25 +285,8 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.hpp \
- /usr/include/GLFW/glfw3.h /usr/include/vulkan/vulkan.h \
- /usr/include/vulkan/vk_platform.h /usr/include/vulkan/vulkan_core.h \
- /usr/include/vk_video/vulkan_video_codec_h264std.h \
- /usr/include/vk_video/vulkan_video_codecs_common.h \
- /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
- /usr/include/vk_video/vulkan_video_codec_h264std.h \
- /usr/include/vk_video/vulkan_video_codec_h265std.h \
- /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
- /usr/include/vk_video/vulkan_video_codec_h265std.h \
- /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_av1std.h \
- /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_camera.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_camera.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/glm/detail/setup.hpp /usr/include/glm/simd/platform.h \
  /usr/include/c++/11/climits \
@@ -427,9 +410,26 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: \
  /usr/include/glm/detail/type_half.hpp \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
  /usr/include/glm/detail/func_integer.inl \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_game_object.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_model.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_device.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_window.hpp \
+ /usr/include/GLFW/glfw3.h /usr/include/vulkan/vulkan.h \
+ /usr/include/vulkan/vk_platform.h /usr/include/vulkan/vulkan_core.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std.h \
+ /usr/include/vk_video/vulkan_video_codecs_common.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
+ /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_buffer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/fbxsdk_def.h \
  /usr/include/c++/11/stdlib.h /usr/include/c++/11/math.h \
@@ -660,7 +660,7 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \

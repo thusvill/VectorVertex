@@ -22,7 +22,7 @@ namespace VectorVertex
         if (glfwGetKey(window, keys.lookDown) == GLFW_PRESS)
             rotate.x -= 1.f;
 
-        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
+        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
         {
             // Get mouse delta movement
             double mouseX, mouseY;

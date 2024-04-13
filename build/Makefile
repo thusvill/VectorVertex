@@ -273,6 +273,30 @@ src/Core/VectorVertex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s
 .PHONY : src/Core/VectorVertex.cpp.s
 
+src/Render/Layers/Editor_Layer.o: src/Render/Layers/Editor_Layer.cpp.o
+.PHONY : src/Render/Layers/Editor_Layer.o
+
+# target to build an object file
+src/Render/Layers/Editor_Layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o
+.PHONY : src/Render/Layers/Editor_Layer.cpp.o
+
+src/Render/Layers/Editor_Layer.i: src/Render/Layers/Editor_Layer.cpp.i
+.PHONY : src/Render/Layers/Editor_Layer.i
+
+# target to preprocess a source file
+src/Render/Layers/Editor_Layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.i
+.PHONY : src/Render/Layers/Editor_Layer.cpp.i
+
+src/Render/Layers/Editor_Layer.s: src/Render/Layers/Editor_Layer.cpp.s
+.PHONY : src/Render/Layers/Editor_Layer.s
+
+# target to generate assembly for a file
+src/Render/Layers/Editor_Layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.s
+.PHONY : src/Render/Layers/Editor_Layer.cpp.s
+
 src/Render/Layers/Imgui_Layer.o: src/Render/Layers/Imgui_Layer.cpp.o
 .PHONY : src/Render/Layers/Imgui_Layer.o
 
@@ -780,6 +804,9 @@ help:
 	@echo "... src/Core/VectorVertex.o"
 	@echo "... src/Core/VectorVertex.i"
 	@echo "... src/Core/VectorVertex.s"
+	@echo "... src/Render/Layers/Editor_Layer.o"
+	@echo "... src/Render/Layers/Editor_Layer.i"
+	@echo "... src/Render/Layers/Editor_Layer.s"
 	@echo "... src/Render/Layers/Imgui_Layer.o"
 	@echo "... src/Render/Layers/Imgui_Layer.i"
 	@echo "... src/Render/Layers/Imgui_Layer.s"
