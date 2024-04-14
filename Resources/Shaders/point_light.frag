@@ -17,6 +17,8 @@ layout(set = 0, binding =0) uniform globalUbo{
     int num_lights;
 } ubo;
 
+
+
 layout(push_constant) uniform Push{
     vec4 position;
     vec4 color;

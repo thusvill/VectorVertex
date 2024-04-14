@@ -7,6 +7,7 @@ namespace VectorVertex
     {
         glm::mat4 modelMatrix{1.0f};
         glm::mat4 normalMatrix{1.f};
+        MaterialData materialData;
     };
     LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
     {
@@ -62,6 +63,7 @@ namespace VectorVertex
             SimplePushConstantData push{};
             push.modelMatrix = obj.transform.mat4();
             push.normalMatrix = obj.transform.normalMatrix();
+            push.materialData = obj.material.m_MaterialData;
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
 

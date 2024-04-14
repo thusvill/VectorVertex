@@ -31,10 +31,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o.d"
   )
 

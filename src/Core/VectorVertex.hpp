@@ -7,8 +7,10 @@
 #include "../Render/vv_game_object.hpp"
 #include "../Render/vv_camera.hpp"
 #include "../Render/vv_descriptors.hpp"
-#include "../Render/vv_framebuffer.hpp"
+#include "../Render/vv_material.hpp"
+//#include "../Render/vv_framebuffer.hpp"
 #include "../Render/Layers/Editor_Layer.hpp"
+#include "../Render/vv_texture.hpp"
 #include "Keyboard_inputs.hpp"
 #include "LayerStack.h"
 
@@ -58,10 +60,10 @@ namespace VectorVertex
 
 
         LayerStack layers{};
+        VVMaterialLibrary materials{};
         Scope<VVDescriptorPool> global_pool{};
         VVGameObject::Map gameObjects;
 
-        //VVFramebuffer framebuffer{vvDevice.device()};
-
+        
     };
 } // namespace VectorVertex

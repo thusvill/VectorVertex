@@ -40,8 +40,7 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
     imgui_layer.Begin();
 
     ImGui::Begin("Viewport");
-    ImGui::Text("Viewport");
-
+    ImGui::Text("VectorVertex Engine 1.0");
     ImGui::End();
 
     imgui_layer.End(frameInfo.command_buffer);

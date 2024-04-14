@@ -8,9 +8,14 @@ layout(location = 3 ) in vec2 uv;
 layout(location = 0) out vec3 fragColor;
 layout(location = 1) out vec3 fragPosWorld;
 layout(location = 2) out vec3 fragNormalWorld;
+layout(location = 3) out vec2 fragUV;
 
 struct PointLight{
     vec4 position;
+    vec4 color;
+};
+
+struct MaterialData{
     vec4 color;
 };
 
@@ -26,6 +31,7 @@ layout(set = 0, binding =0) uniform globalUbo{
 layout(push_constant) uniform Push{
     mat4 modelMatrix;
     mat4 normalMatrix;
+    MaterialData materialData;
 } push;
 
 
@@ -37,5 +43,6 @@ void main(){
     fragNormalWorld = normalize(mat3(push.normalMatrix) * normal);
     fragPosWorld = position_world.xyz;
 
-    fragColor = color;
+    fragColor = push.materialData.color.rgb;
+    fragUV = uv;
 }

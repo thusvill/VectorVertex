@@ -30,7 +30,7 @@ namespace VectorVertex
     {
     public:
         Imgui_Layer();
-        ~Imgui_Layer() = default;
+        ~Imgui_Layer();
         void InitializeImgui(ImguiConfig &config, GLFWwindow *window);
         virtual void OnAttach() override;
         virtual void OnDetach() override;

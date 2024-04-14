@@ -16,6 +16,7 @@ namespace VectorVertex
         global_pool = VVDescriptorPool::Builder(vvDevice)
                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                          .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
         
 
@@ -54,7 +55,16 @@ namespace VectorVertex
 
         auto global_set_layout = LveDescriptorSetLayout::Builder(vvDevice)
                                      .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
+                                     .addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
                                      .build();
+
+        VVTexture texture{vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/textures/internal_ground_ao_texture.jpeg"};
+        VkDescriptorImageInfo imageInfo{};
+imageInfo.imageLayout = texture.getImageLayout();
+imageInfo.imageView = texture.getImageView();
+imageInfo.sampler = texture.getSampler();
+
+
 
         std::vector<VkDescriptorSet> global_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
 
@@ -63,6 +73,7 @@ namespace VectorVertex
             auto buffer_info = ubo_buffers[i]->descriptorInfo();
             LveDescriptorWriter(*global_set_layout, *global_pool)
                 .writeBuffer(0, &buffer_info)
+                .writeImage(1, &imageInfo)
                 .build(global_descriptor_sets[i]);
         }
 
@@ -118,22 +129,16 @@ namespace VectorVertex
                 ubo_buffers[frame_index]->writeToBuffer(&ubo);
                 ubo_buffers[frame_index]->flush();
 
-                // framebuffer.Begin(vvDevice.getCommandPool(), 800, 800);
-                // renderSystem.renderGameobjects(frameInfo);
-
-                // pointLightSystem.render(frameInfo);
-                // framebuffer.End(vvDevice.graphicsQueue());
-
-                // editor_layer->sceneImage = framebuffer.RenderFramebufferToImage(vvDevice.getCommandPool(), 800, 800);
-
+                
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
 
-                renderSystem.renderGameobjects(frameInfo);
-                pointLightSystem.render(frameInfo);
 
                 editor_layer->OnRender(frameInfo);
 
+                renderSystem.renderGameobjects(frameInfo);
+
+                pointLightSystem.render(frameInfo);
 
                 editor_layer->OnImGuiRender(frameInfo);
 
@@ -148,6 +153,8 @@ namespace VectorVertex
 
     void VectorVetrex::loadGameobjects()
     {
+        
+
         std::shared_ptr<VVModel> VVModel = nullptr;
 
         // VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/Rubik.fbx");
@@ -163,6 +170,7 @@ namespace VectorVertex
         auto supra_object = VVGameObject::CreateGameObject();
         supra_object.model = VVModel;
         supra_object.color = {.1f, .0f, .0f};
+        supra_object.material = materials.createMaterial("supra", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
         supra_object.transform.translation = {.5f, .5f, .0f};
         supra_object.transform.scale = glm::vec3{0.2f};
         // supra_object.transform.rotation.z = 1 * 3.15;
@@ -198,5 +206,7 @@ namespace VectorVertex
             }
         }
     }
+
+    
 
 } // namespace VectorVertex

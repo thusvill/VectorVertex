@@ -1,11 +1,12 @@
-[13:30:50] [info] VV-CORE: DEBUGGING STARTED!
-[13:30:50] [warning] VV-CORE: Application is Started!
-[13:30:50] [warning] VV-CORE: Initializing ...
-[13:30:50] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[13:30:50] [info] VV-CORE: [Layer]:EditorLayer Created!
-[13:30:50] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[13:30:50] [warning] VV-CORE: Initialized!
-[13:30:50] [warning] VV-CORE: Loading Gameobjects ...
-[13:30:50] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj
-[13:30:50] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
-[13:30:50] [warning] VV-CORE: Gameobjects Loaded!
+[13:34:58] [info] VV-CORE: DEBUGGING STARTED!
+[13:34:59] [warning] VV-CORE: Application is Started!
+[13:34:59] [warning] VV-CORE: Initializing ...
+[13:34:59] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[13:34:59] [info] VV-CORE: [Layer]:EditorLayer Created!
+[13:34:59] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[13:34:59] [warning] VV-CORE: Initialized!
+[13:34:59] [warning] VV-CORE: Loading Gameobjects ...
+[13:34:59] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj
+[13:34:59] [info] VV-CORE: Created Material: supra
+[13:34:59] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
+[13:34:59] [warning] VV-CORE: Gameobjects Loaded!

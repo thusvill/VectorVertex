@@ -2,6 +2,7 @@
 
 #include "vv_camera.hpp"
 #include "vv_game_object.hpp"
+#include <imgui.h>
 
 #include <vulkan/vulkan.h>
 
@@ -31,5 +32,6 @@ namespace VectorVertex
         VVCamera &camera;
         VkDescriptorSet global_descriptor_set;
         VVGameObject::Map &game_objects;
+        ImTextureID frame_image;
     };
 } // namespace VectorVertex

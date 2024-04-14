@@ -2,8 +2,10 @@
 
 #include <memory>
 #include <unordered_map>
-#include "vv_model.hpp"
 #include <glm/gtc/matrix_transform.hpp>
+
+#include "vv_model.hpp"
+#include "vv_material.hpp"
 
 namespace VectorVertex
 {
@@ -44,6 +46,7 @@ namespace VectorVertex
 
         std::shared_ptr<VVModel> model{};
         glm::vec3 color{};
+        VVMaterial material{};
         TransformComponent transform;
 
         std::unique_ptr<PointLightComponent> point_light = nullptr;

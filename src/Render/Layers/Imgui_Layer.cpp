@@ -8,6 +8,20 @@ namespace VectorVertex
         VV_CORE_INFO("[Layer]:ImguiLayer Created!");
     }
 
+    Imgui_Layer::~Imgui_Layer()
+    {
+        // Cleanup ImGui resources
+        ImGui_ImplVulkan_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+
+        // Destroy Vulkan resources
+        if (config.Device != VK_NULL_HANDLE && imguiPool != VK_NULL_HANDLE)
+        {
+            vkDestroyDescriptorPool(config.Device, imguiPool, nullptr);
+        }
+    }
+
     void Imgui_Layer::InitializeImgui(ImguiConfig &config, GLFWwindow *window)
     {
         // Initialize member variables
@@ -50,7 +64,8 @@ namespace VectorVertex
         ImGui_ImplGlfw_InitForVulkan(window, true);
 
         // Initialize ImGui Vulkan bindings
-        init_info.Instance = config.instance; if(config.instance == VK_NULL_HANDLE)
+        init_info.Instance = config.instance; 
+        if(config.instance == VK_NULL_HANDLE)
         {
             VV_CORE_ERROR("Failed to initialize ImGui for Vulkan!");
             return;
@@ -79,16 +94,16 @@ namespace VectorVertex
 
     void Imgui_Layer::OnDetach()
     {
-        // Cleanup ImGui resources
-        ImGui_ImplVulkan_Shutdown();
-        ImGui_ImplGlfw_Shutdown();
-        ImGui::DestroyContext();
+        // // Cleanup ImGui resources
+        // ImGui_ImplVulkan_Shutdown();
+        // ImGui_ImplGlfw_Shutdown();
+        // ImGui::DestroyContext();
 
-        // Destroy Vulkan resources
-        if (config.Device != VK_NULL_HANDLE && imguiPool != VK_NULL_HANDLE)
-        {
-            vkDestroyDescriptorPool(config.Device, imguiPool, nullptr);
-        }
+        // // Destroy Vulkan resources
+        // if (config.Device != VK_NULL_HANDLE && imguiPool != VK_NULL_HANDLE)
+        // {
+        //     vkDestroyDescriptorPool(config.Device, imguiPool, nullptr);
+        // }
     }
 
     void Imgui_Layer::Begin()

@@ -5,6 +5,7 @@ layout (location =0) out vec4 outColor;
 layout(location = 0) in vec3 fragColor;
 layout(location = 1) in vec3 fragPosWorld;
 layout(location = 2) in vec3 fragNormalWorld;
+layout(location = 3) in vec2 fragUV;
 
 
 
@@ -12,6 +13,8 @@ struct PointLight{
     vec4 position;
     vec4 color;
 };
+
+
 
 struct DirectionalLight {
     vec3 direction;
@@ -26,6 +29,8 @@ layout(set = 0, binding =0) uniform globalUbo{
     PointLight point_lights[10];
     int num_lights;
 } ubo;
+
+layout(set = 0, binding =1) uniform sampler2D image;
 
 layout(push_constant) uniform Push{
     mat4 modelMatrix;
@@ -59,6 +64,7 @@ vec3 lightColor = vec3(0.01);
 
 
 vec4 point_light(){
+
     
     vec3 diffuse_light = ubo.ambient_color.xyz * ubo.ambient_color.w;
     vec3 specular_light = vec3(0.0);
@@ -85,8 +91,12 @@ vec4 point_light(){
         blinn_term = pow(blinn_term, 512.0); // higher values -> sharp highlight
 
         specular_light += intensity * blinn_term;
+
+        
     }
-return vec4(diffuse_light *  fragColor + specular_light * fragColor, 1.0);
+
+    vec3 imageColor = texture(image, fragUV).rgb;
+return vec4((diffuse_light *  fragColor + specular_light * fragColor)*imageColor, 1.0);
 }
 
 
@@ -98,6 +108,8 @@ void main(){
     DirectionalLight d_light;
     d_light.direction = lightDirection;
     d_light.color = lightColor;
+
+    
 
     outColor = vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light();
 

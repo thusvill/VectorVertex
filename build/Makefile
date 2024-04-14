@@ -681,6 +681,30 @@ src/Render/vv_game_object.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.s
 .PHONY : src/Render/vv_game_object.cpp.s
 
+src/Render/vv_material.o: src/Render/vv_material.cpp.o
+.PHONY : src/Render/vv_material.o
+
+# target to build an object file
+src/Render/vv_material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o
+.PHONY : src/Render/vv_material.cpp.o
+
+src/Render/vv_material.i: src/Render/vv_material.cpp.i
+.PHONY : src/Render/vv_material.i
+
+# target to preprocess a source file
+src/Render/vv_material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.i
+.PHONY : src/Render/vv_material.cpp.i
+
+src/Render/vv_material.s: src/Render/vv_material.cpp.s
+.PHONY : src/Render/vv_material.s
+
+# target to generate assembly for a file
+src/Render/vv_material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.s
+.PHONY : src/Render/vv_material.cpp.s
+
 src/Render/vv_model.o: src/Render/vv_model.cpp.o
 .PHONY : src/Render/vv_model.o
 
@@ -776,6 +800,30 @@ src/Render/vv_swap_chain.s: src/Render/vv_swap_chain.cpp.s
 src/Render/vv_swap_chain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.s
 .PHONY : src/Render/vv_swap_chain.cpp.s
+
+src/Render/vv_texture.o: src/Render/vv_texture.cpp.o
+.PHONY : src/Render/vv_texture.o
+
+# target to build an object file
+src/Render/vv_texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.o
+.PHONY : src/Render/vv_texture.cpp.o
+
+src/Render/vv_texture.i: src/Render/vv_texture.cpp.i
+.PHONY : src/Render/vv_texture.i
+
+# target to preprocess a source file
+src/Render/vv_texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.i
+.PHONY : src/Render/vv_texture.cpp.i
+
+src/Render/vv_texture.s: src/Render/vv_texture.cpp.s
+.PHONY : src/Render/vv_texture.s
+
+# target to generate assembly for a file
+src/Render/vv_texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.s
+.PHONY : src/Render/vv_texture.cpp.s
 
 src/Render/vv_window.o: src/Render/vv_window.cpp.o
 .PHONY : src/Render/vv_window.o
@@ -879,6 +927,9 @@ help:
 	@echo "... src/Render/vv_game_object.o"
 	@echo "... src/Render/vv_game_object.i"
 	@echo "... src/Render/vv_game_object.s"
+	@echo "... src/Render/vv_material.o"
+	@echo "... src/Render/vv_material.i"
+	@echo "... src/Render/vv_material.s"
 	@echo "... src/Render/vv_model.o"
 	@echo "... src/Render/vv_model.i"
 	@echo "... src/Render/vv_model.s"
@@ -891,6 +942,9 @@ help:
 	@echo "... src/Render/vv_swap_chain.o"
 	@echo "... src/Render/vv_swap_chain.i"
 	@echo "... src/Render/vv_swap_chain.s"
+	@echo "... src/Render/vv_texture.o"
+	@echo "... src/Render/vv_texture.i"
+	@echo "... src/Render/vv_texture.s"
 	@echo "... src/Render/vv_window.o"
 	@echo "... src/Render/vv_window.i"
 	@echo "... src/Render/vv_window.s"
