@@ -41,6 +41,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertex.dir/src/Render/vv_descriptors.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o.d"
+  "CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o"
+  "CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o"

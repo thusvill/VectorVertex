@@ -22,7 +22,9 @@ void EditorLayer::SetupImgui(VVDevice* vv_device, VVRenderer* vv_renderer, VVWin
     imguiConfig.imageCount = static_cast<uint32_t>(vv_renderer->GetSwapchainImageCount());
 
     imgui_layer.InitializeImgui(imguiConfig, vv_window->getGLFWwindow());
- 
+
+    ImGuiIO& io = ImGui::GetIO();
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
 
 void EditorLayer::OnAttach()
@@ -37,17 +39,26 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
 {
     imgui_layer.Begin();
 
-    ImGui::ShowDemoWindow();
+    ImGui::Begin("Viewport");
+    ImGui::Text("Viewport");
+
+    ImGui::End();
 
     imgui_layer.End(frameInfo.command_buffer);
 }
 
+
+
+
 void EditorLayer::OnRender(FrameInfo &frameInfo)
 {
+
+    
 }
 
 void EditorLayer::OnDetach()
 {
 }
+
 
 } // namespace VectorVertex

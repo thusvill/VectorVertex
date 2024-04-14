@@ -156,6 +156,6 @@ namespace VectorVertex
         vkCmdEndRenderPass(commandBuffer);
     }
 
-
+   
 
 } // namespace VectorVertex

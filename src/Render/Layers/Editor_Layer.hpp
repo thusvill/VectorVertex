@@ -14,7 +14,12 @@ class EditorLayer: public Layer{
         virtual void OnRender(FrameInfo &frameInfo) override;
         virtual void OnImGuiRender(FrameInfo &frameInfo) override;
 
-        private:
-            Imgui_Layer imgui_layer;
+        VkImage sceneImage;
+
+    private:
+        Imgui_Layer imgui_layer;
+        VkImageView sceneImageView;
+        VkDeviceMemory sceneImageMemory;
+        
 };
 } 

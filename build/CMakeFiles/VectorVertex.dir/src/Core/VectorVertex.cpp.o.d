@@ -572,6 +572,8 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /usr/include/glm/gtc/matrix_transform.inl \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_camera.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_descriptors.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_framebuffer.hpp \
+ /usr/include/c++/11/cstring \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Editor_Layer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
@@ -587,9 +589,8 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /usr/include/spdlog/fmt/fmt.h /usr/include/fmt/core.h \
- /usr/include/c++/11/cstring /usr/include/fmt/format.h \
- /usr/include/fmt/core.h /usr/include/spdlog/common-inl.h \
- /usr/include/c++/11/algorithm \
+ /usr/include/fmt/format.h /usr/include/fmt/core.h \
+ /usr/include/spdlog/common-inl.h /usr/include/c++/11/algorithm \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/spdlog/details/registry.h /usr/include/c++/11/mutex \
  /usr/include/c++/11/bits/std_mutex.h \

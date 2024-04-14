@@ -34,6 +34,7 @@ namespace VectorVertex
         VV_CORE_WARN("Loading Gameobjects ...");
         loadGameobjects();
         VV_CORE_WARN("Gameobjects Loaded!");
+
     }
 
     VectorVetrex::~VectorVetrex()
@@ -94,6 +95,8 @@ namespace VectorVertex
             // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
             camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
 
+            
+
             glfwPollEvents();
             if (auto commandBuffer = renderer.BeginFrame())
             {
@@ -114,13 +117,24 @@ namespace VectorVertex
                 pointLightSystem.Update(frameInfo, ubo);
                 ubo_buffers[frame_index]->writeToBuffer(&ubo);
                 ubo_buffers[frame_index]->flush();
+
+                // framebuffer.Begin(vvDevice.getCommandPool(), 800, 800);
+                // renderSystem.renderGameobjects(frameInfo);
+
+                // pointLightSystem.render(frameInfo);
+                // framebuffer.End(vvDevice.graphicsQueue());
+
+                // editor_layer->sceneImage = framebuffer.RenderFramebufferToImage(vvDevice.getCommandPool(), 800, 800);
+
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
 
                 renderSystem.renderGameobjects(frameInfo);
-
                 pointLightSystem.render(frameInfo);
+
                 editor_layer->OnRender(frameInfo);
+
+
                 editor_layer->OnImGuiRender(frameInfo);
 
                 renderer.EndSwapchainRenderPass(commandBuffer);
@@ -145,14 +159,14 @@ namespace VectorVertex
         // // supra_object.transform.rotation.z = 1 * 3.15;
         // gameObjects.emplace(supra5_object.getId(), std::move(supra5_object));
 
-        // VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
-        // auto supra_object = VVGameObject::CreateGameObject();
-        // supra_object.model = VVModel;
-        // supra_object.color = {.1f, .0f, .0f};
-        // supra_object.transform.translation = {.5f, .5f, .0f};
-        // supra_object.transform.scale = glm::vec3{0.2f};
-        // // supra_object.transform.rotation.z = 1 * 3.15;
-        // gameObjects.emplace(supra_object.getId(), std::move(supra_object));
+        VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
+        auto supra_object = VVGameObject::CreateGameObject();
+        supra_object.model = VVModel;
+        supra_object.color = {.1f, .0f, .0f};
+        supra_object.transform.translation = {.5f, .5f, .0f};
+        supra_object.transform.scale = glm::vec3{0.2f};
+        // supra_object.transform.rotation.z = 1 * 3.15;
+        gameObjects.emplace(supra_object.getId(), std::move(supra_object));
 
         VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = VVGameObject::CreateGameObject();

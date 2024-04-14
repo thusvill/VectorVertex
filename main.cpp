@@ -8,8 +8,8 @@ int main()
 {
     VectorVertex::Log::Init();
     VectorVertex::ProjectInfo info{};
-    info.height = 800;
-    info.width = 800;
+    info.width = 1920;
+    info.height = 1080;
     info.title = "VectorVertex";
     VectorVertex::VectorVetrex app{info};
     try
