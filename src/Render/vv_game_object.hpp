@@ -46,7 +46,7 @@ namespace VectorVertex
 
         std::shared_ptr<VVModel> model{};
         glm::vec3 color{};
-        VVMaterial material{};
+        uint32_t material_id = VVMaterialLibrary::getDefaultID();
         TransformComponent transform;
 
         std::unique_ptr<PointLightComponent> point_light = nullptr;

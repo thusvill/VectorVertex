@@ -95,8 +95,8 @@ vec4 point_light(){
         
     }
 
-    vec3 imageColor = texture(image, fragUV).rgb;
-return vec4((diffuse_light *  fragColor + specular_light * fragColor)*imageColor, 1.0);
+    vec4 imageColor = texture(image, fragUV).rgba;
+return vec4((diffuse_light *  fragColor + specular_light * fragColor), 1.0)*imageColor;
 }
 
 

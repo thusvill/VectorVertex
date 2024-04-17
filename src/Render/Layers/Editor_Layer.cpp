@@ -43,6 +43,19 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
     ImGui::Text("VectorVertex Engine 1.0");
     ImGui::End();
 
+    ImGui::Begin("Material");
+    MaterialData _data = VVMaterialLibrary::getMaterial("supra_body").m_MaterialData;
+    float col[4];
+    col[0] = _data.color.x;
+    col[1] = _data.color.y;
+    col[2] = _data.color.z;
+    col[3] = _data.color.w;
+    ImGui::ColorPicker4("supra_body:", col);
+    _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
+    VVMaterialLibrary::updateMaterial("supra_body", _data);
+    //VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
+    ImGui::End();
+
     imgui_layer.End(frameInfo.command_buffer);
 }
 

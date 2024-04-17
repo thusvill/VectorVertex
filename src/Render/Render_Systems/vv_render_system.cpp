@@ -63,7 +63,12 @@ namespace VectorVertex
             SimplePushConstantData push{};
             push.modelMatrix = obj.transform.mat4();
             push.normalMatrix = obj.transform.normalMatrix();
-            push.materialData = obj.material.m_MaterialData;
+            if(obj.material_id > -1.0f){
+            push.materialData = VVMaterialLibrary::getMaterial(obj.material_id).m_MaterialData;
+            }else{
+                VV_CORE_WARN("Material id {} not found on object: {}", obj.material_id, obj.getId());
+                push.materialData = MaterialData{glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)};
+            }
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
 

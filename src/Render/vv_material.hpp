@@ -24,14 +24,17 @@ namespace VectorVertex
 
     class VVMaterialLibrary{
         public:
-            VVMaterialLibrary() = default;
-            ~VVMaterialLibrary() = default;
+            static void InitMaterialLib();
+            static uint32_t getDefaultID();
 
-            std::unordered_map<std::string, VVMaterial> m_Materials;
+            static std::unordered_map<std::string, VVMaterial> m_Materials;
 
-            VVMaterial createMaterial(std::string name, MaterialData materialData);
-            VVMaterial getMaterial(uint32_t id);
-            VVMaterial getMaterial(std::string name);
+            static uint32_t createMaterial(std::string name, MaterialData materialData);
+            static VVMaterial getMaterial(uint32_t id);
+            static VVMaterial getMaterial(std::string name);
+
+        static void updateMaterial(uint32_t id, MaterialData materialData);
+        static void updateMaterial(std::string name, MaterialData materialData);
     };
 
 } // namespace VectorVertex

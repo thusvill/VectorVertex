@@ -30,6 +30,7 @@ namespace VectorVertex
 
         VV_CORE_WARN("Initialized!");
 
+        VVMaterialLibrary::InitMaterialLib();
 
         //TODO: implement Asset system
         VV_CORE_WARN("Loading Gameobjects ...");
@@ -130,6 +131,8 @@ imageInfo.sampler = texture.getSampler();
                 ubo_buffers[frame_index]->flush();
 
                 
+
+                
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
 
@@ -170,16 +173,18 @@ imageInfo.sampler = texture.getSampler();
         auto supra_object = VVGameObject::CreateGameObject();
         supra_object.model = VVModel;
         supra_object.color = {.1f, .0f, .0f};
-        supra_object.material = materials.createMaterial("supra", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
+        supra_object.material_id = VVMaterialLibrary::createMaterial("supra_body", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
         supra_object.transform.translation = {.5f, .5f, .0f};
         supra_object.transform.scale = glm::vec3{0.2f};
         // supra_object.transform.rotation.z = 1 * 3.15;
+
         gameObjects.emplace(supra_object.getId(), std::move(supra_object));
 
         VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = VVGameObject::CreateGameObject();
         quad.model = VVModel;
         quad.transform.translation = {.0f, .5f, .0f};
+        quad.transform.rotation.y = 1 * (3.15 / 2);
         quad.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(quad.getId(), std::move(quad));
 
