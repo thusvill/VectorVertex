@@ -129,4 +129,48 @@ void VVTexture::transitionImageLayout(VkImageLayout oldLayout, VkImageLayout new
 
     vvDevice.endSingleTimeCommands(commandBuffer);
 }
+
+std::unordered_map<std::string, VectorVertex::TextureData> VectorVertex::VVTextureLibrary::m_Textures;
+
+uint32_t VVTextureLibrary::LoadTexture(VVDevice* device,std::string name, std::string path)
+{
+    if(name.empty() || path.empty()){
+        VV_CORE_ERROR("Texture name or path is empty!");
+        return -1;
+    }
+    if(m_Textures.find(name) != m_Textures.end()){
+        VV_CORE_WARN("Texture already exists {}", name);
+        return getTexture(name).ID;
+    }else{
+
+    auto tex = TextureData{};
+    tex.ID = m_Textures.size();
+    VVTexture data(*device, path);
+    tex.texture = &data;
+    VkDescriptorImageInfo imageInfo{};
+    imageInfo.imageLayout = data.getImageLayout();
+    imageInfo.imageView = data.getImageView();
+    imageInfo.sampler = data.getSampler();
+    tex.vk_image_info = imageInfo;
+
+    m_Textures[name] = tex;
+    VV_CORE_INFO("Created Texture: {} ID: {}", name, tex.ID);
+    return tex.ID;
+    }
+}
+TextureData VVTextureLibrary::getTexture(uint32_t id)
+{
+    for(const auto &pair: m_Textures){
+        if(pair.second.ID == id){
+            return pair.second;
+        }
+    }
+
+    VV_CORE_ERROR("Texture not found: {}", id);
+    return TextureData();
+}
+TextureData VVTextureLibrary::getTexture(std::string name)
+{
+    return m_Textures[name];
+}
 }

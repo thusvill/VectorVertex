@@ -729,6 +729,30 @@ src/Render/vv_model.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.s
 .PHONY : src/Render/vv_model.cpp.s
 
+src/Render/vv_offscreen_render.o: src/Render/vv_offscreen_render.cpp.o
+.PHONY : src/Render/vv_offscreen_render.o
+
+# target to build an object file
+src/Render/vv_offscreen_render.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o
+.PHONY : src/Render/vv_offscreen_render.cpp.o
+
+src/Render/vv_offscreen_render.i: src/Render/vv_offscreen_render.cpp.i
+.PHONY : src/Render/vv_offscreen_render.i
+
+# target to preprocess a source file
+src/Render/vv_offscreen_render.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.i
+.PHONY : src/Render/vv_offscreen_render.cpp.i
+
+src/Render/vv_offscreen_render.s: src/Render/vv_offscreen_render.cpp.s
+.PHONY : src/Render/vv_offscreen_render.s
+
+# target to generate assembly for a file
+src/Render/vv_offscreen_render.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.s
+.PHONY : src/Render/vv_offscreen_render.cpp.s
+
 src/Render/vv_pipeline.o: src/Render/vv_pipeline.cpp.o
 .PHONY : src/Render/vv_pipeline.o
 
@@ -933,6 +957,9 @@ help:
 	@echo "... src/Render/vv_model.o"
 	@echo "... src/Render/vv_model.i"
 	@echo "... src/Render/vv_model.s"
+	@echo "... src/Render/vv_offscreen_render.o"
+	@echo "... src/Render/vv_offscreen_render.i"
+	@echo "... src/Render/vv_offscreen_render.s"
 	@echo "... src/Render/vv_pipeline.o"
 	@echo "... src/Render/vv_pipeline.i"
 	@echo "... src/Render/vv_pipeline.s"

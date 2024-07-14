@@ -30,7 +30,8 @@ layout(set = 0, binding =0) uniform globalUbo{
     int num_lights;
 } ubo;
 
-layout(set = 0, binding =1) uniform sampler2D image;
+//layout(set = 0, binding =1) uniform sampler2D image;
+//layout(set =1 , binding =0) uniform sampler2D material_texture;
 
 layout(push_constant) uniform Push{
     mat4 modelMatrix;
@@ -95,8 +96,9 @@ vec4 point_light(){
         
     }
 
-    vec4 imageColor = texture(image, fragUV).rgba;
-return vec4((diffuse_light *  fragColor + specular_light * fragColor), 1.0)*imageColor;
+//vec4 imageColor = texture(image, fragUV).rgba;
+//return vec4((diffuse_light *  fragColor + specular_light * fragColor), 1.0)*imageColor;
+return vec4((diffuse_light *  fragColor + specular_light * fragColor), 1.0);
 }
 
 

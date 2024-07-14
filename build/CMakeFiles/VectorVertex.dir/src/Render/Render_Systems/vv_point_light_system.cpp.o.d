@@ -669,6 +669,7 @@ CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/../vv_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/../vv_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \

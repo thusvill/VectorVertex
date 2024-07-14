@@ -39,10 +39,6 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
 {
     imgui_layer.Begin();
 
-    ImGui::Begin("Viewport");
-    ImGui::Text("VectorVertex Engine 1.0");
-    ImGui::End();
-
     ImGui::Begin("Material");
     MaterialData _data = VVMaterialLibrary::getMaterial("supra_body").m_MaterialData;
     float col[4];
@@ -54,6 +50,25 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
     _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
     VVMaterialLibrary::updateMaterial("supra_body", _data);
     //VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
+    ImGui::End();
+
+    ImTextureID offscreenTextureID = (ImTextureID)sceneImageView;
+
+    // Inside your ImGui rendering loop
+    ImGui::Begin("Offscreen Image Window");
+
+    // Get the size of your ImGui window or set your desired size
+    ImVec2 windowSize = ImGui::GetContentRegionAvail();
+    
+    
+    if(prev_size.x != windowSize.x || prev_size.y != windowSize.y){
+        prev_size = windowSize;
+        Viewport_Extent = {static_cast<uint32_t>(windowSize.x), static_cast<uint32_t>(windowSize.y)};
+        is_viewport_resized = true;
+    }
+    // Display the offscreen image
+    ImGui::Image(sceneTexture, windowSize);
+
     ImGui::End();
 
     imgui_layer.End(frameInfo.command_buffer);

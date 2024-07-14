@@ -168,7 +168,8 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32
 			]
 		}
 	],
@@ -254,7 +255,8 @@
 				28,
 				29,
 				30,
-				31
+				31,
+				32
 			]
 		},
 		{
@@ -426,6 +428,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/Render/vv_model.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Render/vv_offscreen_render.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

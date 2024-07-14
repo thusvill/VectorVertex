@@ -668,11 +668,12 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_camera.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_descriptors.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Editor_Layer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_offscreen_render.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Editor_Layer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Imgui_Layer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h \

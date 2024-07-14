@@ -5,7 +5,8 @@
 #include "../vv_camera.hpp"
 #include "../vv_game_object.hpp"
 #include "../vv_frame_info.hpp"
-
+#include "../vv_descriptors.hpp"
+#include "../vv_texture.hpp"
 
 #include <imgui.h>
 
@@ -19,6 +20,12 @@
 
 namespace VectorVertex
 {
+    struct SimplePushConstantData
+    {
+        glm::mat4 modelMatrix{1.0f};
+        glm::mat4 normalMatrix{1.f};
+        MaterialData materialData;
+    };
     class LveRenderSystem
     {
     public:
@@ -39,5 +46,7 @@ namespace VectorVertex
         std::unique_ptr<VVPipeline> pipeline;
 
         VkPipelineLayout pipelineLayout;
+       // VkDescriptorSet texture_descriptorset;
+        //std::unique_ptr<LveDescriptorSetLayout> texture_layout;
     };
 } // namespace VectorVertex

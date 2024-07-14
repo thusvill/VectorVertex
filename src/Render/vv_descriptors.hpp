@@ -95,7 +95,9 @@ namespace VectorVertex
         LveDescriptorWriter(LveDescriptorSetLayout &setLayout, VVDescriptorPool &pool);
 
         LveDescriptorWriter &writeBuffer(uint32_t binding, VkDescriptorBufferInfo *bufferInfo);
+        LveDescriptorWriter &writeBuffer(uint32_t binding,VkDescriptorSet descriptorSet ,VkDescriptorBufferInfo *bufferInfo);
         LveDescriptorWriter &writeImage(uint32_t binding, VkDescriptorImageInfo *imageInfo);
+        LveDescriptorWriter &writeImage(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorImageInfo *imageInfo);
 
         bool build(VkDescriptorSet &set);
         void overwrite(VkDescriptorSet &set);

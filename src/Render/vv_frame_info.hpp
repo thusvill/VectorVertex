@@ -2,6 +2,7 @@
 
 #include "vv_camera.hpp"
 #include "vv_game_object.hpp"
+#include "vv_descriptors.hpp"
 #include <imgui.h>
 
 #include <vulkan/vulkan.h>
@@ -24,6 +25,7 @@ namespace VectorVertex
         PointLight point_lights[MAX_LIGHTS];
         int num_lights;
     };
+
     struct FrameInfo
     {
         int frame_index;
@@ -32,6 +34,7 @@ namespace VectorVertex
         VVCamera &camera;
         VkDescriptorSet global_descriptor_set;
         VVGameObject::Map &game_objects;
+        VVDescriptorPool& global_pool;
         ImTextureID frame_image;
     };
 } // namespace VectorVertex

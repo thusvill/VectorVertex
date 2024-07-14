@@ -5,7 +5,7 @@
 #include <iostream>
 #include <set>
 #include <unordered_set>
-
+#include <Log.h>
 namespace VectorVertex
 {
 
@@ -16,7 +16,8 @@ namespace VectorVertex
       const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
       void *pUserData)
   {
-    std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
+    //std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
+    VV_CORE_ERROR("Vakidation Layer: {}", pCallbackData->pMessage);
 
     return VK_FALSE;
   }

@@ -49,6 +49,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o.d"
+  "CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o"
+  "CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o"

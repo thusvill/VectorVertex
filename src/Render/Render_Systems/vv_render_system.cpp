@@ -3,16 +3,12 @@
 #include <stdexcept>
 namespace VectorVertex
 {
-    struct SimplePushConstantData
-    {
-        glm::mat4 modelMatrix{1.0f};
-        glm::mat4 normalMatrix{1.f};
-        MaterialData materialData;
-    };
+
     LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
     {
         CreatePipelineLayout(global_set_layout);
         CreatePipeline(renderPass);
+        //texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
     }
 
     LveRenderSystem::~LveRenderSystem()
@@ -55,6 +51,7 @@ namespace VectorVertex
     {
         pipeline->Bind(frame_info.command_buffer);
         vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &frame_info.global_descriptor_set, 0, nullptr);
+
         for (auto &kv : frame_info.game_objects)
         {
             auto &obj = kv.second;

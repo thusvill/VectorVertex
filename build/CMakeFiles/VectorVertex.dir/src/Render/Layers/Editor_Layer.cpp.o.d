@@ -661,6 +661,7 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxusernotification.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_material.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.hpp \

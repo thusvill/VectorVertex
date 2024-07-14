@@ -64,10 +64,13 @@
     "mutex": "cpp",
     "semaphore": "cpp",
     "stop_token": "cpp",
-    "thread": "cpp"
+    "thread": "cpp",
+    "list": "cpp",
+    "optional": "cpp",
+    "variant": "cpp"
   },
   "cmake.configureOnOpen": true,
-  "terminal.explorerKind": "external",
+  "terminal.explorerKind": "integrated",
   "terminal.integrated.automationProfile.linux": {},
   "terminal.sourceControlRepositoriesKind": "external"
 }

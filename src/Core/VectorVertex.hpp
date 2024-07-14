@@ -8,6 +8,7 @@
 #include "../Render/vv_camera.hpp"
 #include "../Render/vv_descriptors.hpp"
 #include "../Render/vv_material.hpp"
+#include "../Render/vv_offscreen_render.hpp"
 //#include "../Render/vv_framebuffer.hpp"
 #include "../Render/Layers/Editor_Layer.hpp"
 #include "../Render/vv_texture.hpp"
@@ -48,6 +49,8 @@ namespace VectorVertex
         int WIDTH, HEIGHT;
         std::string project_name;
         void run();
+        VkExtent2D Offscreen_extent;
+
 
     private:
         void loadGameobjects();
@@ -63,7 +66,6 @@ namespace VectorVertex
         //VVMaterialLibrary materials{};
         Scope<VVDescriptorPool> global_pool{};
         VVGameObject::Map gameObjects;
-
         
     };
 } // namespace VectorVertex

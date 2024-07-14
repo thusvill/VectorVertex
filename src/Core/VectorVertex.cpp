@@ -8,6 +8,12 @@
 
 namespace VectorVertex
 {
+
+    VkImageView CreateColorAttachmentImageView(VkDevice device, VkImage image, VkFormat format);
+    VkImage CreateImage(VVDevice *vvdevice, VkImageUsageFlags usage, uint32_t width, uint32_t height);
+    void TransitionImageLayout(VVDevice *vvdevice, VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout);
+    bool hasStencilComponent(VkFormat format);
+
     VectorVetrex::VectorVetrex(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
     {
         VV_CORE_WARN("Application is Started!");
@@ -16,9 +22,7 @@ namespace VectorVertex
         global_pool = VVDescriptorPool::Builder(vvDevice)
                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                          .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
-        
 
         editor_layer = new EditorLayer();
         editor_layer->SetupImgui(&vvDevice, &renderer, &vvWindow);
@@ -26,17 +30,14 @@ namespace VectorVertex
 
         editor_layer->OnAttach();
 
-        
-
         VV_CORE_WARN("Initialized!");
 
         VVMaterialLibrary::InitMaterialLib();
 
-        //TODO: implement Asset system
+        // TODO: implement Asset system
         VV_CORE_WARN("Loading Gameobjects ...");
         loadGameobjects();
         VV_CORE_WARN("Gameobjects Loaded!");
-
     }
 
     VectorVetrex::~VectorVetrex()
@@ -45,7 +46,7 @@ namespace VectorVertex
 
     void VectorVetrex::run()
     {
-        
+
         std::vector<std::unique_ptr<VVBuffer>> ubo_buffers(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < ubo_buffers.size(); i++)
         {
@@ -56,16 +57,7 @@ namespace VectorVertex
 
         auto global_set_layout = LveDescriptorSetLayout::Builder(vvDevice)
                                      .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
-                                     .addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
                                      .build();
-
-        VVTexture texture{vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/textures/internal_ground_ao_texture.jpeg"};
-        VkDescriptorImageInfo imageInfo{};
-imageInfo.imageLayout = texture.getImageLayout();
-imageInfo.imageView = texture.getImageView();
-imageInfo.sampler = texture.getSampler();
-
-
 
         std::vector<VkDescriptorSet> global_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
 
@@ -74,7 +66,6 @@ imageInfo.sampler = texture.getSampler();
             auto buffer_info = ubo_buffers[i]->descriptorInfo();
             LveDescriptorWriter(*global_set_layout, *global_pool)
                 .writeBuffer(0, &buffer_info)
-                .writeImage(1, &imageInfo)
                 .build(global_descriptor_sets[i]);
         }
 
@@ -89,8 +80,10 @@ imageInfo.sampler = texture.getSampler();
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-
-
+        //------------------------  ----------------OFF-SCREEN------------------------------------//
+        Offscreen_extent = {(int)WIDTH,(int)HEIGHT};
+        OffscreenRender offscreenRenderer(vvDevice.device(), vvDevice.getPhysicalDevice(), Offscreen_extent, vvDevice.getCommandPool(), vvDevice.graphicsQueue());
+        //----------------------------------------OFF-SCREEN------------------------------------//
         while (!vvWindow.shouldClose())
         {
             layers.UpdateAll();
@@ -107,9 +100,41 @@ imageInfo.sampler = texture.getSampler();
             // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
             camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
 
-            
-
             glfwPollEvents();
+            //----------------------------------------OFF-SCREEN------------------------------------//
+            if(editor_layer->is_viewport_resized){
+                Offscreen_extent = editor_layer->Viewport_Extent;
+                offscreenRenderer.ResizeCallback(Offscreen_extent);
+                editor_layer->is_viewport_resized = false;
+            }
+
+
+            offscreenRenderer.startFrame();
+            FrameInfo offs_frameInfo{
+                offscreenRenderer.GetFrameIndex(),
+                frameTime,
+                offscreenRenderer.getCommandBuffer(),
+                camera,
+                global_descriptor_sets[offscreenRenderer.GetFrameIndex()],
+                gameObjects,
+                *global_pool};
+                uint32_t off_s_f_I = offscreenRenderer.GetFrameIndex();
+
+                                GlobalUBO ubo{};
+                ubo.view = camera.GetView();
+                ubo.projection = camera.GetProjection();
+                ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
+                pointLightSystem.Update(offs_frameInfo, ubo);
+                ubo_buffers[off_s_f_I]->writeToBuffer(&ubo);
+                ubo_buffers[off_s_f_I]->flush();
+
+                pointLightSystem.render(offs_frameInfo);
+            renderSystem.renderGameobjects(offs_frameInfo);
+
+            offscreenRenderer.endFrame();
+            editor_layer->sceneTexture = (void*)(intptr_t)offscreenRenderer.getImGuiDescriptorSet();
+            //----------------------------------------OFF-SCREEN------------------------------------//
+
             if (auto commandBuffer = renderer.BeginFrame())
             {
                 int frame_index = renderer.GetFrameIndex();
@@ -119,30 +144,16 @@ imageInfo.sampler = texture.getSampler();
                     commandBuffer,
                     camera,
                     global_descriptor_sets[frame_index],
-                    gameObjects};
+                    gameObjects,
+                    *global_pool};
 
                 // update
-                GlobalUBO ubo{};
-                ubo.view = camera.GetView();
-                ubo.projection = camera.GetProjection();
-                ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
-                pointLightSystem.Update(frameInfo, ubo);
-                ubo_buffers[frame_index]->writeToBuffer(&ubo);
-                ubo_buffers[frame_index]->flush();
 
-                
 
-                
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
 
-
                 editor_layer->OnRender(frameInfo);
-
-                renderSystem.renderGameobjects(frameInfo);
-
-                pointLightSystem.render(frameInfo);
-
                 editor_layer->OnImGuiRender(frameInfo);
 
                 renderer.EndSwapchainRenderPass(commandBuffer);
@@ -150,13 +161,11 @@ imageInfo.sampler = texture.getSampler();
             }
         }
 
-        
         vkDeviceWaitIdle(vvDevice.device());
     }
 
     void VectorVetrex::loadGameobjects()
     {
-        
 
         std::shared_ptr<VVModel> VVModel = nullptr;
 
@@ -211,7 +220,5 @@ imageInfo.sampler = texture.getSampler();
             }
         }
     }
-
-    
 
 } // namespace VectorVertex
