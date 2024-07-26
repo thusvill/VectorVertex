@@ -272,11 +272,16 @@ VkDescriptorSet OffscreenRender::getImGuiDescriptorSet() const {
 }
 void OffscreenRender::ResizeCallback(VkExtent2D new_extent)
 {
+    
     vkDestroyFramebuffer(device, offscreenFramebuffer, nullptr);
+    vkDestroyRenderPass(device, offscreenRenderPass, nullptr);
+    vkDestroyImageView(device, offscreenImageView, nullptr);
+    vkDestroyImage(device, offscreenImage, nullptr);
+    vkFreeMemory(device, offscreenImageMemory, nullptr);
     extent = new_extent;
     createOffscreenResources();
     createFramebuffer();
-    //createRenderPass();
+    createRenderPass();
     // createCommandBuffer();
     // createDescriptorSet();
     // createDescriptorSetLayout();
