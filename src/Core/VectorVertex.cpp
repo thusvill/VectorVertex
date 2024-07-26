@@ -10,7 +10,7 @@ namespace VectorVertex
 {
 
     VkImageView CreateColorAttachmentImageView(VkDevice device, VkImage image, VkFormat format);
-    VkImage CreateImage(VVDevice *vvdevice, VkImageUsageFlags usage, uint32_t width, uint32_t height);
+    VkImage CreateImage(VVDevice &vvdevice, VkImageUsageFlags usage, uint32_t width, uint32_t height);
     void TransitionImageLayout(VVDevice *vvdevice, VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout);
     bool hasStencilComponent(VkFormat format);
 
@@ -68,7 +68,10 @@ namespace VectorVertex
                 .writeBuffer(0, &buffer_info)
                 .build(global_descriptor_sets[i]);
         }
-
+//------------------------  ----------------OFF-SCREEN------------------------------------//
+        Offscreen_extent = {800,800};
+        OffscreenRender offscreenRenderer(&vvDevice, Offscreen_extent, vvDevice.getCommandPool(), vvDevice.graphicsQueue());
+        //----------------------------------------OFF-SCREEN------------------------------------//
         LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
         PointLightSystem pointLightSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
         VVCamera camera{};
@@ -80,10 +83,7 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        //------------------------  ----------------OFF-SCREEN------------------------------------//
-        Offscreen_extent = {(int)WIDTH,(int)HEIGHT};
-        OffscreenRender offscreenRenderer(vvDevice.device(), vvDevice.getPhysicalDevice(), Offscreen_extent, vvDevice.getCommandPool(), vvDevice.graphicsQueue());
-        //----------------------------------------OFF-SCREEN------------------------------------//
+        
         while (!vvWindow.shouldClose())
         {
             layers.UpdateAll();
@@ -104,7 +104,7 @@ namespace VectorVertex
             //----------------------------------------OFF-SCREEN------------------------------------//
             if(editor_layer->is_viewport_resized){
                 Offscreen_extent = editor_layer->Viewport_Extent;
-                offscreenRenderer.ResizeCallback(Offscreen_extent);
+                //offscreenRenderer.ResizeCallback(Offscreen_extent);
                 editor_layer->is_viewport_resized = false;
             }
 

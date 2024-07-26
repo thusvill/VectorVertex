@@ -10,7 +10,7 @@ namespace VectorVertex
     class OffscreenRender
     {
     public:
-        OffscreenRender(VkDevice device, VkPhysicalDevice physicalDevice, VkExtent2D extent, VkCommandPool commandPool, VkQueue graphicsQueue);
+        OffscreenRender(VVDevice *vv_device, VkExtent2D extent, VkCommandPool commandPool, VkQueue graphicsQueue);
         ~OffscreenRender();
 
         void startFrame();
@@ -23,18 +23,21 @@ namespace VectorVertex
         VkCommandBuffer getCommandBuffer() const { return commandBuffer; }
         VkDescriptorSet getImGuiDescriptorSet() const;
 
-        void ResizeCallback(VkExtent2D new_extent);
+        void ResizeCallback(VkExtent2D newExtent, VVDevice* vv_device);
+
+        VkRenderPass getRenderPass() {return offscreenRenderPass;}
+        VkDescriptorSetLayout getDescriptorLayout() {return descriptorSetLayout;}
 
     private:
-        void createOffscreenResources();
-        void createFramebuffer();
-        void createRenderPass();
+        void createOffscreenResources(VVDevice* vv_device);
+        void createFramebuffer(VVDevice *vv_device);
+        void createRenderPass(VVDevice* vv_device);
         void createCommandBuffer();
         void createDescriptorSetLayout();
         void createDescriptorPool();
         void createDescriptorSet();
         uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
-
+        
         VkDevice device;
         VkPhysicalDevice physicalDevice;
         VkExtent2D extent;
@@ -42,8 +45,11 @@ namespace VectorVertex
         VkQueue graphicsQueue;
 
         VkImage offscreenImage;
+        VkImage offscreenDepthImage;
         VkDeviceMemory offscreenImageMemory;
+        VkDeviceMemory offscreenDepthImageMemory;
         VkImageView offscreenImageView;
+        VkImageView offscreenDepthImageView;
         VkFramebuffer offscreenFramebuffer;
         VkRenderPass offscreenRenderPass;
         VkCommandBuffer commandBuffer;
@@ -54,6 +60,8 @@ namespace VectorVertex
         VkSampler offscreenSampler;
 
         uint32_t currentImageIndex;
+
+        VkFormat findDepthFormat_offscreen(VVDevice* device);
         int currentFrameIndex{0};
         bool isFrameStarted{false};
     };

@@ -50,8 +50,7 @@ namespace VectorVertex
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info)
     {
         pipeline->Bind(frame_info.command_buffer);
-        vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &frame_info.global_descriptor_set, 0, nullptr);
-
+    
         for (auto &kv : frame_info.game_objects)
         {
             auto &obj = kv.second;

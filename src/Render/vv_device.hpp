@@ -33,6 +33,7 @@ namespace VectorVertex
 #else
     const bool enableValidationLayers = true;
 #endif
+VVDevice() = default;
     VVDevice(VVWindow &window);
     ~VVDevice();
 
