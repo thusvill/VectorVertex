@@ -10,7 +10,7 @@
 namespace VectorVertex
 {
 
-    class LveDescriptorSetLayout
+    class VVDescriptorSetLayout
     {
     public:
         class Builder
@@ -23,18 +23,18 @@ namespace VectorVertex
                 VkDescriptorType descriptorType,
                 VkShaderStageFlags stageFlags,
                 uint32_t count = 1);
-            std::unique_ptr<LveDescriptorSetLayout> build() const;
+            std::unique_ptr<VVDescriptorSetLayout> build() const;
 
         private:
             VVDevice &vvDevice;
             std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings{};
         };
 
-        LveDescriptorSetLayout(
+        VVDescriptorSetLayout(
             VVDevice &vvDevice, std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings);
-        ~LveDescriptorSetLayout();
-        LveDescriptorSetLayout(const LveDescriptorSetLayout &) = delete;
-        LveDescriptorSetLayout &operator=(const LveDescriptorSetLayout &) = delete;
+        ~VVDescriptorSetLayout();
+        VVDescriptorSetLayout(const VVDescriptorSetLayout &) = delete;
+        VVDescriptorSetLayout &operator=(const VVDescriptorSetLayout &) = delete;
 
         VkDescriptorSetLayout getDescriptorSetLayout() const { return descriptorSetLayout; }
 
@@ -43,7 +43,7 @@ namespace VectorVertex
         VkDescriptorSetLayout descriptorSetLayout;
         std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings;
 
-        friend class LveDescriptorWriter;
+        friend class VVDescriptorWriter;
     };
 
     class VVDescriptorPool
@@ -86,24 +86,24 @@ namespace VectorVertex
         VVDevice &vvDevice;
         VkDescriptorPool descriptorPool;
 
-        friend class LveDescriptorWriter;
+        friend class VVDescriptorWriter;
     };
 
-    class LveDescriptorWriter
+    class VVDescriptorWriter
     {
     public:
-        LveDescriptorWriter(LveDescriptorSetLayout &setLayout, VVDescriptorPool &pool);
+        VVDescriptorWriter(VVDescriptorSetLayout &setLayout, VVDescriptorPool &pool);
 
-        LveDescriptorWriter &writeBuffer(uint32_t binding, VkDescriptorBufferInfo *bufferInfo);
-        LveDescriptorWriter &writeBuffer(uint32_t binding,VkDescriptorSet descriptorSet ,VkDescriptorBufferInfo *bufferInfo);
-        LveDescriptorWriter &writeImage(uint32_t binding, VkDescriptorImageInfo *imageInfo);
-        LveDescriptorWriter &writeImage(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorImageInfo *imageInfo);
+        VVDescriptorWriter &writeBuffer(uint32_t binding, VkDescriptorBufferInfo *bufferInfo);
+        VVDescriptorWriter &writeBuffer(uint32_t binding,VkDescriptorSet descriptorSet ,VkDescriptorBufferInfo *bufferInfo);
+        VVDescriptorWriter &writeImage(uint32_t binding, VkDescriptorImageInfo *imageInfo);
+        VVDescriptorWriter &writeImage(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorImageInfo *imageInfo);
 
         bool build(VkDescriptorSet &set);
         void overwrite(VkDescriptorSet &set);
 
     private:
-        LveDescriptorSetLayout &setLayout;
+        VVDescriptorSetLayout &setLayout;
         VVDescriptorPool &pool;
         std::vector<VkWriteDescriptorSet> writes;
     };

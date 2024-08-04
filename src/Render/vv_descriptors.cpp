@@ -9,7 +9,7 @@ namespace VectorVertex
 
     // *************** Descriptor Set Layout Builder *********************
 
-    LveDescriptorSetLayout::Builder &LveDescriptorSetLayout::Builder::addBinding(
+    VVDescriptorSetLayout::Builder &VVDescriptorSetLayout::Builder::addBinding(
         uint32_t binding,
         VkDescriptorType descriptorType,
         VkShaderStageFlags stageFlags,
@@ -25,14 +25,14 @@ namespace VectorVertex
         return *this;
     }
 
-    std::unique_ptr<LveDescriptorSetLayout> LveDescriptorSetLayout::Builder::build() const
+    std::unique_ptr<VVDescriptorSetLayout> VVDescriptorSetLayout::Builder::build() const
     {
-        return std::make_unique<LveDescriptorSetLayout>(vvDevice, bindings);
+        return std::make_unique<VVDescriptorSetLayout>(vvDevice, bindings);
     }
 
     // *************** Descriptor Set Layout *********************
 
-    LveDescriptorSetLayout::LveDescriptorSetLayout(
+    VVDescriptorSetLayout::VVDescriptorSetLayout(
         VVDevice &vvDevice, std::unordered_map<uint32_t, VkDescriptorSetLayoutBinding> bindings)
         : vvDevice{vvDevice}, bindings{bindings}
     {
@@ -57,7 +57,7 @@ namespace VectorVertex
         }
     }
 
-    LveDescriptorSetLayout::~LveDescriptorSetLayout()
+    VVDescriptorSetLayout::~VVDescriptorSetLayout()
     {
         vkDestroyDescriptorSetLayout(vvDevice.device(), descriptorSetLayout, nullptr);
     }
@@ -150,10 +150,10 @@ namespace VectorVertex
 
     // *************** Descriptor Writer *********************
 
-    LveDescriptorWriter::LveDescriptorWriter(LveDescriptorSetLayout &setLayout, VVDescriptorPool &pool)
+    VVDescriptorWriter::VVDescriptorWriter(VVDescriptorSetLayout &setLayout, VVDescriptorPool &pool)
         : setLayout{setLayout}, pool{pool} {}
 
-    LveDescriptorWriter &LveDescriptorWriter::writeBuffer(
+    VVDescriptorWriter &VVDescriptorWriter::writeBuffer(
         uint32_t binding, VkDescriptorBufferInfo *bufferInfo)
     {
         assert(setLayout.bindings.count(binding) == 1 && "Layout does not contain specified binding");
@@ -175,7 +175,7 @@ namespace VectorVertex
         return *this;
     }
 
-    LveDescriptorWriter &LveDescriptorWriter::writeBuffer(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorBufferInfo *bufferInfo)
+    VVDescriptorWriter &VVDescriptorWriter::writeBuffer(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorBufferInfo *bufferInfo)
     {
         assert(setLayout.bindings.count(binding) == 1 && "Layout does not contain specified binding");
 
@@ -197,7 +197,7 @@ namespace VectorVertex
         return *this;
     }
 
-    LveDescriptorWriter &LveDescriptorWriter::writeImage(
+    VVDescriptorWriter &VVDescriptorWriter::writeImage(
         uint32_t binding, VkDescriptorImageInfo *imageInfo)
     {
         assert(setLayout.bindings.count(binding) == 1 && "Layout does not contain specified binding");
@@ -219,7 +219,7 @@ namespace VectorVertex
         return *this;
     }
 
-    LveDescriptorWriter &LveDescriptorWriter::writeImage(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorImageInfo *imageInfo)
+    VVDescriptorWriter &VVDescriptorWriter::writeImage(uint32_t binding, VkDescriptorSet descriptorSet, VkDescriptorImageInfo *imageInfo)
     {
         assert(setLayout.bindings.count(binding) == 1 && "Layout does not contain specified binding");
 
@@ -241,7 +241,7 @@ namespace VectorVertex
         return *this;
     }
 
-    bool LveDescriptorWriter::build(VkDescriptorSet &set)
+    bool VVDescriptorWriter::build(VkDescriptorSet &set)
     {
         bool success = pool.allocateDescriptor(setLayout.getDescriptorSetLayout(), set);
         if (!success)
@@ -252,7 +252,7 @@ namespace VectorVertex
         return true;
     }
 
-    void LveDescriptorWriter::overwrite(VkDescriptorSet &set)
+    void VVDescriptorWriter::overwrite(VkDescriptorSet &set)
     {
         for (auto &write : writes)
         {

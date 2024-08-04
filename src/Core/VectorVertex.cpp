@@ -55,7 +55,7 @@ namespace VectorVertex
             ubo_buffers[i]->map();
         }
 
-        auto global_set_layout = LveDescriptorSetLayout::Builder(vvDevice)
+        auto global_set_layout = VVDescriptorSetLayout::Builder(vvDevice)
                                      .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                      .build();
 
@@ -64,7 +64,7 @@ namespace VectorVertex
         for (int i = 0; i < global_descriptor_sets.size(); i++)
         {
             auto buffer_info = ubo_buffers[i]->descriptorInfo();
-            LveDescriptorWriter(*global_set_layout, *global_pool)
+            VVDescriptorWriter(*global_set_layout, *global_pool)
                 .writeBuffer(0, &buffer_info)
                 .build(global_descriptor_sets[i]);
         }
@@ -72,7 +72,7 @@ namespace VectorVertex
 
         //------------------------  ----------------OFF-SCREEN------------------------------------//
         Offscreen_extent = {800, 800};
-        VVOffscreen offscreen{vvDevice, Offscreen_extent};
+        VVOffscreen offscreen{vvDevice, Offscreen_extent, global_set_layout->getDescriptorSetLayout()};
         //----------------------------------------OFF-SCREEN------------------------------------//
 
 

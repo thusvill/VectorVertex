@@ -14,6 +14,7 @@ CMakeFiles/VectorVertex.dir/main.cpp.o: /home/bios/CLionProjects/VectorVertex/3D
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp \
@@ -245,7 +246,6 @@ CMakeFiles/VectorVertex.dir/main.cpp.o: /home/bios/CLionProjects/VectorVertex/3D
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h \
-  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
@@ -3456,6 +3456,7 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: /home/bios/CLionProject
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp \
@@ -3687,7 +3688,6 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: /home/bios/CLionProject
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h \
-  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
@@ -12108,6 +12108,7 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o: /home/bios/CLionProje
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxusernotification.h \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
@@ -15586,11 +15587,21 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 
 /usr/include/glm/detail/type_mat4x4.inl:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/adxintrin.h:
+/usr/include/asm-generic/errno.h:
 
-/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h:
+/usr/include/glm/gtc/quaternion.inl:
 
-/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/fbxselectionnode.h:
+/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxprocessor.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/usr/include/spdlog/details/file_helper.h:
+
+/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/constraint/fbxcharacterpose.h:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/sync/fbxthread.h:
 
@@ -15683,6 +15694,12 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 /usr/include/glm/ext/scalar_constants.hpp:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/base/fbxstatus.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/adxintrin.h:
+
+/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h:
+
+/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/fbxselectionnode.h:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/base/fbxutils.h:
 
@@ -15880,10 +15897,6 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h:
 
-/usr/include/glm/mat4x2.hpp:
-
-/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/fbxeventhandler.h:
-
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/fbxobject.h:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxdeformationsevaluator.h:
@@ -15895,6 +15908,10 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 /usr/include/c++/11/bits/stl_bvector.h:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/animation/fbxanimlayer.h:
+
+/usr/include/glm/mat4x2.hpp:
+
+/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/fbxeventhandler.h:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp:
 
@@ -16145,22 +16162,6 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/constraint/fbxcharacternodename.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/glm/gtc/quaternion.inl:
-
-/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxprocessor.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/enable_special_members.h:
-
-/usr/include/spdlog/details/file_helper.h:
-
-/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/scene/constraint/fbxcharacterpose.h:
 
 /usr/include/glm/gtx/hash.inl:
 

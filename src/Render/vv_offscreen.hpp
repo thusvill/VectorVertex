@@ -2,14 +2,15 @@
 #include <VectorVertex.hpp>
 #include "vv_renderer.hpp"
 #include "vv_framebuffer.hpp"
-
+#include "vv_descriptors.hpp"
+#include "vv_pipeline.hpp"
 
 namespace VectorVertex
 {
     class VVOffscreen{
     public:
         VVOffscreen() = default;
-        VVOffscreen(VVDevice& vv_device, VkExtent2D extent);
+        VVOffscreen(VVDevice& vv_device, VkExtent2D extent, VkDescriptorSetLayout global_descriptorset_layout);
         VkCommandBuffer BeginFrame();
        // void BeginRenderPass();
         void EndFrame();
@@ -19,10 +20,12 @@ namespace VectorVertex
             return frame_index;
         }
         VkCommandBuffer GetCommandBuffer() { return command_buffer; }
-        const VkDescriptorPool& GetDescriptorPool() const { return descriptorPool; }
+        //const VkDescriptorPool& GetDescriptorPool() const { return descriptorPool; }
 
         VkRenderPass GetRenderpass() const { return offscreenRenderPass;}
-        VkDescriptorSetLayout GetDescriptorsetlayout() const {return descriptorSetLayout;}
+
+       
+       // VkDescriptorSetLayout GetDescriptorsetlayout() const {return descriptorSetLayout;}
 
     private:
         void SetupImages(VVDevice* vv_device);
@@ -40,11 +43,12 @@ namespace VectorVertex
         VkCommandBuffer command_buffer;
         VkExtent2D window_size;
         VVDevice& vv_device;
-        VkDescriptorSetLayout descriptorSetLayout;
-        VkDescriptorPool descriptorPool;
+        VkDescriptorSetLayout global_layout;
+        // VkDescriptorPool descriptorPool;
         VkDescriptorSet descriptorSet;
         VkSampler textureSampler;
-        VkPipelineLayout pipelinelayout;
+        VkPipelineLayout pipelineLayout;
+        std::unique_ptr<VVPipeline> pipeline;
 
     };
 }

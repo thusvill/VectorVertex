@@ -1,12 +1,22 @@
 #include "vv_offscreen.hpp"
-
+#include "vv_render_system.hpp"
 namespace VectorVertex
 {
-    VVOffscreen::VVOffscreen(VVDevice &vv_device, VkExtent2D extent): vv_device(vv_device)
+    VVOffscreen::VVOffscreen(VVDevice &vv_device, VkExtent2D extent, VkDescriptorSetLayout global_descriptorset_layout) : vv_device(vv_device), global_layout(global_descriptorset_layout)
     {
         window_size = extent;
         createOffscreenRenderPass(VK_FORMAT_B8G8R8A8_UNORM, offscreenRenderPass);
         framebuffer = VVFramebuffer(&vv_device, offscreenRenderPass, VK_FORMAT_B8G8R8A8_UNORM, extent.width, extent.height);
+        SetupImages(&vv_device);
+
+                assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
+        PipelineConfigInfo pipelineConfig{};
+        VVPipeline::defaultPipelineConfigInfo(pipelineConfig);
+        pipelineConfig.renderPass = offscreenRenderPass;
+        pipelineConfig.pipelineLayout = pipelineLayout;
+        pipeline = std::make_unique<VVPipeline>(vv_device, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
+
+
         VkCommandBufferAllocateInfo allocInfo{};
         allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
         allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
@@ -58,8 +68,12 @@ namespace VectorVertex
         vkCmdSetViewport(command_buffer, 0, 1, &viewport);
         vkCmdSetScissor(command_buffer, 0, 1, &scissor);
 
+        vkCmdBindDescriptorSets(command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &descriptorSet, 0, nullptr);
 
         is_frame_started = true;
+        //pipeline->Bind(command_buffer);
+
+
         return command_buffer;
     }
 
@@ -91,58 +105,71 @@ namespace VectorVertex
 
     void VVOffscreen::SetupImages(VVDevice *vv_device)
     {
-        VkDescriptorSetLayoutBinding samplerLayoutBinding = {};
-        samplerLayoutBinding.binding = 0;
-        samplerLayoutBinding.descriptorCount = 1;
-        samplerLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        samplerLayoutBinding.pImmutableSamplers = nullptr;
-        samplerLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+        auto offscreen_des_layout = VVDescriptorSetLayout::Builder(*vv_device)
+                                        .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
+                                        .addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
+                                        .build();
 
-        VkDescriptorSetLayoutBinding colorLayoutBinding = {};
-        colorLayoutBinding.binding = 1;
-        colorLayoutBinding.descriptorCount = 1;
-        colorLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        colorLayoutBinding.pImmutableSamplers = nullptr;
-        colorLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+        // VkDescriptorSetLayoutBinding samplerLayoutBinding = {};
+        // samplerLayoutBinding.binding = 0;
+        // samplerLayoutBinding.descriptorCount = 1;
+        // samplerLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        // samplerLayoutBinding.pImmutableSamplers = nullptr;
+        // samplerLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
 
-        VkDescriptorSetLayoutBinding bindings[] = {samplerLayoutBinding, colorLayoutBinding};
+        // VkDescriptorSetLayoutBinding colorLayoutBinding = {};
+        // colorLayoutBinding.binding = 1;
+        // colorLayoutBinding.descriptorCount = 1;
+        // colorLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        // colorLayoutBinding.pImmutableSamplers = nullptr;
+        // colorLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
 
-        VkDescriptorSetLayoutCreateInfo layoutInfo = {};
-        layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-        layoutInfo.bindingCount = 2;
-        layoutInfo.pBindings = bindings;
+        // VkDescriptorSetLayoutBinding bindings[] = {samplerLayoutBinding, colorLayoutBinding};
 
-        if (vkCreateDescriptorSetLayout(vv_device->device(), &layoutInfo, nullptr, &descriptorSetLayout) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to create descriptor set layout!");
-        }
+        // VkDescriptorSetLayoutCreateInfo layoutInfo = {};
+        // layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+        // layoutInfo.bindingCount = 2;
+        // layoutInfo.pBindings = bindings;
 
-        VkDescriptorPoolSize poolSizes[2] = {};
-        poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        poolSizes[0].descriptorCount = 1;
-        poolSizes[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        poolSizes[1].descriptorCount = 1;
+        // if (vkCreateDescriptorSetLayout(vv_device->device(), &layoutInfo, nullptr, &descriptorSetLayout) != VK_SUCCESS)
+        // {
+        //     throw std::runtime_error("failed to create descriptor set layout!");
+        // }
 
-        VkDescriptorPoolCreateInfo poolInfo = {};
-        poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
-        poolInfo.poolSizeCount = 2;
-        poolInfo.pPoolSizes = poolSizes;
-        poolInfo.maxSets = 1;
+        auto offscreen_des_pool = VVDescriptorPool::Builder(*vv_device)
+                                      .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 0)
+                                      .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1)
+                                      .setMaxSets(1)
+                                      .setPoolFlags(VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO)
+                                      .build();
 
-        if (vkCreateDescriptorPool(vv_device->device(), &poolInfo, nullptr, &descriptorPool) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to create descriptor pool!");
-        }
-        VkDescriptorSetAllocateInfo allocInfo = {};
-        allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
-        allocInfo.descriptorPool = descriptorPool;
-        allocInfo.descriptorSetCount = 1;
-        allocInfo.pSetLayouts = &descriptorSetLayout;
+        // VkDescriptorPoolSize poolSizes[2] = {};
+        // poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        // poolSizes[0].descriptorCount = 1;
+        // poolSizes[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        // poolSizes[1].descriptorCount = 1;
 
-        if (vkAllocateDescriptorSets(vv_device->device(), &allocInfo, &descriptorSet) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to allocate descriptor set!");
-        }
+        // VkDescriptorPoolCreateInfo poolInfo = {};
+        // poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+        // poolInfo.poolSizeCount = 2;
+        // poolInfo.pPoolSizes = poolSizes;
+        // poolInfo.maxSets = 1;
+
+        // if (vkCreateDescriptorPool(vv_device->device(), &poolInfo, nullptr, &descriptorPool) != VK_SUCCESS)
+        // {
+        //     throw std::runtime_error("failed to create descriptor pool!");
+        // }
+
+        // VkDescriptorSetAllocateInfo allocInfo = {};
+        // allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+        // allocInfo.descriptorPool = descriptorPool;
+        // allocInfo.descriptorSetCount = 1;
+        // allocInfo.pSetLayouts = &descriptorSetLayout;
+
+        // if (vkAllocateDescriptorSets(vv_device->device(), &allocInfo, &descriptorSet) != VK_SUCCESS)
+        // {
+        //     throw std::runtime_error("failed to allocate descriptor set!");
+        // }
         VkSamplerCreateInfo samplerInfo = {};
         samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
         samplerInfo.magFilter = VK_FILTER_LINEAR;
@@ -175,25 +202,48 @@ namespace VectorVertex
         depthImageInfo.imageView = framebuffer.GetDepthImageView();
         depthImageInfo.sampler = textureSampler;
 
-        VkWriteDescriptorSet descriptorWrites[2] = {};
+        // VkWriteDescriptorSet descriptorWrites[2] = {};
 
-        descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        descriptorWrites[0].dstSet = descriptorSet;
-        descriptorWrites[0].dstBinding = 0;
-        descriptorWrites[0].dstArrayElement = 0;
-        descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        descriptorWrites[0].descriptorCount = 1;
-        descriptorWrites[0].pImageInfo = &colorImageInfo;
+        // descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        // descriptorWrites[0].dstSet = descriptorSet;
+        // descriptorWrites[0].dstBinding = 0;
+        // descriptorWrites[0].dstArrayElement = 0;
+        // descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        // descriptorWrites[0].descriptorCount = 1;
+        // descriptorWrites[0].pImageInfo = &colorImageInfo;
 
-        descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        descriptorWrites[1].dstSet = descriptorSet;
-        descriptorWrites[1].dstBinding = 1;
-        descriptorWrites[1].dstArrayElement = 0;
-        descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        descriptorWrites[1].descriptorCount = 1;
-        descriptorWrites[1].pImageInfo = &depthImageInfo;
+        // descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        // descriptorWrites[1].dstSet = descriptorSet;
+        // descriptorWrites[1].dstBinding = 1;
+        // descriptorWrites[1].dstArrayElement = 0;
+        // descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        // descriptorWrites[1].descriptorCount = 1;
+        // descriptorWrites[1].pImageInfo = &depthImageInfo;
 
-        vkUpdateDescriptorSets(vv_device->device(), 2, descriptorWrites, 0, nullptr);
+        // vkUpdateDescriptorSets(vv_device->device(), 2, descriptorWrites, 0, nullptr);
+        VVDescriptorWriter(*offscreen_des_layout, *offscreen_des_pool)
+            .writeImage(0, &colorImageInfo)
+            .writeImage(1, &depthImageInfo)
+            .build(descriptorSet);
+
+        std::array<VkDescriptorSetLayout, 2> descriptorSetLayouts = {offscreen_des_layout->getDescriptorSetLayout(), global_layout};
+        
+        VkPushConstantRange pushConstantRange{};
+        pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+        pushConstantRange.offset = 0;
+        pushConstantRange.size = sizeof(SimplePushConstantData);
+
+        VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
+        pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+        pipelineLayoutInfo.setLayoutCount = static_cast<uint32_t>(descriptorSetLayouts.size());
+        pipelineLayoutInfo.pSetLayouts = descriptorSetLayouts.data();
+        pipelineLayoutInfo.pushConstantRangeCount = 1;
+        pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
+
+        if (vkCreatePipelineLayout(vv_device->device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        {
+            throw std::runtime_error("failed to create pipeline layout!");
+        }
     }
 
     void VVOffscreen::createOffscreenRenderPass(VkFormat colorFormat, VkRenderPass &offscreenRenderPass)
@@ -216,8 +266,8 @@ namespace VectorVertex
         // Depth attachment (optional, if you need depth testing in offscreen rendering)
         VkAttachmentDescription depthAttachment = {};
         depthAttachment.format = vv_device.findSupportedFormat({VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},
-                                                             VK_IMAGE_TILING_OPTIMAL,
-                                                             VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
+                                                               VK_IMAGE_TILING_OPTIMAL,
+                                                               VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
         depthAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
         depthAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
         depthAttachment.storeOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
