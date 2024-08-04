@@ -151,9 +151,9 @@
 },
 {
   "directory": "/home/bios/CLionProjects/VectorVertex/3DEngine/build",
-  "command": "/usr/bin/c++ -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render -g -g -o CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen_render.cpp",
-  "file": "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen_render.cpp",
-  "output": "CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o"
+  "command": "/usr/bin/c++ -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render -g -g -o CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.cpp",
+  "file": "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.cpp",
+  "output": "CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o"
 },
 {
   "directory": "/home/bios/CLionProjects/VectorVertex/3DEngine/build",

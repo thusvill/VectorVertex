@@ -1,10 +1,10 @@
 #include "vv_framebuffer.hpp"
 namespace VectorVertex
 {
-VVFramebuffer::VVFramebuffer(VVDevice* device, VkRenderPass renderpass, uint32_t width, uint32_t height) : vvDevice(device)
+VVFramebuffer::VVFramebuffer(VVDevice* device, VkRenderPass& renderpass, VkFormat colorFormat, uint32_t width, uint32_t height) : vvDevice(device)
 {
-    VkImageView colorAttachmentView = createColorAttachmentImageView(vvDevice->device(), CreateImage(vvDevice->device(), VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT, width, height), VK_FORMAT_R8G8B8A8_UNORM);
-    VkImageView depthAttachmentView = createDepthAttachmentImageView(vvDevice->device(), CreateImage(vvDevice->device(), VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, width, height), VK_FORMAT_D32_SFLOAT);
+    colorAttachmentView = createColorAttachmentImageView(vvDevice->device(), CreateImage(vvDevice->device(),VK_FORMAT_B8G8R8A8_UNORM, VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT, width, height), colorFormat);
+    depthAttachmentView = createDepthAttachmentImageView(vvDevice->device(), CreateImage(vvDevice->device(),vvDevice->findSupportedFormat({VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},VK_IMAGE_TILING_OPTIMAL,VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT),VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, width, height));
     std::vector<VkImageView> attachments= {colorAttachmentView, depthAttachmentView};
 
     VkFramebufferCreateInfo framebufferInfo = {};
@@ -24,12 +24,10 @@ VVFramebuffer::VVFramebuffer(VVDevice* device, VkRenderPass renderpass, uint32_t
     }
 }
 
-    VkImage VVFramebuffer::CreateImage(VkDevice device,VkImageUsageFlags usage, uint32_t WIDTH, uint32_t HEIGHT)
+    VkImage VVFramebuffer::CreateImage(VkDevice device,VkFormat colorFormat,VkImageUsageFlags usage, uint32_t WIDTH, uint32_t HEIGHT)
     {
         VkImage image;
         VkDeviceMemory imageMemory;
-
-        VkFormat colorFormat = VK_FORMAT_R8G8B8A8_UNORM; // Example format, choose based on your requirements
 
         VkImageCreateInfo imageInfo = {};
         imageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;

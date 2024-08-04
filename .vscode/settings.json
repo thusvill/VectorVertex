@@ -67,7 +67,8 @@
     "thread": "cpp",
     "list": "cpp",
     "optional": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "*.bak": "c"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

@@ -9,10 +9,12 @@ CMakeFiles/VectorVertex.dir/main.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_camera.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen_render.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp
@@ -244,7 +246,6 @@ CMakeFiles/VectorVertex.dir/main.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h
@@ -3455,10 +3456,12 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_camera.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen_render.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp
@@ -3690,7 +3693,6 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h
@@ -11893,11 +11895,29 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h
 
-CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen_render.cpp
+CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.cpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Editor_Layer.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_buffer.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_camera.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/VectorVertex.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/arch/fbxalloc.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/core/arch/fbxarch.h
@@ -12116,17 +12136,11 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen_render.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxusernotification.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_buffer.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_camera.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen_render.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h
  /usr/include/GLFW/glfw3.h

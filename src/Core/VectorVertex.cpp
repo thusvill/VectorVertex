@@ -68,11 +68,17 @@ namespace VectorVertex
                 .writeBuffer(0, &buffer_info)
                 .build(global_descriptor_sets[i]);
         }
-//------------------------  ----------------OFF-SCREEN------------------------------------//
-        Offscreen_extent = {800,800};
-        OffscreenRender offscreenRenderer(&vvDevice, Offscreen_extent, vvDevice.getCommandPool(), vvDevice.graphicsQueue());
+
+
+        //------------------------  ----------------OFF-SCREEN------------------------------------//
+        Offscreen_extent = {800, 800};
+        VVOffscreen offscreen{vvDevice, Offscreen_extent};
         //----------------------------------------OFF-SCREEN------------------------------------//
-        LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
+
+
+
+//        LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
+       LveRenderSystem renderSystem{vvDevice, offscreen.GetRenderpass(), global_set_layout->getDescriptorSetLayout()};
         PointLightSystem pointLightSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
         VVCamera camera{};
 
@@ -83,7 +89,6 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        
         while (!vvWindow.shouldClose())
         {
             layers.UpdateAll();
@@ -102,25 +107,28 @@ namespace VectorVertex
 
             glfwPollEvents();
             //----------------------------------------OFF-SCREEN------------------------------------//
-            if(editor_layer->is_viewport_resized){
+            if (editor_layer->is_viewport_resized)
+            {
                 Offscreen_extent = editor_layer->Viewport_Extent;
-                //offscreenRenderer.ResizeCallback(Offscreen_extent);
+                // offscreenRenderer.ResizeCallback(Offscreen_extent);
                 editor_layer->is_viewport_resized = false;
             }
 
+            if (auto offscreen_cmdbuffer = offscreen.BeginFrame())
+            {
+                int off_s_f_I = offscreen.GetFrameIndex();
+                //VV_CORE_INFO(off_s_f_I);
+                FrameInfo offs_frameInfo{
+                    off_s_f_I,
+                    frameTime,
+                    offscreen_cmdbuffer,
+                    camera,
+                    global_descriptor_sets[off_s_f_I],
+                    gameObjects,
+                    *global_pool};
+                
 
-            offscreenRenderer.startFrame();
-            FrameInfo offs_frameInfo{
-                offscreenRenderer.GetFrameIndex(),
-                frameTime,
-                offscreenRenderer.getCommandBuffer(),
-                camera,
-                global_descriptor_sets[offscreenRenderer.GetFrameIndex()],
-                gameObjects,
-                *global_pool};
-                uint32_t off_s_f_I = offscreenRenderer.GetFrameIndex();
-
-                                GlobalUBO ubo{};
+                GlobalUBO ubo{};
                 ubo.view = camera.GetView();
                 ubo.projection = camera.GetProjection();
                 ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
@@ -129,15 +137,17 @@ namespace VectorVertex
                 ubo_buffers[off_s_f_I]->flush();
 
                 pointLightSystem.render(offs_frameInfo);
-            renderSystem.renderGameobjects(offs_frameInfo);
+                renderSystem.renderGameobjects(offs_frameInfo);
 
-            offscreenRenderer.endFrame();
-            editor_layer->sceneTexture = (void*)(intptr_t)offscreenRenderer.getImGuiDescriptorSet();
+                offscreen.EndFrame();
+                editor_layer->sceneTexture = (void *)(intptr_t)offscreen.GetImageDescriptorSet();
+            }
             //----------------------------------------OFF-SCREEN------------------------------------//
 
             if (auto commandBuffer = renderer.BeginFrame())
             {
                 int frame_index = renderer.GetFrameIndex();
+                //VV_CORE_WARN(frame_index);
                 FrameInfo frameInfo{
                     frame_index,
                     frameTime,
@@ -148,7 +158,6 @@ namespace VectorVertex
                     *global_pool};
 
                 // update
-
 
                 // render
                 renderer.BeginSwapchainRenderPass(commandBuffer);
