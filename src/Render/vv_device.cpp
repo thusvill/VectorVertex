@@ -16,9 +16,9 @@ namespace VectorVertex
       const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
       void *pUserData)
   {
-    //std::cerr << "validation layer: " << pCallbackData->pMessage << std::endl;
-    VV_CORE_ERROR("Vakidation Layer: {}", pCallbackData->pMessage);
-
+    std::cerr << "" << std::endl;
+    VV_CORE_ERROR("Validation Layer: {}", pCallbackData->pMessage);
+    std::cerr << "" << std::endl;
     return VK_FALSE;
   }
 
@@ -122,10 +122,12 @@ namespace VectorVertex
     {
       throw std::runtime_error("failed to create instance!");
     }
-    if(!instance)
+    if (!instance)
     {
       throw std::runtime_error("VkInstance is NULL!!");
-    }else{
+    }
+    else
+    {
       instance_ = instance;
     }
 

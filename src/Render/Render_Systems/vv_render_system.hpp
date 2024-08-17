@@ -30,18 +30,18 @@ namespace VectorVertex
     {
     public:
         LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout);
+        LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout[]);
         ~LveRenderSystem();
 
         LveRenderSystem(const LveRenderSystem &) = delete;
         LveRenderSystem &operator=(const LveRenderSystem &) = delete;
         void renderGameobjects(FrameInfo &frame_info);
         void renderImGui(VkCommandBuffer commandBuffer);
-        void setPipeline(std::unique_ptr<VVPipeline> newPipeline){
-            pipeline = std::make_unique<VVPipeline>(newPipeline);
-        }
+        
 
     private:
-        void CreatePipelineLayout(VkDescriptorSetLayout global_set_layout);
+        void CreatePipelineLayout(VkDescriptorSetLayout des_set_layout[]);
+        void CreatePipelineLayout(VkDescriptorSetLayout des_set_layout);
         void CreatePipeline(VkRenderPass renderPass);
 
         VVDevice &vvDevice;

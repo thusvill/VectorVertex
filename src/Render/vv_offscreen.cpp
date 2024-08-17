@@ -2,411 +2,251 @@
 #include "vv_render_system.hpp"
 namespace VectorVertex
 {
-    VVOffscreen::VVOffscreen(VVDevice &vv_device, VkExtent2D extent, VkDescriptorSetLayout global_descriptorset_layout) : vv_device(vv_device), global_layout(global_descriptorset_layout)
+    VVOffscreen::VVOffscreen(VVDevice *vv_device, VkExtent2D extent, VkRenderPass renderPass)
+        : extent(extent), offscreenRenderPass(renderPass)
     {
-        window_size = extent;
-        createOffscreenRenderPass(VK_FORMAT_B8G8R8A8_UNORM, offscreenRenderPass);
-        framebuffer = VVFramebuffer(&vv_device, offscreenRenderPass, VK_FORMAT_B8G8R8A8_UNORM, extent.width, extent.height);
-        SetupImages(&vv_device);
-
-                assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
-        PipelineConfigInfo pipelineConfig{};
-        VVPipeline::defaultPipelineConfigInfo(pipelineConfig);
-        pipelineConfig.renderPass = offscreenRenderPass;
-        pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VVPipeline>(vv_device, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
-
-
-        VkCommandBufferAllocateInfo allocInfo{};
-        allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-        allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-        allocInfo.commandPool = vv_device.getCommandPool();
-        allocInfo.commandBufferCount = 1;
-
-        if (vkAllocateCommandBuffers(vv_device.device(), &allocInfo, &command_buffer) != VK_SUCCESS)
-        {
-            VV_CORE_ERROR("Failed to allocate command buffers");
-            throw std::runtime_error("Failed to create commandbuffers");
-        }
+        vvDevice = vv_device;
+        device = vvDevice->device();
+        physicalDevice = vvDevice->getPhysicalDevice();
+        CreateOffscreenResources();
     }
 
-    VkCommandBuffer VVOffscreen::BeginFrame()
+    VVOffscreen::~VVOffscreen()
     {
-
-        VkCommandBufferBeginInfo beginInfo{};
-        beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-        if (vkBeginCommandBuffer(command_buffer, &beginInfo) != VK_SUCCESS)
-        {
-            VV_CORE_ERROR("Failed to begin recording command buffer!");
-            throw std::runtime_error("Failed to begin recording command buffer!");
-        }
-
-        VkRenderPassBeginInfo renderPassInfo = {};
-        renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-        renderPassInfo.renderPass = offscreenRenderPass;
-        renderPassInfo.framebuffer = framebuffer.GetFrameBuffer();
-        renderPassInfo.renderArea.offset = {0, 0};
-        renderPassInfo.renderArea.extent = window_size;
-
-        VkClearValue clearColor = {{0.0f, 0.0f, 0.0f, 1.0f}};
-        VkClearValue clearDepth = {1.0f, 0};
-        VkClearValue clearValues[2] = {clearColor, clearDepth};
-
-        renderPassInfo.clearValueCount = 2;
-        renderPassInfo.pClearValues = clearValues;
-
-        vkCmdBeginRenderPass(command_buffer, &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
-
-        VkViewport viewport{};
-        viewport.x = 0.0f;
-        viewport.y = 0.0f;
-        viewport.width = window_size.width;
-        viewport.height = window_size.height;
-        viewport.minDepth = 0.0f;
-        viewport.maxDepth = 1.0f;
-        VkRect2D scissor{{0, 0}, window_size};
-        vkCmdSetViewport(command_buffer, 0, 1, &viewport);
-        vkCmdSetScissor(command_buffer, 0, 1, &scissor);
-
-        vkCmdBindDescriptorSets(command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &descriptorSet, 0, nullptr);
-
-        is_frame_started = true;
-        //pipeline->Bind(command_buffer);
-
-
-        return command_buffer;
+        vkDestroySampler(device, offscreenSampler, nullptr);
+        vkDestroyImageView(device, offscreenImageView, nullptr);
+        vkDestroyImage(device, offscreenImage, nullptr);
+        vkFreeMemory(device, offscreenImageMemory, nullptr);
+        vkDestroyFramebuffer(device, offscreenFramebuffer, nullptr);
     }
 
-    void VVOffscreen::EndFrame()
+    void VVOffscreen::Initialize(VkDescriptorPool descriptorPool)
     {
-        vkCmdEndRenderPass(command_buffer);
+        // Allocate and setup ImGui descriptor set for the offscreen image
+        VkDescriptorSetLayoutBinding layoutBinding = {};
+        layoutBinding.binding = 0;
+        layoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        layoutBinding.descriptorCount = 1;
+        layoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
 
-        // End command buffer
-        if (vkEndCommandBuffer(command_buffer) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to record command buffer!");
-        }
+        VkDescriptorSetLayoutCreateInfo layoutInfo = {};
+        layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
+        layoutInfo.bindingCount = 1;
+        layoutInfo.pBindings = &layoutBinding;
 
-        // Submit command buffer
-        VkSubmitInfo submitInfo = {};
-        submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
-        submitInfo.commandBufferCount = 1;
-        submitInfo.pCommandBuffers = &command_buffer;
+        VkDescriptorSetLayout descriptorSetLayout;
+        vkCreateDescriptorSetLayout(device, &layoutInfo, nullptr, &descriptorSetLayout);
 
-        if (vkQueueSubmit(vv_device.graphicsQueue(), 1, &submitInfo, VK_NULL_HANDLE) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to submit draw command buffer!");
-        }
+        VkDescriptorSetAllocateInfo allocInfo = {};
+        allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+        allocInfo.descriptorPool = descriptorPool;
+        allocInfo.descriptorSetCount = 1;
+        allocInfo.pSetLayouts = &descriptorSetLayout;
 
-        vkQueueWaitIdle(vv_device.graphicsQueue());
-        is_frame_started = false;
-        frame_index = (frame_index + 1) % VVSwapChain::MAX_FRAMES_IN_FLIGHT;
+        vkAllocateDescriptorSets(device, &allocInfo, &imguiDescriptorSet);
+        vkDestroyDescriptorSetLayout(device, descriptorSetLayout, nullptr);
+
+        SetupImGuiTexture(imguiDescriptorSet);
     }
 
-    void VVOffscreen::SetupImages(VVDevice *vv_device)
+    void VVOffscreen::CreateOffscreenResources()
     {
-        auto offscreen_des_layout = VVDescriptorSetLayout::Builder(*vv_device)
-                                        .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
-                                        .addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
-                                        .build();
+        // Create the offscreen image
+        VkImageCreateInfo imageInfo = {};
+        imageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+        imageInfo.imageType = VK_IMAGE_TYPE_2D;
+        imageInfo.format = VK_FORMAT_B8G8R8A8_UNORM;
+        imageInfo.extent.width = extent.width;
+        imageInfo.extent.height = extent.height;
+        imageInfo.extent.depth = 1;
+        imageInfo.mipLevels = 1;
+        imageInfo.arrayLayers = 1;
+        imageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
+        imageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
+        imageInfo.usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT;
+        imageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 
-        // VkDescriptorSetLayoutBinding samplerLayoutBinding = {};
-        // samplerLayoutBinding.binding = 0;
-        // samplerLayoutBinding.descriptorCount = 1;
-        // samplerLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        // samplerLayoutBinding.pImmutableSamplers = nullptr;
-        // samplerLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+        vkCreateImage(device, &imageInfo, nullptr, &offscreenImage);
 
-        // VkDescriptorSetLayoutBinding colorLayoutBinding = {};
-        // colorLayoutBinding.binding = 1;
-        // colorLayoutBinding.descriptorCount = 1;
-        // colorLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        // colorLayoutBinding.pImmutableSamplers = nullptr;
-        // colorLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+        VkMemoryRequirements memRequirements;
+        vkGetImageMemoryRequirements(device, offscreenImage, &memRequirements);
 
-        // VkDescriptorSetLayoutBinding bindings[] = {samplerLayoutBinding, colorLayoutBinding};
+        VkMemoryAllocateInfo allocInfo = {};
+        allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+        allocInfo.allocationSize = memRequirements.size;
+        allocInfo.memoryTypeIndex = FindMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        // VkDescriptorSetLayoutCreateInfo layoutInfo = {};
-        // layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-        // layoutInfo.bindingCount = 2;
-        // layoutInfo.pBindings = bindings;
+        vkAllocateMemory(device, &allocInfo, nullptr, &offscreenImageMemory);
+        vkBindImageMemory(device, offscreenImage, offscreenImageMemory, 0);
 
-        // if (vkCreateDescriptorSetLayout(vv_device->device(), &layoutInfo, nullptr, &descriptorSetLayout) != VK_SUCCESS)
-        // {
-        //     throw std::runtime_error("failed to create descriptor set layout!");
-        // }
+        // Create the image view for the offscreen image
+        VkImageViewCreateInfo imageViewInfo = {};
+        imageViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+        imageViewInfo.image = offscreenImage;
+        imageViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+        imageViewInfo.format = imageInfo.format;
+        imageViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+        imageViewInfo.subresourceRange.baseMipLevel = 0;
+        imageViewInfo.subresourceRange.levelCount = 1;
+        imageViewInfo.subresourceRange.baseArrayLayer = 0;
+        imageViewInfo.subresourceRange.layerCount = 1;
 
-        auto offscreen_des_pool = VVDescriptorPool::Builder(*vv_device)
-                                      .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 0)
-                                      .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1)
-                                      .setMaxSets(1)
-                                      .setPoolFlags(VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO)
-                                      .build();
+        vkCreateImageView(device, &imageViewInfo, nullptr, &offscreenImageView);
 
-        // VkDescriptorPoolSize poolSizes[2] = {};
-        // poolSizes[0].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        // poolSizes[0].descriptorCount = 1;
-        // poolSizes[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        // poolSizes[1].descriptorCount = 1;
-
-        // VkDescriptorPoolCreateInfo poolInfo = {};
-        // poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
-        // poolInfo.poolSizeCount = 2;
-        // poolInfo.pPoolSizes = poolSizes;
-        // poolInfo.maxSets = 1;
-
-        // if (vkCreateDescriptorPool(vv_device->device(), &poolInfo, nullptr, &descriptorPool) != VK_SUCCESS)
-        // {
-        //     throw std::runtime_error("failed to create descriptor pool!");
-        // }
-
-        // VkDescriptorSetAllocateInfo allocInfo = {};
-        // allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
-        // allocInfo.descriptorPool = descriptorPool;
-        // allocInfo.descriptorSetCount = 1;
-        // allocInfo.pSetLayouts = &descriptorSetLayout;
-
-        // if (vkAllocateDescriptorSets(vv_device->device(), &allocInfo, &descriptorSet) != VK_SUCCESS)
-        // {
-        //     throw std::runtime_error("failed to allocate descriptor set!");
-        // }
+        // Create a sampler for the offscreen image
         VkSamplerCreateInfo samplerInfo = {};
         samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
         samplerInfo.magFilter = VK_FILTER_LINEAR;
         samplerInfo.minFilter = VK_FILTER_LINEAR;
-        samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT;
-        samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT;
-        samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT;
-        samplerInfo.anisotropyEnable = VK_TRUE;
-        samplerInfo.maxAnisotropy = 16;
+        samplerInfo.addressModeU = VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE;
+        samplerInfo.addressModeV = VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE;
+        samplerInfo.addressModeW = VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE;
+        samplerInfo.anisotropyEnable = VK_FALSE;
+        samplerInfo.maxAnisotropy = 1.0f;
         samplerInfo.borderColor = VK_BORDER_COLOR_INT_OPAQUE_BLACK;
         samplerInfo.unnormalizedCoordinates = VK_FALSE;
         samplerInfo.compareEnable = VK_FALSE;
         samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
         samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
-        samplerInfo.mipLodBias = 0.0f;
-        samplerInfo.minLod = 0.0f;
-        samplerInfo.maxLod = 0.0f;
 
-        if (vkCreateSampler(vv_device->device(), &samplerInfo, nullptr, &textureSampler) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to create texture sampler!");
-        }
-        VkDescriptorImageInfo colorImageInfo = {};
-        colorImageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-        colorImageInfo.imageView = framebuffer.GetColorImageView();
-        colorImageInfo.sampler = textureSampler;
-
-        VkDescriptorImageInfo depthImageInfo = {};
-        depthImageInfo.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-        depthImageInfo.imageView = framebuffer.GetDepthImageView();
-        depthImageInfo.sampler = textureSampler;
-
-        // VkWriteDescriptorSet descriptorWrites[2] = {};
-
-        // descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        // descriptorWrites[0].dstSet = descriptorSet;
-        // descriptorWrites[0].dstBinding = 0;
-        // descriptorWrites[0].dstArrayElement = 0;
-        // descriptorWrites[0].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        // descriptorWrites[0].descriptorCount = 1;
-        // descriptorWrites[0].pImageInfo = &colorImageInfo;
-
-        // descriptorWrites[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        // descriptorWrites[1].dstSet = descriptorSet;
-        // descriptorWrites[1].dstBinding = 1;
-        // descriptorWrites[1].dstArrayElement = 0;
-        // descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        // descriptorWrites[1].descriptorCount = 1;
-        // descriptorWrites[1].pImageInfo = &depthImageInfo;
-
-        // vkUpdateDescriptorSets(vv_device->device(), 2, descriptorWrites, 0, nullptr);
-        VVDescriptorWriter(*offscreen_des_layout, *offscreen_des_pool)
-            .writeImage(0, &colorImageInfo)
-            .writeImage(1, &depthImageInfo)
-            .build(descriptorSet);
-
-        std::array<VkDescriptorSetLayout, 2> descriptorSetLayouts = {offscreen_des_layout->getDescriptorSetLayout(), global_layout};
+        vkCreateSampler(device, &samplerInfo, nullptr, &offscreenSampler);
         
-        VkPushConstantRange pushConstantRange{};
-        pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
-        pushConstantRange.offset = 0;
-        pushConstantRange.size = sizeof(SimplePushConstantData);
 
-        VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
-        pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-        pipelineLayoutInfo.setLayoutCount = static_cast<uint32_t>(descriptorSetLayouts.size());
-        pipelineLayoutInfo.pSetLayouts = descriptorSetLayouts.data();
-        pipelineLayoutInfo.pushConstantRangeCount = 1;
-        pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
+        VkImageCreateInfo depthImageInfo = {};
+        depthImageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+        depthImageInfo.imageType = VK_IMAGE_TYPE_2D;
+        depthImageInfo.format = findDepthFormat_offscreen(vvDevice);
+        depthImageInfo.extent = {extent.width, extent.height, 1};
+        depthImageInfo.mipLevels = 1;
+        depthImageInfo.arrayLayers = 1;
+        depthImageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
+        depthImageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
+        depthImageInfo.usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT;
+        depthImageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 
-        if (vkCreatePipelineLayout(vv_device->device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to create pipeline layout!");
-        }
+        vkCreateImage(device, &depthImageInfo, nullptr, &depthImage);
+
+        vkGetImageMemoryRequirements(device, depthImage, &memRequirements);
+        allocInfo = {};
+        allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
+        allocInfo.allocationSize = memRequirements.size;
+        allocInfo.memoryTypeIndex = FindMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+
+        vkAllocateMemory(device, &allocInfo, nullptr, &depthImageMemory);
+        vkBindImageMemory(device, depthImage, depthImageMemory, 0);
+
+        VkImageViewCreateInfo depthViewInfo = {};
+        depthViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+        depthViewInfo.image = depthImage;
+        depthViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+        depthViewInfo.format = findDepthFormat_offscreen(vvDevice);
+        depthViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
+        depthViewInfo.subresourceRange.baseMipLevel = 0;
+        depthViewInfo.subresourceRange.levelCount = 1;
+        depthViewInfo.subresourceRange.baseArrayLayer = 0;
+        depthViewInfo.subresourceRange.layerCount = 1;
+
+        vkCreateImageView(device, &depthViewInfo, nullptr, &depthImageView);
+
+        std::array<VkImageView, 2> attachments = {offscreenImageView, depthImageView};
+
+        VkFramebufferCreateInfo framebufferInfo = {};
+        framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+        framebufferInfo.renderPass = offscreenRenderPass;
+        framebufferInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
+        framebufferInfo.pAttachments = attachments.data();
+        framebufferInfo.width = extent.width;
+        framebufferInfo.height = extent.height;
+        framebufferInfo.layers = 1;
+
+        vkCreateFramebuffer(device, &framebufferInfo, nullptr, &offscreenFramebuffer);
     }
 
-    void VVOffscreen::createOffscreenRenderPass(VkFormat colorFormat, VkRenderPass &offscreenRenderPass)
+    void VVOffscreen::SetupImGuiTexture(VkDescriptorSet imguiDescriptorSet)
     {
-        // Color attachment description
-        VkAttachmentDescription colorAttachment = {};
-        colorAttachment.format = colorFormat;
-        colorAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
-        colorAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
-        colorAttachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
-        colorAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-        colorAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-        colorAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-        colorAttachment.finalLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+        //VkDescriptorImageInfo imageInfoForImGui = {};
+        imageInfoForImGui.imageView = offscreenImageView;
+        imageInfoForImGui.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+        imageInfoForImGui.sampler = offscreenSampler;
 
-        VkAttachmentReference colorAttachmentRef = {};
-        colorAttachmentRef.attachment = 0;
-        colorAttachmentRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+        VkWriteDescriptorSet descriptorWrite = {};
+        descriptorWrite.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+        descriptorWrite.dstSet = imguiDescriptorSet;
+        descriptorWrite.dstBinding = 1;
+        descriptorWrite.dstArrayElement = 0;
+        descriptorWrite.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+        descriptorWrite.descriptorCount = VVSwapChain::MAX_FRAMES_IN_FLIGHT;
+        descriptorWrite.pImageInfo = &imageInfoForImGui;
 
-        // Depth attachment (optional, if you need depth testing in offscreen rendering)
-        VkAttachmentDescription depthAttachment = {};
-        depthAttachment.format = vv_device.findSupportedFormat({VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},
-                                                               VK_IMAGE_TILING_OPTIMAL,
-                                                               VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
-        depthAttachment.samples = VK_SAMPLE_COUNT_1_BIT;
-        depthAttachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
-        depthAttachment.storeOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-        depthAttachment.stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE;
-        depthAttachment.stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE;
-        depthAttachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
-        depthAttachment.finalLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
-
-        VkAttachmentReference depthAttachmentRef = {};
-        depthAttachmentRef.attachment = 1;
-        depthAttachmentRef.layout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
-
-        // Subpass description
-        VkSubpassDescription subpass = {};
-        subpass.pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS;
-        subpass.colorAttachmentCount = 1;
-        subpass.pColorAttachments = &colorAttachmentRef;
-        subpass.pDepthStencilAttachment = &depthAttachmentRef; // Optional
-
-        // Subpass dependency
-        VkSubpassDependency dependency = {};
-        dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
-        dependency.srcAccessMask = 0;
-        dependency.srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
-        dependency.dstSubpass = 0;
-        dependency.dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT | VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT;
-        dependency.dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT | VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT;
-
-        std::array<VkAttachmentDescription, 2> attachments = {colorAttachment, depthAttachment};
-        VkRenderPassCreateInfo renderPassInfo = {};
-        renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
-        renderPassInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
-        renderPassInfo.pAttachments = attachments.data();
-        renderPassInfo.subpassCount = 1;
-        renderPassInfo.pSubpasses = &subpass;
-        renderPassInfo.dependencyCount = 1;
-        renderPassInfo.pDependencies = &dependency;
-
-        if (vkCreateRenderPass(vv_device.device(), &renderPassInfo, nullptr, &offscreenRenderPass) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to create offscreen render pass!");
-        }
+        vkUpdateDescriptorSets(device, 1, &descriptorWrite, 0, nullptr);
     }
-    void VVOffscreen::transitionImageLayout(VkCommandPool commandPool, VkQueue graphicsQueue,
-                                            VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout)
+
+    void VVOffscreen::StartFrame(VkCommandBuffer commandBuffer)
     {
-        VkCommandBuffer commandBuffer;
+        VkRenderPassBeginInfo renderPassInfo = {};
+        renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+        renderPassInfo.renderPass = offscreenRenderPass;
+        renderPassInfo.framebuffer = offscreenFramebuffer;
+        renderPassInfo.renderArea.extent = extent;
+        VkClearValue clearColor = {{0.0f, 0.0f, 0.0f, 1.0f}};
+        renderPassInfo.clearValueCount = 1;
+        renderPassInfo.pClearValues = &clearColor;
 
-        VkCommandBufferAllocateInfo allocInfo = {};
-        allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
-        allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
-        allocInfo.commandPool = commandPool;
-        allocInfo.commandBufferCount = 1;
+        vkCmdBeginRenderPass(commandBuffer, &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
 
-        if (vkAllocateCommandBuffers(vv_device.device(), &allocInfo, &commandBuffer) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to allocate command buffer!");
-        }
-
-        VkCommandBufferBeginInfo beginInfo = {};
-        beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
-        beginInfo.flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
-
-        if (vkBeginCommandBuffer(commandBuffer, &beginInfo) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to begin command buffer!");
-        }
+        // vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline);
+        // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+        //                         pipelineLayout, 0, descriptorSets.size(), descriptorSets.data(), 0, nullptr);
+    }
+    void VVOffscreen::StopFrame(VkCommandBuffer commandBuffer)
+    {
+        vkCmdEndRenderPass(commandBuffer);
 
         VkImageMemoryBarrier barrier = {};
         barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
-        barrier.oldLayout = oldLayout;
-        barrier.newLayout = newLayout;
+        barrier.oldLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
+        barrier.newLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
         barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
         barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
-        barrier.image = image;
+        barrier.image = offscreenImage;
         barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
         barrier.subresourceRange.baseMipLevel = 0;
         barrier.subresourceRange.levelCount = 1;
         barrier.subresourceRange.baseArrayLayer = 0;
         barrier.subresourceRange.layerCount = 1;
-
-        VkPipelineStageFlags sourceStage;
-        VkPipelineStageFlags destinationStage;
-
-        if (oldLayout == VK_IMAGE_LAYOUT_UNDEFINED && newLayout == VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL)
-        {
-            barrier.srcAccessMask = 0;
-            barrier.dstAccessMask = VK_ACCESS_TRANSFER_WRITE_BIT;
-
-            sourceStage = VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT;
-            destinationStage = VK_PIPELINE_STAGE_TRANSFER_BIT;
-        }
-        else if (oldLayout == VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL && newLayout == VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL)
-        {
-            barrier.srcAccessMask = VK_ACCESS_TRANSFER_WRITE_BIT;
-            barrier.dstAccessMask = VK_ACCESS_SHADER_READ_BIT;
-
-            sourceStage = VK_PIPELINE_STAGE_TRANSFER_BIT;
-            destinationStage = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT;
-        }
-        else if (oldLayout == VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL && newLayout == VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL)
-        {
-            barrier.srcAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
-            barrier.dstAccessMask = VK_ACCESS_SHADER_READ_BIT;
-
-            sourceStage = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
-            destinationStage = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT;
-        }
-        else
-        {
-            throw std::invalid_argument("unsupported layout transition!");
-        }
+        barrier.srcAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
+        barrier.dstAccessMask = VK_ACCESS_SHADER_READ_BIT;
 
         vkCmdPipelineBarrier(
             commandBuffer,
-            sourceStage, destinationStage,
+            VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT,
+            VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT,
             0,
             0, nullptr,
             0, nullptr,
             1, &barrier);
+    }
+     VkFormat VVOffscreen::findDepthFormat_offscreen(VVDevice *device)
+    {
+        return device->findSupportedFormat(
+            {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},
+            VK_IMAGE_TILING_OPTIMAL,
+            VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
+    }
+    uint32_t VVOffscreen::FindMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties)
+    {
+        VkPhysicalDeviceMemoryProperties memProperties;
+        vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memProperties);
 
-        if (vkEndCommandBuffer(commandBuffer) != VK_SUCCESS)
+        for (uint32_t i = 0; i < memProperties.memoryTypeCount; i++)
         {
-            throw std::runtime_error("failed to record command buffer!");
+            if ((typeFilter & (1 << i)) && (memProperties.memoryTypes[i].propertyFlags & properties) == properties)
+            {
+                return i;
+            }
         }
 
-        VkSubmitInfo submitInfo = {};
-        submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
-        submitInfo.commandBufferCount = 1;
-        submitInfo.pCommandBuffers = &commandBuffer;
-
-        if (vkQueueSubmit(graphicsQueue, 1, &submitInfo, VK_NULL_HANDLE) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to submit command buffer!");
-        }
-
-        vkQueueWaitIdle(graphicsQueue);
-
-        vkFreeCommandBuffers(vv_device.device(), commandPool, 1, &commandBuffer);
+        throw std::runtime_error("failed to find suitable memory type!");
     }
 
 }

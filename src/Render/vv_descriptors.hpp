@@ -36,7 +36,7 @@ namespace VectorVertex
         VVDescriptorSetLayout(const VVDescriptorSetLayout &) = delete;
         VVDescriptorSetLayout &operator=(const VVDescriptorSetLayout &) = delete;
 
-        VkDescriptorSetLayout getDescriptorSetLayout() const { return descriptorSetLayout; }
+        VkDescriptorSetLayout getDescriptorSetLayout()  { return descriptorSetLayout; }
 
     private:
         VVDevice &vvDevice;
@@ -81,6 +81,8 @@ namespace VectorVertex
         void freeDescriptors(std::vector<VkDescriptorSet> &descriptors) const;
 
         void resetPool();
+
+        VkDescriptorPool getPool() {return descriptorPool;}
 
     private:
         VVDevice &vvDevice;

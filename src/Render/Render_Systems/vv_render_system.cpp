@@ -8,7 +8,13 @@ namespace VectorVertex
     {
         CreatePipelineLayout(global_set_layout);
         CreatePipeline(renderPass);
-        //texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
+        // texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
+    }
+    LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout[]) : vvDevice{device}
+    {
+        CreatePipelineLayout(global_set_layout);
+        CreatePipeline(renderPass);
+        // texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
     }
 
     LveRenderSystem::~LveRenderSystem()
@@ -16,18 +22,45 @@ namespace VectorVertex
         vkDestroyPipelineLayout(vvDevice.device(), pipelineLayout, nullptr);
     }
 
-    void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout global_set_layout)
+    void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout des_set_layout)
     {
+       
+
         VkPushConstantRange pushConstantRange{};
         pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
         pushConstantRange.offset = 0;
         pushConstantRange.size = sizeof(SimplePushConstantData);
 
-        std::vector<VkDescriptorSetLayout> descriptor_set_layouts{global_set_layout};
+        // std::vector<VkDescriptorSetLayout> descriptor_set_layouts{global_set_layout};
+
         VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
         pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-        pipelineLayoutInfo.setLayoutCount = static_cast<uint32_t>(descriptor_set_layouts.size());
-        pipelineLayoutInfo.pSetLayouts = descriptor_set_layouts.data();
+        pipelineLayoutInfo.setLayoutCount = 1;
+        pipelineLayoutInfo.pSetLayouts = &des_set_layout;
+        pipelineLayoutInfo.pushConstantRangeCount = 1;
+        pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
+
+        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        {
+            throw std::runtime_error("Failed to create pipeline layout!");
+        }
+    }
+
+    void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout des_set_layout[])
+    {
+       
+
+        VkPushConstantRange pushConstantRange{};
+        pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+        pushConstantRange.offset = 0;
+        pushConstantRange.size = sizeof(SimplePushConstantData);
+
+        // std::vector<VkDescriptorSetLayout> descriptor_set_layouts{global_set_layout};
+
+        VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
+        pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+        pipelineLayoutInfo.setLayoutCount = sizeof(des_set_layout) / sizeof(des_set_layout[1]);
+        pipelineLayoutInfo.pSetLayouts = des_set_layout;
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
@@ -50,7 +83,7 @@ namespace VectorVertex
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info)
     {
         pipeline->Bind(frame_info.command_buffer);
-    
+
         for (auto &kv : frame_info.game_objects)
         {
             auto &obj = kv.second;
@@ -59,9 +92,12 @@ namespace VectorVertex
             SimplePushConstantData push{};
             push.modelMatrix = obj.transform.mat4();
             push.normalMatrix = obj.transform.normalMatrix();
-            if(obj.material_id > -1.0f){
-            push.materialData = VVMaterialLibrary::getMaterial(obj.material_id).m_MaterialData;
-            }else{
+            if (obj.material_id > -1.0f)
+            {
+                push.materialData = VVMaterialLibrary::getMaterial(obj.material_id).m_MaterialData;
+            }
+            else
+            {
                 VV_CORE_WARN("Material id {} not found on object: {}", obj.material_id, obj.getId());
                 push.materialData = MaterialData{glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)};
             }

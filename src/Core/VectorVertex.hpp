@@ -57,8 +57,7 @@ namespace VectorVertex
 
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};
-        VVRenderer renderer{vvWindow, vvDevice};    
-
+        VVRenderer renderer{vvWindow, vvDevice};
         EditorLayer* editor_layer;
 
 
@@ -66,6 +65,6 @@ namespace VectorVertex
         //VVMaterialLibrary materials{};
         Scope<VVDescriptorPool> global_pool{};
         VVGameObject::Map gameObjects;
-        
+    
     };
 } // namespace VectorVertex

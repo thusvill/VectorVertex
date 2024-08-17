@@ -52,8 +52,6 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
     //VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
     ImGui::End();
 
-    ImTextureID offscreenTextureID = (ImTextureID)sceneImageView;
-
     // Inside your ImGui rendering loop
     ImGui::Begin("Offscreen Image Window");
 
@@ -67,7 +65,7 @@ void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
         is_viewport_resized = true;
     }
     // Display the offscreen image
-    ImGui::Image(sceneTexture, windowSize);
+    ImGui::Image(sceneImageView, windowSize);
 
     ImGui::End();
 

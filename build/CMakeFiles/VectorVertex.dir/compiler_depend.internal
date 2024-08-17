@@ -10,12 +10,10 @@ CMakeFiles/VectorVertex.dir/main.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp
@@ -247,6 +245,7 @@ CMakeFiles/VectorVertex.dir/main.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h
  /usr/include/GLFW/glfw3.h
@@ -3457,12 +3456,10 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_frame_info.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_model.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp
@@ -3694,6 +3691,7 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /usr/include/GL/gl.h
  /usr/include/GL/glext.h
  /usr/include/GLFW/glfw3.h
@@ -12139,7 +12137,6 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_offscreen.hpp
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp
  /usr/include/GL/gl.h
