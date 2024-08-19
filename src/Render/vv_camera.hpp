@@ -17,7 +17,7 @@ namespace VectorVertex
         void SetViewYXZ(glm::vec3 position, glm::vec3 rotation);
         void Resize(VkExtent2D new_size)
         {
-            float aspect = static_cast<float>(new_size.width) / static_cast<float>(new_size.height);
+            aspect = static_cast<float>(new_size.width) / static_cast<float>(new_size.height);
             SetPerspectiveProjection(fov, aspect, near, far);
             VV_CORE_INFO("Camera Resized!");
         }

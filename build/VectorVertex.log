@@ -1,624 +1,249 @@
-[18:45:35] [info] VV-CORE: DEBUGGING STARTED!
-[18:45:35] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
-[18:45:35] [warning] VV-CORE: Application is Started!
-[18:45:35] [warning] VV-CORE: Initializing ...
-[18:45:35] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[18:45:35] [info] VV-CORE: [Layer]:EditorLayer Created!
-[18:45:35] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[18:45:35] [warning] VV-CORE: Initialized!
-[18:45:35] [info] VV-CORE: Created Material: default ID: 0
-[18:45:35] [info] VV-CORE: Initialized Material Library
-[18:45:35] [warning] VV-CORE: Loading Gameobjects ...
-[18:45:35] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj
-[18:45:35] [info] VV-CORE: Created Material: supra_body ID: 1
-[18:45:35] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
-[18:45:35] [warning] VV-CORE: Gameobjects Loaded!
-[18:45:35] [info] VV-CORE: Creating render systems...
-[18:45:35] [info] VV-CORE: Created render systems!
-[18:45:35] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:37] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:38] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:39] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:40] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:41] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:42] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:43] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:44] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:46] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00944 ] | MessageID = 0x8869da08 | vkCreateImage(): pCreateInfo->extent.width is zero. The Vulkan spec states: extent.width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00944)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00945 ] | MessageID = 0xeaa98d2c | vkCreateImage(): pCreateInfo->extent.height is zero. The Vulkan spec states: extent.height must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00945)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00944 ] | MessageID = 0x8869da08 | vkCreateImage(): pCreateInfo->extent.width is zero. The Vulkan spec states: extent.width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00944)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00945 ] | MessageID = 0xeaa98d2c | vkCreateImage(): pCreateInfo->extent.height is zero. The Vulkan spec states: extent.height must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00945)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkFramebufferCreateInfo-width-00885 ] | MessageID = 0xb6981526 | vkCreateFramebuffer(): pCreateInfo->width is zero. The Vulkan spec states: width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkFramebufferCreateInfo-width-00885)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkFramebufferCreateInfo-height-00887 ] | MessageID = 0xa5ca7bc3 | vkCreateFramebuffer(): pCreateInfo->height is zero. The Vulkan spec states: height must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkFramebufferCreateInfo-height-00887)
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkRenderPassBeginInfo-None-08996 ] Object 0: handle = 0x5fb1b9bc95e0, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0x591f1bd6 | vkCmdBeginRenderPass(): pRenderPassBegin->renderArea.extent.width is zero. The Vulkan spec states: If the pNext chain does not contain VkDeviceGroupRenderPassBeginInfo or its deviceRenderAreaCount member is equal to 0, renderArea.extent.width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkRenderPassBeginInfo-None-08996)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkViewport-width-01770 ] Object 0: handle = 0x5fb1b9bc95e0, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0xa4164ba5 | vkCmdSetViewport(): pViewports[0].width (0.000000) is not greater than 0.0. The Vulkan spec states: width must be greater than 0.0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkViewport-width-01770)
-[18:45:47] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkViewport-apiVersion-07917 ] Object 0: handle = 0x5fb1b9bc95e0, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0x2391ffb2 | vkCmdSetViewport(): pViewports[0].height (0.000000) is not greater 0.0. The Vulkan spec states: If the VK_KHR_maintenance1 extension is not enabled, the VK_AMD_negative_viewport_height extension is not enabled, and VkPhysicalDeviceProperties::apiVersion is less than Vulkan 1.1, height must be greater than 0.0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkViewport-apiVersion-07917)
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:47] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00944 ] | MessageID = 0x8869da08 | vkCreateImage(): pCreateInfo->extent.width is zero. The Vulkan spec states: extent.width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00944)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00945 ] | MessageID = 0xeaa98d2c | vkCreateImage(): pCreateInfo->extent.height is zero. The Vulkan spec states: extent.height must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00945)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00944 ] | MessageID = 0x8869da08 | vkCreateImage(): pCreateInfo->extent.width is zero. The Vulkan spec states: extent.width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00944)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkImageCreateInfo-extent-00945 ] | MessageID = 0xeaa98d2c | vkCreateImage(): pCreateInfo->extent.height is zero. The Vulkan spec states: extent.height must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkImageCreateInfo-extent-00945)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkFramebufferCreateInfo-width-00885 ] | MessageID = 0xb6981526 | vkCreateFramebuffer(): pCreateInfo->width is zero. The Vulkan spec states: width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkFramebufferCreateInfo-width-00885)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkFramebufferCreateInfo-height-00887 ] | MessageID = 0xa5ca7bc3 | vkCreateFramebuffer(): pCreateInfo->height is zero. The Vulkan spec states: height must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkFramebufferCreateInfo-height-00887)
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkRenderPassBeginInfo-None-08996 ] Object 0: handle = 0x5fb1b9bcb800, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0x591f1bd6 | vkCmdBeginRenderPass(): pRenderPassBegin->renderArea.extent.width is zero. The Vulkan spec states: If the pNext chain does not contain VkDeviceGroupRenderPassBeginInfo or its deviceRenderAreaCount member is equal to 0, renderArea.extent.width must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkRenderPassBeginInfo-None-08996)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkViewport-width-01770 ] Object 0: handle = 0x5fb1b9bcb800, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0xa4164ba5 | vkCmdSetViewport(): pViewports[0].width (0.000000) is not greater than 0.0. The Vulkan spec states: width must be greater than 0.0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkViewport-width-01770)
-[18:45:50] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkViewport-apiVersion-07917 ] Object 0: handle = 0x5fb1b9bcb800, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0x2391ffb2 | vkCmdSetViewport(): pViewports[0].height (0.000000) is not greater 0.0. The Vulkan spec states: If the VK_KHR_maintenance1 extension is not enabled, the VK_AMD_negative_viewport_height extension is not enabled, and VkPhysicalDeviceProperties::apiVersion is less than Vulkan 1.1, height must be greater than 0.0 (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-VkViewport-apiVersion-07917)
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:50] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:51] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:53] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:54] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:55] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:58] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:45:59] [info] VV-CORE: Recreated Offscreen!
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroySampler-sampler-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0xdd9fa550 | vkDestroySampler(): sampler Invalid VkSampler Object 0x4000000042. The Vulkan spec states: If sampler is not VK_NULL_HANDLE, sampler must be a valid VkSampler handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroySampler-sampler-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000042, type = VK_OBJECT_TYPE_SAMPLER; | MessageID = 0x5d6b67e2 | vkDestroySampler():  Couldn't find VkSampler Object 0x4000000042. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000042, type = VK_OBJECT_TYPE_SAMPLER; | MessageID = 0x5d6b67e2 | vkDestroySampler():  Couldn't find VkSampler Object 0x4000000042. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDescriptorSetLayout-descriptorSetLayout-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x78f350ea | vkDestroyDescriptorSetLayout(): descriptorSetLayout Invalid VkDescriptorSetLayout Object 0x800000000000000e. The Vulkan spec states: If descriptorSetLayout is not VK_NULL_HANDLE, descriptorSetLayout must be a valid VkDescriptorSetLayout handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDescriptorSetLayout-descriptorSetLayout-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x800000000000000e, type = VK_OBJECT_TYPE_DESCRIPTOR_SET_LAYOUT; | MessageID = 0x5d6b67e2 | vkDestroyDescriptorSetLayout():  Couldn't find VkDescriptorSetLayout Object 0x800000000000000e. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x800000000000000e, type = VK_OBJECT_TYPE_DESCRIPTOR_SET_LAYOUT; | MessageID = 0x5d6b67e2 | vkDestroyDescriptorSetLayout():  Couldn't find VkDescriptorSetLayout Object 0x800000000000000e. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyFramebuffer-framebuffer-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x898714db | vkDestroyFramebuffer(): framebuffer Invalid VkFramebuffer Object 0xc1dd133899627f00. The Vulkan spec states: If framebuffer is not VK_NULL_HANDLE, framebuffer must be a valid VkFramebuffer handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyFramebuffer-framebuffer-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0xc1dd133899627f00, type = VK_OBJECT_TYPE_FRAMEBUFFER; | MessageID = 0x5d6b67e2 | vkDestroyFramebuffer():  Couldn't find VkFramebuffer Object 0xc1dd133899627f00. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0xc1dd133899627f00, type = VK_OBJECT_TYPE_FRAMEBUFFER; | MessageID = 0x5d6b67e2 | vkDestroyFramebuffer():  Couldn't find VkFramebuffer Object 0xc1dd133899627f00. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyRenderPass-renderPass-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x93228619 | vkDestroyRenderPass(): renderPass Invalid VkRenderPass Object 0x10. The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, renderPass must be a valid VkRenderPass handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyRenderPass-renderPass-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x10, type = VK_OBJECT_TYPE_RENDER_PASS; | MessageID = 0x5d6b67e2 | vkDestroyRenderPass():  Couldn't find VkRenderPass Object 0x10. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x10, type = VK_OBJECT_TYPE_RENDER_PASS; | MessageID = 0x5d6b67e2 | vkDestroyRenderPass():  Couldn't find VkRenderPass Object 0x10. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyImageView-imageView-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0xe0208096 | vkDestroyImageView(): imageView Invalid VkImageView Object 0x7ffdd52b2c50. The Vulkan spec states: If imageView is not VK_NULL_HANDLE, imageView must be a valid VkImageView handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyImageView-imageView-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x7ffdd52b2c50, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x5d6b67e2 | vkDestroyImageView():  Couldn't find VkImageView Object 0x7ffdd52b2c50. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x7ffdd52b2c50, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x5d6b67e2 | vkDestroyImageView():  Couldn't find VkImageView Object 0x7ffdd52b2c50. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkFreeMemory-memory-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x4bcc6567 | vkFreeMemory(): memory Invalid VkDeviceMemory Object 0x410. The Vulkan spec states: If memory is not VK_NULL_HANDLE, memory must be a valid VkDeviceMemory handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkFreeMemory-memory-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x410, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x5d6b67e2 | vkFreeMemory():  Couldn't find VkDeviceMemory Object 0x410. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x410, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x5d6b67e2 | vkFreeMemory():  Couldn't find VkDeviceMemory Object 0x410. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyImage-image-parameter ] Object 0: handle = 0x5fb1b94bb570, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x18c56777 | vkDestroyImage(): image Invalid VkImage Object 0x4000000000. The Vulkan spec states: If image is not VK_NULL_HANDLE, image must be a valid VkImage handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyImage-image-parameter)
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000000, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x5d6b67e2 | vkDestroyImage():  Couldn't find VkImage Object 0x4000000000. This should not happen and may indicate a bug in the application.
-[18:46:00] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000000, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x5d6b67e2 | vkDestroyImage():  Couldn't find VkImage Object 0x4000000000. This should not happen and may indicate a bug in the application.
+[20:21:38] [info] VV-CORE: DEBUGGING STARTED!
+[20:21:38] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
+[20:21:38] [warning] VV-CORE: Application is Started!
+[20:21:38] [warning] VV-CORE: Initializing ...
+[20:21:38] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[20:21:38] [info] VV-CORE: [Layer]:EditorLayer Created!
+[20:21:38] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[20:21:38] [warning] VV-CORE: Initialized!
+[20:21:38] [info] VV-CORE: Created Material: default ID: 0
+[20:21:38] [info] VV-CORE: Initialized Material Library
+[20:21:38] [warning] VV-CORE: Loading Gameobjects ...
+[20:21:38] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj
+[20:21:38] [info] VV-CORE: Created Material: supra_body ID: 1
+[20:21:38] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj
+[20:21:38] [warning] VV-CORE: Gameobjects Loaded!
+[20:21:38] [info] VV-CORE: Creating render systems...
+[20:21:38] [info] VV-CORE: Created render systems!
+[20:21:38] [info] VV-CORE: Extent Resized with WIDTH: 696, HEIGHT 380 at 1.831579 aspect ratio.
+[20:21:42] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 746 at 0.8538874 aspect ratio.
+[20:21:44] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 954 at 0.6677149 aspect ratio.
+[20:21:49] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 872 at 0.7305046 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 871 at 0.73134327 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 869 at 0.73302644 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 867 at 0.7347174 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 864 at 0.7372685 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 860 at 0.7406977 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 859 at 0.74156 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 853 at 0.7467761 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 850 at 0.74941176 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 845 at 0.75384617 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 842 at 0.7565321 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 638, HEIGHT 837 at 0.76224613 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 639, HEIGHT 831 at 0.7689531 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 640, HEIGHT 826 at 0.7748184 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 640, HEIGHT 820 at 0.7804878 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 640, HEIGHT 817 at 0.78335375 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 641, HEIGHT 814 at 0.78746927 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 641, HEIGHT 809 at 0.7923362 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 641, HEIGHT 805 at 0.7962733 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 641, HEIGHT 800 at 0.80125 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 643, HEIGHT 792 at 0.81186867 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 644, HEIGHT 778 at 0.8277635 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 646, HEIGHT 756 at 0.8544974 aspect ratio.
+[20:21:54] [info] VV-CORE: Extent Resized with WIDTH: 652, HEIGHT 720 at 0.90555555 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 654, HEIGHT 694 at 0.9423631 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 656, HEIGHT 668 at 0.98203593 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 656, HEIGHT 649 at 1.0107858 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 656, HEIGHT 619 at 1.0597738 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 656, HEIGHT 590 at 1.1118644 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 656, HEIGHT 560 at 1.1714286 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 652, HEIGHT 525 at 1.2419047 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 648, HEIGHT 502 at 1.2908367 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 647, HEIGHT 486 at 1.3312757 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 642, HEIGHT 473 at 1.3572938 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 640, HEIGHT 456 at 1.4035088 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 445 at 1.4314606 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 439 at 1.451025 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 435 at 1.4643679 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 433 at 1.4711317 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 431 at 1.4779582 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 430 at 1.4813954 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 427 at 1.4918033 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 426 at 1.4953052 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 423 at 1.5059102 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 420 at 1.5166667 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 417 at 1.527578 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 413 at 1.5423728 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 408 at 1.5612745 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 403 at 1.5806452 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 397 at 1.604534 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 384 at 1.6588541 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 380 at 1.6763158 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 374 at 1.7032086 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 369 at 1.7262872 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 360 at 1.7694445 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 355 at 1.7943662 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 637, HEIGHT 351 at 1.8148148 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 636, HEIGHT 346 at 1.8381503 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 635, HEIGHT 343 at 1.8513119 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 634, HEIGHT 342 at 1.8538011 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 634, HEIGHT 340 at 1.8647059 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 634, HEIGHT 338 at 1.8757397 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 633, HEIGHT 337 at 1.8783383 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 633, HEIGHT 335 at 1.8895522 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 632, HEIGHT 333 at 1.8978978 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 631, HEIGHT 331 at 1.9063444 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 630, HEIGHT 329 at 1.9148936 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 628, HEIGHT 326 at 1.9263804 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 627, HEIGHT 323 at 1.9411764 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 626, HEIGHT 320 at 1.95625 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 624, HEIGHT 314 at 1.9872612 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 620, HEIGHT 303 at 2.0462046 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 613, HEIGHT 290 at 2.1137931 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 604, HEIGHT 270 at 2.237037 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 598, HEIGHT 260 at 2.3 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 592, HEIGHT 250 at 2.368 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 586, HEIGHT 241 at 2.4315352 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 581, HEIGHT 234 at 2.4829059 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 577, HEIGHT 229 at 2.5196507 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 572, HEIGHT 225 at 2.5422223 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 569, HEIGHT 222 at 2.5630631 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 567, HEIGHT 221 at 2.565611 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 565, HEIGHT 220 at 2.5681818 aspect ratio.
+[20:21:55] [info] VV-CORE: Extent Resized with WIDTH: 563, HEIGHT 219 at 2.5707762 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 558, HEIGHT 217 at 2.5714285 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 553, HEIGHT 214 at 2.5841122 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 543, HEIGHT 212 at 2.5613208 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 532, HEIGHT 210 at 2.5333333 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 517, HEIGHT 209 at 2.4736843 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 502, HEIGHT 207 at 2.4251208 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 486, HEIGHT 205 at 2.3707316 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 457, HEIGHT 202 at 2.2623763 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 434, HEIGHT 198 at 2.191919 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 417, HEIGHT 196 at 2.127551 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 403, HEIGHT 196 at 2.0561225 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 384, HEIGHT 196 at 1.9591837 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 364, HEIGHT 196 at 1.8571428 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 347, HEIGHT 196 at 1.7704082 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 333, HEIGHT 196 at 1.6989796 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 320, HEIGHT 196 at 1.6326531 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 314, HEIGHT 196 at 1.6020408 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 306, HEIGHT 196 at 1.5612245 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 295, HEIGHT 196 at 1.505102 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 278, HEIGHT 196 at 1.4183674 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 259, HEIGHT 197 at 1.3147209 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 250, HEIGHT 199 at 1.2562814 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 246, HEIGHT 200 at 1.23 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 243, HEIGHT 200 at 1.215 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 242, HEIGHT 201 at 1.2039801 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 240, HEIGHT 202 at 1.1881188 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 237, HEIGHT 204 at 1.1617647 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 233, HEIGHT 205 at 1.1365854 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 228, HEIGHT 208 at 1.0961539 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 220, HEIGHT 212 at 1.0377358 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 215, HEIGHT 215 at 1 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 204, HEIGHT 220 at 0.92727274 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 193, HEIGHT 228 at 0.8464912 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 185, HEIGHT 234 at 0.7905983 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 176, HEIGHT 238 at 0.7394958 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 171, HEIGHT 243 at 0.7037037 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 166, HEIGHT 247 at 0.6720648 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 160, HEIGHT 253 at 0.63241106 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 157, HEIGHT 259 at 0.6061776 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 153, HEIGHT 266 at 0.575188 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 151, HEIGHT 270 at 0.55925924 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 147, HEIGHT 278 at 0.528777 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 144, HEIGHT 283 at 0.50883394 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 144, HEIGHT 286 at 0.5034965 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 142, HEIGHT 298 at 0.47651008 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 140, HEIGHT 304 at 0.46052632 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 138, HEIGHT 314 at 0.43949044 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 138, HEIGHT 320 at 0.43125 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 136, HEIGHT 331 at 0.41087613 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 136, HEIGHT 338 at 0.40236688 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 136, HEIGHT 354 at 0.38418078 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 136, HEIGHT 371 at 0.36657682 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 138, HEIGHT 391 at 0.3529412 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 141, HEIGHT 405 at 0.34814814 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 145, HEIGHT 422 at 0.34360188 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 150, HEIGHT 445 at 0.33707866 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 154, HEIGHT 465 at 0.3311828 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 158, HEIGHT 476 at 0.33193278 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 161, HEIGHT 488 at 0.32991803 aspect ratio.
+[20:21:56] [info] VV-CORE: Extent Resized with WIDTH: 166, HEIGHT 500 at 0.332 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 169, HEIGHT 508 at 0.33267716 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 173, HEIGHT 517 at 0.33462283 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 177, HEIGHT 528 at 0.33522728 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 185, HEIGHT 542 at 0.3413284 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 193, HEIGHT 554 at 0.34837544 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 202, HEIGHT 569 at 0.35500878 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 210, HEIGHT 582 at 0.36082473 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 216, HEIGHT 591 at 0.36548224 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 227, HEIGHT 607 at 0.37397036 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 235, HEIGHT 618 at 0.3802589 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 242, HEIGHT 627 at 0.3859649 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 251, HEIGHT 636 at 0.3946541 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 264, HEIGHT 648 at 0.4074074 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 280, HEIGHT 661 at 0.4236006 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 293, HEIGHT 670 at 0.43731344 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 306, HEIGHT 676 at 0.45266274 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 324, HEIGHT 687 at 0.47161573 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 345, HEIGHT 696 at 0.49568966 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 375, HEIGHT 708 at 0.529661 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 396, HEIGHT 718 at 0.55153203 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 416, HEIGHT 725 at 0.5737931 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 436, HEIGHT 732 at 0.59562844 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 463, HEIGHT 738 at 0.62737125 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 487, HEIGHT 743 at 0.6554509 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 507, HEIGHT 748 at 0.6778075 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 517, HEIGHT 752 at 0.6875 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 527, HEIGHT 752 at 0.70079786 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 530, HEIGHT 753 at 0.7038513 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 531, HEIGHT 753 at 0.7051793 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 532, HEIGHT 753 at 0.7065073 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 533, HEIGHT 753 at 0.7078353 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 535, HEIGHT 753 at 0.71049136 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 544, HEIGHT 753 at 0.7224436 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 553, HEIGHT 753 at 0.73439574 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 572, HEIGHT 751 at 0.76165116 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 592, HEIGHT 750 at 0.78933334 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 598, HEIGHT 750 at 0.79733336 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 621, HEIGHT 746 at 0.83243966 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 628, HEIGHT 745 at 0.842953 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 638, HEIGHT 742 at 0.85983825 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 644, HEIGHT 741 at 0.8690958 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 650, HEIGHT 738 at 0.8807588 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 658, HEIGHT 736 at 0.89402175 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 665, HEIGHT 733 at 0.90723056 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 671, HEIGHT 730 at 0.91917807 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 675, HEIGHT 730 at 0.9246575 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 676, HEIGHT 730 at 0.9260274 aspect ratio.
+[20:21:57] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 729 at 0.9286694 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 728 at 0.92994505 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 727 at 0.9312242 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 726 at 0.93250686 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 721 at 0.93897367 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 710 at 0.95352113 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 694 at 0.97550434 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 670 at 1.0104477 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 645 at 1.0496124 aspect ratio.
+[20:22:00] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 615 at 1.100813 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 598 at 1.132107 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 566 at 1.1961131 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 541 at 1.2513863 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 522 at 1.2969348 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 506 at 1.3379446 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 491 at 1.3788188 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 485 at 1.3958763 aspect ratio.
+[20:22:01] [info] VV-CORE: Extent Resized with WIDTH: 677, HEIGHT 482 at 1.4045643 aspect ratio.
+[20:22:07] [info] VV-CORE: Extent Resized with WIDTH: 1904, HEIGHT 954 at 1.9958072 aspect ratio.
+[20:22:11] [info] VV-CORE: Extent Resized with WIDTH: 1249, HEIGHT 954 at 1.3092244 aspect ratio.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroySampler-sampler-parameter ] Object 0: handle = 0x591bf549b360, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0xdd9fa550 | vkDestroySampler(): sampler Invalid VkSampler Object 0x4000000042. The Vulkan spec states: If sampler is not VK_NULL_HANDLE, sampler must be a valid VkSampler handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroySampler-sampler-parameter)
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000042, type = VK_OBJECT_TYPE_SAMPLER; | MessageID = 0x5d6b67e2 | vkDestroySampler():  Couldn't find VkSampler Object 0x4000000042. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000042, type = VK_OBJECT_TYPE_SAMPLER; | MessageID = 0x5d6b67e2 | vkDestroySampler():  Couldn't find VkSampler Object 0x4000000042. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyFramebuffer-framebuffer-parameter ] Object 0: handle = 0x591bf549b360, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x898714db | vkDestroyFramebuffer(): framebuffer Invalid VkFramebuffer Object 0x7509ec08bbc7ff00. The Vulkan spec states: If framebuffer is not VK_NULL_HANDLE, framebuffer must be a valid VkFramebuffer handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyFramebuffer-framebuffer-parameter)
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x7509ec08bbc7ff00, type = VK_OBJECT_TYPE_FRAMEBUFFER; | MessageID = 0x5d6b67e2 | vkDestroyFramebuffer():  Couldn't find VkFramebuffer Object 0x7509ec08bbc7ff00. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x7509ec08bbc7ff00, type = VK_OBJECT_TYPE_FRAMEBUFFER; | MessageID = 0x5d6b67e2 | vkDestroyFramebuffer():  Couldn't find VkFramebuffer Object 0x7509ec08bbc7ff00. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyRenderPass-renderPass-parameter ] Object 0: handle = 0x591bf549b360, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x93228619 | vkDestroyRenderPass(): renderPass Invalid VkRenderPass Object 0x10. The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, renderPass must be a valid VkRenderPass handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyRenderPass-renderPass-parameter)
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x10, type = VK_OBJECT_TYPE_RENDER_PASS; | MessageID = 0x5d6b67e2 | vkDestroyRenderPass():  Couldn't find VkRenderPass Object 0x10. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x10, type = VK_OBJECT_TYPE_RENDER_PASS; | MessageID = 0x5d6b67e2 | vkDestroyRenderPass():  Couldn't find VkRenderPass Object 0x10. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyImageView-imageView-parameter ] Object 0: handle = 0x591bf549b360, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0xe0208096 | vkDestroyImageView(): imageView Invalid VkImageView Object 0x7ffd47e54220. The Vulkan spec states: If imageView is not VK_NULL_HANDLE, imageView must be a valid VkImageView handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyImageView-imageView-parameter)
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x7ffd47e54220, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x5d6b67e2 | vkDestroyImageView():  Couldn't find VkImageView Object 0x7ffd47e54220. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x7ffd47e54220, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x5d6b67e2 | vkDestroyImageView():  Couldn't find VkImageView Object 0x7ffd47e54220. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkFreeMemory-memory-parameter ] Object 0: handle = 0x591bf549b360, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x4bcc6567 | vkFreeMemory(): memory Invalid VkDeviceMemory Object 0x410. The Vulkan spec states: If memory is not VK_NULL_HANDLE, memory must be a valid VkDeviceMemory handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkFreeMemory-memory-parameter)
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x410, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x5d6b67e2 | vkFreeMemory():  Couldn't find VkDeviceMemory Object 0x410. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x410, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x5d6b67e2 | vkFreeMemory():  Couldn't find VkDeviceMemory Object 0x410. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyImage-image-parameter ] Object 0: handle = 0x591bf549b360, type = VK_OBJECT_TYPE_INSTANCE; | MessageID = 0x18c56777 | vkDestroyImage(): image Invalid VkImage Object 0x4000000000. The Vulkan spec states: If image is not VK_NULL_HANDLE, image must be a valid VkImage handle (https://vulkan.lunarg.com/doc/view/1.3.290.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyImage-image-parameter)
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000000, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x5d6b67e2 | vkDestroyImage():  Couldn't find VkImage Object 0x4000000000. This should not happen and may indicate a bug in the application.
+[20:22:12] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-Threading-Info ] Object 0: handle = 0x4000000000, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x5d6b67e2 | vkDestroyImage():  Couldn't find VkImage Object 0x4000000000. This should not happen and may indicate a bug in the application.

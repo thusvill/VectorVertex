@@ -98,7 +98,7 @@ namespace VectorVertex
             camControl.moveInPlaneXZ(vvWindow.getGLFWwindow(), frameTime, viewerObject);
             camera.SetViewYXZ(viewerObject.transform.translation, viewerObject.transform.rotation);
 
-            auto aspectRatio = renderer.GetAspectRatio();
+            auto aspectRatio = static_cast<float>(offscreen.getViewSize().width) / static_cast<float>(offscreen.getViewSize().height);//renderer.GetAspectRatio();
             // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
             camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
 
@@ -106,7 +106,7 @@ namespace VectorVertex
                 if (editor_layer->is_viewport_resized)
                 {
                     offscreen.Resize(editor_layer->Viewport_Extent);
-                    camera.Resize(offscreen.getViewSize());
+                    //camera.Resize(editor_layer->Viewport_Extent);
                     editor_layer->is_viewport_resized = false;
                 }
             }

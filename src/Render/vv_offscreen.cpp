@@ -1,4 +1,5 @@
 #include "vv_offscreen.hpp"
+#include <iostream>
 namespace VectorVertex
 {
     VVOffscreen::VVOffscreen(VVDevice &device, VVRenderer &renderer, VkExtent2D size) : device(device), renderer(renderer), ViewExtent(size)
@@ -80,38 +81,74 @@ namespace VectorVertex
         {
             ViewExtent = {1, 1};
         }
-        SetAccordingtoAspectRatio(ViewExtent, new_extent);
 
+        // SetAccordingtoAspectRatio(ViewExtent, new_extent);
+        float newAR = static_cast<float>(ViewExtent.width) / static_cast<float>(ViewExtent.height);
+        float AR = static_cast<float>(new_extent.width) / static_cast<float>(new_extent.height);
+
+        if (newAR > AR)
+        {
+            ViewExtent.height = new_extent.height;
+            ViewExtent.width = ViewExtent.height * AR;
+        }
+        else
+        {
+            ViewExtent.width = new_extent.width;
+            ViewExtent.height = ViewExtent.width / AR;
+        }
+
+        VkPhysicalDeviceProperties deviceProperties;
+        vkGetPhysicalDeviceProperties(device.getPhysicalDevice(), &deviceProperties);
+        uint32_t maxFramebufferWidth = deviceProperties.limits.maxFramebufferWidth;
+        uint32_t maxFramebufferHeight = deviceProperties.limits.maxFramebufferHeight;
+
+        // Adjust dimensions if they exceed limits
+        ViewExtent.width = std::min(new_extent.width, maxFramebufferWidth);
+        ViewExtent.height = std::min(new_extent.height, maxFramebufferHeight);
+
+        VV_CORE_INFO("Extent Resized with WIDTH: {0}, HEIGHT {1} at {2} aspect ratio.", ViewExtent.width, ViewExtent.height, AR);
 
         vkDeviceWaitIdle(device.device());
         clean();
         create_resources();
-        VV_CORE_INFO("Recreated Offscreen!");
     }
 
-void VVOffscreen::SetAccordingtoAspectRatio(VkExtent2D old_extent, VkExtent2D new_extent)
-{
-        float newAspectRatio = static_cast<float>(new_extent.width) / static_cast<float>(new_extent.height);
-        float targetAspectRatio = renderer.GetAspectRatio();
+    void VVOffscreen::SetAccordingtoAspectRatio(VkExtent2D &old_extent, VkExtent2D new_extent)
+    {
+        // Step 1: Query the device's maximum framebuffer dimensions
+        VkPhysicalDeviceProperties deviceProperties;
+        vkGetPhysicalDeviceProperties(device.getPhysicalDevice(), &deviceProperties);
 
+        uint32_t maxFramebufferWidth = deviceProperties.limits.maxFramebufferWidth;
+        uint32_t maxFramebufferHeight = deviceProperties.limits.maxFramebufferHeight;
+
+        // Step 2: Get the target aspect ratio from the renderer
+        float targetAspectRatio = static_cast<float>(new_extent.width) / static_cast<float>(new_extent.height); // renderer.GetAspectRatio();
+        std::cout << targetAspectRatio << std::endl;
+        // Step 3: Calculate the current aspect ratio of the new_extent
+        float newAspectRatio = static_cast<float>(old_extent.width) / static_cast<float>(old_extent.height);
+
+        // Step 4: Adjust the extent to maintain the target aspect ratio
+        VkExtent2D adjustedExtent = new_extent;
         if (newAspectRatio > targetAspectRatio)
         {
-            // The new size is wider than the target aspect ratio
-            old_extent.width = static_cast<uint32_t>(new_extent.height * targetAspectRatio);
-            old_extent.height = new_extent.height;
+            // If the new extent is wider than the target aspect ratio
+            adjustedExtent.width = static_cast<uint32_t>(adjustedExtent.height * targetAspectRatio);
         }
         else if (newAspectRatio < targetAspectRatio)
         {
-            // The new size is taller than the target aspect ratio
-            old_extent.width = new_extent.width;
-            old_extent.height = static_cast<uint32_t>(new_extent.width / targetAspectRatio);
+            // If the new extent is taller than the target aspect ratio
+            adjustedExtent.height = static_cast<uint32_t>(adjustedExtent.width / targetAspectRatio);
         }
-        else
-        {
-            // The new size matches the target aspect ratio
-            old_extent = new_extent;
-        }
-}
+
+        // Step 5: Clamp the adjusted extent to the device's maximum allowable dimensions
+        adjustedExtent.width = std::min(adjustedExtent.width, maxFramebufferWidth);
+        adjustedExtent.height = std::min(adjustedExtent.height, maxFramebufferHeight);
+
+        // Step 6: Update old_extent with the adjusted extent
+        old_extent = adjustedExtent;
+        VV_CORE_INFO("Extent Resized with WIDTH: {0}, HEIGHT {1} at {2} aspect ratio.", old_extent.width, old_extent.height, targetAspectRatio);
+    }
 
     void VVOffscreen::create_resources()
     {

@@ -20,10 +20,10 @@ namespace VectorVertex
         ~VVOffscreen();
         void StartRenderpass(VkCommandBuffer commandBuffer);
         void EndRendrepass(VkCommandBuffer commandBuffer);
-        void Resize(VkExtent2D new_size);
+        void Resize(VkExtent2D new_extent);
         VkExtent2D getViewSize() {return ViewExtent;}
         ImTextureID getFramebufferImage() { return imguiTextureId; }
-        void SetAccordingtoAspectRatio(VkExtent2D old_extent, VkExtent2D new_extent);
+        void SetAccordingtoAspectRatio(VkExtent2D& old_extent, VkExtent2D new_extent);
 
     private:
         void create_resources();
