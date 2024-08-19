@@ -1,5 +1,14 @@
 #pragma once
-#include <VectorVertex.hpp>
+#include "vv_device.hpp"
+#include "vv_swap_chain.hpp"
+#include "vv_renderer.hpp"
+#include "Log.h"
+#include <imgui.h>
+#include <imgui_impl_vulkan.h>
+#include <memory>
+#include <vector>
+#include <array>
+#include <cassert>
 
 namespace VectorVertex
 {
@@ -7,36 +16,28 @@ namespace VectorVertex
     {
     public:
         VVOffscreen() = default;
-        VVOffscreen(VVDevice *vv_device, VkExtent2D extent, VkRenderPass renderPass);
+        VVOffscreen(VVDevice &device, VVRenderer &renderer, VkExtent2D size);
         ~VVOffscreen();
-
-        void Initialize(VkDescriptorPool descriptorPool);
-        void StartFrame(VkCommandBuffer commandBuffer);
-        void StopFrame(VkCommandBuffer commandBuffer);
-        void SetupImGuiTexture(VkDescriptorSet imguiDescriptorSet);
-        VkDescriptorSet GetImGuiDescriptorSet() const { return imguiDescriptorSet; }
-        VkDescriptorImageInfo imageInfoForImGui{};
+        void StartRenderpass(VkCommandBuffer commandBuffer);
+        void EndRendrepass(VkCommandBuffer commandBuffer);
+        void Resize(VkExtent2D new_size);
+        ImTextureID getFramebufferImage() { return imguiTextureId; }
+        
 
     private:
-        VVDevice *vvDevice;
-        VkDevice device;
-        VkPhysicalDevice physicalDevice;
-        VkExtent2D extent;
-
-        VkRenderPass offscreenRenderPass;
-        VkFramebuffer offscreenFramebuffer;
+        void create_resources();
+        void clean();
+        VkExtent2D ViewExtent{800,800};
+        ImTextureID imguiTextureId;
         VkImage offscreenImage;
-        VkImageView offscreenImageView;
+        VkImage offscreenDepthImage;
         VkDeviceMemory offscreenImageMemory;
-        VkImage depthImage;
-        VkImageView depthImageView;
-        VkDeviceMemory depthImageMemory;
-        VkSampler offscreenSampler;
-        VkDescriptorSet imguiDescriptorSet;
+        VkImageView offscreenImageView;
+        VkFramebuffer offscreenFramebuffer;
+        VkSampler sampler;
+        VkDescriptorSet descriptorSet;
 
-        void CreateOffscreenResources();
-        VkFormat findDepthFormat_offscreen(VVDevice *device);
-        uint32_t FindMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
+        VVDevice &device;
+        VVRenderer &renderer;
     };
-
-}
+} // namespace VectorVertex

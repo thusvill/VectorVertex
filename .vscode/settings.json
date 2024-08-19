@@ -68,7 +68,8 @@
     "list": "cpp",
     "optional": "cpp",
     "variant": "cpp",
-    "*.bak": "c"
+    "*.bak": "c",
+    "cassert": "cpp"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

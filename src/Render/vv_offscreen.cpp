@@ -1,100 +1,189 @@
 #include "vv_offscreen.hpp"
-#include "vv_render_system.hpp"
 namespace VectorVertex
 {
-    VVOffscreen::VVOffscreen(VVDevice *vv_device, VkExtent2D extent, VkRenderPass renderPass)
-        : extent(extent), offscreenRenderPass(renderPass)
+    VVOffscreen::VVOffscreen(VVDevice &device, VVRenderer &renderer, VkExtent2D size) : device(device), renderer(renderer), ViewExtent(size)
     {
-        vvDevice = vv_device;
-        device = vvDevice->device();
-        physicalDevice = vvDevice->getPhysicalDevice();
-        CreateOffscreenResources();
+        create_resources();
     }
 
     VVOffscreen::~VVOffscreen()
     {
-        vkDestroySampler(device, offscreenSampler, nullptr);
-        vkDestroyImageView(device, offscreenImageView, nullptr);
-        vkDestroyImage(device, offscreenImage, nullptr);
-        vkFreeMemory(device, offscreenImageMemory, nullptr);
-        vkDestroyFramebuffer(device, offscreenFramebuffer, nullptr);
+        clean();
     }
 
-    void VVOffscreen::Initialize(VkDescriptorPool descriptorPool)
+    void VVOffscreen::StartRenderpass(VkCommandBuffer commandBuffer)
     {
-        // Allocate and setup ImGui descriptor set for the offscreen image
-        VkDescriptorSetLayoutBinding layoutBinding = {};
-        layoutBinding.binding = 0;
-        layoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        layoutBinding.descriptorCount = 1;
-        layoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+        VkRenderPassBeginInfo renderPassInfo{};
+        renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+        renderPassInfo.renderPass = renderer.GetSwapchainRenderPass();
+        renderPassInfo.framebuffer = offscreenFramebuffer;
+        renderPassInfo.renderArea.offset = {0, 0};
+        renderPassInfo.renderArea.extent = ViewExtent;
 
-        VkDescriptorSetLayoutCreateInfo layoutInfo = {};
-        layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
-        layoutInfo.bindingCount = 1;
-        layoutInfo.pBindings = &layoutBinding;
+        std::array<VkClearValue, 2> clearValues{};
+        clearValues[0].color = {0.01f, 0.01f, 0.01f, 1.0f};
+        clearValues[1].depthStencil = {1.0f, 0};
+        renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
+        renderPassInfo.pClearValues = clearValues.data();
 
-        VkDescriptorSetLayout descriptorSetLayout;
-        vkCreateDescriptorSetLayout(device, &layoutInfo, nullptr, &descriptorSetLayout);
+        vkCmdBeginRenderPass(commandBuffer, &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
 
-        VkDescriptorSetAllocateInfo allocInfo = {};
-        allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
-        allocInfo.descriptorPool = descriptorPool;
-        allocInfo.descriptorSetCount = 1;
-        allocInfo.pSetLayouts = &descriptorSetLayout;
-
-        vkAllocateDescriptorSets(device, &allocInfo, &imguiDescriptorSet);
-        vkDestroyDescriptorSetLayout(device, descriptorSetLayout, nullptr);
-
-        SetupImGuiTexture(imguiDescriptorSet);
+        VkViewport viewport{};
+        viewport.x = 0.0f;
+        viewport.y = 0.0f;
+        viewport.width = static_cast<float>(ViewExtent.width);
+        viewport.height = static_cast<float>(ViewExtent.height);
+        viewport.minDepth = 0.0f;
+        viewport.maxDepth = 1.0f;
+        VkRect2D scissor{{0, 0}, ViewExtent};
+        vkCmdSetViewport(commandBuffer, 0, 1, &viewport);
+        vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
     }
 
-    void VVOffscreen::CreateOffscreenResources()
+    void VVOffscreen::EndRendrepass(VkCommandBuffer commandBuffer)
     {
-        // Create the offscreen image
-        VkImageCreateInfo imageInfo = {};
+        vkCmdEndRenderPass(commandBuffer);
+
+        // Transition image layout for ImGui
+        VkImageMemoryBarrier barrier{};
+        barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
+        barrier.oldLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR;
+        barrier.newLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+        barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
+        barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
+        barrier.image = offscreenImage;
+        barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+        barrier.subresourceRange.baseMipLevel = 0;
+        barrier.subresourceRange.levelCount = 1;
+        barrier.subresourceRange.baseArrayLayer = 0;
+        barrier.subresourceRange.layerCount = 1;
+
+        VkPipelineStageFlags sourceStage = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT;
+        VkPipelineStageFlags destinationStage = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT;
+
+        vkCmdPipelineBarrier(
+            commandBuffer,
+            sourceStage, destinationStage,
+            0,
+            0, nullptr,
+            0, nullptr,
+            1, &barrier);
+    }
+
+    void VVOffscreen::Resize(VkExtent2D new_size)
+    {
+        ViewExtent = new_size;
+        vkDeviceWaitIdle(device.device());
+        clean();
+        create_resources();
+        VV_CORE_INFO("Recreated Offscreen!");
+    }
+
+    void VVOffscreen::create_resources()
+    {
+        VkImageCreateInfo imageInfo{};
         imageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
         imageInfo.imageType = VK_IMAGE_TYPE_2D;
         imageInfo.format = VK_FORMAT_B8G8R8A8_UNORM;
-        imageInfo.extent.width = extent.width;
-        imageInfo.extent.height = extent.height;
+        imageInfo.extent.width = ViewExtent.width;
+        imageInfo.extent.height = ViewExtent.height;
         imageInfo.extent.depth = 1;
         imageInfo.mipLevels = 1;
         imageInfo.arrayLayers = 1;
         imageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
         imageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
         imageInfo.usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT;
+        imageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
         imageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 
-        vkCreateImage(device, &imageInfo, nullptr, &offscreenImage);
+        vkCreateImage(device.device(), &imageInfo, nullptr, &offscreenImage);
 
+        // Step 2: Allocate memory for the offscreen image
         VkMemoryRequirements memRequirements;
-        vkGetImageMemoryRequirements(device, offscreenImage, &memRequirements);
+        vkGetImageMemoryRequirements(device.device(), offscreenImage, &memRequirements);
 
-        VkMemoryAllocateInfo allocInfo = {};
+        VkMemoryAllocateInfo allocInfo{};
         allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
         allocInfo.allocationSize = memRequirements.size;
-        allocInfo.memoryTypeIndex = FindMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+        allocInfo.memoryTypeIndex = device.findMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        vkAllocateMemory(device, &allocInfo, nullptr, &offscreenImageMemory);
-        vkBindImageMemory(device, offscreenImage, offscreenImageMemory, 0);
+        vkAllocateMemory(device.device(), &allocInfo, nullptr, &offscreenImageMemory);
+        vkBindImageMemory(device.device(), offscreenImage, offscreenImageMemory, 0);
 
-        // Create the image view for the offscreen image
-        VkImageViewCreateInfo imageViewInfo = {};
-        imageViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-        imageViewInfo.image = offscreenImage;
-        imageViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
-        imageViewInfo.format = imageInfo.format;
-        imageViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-        imageViewInfo.subresourceRange.baseMipLevel = 0;
-        imageViewInfo.subresourceRange.levelCount = 1;
-        imageViewInfo.subresourceRange.baseArrayLayer = 0;
-        imageViewInfo.subresourceRange.layerCount = 1;
+        // Step 3: Create the image view for the offscreen image
+        VkImageViewCreateInfo viewInfo{};
+        viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+        viewInfo.image = offscreenImage;
+        viewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+        viewInfo.format = VK_FORMAT_B8G8R8A8_UNORM;
+        viewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
+        viewInfo.subresourceRange.baseMipLevel = 0;
+        viewInfo.subresourceRange.levelCount = 1;
+        viewInfo.subresourceRange.baseArrayLayer = 0;
+        viewInfo.subresourceRange.layerCount = 1;
 
-        vkCreateImageView(device, &imageViewInfo, nullptr, &offscreenImageView);
+        vkCreateImageView(device.device(), &viewInfo, nullptr, &offscreenImageView);
 
-        // Create a sampler for the offscreen image
-        VkSamplerCreateInfo samplerInfo = {};
+        // Step 4: Create the depth attachment (if not already done)
+        VkImage depthImage;
+        VkDeviceMemory depthImageMemory;
+        VkImageView depthImageView;
+
+        VkImageCreateInfo depthImageInfo = {};
+        depthImageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+        depthImageInfo.imageType = VK_IMAGE_TYPE_2D;
+        depthImageInfo.format = renderer.Get_Swapchain().findDepthFormat();
+        depthImageInfo.extent.width = ViewExtent.width;
+        depthImageInfo.extent.height = ViewExtent.height;
+        depthImageInfo.extent.depth = 1;
+        depthImageInfo.mipLevels = 1;
+        depthImageInfo.arrayLayers = 1;
+        depthImageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
+        depthImageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
+        depthImageInfo.usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT;
+        depthImageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
+        depthImageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+
+        vkCreateImage(device.device(), &depthImageInfo, nullptr, &depthImage);
+
+        // Allocate memory for depth image
+        vkGetImageMemoryRequirements(device.device(), depthImage, &memRequirements);
+        allocInfo.allocationSize = memRequirements.size;
+        allocInfo.memoryTypeIndex = device.findMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+
+        vkAllocateMemory(device.device(), &allocInfo, nullptr, &depthImageMemory);
+        vkBindImageMemory(device.device(), depthImage, depthImageMemory, 0);
+
+        // Create the image view for the depth attachment
+        VkImageViewCreateInfo depthViewInfo{};
+        depthViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+        depthViewInfo.image = depthImage;
+        depthViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
+        depthViewInfo.format = renderer.Get_Swapchain().findDepthFormat();
+        depthViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
+        depthViewInfo.subresourceRange.baseMipLevel = 0;
+        depthViewInfo.subresourceRange.levelCount = 1;
+        depthViewInfo.subresourceRange.baseArrayLayer = 0;
+        depthViewInfo.subresourceRange.layerCount = 1;
+
+        vkCreateImageView(device.device(), &depthViewInfo, nullptr, &depthImageView);
+
+        // Step 5: Create the framebuffer with both color and depth attachments
+        std::array<VkImageView, 2> framebufferAttachments = {offscreenImageView, depthImageView};
+
+        VkFramebufferCreateInfo framebufferInfo{};
+        framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+        framebufferInfo.renderPass = renderer.GetSwapchainRenderPass(); // Assuming it is compatible with both color and depth
+        framebufferInfo.attachmentCount = static_cast<uint32_t>(framebufferAttachments.size());
+        framebufferInfo.pAttachments = framebufferAttachments.data();
+        framebufferInfo.width = ViewExtent.width;
+        framebufferInfo.height = ViewExtent.height;
+        framebufferInfo.layers = 1;
+
+        vkCreateFramebuffer(device.device(), &framebufferInfo, nullptr, &offscreenFramebuffer);
+
+        // Step 6: Create the sampler for the offscreen image
+        VkSamplerCreateInfo samplerInfo{};
         samplerInfo.sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO;
         samplerInfo.magFilter = VK_FILTER_LINEAR;
         samplerInfo.minFilter = VK_FILTER_LINEAR;
@@ -109,144 +198,21 @@ namespace VectorVertex
         samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
         samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
 
-        vkCreateSampler(device, &samplerInfo, nullptr, &offscreenSampler);
-        
+        vkCreateSampler(device.device(), &samplerInfo, nullptr, &sampler);
 
-        VkImageCreateInfo depthImageInfo = {};
-        depthImageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
-        depthImageInfo.imageType = VK_IMAGE_TYPE_2D;
-        depthImageInfo.format = findDepthFormat_offscreen(vvDevice);
-        depthImageInfo.extent = {extent.width, extent.height, 1};
-        depthImageInfo.mipLevels = 1;
-        depthImageInfo.arrayLayers = 1;
-        depthImageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
-        depthImageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
-        depthImageInfo.usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT;
-        depthImageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+        // Step 7: Create the ImGui texture ID from the offscreen image
+        imguiTextureId = ImGui_ImplVulkan_AddTexture(sampler, offscreenImageView, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
 
-        vkCreateImage(device, &depthImageInfo, nullptr, &depthImage);
-
-        vkGetImageMemoryRequirements(device, depthImage, &memRequirements);
-        allocInfo = {};
-        allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
-        allocInfo.allocationSize = memRequirements.size;
-        allocInfo.memoryTypeIndex = FindMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-
-        vkAllocateMemory(device, &allocInfo, nullptr, &depthImageMemory);
-        vkBindImageMemory(device, depthImage, depthImageMemory, 0);
-
-        VkImageViewCreateInfo depthViewInfo = {};
-        depthViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
-        depthViewInfo.image = depthImage;
-        depthViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
-        depthViewInfo.format = findDepthFormat_offscreen(vvDevice);
-        depthViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
-        depthViewInfo.subresourceRange.baseMipLevel = 0;
-        depthViewInfo.subresourceRange.levelCount = 1;
-        depthViewInfo.subresourceRange.baseArrayLayer = 0;
-        depthViewInfo.subresourceRange.layerCount = 1;
-
-        vkCreateImageView(device, &depthViewInfo, nullptr, &depthImageView);
-
-        std::array<VkImageView, 2> attachments = {offscreenImageView, depthImageView};
-
-        VkFramebufferCreateInfo framebufferInfo = {};
-        framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
-        framebufferInfo.renderPass = offscreenRenderPass;
-        framebufferInfo.attachmentCount = static_cast<uint32_t>(attachments.size());
-        framebufferInfo.pAttachments = attachments.data();
-        framebufferInfo.width = extent.width;
-        framebufferInfo.height = extent.height;
-        framebufferInfo.layers = 1;
-
-        vkCreateFramebuffer(device, &framebufferInfo, nullptr, &offscreenFramebuffer);
+        vkDestroyImageView(device.device(), depthImageView, nullptr);
+        vkDestroyImage(device.device(), depthImage, nullptr);
+        vkFreeMemory(device.device(), depthImageMemory, nullptr);
     }
-
-    void VVOffscreen::SetupImGuiTexture(VkDescriptorSet imguiDescriptorSet)
+    void VVOffscreen::clean()
     {
-        //VkDescriptorImageInfo imageInfoForImGui = {};
-        imageInfoForImGui.imageView = offscreenImageView;
-        imageInfoForImGui.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-        imageInfoForImGui.sampler = offscreenSampler;
-
-        VkWriteDescriptorSet descriptorWrite = {};
-        descriptorWrite.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-        descriptorWrite.dstSet = imguiDescriptorSet;
-        descriptorWrite.dstBinding = 1;
-        descriptorWrite.dstArrayElement = 0;
-        descriptorWrite.descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
-        descriptorWrite.descriptorCount = VVSwapChain::MAX_FRAMES_IN_FLIGHT;
-        descriptorWrite.pImageInfo = &imageInfoForImGui;
-
-        vkUpdateDescriptorSets(device, 1, &descriptorWrite, 0, nullptr);
+        vkDestroySampler(device.device(), sampler, nullptr);
+        vkDestroyFramebuffer(device.device(), offscreenFramebuffer, nullptr);
+        vkDestroyImageView(device.device(), offscreenImageView, nullptr);
+        vkDestroyImage(device.device(), offscreenImage, nullptr);
+        vkFreeMemory(device.device(), offscreenImageMemory, nullptr);
     }
-
-    void VVOffscreen::StartFrame(VkCommandBuffer commandBuffer)
-    {
-        VkRenderPassBeginInfo renderPassInfo = {};
-        renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-        renderPassInfo.renderPass = offscreenRenderPass;
-        renderPassInfo.framebuffer = offscreenFramebuffer;
-        renderPassInfo.renderArea.extent = extent;
-        VkClearValue clearColor = {{0.0f, 0.0f, 0.0f, 1.0f}};
-        renderPassInfo.clearValueCount = 1;
-        renderPassInfo.pClearValues = &clearColor;
-
-        vkCmdBeginRenderPass(commandBuffer, &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
-
-        // vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline);
-        // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
-        //                         pipelineLayout, 0, descriptorSets.size(), descriptorSets.data(), 0, nullptr);
-    }
-    void VVOffscreen::StopFrame(VkCommandBuffer commandBuffer)
-    {
-        vkCmdEndRenderPass(commandBuffer);
-
-        VkImageMemoryBarrier barrier = {};
-        barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
-        barrier.oldLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
-        barrier.newLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-        barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
-        barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
-        barrier.image = offscreenImage;
-        barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
-        barrier.subresourceRange.baseMipLevel = 0;
-        barrier.subresourceRange.levelCount = 1;
-        barrier.subresourceRange.baseArrayLayer = 0;
-        barrier.subresourceRange.layerCount = 1;
-        barrier.srcAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT;
-        barrier.dstAccessMask = VK_ACCESS_SHADER_READ_BIT;
-
-        vkCmdPipelineBarrier(
-            commandBuffer,
-            VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT,
-            VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT,
-            0,
-            0, nullptr,
-            0, nullptr,
-            1, &barrier);
-    }
-     VkFormat VVOffscreen::findDepthFormat_offscreen(VVDevice *device)
-    {
-        return device->findSupportedFormat(
-            {VK_FORMAT_D32_SFLOAT, VK_FORMAT_D32_SFLOAT_S8_UINT, VK_FORMAT_D24_UNORM_S8_UINT},
-            VK_IMAGE_TILING_OPTIMAL,
-            VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT);
-    }
-    uint32_t VVOffscreen::FindMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties)
-    {
-        VkPhysicalDeviceMemoryProperties memProperties;
-        vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memProperties);
-
-        for (uint32_t i = 0; i < memProperties.memoryTypeCount; i++)
-        {
-            if ((typeFilter & (1 << i)) && (memProperties.memoryTypes[i].propertyFlags & properties) == properties)
-            {
-                return i;
-            }
-        }
-
-        throw std::runtime_error("failed to find suitable memory type!");
-    }
-
 }

@@ -22,8 +22,6 @@ namespace VectorVertex
         global_pool = VVDescriptorPool::Builder(vvDevice)
                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                          .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                          //.addPoolSize(VK_DESCRIPTOR_TYPE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
 
         editor_layer = new EditorLayer();
@@ -49,9 +47,6 @@ namespace VectorVertex
     void VectorVetrex::run()
     {
 
-        Offscreen_extent = {800, 800};
-        VVOffscreen *offscreenRenderer = new VVOffscreen(&vvDevice, Offscreen_extent, renderer.GetSwapchainRenderPass());
-
         std::vector<std::unique_ptr<VVBuffer>> ubo_buffers(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
         for (int i = 0; i < ubo_buffers.size(); i++)
         {
@@ -62,28 +57,23 @@ namespace VectorVertex
 
         auto global_set_layout = VVDescriptorSetLayout::Builder(vvDevice)
                                      .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
-                                     //.addBinding(1, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                      .build();
 
         std::vector<VkDescriptorSet> global_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
-
-        offscreenRenderer->Initialize(global_pool->getPool());
 
         for (int i = 0; i < global_descriptor_sets.size(); i++)
         {
             auto buffer_info = ubo_buffers[i]->descriptorInfo();
 
-            VV_CORE_ASSERT(!VVDescriptorWriter(*global_set_layout, *global_pool)
-                                .writeBuffer(0, &buffer_info)
-                                //.writeImage(1, &offscreenRenderer->imageInfoForImGui)
-                                .build(global_descriptor_sets[i]),
-                           "Failed to build global descriptor set!");
+            VVDescriptorWriter(*global_set_layout, *global_pool)
+                .writeBuffer(0, &buffer_info)
+                .build(global_descriptor_sets[i]);
         }
         // renderer.createOffscreenResources(WIDTH, HEIGHT, global_pool->getPool());
         //          LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
 
         VV_CORE_INFO("Creating render systems...");
-
+        VVOffscreen offscreen{vvDevice, renderer, editor_layer->Viewport_Extent};
         LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
         PointLightSystem pointLightSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
         VV_CORE_INFO("Created render systems!");
@@ -112,6 +102,15 @@ namespace VectorVertex
             // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
             camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
 
+            {
+                if (editor_layer->is_viewport_resized)
+                {
+                    offscreen.Resize(editor_layer->Viewport_Extent);
+                    camera.Resize(editor_layer->Viewport_Extent);
+                    editor_layer->is_viewport_resized = false;
+                }
+            }
+
             glfwPollEvents();
 
             if (auto commandBuffer = renderer.BeginFrame())
@@ -128,19 +127,22 @@ namespace VectorVertex
                     *global_pool};
 
                 // update
-                // GlobalUBO ubo{};
-                // ubo.view = camera.GetView();
-                // ubo.projection = camera.GetProjection();
-                // ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
-                // pointLightSystem.Update(frameInfo, ubo);
-                // ubo_buffers[frame_index]->writeToBuffer(&ubo);
-                // ubo_buffers[frame_index]->flush();
+                GlobalUBO ubo{};
+                ubo.view = camera.GetView();
+                ubo.projection = camera.GetProjection();
+                ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
+                pointLightSystem.Update(frameInfo, ubo);
+                ubo_buffers[frame_index]->writeToBuffer(&ubo);
+                ubo_buffers[frame_index]->flush();
 
-                offscreenRenderer->StartFrame(commandBuffer);
-                renderSystem.renderGameobjects(frameInfo);
-                pointLightSystem.render(frameInfo);
-                offscreenRenderer->StopFrame(commandBuffer);
-                editor_layer->sceneImageView = (ImTextureID)offscreenRenderer->GetImGuiDescriptorSet();
+                {
+
+                    offscreen.StartRenderpass(commandBuffer);
+                    renderSystem.renderGameobjects(frameInfo);
+                    pointLightSystem.render(frameInfo);
+                    offscreen.EndRendrepass(commandBuffer);
+                    editor_layer->sceneImageView = offscreen.getFramebufferImage();
+                }
 
                 renderer.BeginSwapchainRenderPass(commandBuffer);
                 // renderSystem.renderGameobjects(frameInfo);
@@ -177,6 +179,7 @@ namespace VectorVertex
         supra_object.color = {.1f, .0f, .0f};
         supra_object.material_id = VVMaterialLibrary::createMaterial("supra_body", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
         supra_object.transform.translation = {.5f, .5f, .0f};
+        supra_object.transform.rotation = glm::vec3(0.0f);
         supra_object.transform.scale = glm::vec3{0.2f};
         // supra_object.transform.rotation.z = 1 * 3.15;
 
@@ -186,7 +189,8 @@ namespace VectorVertex
         auto quad = VVGameObject::CreateGameObject();
         quad.model = VVModel;
         quad.transform.translation = {.0f, .5f, .0f};
-        quad.transform.rotation.y = 1 * (3.15 / 2);
+        quad.transform.rotation = glm::vec3(0.0f);
+        // quad.transform.rotation.y = 1 * (3.15 / 2);
         quad.transform.scale = glm::vec3{3.f};
         gameObjects.emplace(quad.getId(), std::move(quad));
 

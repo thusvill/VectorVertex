@@ -9,7 +9,7 @@
 #include "../Render/vv_descriptors.hpp"
 #include "../Render/vv_material.hpp"
 #include "../Render/vv_offscreen.hpp"
-//#include "../Render/vv_framebuffer.hpp"
+// #include "../Render/vv_framebuffer.hpp"
 #include "../Render/Layers/Editor_Layer.hpp"
 #include "../Render/vv_texture.hpp"
 #include "Keyboard_inputs.hpp"
@@ -33,8 +33,7 @@ namespace VectorVertex
         std::string title = "VectorVertex";
     };
 
-
-        class VectorVetrex
+    class VectorVetrex
     {
     public:
         VectorVetrex(ProjectInfo &info);
@@ -49,22 +48,22 @@ namespace VectorVertex
         int WIDTH, HEIGHT;
         std::string project_name;
         void run();
-        VkExtent2D Offscreen_extent;
-
+        
 
     private:
         void loadGameobjects();
 
+        
+
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};
         VVRenderer renderer{vvWindow, vvDevice};
-        EditorLayer* editor_layer;
-
+        
+        EditorLayer *editor_layer;
 
         LayerStack layers{};
-        //VVMaterialLibrary materials{};
+        // VVMaterialLibrary materials{};
         Scope<VVDescriptorPool> global_pool{};
         VVGameObject::Map gameObjects;
-    
     };
 } // namespace VectorVertex

@@ -18,6 +18,12 @@ namespace VectorVertex
 
     void VVCamera::SetPerspectiveProjection(float fovy, float aspect, float near, float far)
     {
+        {
+            fov = fovy;
+            aspect = aspect;
+            near = near;
+            far = far;
+        }
         assert(glm::abs(aspect - std::numeric_limits<float>::epsilon()) > 0.0f);
         const float tanHalfFovy = tan(fovy / 2.f);
         projectionMatrix = glm::mat4{0.0f};
