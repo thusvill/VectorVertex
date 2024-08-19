@@ -106,7 +106,7 @@ namespace VectorVertex
                 if (editor_layer->is_viewport_resized)
                 {
                     offscreen.Resize(editor_layer->Viewport_Extent);
-                    camera.Resize(editor_layer->Viewport_Extent);
+                    camera.Resize(offscreen.getViewSize());
                     editor_layer->is_viewport_resized = false;
                 }
             }

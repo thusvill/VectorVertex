@@ -3,6 +3,10 @@ namespace VectorVertex
 {
     VVOffscreen::VVOffscreen(VVDevice &device, VVRenderer &renderer, VkExtent2D size) : device(device), renderer(renderer), ViewExtent(size)
     {
+        if (ViewExtent.height == 0 || ViewExtent.width == 0)
+        {
+            ViewExtent = {800, 800};
+        }
         create_resources();
     }
 
@@ -70,14 +74,44 @@ namespace VectorVertex
             1, &barrier);
     }
 
-    void VVOffscreen::Resize(VkExtent2D new_size)
+    void VVOffscreen::Resize(VkExtent2D new_extent)
     {
-        ViewExtent = new_size;
+        if (new_extent.height == 0 || new_extent.width == 0)
+        {
+            ViewExtent = {1, 1};
+        }
+        SetAccordingtoAspectRatio(ViewExtent, new_extent);
+
+
         vkDeviceWaitIdle(device.device());
         clean();
         create_resources();
         VV_CORE_INFO("Recreated Offscreen!");
     }
+
+void VVOffscreen::SetAccordingtoAspectRatio(VkExtent2D old_extent, VkExtent2D new_extent)
+{
+        float newAspectRatio = static_cast<float>(new_extent.width) / static_cast<float>(new_extent.height);
+        float targetAspectRatio = renderer.GetAspectRatio();
+
+        if (newAspectRatio > targetAspectRatio)
+        {
+            // The new size is wider than the target aspect ratio
+            old_extent.width = static_cast<uint32_t>(new_extent.height * targetAspectRatio);
+            old_extent.height = new_extent.height;
+        }
+        else if (newAspectRatio < targetAspectRatio)
+        {
+            // The new size is taller than the target aspect ratio
+            old_extent.width = new_extent.width;
+            old_extent.height = static_cast<uint32_t>(new_extent.width / targetAspectRatio);
+        }
+        else
+        {
+            // The new size matches the target aspect ratio
+            old_extent = new_extent;
+        }
+}
 
     void VVOffscreen::create_resources()
     {
@@ -123,11 +157,6 @@ namespace VectorVertex
         viewInfo.subresourceRange.layerCount = 1;
 
         vkCreateImageView(device.device(), &viewInfo, nullptr, &offscreenImageView);
-
-        // Step 4: Create the depth attachment (if not already done)
-        VkImage depthImage;
-        VkDeviceMemory depthImageMemory;
-        VkImageView depthImageView;
 
         VkImageCreateInfo depthImageInfo = {};
         depthImageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
@@ -202,15 +231,14 @@ namespace VectorVertex
 
         // Step 7: Create the ImGui texture ID from the offscreen image
         imguiTextureId = ImGui_ImplVulkan_AddTexture(sampler, offscreenImageView, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
-
-        vkDestroyImageView(device.device(), depthImageView, nullptr);
-        vkDestroyImage(device.device(), depthImage, nullptr);
-        vkFreeMemory(device.device(), depthImageMemory, nullptr);
     }
     void VVOffscreen::clean()
     {
         vkDestroySampler(device.device(), sampler, nullptr);
         vkDestroyFramebuffer(device.device(), offscreenFramebuffer, nullptr);
+        vkDestroyImageView(device.device(), depthImageView, nullptr);
+        vkDestroyImage(device.device(), depthImage, nullptr);
+        vkFreeMemory(device.device(), depthImageMemory, nullptr);
         vkDestroyImageView(device.device(), offscreenImageView, nullptr);
         vkDestroyImage(device.device(), offscreenImage, nullptr);
         vkFreeMemory(device.device(), offscreenImageMemory, nullptr);
