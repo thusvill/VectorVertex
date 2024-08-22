@@ -1,6 +1,7 @@
 #include "vv_render_system.hpp"
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
+#include <iostream>
 namespace VectorVertex
 {
 
@@ -10,7 +11,7 @@ namespace VectorVertex
         CreatePipeline(renderPass);
         // texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
     }
-    LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout[]) : vvDevice{device}
+    LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout) : vvDevice{device}
     {
         CreatePipelineLayout(global_set_layout);
         CreatePipeline(renderPass);
@@ -24,7 +25,6 @@ namespace VectorVertex
 
     void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout des_set_layout)
     {
-       
 
         VkPushConstantRange pushConstantRange{};
         pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
@@ -46,9 +46,8 @@ namespace VectorVertex
         }
     }
 
-    void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout des_set_layout[])
+    void LveRenderSystem::CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout)
     {
-       
 
         VkPushConstantRange pushConstantRange{};
         pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
@@ -57,10 +56,12 @@ namespace VectorVertex
 
         // std::vector<VkDescriptorSetLayout> descriptor_set_layouts{global_set_layout};
 
+        std::cout << des_set_layout.size() << std::endl;
+
         VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
         pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-        pipelineLayoutInfo.setLayoutCount = sizeof(des_set_layout) / sizeof(des_set_layout[1]);
-        pipelineLayoutInfo.pSetLayouts = des_set_layout;
+        pipelineLayoutInfo.setLayoutCount = static_cast<uint32_t>(des_set_layout.size());
+        pipelineLayoutInfo.pSetLayouts = des_set_layout.data();
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
@@ -83,7 +84,6 @@ namespace VectorVertex
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info)
     {
         pipeline->Bind(frame_info.command_buffer);
-        vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &frame_info.global_descriptor_set, 0, nullptr);
 
         for (auto &kv : frame_info.game_objects)
         {
@@ -95,15 +95,23 @@ namespace VectorVertex
             push.normalMatrix = obj.transform.normalMatrix();
             if (obj.material_id > -1.0f)
             {
-                push.materialData = VVMaterialLibrary::getMaterial(obj.material_id).m_MaterialData;
+                push.materialData = VVMaterialLibrary::getMaterial(obj.material_id).m_MaterialData.getPushData();
             }
             else
             {
                 VV_CORE_WARN("Material id {} not found on object: {}", obj.material_id, obj.getId());
-                push.materialData = MaterialData{glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)};
+                push.materialData = MaterialPushConstant{glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)};
             }
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
+            for (auto &des: frame_info.descriptor_sets)
+            {
+                if(des.second == VK_NULL_HANDLE){
+                    VV_CORE_ASSERT(true, "descriptor set is null");
+                }
+                vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                                        pipelineLayout, des.first, 1, &des.second, 0, nullptr);
+            }
 
             obj.model->Bind(frame_info.command_buffer);
             obj.model->Draw(frame_info.command_buffer);

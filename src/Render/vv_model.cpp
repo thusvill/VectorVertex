@@ -12,7 +12,6 @@
 #include <Log.h>
 
 #include <iostream>
-
 namespace std
 {
     template <>
@@ -130,8 +129,6 @@ namespace VectorVertex
         return bindingDescriptions;
     }
 
-    
-
     void VVModel::Builder::loadModel(const std::string &filepath)
     {
         std::string lowerPath = filepath;
@@ -200,88 +197,109 @@ namespace VectorVertex
         }
         else if (lowerPath.substr(lowerPath.length() - 4) == ".fbx")
         {
-            VV_CORE_INFO("Loading FBX model: " + filepath);
+           VV_CORE_WARN("Currently we'r not supprt FBX yet :/");
+           return; 
+           // VV_CORE_INFO("Loading FBX model: " + filepath);
 
-            loadFBX(filepath);
+           // loadFBX(filepath);
+        }
+        else{
+            VV_CORE_ERROR("File Format {} not supported!", lowerPath.substr(lowerPath.length() - 4));
+            return;
         }
     }
 
     void VVModel::Builder::loadFBX(const std::string &fbx_path)
+{
+    // Initialize FBX SDK Manager
+    FbxManager *sdkManager = FbxManager::Create();
+    if (!sdkManager)
     {
-        sdkManager = FbxManager::Create();
-        if (!sdkManager)
-        {
-            throw std::runtime_error("Failed to create FBX SDK manager.");
-        }
-
-        fbxsdk::FbxIOSettings *ios = fbxsdk::FbxIOSettings::Create(sdkManager, IOSROOT);
-        sdkManager->SetIOSettings(ios);
-
-        fbxsdk::FbxImporter *importer = fbxsdk::FbxImporter::Create(sdkManager, "");
-
-        if (!importer->Initialize(fbx_path.c_str(), -1, sdkManager->GetIOSettings()))
-        {
-            throw std::runtime_error("Failed to initialize FBX importer: " + std::string(importer->GetStatus().GetErrorString()));
-        }
-
-        FbxScene *scene = FbxScene::Create(sdkManager, "LoadScene");
-
-        if (!importer->Import(scene))
-        {
-            throw std::runtime_error("Failed to import FBX file: " + std::string(importer->GetStatus().GetErrorString()));
-        }
-
-        importer->Destroy();
-
-        fbxsdk::FbxNode *rootNode = scene->GetRootNode();
-        if (rootNode)
-        {
-            for (int i = 0; i < rootNode->GetChildCount(); i++)
-            {
-                fbxsdk::FbxNode *childNode = rootNode->GetChild(i);
-                if (childNode->GetNodeAttribute() && childNode->GetNodeAttribute()->GetAttributeType() == FbxNodeAttribute::eMesh)
-                {
-                    fbxsdk::FbxMesh *mesh = (fbxsdk::FbxMesh *)childNode->GetNodeAttribute();
-
-                    for (int polygonIndex = 0; polygonIndex < mesh->GetPolygonCount(); ++polygonIndex)
-                    {
-                        int numVertices = mesh->GetPolygonSize(polygonIndex);
-
-                        for (int vertexIndex = 0; vertexIndex < numVertices; ++vertexIndex)
-                        {
-                            
-                            int controlPointIndex = mesh->GetPolygonVertex(polygonIndex, vertexIndex);
-
-                            fbxsdk::FbxVector4 fbxPosition = mesh->GetControlPointAt(controlPointIndex);
-                            vertices[vertexIndex].position = glm::vec3(fbxPosition[0], fbxPosition[1], fbxPosition[2]);
-
-                            fbxsdk::FbxVector4 fbxNormal;
-                            mesh->GetPolygonVertexNormal(polygonIndex, vertexIndex, fbxNormal);
-                            vertices[vertexIndex].normal = glm::vec3(fbxNormal[0], fbxNormal[1], fbxNormal[2]);
-
-                            fbxsdk::FbxVector2 fbxUV;
-                            bool unmappedUV;
-                            mesh->GetPolygonVertexUV(polygonIndex, vertexIndex, "UVChannel_0", fbxUV, unmappedUV);
-                            vertices[vertexIndex].uv = glm::vec2(fbxUV[0], fbxUV[1]);
-
-                            // fbxsdk::FbxColor fbxColor;
-                            // int vertexId = polygonIndex * numVertices + vertexIndex;
-                            // bool mappedColor;
-                            // mesh->GetPolygonVertexColor(vertexId, fbxColor);
-                            // glm::vec3 color(fbxColor.mRed, fbxColor.mGreen, fbxColor.mBlue);
-                            
-
-                            VV_CORE_WARN("Vertex Counrt {0}", vertices.size());
-                            
-
-                        }
-                    }
-                }
-            }
-        }
-
-        scene->Destroy();
-        sdkManager->Destroy();
+        throw std::runtime_error("Error: Unable to create FBX Manager!");
     }
+
+    FbxScene *scene = FbxScene::Create(sdkManager, "My Scene");
+    FbxImporter *importer = FbxImporter::Create(sdkManager, "");
+    if (!importer->Initialize(fbx_path.c_str(), -1, sdkManager->GetIOSettings()))
+    {
+        throw std::runtime_error("Error: Unable to initialize FBX importer.");
+    }
+
+    if (!importer->Import(scene))
+    {
+        throw std::runtime_error("Error: Unable to import FBX file.");
+    }
+    importer->Destroy();
+
+    // Initialize vertex and index data containers
+    vertices.clear();
+    indices.clear();
+    std::unordered_map<Vertex, uint32_t> uniqueVertex{};
+
+    // Process each node in the scene recursively
+    FbxNode *rootNode = scene->GetRootNode();
+    if (rootNode)
+    {
+        for (int i = 0; i < rootNode->GetChildCount(); ++i)
+        {
+            ProcessNode(rootNode->GetChild(i), uniqueVertex);
+        }
+    }
+
+    // Clean up the SDK manager after processing
+    sdkManager->Destroy();
+}
+
+void VVModel::Builder::ProcessNode(FbxNode *node, std::unordered_map<Vertex, uint32_t> &uniqueVertex)
+{
+    FbxMesh *mesh = node->GetMesh();
+    if (!mesh)
+    {
+        return; // Skip this node if it does not contain a mesh
+    }
+
+    FbxVector4 *controlPoints = mesh->GetControlPoints();
+    int polygonCount = mesh->GetPolygonCount();
+
+    for (int i = 0; i < polygonCount; ++i)
+    {
+        int polygonSize = mesh->GetPolygonSize(i);
+        for (int j = 0; j < polygonSize; ++j)
+        {
+            Vertex vertex{};
+
+            // Get the index of the vertex in the control points array
+            int controlPointIndex = mesh->GetPolygonVertex(i, j);
+            FbxVector4 position = controlPoints[controlPointIndex];
+            vertex.position = glm::vec3((float)position[0], (float)position[1], (float)position[2]);
+
+            // Retrieve normals
+            FbxVector4 normal;
+            mesh->GetPolygonVertexNormal(i, j, normal);
+            vertex.normal = glm::vec3((float)normal[0], (float)normal[1], (float)normal[2]);
+
+            // Retrieve texture coordinates
+            FbxVector2 uv;
+            bool unmapped;
+            mesh->GetPolygonVertexUV(i, j, mesh->GetElementUV()->GetName(), uv, unmapped);
+            vertex.uv = glm::vec2((float)uv[0], (float)uv[1]);
+
+            // Optional: Retrieve vertex colors (similar to normals/UVs)
+            if (mesh->GetElementVertexColor())
+            {
+                FbxColor color = mesh->GetElementVertexColor()->GetDirectArray().GetAt(controlPointIndex);
+                vertex.color = glm::vec3((float)color.mRed, (float)color.mGreen, (float)color.mBlue);
+            }
+
+            // Store unique vertices and create indices
+            if (uniqueVertex.count(vertex) == 0)
+            {
+                uniqueVertex[vertex] = static_cast<uint32_t>(vertices.size());
+                vertices.push_back(vertex);
+            }
+            indices.push_back(uniqueVertex[vertex]);
+        }
+    }
+}
 
 } // namespace VectorVertex

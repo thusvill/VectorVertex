@@ -5,15 +5,13 @@
 #include <iostream>
 namespace VectorVertex
 {
-    VVPipeline::VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source) : vvDevice{device}
+    VVPipeline::VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader) : vvDevice{device}
     {
-        CreateGraphicsPipeline(config_info, vertex_source, fragment_source);
+        CreateGraphicsPipeline(config_info, vertex_shader, fragment_shader);
     }
 
     VVPipeline::~VVPipeline()
     {
-        vkDestroyShaderModule(vvDevice.device(), vertShaderModule, nullptr);
-        vkDestroyShaderModule(vvDevice.device(), fragShaderModule, nullptr);
         vkDestroyPipeline(vvDevice.device(), graphiscPipeline, nullptr);
     }
 
@@ -130,19 +128,19 @@ namespace VectorVertex
         return buffer;
     }
 
-    void VVPipeline::CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source)
+    void VVPipeline::CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader)
     {
         assert(config_info.pipelineLayout != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Pipelinelayout provided in config");
         assert(config_info.renderPass != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Renderpass provided in config");
-        auto vertex_code = readFile(vertex_source);
-        auto fragment_code = readFile(fragment_source);
 
-        CreateShaderModule(vertex_code, &vertShaderModule);
-        CreateShaderModule(fragment_code, &fragShaderModule);
+        
+        VVShader v_shader(vvDevice, vertex_shader, VK_SHADER_STAGE_VERTEX_BIT);
+        VVShader f_shader(vvDevice, fragment_shader, VK_SHADER_STAGE_FRAGMENT_BIT);
+
         VkPipelineShaderStageCreateInfo shaderStages[2];
         shaderStages[0].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
         shaderStages[0].stage = VK_SHADER_STAGE_VERTEX_BIT;
-        shaderStages[0].module = vertShaderModule;
+        shaderStages[0].module = v_shader.getModule();
         shaderStages[0].pName = "main";
         shaderStages[0].flags = 0;
         shaderStages[0].pNext = nullptr;
@@ -150,7 +148,7 @@ namespace VectorVertex
 
         shaderStages[1].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
         shaderStages[1].stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-        shaderStages[1].module = fragShaderModule;
+        shaderStages[1].module = f_shader.getModule();
         shaderStages[1].pName = "main";
         shaderStages[1].flags = 0;
         shaderStages[1].pNext = nullptr;
@@ -192,17 +190,6 @@ namespace VectorVertex
         }
     }
 
-    void VVPipeline::CreateShaderModule(const std::vector<char> &code, VkShaderModule *shaderModule)
-    {
-        VkShaderModuleCreateInfo createInfo{};
-        createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
-        createInfo.codeSize = code.size();
-        createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
 
-        if (vkCreateShaderModule(vvDevice.device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS)
-        {
-            throw std::runtime_error("failed to create shader module!");
-        }
-    }
 
 } // namespace VectorVertex

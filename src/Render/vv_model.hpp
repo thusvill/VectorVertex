@@ -7,6 +7,7 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include <memory>
+#include <unordered_map>
 #include <fbx/include/fbxsdk.h>
 #include <vector>
 namespace VectorVertex
@@ -38,6 +39,7 @@ namespace VectorVertex
             void
             loadModel(const std::string &filepath);
             void loadFBX(const std::string &fbx_path);
+            void ProcessNode(FbxNode *node, std::unordered_map<Vertex, uint32_t> &uniqueVertex);
         };
         VVModel(VVDevice &device, const Builder &builder);
         ~VVModel();

@@ -1,50 +1,75 @@
 #pragma once
 #include "vv_device.hpp"
+#include "vv_image.hpp"
 #include <string.h>
 #include <unordered_map>
 
-
 namespace VectorVertex
 {
-    class VVTexture{
-        public:
-            VVTexture(VVDevice &device, const std::string &filepath);
-            // VVTexture(const VVTexture&) = delete;
-            // VVTexture& operator=(const VVTexture&) = delete;
-            // VVTexture(VVTexture&&) = delete;
-            // VVTexture& operator=(VVTexture&&) = delete;
+    class VVTexture
+    {
+    public:
+        VVTexture() = default;
+        VVTexture(VVDevice &device);
+        ~VVTexture();
 
-            ~VVTexture();
+        VVTexture(const VVTexture &) = delete;
+        VVTexture &operator=(const VVTexture &) = delete;
 
-            VkSampler getSampler() const { return sampler; }
-            VkImageView getImageView() const { return imageView; }
-            VkImageLayout getImageLayout() const { return imageLayout; }
+        void createTextureImage(const std::string &filePath);
+        void createTextureImageView();
+        void createTextureSampler();
 
-            private:
-            void transitionImageLayout(VkImageLayout oldLayout, VkImageLayout newLayout);
-                VVDevice& vvDevice;
-                VkImage image;
-                VkDeviceMemory imageMemory;
-                VkImageView imageView;
-                VkSampler sampler;
-                VkImageLayout imageLayout;
-                VkFormat imageFormat;
-    };
-    struct TextureData{
-        TextureData()=default;
-        uint32_t ID;
-        VVTexture* texture;
-        VkDescriptorImageInfo vk_image_info{};
+        VkImageView getImageView() const
+        {
 
-    };
+            return textureImageView;
+        }
+        VkSampler getSampler() const
+        {
 
-    class VVTextureLibrary{
-        public:
-            static std::unordered_map<std::string, TextureData> m_Textures;
-            static uint32_t LoadTexture(VVDevice* device, std::string name, std::string path);
-            static TextureData getTexture(uint32_t id);
-            static TextureData getTexture(std::string name);
+            return textureSampler;
+        }
+        VkDescriptorImageInfo getDescriptorImageInfo()
+        {
+            if (textureImageView == VK_NULL_HANDLE)
+            {
+                createTextureImageView();
+            }
+            if (textureSampler == VK_NULL_HANDLE)
+            {
+                createTextureSampler();
+            }
 
+            VkDescriptorImageInfo info{};
+            info.imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+            info.imageView = getImageView();
+            info.sampler = getSampler();
+            return info;
+        }
+
+        explicit operator bool() const
+        {
+            return valid;
+        }
+
+    private:
+        bool valid = false;
+        VVDevice &device;
+
+        VVImage *textureImage;
+        VkImageView textureImageView;
+        VkSampler textureSampler;
+
+        VkBuffer stagingBuffer;
+        VkDeviceMemory stagingBufferMemory;
+
+        void transitionImageLayout(VkImageLayout oldLayout, VkImageLayout newLayout);
+        void copyBufferToImage(VkBuffer buffer, uint32_t width, uint32_t height);
+        VkBuffer createStagingBuffer(const void *data, VkDeviceSize size);
+        void destroyStagingBuffer(VkBuffer buffer, VkDeviceMemory bufferMemory);
+
+        int texWidth, texHeight, texChannels;
     };
 
 } // namespace VectorVertex

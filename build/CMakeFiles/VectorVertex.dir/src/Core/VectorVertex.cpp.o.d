@@ -666,6 +666,8 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_texture.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_image.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_camera.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_offscreen.hpp \
@@ -677,8 +679,12 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Imgui_Layer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_shader.hpp \
+ /usr/include/c++/11/fstream \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_texture.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/vv_point_light_system.hpp \

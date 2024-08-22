@@ -8,7 +8,6 @@ layout(location = 2) in vec3 fragNormalWorld;
 layout(location = 3) in vec2 fragUV;
 
 
-
 struct PointLight{
     vec4 position;
     vec4 color;
@@ -20,7 +19,6 @@ struct DirectionalLight {
     vec3 direction;
     vec3 color;
 };
-layout(set = 1, binding = 0) uniform sampler2D imguiTexture;
 
 layout(set = 0, binding =0) uniform globalUbo{
     mat4 projection;
@@ -31,8 +29,7 @@ layout(set = 0, binding =0) uniform globalUbo{
     int num_lights;
 } ubo;
 
-//layout(set = 0, binding =1) uniform sampler2D image;
-//layout(set =1 , binding =0) uniform sampler2D material_texture;
+layout(set=1, binding=0) uniform sampler2D material_texture;
 
 layout(push_constant) uniform Push{
     mat4 modelMatrix;
@@ -112,8 +109,8 @@ void main(){
     d_light.direction = lightDirection;
     d_light.color = lightColor;
 
-    
+    vec4 tex_color = texture(material_texture, fragUV).rgba;
 
-    outColor = vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light();
+    outColor = vec4(fragColor, 1.0f)*tex_color; //vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light();
 
 }

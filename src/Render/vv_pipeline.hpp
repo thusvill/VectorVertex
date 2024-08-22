@@ -1,5 +1,6 @@
 #pragma once
 #include "vv_device.hpp"
+#include "vv_shader.hpp"
 #include <string>
 #include <cassert>
 #include <vector>
@@ -31,7 +32,7 @@ namespace VectorVertex
     class VVPipeline
     {
     public:
-        VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source);
+        VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader);
         ~VVPipeline();
 
         VVPipeline(const VVPipeline &) = delete;
@@ -44,11 +45,10 @@ namespace VectorVertex
 
     private:
         static std::vector<char> readFile(const std::string &file_path);
-        void CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_source, const std::string fragment_source);
-        void CreateShaderModule(const std::vector<char> &code, VkShaderModule *shaderModule);
+        void CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader);
+    
         VVDevice &vvDevice;
         VkPipeline graphiscPipeline;
-        VkShaderModule vertShaderModule;
-        VkShaderModule fragShaderModule;
+    
     };
 } // namespace VectorVertex

@@ -662,4 +662,6 @@ CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o: \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
  /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_texture.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_image.hpp \
  /usr/include/c++/11/iostream

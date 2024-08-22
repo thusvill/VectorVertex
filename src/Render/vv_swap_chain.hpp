@@ -16,7 +16,7 @@ namespace VectorVertex
   class VVSwapChain
   {
   public:
-    static constexpr int MAX_FRAMES_IN_FLIGHT = 2;
+    static constexpr int MAX_FRAMES_IN_FLIGHT = 4; //2
 
     VVSwapChain(VVDevice &deviceRef, VkExtent2D windowExtent);
     VVSwapChain(VVDevice &deviceRef, VkExtent2D windowExtent, std::shared_ptr<VVSwapChain> previous);

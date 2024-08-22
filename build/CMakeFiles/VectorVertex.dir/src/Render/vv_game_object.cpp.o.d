@@ -660,4 +660,6 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o: \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/codecvt \
- /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h
+ /usr/include/c++/11/bits/fs_dir.h /usr/include/c++/11/bits/fs_ops.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_image.hpp

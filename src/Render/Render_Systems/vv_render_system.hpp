@@ -24,13 +24,13 @@ namespace VectorVertex
     {
         glm::mat4 modelMatrix{1.0f};
         glm::mat4 normalMatrix{1.f};
-        MaterialData materialData;
+        MaterialPushConstant materialData;
     };
     class LveRenderSystem
     {
     public:
         LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout);
-        LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout[]);
+        LveRenderSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout);
         ~LveRenderSystem();
 
         LveRenderSystem(const LveRenderSystem &) = delete;
@@ -40,7 +40,7 @@ namespace VectorVertex
         
 
     private:
-        void CreatePipelineLayout(VkDescriptorSetLayout des_set_layout[]);
+        void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout);
         void CreatePipelineLayout(VkDescriptorSetLayout des_set_layout);
         void CreatePipeline(VkRenderPass renderPass);
 

@@ -1,18 +1,26 @@
 #pragma once
 
 #include <Log.h>
-
+#include "vv_texture.hpp"
 #include <glm/glm.hpp>
 #include <unordered_map>
 #include <string>
+#include <vulkan/vulkan.h>
 
 namespace VectorVertex
 {
+    struct MaterialPushConstant{
+        glm::vec4 color{1.0f, 1.0f, 1.0f, 1.0f};
+    };
     struct MaterialData
     {
         MaterialData() = default;
         MaterialData(glm::vec4 color):color(color){}
-
+        MaterialPushConstant getPushData(){
+            MaterialPushConstant push;
+            push.color = color;
+            return push;
+        }
         glm::vec4 color{1.0f, 1.0f, 1.0f, 1.0f};
     };
 

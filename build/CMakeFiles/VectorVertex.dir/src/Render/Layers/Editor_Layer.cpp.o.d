@@ -661,11 +661,18 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxusernotification.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_material.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_texture.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_image.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_shader.hpp \
+ /usr/include/c++/11/fstream \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+ /usr/include/c++/11/bits/fstream.tcc \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h \

@@ -18,10 +18,10 @@ namespace VectorVertex
     {
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
-
         global_pool = VVDescriptorPool::Builder(vvDevice)
-                          .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                          .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT * 2) // x2 cuz 2 elements
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                          .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
 
         editor_layer = new EditorLayer();
@@ -57,9 +57,15 @@ namespace VectorVertex
 
         auto global_set_layout = VVDescriptorSetLayout::Builder(vvDevice)
                                      .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
+                                     //.addBinding(1, VK_DESCRIPTOR_TYPE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                      .build();
 
+        textureImageDescriptorLayout = VVDescriptorSetLayout::Builder(vvDevice)
+                                           .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
+                                           .build();
+
         std::vector<VkDescriptorSet> global_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
+        std::vector<VkDescriptorSet> texture_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
 
         for (int i = 0; i < global_descriptor_sets.size(); i++)
         {
@@ -67,15 +73,18 @@ namespace VectorVertex
 
             VVDescriptorWriter(*global_set_layout, *global_pool)
                 .writeBuffer(0, &buffer_info)
+                // add texture sampler here
                 .build(global_descriptor_sets[i]);
         }
+
+        base_texture.createTextureImage("/home/bios/Pictures/leonardoAI.png");
         // renderer.createOffscreenResources(WIDTH, HEIGHT, global_pool->getPool());
         //          LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
 
         VV_CORE_INFO("Creating render systems...");
         VVOffscreen offscreen{vvDevice, renderer, editor_layer->Viewport_Extent};
-        LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
-        PointLightSystem pointLightSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
+        std::vector<VkDescriptorSetLayout> layouts = {global_set_layout->getDescriptorSetLayout(), textureImageDescriptorLayout->getDescriptorSetLayout()};
+        LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), layouts};
         VV_CORE_INFO("Created render systems!");
         VVCamera camera{};
 
@@ -98,7 +107,7 @@ namespace VectorVertex
             camControl.moveInPlaneXZ(vvWindow.getGLFWwindow(), frameTime, viewerObject);
             camera.SetViewYXZ(viewerObject.transform.translation, viewerObject.transform.rotation);
 
-            auto aspectRatio = static_cast<float>(offscreen.getViewSize().width) / static_cast<float>(offscreen.getViewSize().height);//renderer.GetAspectRatio();
+            auto aspectRatio = static_cast<float>(offscreen.getViewSize().width) / static_cast<float>(offscreen.getViewSize().height); // renderer.GetAspectRatio();
             // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
             camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
 
@@ -106,7 +115,7 @@ namespace VectorVertex
                 if (editor_layer->is_viewport_resized)
                 {
                     offscreen.Resize(editor_layer->Viewport_Extent);
-                    //camera.Resize(editor_layer->Viewport_Extent);
+                    // camera.Resize(editor_layer->Viewport_Extent);
                     editor_layer->is_viewport_resized = false;
                 }
             }
@@ -117,12 +126,16 @@ namespace VectorVertex
             {
                 int frame_index = renderer.GetFrameIndex();
                 // VV_CORE_WARN(frame_index);
+                std::unordered_map<int, VkDescriptorSet> descriptor_sets;
+                descriptor_sets[0] = global_descriptor_sets[frame_index];
+                descriptor_sets[1] = texture_descriptor_sets[frame_index];
+
                 FrameInfo frameInfo{
                     frame_index,
                     frameTime,
                     commandBuffer,
                     camera,
-                    global_descriptor_sets[frame_index],
+                    descriptor_sets,
                     gameObjects,
                     *global_pool};
 
@@ -131,15 +144,39 @@ namespace VectorVertex
                 ubo.view = camera.GetView();
                 ubo.projection = camera.GetProjection();
                 ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
-                pointLightSystem.Update(frameInfo, ubo);
+
                 ubo_buffers[frame_index]->writeToBuffer(&ubo);
                 ubo_buffers[frame_index]->flush();
 
                 {
+                    {
 
+                        VkDescriptorSet imageSet = texture_descriptor_sets[frame_index];
+                        {
+                            global_pool->resetPool();
+                            for (int i = 0; i < global_descriptor_sets.size(); i++)
+                            {
+                                auto buffer_info = ubo_buffers[i]->descriptorInfo();
+
+                                VVDescriptorWriter(*global_set_layout, *global_pool)
+                                    .writeBuffer(0, &buffer_info)
+                                    .build(global_descriptor_sets[i]);
+                            }
+                            auto imageInfo = base_texture.getDescriptorImageInfo();
+                            for (int i = 0; i < texture_descriptor_sets.size(); i++)
+                            {
+                                VVDescriptorWriter(*textureImageDescriptorLayout, *global_pool)
+                                    .writeImage(0, &imageInfo)
+                                    .build(texture_descriptor_sets[i]);
+                            }
+
+                            descriptor_sets[0] = global_descriptor_sets[frame_index];
+                            descriptor_sets[1] = texture_descriptor_sets[frame_index];
+                            frameInfo.descriptor_sets = descriptor_sets;
+                        }
+                    }
                     offscreen.StartRenderpass(commandBuffer);
                     renderSystem.renderGameobjects(frameInfo);
-                    pointLightSystem.render(frameInfo);
                     offscreen.EndRendrepass(commandBuffer);
                     editor_layer->sceneImageView = offscreen.getFramebufferImage();
                 }
@@ -177,10 +214,11 @@ namespace VectorVertex
         auto supra_object = VVGameObject::CreateGameObject();
         supra_object.model = VVModel;
         supra_object.color = {.1f, .0f, .0f};
-        supra_object.material_id = VVMaterialLibrary::createMaterial("supra_body", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
         supra_object.transform.translation = {.5f, .5f, .0f};
         supra_object.transform.rotation = glm::vec3(0.0f);
         supra_object.transform.scale = glm::vec3{0.2f};
+        supra_object.material_id = VVMaterialLibrary::createMaterial("supra_body", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
+
         // supra_object.transform.rotation.z = 1 * 3.15;
 
         gameObjects.emplace(supra_object.getId(), std::move(supra_object));

@@ -633,30 +633,6 @@ src/Render/vv_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.s
 .PHONY : src/Render/vv_device.cpp.s
 
-src/Render/vv_framebuffer.o: src/Render/vv_framebuffer.cpp.o
-.PHONY : src/Render/vv_framebuffer.o
-
-# target to build an object file
-src/Render/vv_framebuffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o
-.PHONY : src/Render/vv_framebuffer.cpp.o
-
-src/Render/vv_framebuffer.i: src/Render/vv_framebuffer.cpp.i
-.PHONY : src/Render/vv_framebuffer.i
-
-# target to preprocess a source file
-src/Render/vv_framebuffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.i
-.PHONY : src/Render/vv_framebuffer.cpp.i
-
-src/Render/vv_framebuffer.s: src/Render/vv_framebuffer.cpp.s
-.PHONY : src/Render/vv_framebuffer.s
-
-# target to generate assembly for a file
-src/Render/vv_framebuffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.s
-.PHONY : src/Render/vv_framebuffer.cpp.s
-
 src/Render/vv_game_object.o: src/Render/vv_game_object.cpp.o
 .PHONY : src/Render/vv_game_object.o
 
@@ -680,6 +656,30 @@ src/Render/vv_game_object.s: src/Render/vv_game_object.cpp.s
 src/Render/vv_game_object.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.s
 .PHONY : src/Render/vv_game_object.cpp.s
+
+src/Render/vv_image.o: src/Render/vv_image.cpp.o
+.PHONY : src/Render/vv_image.o
+
+# target to build an object file
+src/Render/vv_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o
+.PHONY : src/Render/vv_image.cpp.o
+
+src/Render/vv_image.i: src/Render/vv_image.cpp.i
+.PHONY : src/Render/vv_image.i
+
+# target to preprocess a source file
+src/Render/vv_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.i
+.PHONY : src/Render/vv_image.cpp.i
+
+src/Render/vv_image.s: src/Render/vv_image.cpp.s
+.PHONY : src/Render/vv_image.s
+
+# target to generate assembly for a file
+src/Render/vv_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.s
+.PHONY : src/Render/vv_image.cpp.s
 
 src/Render/vv_material.o: src/Render/vv_material.cpp.o
 .PHONY : src/Render/vv_material.o
@@ -945,12 +945,12 @@ help:
 	@echo "... src/Render/vv_device.o"
 	@echo "... src/Render/vv_device.i"
 	@echo "... src/Render/vv_device.s"
-	@echo "... src/Render/vv_framebuffer.o"
-	@echo "... src/Render/vv_framebuffer.i"
-	@echo "... src/Render/vv_framebuffer.s"
 	@echo "... src/Render/vv_game_object.o"
 	@echo "... src/Render/vv_game_object.i"
 	@echo "... src/Render/vv_game_object.s"
+	@echo "... src/Render/vv_image.o"
+	@echo "... src/Render/vv_image.i"
+	@echo "... src/Render/vv_image.s"
 	@echo "... src/Render/vv_material.o"
 	@echo "... src/Render/vv_material.i"
 	@echo "... src/Render/vv_material.s"

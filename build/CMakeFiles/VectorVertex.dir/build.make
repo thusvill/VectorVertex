@@ -363,24 +363,10 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.cpp -o CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.s
 
-CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
-CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.cpp
-CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o: CMakeFiles/VectorVertex.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o -MF CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o.d -o CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.cpp
-
-CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.cpp > CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.i
-
-CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_framebuffer.cpp -o CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.s
-
 CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
 CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.cpp
 CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o: CMakeFiles/VectorVertex.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o -MF CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o.d -o CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.cpp
 
 CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.i: cmake_force
@@ -390,6 +376,20 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.i: cmake_force
 CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_game_object.cpp -o CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.s
+
+CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
+CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_image.cpp
+CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o: CMakeFiles/VectorVertex.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/CLionProjects/VectorVertex/3DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o -MF CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o.d -o CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_image.cpp
+
+CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_image.cpp > CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.i
+
+CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_image.cpp -o CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.s
 
 CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o: CMakeFiles/VectorVertex.dir/flags.make
 CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o: /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_material.cpp
@@ -526,8 +526,8 @@ VectorVertex_OBJECTS = \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_camera.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_descriptors.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o" \
-"CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o" \
+"CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o" \
 "CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o" \
@@ -561,8 +561,8 @@ VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_buffer.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_camera.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_descriptors.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o
-VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_framebuffer.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o
+VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o
 VectorVertex: CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o

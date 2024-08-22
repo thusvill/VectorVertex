@@ -16,7 +16,7 @@ class EditorLayer: public Layer{
         virtual void OnImGuiRender(FrameInfo &frameInfo) override;
 
         ImTextureID sceneImageView;
-        VkExtent2D Viewport_Extent;
+        VkExtent2D Viewport_Extent{800,800};
 
         bool is_viewport_resized = false;
 

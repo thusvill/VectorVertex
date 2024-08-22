@@ -32,7 +32,7 @@ namespace VectorVertex
         float frame_time;
         VkCommandBuffer command_buffer;
         VVCamera &camera;
-        VkDescriptorSet global_descriptor_set;
+        std::unordered_map<int,VkDescriptorSet> descriptor_sets;
         VVGameObject::Map &game_objects;
         VVDescriptorPool& global_pool;
         ImTextureID frame_image;

@@ -65,5 +65,8 @@ namespace VectorVertex
         // VVMaterialLibrary materials{};
         Scope<VVDescriptorPool> global_pool{};
         VVGameObject::Map gameObjects;
+
+        Scope<VVDescriptorSetLayout> textureImageDescriptorLayout{};
+        VVTexture base_texture{vvDevice};
     };
 } // namespace VectorVertex

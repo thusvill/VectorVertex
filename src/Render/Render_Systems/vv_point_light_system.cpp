@@ -95,7 +95,10 @@ namespace VectorVertex
         }
 
         pipeline->Bind(frame_info.command_buffer);
-        vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &frame_info.global_descriptor_set, 0, nullptr);
+        for (int i = 0; i < frame_info.descriptor_sets.size(); i++)
+        {
+            vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, i, 1, &frame_info.descriptor_sets[i], 0, nullptr);
+        }
 
         // render with revserse of sorted order
         for (auto it = sorted.rbegin(); it != sorted.rend(); it++)
