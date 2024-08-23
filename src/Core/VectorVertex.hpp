@@ -64,6 +64,7 @@ namespace VectorVertex
         LayerStack layers{};
         // VVMaterialLibrary materials{};
         Scope<VVDescriptorPool> global_pool{};
+        Scope<VVDescriptorPool> texture_pool{};
         VVGameObject::Map gameObjects;
 
         Scope<VVDescriptorSetLayout> textureImageDescriptorLayout{};

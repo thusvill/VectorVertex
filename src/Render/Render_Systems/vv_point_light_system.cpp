@@ -17,9 +17,35 @@ namespace VectorVertex
         CreatePipeline(renderPass);
     }
 
+    PointLightSystem::PointLightSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout) : vvDevice{device}
+    {
+        CreatePipelineLayout(global_set_layout);
+        CreatePipeline(renderPass);
+    }
+
     PointLightSystem::~PointLightSystem()
     {
         vkDestroyPipelineLayout(vvDevice.device(), pipelineLayout, nullptr);
+    }
+
+    void PointLightSystem::CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout)
+    {
+        VkPushConstantRange pushConstantRange{};
+        pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+        pushConstantRange.offset = 0;
+        pushConstantRange.size = sizeof(PointLightPushConstants);
+
+        VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
+        pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
+        pipelineLayoutInfo.setLayoutCount = static_cast<uint32_t>(des_set_layout.size());
+        pipelineLayoutInfo.pSetLayouts = des_set_layout.data();
+        pipelineLayoutInfo.pushConstantRangeCount = 1;
+        pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
+
+        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        {
+            throw std::runtime_error("Failed to create pipeline layout!");
+        }
     }
 
     void PointLightSystem::CreatePipelineLayout(VkDescriptorSetLayout global_set_layout)
@@ -95,9 +121,14 @@ namespace VectorVertex
         }
 
         pipeline->Bind(frame_info.command_buffer);
-        for (int i = 0; i < frame_info.descriptor_sets.size(); i++)
+        for (auto &des : frame_info.descriptor_sets)
         {
-            vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, i, 1, &frame_info.descriptor_sets[i], 0, nullptr);
+            if (des.second == VK_NULL_HANDLE)
+            {
+                VV_CORE_ASSERT(true, "descriptor set is null");
+            }
+            vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                                    pipelineLayout, des.first, 1, &des.second, 0, nullptr);
         }
 
         // render with revserse of sorted order
@@ -111,6 +142,7 @@ namespace VectorVertex
             push.radius = _obj.transform.scale.x;
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(PointLightPushConstants), &push);
+
             vkCmdDraw(frame_info.command_buffer, 6, 1, 0, 0);
         }
     }

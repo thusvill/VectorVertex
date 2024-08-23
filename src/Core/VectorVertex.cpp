@@ -77,14 +77,32 @@ namespace VectorVertex
                 .build(global_descriptor_sets[i]);
         }
 
-        base_texture.createTextureImage("/home/bios/Pictures/leonardoAI.png");
-        // renderer.createOffscreenResources(WIDTH, HEIGHT, global_pool->getPool());
-        //          LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), global_set_layout->getDescriptorSetLayout()};
+        base_texture.createTextureImage("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey3.png");
+
+        {
+
+            {
+
+                for (int i = 0; i < texture_descriptor_sets.size(); i++)
+                {
+                    VkDescriptorSet imageSet = texture_descriptor_sets[i];
+                    auto imageInfo = base_texture.getDescriptorImageInfo();
+                    VVDescriptorWriter(*textureImageDescriptorLayout, *global_pool)
+                        .writeImage(0, &imageInfo)
+                        .build(texture_descriptor_sets[i]);
+                }
+
+                // descriptor_sets[0] = global_descriptor_sets[frame_index];
+                // descriptor_sets[1] = texture_descriptor_sets[frame_index];
+                // frameInfo.descriptor_sets = descriptor_sets;
+            }
+        }
 
         VV_CORE_INFO("Creating render systems...");
         VVOffscreen offscreen{vvDevice, renderer, editor_layer->Viewport_Extent};
         std::vector<VkDescriptorSetLayout> layouts = {global_set_layout->getDescriptorSetLayout(), textureImageDescriptorLayout->getDescriptorSetLayout()};
         LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), layouts};
+        PointLightSystem pointlightSystem(vvDevice, renderer.GetSwapchainRenderPass(), layouts);
         VV_CORE_INFO("Created render systems!");
         VVCamera camera{};
 
@@ -145,38 +163,16 @@ namespace VectorVertex
                 ubo.projection = camera.GetProjection();
                 ubo.inverse_view_matrix = camera.GetInverseViewMatrix();
 
+                pointlightSystem.Update(frameInfo, ubo);
+
                 ubo_buffers[frame_index]->writeToBuffer(&ubo);
                 ubo_buffers[frame_index]->flush();
 
                 {
-                    {
 
-                        VkDescriptorSet imageSet = texture_descriptor_sets[frame_index];
-                        {
-                            global_pool->resetPool();
-                            for (int i = 0; i < global_descriptor_sets.size(); i++)
-                            {
-                                auto buffer_info = ubo_buffers[i]->descriptorInfo();
-
-                                VVDescriptorWriter(*global_set_layout, *global_pool)
-                                    .writeBuffer(0, &buffer_info)
-                                    .build(global_descriptor_sets[i]);
-                            }
-                            auto imageInfo = base_texture.getDescriptorImageInfo();
-                            for (int i = 0; i < texture_descriptor_sets.size(); i++)
-                            {
-                                VVDescriptorWriter(*textureImageDescriptorLayout, *global_pool)
-                                    .writeImage(0, &imageInfo)
-                                    .build(texture_descriptor_sets[i]);
-                            }
-
-                            descriptor_sets[0] = global_descriptor_sets[frame_index];
-                            descriptor_sets[1] = texture_descriptor_sets[frame_index];
-                            frameInfo.descriptor_sets = descriptor_sets;
-                        }
-                    }
                     offscreen.StartRenderpass(commandBuffer);
                     renderSystem.renderGameobjects(frameInfo);
+                    pointlightSystem.render(frameInfo);
                     offscreen.EndRendrepass(commandBuffer);
                     editor_layer->sceneImageView = offscreen.getFramebufferImage();
                 }

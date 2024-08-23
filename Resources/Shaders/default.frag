@@ -7,20 +7,17 @@ layout(location = 1) in vec3 fragPosWorld;
 layout(location = 2) in vec3 fragNormalWorld;
 layout(location = 3) in vec2 fragUV;
 
-
-struct PointLight{
+struct PointLight {
     vec4 position;
     vec4 color;
 };
-
-
 
 struct DirectionalLight {
     vec3 direction;
     vec3 color;
 };
 
-layout(set = 0, binding =0) uniform globalUbo{
+layout(set = 0, binding =0) uniform globalUbo {
     mat4 projection;
     mat4 view;
     mat4 inv_view;
@@ -29,9 +26,9 @@ layout(set = 0, binding =0) uniform globalUbo{
     int num_lights;
 } ubo;
 
-layout(set=1, binding=0) uniform sampler2D material_texture;
+layout(set = 1, binding = 0) uniform sampler2D material_texture;
 
-layout(push_constant) uniform Push{
+layout(push_constant) uniform Push {
     mat4 modelMatrix;
     mat4 normalMatrix;
 } push;
@@ -50,7 +47,6 @@ vec3 calculateSpecular(vec3 normal, vec3 lightDir, vec3 viewDir, float roughness
     return specular * lightColor;
 }
 
-
 vec3 calculateDirectionalLight(DirectionalLight dirLight, vec3 normal, vec3 viewDir) {
     vec3 lightDir = normalize(-dirLight.direction);
     vec3 diffuse = calculateDiffuse(normal, lightDir, dirLight.color);
@@ -61,56 +57,42 @@ vec3 calculateDirectionalLight(DirectionalLight dirLight, vec3 normal, vec3 view
 vec3 lightDirection = vec3(0.0f, 0.1f, 0.0f);  // Direction of the directional light
 vec3 lightColor = vec3(0.01); 
 
-
-vec4 point_light(){
-
-    
+vec4 point_light() {
     vec3 diffuse_light = ubo.ambient_color.xyz * ubo.ambient_color.w;
     vec3 specular_light = vec3(0.0);
     vec3 surface_normal = normalize(fragNormalWorld);
-
+    
     vec3 camera_pos_world = ubo.inv_view[3].xyz;
     vec3 view_direction = normalize(camera_pos_world - fragPosWorld);
-
-    for(int i= 0; i < ubo.num_lights; i++){
+    
+    for(int i= 0; i < ubo.num_lights; i++) {
         PointLight light = ubo.point_lights[i];
         vec3 direction_to_light = light.position.xyz - fragPosWorld;
         float attenuation = 1.0 / dot(direction_to_light, direction_to_light); // distance ^ 2
         direction_to_light = normalize(direction_to_light);
-
+        
         float cos_ang_incidence = max(dot(surface_normal, direction_to_light), 0.0);
         vec3 intensity = light.color.xyz * light.color.w * attenuation;
-
+        
         diffuse_light += intensity * cos_ang_incidence;
-
+        
         //specular lightning
         vec3 half_angle = normalize(direction_to_light + view_direction);
         float blinn_term = dot(surface_normal , half_angle);
         blinn_term = clamp(blinn_term, 0, 1);
         blinn_term = pow(blinn_term, 512.0); // higher values -> sharp highlight
-
-        specular_light += intensity * blinn_term;
-
         
+        specular_light += intensity * blinn_term;
     }
-
-//vec4 imageColor = texture(image, fragUV).rgba;
-//return vec4((diffuse_light *  fragColor + specular_light * fragColor), 1.0)*imageColor;
-return vec4((diffuse_light *  fragColor + specular_light * fragColor), 1.0);
+    return vec4((diffuse_light * fragColor + specular_light * fragColor), 1.0);
 }
 
-
-
-void main(){
-
+void main() {
     //outColor = point_light();
-
+    
     DirectionalLight d_light;
     d_light.direction = lightDirection;
     d_light.color = lightColor;
-
-    vec4 tex_color = texture(material_texture, fragUV).rgba;
-
-    outColor = vec4(fragColor, 1.0f)*tex_color; //vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light();
-
+    
+    outColor = vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light()+texture(material_texture, fragUV).rgba;
 }

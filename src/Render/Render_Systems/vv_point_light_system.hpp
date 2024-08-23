@@ -21,6 +21,7 @@ namespace VectorVertex
     {
     public:
         PointLightSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout);
+        PointLightSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout);
         ~PointLightSystem();
 
         PointLightSystem(const PointLightSystem &) = delete;
@@ -30,6 +31,7 @@ namespace VectorVertex
         void render(FrameInfo &frame_info);
 
     private:
+        void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout);
         void CreatePipelineLayout(VkDescriptorSetLayout global_set_layout);
         void CreatePipeline(VkRenderPass renderPass);
 
