@@ -6,9 +6,13 @@
 
 #include "vv_model.hpp"
 #include "vv_material.hpp"
+#include <vv_uuid.hpp>
 
 namespace VectorVertex
 {
+    struct IDComponent{
+        UUID id;
+    };
 
     struct TransformComponent
     {
@@ -27,12 +31,11 @@ namespace VectorVertex
     class VVGameObject
     {
     public:
-        using id_t = unsigned int;
+        using id_t = uint64_t;
         using Map = std::unordered_map<id_t, VVGameObject>;
-        static VVGameObject CreateGameObject()
+        static VVGameObject CreateGameObject(std::string name)
         {
-            static id_t current_id = 0;
-            return VVGameObject{current_id++};
+            return VVGameObject{name};
         }
 
         static VVGameObject MakePointLight(float intensity = 1.0f, float radius = 0.1f, glm::vec3 color = glm::vec3(1.0f));
@@ -42,19 +45,21 @@ namespace VectorVertex
         VVGameObject(VVGameObject &&) = default;
         VVGameObject &operator=(VVGameObject &&) = default;
 
-        const id_t getId() { return id; }
-
+        const id_t getId() { return uuid.id; }
+        IDComponent uuid;
+        std::string m_Name;
         std::shared_ptr<VVModel> model{};
         glm::vec3 color{};
-        uint32_t material_id = VVMaterialLibrary::getDefaultID();
+        uint64_t material_id;
         TransformComponent transform;
 
         std::unique_ptr<PointLightComponent> point_light = nullptr;
 
     private:
-        VVGameObject(id_t id) : id{id}
+        VVGameObject(std::string name)
         {
+            m_Name = name;
+            VV_CORE_INFO("GameObject Created with name:{0} on UUID:{1}", name, uuid.id);
         }
-        id_t id;
     };
 } // namespace VectorVertex

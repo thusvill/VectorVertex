@@ -19,10 +19,15 @@ namespace VectorVertex
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
         global_pool = VVDescriptorPool::Builder(vvDevice)
-                          .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT * 2) // x2 cuz 2 elements
+                          .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                          .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                          //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
+
+        texture_pool = VVDescriptorPool::Builder(vvDevice)
+                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                           .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                           .build();
 
         editor_layer = new EditorLayer();
         editor_layer->SetupImgui(&vvDevice, &renderer, &vvWindow);
@@ -33,6 +38,8 @@ namespace VectorVertex
         VV_CORE_WARN("Initialized!");
 
         VVMaterialLibrary::InitMaterialLib();
+        VVTextureLibrary::InitTextureLib(vvDevice);
+
 
         // TODO: implement Asset system
         VV_CORE_WARN("Loading Gameobjects ...");
@@ -77,24 +84,19 @@ namespace VectorVertex
                 .build(global_descriptor_sets[i]);
         }
 
-        base_texture.createTextureImage("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey3.png");
+        // base_texture.createTextureImage("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/DirtAlbedo.png");
+        uint64_t newTexture = VVTextureLibrary::Create(vvDevice, "DirtAlbedo", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/DirtAlbedo.png");
 
         {
 
+            for (int i = 0; i < texture_descriptor_sets.size(); i++)
             {
-
-                for (int i = 0; i < texture_descriptor_sets.size(); i++)
-                {
-                    VkDescriptorSet imageSet = texture_descriptor_sets[i];
-                    auto imageInfo = base_texture.getDescriptorImageInfo();
-                    VVDescriptorWriter(*textureImageDescriptorLayout, *global_pool)
-                        .writeImage(0, &imageInfo)
-                        .build(texture_descriptor_sets[i]);
-                }
-
-                // descriptor_sets[0] = global_descriptor_sets[frame_index];
-                // descriptor_sets[1] = texture_descriptor_sets[frame_index];
-                // frameInfo.descriptor_sets = descriptor_sets;
+                VkDescriptorSet imageSet = texture_descriptor_sets[i];
+                //auto imageInfo = VVTextureLibrary::GetTexture(VVTextureLibrary::default_uuid).getDescriptorImageInfo();
+                auto imageInfo = VVTextureLibrary::GetTexture(newTexture).getDescriptorImageInfo();
+                VVDescriptorWriter(*textureImageDescriptorLayout, *texture_pool)
+                    .writeImage(0, &imageInfo)
+                    .build(texture_descriptor_sets[i]);
             }
         }
 
@@ -106,7 +108,7 @@ namespace VectorVertex
         VV_CORE_INFO("Created render systems!");
         VVCamera camera{};
 
-        auto viewerObject = VVGameObject::CreateGameObject();
+        auto viewerObject = VVGameObject::CreateGameObject("Camera");
         viewerObject.transform.translation = glm::vec3(-1.48, -0.77, -2.17);
         viewerObject.transform.rotation = glm::vec3(-0.41, 0.87, 0.0f);
         KeyboardInputs camControl{};
@@ -142,11 +144,25 @@ namespace VectorVertex
 
             if (auto commandBuffer = renderer.BeginFrame())
             {
+
                 int frame_index = renderer.GetFrameIndex();
+
+                // TODO: Need to make textures update runtime
+                // {
+
+                //     VkDescriptorSet imageSet = texture_descriptor_sets[frame_index];
+                //     auto imageInfo = base_texture.getDescriptorImageInfo();
+                //     VVDescriptorWriter(*textureImageDescriptorLayout, *texture_pool)
+                //         .writeImage(0, &imageInfo)
+                //         .build(texture_descriptor_sets[frame_index]);
+                // }
+
                 // VV_CORE_WARN(frame_index);
                 std::unordered_map<int, VkDescriptorSet> descriptor_sets;
                 descriptor_sets[0] = global_descriptor_sets[frame_index];
                 descriptor_sets[1] = texture_descriptor_sets[frame_index];
+
+                std::vector<std::reference_wrapper<VVDescriptorPool>> pools = {*global_pool, *texture_pool};
 
                 FrameInfo frameInfo{
                     frame_index,
@@ -155,7 +171,7 @@ namespace VectorVertex
                     camera,
                     descriptor_sets,
                     gameObjects,
-                    *global_pool};
+                    pools};
 
                 // update
                 GlobalUBO ubo{};
@@ -168,6 +184,7 @@ namespace VectorVertex
                 ubo_buffers[frame_index]->writeToBuffer(&ubo);
                 ubo_buffers[frame_index]->flush();
 
+                // Offscreen Renderer
                 {
 
                     offscreen.StartRenderpass(commandBuffer);
@@ -176,14 +193,13 @@ namespace VectorVertex
                     offscreen.EndRendrepass(commandBuffer);
                     editor_layer->sceneImageView = offscreen.getFramebufferImage();
                 }
-
-                renderer.BeginSwapchainRenderPass(commandBuffer);
-                // renderSystem.renderGameobjects(frameInfo);
-                // pointLightSystem.render(frameInfo);
-                editor_layer->OnRender(frameInfo);
-                editor_layer->OnImGuiRender(frameInfo);
-
-                renderer.EndSwapchainRenderPass(commandBuffer);
+                // Main Window Renderer
+                {
+                    renderer.BeginSwapchainRenderPass(commandBuffer);
+                    editor_layer->OnRender(frameInfo);
+                    editor_layer->OnImGuiRender(frameInfo);
+                    renderer.EndSwapchainRenderPass(commandBuffer);
+                }
 
                 renderer.EndFrame();
             }
@@ -207,7 +223,7 @@ namespace VectorVertex
         // gameObjects.emplace(supra5_object.getId(), std::move(supra5_object));
 
         VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
-        auto supra_object = VVGameObject::CreateGameObject();
+        auto supra_object = VVGameObject::CreateGameObject("Supra Model");
         supra_object.model = VVModel;
         supra_object.color = {.1f, .0f, .0f};
         supra_object.transform.translation = {.5f, .5f, .0f};
@@ -220,8 +236,9 @@ namespace VectorVertex
         gameObjects.emplace(supra_object.getId(), std::move(supra_object));
 
         VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
-        auto quad = VVGameObject::CreateGameObject();
+        auto quad = VVGameObject::CreateGameObject("Plane");
         quad.model = VVModel;
+        quad.material_id = VVMaterialLibrary::createMaterial("ground", MaterialData(glm::vec4(1.0f, 0.0f, 1.0f, 1.0f)));
         quad.transform.translation = {.0f, .5f, .0f};
         quad.transform.rotation = glm::vec3(0.0f);
         // quad.transform.rotation.y = 1 * (3.15 / 2);

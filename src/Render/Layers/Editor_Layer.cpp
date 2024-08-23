@@ -92,18 +92,43 @@ namespace VectorVertex
             ImGui::End();
         }
 
-        ImGui::Begin("Material");
-        MaterialData _data = VVMaterialLibrary::getMaterial("supra_body").m_MaterialData;
-        float col[4];
-        col[0] = _data.color.x;
-        col[1] = _data.color.y;
-        col[2] = _data.color.z;
-        col[3] = _data.color.w;
-        ImGui::ColorPicker4("supra_body:", col);
-        _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
-        VVMaterialLibrary::updateMaterial("supra_body", _data);
-        // VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
-        ImGui::End();
+        {
+
+            // MaterialData _data = VVMaterialLibrary::getMaterial("supra_body").m_MaterialData;
+            // float col[4];
+            // col[0] = _data.color.x;
+            // col[1] = _data.color.y;
+            // col[2] = _data.color.z;
+            // col[3] = _data.color.w;
+            // ImGui::ColorPicker4("supra_body:", col);
+            // _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
+            // VVMaterialLibrary::updateMaterial("supra_body", _data);
+            // VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
+        }
+        {
+            for (auto &obj : frameInfo.game_objects)
+            {
+                if (VVMaterialLibrary::getMaterial(obj.second.material_id).m_ID > -1)
+                {
+
+                    ImGui::Begin("Material");
+                    MaterialData _data = VVMaterialLibrary::getMaterial(obj.second.material_id).m_MaterialData;
+                    ImGui::PushID(obj.second.getId());
+                    float col[4];
+                    col[0] = _data.color.r;
+                    col[1] = _data.color.g;
+                    col[2] = _data.color.b;
+                    col[3] = _data.color.a;
+                    if (ImGui::ColorPicker4(obj.second.m_Name.c_str(), col))
+                    {
+                        _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
+                        VVMaterialLibrary::updateMaterial(obj.second.material_id, _data);
+                    }
+                    ImGui::PopID();
+                    ImGui::End();
+                }
+            }
+        }
 
         // Inside your ImGui rendering loop
         ImGui::Begin("Offscreen Image Window");

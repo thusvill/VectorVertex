@@ -12,12 +12,12 @@ namespace VectorVertex
         VV_CORE_INFO("Initialized Material Library");
     }
 
-    uint32_t VVMaterialLibrary::getDefaultID()
+    uint64_t VVMaterialLibrary::getDefaultID()
     {
         return getMaterial("default").m_ID;
     }
 
-    uint32_t VVMaterialLibrary::createMaterial(std::string name, MaterialData materialData)
+    uint64_t VVMaterialLibrary::createMaterial(std::string name, MaterialData materialData)
     {
         if (name.empty())
         {
@@ -32,7 +32,6 @@ namespace VectorVertex
         else
         {
             VVMaterial newMaterial{};
-            newMaterial.m_ID = m_Materials.size();
             newMaterial.m_MaterialData = materialData;
             m_Materials[name] = newMaterial;
             VV_CORE_INFO("Created Material: {} ID: {}", name, newMaterial.m_ID);
@@ -40,7 +39,7 @@ namespace VectorVertex
         }
 }
 
-VVMaterial VVMaterialLibrary::getMaterial(uint32_t id)
+VVMaterial VVMaterialLibrary::getMaterial(uint64_t id)
 {
     for (const auto &pair : m_Materials)
     {
@@ -50,7 +49,9 @@ VVMaterial VVMaterialLibrary::getMaterial(uint32_t id)
         }
     }
     VV_CORE_ERROR("Material not found: {}", id);
-    return VVMaterial{};
+    VVMaterial _m{};
+    _m.m_ID = -1;
+    return _m;
 }
 
 VVMaterial VVMaterialLibrary::getMaterial(std::string name)
@@ -58,7 +59,7 @@ VVMaterial VVMaterialLibrary::getMaterial(std::string name)
     return m_Materials[name];
 }
 
-void VVMaterialLibrary::updateMaterial(uint32_t id, MaterialData materialData)
+void VVMaterialLibrary::updateMaterial(uint64_t id, MaterialData materialData)
 {
     for (auto &pair : m_Materials)
     {

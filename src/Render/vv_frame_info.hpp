@@ -4,7 +4,8 @@
 #include "vv_game_object.hpp"
 #include "vv_descriptors.hpp"
 #include <imgui.h>
-
+#include <functional>
+#include <vector>
 #include <vulkan/vulkan.h>
 
 namespace VectorVertex
@@ -34,7 +35,7 @@ namespace VectorVertex
         VVCamera &camera;
         std::unordered_map<int,VkDescriptorSet> descriptor_sets;
         VVGameObject::Map &game_objects;
-        VVDescriptorPool& global_pool;
+        std::vector<std::reference_wrapper<VVDescriptorPool>> &global_pool;
         ImTextureID frame_image;
     };
 } // namespace VectorVertex

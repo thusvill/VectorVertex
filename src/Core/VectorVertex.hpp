@@ -68,6 +68,6 @@ namespace VectorVertex
         VVGameObject::Map gameObjects;
 
         Scope<VVDescriptorSetLayout> textureImageDescriptorLayout{};
-        VVTexture base_texture{vvDevice};
+        //VVTexture base_texture;
     };
 } // namespace VectorVertex

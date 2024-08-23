@@ -42,6 +42,7 @@ namespace VectorVertex
 
     VkResult acquireNextImage(uint32_t *imageIndex);
     VkResult submitCommandBuffers(const VkCommandBuffer *buffers, uint32_t *imageIndex);
+    VkResult submitCommandBuffersToAFence(const VkCommandBuffer *buffers, uint32_t *imageIndex, VkFence fence);
 
     bool compareSwapFormats(const VVSwapChain &swapChain) const
     {

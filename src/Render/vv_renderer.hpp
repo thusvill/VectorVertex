@@ -50,17 +50,6 @@ namespace VectorVertex
         uint32_t GetSwapchainImageCount() const { return lveSwapChain->getImageCount(); }
         VVSwapChain &Get_Swapchain() const { return *lveSwapChain; }
 
-        // Offscreen
-        void createOffscreenResources(uint32_t width, uint32_t height, VkDescriptorPool des_pool);
-        void BeginOffscreenRenderpass(VkCommandBuffer commandBuffer);
-        void EndOffscreenRenderpass(VkCommandBuffer commandBuffer);
-        void renderOffscreen(VkCommandBuffer commandBuffer);
-        void cleanupOffscreenResources();
-        VkExtent2D offscreen_size{};
-        VkDescriptorSet getImGuiDescriptorSet() const { return imguiDescriptorSet; }
-        VkRenderPass GetOffscreenRenderpass()const{ return offscreenRenderPass;}
-        VkDescriptorSetLayout imguiDescriptorSetLayout;
-        // Offscreen
 
     private:
         void
@@ -78,26 +67,5 @@ namespace VectorVertex
         uint32_t currentImageIndex;
         int currentFrameIndex{0};
         bool isFrameStarted{false};
-
-        // Offscreen
-        VkImage offscreenImage;
-        VkDeviceMemory offscreenImageMemory;
-        VkImageView offscreenImageView;
-        VkFramebuffer offscreenFramebuffer;
-        VkRenderPass offscreenRenderPass;
-
-        void createOffscreenImage(uint32_t width, uint32_t height);
-        void createOffscreenImageView();
-        void createOffscreenRenderPass();
-        void createOffscreenFramebuffer(uint32_t width, uint32_t height);
-        uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
-        VkSampler imguiSampler;
-        
-        VkDescriptorSet imguiDescriptorSet;
-        VkDescriptorPool descriptorPool;
-
-        void createImGuiDescriptorSet();
-        void cleanupImGuiResources();
-        // Offscreen
     };
 } // namespace VectorVertex

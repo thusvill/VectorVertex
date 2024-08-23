@@ -142,6 +142,67 @@ namespace VectorVertex
     return result;
   }
 
+  VkResult VVSwapChain::submitCommandBuffersToAFence(const VkCommandBuffer *buffers, uint32_t *imageIndex, VkFence fence)
+  {
+      if (fence != VK_NULL_HANDLE)
+    {
+        vkWaitForFences(device.device(), 1, &fence, VK_TRUE, UINT64_MAX);
+    }
+
+    // Update the in-flight fence for the current image
+    imagesInFlight[*imageIndex] = fence;
+
+    VkSubmitInfo submitInfo = {};
+    submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+
+    // Semaphore waiting setup
+    VkSemaphore waitSemaphores[] = {imageAvailableSemaphores[currentFrame]};
+    VkPipelineStageFlags waitStages[] = {VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT};
+    submitInfo.waitSemaphoreCount = 1;
+    submitInfo.pWaitSemaphores = waitSemaphores;
+    submitInfo.pWaitDstStageMask = waitStages;
+
+    // Command buffers setup
+    submitInfo.commandBufferCount = 1; // Adjust if submitting multiple command buffers
+    submitInfo.pCommandBuffers = buffers;
+
+    // Semaphore signaling setup
+    VkSemaphore signalSemaphores[] = {renderFinishedSemaphores[currentFrame]};
+    submitInfo.signalSemaphoreCount = 1;
+    submitInfo.pSignalSemaphores = signalSemaphores;
+
+    // Reset the fence before submitting the command buffer
+    vkResetFences(device.device(), 1, &fence);
+
+    // Submit the command buffer to the graphics queue
+    VkResult result = vkQueueSubmit(device.graphicsQueue(), 1, &submitInfo, fence);
+    if (result != VK_SUCCESS)
+    {
+        VV_CORE_ERROR("failed to submit draw command buffer!");
+        throw std::runtime_error("failed to submit draw command buffer!");
+    }
+
+    // Present the image
+    VkPresentInfoKHR presentInfo = {};
+    presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+
+    presentInfo.waitSemaphoreCount = 1;
+    presentInfo.pWaitSemaphores = signalSemaphores;
+
+    VkSwapchainKHR swapChains[] = {swapChain};
+    presentInfo.swapchainCount = 1;
+    presentInfo.pSwapchains = swapChains;
+
+    presentInfo.pImageIndices = imageIndex;
+
+    result = vkQueuePresentKHR(device.presentQueue(), &presentInfo);
+
+    // Move to the next frame
+    currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
+
+    return result;
+  }
+
   void VVSwapChain::createSwapChain()
   {
     SwapChainSupportDetails swapChainSupport = device.getSwapChainSupport();

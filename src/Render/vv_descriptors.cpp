@@ -1,4 +1,5 @@
 #include "vv_descriptors.hpp"
+#include <Log.h>
 
 // std
 #include <cassert>
@@ -246,7 +247,18 @@ namespace VectorVertex
         bool success = pool.allocateDescriptor(setLayout.getDescriptorSetLayout(), set);
         if (!success)
         {
-            return false;
+            VV_CORE_ERROR("Cannot Allocate Descriptor set!");
+
+            pool.resetPool();
+            success = pool.allocateDescriptor(setLayout.getDescriptorSetLayout(), set);
+            if (!success)
+            {
+                VV_CORE_ERROR("Cannot allocate descriptor set after reset!");
+                return false;
+            }else{
+                VV_CORE_WARN("Created allocate descriptor set after reset!");
+               
+            }
         }
         overwrite(set);
         return true;

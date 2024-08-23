@@ -273,6 +273,30 @@ src/Core/VectorVertex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s
 .PHONY : src/Core/VectorVertex.cpp.s
 
+src/Core/vv_uuid.o: src/Core/vv_uuid.cpp.o
+.PHONY : src/Core/vv_uuid.o
+
+# target to build an object file
+src/Core/vv_uuid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o
+.PHONY : src/Core/vv_uuid.cpp.o
+
+src/Core/vv_uuid.i: src/Core/vv_uuid.cpp.i
+.PHONY : src/Core/vv_uuid.i
+
+# target to preprocess a source file
+src/Core/vv_uuid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.i
+.PHONY : src/Core/vv_uuid.cpp.i
+
+src/Core/vv_uuid.s: src/Core/vv_uuid.cpp.s
+.PHONY : src/Core/vv_uuid.s
+
+# target to generate assembly for a file
+src/Core/vv_uuid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.s
+.PHONY : src/Core/vv_uuid.cpp.s
+
 src/Render/Layers/Editor_Layer.o: src/Render/Layers/Editor_Layer.cpp.o
 .PHONY : src/Render/Layers/Editor_Layer.o
 
@@ -900,6 +924,9 @@ help:
 	@echo "... src/Core/VectorVertex.o"
 	@echo "... src/Core/VectorVertex.i"
 	@echo "... src/Core/VectorVertex.s"
+	@echo "... src/Core/vv_uuid.o"
+	@echo "... src/Core/vv_uuid.i"
+	@echo "... src/Core/vv_uuid.s"
 	@echo "... src/Render/Layers/Editor_Layer.o"
 	@echo "... src/Render/Layers/Editor_Layer.i"
 	@echo "... src/Render/Layers/Editor_Layer.s"
