@@ -92,8 +92,8 @@ namespace VectorVertex
             for (int i = 0; i < texture_descriptor_sets.size(); i++)
             {
                 VkDescriptorSet imageSet = texture_descriptor_sets[i];
-                //auto imageInfo = VVTextureLibrary::GetTexture(VVTextureLibrary::default_uuid).getDescriptorImageInfo();
-                auto imageInfo = VVTextureLibrary::GetTexture(newTexture).getDescriptorImageInfo();
+                auto imageInfo = VVTextureLibrary::GetTexture(VVTextureLibrary::default_uuid).getDescriptorImageInfo();
+                //auto imageInfo = VVTextureLibrary::GetTexture(newTexture).getDescriptorImageInfo();
                 VVDescriptorWriter(*textureImageDescriptorLayout, *texture_pool)
                     .writeImage(0, &imageInfo)
                     .build(texture_descriptor_sets[i]);

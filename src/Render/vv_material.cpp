@@ -54,6 +54,18 @@ VVMaterial VVMaterialLibrary::getMaterial(uint64_t id)
     return _m;
 }
 
+bool VVMaterialLibrary::isMaterialAvailable(uint64_t id)
+{
+    for (const auto &pair : m_Materials)
+    {
+        if (pair.second.m_ID == id)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 VVMaterial VVMaterialLibrary::getMaterial(std::string name)
 {
     return m_Materials[name];

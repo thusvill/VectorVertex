@@ -108,7 +108,7 @@ namespace VectorVertex
         {
             for (auto &obj : frameInfo.game_objects)
             {
-                if (VVMaterialLibrary::getMaterial(obj.second.material_id).m_ID > -1)
+                if (VVMaterialLibrary::isMaterialAvailable(obj.second.material_id))
                 {
 
                     ImGui::Begin("Material");

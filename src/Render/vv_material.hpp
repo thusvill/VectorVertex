@@ -39,6 +39,7 @@ namespace VectorVertex
 
             static uint64_t createMaterial(std::string name, MaterialData materialData);
             static VVMaterial getMaterial(uint64_t id);
+            static bool isMaterialAvailable(uint64_t id);
             static VVMaterial getMaterial(std::string name);
 
         static void updateMaterial(uint64_t id, MaterialData materialData);
