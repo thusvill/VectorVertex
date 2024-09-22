@@ -1,11 +1,17 @@
 #include "Editor_Layer.hpp"
 #include <glm/gtc/type_ptr.hpp>
+#include <Entity.hpp>
+
+#include <Scene.hpp>
 
 namespace VectorVertex
 {
     EditorLayer::EditorLayer() : Layer("EditorLayer")
     {
         VV_CORE_INFO("[Layer]:EditorLayer Created!");
+        m_ActiveScene = CreateRef<Scene>();
+
+        
     }
 
     void EditorLayer::SetupImgui(VVDevice *vv_device, VVRenderer *vv_renderer, VVWindow *vv_window)
@@ -30,10 +36,13 @@ namespace VectorVertex
 
     void EditorLayer::OnAttach()
     {
+
     }
 
     void EditorLayer::OnUpdate()
     {
+            m_ActiveScene->OnUpdate();
+            auto test_object = m_ActiveScene->CreateEntity("test");
     }
 
     void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
@@ -112,7 +121,7 @@ namespace VectorVertex
             for (auto &obj : frameInfo.game_objects)
             {
 
-                ImGui::Text(obj.second.m_Name.c_str());
+                ImGui::Text("%s",obj.second.m_Name.c_str());
                 ImGui::PushID(obj.second.uuid.id);
                 ImGui::DragFloat3("Position: ", glm::value_ptr(obj.second.transform.translation), 0.05f, 0.0f, 100.0f);
                 ImGui::PopID();
@@ -130,10 +139,10 @@ namespace VectorVertex
         {
             ImGui::Begin("Materials");
             for (auto &obj : frameInfo.game_objects)
-            {   
+            {
                 if (VVMaterialLibrary::isMaterialAvailable(obj.second.material_id))
                 {
-                    ImGui::Text(obj.second.m_Name.c_str());
+                    ImGui::Text("%s",obj.second.m_Name.c_str());
                     MaterialData _data = VVMaterialLibrary::getMaterial(obj.second.material_id).m_MaterialData;
                     ImGui::PushID(obj.second.material_id);
                     float col[4];
@@ -141,7 +150,7 @@ namespace VectorVertex
                     col[1] = _data.color.g;
                     col[2] = _data.color.b;
                     col[3] = _data.color.a;
-                    if (ImGui::ColorPicker4(_data.m_Name.c_str(), col))
+                    if (ImGui::ColorEdit4(_data.m_Name.c_str(), col))
                     {
                         _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
                         VVMaterialLibrary::updateMaterial(obj.second.material_id, _data);
@@ -153,7 +162,8 @@ namespace VectorVertex
         }
 
         // Inside your ImGui rendering loop
-        ImGui::Begin("Offscreen Image Window");
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
+        ImGui::Begin("Viewport");
 
         // Get the size of your ImGui window or set your desired size
         ImVec2 windowSize = ImGui::GetContentRegionAvail();
@@ -169,6 +179,7 @@ namespace VectorVertex
         ImGui::Image(sceneImageView, windowSize);
 
         ImGui::End();
+        ImGui::PopStyleVar();
 
         imgui_layer.End(frameInfo.command_buffer);
     }

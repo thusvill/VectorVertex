@@ -249,6 +249,54 @@ src/Core/Log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.s
 .PHONY : src/Core/Log.cpp.s
 
+src/Core/Scene/Entity.o: src/Core/Scene/Entity.cpp.o
+.PHONY : src/Core/Scene/Entity.o
+
+# target to build an object file
+src/Core/Scene/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o
+.PHONY : src/Core/Scene/Entity.cpp.o
+
+src/Core/Scene/Entity.i: src/Core/Scene/Entity.cpp.i
+.PHONY : src/Core/Scene/Entity.i
+
+# target to preprocess a source file
+src/Core/Scene/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.i
+.PHONY : src/Core/Scene/Entity.cpp.i
+
+src/Core/Scene/Entity.s: src/Core/Scene/Entity.cpp.s
+.PHONY : src/Core/Scene/Entity.s
+
+# target to generate assembly for a file
+src/Core/Scene/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.s
+.PHONY : src/Core/Scene/Entity.cpp.s
+
+src/Core/Scene/Scene.o: src/Core/Scene/Scene.cpp.o
+.PHONY : src/Core/Scene/Scene.o
+
+# target to build an object file
+src/Core/Scene/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o
+.PHONY : src/Core/Scene/Scene.cpp.o
+
+src/Core/Scene/Scene.i: src/Core/Scene/Scene.cpp.i
+.PHONY : src/Core/Scene/Scene.i
+
+# target to preprocess a source file
+src/Core/Scene/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.i
+.PHONY : src/Core/Scene/Scene.cpp.i
+
+src/Core/Scene/Scene.s: src/Core/Scene/Scene.cpp.s
+.PHONY : src/Core/Scene/Scene.s
+
+# target to generate assembly for a file
+src/Core/Scene/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.s
+.PHONY : src/Core/Scene/Scene.cpp.s
+
 src/Core/VectorVertex.o: src/Core/VectorVertex.cpp.o
 .PHONY : src/Core/VectorVertex.o
 
@@ -921,6 +969,12 @@ help:
 	@echo "... src/Core/Log.o"
 	@echo "... src/Core/Log.i"
 	@echo "... src/Core/Log.s"
+	@echo "... src/Core/Scene/Entity.o"
+	@echo "... src/Core/Scene/Entity.i"
+	@echo "... src/Core/Scene/Entity.s"
+	@echo "... src/Core/Scene/Scene.o"
+	@echo "... src/Core/Scene/Scene.i"
+	@echo "... src/Core/Scene/Scene.s"
 	@echo "... src/Core/VectorVertex.o"
 	@echo "... src/Core/VectorVertex.i"
 	@echo "... src/Core/VectorVertex.s"

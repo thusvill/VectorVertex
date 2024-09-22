@@ -3,7 +3,7 @@
 #include "../vv_material.hpp"
 namespace VectorVertex
 {
-
+class Scene;
 class EditorLayer: public Layer{
     public:
         EditorLayer();
@@ -23,6 +23,7 @@ class EditorLayer: public Layer{
     private:
         Imgui_Layer imgui_layer;
         ImVec2 prev_size;
+        Ref<Scene> m_ActiveScene;
         
 };
 } 

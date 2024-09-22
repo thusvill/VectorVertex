@@ -69,7 +69,10 @@
     "optional": "cpp",
     "variant": "cpp",
     "*.bak": "c",
-    "cassert": "cpp"
+    "cassert": "cpp",
+    "charconv": "cpp",
+    "span": "cpp",
+    "format": "cpp"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

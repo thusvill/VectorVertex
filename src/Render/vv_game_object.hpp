@@ -8,29 +8,10 @@
 #include "vv_material.hpp"
 #include "vv_texture.hpp"
 #include <vv_uuid.hpp>
-
+#include "Components.hpp"
 namespace VectorVertex
 {
-    struct TextureComponent{
-        TextureData data;
-    };
-    struct IDComponent{
-        UUID id;
-    };
-
-    struct TransformComponent
-    {
-
-        glm::vec3 translation{0.0f};
-        glm::vec3 scale{1.f};
-        glm::vec3 rotation{0.0f};
-        glm::mat4 mat4();
-        glm::mat3 normalMatrix();
-    };
-    struct PointLightComponent
-    {
-        float light_intensity = 1.0f;
-    };
+   
 
     class VVGameObject
     {

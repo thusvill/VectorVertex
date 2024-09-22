@@ -677,4 +677,5 @@ CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o: \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Components.hpp \
  /usr/include/c++/13/iostream
