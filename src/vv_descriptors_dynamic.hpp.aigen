@@ -1,0 +1,55 @@
+
+#pragma once
+#include "vv_device.hpp"
+#include <vector>
+#include <vulkan/vulkan.h>
+
+namespace VectorVertex {
+    class VVDescriptorPool {
+    public:
+        class Builder {
+        public:
+            Builder(VVDevice &vvDevice) : vvDevice{vvDevice} {}
+
+            Builder &addPoolSize(VkDescriptorType type, uint32_t count);
+            Builder &setPoolFlags(VkDescriptorPoolCreateFlags flags);
+            Builder &setMaxSets(uint32_t count);
+            std::unique_ptr<VVDescriptorPool> build() const;
+
+        private:
+            VVDevice &vvDevice;
+            std::vector<VkDescriptorPoolSize> poolSizes{};
+            uint32_t maxSets = 1000;
+            VkDescriptorPoolCreateFlags poolFlags = 0;
+        };
+
+        VVDescriptorPool(
+            VVDevice &vvDevice,
+            uint32_t maxSets,
+            VkDescriptorPoolCreateFlags poolFlags,
+            const std::vector<VkDescriptorPoolSize> &poolSizes);
+
+        ~VVDescriptorPool();
+        VVDescriptorPool(const VVDescriptorPool &) = delete;
+        VVDescriptorPool &operator=(const VVDescriptorPool &) = delete;
+
+        bool allocateDescriptor(
+            const VkDescriptorSetLayout descriptorSetLayout, VkDescriptorSet &descriptor);
+
+        void freeDescriptors(std::vector<VkDescriptorSet> &descriptors);
+        void resetPool();
+        void createNewPool();
+        VkDescriptorPool getPool() { return currentPool; }
+
+    private:
+        VVDevice &vvDevice;
+        std::vector<VkDescriptorPool> descriptorPools{};
+        VkDescriptorPool currentPool;
+        std::vector<VkDescriptorPoolSize> poolSizes;
+        uint32_t allocatedSets = 0;
+        uint32_t maxSets;
+        VkDescriptorPoolCreateFlags poolFlags;
+
+        void createPool();
+    };
+}

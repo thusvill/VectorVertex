@@ -6,10 +6,14 @@
 
 #include "vv_model.hpp"
 #include "vv_material.hpp"
+#include "vv_texture.hpp"
 #include <vv_uuid.hpp>
 
 namespace VectorVertex
 {
+    struct TextureComponent{
+        TextureData data;
+    };
     struct IDComponent{
         UUID id;
     };
@@ -52,6 +56,7 @@ namespace VectorVertex
         glm::vec3 color{};
         uint64_t material_id;
         TransformComponent transform;
+        TextureComponent texture;
 
         std::unique_ptr<PointLightComponent> point_light = nullptr;
 
@@ -59,6 +64,7 @@ namespace VectorVertex
         VVGameObject(std::string name)
         {
             m_Name = name;
+            texture.data = VVTextureLibrary::GetTexture(VVTextureLibrary::default_uuid).data;
             VV_CORE_INFO("GameObject Created with name:{0} on UUID:{1}", name, uuid.id);
         }
     };

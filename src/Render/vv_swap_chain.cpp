@@ -72,12 +72,15 @@ namespace VectorVertex
 
   VkResult VVSwapChain::acquireNextImage(uint32_t *imageIndex)
   {
+    isWaitingForFence = true;
     vkWaitForFences(
         device.device(),
         1,
         &inFlightFences[currentFrame],
         VK_TRUE,
         std::numeric_limits<uint64_t>::max());
+
+    isWaitingForFence = false;
 
     VkResult result = vkAcquireNextImageKHR(
         device.device(),
@@ -95,8 +98,11 @@ namespace VectorVertex
   {
     if (imagesInFlight[*imageIndex] != VK_NULL_HANDLE)
     {
+      //isWaitingForFence = true;
       vkWaitForFences(device.device(), 1, &imagesInFlight[*imageIndex], VK_TRUE, UINT64_MAX);
+      //isWaitingForFence = false;
     }
+
     imagesInFlight[*imageIndex] = inFlightFences[currentFrame];
 
     VkSubmitInfo submitInfo = {};
@@ -116,6 +122,7 @@ namespace VectorVertex
     submitInfo.pSignalSemaphores = signalSemaphores;
 
     vkResetFences(device.device(), 1, &inFlightFences[currentFrame]);
+
     if (vkQueueSubmit(device.graphicsQueue(), 1, &submitInfo, inFlightFences[currentFrame]) !=
         VK_SUCCESS)
     {
@@ -138,15 +145,15 @@ namespace VectorVertex
     auto result = vkQueuePresentKHR(device.presentQueue(), &presentInfo);
 
     currentFrame = (currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
-
     return result;
   }
 
   VkResult VVSwapChain::submitCommandBuffersToAFence(const VkCommandBuffer *buffers, uint32_t *imageIndex, VkFence fence)
   {
-      if (fence != VK_NULL_HANDLE)
+    if (fence != VK_NULL_HANDLE)
     {
-        vkWaitForFences(device.device(), 1, &fence, VK_TRUE, UINT64_MAX);
+      vkWaitForFences(device.device(), 1, &fence, VK_TRUE, UINT64_MAX);
+      VV_CORE_TRACE("Waiting for fence");
     }
 
     // Update the in-flight fence for the current image
@@ -178,8 +185,8 @@ namespace VectorVertex
     VkResult result = vkQueueSubmit(device.graphicsQueue(), 1, &submitInfo, fence);
     if (result != VK_SUCCESS)
     {
-        VV_CORE_ERROR("failed to submit draw command buffer!");
-        throw std::runtime_error("failed to submit draw command buffer!");
+      VV_CORE_ERROR("failed to submit draw command buffer!");
+      throw std::runtime_error("failed to submit draw command buffer!");
     }
 
     // Present the image

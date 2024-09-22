@@ -10,6 +10,8 @@ namespace VectorVertex
 {
     std::unordered_map<uint64_t, Ref<VVTexture>> VVTextureLibrary::m_Textures;
     uint64_t VVTextureLibrary::default_uuid;
+    Scope<VVDescriptorPool> VVTextureLibrary::texture_pool;
+    Scope<VVDescriptorSetLayout> VVTextureLibrary::textureImageDescriptorLayout;
 
     VVTexture::VVTexture(VVDevice &device, const std::string &path) : device(device)
     {
@@ -44,8 +46,8 @@ namespace VectorVertex
         data.m_textureImage = new VVImage(device);
 
         data.m_textureImage->createImage(texWidth, texHeight, VK_FORMAT_R8G8B8A8_SRGB,
-                                       VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
-                                       VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+                                         VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
+                                         VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
         transitionImageLayout(VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL);
         copyBufferToImage(m_stagingBuffer, texWidth, texHeight);
@@ -128,6 +130,15 @@ namespace VectorVertex
     void VVTextureLibrary::InitTextureLib(VVDevice &device)
     {
         default_uuid = Create(device, "default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
+        texture_pool = VVDescriptorPool::Builder(device)
+                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
+                           .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                           .setPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
+                           .build();
+
+        textureImageDescriptorLayout = VVDescriptorSetLayout::Builder(device)
+                                           .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
+                                           .build();
         VV_CORE_INFO("Initilized Texture Library!");
     }
 

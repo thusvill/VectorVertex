@@ -104,17 +104,43 @@ namespace VectorVertex
             }
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
-            for (auto &des: frame_info.descriptor_sets)
+            for (auto &des : frame_info.descriptor_sets)
             {
-                if(des.second == VK_NULL_HANDLE){
+                if (des.second == VK_NULL_HANDLE)
+                {
                     VV_CORE_ASSERT(true, "descriptor set is null");
                 }
                 vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
                                         pipelineLayout, des.first, 1, &des.second, 0, nullptr);
             }
+            // if (!frame_info.renderer.Get_Swapchain().isWaitingForFence)
+            // {
+            //     VV_CORE_TRACE("Fence Done!");
+            //     // update textures
 
-            obj.model->Bind(frame_info.command_buffer);
-            obj.model->Draw(frame_info.command_buffer);
+            //     auto imageInfo = VVTextureLibrary::GetTexture(obj.texture.data.m_ID).getDescriptorImageInfo();
+            //     // auto imageInfo = VVTextureLibrary::GetTexture(newTexture).getDescriptorImageInfo();
+            //     VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+            //         .writeImage(0, &imageInfo)
+            //         .build(obj.texture.data.m_descriptorSet);
+            // }
+            // else
+            // {
+            //     VV_CORE_TRACE("Waiting For Fence");
+            //     // VVTextureLibrary::texture_pool->resetPool();
+            //     // auto imageInfo = VVTextureLibrary::GetTexture(obj.texture.data.m_ID).getDescriptorImageInfo();
+            //     // VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+            //     //     .writeImage(0, &imageInfo)
+            //     //     .build(obj.texture.data.m_descriptorSet);
+            // }
+
+            if (!frame_info.renderer.Get_Swapchain().isWaitingForFence)
+            {
+                vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                                        pipelineLayout, 1, 1, &obj.texture.data.m_descriptorSet, 0, nullptr);
+                obj.model->Bind(frame_info.command_buffer);
+                obj.model->Draw(frame_info.command_buffer);
+            }
         }
     }
     void LveRenderSystem::renderImGui(VkCommandBuffer commandBuffer)

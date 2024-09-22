@@ -84,6 +84,8 @@ namespace VectorVertex
 
         VkDescriptorPool getPool() {return descriptorPool;}
 
+        uint32_t maxSets;
+
     private:
         VVDevice &vvDevice;
         VkDescriptorPool descriptorPool;

@@ -1,0 +1,72 @@
+
+#include "vv_descriptors.hpp"
+#include <stdexcept>
+
+namespace VectorVertex {
+
+    VVDescriptorPool::VVDescriptorPool(
+        VVDevice &vvDevice,
+        uint32_t maxSets,
+        VkDescriptorPoolCreateFlags poolFlags,
+        const std::vector<VkDescriptorPoolSize> &poolSizes)
+        : vvDevice{vvDevice}, maxSets{maxSets}, poolFlags{poolFlags}, poolSizes{poolSizes} {
+        createPool();
+    }
+
+    VVDescriptorPool::~VVDescriptorPool() {
+        for (auto pool : descriptorPools) {
+            vkDestroyDescriptorPool(vvDevice.device(), pool, nullptr);
+        }
+    }
+
+    void VVDescriptorPool::createPool() {
+        VkDescriptorPoolCreateInfo poolInfo{};
+        poolInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
+        poolInfo.poolSizeCount = static_cast<uint32_t>(poolSizes.size());
+        poolInfo.pPoolSizes = poolSizes.data();
+        poolInfo.maxSets = maxSets;
+        poolInfo.flags = poolFlags;
+
+        if (vkCreateDescriptorPool(vvDevice.device(), &poolInfo, nullptr, &currentPool) != VK_SUCCESS) {
+            throw std::runtime_error("Failed to create descriptor pool");
+        }
+
+        descriptorPools.push_back(currentPool);
+    }
+
+    bool VVDescriptorPool::allocateDescriptor(const VkDescriptorSetLayout descriptorSetLayout, VkDescriptorSet &descriptor) {
+        if (allocatedSets >= maxSets) {
+            createNewPool();  // Create a new pool if the current one is full
+        }
+
+        VkDescriptorSetAllocateInfo allocInfo{};
+        allocInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO;
+        allocInfo.descriptorPool = currentPool;
+        allocInfo.pSetLayouts = &descriptorSetLayout;
+        allocInfo.descriptorSetCount = 1;
+
+        if (vkAllocateDescriptorSets(vvDevice.device(), &allocInfo, &descriptor) == VK_SUCCESS) {
+            allocatedSets++;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    void VVDescriptorPool::freeDescriptors(std::vector<VkDescriptorSet> &descriptors) {
+        vkFreeDescriptorSets(vvDevice.device(), currentPool, static_cast<uint32_t>(descriptors.size()), descriptors.data());
+    }
+
+    void VVDescriptorPool::resetPool() {
+        for (auto pool : descriptorPools) {
+            vkResetDescriptorPool(vvDevice.device(), pool, 0);
+        }
+        allocatedSets = 0;
+    }
+
+    void VVDescriptorPool::createNewPool() {
+        createPool();
+        allocatedSets = 0;  // Reset the count for the new pool
+    }
+
+}

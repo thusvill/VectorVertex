@@ -1,6 +1,8 @@
 #pragma once
 #include "vv_device.hpp"
 #include "vv_image.hpp"
+#include "vv_descriptors.hpp"
+#include "vv_swap_chain.hpp"
 #include <vv_uuid.hpp>
 #include <string.h>
 #include <unordered_map>
@@ -14,6 +16,7 @@ namespace VectorVertex
         VVImage *m_textureImage;
         VkImageView m_textureImageView;
         VkSampler m_textureSampler;
+        VkDescriptorSet m_descriptorSet;
     };
     class VVTexture
     {
@@ -92,5 +95,7 @@ namespace VectorVertex
 
         static std::unordered_map<uint64_t, Ref<VVTexture>> m_Textures;
         static uint64_t default_uuid;
+        static Scope<VVDescriptorPool> texture_pool;
+        static Scope<VVDescriptorSetLayout> textureImageDescriptorLayout;
     };
 } // namespace VectorVertex

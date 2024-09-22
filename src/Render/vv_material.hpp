@@ -21,12 +21,14 @@ namespace VectorVertex
             push.color = color;
             return push;
         }
+
+        UUID m_ID;
+        std::string m_Name;
         glm::vec4 color{1.0f, 1.0f, 1.0f, 1.0f};
     };
 
     struct VVMaterial
     {
-        UUID m_ID;
         MaterialData m_MaterialData;
     };
 
@@ -35,15 +37,14 @@ namespace VectorVertex
             static void InitMaterialLib();
             static uint64_t getDefaultID();
 
-            static std::unordered_map<std::string, VVMaterial> m_Materials;
+            static std::unordered_map<uint64_t, VVMaterial> m_Materials;
 
             static uint64_t createMaterial(std::string name, MaterialData materialData);
             static VVMaterial getMaterial(uint64_t id);
             static bool isMaterialAvailable(uint64_t id);
-            static VVMaterial getMaterial(std::string name);
+            static uint64_t default_material;
 
         static void updateMaterial(uint64_t id, MaterialData materialData);
-        static void updateMaterial(std::string name, MaterialData materialData);
     };
 
 } // namespace VectorVertex

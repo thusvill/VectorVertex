@@ -51,6 +51,11 @@ namespace VectorVertex
 
     uint32_t getImageCount() const { return static_cast<uint32_t>(swapChainImages.size()); }
 
+    
+    VkSemaphore GetRenderFinishedSemaphore() {return renderFinishedSemaphores[currentFrame];}
+    bool isWaitingForFence = false;
+    VkFence getCurrentFence() {return inFlightFences[currentFrame];}
+
   private:
     void
     init();

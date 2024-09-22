@@ -24,10 +24,10 @@ namespace VectorVertex
                           //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                           .build();
 
-        texture_pool = VVDescriptorPool::Builder(vvDevice)
-                           .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                           .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                           .build();
+        // texture_pool = VVDescriptorPool::Builder(vvDevice)
+        //                    .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+        //                    .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+        //                    .build();
 
         editor_layer = new EditorLayer();
         editor_layer->SetupImgui(&vvDevice, &renderer, &vvWindow);
@@ -39,7 +39,6 @@ namespace VectorVertex
 
         VVMaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib(vvDevice);
-
 
         // TODO: implement Asset system
         VV_CORE_WARN("Loading Gameobjects ...");
@@ -67,12 +66,12 @@ namespace VectorVertex
                                      //.addBinding(1, VK_DESCRIPTOR_TYPE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                      .build();
 
-        textureImageDescriptorLayout = VVDescriptorSetLayout::Builder(vvDevice)
-                                           .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
-                                           .build();
+        // textureImageDescriptorLayout = VVDescriptorSetLayout::Builder(vvDevice)
+        //                                    .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
+        //                                    .build();
 
         std::vector<VkDescriptorSet> global_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
-        std::vector<VkDescriptorSet> texture_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
+        // std::vector<VkDescriptorSet> texture_descriptor_sets(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
 
         for (int i = 0; i < global_descriptor_sets.size(); i++)
         {
@@ -84,25 +83,9 @@ namespace VectorVertex
                 .build(global_descriptor_sets[i]);
         }
 
-        // base_texture.createTextureImage("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/DirtAlbedo.png");
-        uint64_t newTexture = VVTextureLibrary::Create(vvDevice, "DirtAlbedo", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/DirtAlbedo.png");
-
-        {
-
-            for (int i = 0; i < texture_descriptor_sets.size(); i++)
-            {
-                VkDescriptorSet imageSet = texture_descriptor_sets[i];
-                auto imageInfo = VVTextureLibrary::GetTexture(VVTextureLibrary::default_uuid).getDescriptorImageInfo();
-                //auto imageInfo = VVTextureLibrary::GetTexture(newTexture).getDescriptorImageInfo();
-                VVDescriptorWriter(*textureImageDescriptorLayout, *texture_pool)
-                    .writeImage(0, &imageInfo)
-                    .build(texture_descriptor_sets[i]);
-            }
-        }
-
         VV_CORE_INFO("Creating render systems...");
         VVOffscreen offscreen{vvDevice, renderer, editor_layer->Viewport_Extent};
-        std::vector<VkDescriptorSetLayout> layouts = {global_set_layout->getDescriptorSetLayout(), textureImageDescriptorLayout->getDescriptorSetLayout()};
+        std::vector<VkDescriptorSetLayout> layouts = {global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
         LveRenderSystem renderSystem{vvDevice, renderer.GetSwapchainRenderPass(), layouts};
         PointLightSystem pointlightSystem(vvDevice, renderer.GetSwapchainRenderPass(), layouts);
         VV_CORE_INFO("Created render systems!");
@@ -141,6 +124,22 @@ namespace VectorVertex
             }
 
             glfwPollEvents();
+            for(auto &kv : gameObjects){
+                auto& obj = kv.second;
+            if (!renderer.Get_Swapchain().isWaitingForFence)
+            {
+                VV_CORE_TRACE("Fence Done!");
+                // update textures
+                auto imageInfo = VVTextureLibrary::GetTexture(obj.texture.data.m_ID).getDescriptorImageInfo();
+                VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+                    .writeImage(0, &imageInfo)
+                    .build(obj.texture.data.m_descriptorSet);
+            }
+            else
+            {
+                VV_CORE_TRACE("Waiting For Fence");
+            }
+            }
 
             if (auto commandBuffer = renderer.BeginFrame())
             {
@@ -160,9 +159,8 @@ namespace VectorVertex
                 // VV_CORE_WARN(frame_index);
                 std::unordered_map<int, VkDescriptorSet> descriptor_sets;
                 descriptor_sets[0] = global_descriptor_sets[frame_index];
-                descriptor_sets[1] = texture_descriptor_sets[frame_index];
 
-                std::vector<std::reference_wrapper<VVDescriptorPool>> pools = {*global_pool, *texture_pool};
+                std::vector<std::reference_wrapper<VVDescriptorPool>> pools = {*global_pool};
 
                 FrameInfo frameInfo{
                     frame_index,
@@ -171,7 +169,8 @@ namespace VectorVertex
                     camera,
                     descriptor_sets,
                     gameObjects,
-                    pools};
+                    pools,
+                    renderer};
 
                 // update
                 GlobalUBO ubo{};
@@ -222,15 +221,18 @@ namespace VectorVertex
         // // supra_object.transform.rotation.z = 1 * 3.15;
         // gameObjects.emplace(supra5_object.getId(), std::move(supra5_object));
 
-        VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra_a80.obj");
-        auto supra_object = VVGameObject::CreateGameObject("Supra Model");
+        uint64_t dirt_texture = VVTextureLibrary::Create(vvDevice, "DirtAlbedo", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/DirtAlbedo.png");
+        uint64_t grid_texture = VVTextureLibrary::Create(vvDevice, "Grid", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/BackgroundGreyGridSprite.png");
+
+        VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/S15/source/S15_Nobonnet.obj");
+        auto supra_object = VVGameObject::CreateGameObject("S15 Model");
         supra_object.model = VVModel;
         supra_object.color = {.1f, .0f, .0f};
-        supra_object.transform.translation = {.5f, .5f, .0f};
-        supra_object.transform.rotation = glm::vec3(0.0f);
-        supra_object.transform.scale = glm::vec3{0.2f};
-        supra_object.material_id = VVMaterialLibrary::createMaterial("supra_body", MaterialData(glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)));
-
+        supra_object.transform.translation = {.5f, 0.25f, .0f};
+        supra_object.transform.rotation = glm::vec3(3.15f, 0.0f, 0.0f);
+        supra_object.transform.scale = glm::vec3{0.45f};
+        supra_object.material_id = VVMaterialLibrary::createMaterial("supra_body", MaterialData(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f)));
+        supra_object.texture.data = VVTextureLibrary::GetTexture(grid_texture).data;
         // supra_object.transform.rotation.z = 1 * 3.15;
 
         gameObjects.emplace(supra_object.getId(), std::move(supra_object));
@@ -238,11 +240,12 @@ namespace VectorVertex
         VVModel = VVModel::createModelFromFile(vvDevice, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/quad.obj");
         auto quad = VVGameObject::CreateGameObject("Plane");
         quad.model = VVModel;
-        quad.material_id = VVMaterialLibrary::createMaterial("ground", MaterialData(glm::vec4(1.0f, 0.0f, 1.0f, 1.0f)));
+        quad.material_id = VVMaterialLibrary::createMaterial("ground", MaterialData(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f)));
         quad.transform.translation = {.0f, .5f, .0f};
         quad.transform.rotation = glm::vec3(0.0f);
         // quad.transform.rotation.y = 1 * (3.15 / 2);
         quad.transform.scale = glm::vec3{3.f};
+        quad.texture.data = VVTextureLibrary::GetTexture(dirt_texture).data;
         gameObjects.emplace(quad.getId(), std::move(quad));
 
         {

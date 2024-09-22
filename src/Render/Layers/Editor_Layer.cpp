@@ -1,4 +1,5 @@
 #include "Editor_Layer.hpp"
+#include <glm/gtc/type_ptr.hpp>
 
 namespace VectorVertex
 {
@@ -105,29 +106,50 @@ namespace VectorVertex
             // VVMaterialLibrary::updateMaterial("supra_body", _data);
             // VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
         }
+
         {
+            ImGui::Begin("Transforms");
             for (auto &obj : frameInfo.game_objects)
             {
+
+                ImGui::Text(obj.second.m_Name.c_str());
+                ImGui::PushID(obj.second.uuid.id);
+                ImGui::DragFloat3("Position: ", glm::value_ptr(obj.second.transform.translation), 0.05f, 0.0f, 100.0f);
+                ImGui::PopID();
+                ImGui::PushID(obj.second.uuid.id);
+                ImGui::DragFloat3("Rotation: ", glm::value_ptr(obj.second.transform.rotation), 0.05f, 0.0f, 100.0f);
+                ImGui::PopID();
+                ImGui::PushID(obj.second.uuid.id);
+                ImGui::DragFloat3("Scale: ", glm::value_ptr(obj.second.transform.scale), 0.05f, 0.0f, 100.0f);
+                ImGui::PopID();
+            }
+
+            ImGui::End();
+        }
+
+        {
+            ImGui::Begin("Materials");
+            for (auto &obj : frameInfo.game_objects)
+            {   
                 if (VVMaterialLibrary::isMaterialAvailable(obj.second.material_id))
                 {
-
-                    ImGui::Begin("Material");
+                    ImGui::Text(obj.second.m_Name.c_str());
                     MaterialData _data = VVMaterialLibrary::getMaterial(obj.second.material_id).m_MaterialData;
-                    ImGui::PushID(obj.second.getId());
+                    ImGui::PushID(obj.second.material_id);
                     float col[4];
                     col[0] = _data.color.r;
                     col[1] = _data.color.g;
                     col[2] = _data.color.b;
                     col[3] = _data.color.a;
-                    if (ImGui::ColorPicker4(obj.second.m_Name.c_str(), col))
+                    if (ImGui::ColorPicker4(_data.m_Name.c_str(), col))
                     {
                         _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
                         VVMaterialLibrary::updateMaterial(obj.second.material_id, _data);
                     }
                     ImGui::PopID();
-                    ImGui::End();
                 }
             }
+            ImGui::End();
         }
 
         // Inside your ImGui rendering loop

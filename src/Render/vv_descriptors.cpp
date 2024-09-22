@@ -147,9 +147,9 @@ namespace VectorVertex
     void VVDescriptorPool::resetPool()
     {
         vkResetDescriptorPool(vvDevice.device(), descriptorPool, 0);
+    
     }
 
-    // *************** Descriptor Writer *********************
 
     VVDescriptorWriter::VVDescriptorWriter(VVDescriptorSetLayout &setLayout, VVDescriptorPool &pool)
         : setLayout{setLayout}, pool{pool} {}
@@ -249,6 +249,7 @@ namespace VectorVertex
         {
             VV_CORE_ERROR("Cannot Allocate Descriptor set!");
 
+            
             pool.resetPool();
             success = pool.allocateDescriptor(setLayout.getDescriptorSetLayout(), set);
             if (!success)

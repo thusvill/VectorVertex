@@ -24,6 +24,8 @@ namespace VectorVertex
 
         if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
         {
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
             // Get mouse delta movement
             double mouseX, mouseY;
             glfwGetCursorPos(window, &mouseX, &mouseY);
@@ -42,6 +44,9 @@ namespace VectorVertex
             // Update last mouse position
             lastMouseX = mouseX;
             lastMouseY = mouseY;
+        }else{
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
         }
 
         if (glm::dot(rotate, rotate) > std::numeric_limits<float>::epsilon())
