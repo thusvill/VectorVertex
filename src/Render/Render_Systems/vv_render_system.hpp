@@ -35,7 +35,7 @@ namespace VectorVertex
 
         LveRenderSystem(const LveRenderSystem &) = delete;
         LveRenderSystem &operator=(const LveRenderSystem &) = delete;
-        void renderGameobjects(FrameInfo &frame_info);
+        void renderGameobjects(FrameInfo &frame_info, SceneRenderInfo &scene_info);
         void renderImGui(VkCommandBuffer commandBuffer);
         
 

@@ -3,7 +3,7 @@
 
 namespace VectorVertex
 {
-    void KeyboardInputs::moveInPlaneXZ(GLFWwindow *window, float dt, VVGameObject &gameObject)
+    void KeyboardInputs::moveInPlaneXZ(GLFWwindow *window, float dt, TransformComponent &transform)
     {
         moveSpeed = originalSpeed;
 
@@ -51,14 +51,14 @@ namespace VectorVertex
 
         if (glm::dot(rotate, rotate) > std::numeric_limits<float>::epsilon())
         {
-            gameObject.transform.rotation += lookSpeed * dt * glm::normalize(rotate);
+            transform.rotation += lookSpeed * dt * glm::normalize(rotate);
         }
 
         // limit pitch values between about +/- 85ish degrees
-        gameObject.transform.rotation.x = glm::clamp(gameObject.transform.rotation.x, -1.5f, 1.5f);
-        gameObject.transform.rotation.y = glm::mod(gameObject.transform.rotation.y, glm::two_pi<float>());
+        transform.rotation.x = glm::clamp(transform.rotation.x, -1.5f, 1.5f);
+        transform.rotation.y = glm::mod(transform.rotation.y, glm::two_pi<float>());
 
-        float yaw = gameObject.transform.rotation.y;
+        float yaw = transform.rotation.y;
         const glm::vec3 forwardDir{sin(yaw), 0.f, cos(yaw)};
         const glm::vec3 rightDir{forwardDir.z, 0.f, -forwardDir.x};
         const glm::vec3 upDir{0.f, -1.f, 0.f};
@@ -79,9 +79,9 @@ namespace VectorVertex
 
         if (glm::dot(moveDir, moveDir) > std::numeric_limits<float>::epsilon())
         {
-            gameObject.transform.translation += moveSpeed * dt * glm::normalize(moveDir);
+            transform.translation += moveSpeed * dt * glm::normalize(moveDir);
         }
-        // std::cout << "Camera | position x:" << gameObject.transform.translation.x << " y:" << gameObject.transform.translation.y << " z:" << gameObject.transform.translation.z << "\n Camera| rotation x:" << gameObject.transform.rotation.x << " y:" << gameObject.transform.rotation.y << " z:" << gameObject.transform.rotation.z << std::endl;
+        // std::cout << "Camera | position x:" << transform.translation.x << " y:" << transform.translation.y << " z:" << transform.translation.z << "\n Camera| rotation x:" << transform.rotation.x << " y:" << transform.rotation.y << " z:" << transform.rotation.z << std::endl;
         // std::cout<<moveDir.x<<" "<<moveDir.y<<" "<<moveDir.z<<std::endl;
     }
 

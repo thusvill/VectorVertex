@@ -21,7 +21,7 @@ namespace VectorVertex
             int lookDown = GLFW_KEY_DOWN;
         };
 
-        void moveInPlaneXZ(GLFWwindow *window, float dt, VVGameObject &gameObject);
+        void moveInPlaneXZ(GLFWwindow *window, float dt, TransformComponent &transform);
 
         KeyMappings keys{};
         float originalSpeed{1.f};

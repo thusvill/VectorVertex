@@ -2,6 +2,7 @@
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
 #include <iostream>
+#include <Entity.hpp>
 namespace VectorVertex
 {
 
@@ -81,30 +82,37 @@ namespace VectorVertex
         pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
     }
 
-    void LveRenderSystem::renderGameobjects(FrameInfo &frame_info)
+    void LveRenderSystem::renderGameobjects(FrameInfo &frame_info, SceneRenderInfo &scene_info)
     {
         pipeline->Bind(frame_info.command_buffer);
 
-        for (auto &kv : frame_info.game_objects)
+        for (auto &kv : scene_info.entities)
         {
             auto &obj = kv.second;
-            if (obj.model == nullptr) // Preformance drop when go through all objects
+            if (!obj.HasComponent<MeshComponent>()) // Preformance drop when go through all objects
                 continue;
+
+            TransformComponent _transform = obj.GetComponent<TransformComponent>();
+
             SimplePushConstantData push{};
-            push.modelMatrix = obj.transform.mat4();
-            push.normalMatrix = obj.transform.normalMatrix();
-            if (obj.material_id > -1.0f)
+            push.modelMatrix = _transform.mat4();
+            push.normalMatrix = _transform.normalMatrix();
+            if (obj.HasComponent<MaterialComponent>())
             {
-                push.materialData = VVMaterialLibrary::getMaterial(obj.material_id).m_MaterialData.getPushData();
-            }
-            else
-            {
-                VV_CORE_WARN("Material id {} not found on object: {}", obj.material_id, obj.getId());
-                push.materialData = MaterialPushConstant{glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)};
+                MaterialComponent _material = obj.GetComponent<MaterialComponent>();
+                if (_material.m_ID > -1.0f)
+                {
+                    push.materialData = VVMaterialLibrary::getMaterial(_material.m_ID).m_MaterialData.getPushData();
+                }
+                else
+                {
+                    VV_CORE_WARN("Material id {} not found on object: {}", _material.m_ID, obj.GetComponent<IDComponent>().m_Name.c_str());
+                    push.materialData = MaterialPushConstant{glm::vec4(1.0f, 0.0f, 0.0f, 1.0f)};
+                }
             }
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(SimplePushConstantData), &push);
-            for (auto &des : frame_info.descriptor_sets)
+            for (auto &des : scene_info.descriptor_sets)
             {
                 if (des.second == VK_NULL_HANDLE)
                 {
@@ -113,33 +121,24 @@ namespace VectorVertex
                 vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
                                         pipelineLayout, des.first, 1, &des.second, 0, nullptr);
             }
-            // if (!frame_info.renderer.Get_Swapchain().isWaitingForFence)
-            // {
-            //     VV_CORE_TRACE("Fence Done!");
-            //     // update textures
-
-            //     auto imageInfo = VVTextureLibrary::GetTexture(obj.texture.data.m_ID).getDescriptorImageInfo();
-            //     // auto imageInfo = VVTextureLibrary::GetTexture(newTexture).getDescriptorImageInfo();
-            //     VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
-            //         .writeImage(0, &imageInfo)
-            //         .build(obj.texture.data.m_descriptorSet);
-            // }
-            // else
-            // {
-            //     VV_CORE_TRACE("Waiting For Fence");
-            //     // VVTextureLibrary::texture_pool->resetPool();
-            //     // auto imageInfo = VVTextureLibrary::GetTexture(obj.texture.data.m_ID).getDescriptorImageInfo();
-            //     // VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
-            //     //     .writeImage(0, &imageInfo)
-            //     //     .build(obj.texture.data.m_descriptorSet);
-            // }
+            
 
             if (!frame_info.renderer.Get_Swapchain().isWaitingForFence)
             {
-                vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
-                                        pipelineLayout, 1, 1, &obj.texture.data.m_descriptorSet, 0, nullptr);
-                obj.model->Bind(frame_info.command_buffer);
-                obj.model->Draw(frame_info.command_buffer);
+                TextureData data = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data;
+                if (data.m_descriptorSet == nullptr)
+                {
+                    VV_CORE_ERROR("Null Descriptors in Texture :{0}, Entity :{1} ", data.m_Name, obj.GetComponent<IDComponent>().m_Name);
+                    VV_CORE_ASSERT(false, "Texture Descriptorset is NULL!");
+                }
+                else
+                {
+
+                    vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                                            pipelineLayout, 1, 1, &data.m_descriptorSet, 0, nullptr);
+                }
+                obj.GetComponent<MeshComponent>().m_Model->Bind(frame_info.command_buffer);
+                obj.GetComponent<MeshComponent>().m_Model->Draw(frame_info.command_buffer);
             }
         }
     }

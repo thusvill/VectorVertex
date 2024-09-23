@@ -8,9 +8,11 @@
 #include <functional>
 #include <vector>
 #include <vulkan/vulkan.h>
+//#include <Entity.hpp>
 
 namespace VectorVertex
 {
+    class Entity;
 #define MAX_LIGHTS 10
 
     struct PointLight
@@ -30,14 +32,18 @@ namespace VectorVertex
 
     struct FrameInfo
     {
-        int frame_index;
-        float frame_time;
-        VkCommandBuffer command_buffer;
-        VVCamera &camera;
-        std::unordered_map<int,VkDescriptorSet> descriptor_sets;
-        VVGameObject::Map &game_objects;
-        std::vector<std::reference_wrapper<VVDescriptorPool>> &global_pool;
+        int frame_index = 0;
+        float frame_time = 0.0f;
+        VkCommandBuffer command_buffer = VK_NULL_HANDLE;
         VVRenderer &renderer;
-        ImTextureID frame_image;
+    };
+
+    struct SceneRenderInfo
+    {
+
+        std::unordered_map<UUID, Entity> &entities;
+        Entity &m_Camera;
+        std::unordered_map<int, VkDescriptorSet> descriptor_sets = {};
+        std::vector<std::reference_wrapper<VVDescriptorPool>> &global_pool;
     };
 } // namespace VectorVertex

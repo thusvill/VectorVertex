@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertex.dir/src/Core/LayerStack.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o.d"
+  "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o"
+  "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o"

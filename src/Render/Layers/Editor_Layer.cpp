@@ -6,12 +6,67 @@
 
 namespace VectorVertex
 {
-    EditorLayer::EditorLayer() : Layer("EditorLayer")
+    EditorLayer::EditorLayer(VVDevice &device, VVWindow &window, VVRenderer &renderer) : m_Device(device), m_Window(window), m_Renderer(renderer), Layer("EditorLayer")
     {
         VV_CORE_INFO("[Layer]:EditorLayer Created!");
-        m_ActiveScene = CreateRef<Scene>();
 
-        
+        m_ActiveScene = CreateRef<Scene>("Main");
+
+        m_global_pool = VVDescriptorPool::Builder(m_Device)
+                            .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                            //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
+                            .build();
+
+        m_ubo_buffers.resize(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
+
+        for (int i = 0; i < m_ubo_buffers.size(); i++)
+        {
+            m_ubo_buffers[i] = std::make_unique<VVBuffer>(m_Device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
+                                                          VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
+            m_ubo_buffers[i]->map();
+        }
+
+        m_global_set_layout = VVDescriptorSetLayout::Builder(m_Device)
+                                  .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
+                                  //.addBinding(1, VK_DESCRIPTOR_TYPE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
+                                  .build();
+
+        m_global_descriptor_sets.resize(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
+        for (int i = 0; i < m_global_descriptor_sets.size(); i++)
+        {
+            auto buffer_info = m_ubo_buffers[i]->descriptorInfo();
+
+            VVDescriptorWriter(*m_global_set_layout, *m_global_pool)
+                .writeBuffer(0, &buffer_info)
+                // add texture sampler here
+                .build(m_global_descriptor_sets[i]);
+        }
+
+        VVMaterialLibrary::InitMaterialLib();
+        VVTextureLibrary::InitTextureLib(device);
+
+        std::vector<VkDescriptorSetLayout> layouts = {m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+
+        m_RenderSystem = CreateRef<LveRenderSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
+        m_PointlightSystem = CreateRef<PointLightSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
+        m_SceneCamera = m_ActiveScene->CreateEntity("Camera View");
+        m_SceneCamera.AddComponent<CameraComponent>();
+        m_SceneCamera.GetComponent<TransformComponent>().translation = glm::vec3(-1.48, -0.77, -2.17);
+        m_SceneCamera.GetComponent<TransformComponent>().rotation = glm::vec3(-0.41, 0.87, 0.0f);
+
+        {
+            // load a model
+            auto light = m_ActiveScene->CreateEntity("Light");
+            light.AddComponent<PointLightComponent>();
+            light.GetComponent<TransformComponent>().translation = glm::vec3(1.0f);
+            auto box = m_ActiveScene->CreateEntity("Box");
+            box.AddComponent<MeshComponent>(m_Device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/cube.obj");
+            box.GetComponent<TextureComponent>().m_ID = VVTextureLibrary::Create(device, "new", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/default.png");
+        }
+
+        currentTime = std::chrono::high_resolution_clock::now();
+        UpdateTextures();
     }
 
     void EditorLayer::SetupImgui(VVDevice *vv_device, VVRenderer *vv_renderer, VVWindow *vv_window)
@@ -32,17 +87,38 @@ namespace VectorVertex
 
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+
+        m_Offscreen = CreateRef<VVOffscreen>(m_Device, m_Renderer, Viewport_Extent);
     }
 
     void EditorLayer::OnAttach()
     {
-
+        m_SceneHierarchyPanel.SetContext(m_ActiveScene);
     }
 
     void EditorLayer::OnUpdate()
     {
-            m_ActiveScene->OnUpdate();
-            auto test_object = m_ActiveScene->CreateEntity("test");
+        m_ActiveScene->OnUpdate();
+        {
+            auto newTime = std::chrono::high_resolution_clock::now();
+            frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
+            currentTime = newTime;
+
+            camControl.moveInPlaneXZ(m_Window.getGLFWwindow(), frameTime, m_SceneCamera.GetComponent<TransformComponent>());
+            m_Camera.SetViewYXZ(m_SceneCamera.GetComponent<TransformComponent>().translation, m_SceneCamera.GetComponent<TransformComponent>().rotation);
+
+            auto aspectRatio = static_cast<float>(m_Offscreen->getViewSize().width) / static_cast<float>(m_Offscreen->getViewSize().height); // renderer.GetAspectRatio();
+            // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
+            m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
+
+            {
+                if (is_viewport_resized)
+                {
+                    m_Offscreen->Resize(Viewport_Extent);
+                    is_viewport_resized = false;
+                }
+            }
+        }
     }
 
     void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
@@ -101,91 +177,90 @@ namespace VectorVertex
             }
             ImGui::End();
         }
-
         {
-
-            // MaterialData _data = VVMaterialLibrary::getMaterial("supra_body").m_MaterialData;
-            // float col[4];
-            // col[0] = _data.color.x;
-            // col[1] = _data.color.y;
-            // col[2] = _data.color.z;
-            // col[3] = _data.color.w;
-            // ImGui::ColorPicker4("supra_body:", col);
-            // _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
-            // VVMaterialLibrary::updateMaterial("supra_body", _data);
-            // VV_CORE_INFO("supra_body color: {} {} {} {}", col[0], col[1], col[2], col[3]);
+            m_SceneHierarchyPanel.OnImGuiRender();
         }
+        { // Inside your ImGui rendering loop
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
+            ImGui::Begin("Viewport");
 
-        {
-            ImGui::Begin("Transforms");
-            for (auto &obj : frameInfo.game_objects)
+            // Get the size of your ImGui window or set your desired size
+            ImVec2 windowSize = ImGui::GetContentRegionAvail();
+
+            if (prev_size.x != windowSize.x || prev_size.y != windowSize.y)
             {
-
-                ImGui::Text("%s",obj.second.m_Name.c_str());
-                ImGui::PushID(obj.second.uuid.id);
-                ImGui::DragFloat3("Position: ", glm::value_ptr(obj.second.transform.translation), 0.05f, 0.0f, 100.0f);
-                ImGui::PopID();
-                ImGui::PushID(obj.second.uuid.id);
-                ImGui::DragFloat3("Rotation: ", glm::value_ptr(obj.second.transform.rotation), 0.05f, 0.0f, 100.0f);
-                ImGui::PopID();
-                ImGui::PushID(obj.second.uuid.id);
-                ImGui::DragFloat3("Scale: ", glm::value_ptr(obj.second.transform.scale), 0.05f, 0.0f, 100.0f);
-                ImGui::PopID();
+                prev_size = windowSize;
+                Viewport_Extent = {static_cast<uint32_t>(windowSize.x), static_cast<uint32_t>(windowSize.y)};
+                is_viewport_resized = true;
             }
-
-            ImGui::End();
-        }
-
-        {
-            ImGui::Begin("Materials");
-            for (auto &obj : frameInfo.game_objects)
-            {
-                if (VVMaterialLibrary::isMaterialAvailable(obj.second.material_id))
-                {
-                    ImGui::Text("%s",obj.second.m_Name.c_str());
-                    MaterialData _data = VVMaterialLibrary::getMaterial(obj.second.material_id).m_MaterialData;
-                    ImGui::PushID(obj.second.material_id);
-                    float col[4];
-                    col[0] = _data.color.r;
-                    col[1] = _data.color.g;
-                    col[2] = _data.color.b;
-                    col[3] = _data.color.a;
-                    if (ImGui::ColorEdit4(_data.m_Name.c_str(), col))
-                    {
-                        _data.color = glm::vec4(col[0], col[1], col[2], col[3]);
-                        VVMaterialLibrary::updateMaterial(obj.second.material_id, _data);
-                    }
-                    ImGui::PopID();
-                }
-            }
-            ImGui::End();
-        }
-
-        // Inside your ImGui rendering loop
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
-        ImGui::Begin("Viewport");
-
-        // Get the size of your ImGui window or set your desired size
-        ImVec2 windowSize = ImGui::GetContentRegionAvail();
-
-        if (prev_size.x != windowSize.x || prev_size.y != windowSize.y)
-        {
-            prev_size = windowSize;
             Viewport_Extent = {static_cast<uint32_t>(windowSize.x), static_cast<uint32_t>(windowSize.y)};
-            is_viewport_resized = true;
-        }
-        Viewport_Extent = {static_cast<uint32_t>(windowSize.x), static_cast<uint32_t>(windowSize.y)};
-        // Display the offscreen image
-        ImGui::Image(sceneImageView, windowSize);
+            // Display the offscreen image
+            ImGui::Image(sceneImageView, windowSize);
 
-        ImGui::End();
-        ImGui::PopStyleVar();
+            ImGui::End();
+            ImGui::PopStyleVar();
+        }
 
         imgui_layer.End(frameInfo.command_buffer);
     }
 
+    void EditorLayer::UpdateTextures()
+    {
+
+        for (auto &kv : m_ActiveScene->GetEntities())
+        {
+            auto &obj = kv.second;
+            if (!m_Renderer.Get_Swapchain().isWaitingForFence)
+            {
+                VV_CORE_TRACE("Fence Done!");
+                // update textures
+                auto imageInfo = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).getDescriptorImageInfo();
+                VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+                    .writeImage(0, &imageInfo)
+                    .build(VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data.m_descriptorSet);
+            }
+            else
+            {
+                VV_CORE_TRACE("Waiting For Fence");
+            }
+        }
+    }
+
     void EditorLayer::OnRender(FrameInfo &frameInfo)
     {
+        // UpdateTextures();
+
+        std::unordered_map<int, VkDescriptorSet> descriptor_sets;
+        descriptor_sets[0] = m_global_descriptor_sets[frameInfo.frame_index];
+
+        std::vector<std::reference_wrapper<VVDescriptorPool>> pools = {*m_global_pool};
+
+        SceneRenderInfo sceneInfo{
+            m_ActiveScene->GetEntities(),
+            m_SceneCamera,
+            descriptor_sets,
+            pools};
+
+        // update
+        GlobalUBO ubo{};
+        ubo.view = m_Camera.GetView();
+        ubo.projection = m_Camera.GetProjection();
+        ubo.inverse_view_matrix = m_Camera.GetInverseViewMatrix();
+
+        m_PointlightSystem->Update(frameInfo, sceneInfo, ubo);
+
+        m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
+        m_ubo_buffers[frameInfo.frame_index]->flush();
+
+        // Offscreen Renderer
+        {
+
+            m_Offscreen->StartRenderpass(frameInfo.command_buffer);
+            m_RenderSystem->renderGameobjects(frameInfo, sceneInfo);
+            m_PointlightSystem->render(frameInfo, sceneInfo);
+            m_Offscreen->EndRendrepass(frameInfo.command_buffer);
+            sceneImageView = m_Offscreen->getFramebufferImage();
+        }
     }
 
     void EditorLayer::OnDetach()

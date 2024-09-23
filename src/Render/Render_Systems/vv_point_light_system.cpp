@@ -1,6 +1,8 @@
 #include "vv_point_light_system.hpp"
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
+#include <Components.hpp>
+#include <Entity.hpp>
 
 namespace VectorVertex
 {
@@ -82,7 +84,7 @@ namespace VectorVertex
         pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
     }
 
-    void PointLightSystem::Update(FrameInfo &frame_info, GlobalUBO &ubo)
+    void PointLightSystem::Update(FrameInfo &frame_info,  SceneRenderInfo &scene_info, GlobalUBO &ubo)
     {
         auto rotateLight = glm::rotate(
             glm::mat4(1.f),
@@ -90,38 +92,43 @@ namespace VectorVertex
             {0.f, -1.f, 0.f});
 
         int light_index = 0;
-        for (auto &kv : frame_info.game_objects)
+        for (auto &kv : scene_info.entities)
         {
             auto &_obj = kv.second;
-            if (_obj.point_light == nullptr)
+            if (!_obj.HasComponent<PointLightComponent>())
                 continue;
 
             assert(light_index < MAX_LIGHTS && "Point light exceeds maximum number of lights!");
 
-            _obj.transform.translation = glm::vec3(rotateLight * glm::vec4(_obj.transform.translation, 1.0f));
-            ubo.point_lights[light_index].position = glm::vec4(_obj.transform.translation, 1.0f);
-            ubo.point_lights[light_index].color = glm::vec4(_obj.color, _obj.point_light->light_intensity);
+            auto _transform = _obj.GetComponent<TransformComponent>();
+
+            _transform.translation = glm::vec3(rotateLight * glm::vec4(_transform.translation, 1.0f));
+            ubo.point_lights[light_index].position = glm::vec4(_transform.translation, 1.0f);
+            ubo.point_lights[light_index].color = glm::vec4(_obj.GetComponent<PointLightComponent>().color, _obj.GetComponent<PointLightComponent>().light_intensity);
             light_index += 1;
         }
         ubo.num_lights = light_index;
     }
 
-    void PointLightSystem::render(FrameInfo &frame_info)
+    void PointLightSystem::render(FrameInfo &frame_info, SceneRenderInfo &scene_info)
     {
-        std::map<float, VVGameObject::id_t> sorted;
-        for (auto &kv : frame_info.game_objects)
+        auto camera = scene_info.m_Camera.GetComponent<CameraComponent>().m_Camera;
+
+        std::map<float, uint64_t> sorted;
+        for (auto &kv : scene_info.entities)
         {
             auto &_object = kv.second;
-            if (_object.point_light == nullptr)
+            if (!_object.HasComponent<PointLightComponent>())
                 continue;
 
-            auto offset = frame_info.camera.GetPosition() - _object.transform.translation;
+            auto _transform = _object.GetComponent<TransformComponent>();
+            auto offset = camera.GetPosition() - _transform.translation;
             float disSquared = glm::dot(offset, offset);
-            sorted[disSquared] = _object.getId();
+            sorted[disSquared] = _object.GetComponent<IDComponent>().id;
         }
 
         pipeline->Bind(frame_info.command_buffer);
-        for (auto &des : frame_info.descriptor_sets)
+        for (auto &des : scene_info.descriptor_sets)
         {
             if (des.second == VK_NULL_HANDLE)
             {
@@ -134,12 +141,13 @@ namespace VectorVertex
         // render with revserse of sorted order
         for (auto it = sorted.rbegin(); it != sorted.rend(); it++)
         {
-            auto &_obj = frame_info.game_objects.at(it->second);
+            auto &_obj = scene_info.entities.at(it->second);
+            auto _transform = _obj.GetComponent<TransformComponent>();
 
             PointLightPushConstants push{};
-            push.position = glm::vec4(_obj.transform.translation, 1.0f);
-            push.color = glm::vec4(_obj.color, _obj.point_light->light_intensity);
-            push.radius = _obj.transform.scale.x;
+            push.position = glm::vec4(_transform.translation, 1.0f);
+            push.color = glm::vec4(_obj.GetComponent<PointLightComponent>().color, _obj.GetComponent<PointLightComponent>().light_intensity);
+            push.radius = _transform.scale.x;
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(PointLightPushConstants), &push);
 

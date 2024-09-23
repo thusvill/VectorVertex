@@ -26,9 +26,9 @@ namespace VectorVertex
 
         PointLightSystem(const PointLightSystem &) = delete;
         PointLightSystem &operator=(const PointLightSystem &) = delete;
-        void Update(FrameInfo &frame_info, GlobalUBO &ubo);
+        void Update(FrameInfo &frame_info, SceneRenderInfo &scene_info, GlobalUBO &ubo);
 
-        void render(FrameInfo &frame_info);
+        void render(FrameInfo &frame_info, SceneRenderInfo &scene_info);
 
     private:
         void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout);

@@ -77,5 +77,6 @@
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",
   "terminal.integrated.automationProfile.linux": {},
-  "terminal.sourceControlRepositoriesKind": "external"
+  "terminal.sourceControlRepositoriesKind": "external",
+  "C_Cpp.errorSquiggles": "enabled"
 }

@@ -51,10 +51,7 @@ namespace VectorVertex
         
 
     private:
-        void loadGameobjects();
-
         
-
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};
         VVRenderer renderer{vvWindow, vvDevice};
@@ -62,10 +59,6 @@ namespace VectorVertex
         EditorLayer *editor_layer;
 
         LayerStack layers{};
-        // VVMaterialLibrary materials{};
-        Scope<VVDescriptorPool> global_pool{};
-        //Scope<VVDescriptorPool> texture_pool{};
-        VVGameObject::Map gameObjects;
 
         // Scope<VVDescriptorSetLayout> textureImageDescriptorLayout{};
         //VVTexture base_texture;

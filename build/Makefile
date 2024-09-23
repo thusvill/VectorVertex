@@ -249,6 +249,30 @@ src/Core/Log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.s
 .PHONY : src/Core/Log.cpp.s
 
+src/Core/Panels/SceneHierarchy.o: src/Core/Panels/SceneHierarchy.cpp.o
+.PHONY : src/Core/Panels/SceneHierarchy.o
+
+# target to build an object file
+src/Core/Panels/SceneHierarchy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o
+.PHONY : src/Core/Panels/SceneHierarchy.cpp.o
+
+src/Core/Panels/SceneHierarchy.i: src/Core/Panels/SceneHierarchy.cpp.i
+.PHONY : src/Core/Panels/SceneHierarchy.i
+
+# target to preprocess a source file
+src/Core/Panels/SceneHierarchy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.i
+.PHONY : src/Core/Panels/SceneHierarchy.cpp.i
+
+src/Core/Panels/SceneHierarchy.s: src/Core/Panels/SceneHierarchy.cpp.s
+.PHONY : src/Core/Panels/SceneHierarchy.s
+
+# target to generate assembly for a file
+src/Core/Panels/SceneHierarchy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.s
+.PHONY : src/Core/Panels/SceneHierarchy.cpp.s
+
 src/Core/Scene/Entity.o: src/Core/Scene/Entity.cpp.o
 .PHONY : src/Core/Scene/Entity.o
 
@@ -969,6 +993,9 @@ help:
 	@echo "... src/Core/Log.o"
 	@echo "... src/Core/Log.i"
 	@echo "... src/Core/Log.s"
+	@echo "... src/Core/Panels/SceneHierarchy.o"
+	@echo "... src/Core/Panels/SceneHierarchy.i"
+	@echo "... src/Core/Panels/SceneHierarchy.s"
 	@echo "... src/Core/Scene/Entity.o"
 	@echo "... src/Core/Scene/Entity.i"
 	@echo "... src/Core/Scene/Entity.s"
