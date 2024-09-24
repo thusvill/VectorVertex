@@ -6,37 +6,44 @@ namespace VectorVertex
     class Entity
     {
     public:
-    Entity() = default;
+        Entity() = default;
         Entity(entt::entity m_handle, Scene *scene);
         Entity(const Entity &other) = default;
 
         template <typename T>
-        bool HasComponent(){
+        bool HasComponent()
+        {
             return m_Scene->m_Registry.any_of<T>(m_EntityHandler);
         }
 
-        template<typename T, typename... Args>
-        T& AddComponent(Args&&... args){
+        template <typename T, typename... Args>
+        T &AddComponent(Args &&...args)
+        {
             VV_CORE_ASSERT(!HasComponent<T>(), "Entity already have this component!");
             return m_Scene->m_Registry.emplace<T>(m_EntityHandler, std::forward<Args>(args)...);
         }
 
-        template<typename T>
-        T& GetComponent(){
+        template <typename T>
+        T &GetComponent()
+        {
             VV_CORE_ASSERT(HasComponent<T>(), "Entity doesn't have this component!");
             return m_Scene->m_Registry.get<T>(m_EntityHandler);
         }
 
-        template<typename T>
-        void RemoveComponent(){
+        template <typename T>
+        void RemoveComponent()
+        {
             VV_CORE_ASSERT(HasComponent<T>(), "Entity doesn't have this component!");
             m_Scene->m_Registry.remove<T>(m_EntityHandler);
         }
-        operator bool() const{return m_EntityHandler != entt::null;}
+
+        entt::entity GetEntt() { return m_EntityHandler; }
+
+        operator bool() const { return m_EntityHandler != entt::null; }
 
     private:
         entt::entity m_EntityHandler{entt::null};
-        Scene *m_Scene=nullptr;
+        Scene *m_Scene = nullptr;
     };
-    
+
 } // namespace VectorVertex

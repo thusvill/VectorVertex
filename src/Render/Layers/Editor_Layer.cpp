@@ -51,18 +51,20 @@ namespace VectorVertex
         m_RenderSystem = CreateRef<LveRenderSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
         m_PointlightSystem = CreateRef<PointLightSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
         m_SceneCamera = m_ActiveScene->CreateEntity("Camera View");
-        m_SceneCamera.AddComponent<CameraComponent>();
-        m_SceneCamera.GetComponent<TransformComponent>().translation = glm::vec3(-1.48, -0.77, -2.17);
+        m_SceneCamera.AddComponent<CameraComponent>().m_Camera.SetProjectionType(VVCamera::ProjectionType::Perspective);
+        m_SceneCamera.GetComponent<TransformComponent>().translation = glm::vec3(-12.188, -6.700, -9.159);
         m_SceneCamera.GetComponent<TransformComponent>().rotation = glm::vec3(-0.41, 0.87, 0.0f);
 
         {
             // load a model
             auto light = m_ActiveScene->CreateEntity("Light");
-            light.AddComponent<PointLightComponent>();
-            light.GetComponent<TransformComponent>().translation = glm::vec3(1.0f);
+            light.AddComponent<PointLightComponent>().color = glm::vec3(1.0f, 1.0f, 1.0f);
+            light.GetComponent<PointLightComponent>().light_intensity = 255.0f;
+            light.GetComponent<TransformComponent>().translation = glm::vec3(0.0f, -17.10f, 3.4f);
             auto box = m_ActiveScene->CreateEntity("Box");
-            box.AddComponent<MeshComponent>(m_Device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/cube.obj");
-            box.GetComponent<TextureComponent>().m_ID = VVTextureLibrary::Create(device, "new", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/default.png");
+            box.AddComponent<MeshComponent>(m_Device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra.obj");
+            box.GetComponent<TransformComponent>().rotation = glm::vec3(3.15f, 0.0f, 0.0f);
+            box.AddComponent<TextureComponent>().m_ID = VVTextureLibrary::Create(device, "new", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/BackgroundGreyGridSprite.png");
         }
 
         currentTime = std::chrono::high_resolution_clock::now();
@@ -98,18 +100,33 @@ namespace VectorVertex
 
     void EditorLayer::OnUpdate()
     {
+        {
+            if(m_SceneHierarchyPanel.requestUpdateTextures){
+                UpdateTextures();
+                m_SceneHierarchyPanel.requestUpdateTextures = false;
+            }
+        }
+        m_ActiveScene->DeletePendingEntities();
+        RunDeferredActions(); //runs commads after frame
         m_ActiveScene->OnUpdate();
         {
             auto newTime = std::chrono::high_resolution_clock::now();
             frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
-
             camControl.moveInPlaneXZ(m_Window.getGLFWwindow(), frameTime, m_SceneCamera.GetComponent<TransformComponent>());
             m_Camera.SetViewYXZ(m_SceneCamera.GetComponent<TransformComponent>().translation, m_SceneCamera.GetComponent<TransformComponent>().rotation);
 
             auto aspectRatio = static_cast<float>(m_Offscreen->getViewSize().width) / static_cast<float>(m_Offscreen->getViewSize().height); // renderer.GetAspectRatio();
             // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
-            m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1, 100.f);
+            if (m_Camera.GetProjectionType() == VVCamera::ProjectionType::Perspective)
+            {
+                m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
+            }
+            else
+            {
+                m_Camera.SetOrthographicProjection(static_cast<float>(m_Offscreen->getViewSize().width), static_cast<float>(m_Offscreen->getViewSize().height), 0.1f, 100.0f);
+                ;
+            }
 
             {
                 if (is_viewport_resized)
@@ -178,11 +195,13 @@ namespace VectorVertex
             ImGui::End();
         }
         {
-            m_SceneHierarchyPanel.OnImGuiRender();
+            m_SceneHierarchyPanel.OnImGuiRender(m_Device);
         }
         { // Inside your ImGui rendering loop
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
             ImGui::Begin("Viewport");
+
+            camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
 
             // Get the size of your ImGui window or set your desired size
             ImVec2 windowSize = ImGui::GetContentRegionAvail();
@@ -214,10 +233,13 @@ namespace VectorVertex
             {
                 VV_CORE_TRACE("Fence Done!");
                 // update textures
-                auto imageInfo = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).getDescriptorImageInfo();
-                VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
-                    .writeImage(0, &imageInfo)
-                    .build(VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data.m_descriptorSet);
+                if (obj.HasComponent<TextureComponent>())
+                {
+                    auto imageInfo = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).getDescriptorImageInfo();
+                    VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+                        .writeImage(0, &imageInfo)
+                        .build(VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data.m_descriptorSet);
+                }
             }
             else
             {

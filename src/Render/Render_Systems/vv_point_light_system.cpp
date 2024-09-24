@@ -10,7 +10,7 @@ namespace VectorVertex
     {
         glm::vec4 position{};
         glm::vec4 color{};
-        float radius;
+        float radius{};
     };
 
     PointLightSystem::PointLightSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
@@ -147,7 +147,7 @@ namespace VectorVertex
             PointLightPushConstants push{};
             push.position = glm::vec4(_transform.translation, 1.0f);
             push.color = glm::vec4(_obj.GetComponent<PointLightComponent>().color, _obj.GetComponent<PointLightComponent>().light_intensity);
-            push.radius = _transform.scale.x;
+            push.radius = _obj.GetComponent<PointLightComponent>().radius;
 
             vkCmdPushConstants(frame_info.command_buffer, pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(PointLightPushConstants), &push);
 

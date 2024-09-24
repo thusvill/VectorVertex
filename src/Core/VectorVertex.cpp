@@ -89,6 +89,7 @@ namespace VectorVertex
 
                 renderer.EndFrame();
             }
+            
         }
 
         vkDeviceWaitIdle(vvDevice.device());

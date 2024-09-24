@@ -22,6 +22,7 @@ namespace VectorVertex
         VkExtent2D Viewport_Extent{800, 800};
 
         bool is_viewport_resized = false;
+        Ref<Scene> GetActiveScene() {return m_ActiveScene;}
 
     private:
         Imgui_Layer imgui_layer;

@@ -20,6 +20,8 @@ namespace VectorVertex
         ~Scene();
 
         Entity CreateEntity(std::string name);
+        void DestroyEntity(Entity entity);
+        void DeletePendingEntities();
 
         void OnUpdate();
         void RenderScene();
@@ -29,6 +31,7 @@ namespace VectorVertex
     private:
         entt::registry m_Registry;
         std::unordered_map<UUID, Entity> m_Entities;
+        std::unordered_map<UUID, Entity> m_Pending_Delete_Entities;
 
 
         friend class SceneHierarchy;

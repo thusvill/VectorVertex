@@ -31,5 +31,5 @@ void main() {
     if(dis >= 1.0) discard;
     
     float cosDis = 0.5 * (cos(dis * M_PI) + 1.0);
-    outColor = vec4(push.color.xyz + cosDis, cosDis);
+    //outColor = vec4(push.color.xyz + cosDis, cosDis);
 }

@@ -77,6 +77,7 @@ namespace VectorVertex
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
         VVPipeline::defaultPipelineConfigInfo(pipelineConfig);
+        VVPipeline::enableAlphaBlending(pipelineConfig);
         pipelineConfig.renderPass = renderPass;
         pipelineConfig.pipelineLayout = pipelineLayout;
         pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
@@ -121,21 +122,23 @@ namespace VectorVertex
                 vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
                                         pipelineLayout, des.first, 1, &des.second, 0, nullptr);
             }
-            
 
             if (!frame_info.renderer.Get_Swapchain().isWaitingForFence)
             {
-                TextureData data = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data;
-                if (data.m_descriptorSet == nullptr)
+                if (obj.HasComponent<TextureComponent>())
                 {
-                    VV_CORE_ERROR("Null Descriptors in Texture :{0}, Entity :{1} ", data.m_Name, obj.GetComponent<IDComponent>().m_Name);
-                    VV_CORE_ASSERT(false, "Texture Descriptorset is NULL!");
-                }
-                else
-                {
+                    TextureData data = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data;
+                    if (data.m_descriptorSet == nullptr)
+                    {
+                        VV_CORE_ERROR("Null Descriptors in Texture :{0}, Entity :{1} ", data.m_Name, obj.GetComponent<IDComponent>().m_Name);
+                        VV_CORE_ASSERT(false, "Texture Descriptorset is NULL!");
+                    }
+                    else
+                    {
 
-                    vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
-                                            pipelineLayout, 1, 1, &data.m_descriptorSet, 0, nullptr);
+                        vkCmdBindDescriptorSets(frame_info.command_buffer, VK_PIPELINE_BIND_POINT_GRAPHICS,
+                                                pipelineLayout, 1, 1, &data.m_descriptorSet, 0, nullptr);
+                    }
                 }
                 obj.GetComponent<MeshComponent>().m_Model->Bind(frame_info.command_buffer);
                 obj.GetComponent<MeshComponent>().m_Model->Draw(frame_info.command_buffer);

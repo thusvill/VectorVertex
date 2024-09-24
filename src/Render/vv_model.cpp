@@ -40,6 +40,7 @@ namespace VectorVertex
 
     std::unique_ptr<VVModel> VVModel::createModelFromFile(VVDevice &device, const std::string &filepath)
     {
+        VV_CORE_INFO(filepath);
         Builder builder{};
         builder.loadModel(filepath);
         return std::make_unique<VVModel>(device, builder);

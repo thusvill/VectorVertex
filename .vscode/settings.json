@@ -72,7 +72,8 @@
     "cassert": "cpp",
     "charconv": "cpp",
     "span": "cpp",
-    "format": "cpp"
+    "format": "cpp",
+    "queue": "cpp"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

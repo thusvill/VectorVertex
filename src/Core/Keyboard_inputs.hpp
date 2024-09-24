@@ -24,9 +24,10 @@ namespace VectorVertex
         void moveInPlaneXZ(GLFWwindow *window, float dt, TransformComponent &transform);
 
         KeyMappings keys{};
-        float originalSpeed{1.f};
-        float speed_multiplier{2.f};
+        float originalSpeed{2.f};
+        float speed_multiplier{2.5f};
         float moveSpeed;
         float lookSpeed{1.f};
+        bool isClickedOnViewport = false;
     };
 } // namespace VectorVertex

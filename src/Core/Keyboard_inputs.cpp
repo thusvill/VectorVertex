@@ -22,7 +22,7 @@ namespace VectorVertex
         if (glfwGetKey(window, keys.lookDown) == GLFW_PRESS)
             rotate.x -= 1.f;
 
-        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
+        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS && isClickedOnViewport)
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
@@ -46,6 +46,7 @@ namespace VectorVertex
             lastMouseY = mouseY;
         }else{
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+            isClickedOnViewport = false;
 
         }
 

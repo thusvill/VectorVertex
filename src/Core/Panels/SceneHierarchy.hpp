@@ -1,22 +1,34 @@
 #pragma once
 #include <Scene.hpp>
+#include <Entity.hpp>
+#include <functional>
+#include <queue>
 
 namespace VectorVertex
 {
+    extern std::queue<std::function<void()>> deferredActions;
+
+    #define RUN_AFTER_FRAME(...) deferredActions.push([&]() { __VA_ARGS__; })
+
+    extern void RunDeferredActions();
+    
+
     class SceneHierarchy
     {
-        public:
-        SceneHierarchy()=default;
-        SceneHierarchy(const Ref<Scene>& scene);
+    public:
+        SceneHierarchy() = default;
+        SceneHierarchy(const Ref<Scene> &scene);
 
-        void SetContext(const Ref<Scene>& scene);
+        void SetContext(const Ref<Scene> &scene);
 
-        void OnImGuiRender();
+        void OnImGuiRender(VVDevice &device);
+        bool requestUpdateTextures;
 
-        private:
+    private:
         void DrawEntityNode(Entity entity);
+        void DrawComponents(VVDevice &device, Entity entity);
         Ref<Scene> m_Context;
-        UUID m_SelectedEntityID;
+        Entity m_SelectedEntity;
     };
 
 } // namespace VectorVertex
