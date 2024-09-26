@@ -12,6 +12,7 @@
 
 namespace VectorVertex
 {
+  bool VVSwapChain::isWaitingForFence =false;
 
   VVSwapChain::VVSwapChain(VVDevice &deviceRef, VkExtent2D extent)
       : device{deviceRef}, windowExtent{extent}

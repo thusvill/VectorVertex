@@ -44,6 +44,7 @@ namespace VectorVertex
         m_stagingBuffer = createStagingBuffer(pixels, imageSize);
 
         data.m_textureImage = new VVImage(device);
+        data.m_path = filePath;
 
         data.m_textureImage->createImage(texWidth, texHeight, VK_FORMAT_R8G8B8A8_SRGB,
                                          VK_IMAGE_TILING_OPTIMAL, VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_SAMPLED_BIT,
@@ -82,6 +83,12 @@ namespace VectorVertex
         {
             throw std::runtime_error("failed to create texture sampler!");
         }
+    }
+    void VVTexture::loadTexture(const std::string &newPath)
+    {
+        createTextureImage(newPath);
+        createTextureImageView();
+        createTextureSampler();
     }
     void VVTexture::transitionImageLayout(VkImageLayout oldLayout, VkImageLayout newLayout)
     {
@@ -167,6 +174,31 @@ namespace VectorVertex
             VV_CORE_ERROR("No Texture assigned with UUID: {}", ID);
         }
         return *m_Textures.at(ID);
+    }
+    void VVTextureLibrary::DeleteTexture(UUID ID)
+    {
+        if (ID != default_uuid)
+        {
+            m_Textures.erase(ID);
+        }
+    }
+    void VVTextureLibrary::UpdateDescriptors()
+    {
+        if (!VVSwapChain::isWaitingForFence)
+        {
+            VV_CORE_TRACE("Fence Done!");
+            for (auto &kv : m_Textures)
+            {
+                auto imageInfo = VVTextureLibrary::GetTexture(kv.first).getDescriptorImageInfo();
+                VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+                    .writeImage(0, &imageInfo)
+                    .build(VVTextureLibrary::GetTexture(kv.first).data.m_descriptorSet);
+            }
+        }
+        else
+        {
+            VV_CORE_TRACE("Waiting For Fence");
+        }
     }
     void VVTextureLibrary::ClearLibrary()
     {

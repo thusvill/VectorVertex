@@ -64,12 +64,12 @@ namespace VectorVertex
         ImGui_ImplGlfw_InitForVulkan(window, true);
 
         // Initialize ImGui Vulkan bindings
-        init_info.Instance = config.instance; 
-        if(config.instance == VK_NULL_HANDLE)
-        {
-            VV_CORE_ERROR("Failed to initialize ImGui for Vulkan!");
-            return;
-        }
+        init_info.Instance = config.instance;
+        // if(config.instance == VK_NULL_HANDLE)
+        // {
+        //     VV_CORE_ERROR("Failed to initialize ImGui for Vulkan!");
+        //     return;
+        // }
         init_info.RenderPass = config.renderPass;
         init_info.PhysicalDevice = config.PhysicalDevice;
         init_info.Device = config.Device;
@@ -77,7 +77,6 @@ namespace VectorVertex
         init_info.DescriptorPool = imguiPool;
         init_info.MinImageCount = 3;
         init_info.ImageCount = config.imageCount;
-        ;
 
         init_info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
 
@@ -86,6 +85,8 @@ namespace VectorVertex
             VV_CORE_ERROR("Failed to initialize ImGui for Vulkan!");
             return;
         }
+
+
     }
 
     void Imgui_Layer::OnAttach()
@@ -117,11 +118,10 @@ namespace VectorVertex
     {
         ImGui::Render();
         ImDrawData *draw_data = ImGui::GetDrawData();
-        
+
         VV_CORE_ASSERT(draw_data, "No draw data!");
-        
+
         ImGui_ImplVulkan_RenderDrawData(draw_data, vkCommandBuffer);
     }
-
 
 } // namespace VectorVertex

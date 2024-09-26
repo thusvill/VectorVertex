@@ -90,6 +90,17 @@ namespace VectorVertex
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
+        
+        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", 15.f);
+        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", 15.f);
+
+        io.Fonts->Build();
+
+        VkCommandBuffer command_buffer =  vv_device->beginSingleTimeCommands(); // Vulkan-specific setup
+        ImGui_ImplVulkan_CreateFontsTexture();
+        vv_device->endSingleTimeCommands(command_buffer);
+        //ImGui_ImplVulkan_DestroyFontUploadObjects();
+
         m_Offscreen = CreateRef<VVOffscreen>(m_Device, m_Renderer, Viewport_Extent);
     }
 
@@ -100,15 +111,18 @@ namespace VectorVertex
 
     void EditorLayer::OnUpdate()
     {
+
+        m_ActiveScene->DeletePendingEntities();
+        RunDeferredActions(); // runs commads after frame
         {
-            if(m_SceneHierarchyPanel.requestUpdateTextures){
+            if (m_SceneHierarchyPanel.requestUpdateTextures)
+            {
                 UpdateTextures();
                 m_SceneHierarchyPanel.requestUpdateTextures = false;
             }
         }
-        m_ActiveScene->DeletePendingEntities();
-        RunDeferredActions(); //runs commads after frame
         m_ActiveScene->OnUpdate();
+
         {
             auto newTime = std::chrono::high_resolution_clock::now();
             frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
@@ -187,11 +201,15 @@ namespace VectorVertex
 
             // Submit the DockSpace
             ImGuiIO &io = ImGui::GetIO();
+            ImGuiStyle& style = ImGui::GetStyle();
+            float minwdth=style.WindowMinSize.x;
+            style.WindowMinSize.x = 370.0f;
             if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
             {
                 ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
                 ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
             }
+            style.WindowMinSize.x = minwdth;
             ImGui::End();
         }
         {
@@ -226,26 +244,27 @@ namespace VectorVertex
     void EditorLayer::UpdateTextures()
     {
 
-        for (auto &kv : m_ActiveScene->GetEntities())
-        {
-            auto &obj = kv.second;
-            if (!m_Renderer.Get_Swapchain().isWaitingForFence)
-            {
-                VV_CORE_TRACE("Fence Done!");
-                // update textures
-                if (obj.HasComponent<TextureComponent>())
-                {
-                    auto imageInfo = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).getDescriptorImageInfo();
-                    VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
-                        .writeImage(0, &imageInfo)
-                        .build(VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data.m_descriptorSet);
-                }
-            }
-            else
-            {
-                VV_CORE_TRACE("Waiting For Fence");
-            }
-        }
+        // for (auto &kv : m_ActiveScene->GetEntities())
+        // {
+        //     auto &obj = kv.second;
+        //     if (!m_Renderer.Get_Swapchain().isWaitingForFence)
+        //     {
+        //         VV_CORE_TRACE("Fence Done!");
+        //         // update textures
+        //         if (obj.HasComponent<TextureComponent>())
+        //         {
+        //             auto imageInfo = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).getDescriptorImageInfo();
+        //             VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
+        //                 .writeImage(0, &imageInfo)
+        //                 .build(VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data.m_descriptorSet);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         VV_CORE_TRACE("Waiting For Fence");
+        //     }
+        // }
+        VVTextureLibrary::UpdateDescriptors();
     }
 
     void EditorLayer::OnRender(FrameInfo &frameInfo)

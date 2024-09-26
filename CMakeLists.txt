@@ -29,6 +29,9 @@ include_directories(
 file(GLOB IMGUI_SOURCES "src/Render/vendor/imgui/*.cpp")
 
 # Collect source files
+# Copy the entire Resources directory to the build output
+file(COPY ${CMAKE_SOURCE_DIR}/Resources DESTINATION ${CMAKE_BINARY_DIR})
+
 file(GLOB_RECURSE SOURCES 
     ${IMGUI_SOURCES}
     "src/Render/**.cpp" 
@@ -69,4 +72,4 @@ target_include_directories(VectorVertex PUBLIC
 )
 
 # Set debug flags
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -w -g")

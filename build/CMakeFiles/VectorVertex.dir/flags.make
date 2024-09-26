@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/entt -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render
 
-CXX_FLAGS = -g -g
+CXX_FLAGS = -g -w -g
 

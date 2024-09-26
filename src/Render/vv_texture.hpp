@@ -13,6 +13,7 @@ namespace VectorVertex
     {
         UUID m_ID;
         std::string m_Name;
+        std::string m_path;
         VVImage *m_textureImage;
         VkImageView m_textureImageView;
         VkSampler m_textureSampler;
@@ -31,6 +32,7 @@ namespace VectorVertex
         void createTextureImage(const std::string &filePath);
         void createTextureImageView();
         void createTextureSampler();
+        void loadTexture(const std::string &newPath);
 
         VkImageView getImageView() const
         {
@@ -91,6 +93,8 @@ namespace VectorVertex
         static uint64_t Create(VVDevice &device, std::string, std::string path);
         static void AddTexture(Ref<VVTexture> texture);
         static VVTexture& GetTexture(UUID ID);
+        static void DeleteTexture(UUID ID);
+        static void UpdateDescriptors();
         static void ClearLibrary();
 
         static std::unordered_map<uint64_t, Ref<VVTexture>> m_Textures;

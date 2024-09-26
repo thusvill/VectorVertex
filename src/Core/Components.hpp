@@ -13,7 +13,7 @@ namespace VectorVertex
         TextureComponent()
         {
             m_ID = VVTextureLibrary::default_uuid;
-            VV_CORE_INFO("Texture Created {}", m_ID);
+            VV_CORE_INFO("Default Texture Loaded {}", m_ID);
         }
         TextureComponent(VVDevice &device, std::string name, std::string path)
         {

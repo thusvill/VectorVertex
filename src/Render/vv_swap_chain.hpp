@@ -53,7 +53,7 @@ namespace VectorVertex
 
     
     VkSemaphore GetRenderFinishedSemaphore() {return renderFinishedSemaphores[currentFrame];}
-    bool isWaitingForFence = false;
+    static bool isWaitingForFence;
     VkFence getCurrentFence() {return inFlightFences[currentFrame];}
 
   private:
