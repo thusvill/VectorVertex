@@ -321,6 +321,30 @@ src/Core/Scene/Scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.s
 .PHONY : src/Core/Scene/Scene.cpp.s
 
+src/Core/Scene/SceneSerializer.o: src/Core/Scene/SceneSerializer.cpp.o
+.PHONY : src/Core/Scene/SceneSerializer.o
+
+# target to build an object file
+src/Core/Scene/SceneSerializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o
+.PHONY : src/Core/Scene/SceneSerializer.cpp.o
+
+src/Core/Scene/SceneSerializer.i: src/Core/Scene/SceneSerializer.cpp.i
+.PHONY : src/Core/Scene/SceneSerializer.i
+
+# target to preprocess a source file
+src/Core/Scene/SceneSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.i
+.PHONY : src/Core/Scene/SceneSerializer.cpp.i
+
+src/Core/Scene/SceneSerializer.s: src/Core/Scene/SceneSerializer.cpp.s
+.PHONY : src/Core/Scene/SceneSerializer.s
+
+# target to generate assembly for a file
+src/Core/Scene/SceneSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.s
+.PHONY : src/Core/Scene/SceneSerializer.cpp.s
+
 src/Core/VectorVertex.o: src/Core/VectorVertex.cpp.o
 .PHONY : src/Core/VectorVertex.o
 
@@ -1002,6 +1026,9 @@ help:
 	@echo "... src/Core/Scene/Scene.o"
 	@echo "... src/Core/Scene/Scene.i"
 	@echo "... src/Core/Scene/Scene.s"
+	@echo "... src/Core/Scene/SceneSerializer.o"
+	@echo "... src/Core/Scene/SceneSerializer.i"
+	@echo "... src/Core/Scene/SceneSerializer.s"
 	@echo "... src/Core/VectorVertex.o"
 	@echo "... src/Core/VectorVertex.i"
 	@echo "... src/Core/VectorVertex.s"

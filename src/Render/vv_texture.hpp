@@ -91,6 +91,7 @@ namespace VectorVertex
         //~VVTextureLibrary();
         static void InitTextureLib(VVDevice &device);
         static uint64_t Create(VVDevice &device, std::string, std::string path);
+        static void CreateWithUUID(VVDevice &device,UUID id,std::string name, std::string path);
         static void AddTexture(Ref<VVTexture> texture);
         static VVTexture& GetTexture(UUID ID);
         static void DeleteTexture(UUID ID);
@@ -101,5 +102,6 @@ namespace VectorVertex
         static uint64_t default_uuid;
         static Scope<VVDescriptorPool> texture_pool;
         static Scope<VVDescriptorSetLayout> textureImageDescriptorLayout;
+
     };
 } // namespace VectorVertex

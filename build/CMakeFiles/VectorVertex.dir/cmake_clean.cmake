@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o.d"
+  "CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o"
+  "CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o"

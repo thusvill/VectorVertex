@@ -10,7 +10,7 @@
 #include "../Render/vv_material.hpp"
 #include "../Render/vv_offscreen.hpp"
 // #include "../Render/vv_framebuffer.hpp"
-#include "../Render/Layers/Editor_Layer.hpp"
+
 #include "../Render/vv_texture.hpp"
 #include "Keyboard_inputs.hpp"
 #include "LayerStack.h"
@@ -26,6 +26,8 @@
 
 namespace VectorVertex
 {
+    class EditorLayer;
+    
     struct ProjectInfo
     {
         int width = 1980;
@@ -33,34 +35,41 @@ namespace VectorVertex
         std::string title = "VectorVertex";
     };
 
-    class VectorVetrex
+    class Application
     {
     public:
-        VectorVetrex(ProjectInfo &info);
-        ~VectorVetrex();
+        Application(ProjectInfo &info);
+        ~Application();
 
-        VectorVetrex(const VectorVetrex &) = delete;
-        VectorVetrex &operator=(const VectorVetrex &) = delete;
+        Application(const Application &) = delete;
+        Application &operator=(const Application &) = delete;
 
         GLFWwindow *GetNativeWindow() { return vvWindow.getGLFWwindow(); }
         VVDevice &GetDevice() { return vvDevice; }
 
+        void Close()
+        {
+            m_Running = false;
+        }
+
         int WIDTH, HEIGHT;
         std::string project_name;
         void run();
-        
+        static Application& Get() { return *s_Instance; }
+
 
     private:
-        
+        static Application* s_Instance;
+        bool m_Running = true;
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};
         VVRenderer renderer{vvWindow, vvDevice};
-        
+
         EditorLayer *editor_layer;
 
         LayerStack layers{};
 
         // Scope<VVDescriptorSetLayout> textureImageDescriptorLayout{};
-        //VVTexture base_texture;
+        // VVTexture base_texture;
     };
 } // namespace VectorVertex

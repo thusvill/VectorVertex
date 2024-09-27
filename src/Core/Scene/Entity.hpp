@@ -29,6 +29,14 @@ namespace VectorVertex
             VV_CORE_ASSERT(HasComponent<T>(), "Entity doesn't have this component!");
             return m_Scene->m_Registry.get<T>(m_EntityHandler);
         }
+        template <typename T>
+        T &GetORCreateComponent()
+        {
+            if(!HasComponent<T>()){
+                AddComponent<T>();
+            }
+            return m_Scene->m_Registry.get<T>(m_EntityHandler);
+        }
 
         template <typename T>
         void RemoveComponent()

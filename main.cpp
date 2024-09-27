@@ -10,7 +10,7 @@ int main() {
   info.width = 1600;
   info.height = 900;
   info.title = "VectorVertex";
-  VectorVertex::VectorVetrex app{info};
+  VectorVertex::Application app{info};
   try {
     app.run();
   } catch (const std::exception &e) {

@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Entity.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Scene.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/SceneSerializer.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/VectorVertex.cpp" "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vv_uuid.cpp" "CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Editor_Layer.cpp" "CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o.d"

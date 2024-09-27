@@ -1,0 +1,60 @@
+Scene: Main
+Entities:
+  - Entity: 13443204925586270924
+    IDComponent:
+      UUID: 13443204925586270924
+      Name: Box
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [3.1500001, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 2969746152572257773
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 1218525496134710781
+      m_Name: new
+      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/BackgroundGreyGridSprite.png
+    MeshComponent:
+      m_ID: 13473374103530659548
+      path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra.obj
+  - Entity: 16160262544611707700
+    IDComponent:
+      UUID: 16160262544611707700
+      Name: Light
+    TransformComponent:
+      Position: [0, -17.1000004, 3.4000001]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 2969746152572257773
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 1, 1]
+      light_intensity: 255
+      radius: 10
+  - Entity: 16971799226011293542
+    IDComponent:
+      UUID: 16971799226011293542
+      Name: Camera View
+    TransformComponent:
+      Position: [-12.1879997, -6.69999981, -9.1590004]
+      Rotation: [-0.409999996, 0.870000005, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 2969746152572257773
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 0
+      aspect: 0
+      near: 0
+      far: 0
+      orthoWidth: 0
+      orthoHeight: 0
+      orthoNear: 0
+      orthoFar: 0
+      mainCamera : true

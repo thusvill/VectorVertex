@@ -685,16 +685,22 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Editor_Layer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_frame_info.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Imgui_Layer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_pipeline.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_shader.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/vv_point_light_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../vv_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/../vv_shader.hpp \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
+ /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Render_Systems/vv_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Editor_Layer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/Layers/Imgui_Layer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Scene.hpp \
@@ -702,17 +708,11 @@ CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o: \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/set \
- /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_point_light_system.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_render_system.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Entity.hpp \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/SceneSerializer.hpp \
  /usr/include/c++/13/iostream

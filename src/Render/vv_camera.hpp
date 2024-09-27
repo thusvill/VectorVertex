@@ -8,11 +8,19 @@ namespace VectorVertex
 {
     class VVCamera
     {
+        
+
     public:
         enum class ProjectionType
         {
             Orthographic = 0,
             Perspective = 1
+        };
+        struct CameraData
+        {
+            ProjectionType m_ProjectionType{1};
+            float fov, aspect, near, far;
+            float orthoWidth, orthoHeight, orthoNear, orthoFar;
         };
         void SetOrthographicProjection(float left, float right, float top, float bottom, float near, float far);
         void SetOrthographicProjection(float width, float height, float near, float far);
@@ -49,12 +57,40 @@ namespace VectorVertex
 
         const ProjectionType GetProjectionType() const { return m_ProjectionType; }
 
+        const CameraData GetCameraData() const {
+            CameraData data;
+            data.m_ProjectionType = m_ProjectionType;
+            data.fov = fov;
+            data.near = near;
+            data.far = far;
+            data.aspect = aspect;
+            data.orthoFar = orthoFar;
+            data.orthoNear = orthoNear;
+            data.orthoHeight = orthoHeight;
+            data.orthoWidth = orthoWidth;
+
+            return data;
+            
+        }
+
+        void SetCameraData(CameraData data){
+             m_ProjectionType = data.m_ProjectionType;
+             fov = data.fov;
+             near = data.near;
+             far = data.far;
+             aspect = data.aspect;
+             orthoFar = data.orthoFar;
+             orthoNear = data.orthoNear;
+             orthoHeight = data.orthoHeight;
+             orthoWidth = data.orthoWidth;
+        }
+
     private:
         ProjectionType m_ProjectionType{1};
         glm::mat4 projectionMatrix{1.0f};
         glm::mat4 viewMatrix{1.0f};
         glm::mat4 inverseViewMatrix{1.0f};
         float fov, aspect, near, far;
-         float orthoWidth, orthoHeight, orthoNear, orthoFar;
+        float orthoWidth, orthoHeight, orthoNear, orthoFar;
     };
 } // namespace VectorVertex

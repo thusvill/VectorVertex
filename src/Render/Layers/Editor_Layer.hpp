@@ -1,8 +1,11 @@
+#pragma once
+#include <VectorVertex.hpp>
 #include <Layer.h>
 #include "Imgui_Layer.hpp"
 #include "../vv_material.hpp"
 #include <SceneHierarchy.hpp>
 #include <Entity.hpp>
+#include <SceneSerializer.hpp>
 namespace VectorVertex
 {
     class Scene;
@@ -48,5 +51,6 @@ namespace VectorVertex
         KeyboardInputs camControl{}; // temporyauto currentTime = std::chrono::high_resolution_clock::now();
         std::chrono::_V2::system_clock::time_point currentTime;
         float frameTime;
+        bool loading_scene=false;
     };
 }

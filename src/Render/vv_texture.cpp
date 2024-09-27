@@ -149,7 +149,7 @@ namespace VectorVertex
         VV_CORE_INFO("Initilized Texture Library!");
     }
 
-    uint64_t VVTextureLibrary::Create(VVDevice &device, std::string name, std::string path)
+    uint64_t VVTextureLibrary::Create(VVDevice &device,std::string name, std::string path)
     {
 
         Ref<VVTexture> texture = CreateRef<VVTexture>(device, path);
@@ -157,6 +157,14 @@ namespace VectorVertex
         VV_CORE_INFO("Created Texture from:{0} as:{1} with UUID:{2}", path, name, texture->data.m_ID);
         m_Textures[texture->data.m_ID] = texture;
         return texture->data.m_ID;
+    }
+    void VVTextureLibrary::CreateWithUUID(VVDevice &device,UUID id, std::string name, std::string path)
+    {
+        Ref<VVTexture> texture = CreateRef<VVTexture>(device, path);
+        texture->data.m_Name = name;
+        texture->data.m_ID = id;
+        VV_CORE_INFO("Created Texture from:{0} as:{1} with UUID:{2}", path, name, texture->data.m_ID);
+        m_Textures[texture->data.m_ID] = texture;
     }
     void VVTextureLibrary::AddTexture(Ref<VVTexture> texture)
     {

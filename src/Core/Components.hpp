@@ -130,6 +130,7 @@ namespace VectorVertex
             m_Model = VVModel::createModelFromFile(device, path);
         }
         Scope<VVModel> m_Model;
+        UUID m_ID;
         std::string path;
     };
     struct CameraComponent
@@ -137,5 +138,6 @@ namespace VectorVertex
         CameraComponent() = default;
 
         VVCamera m_Camera;
+        bool mainCamera;
     };
 } // namespace VectorVertex

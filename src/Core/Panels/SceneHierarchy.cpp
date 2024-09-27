@@ -273,7 +273,7 @@ namespace VectorVertex
 
         DrawComponent<CameraComponent>("Camera", entity, [](auto &component, auto &device)
                                        {
-auto &camera = component.m_Camera;
+                auto &camera = component.m_Camera;
                 const char *projectionTypeStrings[] = {"Orthographic", "Perspective"};
                 const char *currentProjectionTypeString = projectionTypeStrings[(int)camera.GetProjectionType()];
                 if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
@@ -293,7 +293,9 @@ auto &camera = component.m_Camera;
                     }
 
                     ImGui::EndCombo();
-                } }, device);
+                    
+                } 
+                ImGui::Checkbox("Is Main Camera", &component.mainCamera);}, device);
 
         DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light, auto &device)
                                            {

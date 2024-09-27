@@ -1,7 +1,6 @@
 #include "Editor_Layer.hpp"
 #include <glm/gtc/type_ptr.hpp>
 #include <Entity.hpp>
-
 #include <Scene.hpp>
 
 namespace VectorVertex
@@ -50,25 +49,31 @@ namespace VectorVertex
 
         m_RenderSystem = CreateRef<LveRenderSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
         m_PointlightSystem = CreateRef<PointLightSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
-        m_SceneCamera = m_ActiveScene->CreateEntity("Camera View");
-        m_SceneCamera.AddComponent<CameraComponent>().m_Camera.SetProjectionType(VVCamera::ProjectionType::Perspective);
-        m_SceneCamera.GetComponent<TransformComponent>().translation = glm::vec3(-12.188, -6.700, -9.159);
-        m_SceneCamera.GetComponent<TransformComponent>().rotation = glm::vec3(-0.41, 0.87, 0.0f);
+        // m_SceneCamera = m_ActiveScene->CreateEntity("Camera View");
+        // m_SceneCamera.AddComponent<CameraComponent>().m_Camera.SetProjectionType(VVCamera::ProjectionType::Perspective);
+        // m_SceneCamera.GetComponent<TransformComponent>().translation = glm::vec3(-12.188, -6.700, -9.159);
+        // m_SceneCamera.GetComponent<TransformComponent>().rotation = glm::vec3(-0.41, 0.87, 0.0f);
 
-        {
-            // load a model
-            auto light = m_ActiveScene->CreateEntity("Light");
-            light.AddComponent<PointLightComponent>().color = glm::vec3(1.0f, 1.0f, 1.0f);
-            light.GetComponent<PointLightComponent>().light_intensity = 255.0f;
-            light.GetComponent<TransformComponent>().translation = glm::vec3(0.0f, -17.10f, 3.4f);
-            auto box = m_ActiveScene->CreateEntity("Box");
-            box.AddComponent<MeshComponent>(m_Device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra.obj");
-            box.GetComponent<TransformComponent>().rotation = glm::vec3(3.15f, 0.0f, 0.0f);
-            box.AddComponent<TextureComponent>().m_ID = VVTextureLibrary::Create(device, "new", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/BackgroundGreyGridSprite.png");
-        }
+        // {
+        //     // load a model
+        //     auto light = m_ActiveScene->CreateEntity("Light");
+        //     light.AddComponent<PointLightComponent>().color = glm::vec3(1.0f, 1.0f, 1.0f);
+        //     light.GetComponent<PointLightComponent>().light_intensity = 255.0f;
+        //     light.GetComponent<TransformComponent>().translation = glm::vec3(0.0f, -17.10f, 3.4f);
+        //     auto box = m_ActiveScene->CreateEntity("Box");
+        //     box.AddComponent<MeshComponent>(m_Device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra.obj");
+        //     box.GetComponent<TransformComponent>().rotation = glm::vec3(3.15f, 0.0f, 0.0f);
+        //     box.AddComponent<TextureComponent>().m_ID = VVTextureLibrary::Create("new", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/BackgroundGreyGridSprite.png");
+        // }
 
         currentTime = std::chrono::high_resolution_clock::now();
         UpdateTextures();
+
+        // SceneSerializer serializer(m_ActiveScene, device);
+        // serializer.Serialize("assets/scene/Example.scene");
+        // serializer.Deserialize("assets/scene/Example.scene");
+
+        m_SceneCamera = m_ActiveScene->GetMainCamera();
     }
 
     void EditorLayer::SetupImgui(VVDevice *vv_device, VVRenderer *vv_renderer, VVWindow *vv_window)
@@ -90,16 +95,15 @@ namespace VectorVertex
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-        
         io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", 15.f);
         io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", 15.f);
 
         io.Fonts->Build();
 
-        VkCommandBuffer command_buffer =  vv_device->beginSingleTimeCommands(); // Vulkan-specific setup
+        VkCommandBuffer command_buffer = vv_device->beginSingleTimeCommands(); // Vulkan-specific setup
         ImGui_ImplVulkan_CreateFontsTexture();
         vv_device->endSingleTimeCommands(command_buffer);
-        //ImGui_ImplVulkan_DestroyFontUploadObjects();
+        // ImGui_ImplVulkan_DestroyFontUploadObjects();
 
         m_Offscreen = CreateRef<VVOffscreen>(m_Device, m_Renderer, Viewport_Extent);
     }
@@ -111,6 +115,10 @@ namespace VectorVertex
 
     void EditorLayer::OnUpdate()
     {
+        if (!m_SceneCamera)
+        {
+            m_SceneCamera = m_ActiveScene->GetMainCamera();
+        }
 
         m_ActiveScene->DeletePendingEntities();
         RunDeferredActions(); // runs commads after frame
@@ -123,10 +131,12 @@ namespace VectorVertex
         }
         m_ActiveScene->OnUpdate();
 
+        if (!loading_scene)
         {
             auto newTime = std::chrono::high_resolution_clock::now();
             frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
+
             camControl.moveInPlaneXZ(m_Window.getGLFWwindow(), frameTime, m_SceneCamera.GetComponent<TransformComponent>());
             m_Camera.SetViewYXZ(m_SceneCamera.GetComponent<TransformComponent>().translation, m_SceneCamera.GetComponent<TransformComponent>().rotation);
 
@@ -201,8 +211,8 @@ namespace VectorVertex
 
             // Submit the DockSpace
             ImGuiIO &io = ImGui::GetIO();
-            ImGuiStyle& style = ImGui::GetStyle();
-            float minwdth=style.WindowMinSize.x;
+            ImGuiStyle &style = ImGui::GetStyle();
+            float minwdth = style.WindowMinSize.x;
             style.WindowMinSize.x = 370.0f;
             if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
             {
@@ -210,6 +220,35 @@ namespace VectorVertex
                 ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
             }
             style.WindowMinSize.x = minwdth;
+
+            if (ImGui::BeginMenuBar())
+            {
+                if (ImGui::BeginMenu("File"))
+                {
+                    if (ImGui::MenuItem("Save"))
+                    {
+                        SceneSerializer serializer(m_ActiveScene, m_Device);
+                        serializer.Serialize("assets/scene/Example.scene");
+                    }
+                    if (ImGui::MenuItem("Load"))
+                    {
+                        loading_scene = true;
+                        SceneSerializer serializer(m_ActiveScene, m_Device);
+                        serializer.Deserialize("assets/scene/Example.scene");
+                        m_ActiveScene->DestroyEntityImmidiatly(m_SceneCamera);
+                        m_SceneCamera = serializer.m_MainCamera;
+                        std::this_thread::sleep_for(std::chrono::milliseconds(2));
+                        loading_scene = false;
+                    }
+
+                    if (ImGui::MenuItem("Exit"))
+                    {
+                        VectorVertex::Application::Get().Close();
+                    }
+                    ImGui::EndMenu();
+                }
+                ImGui::EndMenuBar();
+            }
             ImGui::End();
         }
         {

@@ -5,6 +5,7 @@ project(VectorVertex)
 # Find required packages
 find_package(glfw3 REQUIRED)
 find_package(Vulkan REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 # Set the path to the FBX SDK
 set(FBX_SDK_DIR "src/Render/Model_Loaders/fbx")
@@ -59,7 +60,7 @@ target_link_libraries(VectorVertex
 
 # Link the FBX SDK library
 find_library(FBX_LIBRARY fbxsdk HINTS ${FBX_SDK_DIR}/lib/debug)
-target_link_libraries(VectorVertex ${FBX_LIBRARY})
+target_link_libraries(VectorVertex ${FBX_LIBRARY} yaml-cpp)
 
 # Add ImGui library
 target_include_directories(VectorVertex PUBLIC 
