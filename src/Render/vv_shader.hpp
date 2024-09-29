@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <stdexcept>
+#include <VectorVertex.hpp>
 
 namespace VectorVertex
 {
@@ -11,7 +12,7 @@ namespace VectorVertex
     {
     public:
         VVShader() = default;
-        VVShader(VVDevice &device, const std::string &filepath, VkShaderStageFlagBits stage) : device(device), shaderStage(stage)
+        VVShader(const std::string &filepath, VkShaderStageFlagBits stage) :shaderStage(stage)
         {
             auto shaderCode = readFile(filepath);
             createShaderModule(shaderCode);
@@ -20,7 +21,7 @@ namespace VectorVertex
         {
             if (shaderModule != VK_NULL_HANDLE)
             {
-                vkDestroyShaderModule(device.device(), shaderModule, nullptr);
+                vkDestroyShaderModule(Application::Get().GetDevice().device(), shaderModule, nullptr);
             }
         }
 
@@ -38,7 +39,6 @@ namespace VectorVertex
         VkShaderModule getModule() const { return shaderModule;}
 
     private:
-        VVDevice &device;
         VkShaderModule shaderModule = VK_NULL_HANDLE;
         VkShaderStageFlagBits shaderStage;
 
@@ -68,7 +68,7 @@ namespace VectorVertex
             createInfo.codeSize = code.size();
             createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
 
-            if (vkCreateShaderModule(device.device(), &createInfo, nullptr, &shaderModule) != VK_SUCCESS)
+            if (vkCreateShaderModule(Application::Get().GetDevice().device(), &createInfo, nullptr, &shaderModule) != VK_SUCCESS)
             {
                 throw std::runtime_error("failed to create shader module!");
             }

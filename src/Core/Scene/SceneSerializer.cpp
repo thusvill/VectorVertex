@@ -214,8 +214,8 @@ namespace VectorVertex
         out << YAML::EndMap;
     }
 
-    SceneSerializer::SceneSerializer(const Ref<Scene> &scene, VVDevice &device)
-        : m_Scene(scene), m_Device(device)
+    SceneSerializer::SceneSerializer(const Ref<Scene> &scene)
+        : m_Scene(scene)
     {
     }
 
@@ -279,7 +279,7 @@ namespace VectorVertex
                         if (auto tComponent = entity["TextureComponent"])
                         {
                             auto &tc = deserialized_entity.GetORCreateComponent<TextureComponent>();
-                            VVTextureLibrary::CreateWithUUID(m_Device,tComponent["m_ID"].as<UUID>(), tComponent["m_Name"].as<std::string>(), tComponent["m_path"].as<std::string>());
+                            VVTextureLibrary::CreateWithUUID(tComponent["m_ID"].as<UUID>(), tComponent["m_Name"].as<std::string>(), tComponent["m_path"].as<std::string>());
                         }
                     }
                     if (entity["PointLightComponent"])
@@ -302,7 +302,7 @@ namespace VectorVertex
                             auto &mc = deserialized_entity.GetORCreateComponent<MeshComponent>();
                             mc.m_ID = mComponent["m_ID"].as<UUID>();
                             mc.path = mComponent["path"].as<std::string>();
-                            mc.m_Model = VVModel::createModelFromFile(m_Device, mc.path);
+                            mc.m_Model = VVModel::createModelFromFile(mc.path);
                         
                         }
                     }

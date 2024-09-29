@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../vv_pipeline.hpp"
-#include "../vv_device.hpp"
 #include "../vv_camera.hpp"
 #include "../vv_game_object.hpp"
 #include "../vv_frame_info.hpp"
@@ -20,8 +19,8 @@ namespace VectorVertex
     class PointLightSystem
     {
     public:
-        PointLightSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout);
-        PointLightSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout);
+        PointLightSystem(VkDescriptorSetLayout global_set_layout);
+        PointLightSystem(std::vector<VkDescriptorSetLayout> global_set_layout);
         ~PointLightSystem();
 
         PointLightSystem(const PointLightSystem &) = delete;
@@ -33,9 +32,7 @@ namespace VectorVertex
     private:
         void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout);
         void CreatePipelineLayout(VkDescriptorSetLayout global_set_layout);
-        void CreatePipeline(VkRenderPass renderPass);
-
-        VVDevice &vvDevice;
+        void CreatePipeline();
 
         std::unique_ptr<VVPipeline> pipeline;
 

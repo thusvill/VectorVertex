@@ -6,7 +6,7 @@
  {
     class SceneSerializer{
         public:
-        SceneSerializer(const Ref<Scene>& scene, VVDevice &device);
+        SceneSerializer(const Ref<Scene>& scene);
         void Serialize(const std::string& path);
         void SerializeRuntime(const std::string& path);
 
@@ -16,7 +16,6 @@
         Entity m_MainCamera;
         private:
         Ref<Scene> m_Scene;
-        VVDevice &m_Device;
     };
  } // namespace VectorVertex
  

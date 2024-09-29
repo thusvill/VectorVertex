@@ -9,7 +9,7 @@
 
 namespace VectorVertex
 {
-    Application* Application::s_Instance = nullptr;
+    Application *Application::s_Instance = nullptr;
 
     VkImageView CreateColorAttachmentImageView(VkDevice device, VkImage image, VkFormat format);
     VkImage CreateImage(VVDevice &vvdevice, VkImageUsageFlags usage, uint32_t width, uint32_t height);
@@ -24,13 +24,10 @@ namespace VectorVertex
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
 
-        editor_layer = new EditorLayer(vvDevice, vvWindow, renderer);
+        editor_layer = new EditorLayer();
 
-        editor_layer->SetupImgui(&vvDevice, &renderer, &vvWindow);
         layers.PushLayer(editor_layer);
-
-        editor_layer->OnAttach();
-
+        editor_layer->SetupImgui();
         VV_CORE_WARN("Initialized!");
     }
 
@@ -52,7 +49,7 @@ namespace VectorVertex
             currentTime = newTime;
 
             glfwPollEvents();
-           
+
             if (auto commandBuffer = renderer.BeginFrame())
             {
 
@@ -61,8 +58,7 @@ namespace VectorVertex
                 FrameInfo frameInfo{
                     frame_index,
                     frameTime,
-                    commandBuffer,
-                    renderer};
+                    commandBuffer};
 
                 editor_layer->OnRender(frameInfo);
                 // Main Window Renderer
@@ -79,5 +75,4 @@ namespace VectorVertex
         vkDeviceWaitIdle(vvDevice.device());
     }
 
-   
 } // namespace VectorVertex

@@ -17,7 +17,7 @@ namespace VectorVertex
         }
         TextureComponent(VVDevice &device, std::string name, std::string path)
         {
-            m_ID = VVTextureLibrary::Create(device, name, path);
+            m_ID = VVTextureLibrary::Create(name, path);
             VV_CORE_INFO("Texture Created {}", m_ID);
         }
         uint64_t m_ID;
@@ -120,14 +120,14 @@ namespace VectorVertex
     struct MeshComponent
     {
         MeshComponent() = default;
-        MeshComponent(VVDevice &device, const std::string &filepath)
+        MeshComponent(const std::string &filepath)
         {
-            m_Model = VVModel::createModelFromFile(device, filepath);
+            m_Model = VVModel::createModelFromFile(filepath);
             path = filepath;
         }
-        void UpdateMesh(VVDevice &device){
+        void UpdateMesh(){
             m_Model.reset();
-            m_Model = VVModel::createModelFromFile(device, path);
+            m_Model = VVModel::createModelFromFile(path);
         }
         Scope<VVModel> m_Model;
         UUID m_ID;

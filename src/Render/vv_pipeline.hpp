@@ -32,7 +32,7 @@ namespace VectorVertex
     class VVPipeline
     {
     public:
-        VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader);
+        VVPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader);
         ~VVPipeline();
 
         VVPipeline(const VVPipeline &) = delete;
@@ -46,9 +46,6 @@ namespace VectorVertex
     private:
         static std::vector<char> readFile(const std::string &file_path);
         void CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader);
-    
-        VVDevice &vvDevice;
         VkPipeline graphiscPipeline;
-    
     };
 } // namespace VectorVertex

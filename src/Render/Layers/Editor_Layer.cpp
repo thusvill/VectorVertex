@@ -5,13 +5,48 @@
 
 namespace VectorVertex
 {
-    EditorLayer::EditorLayer(VVDevice &device, VVWindow &window, VVRenderer &renderer) : m_Device(device), m_Window(window), m_Renderer(renderer), Layer("EditorLayer")
+    EditorLayer::EditorLayer() : Layer("EditorLayer")
     {
         VV_CORE_INFO("[Layer]:EditorLayer Created!");
+    }
 
+    void EditorLayer::SetupImgui()
+    {
+        VkInstance instance = Application::Get().GetDevice().getInstance();
+        VV_CORE_ASSERT(instance, "Vulkan Instance should not be null!");
+
+        ImguiConfig imguiConfig;
+        imguiConfig.instance = instance; // Assign Vulkan instance handle
+        imguiConfig.Device = Application::Get().GetDevice().device();
+        imguiConfig.renderer = &Application::Get().GetRenderer();
+        imguiConfig.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
+        imguiConfig.PhysicalDevice = Application::Get().GetDevice().getPhysicalDevice();
+        imguiConfig.graphicsQueue = Application::Get().GetDevice().graphicsQueue();
+        imguiConfig.imageCount = static_cast<uint32_t>(Application::Get().GetRenderer().GetSwapchainImageCount());
+
+        imgui_layer.InitializeImgui(imguiConfig, Application::Get().GetWindow().getGLFWwindow());
+
+        ImGuiIO &io = ImGui::GetIO();
+        io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+
+        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", 15.f);
+        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", 15.f);
+
+        io.Fonts->Build();
+
+        VkCommandBuffer command_buffer = Application::Get().GetDevice().beginSingleTimeCommands(); // Vulkan-specific setup
+        ImGui_ImplVulkan_CreateFontsTexture();
+        Application::Get().GetDevice().endSingleTimeCommands(command_buffer);
+        // ImGui_ImplVulkan_DestroyFontUploadObjects();
+
+        m_Offscreen = CreateRef<VVOffscreen>(Viewport_Extent);
+    }
+
+    void EditorLayer::OnAttach()
+    {
         m_ActiveScene = CreateRef<Scene>("Main");
 
-        m_global_pool = VVDescriptorPool::Builder(m_Device)
+        m_global_pool = VVDescriptorPool::Builder(Application::Get().GetDevice())
                             .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                             .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                             //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -21,12 +56,12 @@ namespace VectorVertex
 
         for (int i = 0; i < m_ubo_buffers.size(); i++)
         {
-            m_ubo_buffers[i] = std::make_unique<VVBuffer>(m_Device, sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
+            m_ubo_buffers[i] = std::make_unique<VVBuffer>(Application::Get().GetDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
                                                           VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
             m_ubo_buffers[i]->map();
         }
 
-        m_global_set_layout = VVDescriptorSetLayout::Builder(m_Device)
+        m_global_set_layout = VVDescriptorSetLayout::Builder(Application::Get().GetDevice())
                                   .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                   //.addBinding(1, VK_DESCRIPTOR_TYPE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                   .build();
@@ -43,73 +78,17 @@ namespace VectorVertex
         }
 
         VVMaterialLibrary::InitMaterialLib();
-        VVTextureLibrary::InitTextureLib(device);
+        VVTextureLibrary::InitTextureLib();
 
         std::vector<VkDescriptorSetLayout> layouts = {m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
 
-        m_RenderSystem = CreateRef<LveRenderSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
-        m_PointlightSystem = CreateRef<PointLightSystem>(m_Device, m_Renderer.GetSwapchainRenderPass(), layouts);
-        // m_SceneCamera = m_ActiveScene->CreateEntity("Camera View");
-        // m_SceneCamera.AddComponent<CameraComponent>().m_Camera.SetProjectionType(VVCamera::ProjectionType::Perspective);
-        // m_SceneCamera.GetComponent<TransformComponent>().translation = glm::vec3(-12.188, -6.700, -9.159);
-        // m_SceneCamera.GetComponent<TransformComponent>().rotation = glm::vec3(-0.41, 0.87, 0.0f);
+        m_RenderSystem = CreateRef<LveRenderSystem>(layouts);
+        m_PointlightSystem = CreateRef<PointLightSystem>(layouts);
 
-        // {
-        //     // load a model
-        //     auto light = m_ActiveScene->CreateEntity("Light");
-        //     light.AddComponent<PointLightComponent>().color = glm::vec3(1.0f, 1.0f, 1.0f);
-        //     light.GetComponent<PointLightComponent>().light_intensity = 255.0f;
-        //     light.GetComponent<TransformComponent>().translation = glm::vec3(0.0f, -17.10f, 3.4f);
-        //     auto box = m_ActiveScene->CreateEntity("Box");
-        //     box.AddComponent<MeshComponent>(m_Device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/supra/supra.obj");
-        //     box.GetComponent<TransformComponent>().rotation = glm::vec3(3.15f, 0.0f, 0.0f);
-        //     box.AddComponent<TextureComponent>().m_ID = VVTextureLibrary::Create("new", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/BackgroundGreyGridSprite.png");
-        // }
 
         currentTime = std::chrono::high_resolution_clock::now();
-        UpdateTextures();
-
-        // SceneSerializer serializer(m_ActiveScene, device);
-        // serializer.Serialize("assets/scene/Example.scene");
-        // serializer.Deserialize("assets/scene/Example.scene");
-
+        VVTextureLibrary::UpdateDescriptors();
         m_SceneCamera = m_ActiveScene->GetMainCamera();
-    }
-
-    void EditorLayer::SetupImgui(VVDevice *vv_device, VVRenderer *vv_renderer, VVWindow *vv_window)
-    {
-        VkInstance instance = vv_device->getInstance();
-        VV_CORE_ASSERT(instance, "Vulkan Instance should not be null!");
-
-        ImguiConfig imguiConfig;
-        imguiConfig.instance = instance; // Assign Vulkan instance handle
-        imguiConfig.Device = vv_device->device();
-        imguiConfig.renderer = vv_renderer;
-        imguiConfig.renderPass = vv_renderer->GetSwapchainRenderPass();
-        imguiConfig.PhysicalDevice = vv_device->getPhysicalDevice();
-        imguiConfig.graphicsQueue = vv_device->graphicsQueue();
-        imguiConfig.imageCount = static_cast<uint32_t>(vv_renderer->GetSwapchainImageCount());
-
-        imgui_layer.InitializeImgui(imguiConfig, vv_window->getGLFWwindow());
-
-        ImGuiIO &io = ImGui::GetIO();
-        io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-
-        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", 15.f);
-        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", 15.f);
-
-        io.Fonts->Build();
-
-        VkCommandBuffer command_buffer = vv_device->beginSingleTimeCommands(); // Vulkan-specific setup
-        ImGui_ImplVulkan_CreateFontsTexture();
-        vv_device->endSingleTimeCommands(command_buffer);
-        // ImGui_ImplVulkan_DestroyFontUploadObjects();
-
-        m_Offscreen = CreateRef<VVOffscreen>(m_Device, m_Renderer, Viewport_Extent);
-    }
-
-    void EditorLayer::OnAttach()
-    {
         m_SceneHierarchyPanel.SetContext(m_ActiveScene);
     }
 
@@ -125,7 +104,7 @@ namespace VectorVertex
         {
             if (m_SceneHierarchyPanel.requestUpdateTextures)
             {
-                UpdateTextures();
+                VVTextureLibrary::UpdateDescriptors();
                 m_SceneHierarchyPanel.requestUpdateTextures = false;
             }
         }
@@ -137,7 +116,7 @@ namespace VectorVertex
             frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
-            camControl.moveInPlaneXZ(m_Window.getGLFWwindow(), frameTime, m_SceneCamera.GetComponent<TransformComponent>());
+            camControl.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameTime, m_SceneCamera.GetComponent<TransformComponent>());
             m_Camera.SetViewYXZ(m_SceneCamera.GetComponent<TransformComponent>().translation, m_SceneCamera.GetComponent<TransformComponent>().rotation);
 
             auto aspectRatio = static_cast<float>(m_Offscreen->getViewSize().width) / static_cast<float>(m_Offscreen->getViewSize().height); // renderer.GetAspectRatio();
@@ -227,13 +206,13 @@ namespace VectorVertex
                 {
                     if (ImGui::MenuItem("Save"))
                     {
-                        SceneSerializer serializer(m_ActiveScene, m_Device);
+                        SceneSerializer serializer(m_ActiveScene);
                         serializer.Serialize("assets/scene/Example.scene");
                     }
                     if (ImGui::MenuItem("Load"))
                     {
                         loading_scene = true;
-                        SceneSerializer serializer(m_ActiveScene, m_Device);
+                        SceneSerializer serializer(m_ActiveScene);
                         serializer.Deserialize("assets/scene/Example.scene");
                         m_ActiveScene->DestroyEntityImmidiatly(m_SceneCamera);
                         m_SceneCamera = serializer.m_MainCamera;
@@ -252,7 +231,7 @@ namespace VectorVertex
             ImGui::End();
         }
         {
-            m_SceneHierarchyPanel.OnImGuiRender(m_Device);
+            m_SceneHierarchyPanel.OnImGuiRender();
         }
         { // Inside your ImGui rendering loop
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
@@ -280,31 +259,6 @@ namespace VectorVertex
         imgui_layer.End(frameInfo.command_buffer);
     }
 
-    void EditorLayer::UpdateTextures()
-    {
-
-        // for (auto &kv : m_ActiveScene->GetEntities())
-        // {
-        //     auto &obj = kv.second;
-        //     if (!m_Renderer.Get_Swapchain().isWaitingForFence)
-        //     {
-        //         VV_CORE_TRACE("Fence Done!");
-        //         // update textures
-        //         if (obj.HasComponent<TextureComponent>())
-        //         {
-        //             auto imageInfo = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).getDescriptorImageInfo();
-        //             VVDescriptorWriter(*VVTextureLibrary::textureImageDescriptorLayout, *VVTextureLibrary::texture_pool)
-        //                 .writeImage(0, &imageInfo)
-        //                 .build(VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data.m_descriptorSet);
-        //         }
-        //     }
-        //     else
-        //     {
-        //         VV_CORE_TRACE("Waiting For Fence");
-        //     }
-        // }
-        VVTextureLibrary::UpdateDescriptors();
-    }
 
     void EditorLayer::OnRender(FrameInfo &frameInfo)
     {

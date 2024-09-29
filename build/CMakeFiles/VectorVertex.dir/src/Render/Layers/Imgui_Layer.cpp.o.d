@@ -687,6 +687,10 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/VectorVertex.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_offscreen.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_vulkan.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
  /usr/include/c++/13/iostream

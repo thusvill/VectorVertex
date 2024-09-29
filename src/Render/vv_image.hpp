@@ -8,8 +8,7 @@ namespace VectorVertex
     class VVImage
     {
     public:
-        VVImage() = default;
-        VVImage(VVDevice &device);
+        VVImage();
         ~VVImage();
         void createImage(uint32_t width, uint32_t height, VkFormat format,
                          VkImageTiling tiling, VkImageUsageFlags usage,
@@ -23,8 +22,7 @@ namespace VectorVertex
         VkImage getImage() const { return image; }
         VkDeviceMemory getImageMemory() const { return imageMemory; }
 
-    private:
-        VVDevice &device;
+    private:;
         
         VkImage image;
         VkDeviceMemory imageMemory;

@@ -1,7 +1,5 @@
 #pragma once
-#include "vv_device.hpp"
 #include "vv_swap_chain.hpp"
-#include "vv_renderer.hpp"
 #include "Log.h"
 #include <imgui.h>
 #include <imgui_impl_vulkan.h>
@@ -16,7 +14,7 @@ namespace VectorVertex
     {
     public:
         VVOffscreen() = default;
-        VVOffscreen(VVDevice &device, VVRenderer &renderer, VkExtent2D size);
+        VVOffscreen(VkExtent2D size);
         ~VVOffscreen();
         void StartRenderpass(VkCommandBuffer commandBuffer);
         void EndRendrepass(VkCommandBuffer commandBuffer);
@@ -39,8 +37,5 @@ namespace VectorVertex
         VkFramebuffer offscreenFramebuffer;
         VkSampler sampler;
         VkDescriptorSet descriptorSet;
-
-        VVDevice &device;
-        VVRenderer &renderer;
     };
 } // namespace VectorVertex

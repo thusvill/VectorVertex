@@ -90,7 +90,7 @@ namespace VectorVertex
     }
 
     template <typename T, typename UIFunction>
-    static void DrawComponent(const std::string name, Entity entity, UIFunction uiFunction, VVDevice &device)
+    static void DrawComponent(const std::string name, Entity entity, UIFunction uiFunction)
     {
         if (entity.HasComponent<T>())
         {
@@ -120,7 +120,7 @@ namespace VectorVertex
             if (open)
             {
                 auto &component = entity.GetComponent<T>();
-                uiFunction(component, device);
+                uiFunction(component);
 
                 ImGui::TreePop();
             }
@@ -149,7 +149,7 @@ namespace VectorVertex
     {
         m_Context = scene;
     }
-    void SceneHierarchy::OnImGuiRender(VVDevice &device)
+    void SceneHierarchy::OnImGuiRender()
     {
         ImGui::Begin("Scene Hierarchy");
 
@@ -176,7 +176,7 @@ namespace VectorVertex
         ImGui::Begin("Properties");
         if (m_SelectedEntity)
         {
-            DrawComponents(device, m_SelectedEntity);
+            DrawComponents(m_SelectedEntity);
 
             ImGui::Spacing();
             ImGui::Separator();
@@ -190,7 +190,7 @@ namespace VectorVertex
             {
                 if (ImGui::MenuItem("Mesh Renderer"))
                 {
-                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>(device, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/cube.obj"));
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/cube.obj"));
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
                     requestUpdateTextures = true;
                     ImGui::CloseCurrentPopup();
@@ -243,7 +243,7 @@ namespace VectorVertex
             RUN_AFTER_FRAME(m_Context->DestroyEntity(entity));
         }
     }
-    void SceneHierarchy::DrawComponents(VVDevice &device, Entity entity)
+    void SceneHierarchy::DrawComponents(Entity entity)
     {
 
         if (entity.HasComponent<IDComponent>())
@@ -265,13 +265,13 @@ namespace VectorVertex
     //        }
         }
 
-        DrawComponent<TransformComponent>("Transform", entity, [](auto &transform, auto &device)
+        DrawComponent<TransformComponent>("Transform", entity, [](auto &transform)
                                           {
                             DrawVec3Control("Position", transform.translation);
                 DrawVec3Control("Rotation", transform.rotation);
-                DrawVec3Control("Scale", transform.scale, 1.0f); }, device);
+                DrawVec3Control("Scale", transform.scale, 1.0f); });
 
-        DrawComponent<CameraComponent>("Camera", entity, [](auto &component, auto &device)
+        DrawComponent<CameraComponent>("Camera", entity, [](auto &component)
                                        {
                 auto &camera = component.m_Camera;
                 const char *projectionTypeStrings[] = {"Orthographic", "Perspective"};
@@ -295,23 +295,23 @@ namespace VectorVertex
                     ImGui::EndCombo();
                     
                 } 
-                ImGui::Checkbox("Is Main Camera", &component.mainCamera);}, device);
+                ImGui::Checkbox("Is Main Camera", &component.mainCamera);});
 
-        DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light, auto &device)
+        DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light)
                                            {
 
                 ImGui::ColorEdit3("Color ##light", glm::value_ptr(light.color));
                 ImGui::DragFloat("Intensity", &light.light_intensity, 0.1f);
-                ImGui::DragFloat("Radius", &light.radius, 0.1f); }, device);
+                ImGui::DragFloat("Radius", &light.radius, 0.1f); });
 
-        DrawComponent<MaterialComponent>("Material", entity, [](auto &component, auto &device)
+        DrawComponent<MaterialComponent>("Material", entity, [](auto &component)
                                          {
                 auto material = VVMaterialLibrary::getMaterial(component.m_ID);
                 if (ImGui::ColorEdit4("Material Color ##material", glm::value_ptr(material.m_MaterialData.color)))
                 {
                     VVMaterialLibrary::updateMaterial(material.m_MaterialData.m_ID, material.m_MaterialData);
-                } }, device);
-        DrawComponent<TextureComponent>("Texture", entity, [](auto &component, auto &device)
+                } });
+        DrawComponent<TextureComponent>("Texture", entity, [](auto &component)
                                         {
                     auto &texture = VVTextureLibrary::GetTexture(component.m_ID);
                     DrawTextfield("Name", texture.data.m_Name);
@@ -321,16 +321,16 @@ namespace VectorVertex
 
                         RUN_AFTER_FRAME(texture.loadTexture(texture.data.m_path));
                         RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
-                    } }, device);
-        DrawComponent<MeshComponent>("Mesh", entity, [](auto &mesh, auto &device)
+                    } });
+        DrawComponent<MeshComponent>("Mesh", entity, [](auto &mesh)
                                      {
             
                 DrawTextfield("Path", mesh.path);
                 if (ImGui::Button("Load"))
                 {
 
-                    RUN_AFTER_FRAME(mesh.UpdateMesh(device));
+                    RUN_AFTER_FRAME(mesh.UpdateMesh());
                     RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
-                } }, device);
+                } });
     }
 }

@@ -489,6 +489,102 @@ src/Render/Render_Systems/vv_render_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.s
 .PHONY : src/Render/Render_Systems/vv_render_system.cpp.s
 
+src/Render/vendor/ImGuizmo/ImCurveEdit.o: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.o
+
+# target to build an object file
+src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
+
+src/Render/vendor/ImGuizmo/ImCurveEdit.i: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.i
+
+# target to preprocess a source file
+src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i
+
+src/Render/vendor/ImGuizmo/ImCurveEdit.s: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.s
+
+# target to generate assembly for a file
+src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s
+
+src/Render/vendor/ImGuizmo/ImGradient.o: src/Render/vendor/ImGuizmo/ImGradient.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImGradient.o
+
+# target to build an object file
+src/Render/vendor/ImGuizmo/ImGradient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGradient.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImGradient.cpp.o
+
+src/Render/vendor/ImGuizmo/ImGradient.i: src/Render/vendor/ImGuizmo/ImGradient.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImGradient.i
+
+# target to preprocess a source file
+src/Render/vendor/ImGuizmo/ImGradient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGradient.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImGradient.cpp.i
+
+src/Render/vendor/ImGuizmo/ImGradient.s: src/Render/vendor/ImGuizmo/ImGradient.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImGradient.s
+
+# target to generate assembly for a file
+src/Render/vendor/ImGuizmo/ImGradient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGradient.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImGradient.cpp.s
+
+src/Render/vendor/ImGuizmo/ImGuizmo.o: src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.o
+
+# target to build an object file
+src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o
+
+src/Render/vendor/ImGuizmo/ImGuizmo.i: src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.i
+
+# target to preprocess a source file
+src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i
+
+src/Render/vendor/ImGuizmo/ImGuizmo.s: src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.s
+
+# target to generate assembly for a file
+src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s
+
+src/Render/vendor/ImGuizmo/ImSequencer.o: src/Render/vendor/ImGuizmo/ImSequencer.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.o
+
+# target to build an object file
+src/Render/vendor/ImGuizmo/ImSequencer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImSequencer.cpp.o
+.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.cpp.o
+
+src/Render/vendor/ImGuizmo/ImSequencer.i: src/Render/vendor/ImGuizmo/ImSequencer.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.i
+
+# target to preprocess a source file
+src/Render/vendor/ImGuizmo/ImSequencer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImSequencer.cpp.i
+.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.cpp.i
+
+src/Render/vendor/ImGuizmo/ImSequencer.s: src/Render/vendor/ImGuizmo/ImSequencer.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.s
+
+# target to generate assembly for a file
+src/Render/vendor/ImGuizmo/ImSequencer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImSequencer.cpp.s
+.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.cpp.s
+
 src/Render/vendor/imgui/imgui.o: src/Render/vendor/imgui/imgui.cpp.o
 .PHONY : src/Render/vendor/imgui/imgui.o
 
@@ -1047,6 +1143,18 @@ help:
 	@echo "... src/Render/Render_Systems/vv_render_system.o"
 	@echo "... src/Render/Render_Systems/vv_render_system.i"
 	@echo "... src/Render/Render_Systems/vv_render_system.s"
+	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.o"
+	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.i"
+	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.s"
+	@echo "... src/Render/vendor/ImGuizmo/ImGradient.o"
+	@echo "... src/Render/vendor/ImGuizmo/ImGradient.i"
+	@echo "... src/Render/vendor/ImGuizmo/ImGradient.s"
+	@echo "... src/Render/vendor/ImGuizmo/ImGuizmo.o"
+	@echo "... src/Render/vendor/ImGuizmo/ImGuizmo.i"
+	@echo "... src/Render/vendor/ImGuizmo/ImGuizmo.s"
+	@echo "... src/Render/vendor/ImGuizmo/ImSequencer.o"
+	@echo "... src/Render/vendor/ImGuizmo/ImSequencer.i"
+	@echo "... src/Render/vendor/ImGuizmo/ImSequencer.s"
 	@echo "... src/Render/vendor/imgui/imgui.o"
 	@echo "... src/Render/vendor/imgui/imgui.i"
 	@echo "... src/Render/vendor/imgui/imgui.s"

@@ -12,8 +12,8 @@ namespace VectorVertex
     class EditorLayer : public Layer
     {
     public:
-        EditorLayer(VVDevice &device, VVWindow &window, VVRenderer &renderer);
-        void SetupImgui(VVDevice *vv_device, VVRenderer *vv_renderer, VVWindow *vv_window);
+        EditorLayer();
+        void SetupImgui();
         ~EditorLayer() = default;
         virtual void OnAttach() override;
         virtual void OnDetach() override;
@@ -32,12 +32,8 @@ namespace VectorVertex
         ImVec2 prev_size;
         Ref<Scene> m_ActiveScene;
         SceneHierarchy m_SceneHierarchyPanel;
-        void UpdateTextures();
 
     private:
-        VVDevice &m_Device;
-        VVWindow &m_Window;
-        VVRenderer &m_Renderer;
 
         Scope<VVDescriptorPool> m_global_pool;
         std::vector<Scope<VVBuffer>> m_ubo_buffers;

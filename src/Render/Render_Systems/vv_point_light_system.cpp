@@ -4,6 +4,8 @@
 #include <Components.hpp>
 #include <Entity.hpp>
 
+#include <VectorVertex.hpp>
+
 namespace VectorVertex
 {
     struct PointLightPushConstants
@@ -13,21 +15,21 @@ namespace VectorVertex
         float radius{};
     };
 
-    PointLightSystem::PointLightSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
+    PointLightSystem::PointLightSystem(VkDescriptorSetLayout global_set_layout)
     {
         CreatePipelineLayout(global_set_layout);
-        CreatePipeline(renderPass);
+        CreatePipeline();
     }
 
-    PointLightSystem::PointLightSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout) : vvDevice{device}
+    PointLightSystem::PointLightSystem(std::vector<VkDescriptorSetLayout> global_set_layout)
     {
         CreatePipelineLayout(global_set_layout);
-        CreatePipeline(renderPass);
+        CreatePipeline();
     }
 
     PointLightSystem::~PointLightSystem()
     {
-        vkDestroyPipelineLayout(vvDevice.device(), pipelineLayout, nullptr);
+        vkDestroyPipelineLayout(Application::Get().GetDevice().device(), pipelineLayout, nullptr);
     }
 
     void PointLightSystem::CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout)
@@ -44,7 +46,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -65,12 +67,12 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
     }
-    void PointLightSystem::CreatePipeline(VkRenderPass renderPass)
+    void PointLightSystem::CreatePipeline()
     {
 
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
@@ -79,9 +81,9 @@ namespace VectorVertex
         VVPipeline::enableAlphaBlending(pipelineConfig);
         pipelineConfig.attribute_descriptions.clear();
         pipelineConfig.bind_descriptions.clear();
-        pipelineConfig.renderPass = renderPass;
+        pipelineConfig.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
         pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
+        pipeline = std::make_unique<VVPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
     }
 
     void PointLightSystem::Update(FrameInfo &frame_info,  SceneRenderInfo &scene_info, GlobalUBO &ubo)

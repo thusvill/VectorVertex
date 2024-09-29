@@ -27,7 +27,7 @@
 namespace VectorVertex
 {
     class EditorLayer;
-    
+
     struct ProjectInfo
     {
         int width = 1980;
@@ -46,6 +46,8 @@ namespace VectorVertex
 
         GLFWwindow *GetNativeWindow() { return vvWindow.getGLFWwindow(); }
         VVDevice &GetDevice() { return vvDevice; }
+        VVWindow &GetWindow() { return vvWindow; }
+        VVRenderer &GetRenderer() {return renderer;}
 
         void Close()
         {
@@ -55,11 +57,10 @@ namespace VectorVertex
         int WIDTH, HEIGHT;
         std::string project_name;
         void run();
-        static Application& Get() { return *s_Instance; }
-
+        static Application &Get() { return *s_Instance; }
 
     private:
-        static Application* s_Instance;
+        static Application *s_Instance;
         bool m_Running = true;
         VVWindow vvWindow{WIDTH, HEIGHT, project_name};
         VVDevice vvDevice{vvWindow};

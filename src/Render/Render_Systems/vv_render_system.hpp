@@ -1,7 +1,6 @@
 #pragma once
 
 #include "../vv_pipeline.hpp"
-#include "../vv_device.hpp"
 #include "../vv_camera.hpp"
 #include "../vv_game_object.hpp"
 #include "../vv_frame_info.hpp"
@@ -29,8 +28,8 @@ namespace VectorVertex
     class LveRenderSystem
     {
     public:
-        LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout);
-        LveRenderSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout);
+        LveRenderSystem(VkDescriptorSetLayout global_set_layout);
+        LveRenderSystem(std::vector<VkDescriptorSetLayout> global_set_layout);
         ~LveRenderSystem();
 
         LveRenderSystem(const LveRenderSystem &) = delete;
@@ -42,9 +41,7 @@ namespace VectorVertex
     private:
         void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout);
         void CreatePipelineLayout(VkDescriptorSetLayout des_set_layout);
-        void CreatePipeline(VkRenderPass renderPass);
-
-        VVDevice &vvDevice;
+        void CreatePipeline();
 
         std::unique_ptr<VVPipeline> pipeline;
 

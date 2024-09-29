@@ -5,6 +5,7 @@
 #include <stb_image.h>
 #include <stdexcept>
 #include <Log.h>
+#include <VectorVertex.hpp>
 
 namespace VectorVertex
 {
@@ -13,7 +14,7 @@ namespace VectorVertex
     Scope<VVDescriptorPool> VVTextureLibrary::texture_pool;
     Scope<VVDescriptorSetLayout> VVTextureLibrary::textureImageDescriptorLayout;
 
-    VVTexture::VVTexture(VVDevice &device, const std::string &path) : device(device)
+    VVTexture::VVTexture(const std::string &path)
     {
         createTextureImage(path);
         createTextureImageView();
@@ -21,13 +22,13 @@ namespace VectorVertex
     }
     VVTexture::~VVTexture()
     {
-        if (data.m_textureSampler != VK_NULL_HANDLE && device.device() != VK_NULL_HANDLE)
+        if (data.m_textureSampler != VK_NULL_HANDLE && Application::Get().GetDevice().device() != VK_NULL_HANDLE)
         {
-            vkDestroySampler(device.device(), data.m_textureSampler, nullptr);
+            vkDestroySampler(Application::Get().GetDevice().device(), data.m_textureSampler, nullptr);
         }
         if (data.m_textureImageView != VK_NULL_HANDLE)
         {
-            vkDestroyImageView(device.device(), data.m_textureImageView, nullptr);
+            vkDestroyImageView(Application::Get().GetDevice().device(), data.m_textureImageView, nullptr);
         }
         delete data.m_textureImage;
     }
@@ -43,7 +44,7 @@ namespace VectorVertex
 
         m_stagingBuffer = createStagingBuffer(pixels, imageSize);
 
-        data.m_textureImage = new VVImage(device);
+        data.m_textureImage = new VVImage();
         data.m_path = filePath;
 
         data.m_textureImage->createImage(texWidth, texHeight, VK_FORMAT_R8G8B8A8_SRGB,
@@ -79,7 +80,7 @@ namespace VectorVertex
         samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
         samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
 
-        if (vkCreateSampler(device.device(), &samplerInfo, nullptr, &data.m_textureSampler) != VK_SUCCESS)
+        if (vkCreateSampler(Application::Get().GetDevice().device(), &samplerInfo, nullptr, &data.m_textureSampler) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to create texture sampler!");
         }
@@ -92,11 +93,11 @@ namespace VectorVertex
     }
     void VVTexture::transitionImageLayout(VkImageLayout oldLayout, VkImageLayout newLayout)
     {
-        data.m_textureImage->transitionImageLayout(device.getCommandPool(), device.graphicsQueue(), VK_FORMAT_R8G8B8A8_SRGB, oldLayout, newLayout);
+        data.m_textureImage->transitionImageLayout(Application::Get().GetDevice().getCommandPool(), Application::Get().GetDevice().graphicsQueue(), VK_FORMAT_R8G8B8A8_SRGB, oldLayout, newLayout);
     }
     void VVTexture::copyBufferToImage(VkBuffer buffer, uint32_t width, uint32_t height)
     {
-        VkCommandBuffer commandBuffer = device.beginSingleTimeCommands();
+        VkCommandBuffer commandBuffer = Application::Get().GetDevice().beginSingleTimeCommands();
 
         VkBufferImageCopy region{};
         region.bufferOffset = 0;
@@ -111,56 +112,56 @@ namespace VectorVertex
 
         vkCmdCopyBufferToImage(commandBuffer, buffer, data.m_textureImage->getImage(), VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &region);
 
-        device.endSingleTimeCommands(commandBuffer);
+        Application::Get().GetDevice().endSingleTimeCommands(commandBuffer);
     }
     VkBuffer VVTexture::createStagingBuffer(const void *data, VkDeviceSize size)
     {
 
-        device.createBuffer(size,
+        Application::Get().GetDevice().createBuffer(size,
                             VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
                             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
                             m_stagingBuffer, m_stagingBufferMemory);
 
         void *mappedData;
-        vkMapMemory(device.device(), m_stagingBufferMemory, 0, size, 0, &mappedData);
+        vkMapMemory(Application::Get().GetDevice().device(), m_stagingBufferMemory, 0, size, 0, &mappedData);
         memcpy(mappedData, data, (size_t)size);
-        vkUnmapMemory(device.device(), m_stagingBufferMemory);
+        vkUnmapMemory(Application::Get().GetDevice().device(), m_stagingBufferMemory);
 
         return m_stagingBuffer;
     }
     void VVTexture::destroyStagingBuffer(VkBuffer buffer, VkDeviceMemory bufferMemory)
     {
-        vkDestroyBuffer(device.device(), buffer, nullptr);
-        vkFreeMemory(device.device(), bufferMemory, nullptr);
+        vkDestroyBuffer(Application::Get().GetDevice().device(), buffer, nullptr);
+        vkFreeMemory(Application::Get().GetDevice().device(), bufferMemory, nullptr);
     }
 
-    void VVTextureLibrary::InitTextureLib(VVDevice &device)
+    void VVTextureLibrary::InitTextureLib()
     {
-        default_uuid = Create(device, "default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
-        texture_pool = VVDescriptorPool::Builder(device)
+        default_uuid = Create("default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
+        texture_pool = VVDescriptorPool::Builder(Application::Get().GetDevice())
                            .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
                            .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
                            .setPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
                            .build();
 
-        textureImageDescriptorLayout = VVDescriptorSetLayout::Builder(device)
+        textureImageDescriptorLayout = VVDescriptorSetLayout::Builder(Application::Get().GetDevice())
                                            .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
                                            .build();
         VV_CORE_INFO("Initilized Texture Library!");
     }
 
-    uint64_t VVTextureLibrary::Create(VVDevice &device,std::string name, std::string path)
+    uint64_t VVTextureLibrary::Create(std::string name, std::string path)
     {
 
-        Ref<VVTexture> texture = CreateRef<VVTexture>(device, path);
+        Ref<VVTexture> texture = CreateRef<VVTexture>(path);
         texture->data.m_Name = name;
         VV_CORE_INFO("Created Texture from:{0} as:{1} with UUID:{2}", path, name, texture->data.m_ID);
         m_Textures[texture->data.m_ID] = texture;
         return texture->data.m_ID;
     }
-    void VVTextureLibrary::CreateWithUUID(VVDevice &device,UUID id, std::string name, std::string path)
+    void VVTextureLibrary::CreateWithUUID(UUID id, std::string name, std::string path)
     {
-        Ref<VVTexture> texture = CreateRef<VVTexture>(device, path);
+        Ref<VVTexture> texture = CreateRef<VVTexture>(path);
         texture->data.m_Name = name;
         texture->data.m_ID = id;
         VV_CORE_INFO("Created Texture from:{0} as:{1} with UUID:{2}", path, name, texture->data.m_ID);

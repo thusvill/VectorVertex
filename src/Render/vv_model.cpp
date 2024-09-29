@@ -10,6 +10,7 @@
 #include <cassert>
 #include <cstring>
 #include <Log.h>
+#include <VectorVertex.hpp>
 
 #include <iostream>
 namespace std
@@ -28,7 +29,7 @@ namespace std
 
 namespace VectorVertex
 {
-    VVModel::VVModel(VVDevice &device, const Builder &builder) : vvDevice{device}
+    VVModel::VVModel(const Builder &builder)
     {
         CreateVertexBuffers(builder.vertices);
         CreateIndexBuffers(builder.indices);
@@ -38,12 +39,12 @@ namespace VectorVertex
     {
     }
 
-    std::unique_ptr<VVModel> VVModel::createModelFromFile(VVDevice &device, const std::string &filepath)
+    std::unique_ptr<VVModel> VVModel::createModelFromFile(const std::string &filepath)
     {
         VV_CORE_INFO(filepath);
         Builder builder{};
         builder.loadModel(filepath);
-        return std::make_unique<VVModel>(device, builder);
+        return std::make_unique<VVModel>(builder);
     }
     void VVModel::Bind(VkCommandBuffer commandBuffer)
     {
@@ -75,17 +76,17 @@ namespace VectorVertex
         uint32_t vertexSize = sizeof(vertices[0]);
 
         VVBuffer stagingBuffer{
-            vvDevice, vertexSize, vertexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+            Application::Get().GetDevice(), vertexSize, vertexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT};
 
         stagingBuffer.map();
         stagingBuffer.writeToBuffer((void *)vertices.data());
 
         vertexBuffer = std::make_unique<VVBuffer>(
-            vvDevice, vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+            Application::Get().GetDevice(), vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        vvDevice.copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
+        Application::Get().GetDevice().copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
     }
 
     void VVModel::CreateIndexBuffers(const std::vector<uint32_t> &indices)
@@ -99,16 +100,16 @@ namespace VectorVertex
         VkDeviceSize bufferSize = sizeof(indices[0]) * indexCount;
         uint32_t indexSize = sizeof(indices[0]);
         VVBuffer stagingBuffer{
-            vvDevice, indexSize, indexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+            Application::Get().GetDevice(), indexSize, indexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT};
         stagingBuffer.map();
         stagingBuffer.writeToBuffer((void *)indices.data());
 
         indexBuffer = std::make_unique<VVBuffer>(
-            vvDevice, indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+            Application::Get().GetDevice(), indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        vvDevice.copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
+        Application::Get().GetDevice().copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
     }
     std::vector<VkVertexInputAttributeDescription> VVModel::Vertex::getAttributeDescriptions()
     {

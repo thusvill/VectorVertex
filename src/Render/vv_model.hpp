@@ -41,14 +41,14 @@ namespace VectorVertex
             void loadFBX(const std::string &fbx_path);
             void ProcessNode(FbxNode *node, std::unordered_map<Vertex, uint32_t> &uniqueVertex);
         };
-        VVModel(VVDevice &device, const Builder &builder);
+        VVModel(const Builder &builder);
         ~VVModel();
 
         VVModel(const VVModel &) = delete;
         VVModel &operator=(const VVModel &) = delete;
 
         static std::unique_ptr<VVModel>
-        createModelFromFile(VVDevice &device, const std::string &filepath);
+        createModelFromFile(const std::string &filepath);
 
         void
         Bind(VkCommandBuffer commandBuffer);
@@ -57,7 +57,6 @@ namespace VectorVertex
     private:
         void CreateVertexBuffers(const std::vector<Vertex> &vertices);
         void CreateIndexBuffers(const std::vector<uint32_t> &indices);
-        VVDevice &vvDevice;
         std::unique_ptr<VVBuffer> vertexBuffer;
         uint32_t vertexCount;
 

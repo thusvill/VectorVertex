@@ -3,16 +3,17 @@
 #include <fstream>
 #include <stdexcept>
 #include <iostream>
+#include <VectorVertex.hpp>
 namespace VectorVertex
 {
-    VVPipeline::VVPipeline(VVDevice &device, const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader) : vvDevice{device}
+    VVPipeline::VVPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader)
     {
         CreateGraphicsPipeline(config_info, vertex_shader, fragment_shader);
     }
 
     VVPipeline::~VVPipeline()
     {
-        vkDestroyPipeline(vvDevice.device(), graphiscPipeline, nullptr);
+        vkDestroyPipeline(Application::Get().GetDevice().device(), graphiscPipeline, nullptr);
     }
 
     void VVPipeline::Bind(VkCommandBuffer commandBUffer)
@@ -134,8 +135,8 @@ namespace VectorVertex
         assert(config_info.renderPass != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Renderpass provided in config");
 
         
-        VVShader v_shader(vvDevice, vertex_shader, VK_SHADER_STAGE_VERTEX_BIT);
-        VVShader f_shader(vvDevice, fragment_shader, VK_SHADER_STAGE_FRAGMENT_BIT);
+        VVShader v_shader(vertex_shader, VK_SHADER_STAGE_VERTEX_BIT);
+        VVShader f_shader(fragment_shader, VK_SHADER_STAGE_FRAGMENT_BIT);
 
         VkPipelineShaderStageCreateInfo shaderStages[2];
         shaderStages[0].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
@@ -184,7 +185,7 @@ namespace VectorVertex
         pipelineInfo.basePipelineIndex = -1;
         pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-        if (vkCreateGraphicsPipelines(vvDevice.device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphiscPipeline) != VK_SUCCESS)
+        if (vkCreateGraphicsPipelines(Application::Get().GetDevice().device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphiscPipeline) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create graphics pipeline");
         }

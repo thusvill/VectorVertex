@@ -1,8 +1,9 @@
 #include "vv_offscreen.hpp"
 #include <iostream>
+#include <VectorVertex.hpp>
 namespace VectorVertex
 {
-    VVOffscreen::VVOffscreen(VVDevice &device, VVRenderer &renderer, VkExtent2D size) : device(device), renderer(renderer), ViewExtent(size)
+    VVOffscreen::VVOffscreen(VkExtent2D size) : ViewExtent(size)
     {
         if (ViewExtent.height == 0 || ViewExtent.width == 0)
         {
@@ -21,7 +22,7 @@ namespace VectorVertex
     {
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-        renderPassInfo.renderPass = renderer.GetSwapchainRenderPass();
+        renderPassInfo.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
         renderPassInfo.framebuffer = offscreenFramebuffer;
         renderPassInfo.renderArea.offset = {0, 0};
         renderPassInfo.renderArea.extent = ViewExtent;
@@ -99,7 +100,7 @@ namespace VectorVertex
         }
 
         VkPhysicalDeviceProperties deviceProperties;
-        vkGetPhysicalDeviceProperties(device.getPhysicalDevice(), &deviceProperties);
+        vkGetPhysicalDeviceProperties(Application::Get().GetDevice().getPhysicalDevice(), &deviceProperties);
         uint32_t maxFramebufferWidth = deviceProperties.limits.maxFramebufferWidth;
         uint32_t maxFramebufferHeight = deviceProperties.limits.maxFramebufferHeight;
 
@@ -109,7 +110,7 @@ namespace VectorVertex
 
         VV_CORE_INFO("Extent Resized with WIDTH: {0}, HEIGHT {1} at {2} aspect ratio.", ViewExtent.width, ViewExtent.height, AR);
 
-        vkDeviceWaitIdle(device.device());
+        vkDeviceWaitIdle(Application::Get().GetDevice().device());
         clean();
         create_resources();
     }
@@ -118,7 +119,7 @@ namespace VectorVertex
     {
         // Step 1: Query the device's maximum framebuffer dimensions
         VkPhysicalDeviceProperties deviceProperties;
-        vkGetPhysicalDeviceProperties(device.getPhysicalDevice(), &deviceProperties);
+        vkGetPhysicalDeviceProperties(Application::Get().GetDevice().getPhysicalDevice(), &deviceProperties);
 
         uint32_t maxFramebufferWidth = deviceProperties.limits.maxFramebufferWidth;
         uint32_t maxFramebufferHeight = deviceProperties.limits.maxFramebufferHeight;
@@ -168,19 +169,19 @@ namespace VectorVertex
         imageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
         imageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 
-        vkCreateImage(device.device(), &imageInfo, nullptr, &offscreenImage);
+        vkCreateImage(Application::Get().GetDevice().device(), &imageInfo, nullptr, &offscreenImage);
 
         // Step 2: Allocate memory for the offscreen image
         VkMemoryRequirements memRequirements;
-        vkGetImageMemoryRequirements(device.device(), offscreenImage, &memRequirements);
+        vkGetImageMemoryRequirements(Application::Get().GetDevice().device(), offscreenImage, &memRequirements);
 
         VkMemoryAllocateInfo allocInfo{};
         allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
         allocInfo.allocationSize = memRequirements.size;
-        allocInfo.memoryTypeIndex = device.findMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+        allocInfo.memoryTypeIndex = Application::Get().GetDevice().findMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        vkAllocateMemory(device.device(), &allocInfo, nullptr, &offscreenImageMemory);
-        vkBindImageMemory(device.device(), offscreenImage, offscreenImageMemory, 0);
+        vkAllocateMemory(Application::Get().GetDevice().device(), &allocInfo, nullptr, &offscreenImageMemory);
+        vkBindImageMemory(Application::Get().GetDevice().device(), offscreenImage, offscreenImageMemory, 0);
 
         // Step 3: Create the image view for the offscreen image
         VkImageViewCreateInfo viewInfo{};
@@ -194,12 +195,12 @@ namespace VectorVertex
         viewInfo.subresourceRange.baseArrayLayer = 0;
         viewInfo.subresourceRange.layerCount = 1;
 
-        vkCreateImageView(device.device(), &viewInfo, nullptr, &offscreenImageView);
+        vkCreateImageView(Application::Get().GetDevice().device(), &viewInfo, nullptr, &offscreenImageView);
 
         VkImageCreateInfo depthImageInfo = {};
         depthImageInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
         depthImageInfo.imageType = VK_IMAGE_TYPE_2D;
-        depthImageInfo.format = renderer.Get_Swapchain().findDepthFormat();
+        depthImageInfo.format = Application::Get().GetRenderer().Get_Swapchain().findDepthFormat();
         depthImageInfo.extent.width = ViewExtent.width;
         depthImageInfo.extent.height = ViewExtent.height;
         depthImageInfo.extent.depth = 1;
@@ -211,43 +212,43 @@ namespace VectorVertex
         depthImageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
         depthImageInfo.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
 
-        vkCreateImage(device.device(), &depthImageInfo, nullptr, &depthImage);
+        vkCreateImage(Application::Get().GetDevice().device(), &depthImageInfo, nullptr, &depthImage);
 
         // Allocate memory for depth image
-        vkGetImageMemoryRequirements(device.device(), depthImage, &memRequirements);
+        vkGetImageMemoryRequirements(Application::Get().GetDevice().device(), depthImage, &memRequirements);
         allocInfo.allocationSize = memRequirements.size;
-        allocInfo.memoryTypeIndex = device.findMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+        allocInfo.memoryTypeIndex = Application::Get().GetDevice().findMemoryType(memRequirements.memoryTypeBits, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        vkAllocateMemory(device.device(), &allocInfo, nullptr, &depthImageMemory);
-        vkBindImageMemory(device.device(), depthImage, depthImageMemory, 0);
+        vkAllocateMemory(Application::Get().GetDevice().device(), &allocInfo, nullptr, &depthImageMemory);
+        vkBindImageMemory(Application::Get().GetDevice().device(), depthImage, depthImageMemory, 0);
 
         // Create the image view for the depth attachment
         VkImageViewCreateInfo depthViewInfo{};
         depthViewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
         depthViewInfo.image = depthImage;
         depthViewInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
-        depthViewInfo.format = renderer.Get_Swapchain().findDepthFormat();
+        depthViewInfo.format = Application::Get().GetRenderer().Get_Swapchain().findDepthFormat();
         depthViewInfo.subresourceRange.aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT;
         depthViewInfo.subresourceRange.baseMipLevel = 0;
         depthViewInfo.subresourceRange.levelCount = 1;
         depthViewInfo.subresourceRange.baseArrayLayer = 0;
         depthViewInfo.subresourceRange.layerCount = 1;
 
-        vkCreateImageView(device.device(), &depthViewInfo, nullptr, &depthImageView);
+        vkCreateImageView(Application::Get().GetDevice().device(), &depthViewInfo, nullptr, &depthImageView);
 
         // Step 5: Create the framebuffer with both color and depth attachments
         std::array<VkImageView, 2> framebufferAttachments = {offscreenImageView, depthImageView};
 
         VkFramebufferCreateInfo framebufferInfo{};
         framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
-        framebufferInfo.renderPass = renderer.GetSwapchainRenderPass(); // Assuming it is compatible with both color and depth
+        framebufferInfo.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass(); // Assuming it is compatible with both color and depth
         framebufferInfo.attachmentCount = static_cast<uint32_t>(framebufferAttachments.size());
         framebufferInfo.pAttachments = framebufferAttachments.data();
         framebufferInfo.width = ViewExtent.width;
         framebufferInfo.height = ViewExtent.height;
         framebufferInfo.layers = 1;
 
-        vkCreateFramebuffer(device.device(), &framebufferInfo, nullptr, &offscreenFramebuffer);
+        vkCreateFramebuffer(Application::Get().GetDevice().device(), &framebufferInfo, nullptr, &offscreenFramebuffer);
 
         // Step 6: Create the sampler for the offscreen image
         VkSamplerCreateInfo samplerInfo{};
@@ -265,20 +266,20 @@ namespace VectorVertex
         samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
         samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
 
-        vkCreateSampler(device.device(), &samplerInfo, nullptr, &sampler);
+        vkCreateSampler(Application::Get().GetDevice().device(), &samplerInfo, nullptr, &sampler);
 
         // Step 7: Create the ImGui texture ID from the offscreen image
         imguiTextureId = ImGui_ImplVulkan_AddTexture(sampler, offscreenImageView, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
     }
     void VVOffscreen::clean()
     {
-        vkDestroySampler(device.device(), sampler, nullptr);
-        vkDestroyFramebuffer(device.device(), offscreenFramebuffer, nullptr);
-        vkDestroyImageView(device.device(), depthImageView, nullptr);
-        vkDestroyImage(device.device(), depthImage, nullptr);
-        vkFreeMemory(device.device(), depthImageMemory, nullptr);
-        vkDestroyImageView(device.device(), offscreenImageView, nullptr);
-        vkDestroyImage(device.device(), offscreenImage, nullptr);
-        vkFreeMemory(device.device(), offscreenImageMemory, nullptr);
+        vkDestroySampler(Application::Get().GetDevice().device(), sampler, nullptr);
+        vkDestroyFramebuffer(Application::Get().GetDevice().device(), offscreenFramebuffer, nullptr);
+        vkDestroyImageView(Application::Get().GetDevice().device(), depthImageView, nullptr);
+        vkDestroyImage(Application::Get().GetDevice().device(), depthImage, nullptr);
+        vkFreeMemory(Application::Get().GetDevice().device(), depthImageMemory, nullptr);
+        vkDestroyImageView(Application::Get().GetDevice().device(), offscreenImageView, nullptr);
+        vkDestroyImage(Application::Get().GetDevice().device(), offscreenImage, nullptr);
+        vkFreeMemory(Application::Get().GetDevice().device(), offscreenImageMemory, nullptr);
     }
 }

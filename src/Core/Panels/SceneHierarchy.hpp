@@ -21,12 +21,12 @@ namespace VectorVertex
 
         void SetContext(const Ref<Scene> &scene);
 
-        void OnImGuiRender(VVDevice &device);
+        void OnImGuiRender();
         bool requestUpdateTextures;
 
     private:
         void DrawEntityNode(Entity entity);
-        void DrawComponents(VVDevice &device, Entity entity);
+        void DrawComponents(Entity entity);
         Ref<Scene> m_Context;
         Entity m_SelectedEntity;
     };

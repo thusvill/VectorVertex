@@ -3,25 +3,26 @@
 #include <stdexcept>
 #include <iostream>
 #include <Entity.hpp>
+#include <VectorVertex.hpp>
 namespace VectorVertex
 {
 
-    LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, VkDescriptorSetLayout global_set_layout) : vvDevice{device}
+    LveRenderSystem::LveRenderSystem(VkDescriptorSetLayout global_set_layout)
     {
         CreatePipelineLayout(global_set_layout);
-        CreatePipeline(renderPass);
+        CreatePipeline();
         // texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
     }
-    LveRenderSystem::LveRenderSystem(VVDevice &device, VkRenderPass renderPass, std::vector<VkDescriptorSetLayout> global_set_layout) : vvDevice{device}
+    LveRenderSystem::LveRenderSystem(std::vector<VkDescriptorSetLayout> global_set_layout)
     {
         CreatePipelineLayout(global_set_layout);
-        CreatePipeline(renderPass);
+        CreatePipeline();
         // texture_layout = LveDescriptorSetLayout::Builder(device).addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT).build();
     }
 
     LveRenderSystem::~LveRenderSystem()
     {
-        vkDestroyPipelineLayout(vvDevice.device(), pipelineLayout, nullptr);
+        vkDestroyPipelineLayout(Application::Get().GetDevice().device(), pipelineLayout, nullptr);
     }
 
     void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout des_set_layout)
@@ -41,7 +42,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -66,21 +67,21 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(vvDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
     }
-    void LveRenderSystem::CreatePipeline(VkRenderPass renderPass)
+    void LveRenderSystem::CreatePipeline()
     {
 
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
         VVPipeline::defaultPipelineConfigInfo(pipelineConfig);
         VVPipeline::enableAlphaBlending(pipelineConfig);
-        pipelineConfig.renderPass = renderPass;
+        pipelineConfig.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
         pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VVPipeline>(vvDevice, pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
+        pipeline = std::make_unique<VVPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
     }
 
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info, SceneRenderInfo &scene_info)
@@ -123,7 +124,7 @@ namespace VectorVertex
                                         pipelineLayout, des.first, 1, &des.second, 0, nullptr);
             }
 
-            if (!frame_info.renderer.Get_Swapchain().isWaitingForFence)
+            if (!Application::Get().GetRenderer().Get_Swapchain().isWaitingForFence)
             {
                 if (obj.HasComponent<TextureComponent>())
                 {

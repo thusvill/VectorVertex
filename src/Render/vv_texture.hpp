@@ -22,7 +22,7 @@ namespace VectorVertex
     class VVTexture
     {
     public:
-        VVTexture(VVDevice &device, const std::string &path);
+        VVTexture(const std::string &path);
         VVTexture(const VVTexture &) = delete;
         VVTexture &operator=(const VVTexture &) = delete;
         VVTexture(VVTexture &&) noexcept = default;
@@ -71,8 +71,6 @@ namespace VectorVertex
 
     private:
         bool valid = false;
-        VVDevice &device;
-
         VkBuffer m_stagingBuffer;
         VkDeviceMemory m_stagingBufferMemory;
 
@@ -89,9 +87,9 @@ namespace VectorVertex
     public:
         // VVTextureLibrary();
         //~VVTextureLibrary();
-        static void InitTextureLib(VVDevice &device);
-        static uint64_t Create(VVDevice &device, std::string, std::string path);
-        static void CreateWithUUID(VVDevice &device,UUID id,std::string name, std::string path);
+        static void InitTextureLib();
+        static uint64_t Create(std::string, std::string path);
+        static void CreateWithUUID(UUID id,std::string name, std::string path);
         static void AddTexture(Ref<VVTexture> texture);
         static VVTexture& GetTexture(UUID ID);
         static void DeleteTexture(UUID ID);
