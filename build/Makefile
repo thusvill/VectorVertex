@@ -345,6 +345,30 @@ src/Core/Scene/SceneSerializer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.s
 .PHONY : src/Core/Scene/SceneSerializer.cpp.s
 
+src/Core/Utils/PlattformUtils.o: src/Core/Utils/PlattformUtils.cpp.o
+.PHONY : src/Core/Utils/PlattformUtils.o
+
+# target to build an object file
+src/Core/Utils/PlattformUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.o
+.PHONY : src/Core/Utils/PlattformUtils.cpp.o
+
+src/Core/Utils/PlattformUtils.i: src/Core/Utils/PlattformUtils.cpp.i
+.PHONY : src/Core/Utils/PlattformUtils.i
+
+# target to preprocess a source file
+src/Core/Utils/PlattformUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.i
+.PHONY : src/Core/Utils/PlattformUtils.cpp.i
+
+src/Core/Utils/PlattformUtils.s: src/Core/Utils/PlattformUtils.cpp.s
+.PHONY : src/Core/Utils/PlattformUtils.s
+
+# target to generate assembly for a file
+src/Core/Utils/PlattformUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.s
+.PHONY : src/Core/Utils/PlattformUtils.cpp.s
+
 src/Core/VectorVertex.o: src/Core/VectorVertex.cpp.o
 .PHONY : src/Core/VectorVertex.o
 
@@ -488,6 +512,30 @@ src/Render/Render_Systems/vv_render_system.s: src/Render/Render_Systems/vv_rende
 src/Render/Render_Systems/vv_render_system.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.s
 .PHONY : src/Render/Render_Systems/vv_render_system.cpp.s
+
+src/Render/VulkanRendererSystem.o: src/Render/VulkanRendererSystem.cpp.o
+.PHONY : src/Render/VulkanRendererSystem.o
+
+# target to build an object file
+src/Render/VulkanRendererSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/VulkanRendererSystem.cpp.o
+.PHONY : src/Render/VulkanRendererSystem.cpp.o
+
+src/Render/VulkanRendererSystem.i: src/Render/VulkanRendererSystem.cpp.i
+.PHONY : src/Render/VulkanRendererSystem.i
+
+# target to preprocess a source file
+src/Render/VulkanRendererSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/VulkanRendererSystem.cpp.i
+.PHONY : src/Render/VulkanRendererSystem.cpp.i
+
+src/Render/VulkanRendererSystem.s: src/Render/VulkanRendererSystem.cpp.s
+.PHONY : src/Render/VulkanRendererSystem.s
+
+# target to generate assembly for a file
+src/Render/VulkanRendererSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/VulkanRendererSystem.cpp.s
+.PHONY : src/Render/VulkanRendererSystem.cpp.s
 
 src/Render/vendor/ImGuizmo/ImCurveEdit.o: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
 .PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.o
@@ -1125,6 +1173,9 @@ help:
 	@echo "... src/Core/Scene/SceneSerializer.o"
 	@echo "... src/Core/Scene/SceneSerializer.i"
 	@echo "... src/Core/Scene/SceneSerializer.s"
+	@echo "... src/Core/Utils/PlattformUtils.o"
+	@echo "... src/Core/Utils/PlattformUtils.i"
+	@echo "... src/Core/Utils/PlattformUtils.s"
 	@echo "... src/Core/VectorVertex.o"
 	@echo "... src/Core/VectorVertex.i"
 	@echo "... src/Core/VectorVertex.s"
@@ -1143,6 +1194,9 @@ help:
 	@echo "... src/Render/Render_Systems/vv_render_system.o"
 	@echo "... src/Render/Render_Systems/vv_render_system.i"
 	@echo "... src/Render/Render_Systems/vv_render_system.s"
+	@echo "... src/Render/VulkanRendererSystem.o"
+	@echo "... src/Render/VulkanRendererSystem.i"
+	@echo "... src/Render/VulkanRendererSystem.s"
 	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.o"
 	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.i"
 	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.s"

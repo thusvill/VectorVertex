@@ -280,6 +280,7 @@ namespace VectorVertex
                         {
                             auto &tc = deserialized_entity.GetORCreateComponent<TextureComponent>();
                             VVTextureLibrary::CreateWithUUID(tComponent["m_ID"].as<UUID>(), tComponent["m_Name"].as<std::string>(), tComponent["m_path"].as<std::string>());
+                            VVTextureLibrary::UpdateDescriptors();
                         }
                     }
                     if (entity["PointLightComponent"])
@@ -324,7 +325,9 @@ namespace VectorVertex
                             data.orthoFar = cComponent["orthoFar"].as<float>();
                             cc.m_Camera.SetCameraData(data);
                             cc.mainCamera = cComponent["mainCamera"].as<bool>();
-                            m_MainCamera = deserialized_entity;
+                            //m_MainCamera = deserialized_entity;
+                            if(cc.mainCamera)
+                                m_Scene->SetMainCamera(&deserialized_entity);
                             
                         }
                     }
@@ -332,7 +335,6 @@ namespace VectorVertex
             }
             
             VVTextureLibrary::UpdateDescriptors();
-
         }
 
         return true;
@@ -345,6 +347,9 @@ namespace VectorVertex
 
     void SceneSerializer::Serialize(const std::string &path)
     {
+        if(path.empty()){
+            return;
+        }
         {
             std::filesystem::path dirPath = std::filesystem::path(path).parent_path();
 

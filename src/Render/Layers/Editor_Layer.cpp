@@ -2,6 +2,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <Entity.hpp>
 #include <Scene.hpp>
+#include <Utils/PlattformUtils.hpp>
 
 namespace VectorVertex
 {
@@ -44,63 +45,29 @@ namespace VectorVertex
 
     void EditorLayer::OnAttach()
     {
-        m_ActiveScene = CreateRef<Scene>("Main");
-
-        m_global_pool = VVDescriptorPool::Builder(Application::Get().GetDevice())
-                            .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                            .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                            //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
-                            .build();
-
-        m_ubo_buffers.resize(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
-
-        for (int i = 0; i < m_ubo_buffers.size(); i++)
-        {
-            m_ubo_buffers[i] = std::make_unique<VVBuffer>(Application::Get().GetDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
-                                                          VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
-            m_ubo_buffers[i]->map();
-        }
-
-        m_global_set_layout = VVDescriptorSetLayout::Builder(Application::Get().GetDevice())
-                                  .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
-                                  //.addBinding(1, VK_DESCRIPTOR_TYPE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
-                                  .build();
-
-        m_global_descriptor_sets.resize(VVSwapChain::MAX_FRAMES_IN_FLIGHT);
-        for (int i = 0; i < m_global_descriptor_sets.size(); i++)
-        {
-            auto buffer_info = m_ubo_buffers[i]->descriptorInfo();
-
-            VVDescriptorWriter(*m_global_set_layout, *m_global_pool)
-                .writeBuffer(0, &buffer_info)
-                // add texture sampler here
-                .build(m_global_descriptor_sets[i]);
-        }
 
         VVMaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
 
-        std::vector<VkDescriptorSetLayout> layouts = {m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+        m_ActiveScene = CreateRef<Scene>("New Scene");
+        // Entity camera = m_ActiveScene->CreateEntity("Camera");
+        // camera.AddComponent<CameraComponent>();
+        // m_ActiveScene->SetMainCamera(&camera);
 
-        m_RenderSystem = CreateRef<LveRenderSystem>(layouts);
-        m_PointlightSystem = CreateRef<PointLightSystem>(layouts);
+        m_ActiveScene->Init();
 
-
-        currentTime = std::chrono::high_resolution_clock::now();
-        VVTextureLibrary::UpdateDescriptors();
-        m_SceneCamera = m_ActiveScene->GetMainCamera();
         m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+
+        if (m_ActiveScene)
+        {
+            VVTextureLibrary::UpdateDescriptors();
+        }
     }
 
     void EditorLayer::OnUpdate()
     {
-        if (!m_SceneCamera)
-        {
-            m_SceneCamera = m_ActiveScene->GetMainCamera();
-        }
-
+        RunDeferredActions();
         m_ActiveScene->DeletePendingEntities();
-        RunDeferredActions(); // runs commads after frame
         {
             if (m_SceneHierarchyPanel.requestUpdateTextures)
             {
@@ -108,35 +75,23 @@ namespace VectorVertex
                 m_SceneHierarchyPanel.requestUpdateTextures = false;
             }
         }
-        m_ActiveScene->OnUpdate();
 
         if (!loading_scene)
         {
-            auto newTime = std::chrono::high_resolution_clock::now();
-            frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
-            currentTime = newTime;
-
-            camControl.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameTime, m_SceneCamera.GetComponent<TransformComponent>());
-            m_Camera.SetViewYXZ(m_SceneCamera.GetComponent<TransformComponent>().translation, m_SceneCamera.GetComponent<TransformComponent>().rotation);
-
-            auto aspectRatio = static_cast<float>(m_Offscreen->getViewSize().width) / static_cast<float>(m_Offscreen->getViewSize().height); // renderer.GetAspectRatio();
-            // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
-            if (m_Camera.GetProjectionType() == VVCamera::ProjectionType::Perspective)
-            {
-                m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
-            }
-            else
-            {
-                m_Camera.SetOrthographicProjection(static_cast<float>(m_Offscreen->getViewSize().width), static_cast<float>(m_Offscreen->getViewSize().height), 0.1f, 100.0f);
-                ;
-            }
-
             {
                 if (is_viewport_resized)
                 {
                     m_Offscreen->Resize(Viewport_Extent);
+                    if (m_ActiveScene)
+                        m_ActiveScene->GetVulkanRenderer()->ResizeViewport(Viewport_Extent);
+
                     is_viewport_resized = false;
                 }
+            }
+
+            if (m_ActiveScene)
+            {
+                m_ActiveScene->OnUpdate(frameTime);
             }
         }
     }
@@ -204,20 +159,21 @@ namespace VectorVertex
             {
                 if (ImGui::BeginMenu("File"))
                 {
+                    if (ImGui::MenuItem("New"))
+                    {
+                        NewScene();
+                    }
+                    if (ImGui::MenuItem("Open..."))
+                    {
+                        OpenScene("");
+                    }
+                    if (ImGui::MenuItem("SaveAS..."))
+                    {
+                        SaveSceneAs("");
+                    }
                     if (ImGui::MenuItem("Save"))
                     {
-                        SceneSerializer serializer(m_ActiveScene);
-                        serializer.Serialize("assets/scene/Example.scene");
-                    }
-                    if (ImGui::MenuItem("Load"))
-                    {
-                        loading_scene = true;
-                        SceneSerializer serializer(m_ActiveScene);
-                        serializer.Deserialize("assets/scene/Example.scene");
-                        m_ActiveScene->DestroyEntityImmidiatly(m_SceneCamera);
-                        m_SceneCamera = serializer.m_MainCamera;
-                        std::this_thread::sleep_for(std::chrono::milliseconds(2));
-                        loading_scene = false;
+                        SaveScene();
                     }
 
                     if (ImGui::MenuItem("Exit"))
@@ -237,7 +193,8 @@ namespace VectorVertex
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
             ImGui::Begin("Viewport");
 
-            camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
+            // camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
+            m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
 
             // Get the size of your ImGui window or set your desired size
             ImVec2 windowSize = ImGui::GetContentRegionAvail();
@@ -259,46 +216,83 @@ namespace VectorVertex
         imgui_layer.End(frameInfo.command_buffer);
     }
 
+    void EditorLayer::NewScene()
+    {
+        m_ActiveScene = CreateRef<Scene>("New Scene");
+        m_ActiveScene->Init();
+        m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+    }
+
+    void EditorLayer::SaveScene()
+    {
+        if (!m_Info.path.empty())
+        {
+            SceneSerializer serializer(m_ActiveScene);
+            serializer.Serialize(m_Info.path);
+        }
+        else
+        {
+            SaveSceneAs("");
+        }
+    }
+
+    void EditorLayer::OpenScene(std::string path)
+    {
+        if (path.empty())
+        {
+            path = FileDialog::OpenFile("Open Scene", {"Scene | *.vscene"});
+        }
+        if(!path.empty()){
+            loading_scene = true;
+            m_ActiveScene = CreateRef<Scene>("_temp");
+            m_ActiveScene->Init();
+            m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+            SceneSerializer serializer(m_ActiveScene);
+            serializer.Deserialize(path);
+            std::this_thread::sleep_for(std::chrono::milliseconds(2));
+            loading_scene = false;
+        }
+    }
+
+    void EditorLayer::SaveSceneAs(std::string path)
+    {
+        if (path.empty())
+        {
+
+            path = FileDialog::SaveFile("Save Scene", {"Scene | *.vscene"});
+        }
+
+        if(!path.empty()){
+            {
+                std::string extension = ".vscene";
+                if (path.size() >= extension.size() + 1 && path.compare(path.size() - extension.size(), extension.size(), extension) == 0)
+                {
+                }
+                else
+                {
+                    path += extension;
+                }
+            }
+            m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+            SceneSerializer serializer(m_ActiveScene);
+            serializer.Serialize(path);
+        }
+    }
 
     void EditorLayer::OnRender(FrameInfo &frameInfo)
     {
-        // UpdateTextures();
 
-        std::unordered_map<int, VkDescriptorSet> descriptor_sets;
-        descriptor_sets[0] = m_global_descriptor_sets[frameInfo.frame_index];
-
-        std::vector<std::reference_wrapper<VVDescriptorPool>> pools = {*m_global_pool};
-
-        SceneRenderInfo sceneInfo{
-            m_ActiveScene->GetEntities(),
-            m_SceneCamera,
-            descriptor_sets,
-            pools};
-
-        // update
-        GlobalUBO ubo{};
-        ubo.view = m_Camera.GetView();
-        ubo.projection = m_Camera.GetProjection();
-        ubo.inverse_view_matrix = m_Camera.GetInverseViewMatrix();
-
-        m_PointlightSystem->Update(frameInfo, sceneInfo, ubo);
-
-        m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
-        m_ubo_buffers[frameInfo.frame_index]->flush();
-
-        // Offscreen Renderer
+        if (m_ActiveScene->GetMainCamera() != nullptr && !loading_scene)
         {
-
             m_Offscreen->StartRenderpass(frameInfo.command_buffer);
-            m_RenderSystem->renderGameobjects(frameInfo, sceneInfo);
-            m_PointlightSystem->render(frameInfo, sceneInfo);
+            m_ActiveScene->RenderScene(frameInfo);
             m_Offscreen->EndRendrepass(frameInfo.command_buffer);
-            sceneImageView = m_Offscreen->getFramebufferImage();
         }
+        sceneImageView = m_Offscreen->getFramebufferImage();
     }
 
     void EditorLayer::OnDetach()
     {
     }
 
-} // namespace VectorVertex
+}

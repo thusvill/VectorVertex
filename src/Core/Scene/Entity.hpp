@@ -13,6 +13,11 @@ namespace VectorVertex
         template <typename T>
         bool HasComponent()
         {
+            // if ( m_Scene->m_Registry.valid(m_EntityHandler) &&  m_Scene->m_Registry.any_of<T>(m_EntityHandler))
+            // {
+            //     return true;
+            // }
+            // return false;
             return m_Scene->m_Registry.any_of<T>(m_EntityHandler);
         }
 
@@ -32,7 +37,8 @@ namespace VectorVertex
         template <typename T>
         T &GetORCreateComponent()
         {
-            if(!HasComponent<T>()){
+            if (!HasComponent<T>())
+            {
                 AddComponent<T>();
             }
             return m_Scene->m_Registry.get<T>(m_EntityHandler);
@@ -48,6 +54,8 @@ namespace VectorVertex
         entt::entity GetEntt() { return m_EntityHandler; }
 
         operator bool() const { return m_EntityHandler != entt::null; }
+
+        
 
     private:
         entt::entity m_EntityHandler{entt::null};

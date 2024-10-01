@@ -166,7 +166,7 @@ namespace VectorVertex
         {
             if (ImGui::MenuItem("Create Empty Entity"))
             {
-                m_Context->CreateEntity("new Entity");
+                m_SelectedEntity = m_Context->CreateEntity("new Entity");
             }
             ImGui::EndPopup();
         }
@@ -198,6 +198,16 @@ namespace VectorVertex
                 if (ImGui::MenuItem("Point Light"))
                 {
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<PointLightComponent>());
+                    ImGui::CloseCurrentPopup();
+                }
+                if (ImGui::MenuItem("Texture Component"))
+                {
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
+                    ImGui::CloseCurrentPopup();
+                }
+                if (ImGui::MenuItem("Camera"))
+                {
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<CameraComponent>(false));
                     ImGui::CloseCurrentPopup();
                 }
 
@@ -295,7 +305,9 @@ namespace VectorVertex
                     ImGui::EndCombo();
                     
                 } 
-                ImGui::Checkbox("Is Main Camera", &component.mainCamera);});
+                ImGui::Checkbox("Is Main Camera", &component.mainCamera);
+                
+                });
 
         DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light)
                                            {

@@ -15,7 +15,7 @@ namespace VectorVertex
             m_ID = VVTextureLibrary::default_uuid;
             VV_CORE_INFO("Default Texture Loaded {}", m_ID);
         }
-        TextureComponent(VVDevice &device, std::string name, std::string path)
+        TextureComponent(std::string name, std::string path)
         {
             m_ID = VVTextureLibrary::Create(name, path);
             VV_CORE_INFO("Texture Created {}", m_ID);
@@ -134,8 +134,11 @@ namespace VectorVertex
         std::string path;
     };
     struct CameraComponent
-    {
-        CameraComponent() = default;
+    {   
+        CameraComponent()=default;
+        CameraComponent(bool is_main){
+            mainCamera = is_main;
+        }
 
         VVCamera m_Camera;
         bool mainCamera;

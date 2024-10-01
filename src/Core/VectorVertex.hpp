@@ -33,6 +33,7 @@ namespace VectorVertex
         int width = 1980;
         int height = 1080;
         std::string title = "VectorVertex";
+        std::string path = "";
     };
 
     class Application

@@ -9,6 +9,11 @@ namespace VectorVertex
     Scene::Scene(std::string name) : m_Name(name)
     {
         VV_CORE_INFO("Scene {} Created!", name.c_str());
+        m_RendererSystem = CreateRef<VulkanRendererSystem>();
+    }
+    void Scene::Init()
+    {
+        m_RendererSystem->Create();
     }
     Scene::~Scene()
     {
@@ -37,40 +42,45 @@ namespace VectorVertex
 
         return entity;
     }
-    Entity Scene::GetMainCamera()
-    {
-        Entity cam;
+    // Entity& Scene::GetMainCamera()
+    // {
+    //     Entity cam;
 
-        for (auto &kv : m_Entities)
-        {
-            if (kv.second.HasComponent<CameraComponent>() && kv.second.GetComponent<CameraComponent>().mainCamera)
-            {
-                cam = kv.second;
-            }
-        }
-        if (!cam)
-        {
-            for (auto &kv : m_Entities)
-            {
-                if (kv.second.HasComponent<CameraComponent>())
-                {
-                    kv.second.GetComponent<CameraComponent>().mainCamera = true;
-                    cam = kv.second;
-                    break;
-                }
-            }
-            if (!cam)
-            {
-                cam = CreateEntity("MainCamera");
-                cam.AddComponent<CameraComponent>().mainCamera = true;
-            }
-        }
-        if (!cam.HasComponent<TransformComponent>())
-        {
-            cam.AddComponent<TransformComponent>();
-        }
-        return cam;
-    }
+    //     for (auto &kv : m_Entities)
+    //     {
+    //         if (kv.second.HasComponent<CameraComponent>() && kv.second.GetComponent<CameraComponent>().mainCamera)
+    //         {
+    //             cam = kv.second;
+    //             return cam;
+    //             break;
+    //         }
+    //     }
+    //     if (!cam)
+    //     {
+    //         for (auto &kv : m_Entities)
+    //         {
+    //             if (kv.second.HasComponent<CameraComponent>())
+    //             {
+    //                 kv.second.GetComponent<CameraComponent>().mainCamera = true;
+    //                 cam = kv.second;
+    //                 return cam;
+    //                 break;
+    //             }
+    //         }
+    //         if (!cam)
+    //         {
+    //             cam = CreateEntity("MainCamera");
+    //             cam.AddComponent<CameraComponent>().mainCamera = true;
+    //             return cam;
+
+    //         }
+    //     }
+    //     if (!cam.HasComponent<TransformComponent>())
+    //     {
+    //         cam.AddComponent<TransformComponent>();
+    //     }
+    //     return cam;
+    // }
     void Scene::DestroyEntity(Entity entity)
     {
         // m_Entities.erase(entity.GetComponent<IDComponent>().id);
@@ -91,11 +101,24 @@ namespace VectorVertex
         }
         m_Pending_Delete_Entities.clear();
     }
-    void Scene::OnUpdate()
+    void Scene::OnUpdate(float frameTime)
     {
+        for (auto &kv : m_Entities)
+        {
+            if (kv.second.HasComponent<CameraComponent>() && kv.second.GetComponent<CameraComponent>().mainCamera)
+            {
+                m_MainCamera = &kv.second;
+                break;
+            }else{
+                m_MainCamera = nullptr;
+            }
+        }
+
+        m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
     }
 
-    void Scene::RenderScene()
+    void Scene::RenderScene(FrameInfo &frameInfo)
     {
+        m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
     }
 }

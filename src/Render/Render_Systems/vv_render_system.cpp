@@ -58,7 +58,7 @@ namespace VectorVertex
 
         // std::vector<VkDescriptorSetLayout> descriptor_set_layouts{global_set_layout};
 
-        std::cout << des_set_layout.size() << std::endl;
+        //std::cout << des_set_layout.size() << std::endl;
 
         VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
         pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;

@@ -25,28 +25,26 @@ namespace VectorVertex
         VkExtent2D Viewport_Extent{800, 800};
 
         bool is_viewport_resized = false;
-        Ref<Scene> GetActiveScene() {return m_ActiveScene;}
+        Ref<Scene> GetActiveScene() { return m_ActiveScene; }
 
+    
+    public:
+    void NewScene();
+    void SaveScene();
+    void OpenScene(std::string path);
+    void SaveSceneAs(std::string path);
+
+    
     private:
         Imgui_Layer imgui_layer;
         ImVec2 prev_size;
         Ref<Scene> m_ActiveScene;
         SceneHierarchy m_SceneHierarchyPanel;
+        Ref<VVOffscreen> m_Offscreen;
 
     private:
-
-        Scope<VVDescriptorPool> m_global_pool;
-        std::vector<Scope<VVBuffer>> m_ubo_buffers;
-        std::vector<VkDescriptorSet> m_global_descriptor_sets;
-        Scope<VVDescriptorSetLayout> m_global_set_layout;
-        Ref<VVOffscreen> m_Offscreen;
-        Ref<LveRenderSystem> m_RenderSystem;
-        Ref<PointLightSystem> m_PointlightSystem;
-        Entity m_SceneCamera;
-        VVCamera m_Camera;
-        KeyboardInputs camControl{}; // temporyauto currentTime = std::chrono::high_resolution_clock::now();
-        std::chrono::_V2::system_clock::time_point currentTime;
         float frameTime;
-        bool loading_scene=false;
+        bool loading_scene = false;
+        ProjectInfo m_Info;
     };
 }

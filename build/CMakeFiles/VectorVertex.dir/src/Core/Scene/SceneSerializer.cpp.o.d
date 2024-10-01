@@ -705,6 +705,7 @@ CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/VulkanRendererSystem.hpp \
  /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
  /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
  /usr/local/include/yaml-cpp/binary.h \

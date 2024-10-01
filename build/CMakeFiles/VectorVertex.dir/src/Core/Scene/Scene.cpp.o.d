@@ -703,4 +703,5 @@ CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/VulkanRendererSystem.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Entity.hpp
