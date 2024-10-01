@@ -3,6 +3,7 @@
 #include <string.h>
 #include <imgui/imgui_internal.h>
 #include <glm/gtc/type_ptr.hpp>
+#include <Utils/PlattformUtils.hpp>
 
 namespace VectorVertex
 {
@@ -75,18 +76,20 @@ namespace VectorVertex
         ImGui::PopID();
     }
 
-    static void DrawTextfield(const std::string &lable, std::string &value)
+    static bool DrawTextfield(const std::string &lable, std::string &value)
     {
         ImGui::PushID(lable.c_str());
         char buffer[256];
         memset(buffer, 0, sizeof(buffer));
         strcpy(buffer, value.c_str());
 
-        if (ImGui::InputText(lable.c_str(), buffer, sizeof(buffer)))
+        bool changed = ImGui::InputText(lable.c_str(), buffer, sizeof(buffer));
+        if (changed)
         {
             value = std::string(buffer);
         }
         ImGui::PopID();
+        return changed;
     }
 
     template <typename T, typename UIFunction>
@@ -261,18 +264,17 @@ namespace VectorVertex
             auto &ID = entity.GetComponent<IDComponent>();
 
             ImGui::Separator();
-            //bool open = ImGui::TreeNodeEx((void *)typeid(IDComponent).hash_code(), ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_AllowOverlap , ID.m_Name.c_str());
+            // bool open = ImGui::TreeNodeEx((void *)typeid(IDComponent).hash_code(), ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_AllowOverlap , ID.m_Name.c_str());
 
+            //            if (open)
+            //          {
 
-//            if (open)
-  //          {
+            DrawTextfield("Name", ID.m_Name);
+            ImGui::SameLine();
+            ImGui::TextColored(ImVec4(0.7, 0.7, 0.7, 1.0), std::to_string(ID.id).c_str());
 
-                DrawTextfield("Name", ID.m_Name);
-                ImGui::SameLine();
-                ImGui::TextColored(ImVec4(0.7, 0.7, 0.7, 1.0), std::to_string(ID.id).c_str());
-
-//                ImGui::TreePop();
-    //        }
+            //                ImGui::TreePop();
+            //        }
         }
 
         DrawComponent<TransformComponent>("Transform", entity, [](auto &transform)
@@ -283,31 +285,28 @@ namespace VectorVertex
 
         DrawComponent<CameraComponent>("Camera", entity, [](auto &component)
                                        {
-                auto &camera = component.m_Camera;
-                const char *projectionTypeStrings[] = {"Orthographic", "Perspective"};
-                const char *currentProjectionTypeString = projectionTypeStrings[(int)camera.GetProjectionType()];
-                if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
-                {
-                    for (int i = 0; i < 2; i++)
-                    {
-                        bool isSelected = currentProjectionTypeString == projectionTypeStrings[i];
-                        if (ImGui::Selectable(projectionTypeStrings[i], isSelected))
-                        {
-                            currentProjectionTypeString = projectionTypeStrings[i];
-                            camera.SetProjectionType((VVCamera::ProjectionType)i);
-                        }
-                        if (isSelected)
-                        {
-                            ImGui::SetItemDefaultFocus();
-                        }
-                    }
+                                           auto &camera = component.m_Camera;
+                                           const char *projectionTypeStrings[] = {"Orthographic", "Perspective"};
+                                           const char *currentProjectionTypeString = projectionTypeStrings[(int)camera.GetProjectionType()];
+                                           if (ImGui::BeginCombo("Projection", currentProjectionTypeString))
+                                           {
+                                               for (int i = 0; i < 2; i++)
+                                               {
+                                                   bool isSelected = currentProjectionTypeString == projectionTypeStrings[i];
+                                                   if (ImGui::Selectable(projectionTypeStrings[i], isSelected))
+                                                   {
+                                                       currentProjectionTypeString = projectionTypeStrings[i];
+                                                       camera.SetProjectionType((VVCamera::ProjectionType)i);
+                                                   }
+                                                   if (isSelected)
+                                                   {
+                                                       ImGui::SetItemDefaultFocus();
+                                                   }
+                                               }
 
-                    ImGui::EndCombo();
-                    
-                } 
-                ImGui::Checkbox("Is Main Camera", &component.mainCamera);
-                
-                });
+                                               ImGui::EndCombo();
+                                           }
+                                           ImGui::Checkbox("Is Main Camera", &component.mainCamera); });
 
         DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light)
                                            {
@@ -325,15 +324,28 @@ namespace VectorVertex
                 } });
         DrawComponent<TextureComponent>("Texture", entity, [](auto &component)
                                         {
-                    auto &texture = VVTextureLibrary::GetTexture(component.m_ID);
-                    DrawTextfield("Name", texture.data.m_Name);
-                    DrawTextfield("Path", texture.data.m_path);
-                    if (ImGui::Button("Load"))
-                    {
-
-                        RUN_AFTER_FRAME(texture.loadTexture(texture.data.m_path));
-                        RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
-                    } });
+                                            auto &texture = VVTextureLibrary::GetTexture(component.m_ID);
+                                            DrawTextfield("Name", texture.data.m_Name);
+                                            if (DrawTextfield("Path ##"+std::to_string(texture.data.m_ID), texture.data.m_path))
+                                            {
+                                                if (ImGui::Button("Load"))
+                                                {
+                                                    RUN_AFTER_FRAME(texture.loadTexture(texture.data.m_path));
+                                                    RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
+                                                }
+                                            }
+                                            ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
+                                            float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                            ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
+                                            if (ImGui::Button("... #Texture", ImVec2(lineHight, lineHight)))
+                                            {
+                                                std::string new_path = FileDialog::OpenFile("Open Texture", {"Texture | *.png *.jpg"}, "Resources");
+                                                if(!new_path.empty()){
+                                                    texture.data.m_path = new_path;
+                                                    RUN_AFTER_FRAME(texture.loadTexture(texture.data.m_path));
+                                                    RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
+                                                }
+                                            } });
         DrawComponent<MeshComponent>("Mesh", entity, [](auto &mesh)
                                      {
             

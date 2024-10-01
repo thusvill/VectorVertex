@@ -12,7 +12,7 @@ namespace VectorVertex
     class EditorLayer : public Layer
     {
     public:
-        EditorLayer();
+        EditorLayer(ProjectInfo _info);
         void SetupImgui();
         ~EditorLayer() = default;
         virtual void OnAttach() override;

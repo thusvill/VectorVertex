@@ -3535,6 +3535,7 @@ CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o: /home/bios/CLi
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Entity.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Scene.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Utils/PlattformUtils.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/VectorVertex.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vv_uuid.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk.h \
@@ -22450,8 +22451,6 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp:
 
-/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Utils/PlattformUtils.hpp:
-
 /usr/local/include/yaml-cpp/stlemitter.h:
 
 /usr/local/include/yaml-cpp/ostream_wrapper.h:
@@ -22653,6 +22652,8 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o: /home/bios/CLionProjects
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_internal.h:
 
 /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_shader.hpp:
+
+/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Utils/PlattformUtils.hpp:
 
 /usr/local/include/yaml-cpp/emitterdef.h:
 

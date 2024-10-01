@@ -6,7 +6,7 @@
 
 namespace VectorVertex
 {
-    EditorLayer::EditorLayer() : Layer("EditorLayer")
+    EditorLayer::EditorLayer(ProjectInfo _info) : m_Info(_info),Layer("EditorLayer")
     {
         VV_CORE_INFO("[Layer]:EditorLayer Created!");
     }
@@ -49,14 +49,20 @@ namespace VectorVertex
         VVMaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
 
-        m_ActiveScene = CreateRef<Scene>("New Scene");
-        // Entity camera = m_ActiveScene->CreateEntity("Camera");
-        // camera.AddComponent<CameraComponent>();
-        // m_ActiveScene->SetMainCamera(&camera);
+        if(!m_Info.path.empty()){
+            OpenScene(m_Info.path);
+        }else{
+            NewScene();
+        }
 
-        m_ActiveScene->Init();
+        // m_ActiveScene = CreateRef<Scene>("New Scene");
+        // // Entity camera = m_ActiveScene->CreateEntity("Camera");
+        // // camera.AddComponent<CameraComponent>();
+        // // m_ActiveScene->SetMainCamera(&camera);
 
-        m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+        // m_ActiveScene->Init();
+
+        // m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 
         if (m_ActiveScene)
         {
@@ -165,7 +171,7 @@ namespace VectorVertex
                     }
                     if (ImGui::MenuItem("Open..."))
                     {
-                        OpenScene("");
+                        RUN_AFTER_FRAME(OpenScene(""));
                     }
                     if (ImGui::MenuItem("SaveAS..."))
                     {
@@ -251,6 +257,7 @@ namespace VectorVertex
             serializer.Deserialize(path);
             std::this_thread::sleep_for(std::chrono::milliseconds(2));
             loading_scene = false;
+            is_viewport_resized = true;
         }
     }
 
@@ -276,6 +283,7 @@ namespace VectorVertex
             m_SceneHierarchyPanel.SetContext(m_ActiveScene);
             SceneSerializer serializer(m_ActiveScene);
             serializer.Serialize(path);
+            m_Info.path = path;
         }
     }
 

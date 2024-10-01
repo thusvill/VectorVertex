@@ -24,7 +24,7 @@ namespace VectorVertex
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
 
-        editor_layer = new EditorLayer();
+        editor_layer = new EditorLayer(info);
 
         layers.PushLayer(editor_layer);
         editor_layer->SetupImgui();
