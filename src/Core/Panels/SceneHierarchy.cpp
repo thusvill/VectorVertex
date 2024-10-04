@@ -76,9 +76,9 @@ namespace VectorVertex
         ImGui::PopID();
     }
 
-    static bool DrawTextfield(const std::string &lable, std::string &value)
+    static bool DrawTextfield(const std::string &lable, std::string &value, UUID id = 0)
     {
-        ImGui::PushID(lable.c_str());
+        ImGui::PushID(id);
         char buffer[256];
         memset(buffer, 0, sizeof(buffer));
         strcpy(buffer, value.c_str());
@@ -194,8 +194,8 @@ namespace VectorVertex
                 if (ImGui::MenuItem("Mesh Renderer"))
                 {
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/cube.obj"));
-                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
-                    requestUpdateTextures = true;
+                    if(!m_SelectedEntity.HasComponent<TextureComponent>())
+                        RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
                     ImGui::CloseCurrentPopup();
                 }
                 if (ImGui::MenuItem("Point Light"))
@@ -203,9 +203,15 @@ namespace VectorVertex
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<PointLightComponent>());
                     ImGui::CloseCurrentPopup();
                 }
+                if (ImGui::MenuItem("Material"))
+                {
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MaterialComponent>());
+                    ImGui::CloseCurrentPopup();
+                }
                 if (ImGui::MenuItem("Texture Component"))
                 {
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
+                    RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
                     ImGui::CloseCurrentPopup();
                 }
                 if (ImGui::MenuItem("Camera"))
@@ -253,7 +259,7 @@ namespace VectorVertex
             {
                 m_SelectedEntity = {};
             }
-            RUN_AFTER_FRAME(m_Context->DestroyEntity(entity));
+            m_Context->DestroyEntity(entity);
         }
     }
     void SceneHierarchy::DrawComponents(Entity entity)
@@ -269,7 +275,7 @@ namespace VectorVertex
             //            if (open)
             //          {
 
-            DrawTextfield("Name", ID.m_Name);
+            DrawTextfield("Name", ID.m_Name, ID.id);
             ImGui::SameLine();
             ImGui::TextColored(ImVec4(0.7, 0.7, 0.7, 1.0), std::to_string(ID.id).c_str());
 
@@ -318,26 +324,41 @@ namespace VectorVertex
         DrawComponent<MaterialComponent>("Material", entity, [](auto &component)
                                          {
                 auto material = VVMaterialLibrary::getMaterial(component.m_ID);
+                
                 if (ImGui::ColorEdit4("Material Color ##material", glm::value_ptr(material.m_MaterialData.color)))
                 {
                     VVMaterialLibrary::updateMaterial(material.m_MaterialData.m_ID, material.m_MaterialData);
                 } });
+
         DrawComponent<TextureComponent>("Texture", entity, [](auto &component)
                                         {
                                             auto &texture = VVTextureLibrary::GetTexture(component.m_ID);
-                                            DrawTextfield("Name", texture.data.m_Name);
-                                            if (DrawTextfield("Path ##"+std::to_string(texture.data.m_ID), texture.data.m_path))
+                                            DrawTextfield("Name ##TextureName", texture.data.m_Name, texture.data.m_ID);
+                                            ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
+                                            float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                            ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
+                                            if(ImGui::Button("New ##NewTexture")){
+                                                
+                                                UUID new_id = UUID();
+                                                RUN_AFTER_FRAME(VVTextureLibrary::CreateWithUUID(new_id,"New Texture", "Resources/Textures/default.png"));                                            
+                                                RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
+                                                VVTextureLibrary::DeleteTexture(component.m_ID);
+                                                component.m_ID = new_id;
+                                                
+                                            }
+                                            if (DrawTextfield("##Path", texture.data.m_path, texture.data.m_ID))
                                             {
                                                 if (ImGui::Button("Load"))
                                                 {
                                                     RUN_AFTER_FRAME(texture.loadTexture(texture.data.m_path));
                                                     RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
+                                                    
                                                 }
                                             }
-                                            ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
-                                            float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                            contentRegionAvailable = ImGui::GetContentRegionAvail();
+                                            lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
                                             ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
-                                            if (ImGui::Button("... #Texture", ImVec2(lineHight, lineHight)))
+                                            if (ImGui::Button("... ##Texture", ImVec2(lineHight, lineHight)))
                                             {
                                                 std::string new_path = FileDialog::OpenFile("Open Texture", {"Texture | *.png *.jpg"}, "Resources");
                                                 if(!new_path.empty()){
@@ -348,13 +369,28 @@ namespace VectorVertex
                                             } });
         DrawComponent<MeshComponent>("Mesh", entity, [](auto &mesh)
                                      {
-            
-                DrawTextfield("Path", mesh.path);
-                if (ImGui::Button("Load"))
-                {
+                                         if (DrawTextfield("##Path", mesh.path, mesh.m_ID))
+                                         {
+                                             if (ImGui::Button("Load"))
+                                             {
 
-                    RUN_AFTER_FRAME(mesh.UpdateMesh());
-                    RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
-                } });
+                                                 RUN_AFTER_FRAME(mesh.UpdateMesh());
+                                                 RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
+                                             }
+                                         }
+                                         ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
+                                         float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                         ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
+                                         if (ImGui::Button("... ##Mesh", ImVec2(lineHight, lineHight)))
+                                         {
+                                             std::string new_path = FileDialog::OpenFile("Open Mesh", {"Mesh | *.obj"}, "Resources");
+                                             if (!new_path.empty())
+                                             {
+                                                 mesh.path = new_path;
+                                                 RUN_AFTER_FRAME(mesh.UpdateMesh());
+                                                 RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
+                                             }
+                                         }
+                                     });
     }
 }

@@ -22,6 +22,9 @@ namespace VectorVertex
         void SetContext(const Ref<Scene> &scene);
 
         void OnImGuiRender();
+        void ResetSelectedEntity(){
+            m_SelectedEntity = {};
+        }
         bool requestUpdateTextures;
 
     private:

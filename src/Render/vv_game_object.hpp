@@ -45,7 +45,7 @@ namespace VectorVertex
         VVGameObject(std::string name)
         {
             m_Name = name;
-            texture.m_ID = VVTextureLibrary::default_uuid;
+            texture.m_ID = VVTextureLibrary::GetDefaultTexture();
             VV_CORE_INFO("GameObject Created with name:{0} on UUID:{1}", name, uuid.id);
         }
     };

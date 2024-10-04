@@ -40,9 +40,10 @@ namespace VectorVertex
             static std::unordered_map<uint64_t, VVMaterial> m_Materials;
 
             static uint64_t createMaterial(std::string name, MaterialData materialData);
+            static uint64_t createMaterialwithUUID(UUID id,std::string name, MaterialData materialData);
             static VVMaterial getMaterial(uint64_t id);
             static bool isMaterialAvailable(uint64_t id);
-            static uint64_t default_material;
+            //static uint64_t default_material;
 
         static void updateMaterial(uint64_t id, MaterialData materialData);
     };

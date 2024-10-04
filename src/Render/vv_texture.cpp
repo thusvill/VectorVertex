@@ -10,7 +10,6 @@
 namespace VectorVertex
 {
     std::unordered_map<uint64_t, Ref<VVTexture>> VVTextureLibrary::m_Textures;
-    uint64_t VVTextureLibrary::default_uuid;
     Scope<VVDescriptorPool> VVTextureLibrary::texture_pool;
     Scope<VVDescriptorSetLayout> VVTextureLibrary::textureImageDescriptorLayout;
 
@@ -137,7 +136,7 @@ namespace VectorVertex
 
     void VVTextureLibrary::InitTextureLib()
     {
-        default_uuid = Create("default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
+        
         texture_pool = VVDescriptorPool::Builder(Application::Get().GetDevice())
                            .setMaxSets(VVSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
                            .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VVSwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -155,6 +154,7 @@ namespace VectorVertex
 
         Ref<VVTexture> texture = CreateRef<VVTexture>(path);
         texture->data.m_Name = name;
+        texture->data.m_path = path;
         VV_CORE_INFO("Created Texture from:{0} as:{1} with UUID:{2}", path, name, texture->data.m_ID);
         m_Textures[texture->data.m_ID] = texture;
         return texture->data.m_ID;
@@ -164,6 +164,7 @@ namespace VectorVertex
         Ref<VVTexture> texture = CreateRef<VVTexture>(path);
         texture->data.m_Name = name;
         texture->data.m_ID = id;
+        texture->data.m_path = path;
         VV_CORE_INFO("Created Texture from:{0} as:{1} with UUID:{2}", path, name, texture->data.m_ID);
         m_Textures[texture->data.m_ID] = texture;
     }
@@ -184,12 +185,15 @@ namespace VectorVertex
         }
         return *m_Textures.at(ID);
     }
+    uint64_t VVTextureLibrary::GetDefaultTexture()
+    {
+        return Create("default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
+    }
     void VVTextureLibrary::DeleteTexture(UUID ID)
     {
-        if (ID != default_uuid)
-        {
+
             m_Textures.erase(ID);
-        }
+        
     }
     void VVTextureLibrary::UpdateDescriptors()
     {

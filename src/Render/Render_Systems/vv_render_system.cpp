@@ -126,13 +126,14 @@ namespace VectorVertex
 
             if (!Application::Get().GetRenderer().Get_Swapchain().isWaitingForFence)
             {
-                if (obj.HasComponent<TextureComponent>())
+                VVTexture* tex = &VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID);
+                if (obj.HasComponent<TextureComponent>() && tex !=nullptr)
                 {
                     TextureData data = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data;
                     if (data.m_descriptorSet == nullptr)
                     {
                         VV_CORE_ERROR("Null Descriptors in Texture :{0}, Entity :{1} ", data.m_Name, obj.GetComponent<IDComponent>().m_Name);
-                        VV_CORE_ASSERT(false, "Texture Descriptorset is NULL!");
+                        //VV_CORE_ASSERT(false, "Texture Descriptorset is NULL!");
                     }
                     else
                     {

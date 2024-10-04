@@ -270,7 +270,7 @@ namespace VectorVertex
                             _data.color = mComponent["color"].as<glm::vec4>();
                             _data.m_ID = mComponent["m_ID"].as<UUID>();
                             _data.m_Name = mComponent["m_Name"].as<std::string>();
-                            mc.m_ID = VVMaterialLibrary::createMaterial(mComponent["m_Name"].as<std::string>(), _data);
+                            mc.m_ID = VVMaterialLibrary::createMaterialwithUUID(mComponent["m_ID"].as<UUID>(),mComponent["m_Name"].as<std::string>(), _data);
                         }
                     }
                     if (entity["TextureComponent"])
@@ -279,6 +279,7 @@ namespace VectorVertex
                         if (auto tComponent = entity["TextureComponent"])
                         {
                             auto &tc = deserialized_entity.GetORCreateComponent<TextureComponent>();
+                            tc.m_ID = tComponent["m_ID"].as<UUID>();
                             VVTextureLibrary::CreateWithUUID(tComponent["m_ID"].as<UUID>(), tComponent["m_Name"].as<std::string>(), tComponent["m_path"].as<std::string>());
                             VVTextureLibrary::UpdateDescriptors();
                         }

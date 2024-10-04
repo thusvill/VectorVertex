@@ -86,7 +86,7 @@ namespace VectorVertex
             return;
         }
 
-
+       
     }
 
     void Imgui_Layer::OnAttach()
@@ -112,6 +112,8 @@ namespace VectorVertex
         ImGui_ImplVulkan_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
+
+        
     }
 
     void Imgui_Layer::End(VkCommandBuffer vkCommandBuffer)

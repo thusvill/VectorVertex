@@ -12,7 +12,7 @@ namespace VectorVertex
     {
         TextureComponent()
         {
-            m_ID = VVTextureLibrary::default_uuid;
+            m_ID = VVTextureLibrary::GetDefaultTexture();
             VV_CORE_INFO("Default Texture Loaded {}", m_ID);
         }
         TextureComponent(std::string name, std::string path)
@@ -20,6 +20,11 @@ namespace VectorVertex
             m_ID = VVTextureLibrary::Create(name, path);
             VV_CORE_INFO("Texture Created {}", m_ID);
         }
+
+        TextureComponent* get(){
+            return this;
+        }
+
         uint64_t m_ID;
     };
     struct MaterialComponent

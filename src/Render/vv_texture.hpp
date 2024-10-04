@@ -92,12 +92,13 @@ namespace VectorVertex
         static void CreateWithUUID(UUID id,std::string name, std::string path);
         static void AddTexture(Ref<VVTexture> texture);
         static VVTexture& GetTexture(UUID ID);
+        static uint64_t GetDefaultTexture();
         static void DeleteTexture(UUID ID);
         static void UpdateDescriptors();
         static void ClearLibrary();
 
         static std::unordered_map<uint64_t, Ref<VVTexture>> m_Textures;
-        static uint64_t default_uuid;
+        //static uint64_t default_uuid;
         static Scope<VVDescriptorPool> texture_pool;
         static Scope<VVDescriptorSetLayout> textureImageDescriptorLayout;
 
