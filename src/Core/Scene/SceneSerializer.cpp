@@ -256,7 +256,7 @@ namespace VectorVertex
                     {
                         auto &tc = deserialized_entity.GetORCreateComponent<TransformComponent>();
                         tc.translation = tComponent["Position"].as<glm::vec3>();
-                        tc.rotation = tComponent["Rotation"].as<glm::vec3>();
+                        tc.SetRotationEuler(tComponent["Rotation"].as<glm::vec3>());
                         tc.scale = tComponent["Scale"].as<glm::vec3>();
                     }
 

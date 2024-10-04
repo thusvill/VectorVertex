@@ -277,7 +277,26 @@ namespace VectorVertex
             ImGui::Image(sceneImageView, windowSize);
 
             {
-                m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+                if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
+                {
+                    if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_Q) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
+                    }
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_W) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+                    }
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_E) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = ImGuizmo::OPERATION::SCALE;
+                    }
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = -1;
+                    }
+                }
+                
 
                 Entity selected_entity = m_SceneHierarchyPanel.getSelectedEntity();
                 if (selected_entity && m_GuizmoType != -1)
@@ -295,13 +314,20 @@ namespace VectorVertex
                     auto &tc = selected_entity.GetComponent<TransformComponent>();
                     // glm::mat4 transform = tc.mat4();
 
-                    glm::quat tc_rotation = glm::quat(glm::vec3(tc.rotation)); // Convert Euler angles to quaternion
-                    glm::mat4 rotationMatrix = glm::mat4(tc_rotation);
+                    glm::quat tc_rotation = glm::quat(glm::vec3(tc.GetRotationRadians())); // Convert Euler angles to quaternion
+                    glm::mat4 rotationMatrix = glm::mat4(tc.rotationQuat);
                     glm::mat4 transform = glm::translate(glm::mat4(1.0f), tc.translation) * rotationMatrix * glm::scale(glm::mat4(1.0f), tc.scale);
 
                     glm::vec3 original_Rotation = tc.rotation;
 
-                    ImGuizmo::Manipulate(glm::value_ptr(cam_View), glm::value_ptr(proj), (ImGuizmo::OPERATION)m_GuizmoType, ImGuizmo::MODE::LOCAL, glm::value_ptr(transform));
+                    bool snap = glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_LEFT_CONTROL) || glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_RIGHT_CONTROL);
+                    float snapValue = 0.5f;
+                    if(m_GuizmoType == ImGuizmo::OPERATION::ROTATE){
+                        snapValue = 45.0f;
+                    }
+                    float snapValues[3] = {snapValue,snapValue,snapValue};
+
+                    ImGuizmo::Manipulate(glm::value_ptr(cam_View), glm::value_ptr(proj), (ImGuizmo::OPERATION)m_GuizmoType, ImGuizmo::MODE::LOCAL, glm::value_ptr(transform), nullptr, snap ? snapValues : nullptr);
                     if (ImGuizmo::IsUsing())
                     {
                         glm::vec3 rotation, position, scale;
@@ -315,7 +341,7 @@ namespace VectorVertex
 
                         if (m_GuizmoType == ImGuizmo::OPERATION::ROTATE)
                         {
-                            glm::vec3 delta = glm::radians(rotation) - original_Rotation;
+                            glm::vec3 delta = rotation - original_Rotation;
 
                             auto wrapAngle = [](float angle)
                             {
@@ -326,13 +352,9 @@ namespace VectorVertex
                                 return angle;
                             };
 
-                            tc.SetRotationEuler(glm::radians(rotation));
+                            tc.SetRotationEuler(rotation);
 
-                            //tc.rotation += delta;
-
-                            // tc.rotation.x = wrapAngle(tc.rotation.x);
-                            // tc.rotation.y = wrapAngle(tc.rotation.y);
-                            // tc.rotation.z = wrapAngle(tc.rotation.z);
+                           
                         }
                         if (m_GuizmoType == ImGuizmo::OPERATION::SCALE)
                         {

@@ -23,7 +23,8 @@ namespace VectorVertex
             VV_CORE_INFO("Texture Created {}", m_ID);
         }
 
-        TextureComponent* get(){
+        TextureComponent *get()
+        {
             return this;
         }
 
@@ -50,58 +51,67 @@ namespace VectorVertex
         UUID id;
     };
 
-struct TransformComponent
-{
-    TransformComponent() = default;
-
-    glm::vec3 translation{0.0f};   // Translation remains a vector
-    glm::vec3 scale{1.f};          // Scale remains a vector
-    glm::vec3 rotation{0.0f};      // Store rotation as Euler angles (in radians)
-
-    // Internal quaternion for calculations
-    glm::quat rotationQuat{1.0f, 0.0f, 0.0f, 0.0f}; // Initialize to identity quaternion
-
-    // Update the quaternion when the Euler angles are set
-    void SetRotationEuler(const glm::vec3& eulerRadians)
+    struct TransformComponent
     {
-        rotation = eulerRadians;                    // Set the Euler angles
-        rotationQuat = glm::quat(eulerRadians);    // Convert to quaternion
-    }
+        TransformComponent() = default;
 
-    // Retrieve the current rotation as Euler angles (in radians)
-    glm::vec3 GetRotationEuler() const
-    {
-        return rotation;                            // Return the Euler angles directly
-    }
+        glm::vec3 translation{0.0f}; // Translation remains a vector
+        glm::vec3 scale{1.f};        // Scale remains a vector
+        glm::vec3 rotation{0.0f};    // Store rotation as Euler angles (in degrees)
 
-    // Function to get the transformation matrix (with quaternion for rotation)
-    glm::mat4 mat4()
-    {
-        // Convert the quaternion to a 4x4 matrix for rotation
-        glm::mat4 rotationMatrix = glm::mat4_cast(rotationQuat);
+        // Internal quaternion for calculations
+        glm::quat rotationQuat{1.0f, 0.0f, 0.0f, 0.0f}; // Initialize to identity quaternion
 
-        // Combine translation, rotation, and scale into a single transformation matrix
-        return glm::translate(glm::mat4(1.0f), translation) * rotationMatrix * glm::scale(glm::mat4(1.0f), scale);
-    }
+        // Update the quaternion when the Euler angles are set
+        void SetRotationEuler(const glm::vec3 &eulerDegrees)
+        {
+            rotation = eulerDegrees;                              // Set the Euler angles in degrees
+            rotationQuat = glm::quat(glm::radians(eulerDegrees)); // Convert to quaternion from degrees
+        }
 
-    // Normal matrix for lighting (uses the inverse transpose of the rotation matrix)
-    glm::mat3 normalMatrix()
-    {
-        // Convert the quaternion to a 3x3 matrix (ignores translation)
-        glm::mat3 rotationMatrix = glm::mat3_cast(rotationQuat);
+        // Retrieve the current rotation as Euler angles (in degrees)
+        glm::vec3 GetRotationEuler() const
+        {
+            return rotation; // Return the Euler angles directly
+        }
 
-        // Apply scaling inverse (necessary for the normal matrix in lighting calculations)
-        const glm::vec3 invScale = 1.0f / scale;
+        // Retrieve the current rotation as Euler angles (in radians)
+        glm::vec3 GetRotationRadians() const
+        {
+            return glm::radians(rotation); // Convert degrees to radians
+        }
 
-        return glm::transpose(glm::inverse(rotationMatrix)) * glm::mat3(
-            invScale.x, 0.0f, 0.0f,
-            0.0f, invScale.y, 0.0f,
-            0.0f, 0.0f, invScale.z);
-    }
-};
+        // Set rotation from Euler angles (in radians)
+        void SetRotationRadians(const glm::vec3 &eulerRadians)
+        {
+            SetRotationEuler(glm::degrees(eulerRadians)); // Convert radians to degrees and set
+        }
 
+        // Function to get the transformation matrix (with quaternion for rotation)
+        glm::mat4 mat4()
+        {
+            // Convert the quaternion to a 4x4 matrix for rotation
+            glm::mat4 rotationMatrix = glm::mat4_cast(rotationQuat);
 
+            // Combine translation, rotation, and scale into a single transformation matrix
+            return glm::translate(glm::mat4(1.0f), translation) * rotationMatrix * glm::scale(glm::mat4(1.0f), scale);
+        }
 
+        // Normal matrix for lighting (uses the inverse transpose of the rotation matrix)
+        glm::mat3 normalMatrix()
+        {
+            // Convert the quaternion to a 3x3 matrix (ignores translation)
+            glm::mat3 rotationMatrix = glm::mat3_cast(rotationQuat);
+
+            // Apply scaling inverse (necessary for the normal matrix in lighting calculations)
+            const glm::vec3 invScale = 1.0f / scale;
+
+            return glm::transpose(glm::inverse(rotationMatrix)) * glm::mat3(
+                                                                      invScale.x, 0.0f, 0.0f,
+                                                                      0.0f, invScale.y, 0.0f,
+                                                                      0.0f, 0.0f, invScale.z);
+        }
+    };
 
     struct PointLightComponent
     {
@@ -119,7 +129,8 @@ struct TransformComponent
             m_Model = VVModel::createModelFromFile(filepath);
             path = filepath;
         }
-        void UpdateMesh(){
+        void UpdateMesh()
+        {
             m_Model.reset();
             m_Model = VVModel::createModelFromFile(path);
         }
@@ -128,9 +139,10 @@ struct TransformComponent
         std::string path;
     };
     struct CameraComponent
-    {   
-        CameraComponent()=default;
-        CameraComponent(bool is_main){
+    {
+        CameraComponent() = default;
+        CameraComponent(bool is_main)
+        {
             mainCamera = is_main;
         }
 

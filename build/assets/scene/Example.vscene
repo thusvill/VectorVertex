@@ -37,7 +37,7 @@ Entities:
       Name: Box
     TransformComponent:
       Position: [0, 0, 0]
-      Rotation: [3.1500001, 0, 0]
+      Rotation: [180, 0, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
       m_ID: 2969746152572257773
