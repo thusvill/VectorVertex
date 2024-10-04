@@ -31,6 +31,12 @@
 },
 {
   "directory": "/home/bios/CLionProjects/VectorVertex/3DEngine/build",
+  "command": "/usr/bin/c++ -DYAML_CPP_STATIC_DEFINE -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/entt -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render -g -w -g -o CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.cpp",
+  "file": "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.cpp",
+  "output": "CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o"
+},
+{
+  "directory": "/home/bios/CLionProjects/VectorVertex/3DEngine/build",
   "command": "/usr/bin/c++ -DYAML_CPP_STATIC_DEFINE -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vendor -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/entt -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core -I/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render -g -w -g -o CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o -c /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.cpp",
   "file": "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.cpp",
   "output": "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o"

@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Layer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Layer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.cpp" "CMakeFiles/VectorVertex.dir/src/Core/LayerStack.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/LayerStack.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Entity.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Scene.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o.d"

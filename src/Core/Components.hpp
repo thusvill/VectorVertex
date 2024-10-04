@@ -3,7 +3,9 @@
 #include <vv_model.hpp>
 #include <vv_camera.hpp>
 #include <glm/glm.hpp>
+#include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <vv_material.hpp>
 
 namespace VectorVertex
@@ -48,71 +50,58 @@ namespace VectorVertex
         UUID id;
     };
 
-    struct TransformComponent
+struct TransformComponent
+{
+    TransformComponent() = default;
+
+    glm::vec3 translation{0.0f};   // Translation remains a vector
+    glm::vec3 scale{1.f};          // Scale remains a vector
+    glm::vec3 rotation{0.0f};      // Store rotation as Euler angles (in radians)
+
+    // Internal quaternion for calculations
+    glm::quat rotationQuat{1.0f, 0.0f, 0.0f, 0.0f}; // Initialize to identity quaternion
+
+    // Update the quaternion when the Euler angles are set
+    void SetRotationEuler(const glm::vec3& eulerRadians)
     {
-        TransformComponent() = default;
+        rotation = eulerRadians;                    // Set the Euler angles
+        rotationQuat = glm::quat(eulerRadians);    // Convert to quaternion
+    }
 
-        glm::vec3 translation{0.0f};
-        glm::vec3 scale{1.f};
-        glm::vec3 rotation{0.0f};
-        glm::mat4 mat4()
-        {
-            const float c3 = glm::cos(rotation.z);
-            const float s3 = glm::sin(rotation.z);
-            const float c2 = glm::cos(rotation.x);
-            const float s2 = glm::sin(rotation.x);
-            const float c1 = glm::cos(rotation.y);
-            const float s1 = glm::sin(rotation.y);
-            return glm::mat4{
-                {
-                    scale.x * (c1 * c3 + s1 * s2 * s3),
-                    scale.x * (c2 * s3),
-                    scale.x * (c1 * s2 * s3 - c3 * s1),
-                    0.0f,
-                },
-                {
-                    scale.y * (c3 * s1 * s2 - c1 * s3),
-                    scale.y * (c2 * c3),
-                    scale.y * (c1 * c3 * s2 + s1 * s3),
-                    0.0f,
-                },
-                {
-                    scale.z * (c2 * s1),
-                    scale.z * (-s2),
-                    scale.z * (c1 * c2),
-                    0.0f,
-                },
-                {translation.x, translation.y, translation.z, 1.0f}};
-        }
-        glm::mat3 normalMatrix()
-        {
-            const float c3 = glm::cos(rotation.z);
-            const float s3 = glm::sin(rotation.z);
-            const float c2 = glm::cos(rotation.x);
-            const float s2 = glm::sin(rotation.x);
-            const float c1 = glm::cos(rotation.y);
-            const float s1 = glm::sin(rotation.y);
+    // Retrieve the current rotation as Euler angles (in radians)
+    glm::vec3 GetRotationEuler() const
+    {
+        return rotation;                            // Return the Euler angles directly
+    }
 
-            const glm::vec3 invScale = 1.0f / scale;
+    // Function to get the transformation matrix (with quaternion for rotation)
+    glm::mat4 mat4()
+    {
+        // Convert the quaternion to a 4x4 matrix for rotation
+        glm::mat4 rotationMatrix = glm::mat4_cast(rotationQuat);
 
-            return glm::mat3{
-                {
-                    invScale.x * (c1 * c3 + s1 * s2 * s3),
-                    invScale.x * (c2 * s3),
-                    invScale.x * (c1 * s2 * s3 - c3 * s1),
-                },
-                {
-                    invScale.y * (c3 * s1 * s2 - c1 * s3),
-                    invScale.y * (c2 * c3),
-                    invScale.y * (c1 * c3 * s2 + s1 * s3),
-                },
-                {
-                    invScale.z * (c2 * s1),
-                    invScale.z * (-s2),
-                    invScale.z * (c1 * c2),
-                }};
-        }
-    };
+        // Combine translation, rotation, and scale into a single transformation matrix
+        return glm::translate(glm::mat4(1.0f), translation) * rotationMatrix * glm::scale(glm::mat4(1.0f), scale);
+    }
+
+    // Normal matrix for lighting (uses the inverse transpose of the rotation matrix)
+    glm::mat3 normalMatrix()
+    {
+        // Convert the quaternion to a 3x3 matrix (ignores translation)
+        glm::mat3 rotationMatrix = glm::mat3_cast(rotationQuat);
+
+        // Apply scaling inverse (necessary for the normal matrix in lighting calculations)
+        const glm::vec3 invScale = 1.0f / scale;
+
+        return glm::transpose(glm::inverse(rotationMatrix)) * glm::mat3(
+            invScale.x, 0.0f, 0.0f,
+            0.0f, invScale.y, 0.0f,
+            0.0f, 0.0f, invScale.z);
+    }
+};
+
+
+
 
     struct PointLightComponent
     {

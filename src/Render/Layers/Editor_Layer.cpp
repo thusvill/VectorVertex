@@ -4,7 +4,7 @@
 #include <Scene.hpp>
 #include <ImGuizmo/ImGuizmo.h>
 #include <Utils/PlattformUtils.hpp>
-
+#include <Math/Math.hpp>
 namespace VectorVertex
 {
     EditorLayer::EditorLayer(ProjectInfo _info) : m_Info(_info), Layer("EditorLayer")
@@ -277,8 +277,10 @@ namespace VectorVertex
             ImGui::Image(sceneImageView, windowSize);
 
             {
+                m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+
                 Entity selected_entity = m_SceneHierarchyPanel.getSelectedEntity();
-                if (selected_entity)
+                if (selected_entity && m_GuizmoType != -1)
                 {
                     ImGuizmo::SetOrthographic(false);
                     ImGuizmo::SetDrawlist();
@@ -291,9 +293,52 @@ namespace VectorVertex
                     glm::mat4 cam_View = cameraC.m_Camera.GetView();
 
                     auto &tc = selected_entity.GetComponent<TransformComponent>();
-                    glm::mat4 transform = tc.mat4();
+                    // glm::mat4 transform = tc.mat4();
 
-                    ImGuizmo::Manipulate(glm::value_ptr(cam_View), glm::value_ptr(proj), ImGuizmo::OPERATION::TRANSLATE, ImGuizmo::MODE::LOCAL, glm::value_ptr(transform));
+                    glm::quat tc_rotation = glm::quat(glm::vec3(tc.rotation)); // Convert Euler angles to quaternion
+                    glm::mat4 rotationMatrix = glm::mat4(tc_rotation);
+                    glm::mat4 transform = glm::translate(glm::mat4(1.0f), tc.translation) * rotationMatrix * glm::scale(glm::mat4(1.0f), tc.scale);
+
+                    glm::vec3 original_Rotation = tc.rotation;
+
+                    ImGuizmo::Manipulate(glm::value_ptr(cam_View), glm::value_ptr(proj), (ImGuizmo::OPERATION)m_GuizmoType, ImGuizmo::MODE::LOCAL, glm::value_ptr(transform));
+                    if (ImGuizmo::IsUsing())
+                    {
+                        glm::vec3 rotation, position, scale;
+                        ImGuizmo::DecomposeMatrixToComponents(glm::value_ptr(transform), glm::value_ptr(position), glm::value_ptr(rotation), glm::value_ptr(scale));
+
+                        // Math::DecomposeTransform(transform, position, rotation, scale);
+                        if (m_GuizmoType == ImGuizmo::OPERATION::TRANSLATE)
+                        {
+                            tc.translation = position;
+                        }
+
+                        if (m_GuizmoType == ImGuizmo::OPERATION::ROTATE)
+                        {
+                            glm::vec3 delta = glm::radians(rotation) - original_Rotation;
+
+                            auto wrapAngle = [](float angle)
+                            {
+                                while (angle > glm::pi<float>())
+                                    angle -= 2.0f * glm::pi<float>();
+                                while (angle < -glm::pi<float>())
+                                    angle += 2.0f * glm::pi<float>();
+                                return angle;
+                            };
+
+                            tc.SetRotationEuler(glm::radians(rotation));
+
+                            //tc.rotation += delta;
+
+                            // tc.rotation.x = wrapAngle(tc.rotation.x);
+                            // tc.rotation.y = wrapAngle(tc.rotation.y);
+                            // tc.rotation.z = wrapAngle(tc.rotation.z);
+                        }
+                        if (m_GuizmoType == ImGuizmo::OPERATION::SCALE)
+                        {
+                            tc.scale = scale;
+                        }
+                    }
                 }
             }
 

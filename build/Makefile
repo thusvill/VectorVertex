@@ -249,6 +249,30 @@ src/Core/Log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.s
 .PHONY : src/Core/Log.cpp.s
 
+src/Core/Math/Math.o: src/Core/Math/Math.cpp.o
+.PHONY : src/Core/Math/Math.o
+
+# target to build an object file
+src/Core/Math/Math.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o
+.PHONY : src/Core/Math/Math.cpp.o
+
+src/Core/Math/Math.i: src/Core/Math/Math.cpp.i
+.PHONY : src/Core/Math/Math.i
+
+# target to preprocess a source file
+src/Core/Math/Math.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.i
+.PHONY : src/Core/Math/Math.cpp.i
+
+src/Core/Math/Math.s: src/Core/Math/Math.cpp.s
+.PHONY : src/Core/Math/Math.s
+
+# target to generate assembly for a file
+src/Core/Math/Math.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.s
+.PHONY : src/Core/Math/Math.cpp.s
+
 src/Core/Panels/SceneHierarchy.o: src/Core/Panels/SceneHierarchy.cpp.o
 .PHONY : src/Core/Panels/SceneHierarchy.o
 
@@ -1161,6 +1185,9 @@ help:
 	@echo "... src/Core/Log.o"
 	@echo "... src/Core/Log.i"
 	@echo "... src/Core/Log.s"
+	@echo "... src/Core/Math/Math.o"
+	@echo "... src/Core/Math/Math.i"
+	@echo "... src/Core/Math/Math.s"
 	@echo "... src/Core/Panels/SceneHierarchy.o"
 	@echo "... src/Core/Panels/SceneHierarchy.i"
 	@echo "... src/Core/Panels/SceneHierarchy.s"

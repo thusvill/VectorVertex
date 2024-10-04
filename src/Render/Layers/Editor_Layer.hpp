@@ -46,5 +46,6 @@ namespace VectorVertex
         float frameTime;
         bool loading_scene = false;
         ProjectInfo m_Info;
+        int m_GuizmoType=-1;
     };
 }

@@ -725,6 +725,7 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o: \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Components.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_camera.hpp \
+ /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/type_ptr.inl \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/../Render/vv_offscreen.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
