@@ -1,63 +1,40 @@
 Scene: _temp
 Entities:
-  - Entity: 4924102716732619310
+  - Entity: 13443204925586270924
     IDComponent:
-      UUID: 4924102716732619310
-      Name: Ground
+      UUID: 13443204925586270924
+      Name: Box
     TransformComponent:
-      Position: [0, 0, 0]
-      Rotation: [0, 0, 0]
-      Scale: [15, 1, 15]
+      Position: [0, -2.70000005, 0]
+      Rotation: [3.1500001, -2.5, 0]
+      Scale: [5, 5, 5]
     MaterialComponent:
-      m_ID: 8649522344152672625
+      m_ID: 2969746152572257773
       m_Name: ""
       color: [1, 1, 1, 1]
     TextureComponent:
-      m_ID: 13962666851890101714
-      m_Name: Ground
-      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png
+      m_ID: 18188789077180358914
+      m_Name: S15
+      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_white.png
     MeshComponent:
-      m_ID: 1950351198923614989
-      path: /home/bios/CLionProjects/VectorVertex/3DEngine/build/Resources/Models/quad.obj
-  - Entity: 2401656190155733396
+      m_ID: 13473374103530659548
+      path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/S15/source/S15_Nobonnet.obj
+  - Entity: 16160262544611707700
     IDComponent:
-      UUID: 2401656190155733396
-      Name: Cam2
+      UUID: 16160262544611707700
+      Name: Light
     TransformComponent:
-      Position: [18.7025013, -16.0268345, -18.6073341]
-      Rotation: [-0.585124135, 5.58645964, 0]
-      Scale: [1, 1, 1]
-    MaterialComponent:
-      m_ID: 8811153715667093227
-      m_Name: ""
-      color: [1, 1, 1, 1]
-    CameraComponent:
-      m_ProjectionType: 1
-      fov: 0.87266463
-      aspect: -0.164700001
-      near: 0.94690001
-      far: 0.27610001
-      orthoWidth: 0
-      orthoHeight: 0
-      orthoNear: 7.14662217e-44
-      orthoFar: -2.18437843e-28
-      mainCamera: true
-  - Entity: 13836413017664237886
-    IDComponent:
-      UUID: 13836413017664237886
-      Name: Light 2
-    TransformComponent:
-      Position: [0, -13.6999998, 11.8000002]
+      Position: [-5.19999981, -7.30000019, -7.0999999]
       Rotation: [0, 0, 0]
-      Scale: [1, 1, 1]
+      Scale: [0.5, 1, 1]
     MaterialComponent:
-      m_ID: 8811153715667093227
+      m_ID: 2969746152572257773
       m_Name: ""
       color: [1, 1, 1, 1]
     PointLightComponent:
-      color: [0.513274312, 0.896624565, 1]
-      light_intensity: 79.1999969
-      radius: 10
+      color: [1, 0.877045989, 0.305309713]
+      light_intensity: 22.2999992
+      radius: 14.3999996
   - Entity: 16971799226011293542
     IDComponent:
       UUID: 16971799226011293542
@@ -81,38 +58,61 @@ Entities:
       orthoNear: 0
       orthoFar: 0
       mainCamera: false
-  - Entity: 16160262544611707700
+  - Entity: 13836413017664237886
     IDComponent:
-      UUID: 16160262544611707700
-      Name: Light
+      UUID: 13836413017664237886
+      Name: Light 2
     TransformComponent:
-      Position: [-5.19999981, -7.30000019, -7.0999999]
+      Position: [0, -13.6999998, 11.8000002]
       Rotation: [0, 0, 0]
-      Scale: [0.5, 1, 1]
+      Scale: [1, 1, 1]
     MaterialComponent:
-      m_ID: 2969746152572257773
+      m_ID: 8811153715667093227
       m_Name: ""
       color: [1, 1, 1, 1]
     PointLightComponent:
-      color: [1, 0.877045989, 0.305309713]
-      light_intensity: 22.2999992
-      radius: 14.3999996
-  - Entity: 13443204925586270924
+      color: [0.513274312, 0.896624565, 1]
+      light_intensity: 79.1999969
+      radius: 10
+  - Entity: 2401656190155733396
     IDComponent:
-      UUID: 13443204925586270924
-      Name: Box
+      UUID: 2401656190155733396
+      Name: Cam2
     TransformComponent:
-      Position: [0, -2.70000005, 0]
-      Rotation: [3.1500001, -2.5, 0]
-      Scale: [5, 5, 5]
+      Position: [18.8775005, -16.0268345, -18.8164845]
+      Rotation: [-0.585124135, 5.58645964, 0]
+      Scale: [1, 1, 1]
     MaterialComponent:
-      m_ID: 2969746152572257773
+      m_ID: 8811153715667093227
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 0.87266463
+      aspect: -0.164700001
+      near: 0.94690001
+      far: 0.27610001
+      orthoWidth: 0
+      orthoHeight: 0
+      orthoNear: 7.14662217e-44
+      orthoFar: -2.18437843e-28
+      mainCamera: true
+  - Entity: 4924102716732619310
+    IDComponent:
+      UUID: 4924102716732619310
+      Name: Ground
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [15, 1, 15]
+    MaterialComponent:
+      m_ID: 8649522344152672625
       m_Name: ""
       color: [1, 1, 1, 1]
     TextureComponent:
-      m_ID: 18188789077180358914
-      m_Name: default
-      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_white.png
+      m_ID: 13962666851890101714
+      m_Name: Ground
+      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png
     MeshComponent:
-      m_ID: 13473374103530659548
-      path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/S15/source/S15_Nobonnet.obj
+      m_ID: 1950351198923614989
+      path: /home/bios/CLionProjects/VectorVertex/3DEngine/build/Resources/Models/quad.obj

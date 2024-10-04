@@ -286,10 +286,12 @@ namespace VectorVertex
 
     void EditorLayer::NewScene()
     {
+        loading_scene = true;
         m_SceneHierarchyPanel.ResetSelectedEntity();
         m_ActiveScene = CreateRef<Scene>("New Scene");
         m_ActiveScene->Init();
         m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+        loading_scene = false;
     }
 
     void EditorLayer::SaveScene()
@@ -309,20 +311,23 @@ namespace VectorVertex
     {
         if (path.empty())
         {
-            path = FileDialog::OpenFile("Open Scene", {"Scene | *.vscene"}, "assets/scene");
+            path = FileDialog::OpenFile("Open Scene", {"Scene | *.vscene"}, "assets/scene/");
         }
         if (!path.empty())
         {
             loading_scene = true;
             m_SceneHierarchyPanel.ResetSelectedEntity();
             m_ActiveScene = CreateRef<Scene>("_temp");
-            m_ActiveScene->Init();
+            //m_ActiveScene->Init();
             m_SceneHierarchyPanel.SetContext(m_ActiveScene);
             SceneSerializer serializer(m_ActiveScene);
             serializer.Deserialize(path);
+            m_ActiveScene->Init();
+            VVTextureLibrary::UpdateDescriptors();
             std::this_thread::sleep_for(std::chrono::milliseconds(2));
             loading_scene = false;
             is_viewport_resized = true;
+            m_Info.path = path;
         }
     }
 
