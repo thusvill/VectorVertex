@@ -25,6 +25,9 @@ namespace VectorVertex
         void ResetSelectedEntity(){
             m_SelectedEntity = {};
         }
+        Entity getSelectedEntity(){
+            return m_SelectedEntity;
+        }
         bool requestUpdateTextures;
 
     private:

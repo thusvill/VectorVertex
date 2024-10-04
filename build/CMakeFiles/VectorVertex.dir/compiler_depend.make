@@ -8471,6 +8471,7 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o: /home/bios/CLi
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_point_light_system.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/VulkanRendererSystem.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/ImGuizmo/ImGuizmo.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \
@@ -9324,6 +9325,7 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Model_Loaders/fbx/include/fbxsdk/utils/fbxusernotification.h \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/ImGuizmo/ImGuizmo.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imconfig.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/imgui/imgui_impl_glfw.h \

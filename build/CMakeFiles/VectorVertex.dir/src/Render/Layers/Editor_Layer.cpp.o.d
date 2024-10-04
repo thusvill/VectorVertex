@@ -750,4 +750,5 @@ CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o: \
  /usr/include/glm/ext/vector_uint1.hpp \
  /usr/include/glm/ext/vector_uint1_sized.hpp \
  /usr/include/glm/gtc/type_ptr.inl \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vendor/ImGuizmo/ImGuizmo.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Utils/PlattformUtils.hpp

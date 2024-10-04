@@ -2,6 +2,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <Entity.hpp>
 #include <Scene.hpp>
+#include <ImGuizmo/ImGuizmo.h>
 #include <Utils/PlattformUtils.hpp>
 
 namespace VectorVertex
@@ -275,6 +276,27 @@ namespace VectorVertex
             // Display the offscreen image
             ImGui::Image(sceneImageView, windowSize);
 
+            {
+                Entity selected_entity = m_SceneHierarchyPanel.getSelectedEntity();
+                if (selected_entity)
+                {
+                    ImGuizmo::SetOrthographic(false);
+                    ImGuizmo::SetDrawlist();
+                    ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y, Viewport_Extent.width, Viewport_Extent.height);
+                    auto camera = m_ActiveScene->GetMainCamera();
+                    const auto &cameraC = camera->GetComponent<CameraComponent>();
+                    glm::mat4 proj = cameraC.m_Camera.GetProjection();
+                    glm::mat4 flipY = glm::scale(glm::mat4(1.0f), glm::vec3(1, -1, 1));
+                    proj = flipY * proj;
+                    glm::mat4 cam_View = cameraC.m_Camera.GetView();
+
+                    auto &tc = selected_entity.GetComponent<TransformComponent>();
+                    glm::mat4 transform = tc.mat4();
+
+                    ImGuizmo::Manipulate(glm::value_ptr(cam_View), glm::value_ptr(proj), ImGuizmo::OPERATION::TRANSLATE, ImGuizmo::MODE::LOCAL, glm::value_ptr(transform));
+                }
+            }
+
             ImGui::End();
             ImGui::PopStyleVar();
         }
@@ -318,7 +340,7 @@ namespace VectorVertex
             loading_scene = true;
             m_SceneHierarchyPanel.ResetSelectedEntity();
             m_ActiveScene = CreateRef<Scene>("_temp");
-            //m_ActiveScene->Init();
+            // m_ActiveScene->Init();
             m_SceneHierarchyPanel.SetContext(m_ActiveScene);
             SceneSerializer serializer(m_ActiveScene);
             serializer.Deserialize(path);

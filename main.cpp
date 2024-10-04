@@ -10,6 +10,7 @@ int main() {
   info.width = 1600;
   info.height = 900;
   info.title = "VectorVertex";
+  info.path = "/home/bios/CLionProjects/VectorVertex/3DEngine/build/assets/scene/Example.vscene";
   VectorVertex::Application app{info};
   try {
     app.run();

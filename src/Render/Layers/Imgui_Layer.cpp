@@ -1,5 +1,6 @@
 #include "Imgui_Layer.hpp"
 #include <iostream>
+#include <ImGuizmo/ImGuizmo.h>
 
 namespace VectorVertex
 {
@@ -112,6 +113,7 @@ namespace VectorVertex
         ImGui_ImplVulkan_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
+        ImGuizmo::BeginFrame();
 
         
     }
