@@ -405,8 +405,8 @@ namespace VectorVertex
         if (!path.empty())
         {
             loading_scene = true;
-            VVTextureLibrary::ClearLibrary();
             m_SceneHierarchyPanel.ResetSelectedEntity();
+            VVTextureLibrary::ClearLibrary();
             m_ActiveScene = CreateRef<Scene>("_temp");
             // m_ActiveScene->Init();
             m_SceneHierarchyPanel.SetContext(m_ActiveScene);
@@ -414,7 +414,7 @@ namespace VectorVertex
             serializer.Deserialize(path);
             m_ActiveScene->Init();
             VVTextureLibrary::UpdateDescriptors();
-            std::this_thread::sleep_for(std::chrono::milliseconds(2));
+            //std::this_thread::sleep_for(std::chrono::milliseconds(2));
             loading_scene = false;
             is_viewport_resized = true;
             m_Info.path = path;

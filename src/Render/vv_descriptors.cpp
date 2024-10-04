@@ -114,6 +114,7 @@ namespace VectorVertex
 
     VVDescriptorPool::~VVDescriptorPool()
     {
+        
         vkDestroyDescriptorPool(vvDevice.device(), descriptorPool, nullptr);
     }
 

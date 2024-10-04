@@ -9,7 +9,10 @@ namespace VectorVertex
     public:
         VulkanRendererSystem() = default;
         void Create();
-        ~VulkanRendererSystem() {}
+        ~VulkanRendererSystem() {
+            m_global_pool->freeDescriptors(m_global_descriptor_sets);
+            
+        }
 
         void OnUpdate(float frameTime, Entity *m_SceneCamera);
         void OnImguiViewport();

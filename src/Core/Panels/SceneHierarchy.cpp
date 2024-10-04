@@ -337,16 +337,16 @@ namespace VectorVertex
                                             DrawTextfield("Name ##TextureName", texture.data.m_Name, texture.data.m_ID);
                                             ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
                                             float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-                                            ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
-                                            if(ImGui::Button("New ##NewTexture")){
+                                            // ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
+                                            // if(ImGui::Button("New ##NewTexture")){
                                                 
-                                                UUID new_id = UUID();
-                                                RUN_AFTER_FRAME(VVTextureLibrary::CreateWithUUID(new_id,"New Texture", "Resources/Textures/default.png"));                                            
-                                                RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
-                                                VVTextureLibrary::DeleteTexture(component.m_ID);
-                                                component.m_ID = new_id;
+                                            //     RUN_AFTER_FRAME(VVTextureLibrary::DeleteTexture(component.m_ID));
+                                            //     UUID new_id = VVTextureLibrary::GetDefaultTexture();
+                                            //     component.m_ID = new_id;
+                                            //     //VVTextureLibrary::UpdateDescriptors();
                                                 
-                                            }
+                                                
+                                            // }
                                             if (DrawTextfield("##Path", texture.data.m_path, texture.data.m_ID))
                                             {
                                                 if (ImGui::Button("Load"))

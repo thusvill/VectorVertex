@@ -195,8 +195,7 @@ namespace VectorVertex
         return Create("default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
     }
     void VVTextureLibrary::DeleteTexture(UUID ID)
-    {
-
+    {   
             m_Textures.erase(ID);
         
     }
