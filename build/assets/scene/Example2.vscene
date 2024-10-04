@@ -5,8 +5,8 @@ Entities:
       UUID: 13443204925586270924
       Name: Box
     TransformComponent:
-      Position: [0, -2.70000005, 0]
-      Rotation: [3.1500001, -2.5, 0]
+      Position: [0.0241631232, -2.70000005, 0.0423633605]
+      Rotation: [5.00895931e-06, -29.6999893, -179.999893]
       Scale: [5, 5, 5]
     MaterialComponent:
       m_ID: 2969746152572257773

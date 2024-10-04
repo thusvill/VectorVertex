@@ -405,6 +405,7 @@ namespace VectorVertex
         if (!path.empty())
         {
             loading_scene = true;
+            VVTextureLibrary::ClearLibrary();
             m_SceneHierarchyPanel.ResetSelectedEntity();
             m_ActiveScene = CreateRef<Scene>("_temp");
             // m_ActiveScene->Init();

@@ -2,6 +2,7 @@
 #include <Log.h>
 #include <stdexcept>
 #include <Assert.h>
+#include <vv_texture.hpp>
 namespace VectorVertex
 {
     VVRenderer::VVRenderer(VVWindow &window, VVDevice &device)
@@ -68,6 +69,7 @@ namespace VectorVertex
         // assert(!isFrameStarted && "Can't call EndFrame while frame is in progress!");
         VV_CORE_ASSERT(lveSwapChain != nullptr, "lveSwapChain is nullptr");
 
+        
         auto result = lveSwapChain->acquireNextImage(&currentImageIndex);
 
         if (result == VK_ERROR_OUT_OF_DATE_KHR)

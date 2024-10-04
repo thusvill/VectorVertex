@@ -21334,9 +21334,13 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o: /home/bios/CLionProjec
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vv_uuid.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_descriptors.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_device.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_image.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.hpp \
+  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.hpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
@@ -21413,6 +21417,8 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/bits/predefined_ops.h \
   /usr/include/c++/13/bits/ptr_traits.h \
   /usr/include/c++/13/bits/quoted_string.h \
+  /usr/include/c++/13/bits/random.h \
+  /usr/include/c++/13/bits/random.tcc \
   /usr/include/c++/13/bits/range_access.h \
   /usr/include/c++/13/bits/refwrap.h \
   /usr/include/c++/13/bits/requires_hosted.h \
@@ -21434,6 +21440,7 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
@@ -21494,11 +21501,14 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
+  /usr/include/c++/13/numeric \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/execution_defs.h \
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/glue_memory_defs.h \
+  /usr/include/c++/13/pstl/glue_numeric_defs.h \
   /usr/include/c++/13/pstl/pstl_config.h \
+  /usr/include/c++/13/random \
   /usr/include/c++/13/ratio \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
@@ -21704,6 +21714,7 @@ CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o: /home/bios/CLionProjec
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \

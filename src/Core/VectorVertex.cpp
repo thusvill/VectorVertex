@@ -48,6 +48,8 @@ namespace VectorVertex
             float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
+            VVTextureLibrary::UpdateDescriptors();
+
             glfwPollEvents();
 
             if (auto commandBuffer = renderer.BeginFrame())
