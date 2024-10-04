@@ -61,6 +61,7 @@ namespace VectorVertex
             auto &cc = m_SceneCamera->GetComponent<CameraComponent>();
             std::unordered_map<int, VkDescriptorSet> descriptor_sets;
             descriptor_sets[0] = m_global_descriptor_sets[frameInfo.frame_index];
+            
 
             std::vector<std::reference_wrapper<VVDescriptorPool>> pools = {*m_global_pool};
 

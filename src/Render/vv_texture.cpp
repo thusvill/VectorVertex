@@ -29,6 +29,11 @@ namespace VectorVertex
         {
             vkDestroyImageView(Application::Get().GetDevice().device(), data.m_textureImageView, nullptr);
         }
+        if(data.m_descriptorSet != VK_NULL_HANDLE){
+            std::vector<VkDescriptorSet> descriptorSetsToFree = {data.m_descriptorSet};
+
+            VVTextureLibrary::texture_pool->freeDescriptors(descriptorSetsToFree);
+        }
         delete data.m_textureImage;
     }
     void VVTexture::createTextureImage(const std::string &filePath)
@@ -199,7 +204,7 @@ namespace VectorVertex
     {
         if (!VVSwapChain::isWaitingForFence)
         {
-            VV_CORE_TRACE("Fence Done!");
+            //VV_CORE_TRACE("Fence Done!");
             for (auto &kv : m_Textures)
             {
                 auto imageInfo = VVTextureLibrary::GetTexture(kv.first).getDescriptorImageInfo();
