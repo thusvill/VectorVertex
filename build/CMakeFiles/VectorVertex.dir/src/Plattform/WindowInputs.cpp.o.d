@@ -736,4 +736,5 @@ CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imconfig.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/GraphicsContext.hpp

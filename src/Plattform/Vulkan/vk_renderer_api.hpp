@@ -26,6 +26,10 @@ namespace VectorVertex
 
         virtual void DrawMesh(MeshData data) override;
 
+        virtual void WaitForDeviceIdle() override{
+            vkDeviceWaitIdle(VKDevice::Get().device());
+        }
+
     private:
         void
         CreateCommandBuffers();

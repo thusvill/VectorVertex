@@ -42,9 +42,14 @@ namespace VectorVertex
         void run();
         static Application &Get() { return *s_Instance; }
 
+        GLFWwindow* GetNativeWindow() {
+            return reinterpret_cast<GLFWwindow*>(m_Window->GetNativeWindow());
+        }
+
 
     private:
-    
+
+        Scope<Window> m_Window;
         static Application *s_Instance;
         bool m_Running = true;
         

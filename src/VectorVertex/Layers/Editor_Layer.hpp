@@ -2,7 +2,7 @@
 #include <Application.hpp>
 #include <Layer.h>
 #include "Imgui_Layer.hpp"
-#include <vk_material.hpp>
+#include <Material.hpp>
 #include <SceneHierarchy.hpp>
 #include <Entity.hpp>
 #include <SceneSerializer.hpp>

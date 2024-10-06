@@ -223,6 +223,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_texture.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_device.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_window.hpp \
  /usr/include/GLFW/glfw3.h /usr/include/vulkan/vulkan.h \
  /usr/include/vulkan/vk_platform.h /usr/include/vulkan/vulkan_core.h \
@@ -239,8 +241,7 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_device.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_image.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/glm/detail/setup.hpp \
@@ -495,10 +496,15 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_swap_chain.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_game_object.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/UUID.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Components.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_model.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Flags.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/math.h \
@@ -717,27 +723,23 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_material.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_texture.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_image.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_descriptors.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/UUID.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Components.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_camera.hpp \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/type_ptr.inl \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_offscreen.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imconfig.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui_impl_vulkan.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Material.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_frame_info.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Window.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/Event.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imconfig.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/GraphicsContext.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Layers/Imgui_Layer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_pipeline.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_shader.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui_impl_vulkan.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui_impl_glfw.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Panels/SceneHierarchy.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Scene/Scene.hpp \
@@ -750,12 +752,14 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_offscreen.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/Render_Systems/vk_render_system.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/VulkanRendererSystem.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Scene/Entity.hpp \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Scene/SceneSerializer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/FrameBuffer.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/ImGuizmo/ImGuizmo.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Utils/PlattformUtils.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.hpp

@@ -1,15 +1,16 @@
 #pragma once
 #include <Base.h>
 #include <RendererAPI.hpp>
-
+#include <Window.hpp>
 namespace VectorVertex
 {
     class RenderCommand
     {
 
     public:
-        static void Init()
+        static void Init(Window *window)
         {
+            s_RendererAPI = RendererAPI::Create(window);
 
             s_RendererAPI->Init();
         }
@@ -31,8 +32,13 @@ namespace VectorVertex
             s_RendererAPI->EndRenderPass();
         }
 
-        static void DrawMesh(MeshData data){
+        static void DrawMesh(MeshData data)
+        {
             s_RendererAPI->DrawMesh(data);
+        }
+
+        static void WaitForDeviceIdl(){
+            s_RendererAPI->WaitForDeviceIdle();
         }
 
     private:

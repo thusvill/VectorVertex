@@ -2,7 +2,8 @@
 #include <vvpch.hpp>
 #include <Base.h>
 #include <glm/glm.hpp>
-
+#include <Buffer.hpp>
+#include <Window.hpp>
 namespace VectorVertex
 {
     struct MeshData
@@ -32,6 +33,8 @@ namespace VectorVertex
         virtual void EndRenderPass();
 
         virtual void DrawMesh(MeshData data);
+
+        virtual void WaitForDeviceIdle();
 
         static API GetAPI()
         {

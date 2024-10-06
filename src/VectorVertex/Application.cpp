@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <Renderer.hpp>
+#include <RenderCommand.hpp>
 
 namespace VectorVertex
 {
@@ -12,8 +13,18 @@ namespace VectorVertex
 
         Application::Application(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
     {
+
         VV_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
+
+        WindowProps props;
+        props.Title = info.title;
+        props.Width = info.width;
+        props.Height = info.height;
+
+        m_Window = Window::Create(props);
+
+        RenderCommand::Init(m_Window.get());
 
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
@@ -36,7 +47,7 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        while (m_Running && !Window::shouldClose())
+        while (m_Running && !m_Window->shouldClose())
         {
             layers.UpdateAll();
 
@@ -48,19 +59,20 @@ namespace VectorVertex
 
             glfwPollEvents();
 
-            Renderer::StartScene();
+            RenderCommand::BeginFrame();
 
-            editor_layer->OnRender();
+            // editor_layer->OnRender();
 
-            Renderer::BeginFrame();
-            editor_layer->OnImGuiRender();
-            Renderer::EndFrame();
+            RenderCommand::BeginRenderPass();
+            // editor_layer->OnImGuiRender();
+            RenderCommand::EndRenderPass();
 
-            Renderer::EndScene();
+            RenderCommand::EndFrame();
+
+            RenderCommand::WaitForDeviceIdl();
             
         }
 
-        Renderer::WaitForIdle();
     }
 
 } // namespace VectorVertex

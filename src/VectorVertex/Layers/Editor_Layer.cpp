@@ -26,7 +26,7 @@ namespace VectorVertex
         imguiConfig.graphicsQueue = VKDevice::Get().graphicsQueue();
         imguiConfig.imageCount = static_cast<uint32_t>(VKRenderer::Get().GetSwapchainImageCount());
 
-        imgui_layer.InitializeImgui(imguiConfig, reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()));
+        imgui_layer.InitializeImgui(imguiConfig, Application::Get().GetNativeWindow());
 
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
@@ -277,21 +277,21 @@ namespace VectorVertex
             ImGui::Image(sceneImageView, windowSize);
 
             {
-                if (glfwGetMouseButton(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
+                if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
                 {
-                    if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_Q) == GLFW_PRESS)
+                    if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_Q) == GLFW_PRESS)
                     {
                         m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
                     }
-                    else if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_W) == GLFW_PRESS)
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_W) == GLFW_PRESS)
                     {
                         m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
                     }
-                    else if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_E) == GLFW_PRESS)
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_E) == GLFW_PRESS)
                     {
                         m_GuizmoType = ImGuizmo::OPERATION::SCALE;
                     }
-                    else if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
                     {
                         m_GuizmoType = -1;
                     }
@@ -319,7 +319,7 @@ namespace VectorVertex
 
                     glm::vec3 original_Rotation = tc.rotation;
 
-                    bool snap = glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_LEFT_CONTROL) || glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_RIGHT_CONTROL);
+                    bool snap = glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_LEFT_CONTROL) || glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_RIGHT_CONTROL);
                     float snapValue = 0.5f;
                     if (m_GuizmoType == ImGuizmo::OPERATION::ROTATE)
                     {

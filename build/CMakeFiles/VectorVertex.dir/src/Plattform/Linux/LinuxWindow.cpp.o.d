@@ -500,4 +500,6 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/KeyEvent.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/KeyCodes.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/RendererAPI.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/RendererAPI.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Flags.hpp
