@@ -17,12 +17,16 @@ include_directories(
     "src/Render/Model_Loaders"
     "src/Render/Render_Systems"
     "src/Render/vendor"
+    "src/Core"
     "src/Core/vendor"
     "src/Core/Panels"
     "src/Core/Scene"
     "src/Render/Layers"
     "src/Render/vendor/imgui"
     "src/vendor/entt"
+    "src/Plattform"
+    "src/VectorVertex/"
+    "src/VectorVertex/Events"
     ${FBX_SDK_DIR}/include
 )
 
@@ -40,12 +44,19 @@ file(GLOB_RECURSE SOURCES
     "src/Core/Scene/**.hpp" 
     "src/Core/Panels/**.cpp" 
     "src/Core/Panels/**.hpp"  
-    "src/Core/**.cpp" 
+    "src/Plattform/**.cpp" 
+    "src/Plattform/**.hpp" 
+    "src/Core/**.cpp"
+    "src/Core/**.h" 
     "src/Render/Layers/*.cpp" 
     "src/Render/Layers/Editor_Layer.cpp" 
     "src/Render/Layers/Editor_Layer.hpp" 
     "src/Render/Layers/Imgui_Layer.cpp" 
     "src/Render/Layers/Imgui_Layer.hpp"
+    "src/VectorVertex/**.cpp"
+    "src/VectorVertex/**.hpp"
+    "src/VectorVertex/Events/**.cpp"
+    "src/VectorVertex/Events/**.hpp"
 )
 
 # Add executable

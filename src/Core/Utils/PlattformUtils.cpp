@@ -1,8 +1,7 @@
 #include "PlattformUtils.hpp"
-#include <iostream>
+#include <Base.h>
 namespace VectorVertex
 {
-
 
     std::string FileDialog::ExecuteZenity(const std::string &command)
     {
@@ -47,6 +46,7 @@ namespace VectorVertex
 
     std::string FileDialog::OpenFile(const std::string &title, const std::vector<std::string> &filters, const std::string &defaultPath)
     {
+#if VV_PLATTFORM == LINUX
         std::string command = "zenity --file-selection --title=\"" + title + "\"";
         if (!defaultPath.empty())
         {
@@ -61,10 +61,14 @@ namespace VectorVertex
             }
         }
         return ExecuteZenity(command);
+#elif
+        return ""
+#endif
     }
 
     std::string FileDialog::SaveFile(const std::string &title, const std::vector<std::string> &filters, const std::string &defaultPath)
     {
+#if VV_PLATTFORM == LINUX
         std::string command = "zenity --file-selection --save --title=\"" + title + "\"";
         if (!defaultPath.empty())
         {
@@ -79,5 +83,8 @@ namespace VectorVertex
             }
         }
         return ExecuteZenity(command);
+#elif
+        return ""
+#endif
     }
 }

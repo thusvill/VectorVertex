@@ -1,9 +1,7 @@
 #pragma once
+#include <vvpch.hpp>
 #include "vv_device.hpp"
 #include "vv_shader.hpp"
-#include <string>
-#include <cassert>
-#include <vector>
 
 namespace VectorVertex
 {

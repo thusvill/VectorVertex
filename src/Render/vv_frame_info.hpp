@@ -1,12 +1,10 @@
 #pragma once
-
+#include <vvpch.hpp>
 #include "vv_camera.hpp"
 #include "vv_game_object.hpp"
 #include "vv_descriptors.hpp"
 #include "vv_renderer.hpp"
 #include <imgui.h>
-#include <functional>
-#include <vector>
 #include <vulkan/vulkan.h>
 //#include <Entity.hpp>
 

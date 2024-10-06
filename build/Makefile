@@ -297,6 +297,30 @@ src/Core/Panels/SceneHierarchy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.s
 .PHONY : src/Core/Panels/SceneHierarchy.cpp.s
 
+src/Core/Scene/EditorCamera.o: src/Core/Scene/EditorCamera.cpp.o
+.PHONY : src/Core/Scene/EditorCamera.o
+
+# target to build an object file
+src/Core/Scene/EditorCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.o
+.PHONY : src/Core/Scene/EditorCamera.cpp.o
+
+src/Core/Scene/EditorCamera.i: src/Core/Scene/EditorCamera.cpp.i
+.PHONY : src/Core/Scene/EditorCamera.i
+
+# target to preprocess a source file
+src/Core/Scene/EditorCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.i
+.PHONY : src/Core/Scene/EditorCamera.cpp.i
+
+src/Core/Scene/EditorCamera.s: src/Core/Scene/EditorCamera.cpp.s
+.PHONY : src/Core/Scene/EditorCamera.s
+
+# target to generate assembly for a file
+src/Core/Scene/EditorCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.s
+.PHONY : src/Core/Scene/EditorCamera.cpp.s
+
 src/Core/Scene/Entity.o: src/Core/Scene/Entity.cpp.o
 .PHONY : src/Core/Scene/Entity.o
 
@@ -440,6 +464,30 @@ src/Core/vv_uuid.s: src/Core/vv_uuid.cpp.s
 src/Core/vv_uuid.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.s
 .PHONY : src/Core/vv_uuid.cpp.s
+
+src/Plattform/WindowInputs.o: src/Plattform/WindowInputs.cpp.o
+.PHONY : src/Plattform/WindowInputs.o
+
+# target to build an object file
+src/Plattform/WindowInputs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.o
+.PHONY : src/Plattform/WindowInputs.cpp.o
+
+src/Plattform/WindowInputs.i: src/Plattform/WindowInputs.cpp.i
+.PHONY : src/Plattform/WindowInputs.i
+
+# target to preprocess a source file
+src/Plattform/WindowInputs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.i
+.PHONY : src/Plattform/WindowInputs.cpp.i
+
+src/Plattform/WindowInputs.s: src/Plattform/WindowInputs.cpp.s
+.PHONY : src/Plattform/WindowInputs.s
+
+# target to generate assembly for a file
+src/Plattform/WindowInputs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.s
+.PHONY : src/Plattform/WindowInputs.cpp.s
 
 src/Render/Layers/Editor_Layer.o: src/Render/Layers/Editor_Layer.cpp.o
 .PHONY : src/Render/Layers/Editor_Layer.o
@@ -1161,6 +1209,30 @@ src/Render/vv_window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.s
 .PHONY : src/Render/vv_window.cpp.s
 
+src/VectorVertex/vvpch.o: src/VectorVertex/vvpch.cpp.o
+.PHONY : src/VectorVertex/vvpch.o
+
+# target to build an object file
+src/VectorVertex/vvpch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.o
+.PHONY : src/VectorVertex/vvpch.cpp.o
+
+src/VectorVertex/vvpch.i: src/VectorVertex/vvpch.cpp.i
+.PHONY : src/VectorVertex/vvpch.i
+
+# target to preprocess a source file
+src/VectorVertex/vvpch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.i
+.PHONY : src/VectorVertex/vvpch.cpp.i
+
+src/VectorVertex/vvpch.s: src/VectorVertex/vvpch.cpp.s
+.PHONY : src/VectorVertex/vvpch.s
+
+# target to generate assembly for a file
+src/VectorVertex/vvpch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.s
+.PHONY : src/VectorVertex/vvpch.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1191,6 +1263,9 @@ help:
 	@echo "... src/Core/Panels/SceneHierarchy.o"
 	@echo "... src/Core/Panels/SceneHierarchy.i"
 	@echo "... src/Core/Panels/SceneHierarchy.s"
+	@echo "... src/Core/Scene/EditorCamera.o"
+	@echo "... src/Core/Scene/EditorCamera.i"
+	@echo "... src/Core/Scene/EditorCamera.s"
 	@echo "... src/Core/Scene/Entity.o"
 	@echo "... src/Core/Scene/Entity.i"
 	@echo "... src/Core/Scene/Entity.s"
@@ -1209,6 +1284,9 @@ help:
 	@echo "... src/Core/vv_uuid.o"
 	@echo "... src/Core/vv_uuid.i"
 	@echo "... src/Core/vv_uuid.s"
+	@echo "... src/Plattform/WindowInputs.o"
+	@echo "... src/Plattform/WindowInputs.i"
+	@echo "... src/Plattform/WindowInputs.s"
 	@echo "... src/Render/Layers/Editor_Layer.o"
 	@echo "... src/Render/Layers/Editor_Layer.i"
 	@echo "... src/Render/Layers/Editor_Layer.s"
@@ -1299,6 +1377,9 @@ help:
 	@echo "... src/Render/vv_window.o"
 	@echo "... src/Render/vv_window.i"
 	@echo "... src/Render/vv_window.s"
+	@echo "... src/VectorVertex/vvpch.o"
+	@echo "... src/VectorVertex/vvpch.i"
+	@echo "... src/VectorVertex/vvpch.s"
 .PHONY : help
 
 

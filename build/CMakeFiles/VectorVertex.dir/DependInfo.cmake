@@ -15,12 +15,14 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Panels/SceneHierarchy.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/EditorCamera.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Entity.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/Scene.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Scene/SceneSerializer.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Utils/PlattformUtils.cpp" "CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/VectorVertex.cpp" "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vv_uuid.cpp" "CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/WindowInputs.cpp" "CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Editor_Layer.cpp" "CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Layers/Imgui_Layer.cpp" "CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Render_Systems/vv_point_light_system.cpp" "CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o.d"
@@ -51,6 +53,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_swap_chain.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_texture.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.o.d"
   "/home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/vv_window.cpp" "CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o.d"
+  "/home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/vvpch.cpp" "CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.o" "gcc" "CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

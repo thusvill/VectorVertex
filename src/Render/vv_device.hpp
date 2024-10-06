@@ -2,9 +2,7 @@
 
 #include "vv_window.hpp"
 
-// std lib headers
-#include <string>
-#include <vector>
+#include <vvpch.hpp>
 
 namespace VectorVertex
 {

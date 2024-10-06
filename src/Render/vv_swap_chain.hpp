@@ -1,14 +1,9 @@
 #pragma once
-
+#include <vvpch.hpp>
 #include "vv_device.hpp"
 
 // vulkan headers
 #include <vulkan/vulkan.h>
-
-// std lib headers
-#include <memory>
-#include <string>
-#include <vector>
 
 namespace VectorVertex
 {

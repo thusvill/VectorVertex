@@ -10,8 +10,10 @@ namespace VectorVertex
         VulkanRendererSystem() = default;
         void Create();
         ~VulkanRendererSystem() {
+            if(!m_global_descriptor_sets.empty()){
             m_global_pool->freeDescriptors(m_global_descriptor_sets);
-            
+            }
+
         }
 
         void OnUpdate(float frameTime, Entity *m_SceneCamera);

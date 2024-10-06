@@ -1,13 +1,9 @@
 #pragma once
-
+#include <vvpch.hpp>
+#include <Log.h>
 #include "vv_window.hpp"
 #include "vv_device.hpp"
 #include "vv_swap_chain.hpp"
-
-#include <memory>
-#include <vector>
-#include <array>
-#include <cassert>
 
 namespace VectorVertex
 {
@@ -33,12 +29,12 @@ namespace VectorVertex
         bool IsFrameInProgress() { return isFrameStarted; }
         VkCommandBuffer GetCurrentCommandBuffer() const
         {
-            assert(isFrameStarted && "Cannot get command buffer when frame not in progress");
+            VV_CORE_ASSERT(isFrameStarted , "Cannot get command buffer when frame not in progress");
             return commandBuffers[currentFrameIndex];
         }
         int GetFrameIndex() const
         {
-            assert(isFrameStarted && "Cannot get frame index when frame not in progress");
+            VV_CORE_ASSERT(isFrameStarted , "Cannot get frame index when frame not in progress");
             return currentFrameIndex;
         }
         VkCommandBuffer

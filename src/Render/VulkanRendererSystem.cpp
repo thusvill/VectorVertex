@@ -97,12 +97,7 @@ namespace VectorVertex
         frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
         currentTime = newTime;
 
-        if (m_SceneCamera == nullptr)
-        {
-            return;
-        }
-
-        if (!m_SceneCamera->HasComponent<CameraComponent>())
+        if (m_SceneCamera == nullptr || !m_SceneCamera->HasComponent<CameraComponent>())
         {
             return;
         }

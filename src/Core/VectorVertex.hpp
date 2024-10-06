@@ -1,5 +1,5 @@
 #pragma once
-
+#include <vvpch.hpp>
 #include "../Render/vv_window.hpp"
 #include "../Render/vv_device.hpp"
 #include "../Render/vv_renderer.hpp"
@@ -18,11 +18,7 @@
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
-
-#include <memory>
-#include <vector>
-#include <chrono>
-#include <array>
+#include <ApplicationEvent.hpp>
 
 namespace VectorVertex
 {

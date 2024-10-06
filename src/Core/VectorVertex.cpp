@@ -29,6 +29,8 @@ namespace VectorVertex
         layers.PushLayer(editor_layer);
         editor_layer->SetupImgui();
         VV_CORE_WARN("Initialized!");
+        WindowResizeEvent e(info.width, info.height);
+        VV_TRACE(e.ToString());
     }
 
     Application::~Application()

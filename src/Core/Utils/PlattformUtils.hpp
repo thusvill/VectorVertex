@@ -2,13 +2,7 @@
 
 #ifndef FILE_DIALOG_H
 #define FILE_DIALOG_H
-
-#include <string>
-#include <array>
-#include <memory>
-#include <stdexcept>
-#include <vector>
-
+#include <vvpch.hpp>
 namespace VectorVertex
 {
     class FileDialog

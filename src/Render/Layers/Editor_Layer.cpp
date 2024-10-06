@@ -214,7 +214,7 @@ namespace VectorVertex
             ImGuiIO &io = ImGui::GetIO();
             ImGuiStyle &style = ImGui::GetStyle();
             float minwdth = style.WindowMinSize.x;
-            style.WindowMinSize.x = 370.0f;
+            style.WindowMinSize.x = 330.0f;
             if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
             {
                 ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
@@ -377,9 +377,15 @@ namespace VectorVertex
     {
         loading_scene = true;
         m_SceneHierarchyPanel.ResetSelectedEntity();
+        VVTextureLibrary::ClearLibrary();
         m_ActiveScene = CreateRef<Scene>("New Scene");
-        m_ActiveScene->Init();
         m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+        m_ActiveScene->Init();
+        auto new_Cam = m_ActiveScene->CreateEntity("Camera");
+        new_Cam.AddComponent<CameraComponent>();
+        m_ActiveScene->SetMainCamera(&new_Cam);
+        is_viewport_resized = true;
+        
         loading_scene = false;
     }
 

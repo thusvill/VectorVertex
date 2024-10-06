@@ -1,12 +1,9 @@
 #pragma once
+#include <vvpch.hpp>
 #include "vv_swap_chain.hpp"
 #include "Log.h"
 #include <imgui.h>
 #include <imgui_impl_vulkan.h>
-#include <memory>
-#include <vector>
-#include <array>
-#include <cassert>
 
 namespace VectorVertex
 {
