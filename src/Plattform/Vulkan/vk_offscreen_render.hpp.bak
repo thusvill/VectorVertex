@@ -1,0 +1,69 @@
+#pragma once
+#include <vulkan/vulkan.h>
+#include <Log.h>
+#include <vk_device.hpp>
+#include <vk_frame_info.hpp>
+#include <vk_swap_chain.hpp>
+
+namespace VectorVertex
+{
+    class OffscreenRender
+    {
+    public:
+        OffscreenRender(VKDevice* vk_device, VkExtent2D extent, VkCommandPool commandPool, VkQueue graphicsQueue);
+        ~OffscreenRender();
+
+        VkCommandBuffer startFrame();
+        void endFrame();
+        int GetFrameIndex() const
+        {
+            assert(isFrameStarted && "Cannot get frame index when frame not in progress");
+            return currentFrameIndex;
+        }
+        VkCommandBuffer getCommandBuffer() const { return commandBuffer; }
+        VkDescriptorSet getImGuiDescriptorSet() const;
+
+        void ResizeCallback(VkExtent2D newExtent, VKDevice *vk_device);
+
+        VkRenderPass getRenderPass() { return offscreenRenderPass; }
+        VkDescriptorSetLayout getDescriptorLayout() { return descriptorSetLayout; }
+
+    private:
+        void createOffscreenResources(VKDevice *vk_device);
+        void createFramebuffer(VKDevice *vk_device);
+        void createRenderPass(VKDevice *vk_device);
+        void createCommandBuffer();
+        void createDescriptorSetLayout();
+        void createDescriptorPool();
+        void createDescriptorSet();
+        uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
+
+        VkDevice device;
+        VkPhysicalDevice physicalDevice;
+        VkExtent2D extent;
+        VkCommandPool commandPool;
+        VkQueue graphicsQueue;
+
+        VkImage offscreenImage;
+        VkImage offscreenDepthImage;
+        VkDeviceMemory offscreenImageMemory;
+        VkDeviceMemory offscreenDepthImageMemory;
+        VkImageView offscreenImageView;
+        VkImageView offscreenDepthImageView;
+        VkFramebuffer offscreenFramebuffer;
+        VkRenderPass offscreenRenderPass;
+        VkCommandBuffer commandBuffer;
+
+        VkDescriptorSetLayout descriptorSetLayout;
+        VkDescriptorPool descriptorPool;
+        VkDescriptorSet descriptorSet;
+        VkSampler offscreenSampler;
+
+        uint32_t currentImageIndex;
+
+        VkFormat findDepthFormat_offscreen(VKDevice *device);
+        int currentFrameIndex{0};
+        bool isFrameStarted{false};
+    };
+
+}

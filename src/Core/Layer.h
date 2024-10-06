@@ -7,7 +7,7 @@
 
 #pragma once
 #include "Base.h"
-#include "../Render/vv_frame_info.hpp"
+#include <vk_frame_info.hpp>
 
 namespace VectorVertex {
     class Layer {

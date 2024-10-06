@@ -9,7 +9,7 @@ namespace VectorVertex {
     public:
         class Builder {
         public:
-            Builder(VVDevice &vvDevice) : vvDevice{vvDevice} {}
+            Builder(VKDevice &VKDevice) : VKDevice{VKDevice} {}
 
             Builder &addPoolSize(VkDescriptorType type, uint32_t count);
             Builder &setPoolFlags(VkDescriptorPoolCreateFlags flags);
@@ -17,14 +17,14 @@ namespace VectorVertex {
             std::unique_ptr<VVDescriptorPool> build() const;
 
         private:
-            VVDevice &vvDevice;
+            VKDevice &VKDevice;
             std::vector<VkDescriptorPoolSize> poolSizes{};
             uint32_t maxSets = 1000;
             VkDescriptorPoolCreateFlags poolFlags = 0;
         };
 
         VVDescriptorPool(
-            VVDevice &vvDevice,
+            VKDevice &VKDevice,
             uint32_t maxSets,
             VkDescriptorPoolCreateFlags poolFlags,
             const std::vector<VkDescriptorPoolSize> &poolSizes);
@@ -42,7 +42,7 @@ namespace VectorVertex {
         VkDescriptorPool getPool() { return currentPool; }
 
     private:
-        VVDevice &vvDevice;
+        VKDevice &VKDevice;
         std::vector<VkDescriptorPool> descriptorPools{};
         VkDescriptorPool currentPool;
         std::vector<VkDescriptorPoolSize> poolSizes;

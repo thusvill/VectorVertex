@@ -273,125 +273,29 @@ src/Core/Math/Math.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.s
 .PHONY : src/Core/Math/Math.cpp.s
 
-src/Core/Panels/SceneHierarchy.o: src/Core/Panels/SceneHierarchy.cpp.o
-.PHONY : src/Core/Panels/SceneHierarchy.o
+src/Core/UUID.o: src/Core/UUID.cpp.o
+.PHONY : src/Core/UUID.o
 
 # target to build an object file
-src/Core/Panels/SceneHierarchy.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.o
-.PHONY : src/Core/Panels/SceneHierarchy.cpp.o
+src/Core/UUID.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/UUID.cpp.o
+.PHONY : src/Core/UUID.cpp.o
 
-src/Core/Panels/SceneHierarchy.i: src/Core/Panels/SceneHierarchy.cpp.i
-.PHONY : src/Core/Panels/SceneHierarchy.i
-
-# target to preprocess a source file
-src/Core/Panels/SceneHierarchy.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.i
-.PHONY : src/Core/Panels/SceneHierarchy.cpp.i
-
-src/Core/Panels/SceneHierarchy.s: src/Core/Panels/SceneHierarchy.cpp.s
-.PHONY : src/Core/Panels/SceneHierarchy.s
-
-# target to generate assembly for a file
-src/Core/Panels/SceneHierarchy.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Panels/SceneHierarchy.cpp.s
-.PHONY : src/Core/Panels/SceneHierarchy.cpp.s
-
-src/Core/Scene/EditorCamera.o: src/Core/Scene/EditorCamera.cpp.o
-.PHONY : src/Core/Scene/EditorCamera.o
-
-# target to build an object file
-src/Core/Scene/EditorCamera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.o
-.PHONY : src/Core/Scene/EditorCamera.cpp.o
-
-src/Core/Scene/EditorCamera.i: src/Core/Scene/EditorCamera.cpp.i
-.PHONY : src/Core/Scene/EditorCamera.i
+src/Core/UUID.i: src/Core/UUID.cpp.i
+.PHONY : src/Core/UUID.i
 
 # target to preprocess a source file
-src/Core/Scene/EditorCamera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.i
-.PHONY : src/Core/Scene/EditorCamera.cpp.i
+src/Core/UUID.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/UUID.cpp.i
+.PHONY : src/Core/UUID.cpp.i
 
-src/Core/Scene/EditorCamera.s: src/Core/Scene/EditorCamera.cpp.s
-.PHONY : src/Core/Scene/EditorCamera.s
-
-# target to generate assembly for a file
-src/Core/Scene/EditorCamera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/EditorCamera.cpp.s
-.PHONY : src/Core/Scene/EditorCamera.cpp.s
-
-src/Core/Scene/Entity.o: src/Core/Scene/Entity.cpp.o
-.PHONY : src/Core/Scene/Entity.o
-
-# target to build an object file
-src/Core/Scene/Entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.o
-.PHONY : src/Core/Scene/Entity.cpp.o
-
-src/Core/Scene/Entity.i: src/Core/Scene/Entity.cpp.i
-.PHONY : src/Core/Scene/Entity.i
-
-# target to preprocess a source file
-src/Core/Scene/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.i
-.PHONY : src/Core/Scene/Entity.cpp.i
-
-src/Core/Scene/Entity.s: src/Core/Scene/Entity.cpp.s
-.PHONY : src/Core/Scene/Entity.s
+src/Core/UUID.s: src/Core/UUID.cpp.s
+.PHONY : src/Core/UUID.s
 
 # target to generate assembly for a file
-src/Core/Scene/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Entity.cpp.s
-.PHONY : src/Core/Scene/Entity.cpp.s
-
-src/Core/Scene/Scene.o: src/Core/Scene/Scene.cpp.o
-.PHONY : src/Core/Scene/Scene.o
-
-# target to build an object file
-src/Core/Scene/Scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.o
-.PHONY : src/Core/Scene/Scene.cpp.o
-
-src/Core/Scene/Scene.i: src/Core/Scene/Scene.cpp.i
-.PHONY : src/Core/Scene/Scene.i
-
-# target to preprocess a source file
-src/Core/Scene/Scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.i
-.PHONY : src/Core/Scene/Scene.cpp.i
-
-src/Core/Scene/Scene.s: src/Core/Scene/Scene.cpp.s
-.PHONY : src/Core/Scene/Scene.s
-
-# target to generate assembly for a file
-src/Core/Scene/Scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/Scene.cpp.s
-.PHONY : src/Core/Scene/Scene.cpp.s
-
-src/Core/Scene/SceneSerializer.o: src/Core/Scene/SceneSerializer.cpp.o
-.PHONY : src/Core/Scene/SceneSerializer.o
-
-# target to build an object file
-src/Core/Scene/SceneSerializer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.o
-.PHONY : src/Core/Scene/SceneSerializer.cpp.o
-
-src/Core/Scene/SceneSerializer.i: src/Core/Scene/SceneSerializer.cpp.i
-.PHONY : src/Core/Scene/SceneSerializer.i
-
-# target to preprocess a source file
-src/Core/Scene/SceneSerializer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.i
-.PHONY : src/Core/Scene/SceneSerializer.cpp.i
-
-src/Core/Scene/SceneSerializer.s: src/Core/Scene/SceneSerializer.cpp.s
-.PHONY : src/Core/Scene/SceneSerializer.s
-
-# target to generate assembly for a file
-src/Core/Scene/SceneSerializer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Scene/SceneSerializer.cpp.s
-.PHONY : src/Core/Scene/SceneSerializer.cpp.s
+src/Core/UUID.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/UUID.cpp.s
+.PHONY : src/Core/UUID.cpp.s
 
 src/Core/Utils/PlattformUtils.o: src/Core/Utils/PlattformUtils.cpp.o
 .PHONY : src/Core/Utils/PlattformUtils.o
@@ -417,53 +321,437 @@ src/Core/Utils/PlattformUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.s
 .PHONY : src/Core/Utils/PlattformUtils.cpp.s
 
-src/Core/VectorVertex.o: src/Core/VectorVertex.cpp.o
-.PHONY : src/Core/VectorVertex.o
+src/Core/vvpch.o: src/Core/vvpch.cpp.o
+.PHONY : src/Core/vvpch.o
 
 # target to build an object file
-src/Core/VectorVertex.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.o
-.PHONY : src/Core/VectorVertex.cpp.o
+src/Core/vvpch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vvpch.cpp.o
+.PHONY : src/Core/vvpch.cpp.o
 
-src/Core/VectorVertex.i: src/Core/VectorVertex.cpp.i
-.PHONY : src/Core/VectorVertex.i
+src/Core/vvpch.i: src/Core/vvpch.cpp.i
+.PHONY : src/Core/vvpch.i
 
 # target to preprocess a source file
-src/Core/VectorVertex.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.i
-.PHONY : src/Core/VectorVertex.cpp.i
+src/Core/vvpch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vvpch.cpp.i
+.PHONY : src/Core/vvpch.cpp.i
 
-src/Core/VectorVertex.s: src/Core/VectorVertex.cpp.s
-.PHONY : src/Core/VectorVertex.s
+src/Core/vvpch.s: src/Core/vvpch.cpp.s
+.PHONY : src/Core/vvpch.s
 
 # target to generate assembly for a file
-src/Core/VectorVertex.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/VectorVertex.cpp.s
-.PHONY : src/Core/VectorVertex.cpp.s
+src/Core/vvpch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vvpch.cpp.s
+.PHONY : src/Core/vvpch.cpp.s
 
-src/Core/vv_uuid.o: src/Core/vv_uuid.cpp.o
-.PHONY : src/Core/vv_uuid.o
+src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o
 
 # target to build an object file
-src/Core/vv_uuid.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.o
-.PHONY : src/Core/vv_uuid.cpp.o
+src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
 
-src/Core/vv_uuid.i: src/Core/vv_uuid.cpp.i
-.PHONY : src/Core/vv_uuid.i
+src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i
 
 # target to preprocess a source file
-src/Core/vv_uuid.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.i
-.PHONY : src/Core/vv_uuid.cpp.i
+src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i
 
-src/Core/vv_uuid.s: src/Core/vv_uuid.cpp.s
-.PHONY : src/Core/vv_uuid.s
+src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s
 
 # target to generate assembly for a file
-src/Core/vv_uuid.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vv_uuid.cpp.s
-.PHONY : src/Core/vv_uuid.cpp.s
+src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s
+
+src/Plattform/Vulkan/Render_Systems/vk_render_system.o: src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.o
+
+# target to build an object file
+src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o
+
+src/Plattform/Vulkan/Render_Systems/vk_render_system.i: src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i
+
+src/Plattform/Vulkan/Render_Systems/vk_render_system.s: src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s
+
+src/Plattform/Vulkan/VulkanRendererSystem.o: src/Plattform/Vulkan/VulkanRendererSystem.cpp.o
+.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.o
+
+# target to build an object file
+src/Plattform/Vulkan/VulkanRendererSystem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.o
+.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.cpp.o
+
+src/Plattform/Vulkan/VulkanRendererSystem.i: src/Plattform/Vulkan/VulkanRendererSystem.cpp.i
+.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/VulkanRendererSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.i
+.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.cpp.i
+
+src/Plattform/Vulkan/VulkanRendererSystem.s: src/Plattform/Vulkan/VulkanRendererSystem.cpp.s
+.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/VulkanRendererSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.s
+.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.cpp.s
+
+src/Plattform/Vulkan/vk_buffer.o: src/Plattform/Vulkan/vk_buffer.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_buffer.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_buffer.cpp.o
+
+src/Plattform/Vulkan/vk_buffer.i: src/Plattform/Vulkan/vk_buffer.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_buffer.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_buffer.cpp.i
+
+src/Plattform/Vulkan/vk_buffer.s: src/Plattform/Vulkan/vk_buffer.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_buffer.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_buffer.cpp.s
+
+src/Plattform/Vulkan/vk_camera.o: src/Plattform/Vulkan/vk_camera.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_camera.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_camera.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_camera.cpp.o
+
+src/Plattform/Vulkan/vk_camera.i: src/Plattform/Vulkan/vk_camera.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_camera.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_camera.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_camera.cpp.i
+
+src/Plattform/Vulkan/vk_camera.s: src/Plattform/Vulkan/vk_camera.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_camera.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_camera.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_camera.cpp.s
+
+src/Plattform/Vulkan/vk_descriptors.o: src/Plattform/Vulkan/vk_descriptors.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_descriptors.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_descriptors.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_descriptors.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_descriptors.cpp.o
+
+src/Plattform/Vulkan/vk_descriptors.i: src/Plattform/Vulkan/vk_descriptors.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_descriptors.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_descriptors.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_descriptors.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_descriptors.cpp.i
+
+src/Plattform/Vulkan/vk_descriptors.s: src/Plattform/Vulkan/vk_descriptors.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_descriptors.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_descriptors.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_descriptors.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_descriptors.cpp.s
+
+src/Plattform/Vulkan/vk_device.o: src/Plattform/Vulkan/vk_device.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_device.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_device.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_device.cpp.o
+
+src/Plattform/Vulkan/vk_device.i: src/Plattform/Vulkan/vk_device.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_device.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_device.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_device.cpp.i
+
+src/Plattform/Vulkan/vk_device.s: src/Plattform/Vulkan/vk_device.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_device.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_device.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_device.cpp.s
+
+src/Plattform/Vulkan/vk_game_object.o: src/Plattform/Vulkan/vk_game_object.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_game_object.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_game_object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_game_object.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_game_object.cpp.o
+
+src/Plattform/Vulkan/vk_game_object.i: src/Plattform/Vulkan/vk_game_object.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_game_object.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_game_object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_game_object.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_game_object.cpp.i
+
+src/Plattform/Vulkan/vk_game_object.s: src/Plattform/Vulkan/vk_game_object.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_game_object.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_game_object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_game_object.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_game_object.cpp.s
+
+src/Plattform/Vulkan/vk_image.o: src/Plattform/Vulkan/vk_image.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_image.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_image.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_image.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_image.cpp.o
+
+src/Plattform/Vulkan/vk_image.i: src/Plattform/Vulkan/vk_image.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_image.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_image.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_image.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_image.cpp.i
+
+src/Plattform/Vulkan/vk_image.s: src/Plattform/Vulkan/vk_image.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_image.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_image.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_image.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_image.cpp.s
+
+src/Plattform/Vulkan/vk_material.o: src/Plattform/Vulkan/vk_material.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_material.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_material.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_material.cpp.o
+
+src/Plattform/Vulkan/vk_material.i: src/Plattform/Vulkan/vk_material.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_material.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_material.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_material.cpp.i
+
+src/Plattform/Vulkan/vk_material.s: src/Plattform/Vulkan/vk_material.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_material.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_material.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_material.cpp.s
+
+src/Plattform/Vulkan/vk_model.o: src/Plattform/Vulkan/vk_model.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_model.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_model.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_model.cpp.o
+
+src/Plattform/Vulkan/vk_model.i: src/Plattform/Vulkan/vk_model.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_model.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_model.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_model.cpp.i
+
+src/Plattform/Vulkan/vk_model.s: src/Plattform/Vulkan/vk_model.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_model.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_model.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_model.cpp.s
+
+src/Plattform/Vulkan/vk_offscreen.o: src/Plattform/Vulkan/vk_offscreen.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_offscreen.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_offscreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_offscreen.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_offscreen.cpp.o
+
+src/Plattform/Vulkan/vk_offscreen.i: src/Plattform/Vulkan/vk_offscreen.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_offscreen.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_offscreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_offscreen.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_offscreen.cpp.i
+
+src/Plattform/Vulkan/vk_offscreen.s: src/Plattform/Vulkan/vk_offscreen.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_offscreen.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_offscreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_offscreen.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_offscreen.cpp.s
+
+src/Plattform/Vulkan/vk_pipeline.o: src/Plattform/Vulkan/vk_pipeline.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_pipeline.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_pipeline.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_pipeline.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_pipeline.cpp.o
+
+src/Plattform/Vulkan/vk_pipeline.i: src/Plattform/Vulkan/vk_pipeline.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_pipeline.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_pipeline.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_pipeline.cpp.i
+
+src/Plattform/Vulkan/vk_pipeline.s: src/Plattform/Vulkan/vk_pipeline.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_pipeline.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_pipeline.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_pipeline.cpp.s
+
+src/Plattform/Vulkan/vk_renderer.o: src/Plattform/Vulkan/vk_renderer.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_renderer.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_renderer.cpp.o
+
+src/Plattform/Vulkan/vk_renderer.i: src/Plattform/Vulkan/vk_renderer.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_renderer.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_renderer.cpp.i
+
+src/Plattform/Vulkan/vk_renderer.s: src/Plattform/Vulkan/vk_renderer.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_renderer.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_renderer.cpp.s
+
+src/Plattform/Vulkan/vk_swap_chain.o: src/Plattform/Vulkan/vk_swap_chain.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_swap_chain.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_swap_chain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_swap_chain.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_swap_chain.cpp.o
+
+src/Plattform/Vulkan/vk_swap_chain.i: src/Plattform/Vulkan/vk_swap_chain.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_swap_chain.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_swap_chain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_swap_chain.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_swap_chain.cpp.i
+
+src/Plattform/Vulkan/vk_swap_chain.s: src/Plattform/Vulkan/vk_swap_chain.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_swap_chain.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_swap_chain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_swap_chain.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_swap_chain.cpp.s
+
+src/Plattform/Vulkan/vk_texture.o: src/Plattform/Vulkan/vk_texture.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_texture.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_texture.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_texture.cpp.o
+
+src/Plattform/Vulkan/vk_texture.i: src/Plattform/Vulkan/vk_texture.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_texture.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_texture.cpp.i
+
+src/Plattform/Vulkan/vk_texture.s: src/Plattform/Vulkan/vk_texture.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_texture.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_texture.cpp.s
+
+src/Plattform/Vulkan/vk_window.o: src/Plattform/Vulkan/vk_window.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_window.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_window.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_window.cpp.o
+
+src/Plattform/Vulkan/vk_window.i: src/Plattform/Vulkan/vk_window.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_window.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_window.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_window.cpp.i
+
+src/Plattform/Vulkan/vk_window.s: src/Plattform/Vulkan/vk_window.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_window.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_window.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_window.cpp.s
 
 src/Plattform/WindowInputs.o: src/Plattform/WindowInputs.cpp.o
 .PHONY : src/Plattform/WindowInputs.o
@@ -489,749 +777,461 @@ src/Plattform/WindowInputs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.s
 .PHONY : src/Plattform/WindowInputs.cpp.s
 
-src/Render/Layers/Editor_Layer.o: src/Render/Layers/Editor_Layer.cpp.o
-.PHONY : src/Render/Layers/Editor_Layer.o
+src/VectorVertex/Application.o: src/VectorVertex/Application.cpp.o
+.PHONY : src/VectorVertex/Application.o
 
 # target to build an object file
-src/Render/Layers/Editor_Layer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.o
-.PHONY : src/Render/Layers/Editor_Layer.cpp.o
+src/VectorVertex/Application.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Application.cpp.o
+.PHONY : src/VectorVertex/Application.cpp.o
 
-src/Render/Layers/Editor_Layer.i: src/Render/Layers/Editor_Layer.cpp.i
-.PHONY : src/Render/Layers/Editor_Layer.i
+src/VectorVertex/Application.i: src/VectorVertex/Application.cpp.i
+.PHONY : src/VectorVertex/Application.i
 
 # target to preprocess a source file
-src/Render/Layers/Editor_Layer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.i
-.PHONY : src/Render/Layers/Editor_Layer.cpp.i
+src/VectorVertex/Application.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Application.cpp.i
+.PHONY : src/VectorVertex/Application.cpp.i
 
-src/Render/Layers/Editor_Layer.s: src/Render/Layers/Editor_Layer.cpp.s
-.PHONY : src/Render/Layers/Editor_Layer.s
+src/VectorVertex/Application.s: src/VectorVertex/Application.cpp.s
+.PHONY : src/VectorVertex/Application.s
 
 # target to generate assembly for a file
-src/Render/Layers/Editor_Layer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Editor_Layer.cpp.s
-.PHONY : src/Render/Layers/Editor_Layer.cpp.s
+src/VectorVertex/Application.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Application.cpp.s
+.PHONY : src/VectorVertex/Application.cpp.s
 
-src/Render/Layers/Imgui_Layer.o: src/Render/Layers/Imgui_Layer.cpp.o
-.PHONY : src/Render/Layers/Imgui_Layer.o
+src/VectorVertex/Layers/Editor_Layer.o: src/VectorVertex/Layers/Editor_Layer.cpp.o
+.PHONY : src/VectorVertex/Layers/Editor_Layer.o
 
 # target to build an object file
-src/Render/Layers/Imgui_Layer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.o
-.PHONY : src/Render/Layers/Imgui_Layer.cpp.o
+src/VectorVertex/Layers/Editor_Layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o
+.PHONY : src/VectorVertex/Layers/Editor_Layer.cpp.o
 
-src/Render/Layers/Imgui_Layer.i: src/Render/Layers/Imgui_Layer.cpp.i
-.PHONY : src/Render/Layers/Imgui_Layer.i
+src/VectorVertex/Layers/Editor_Layer.i: src/VectorVertex/Layers/Editor_Layer.cpp.i
+.PHONY : src/VectorVertex/Layers/Editor_Layer.i
 
 # target to preprocess a source file
-src/Render/Layers/Imgui_Layer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.i
-.PHONY : src/Render/Layers/Imgui_Layer.cpp.i
+src/VectorVertex/Layers/Editor_Layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.i
+.PHONY : src/VectorVertex/Layers/Editor_Layer.cpp.i
 
-src/Render/Layers/Imgui_Layer.s: src/Render/Layers/Imgui_Layer.cpp.s
-.PHONY : src/Render/Layers/Imgui_Layer.s
+src/VectorVertex/Layers/Editor_Layer.s: src/VectorVertex/Layers/Editor_Layer.cpp.s
+.PHONY : src/VectorVertex/Layers/Editor_Layer.s
 
 # target to generate assembly for a file
-src/Render/Layers/Imgui_Layer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Layers/Imgui_Layer.cpp.s
-.PHONY : src/Render/Layers/Imgui_Layer.cpp.s
+src/VectorVertex/Layers/Editor_Layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.s
+.PHONY : src/VectorVertex/Layers/Editor_Layer.cpp.s
 
-src/Render/Render_Systems/vv_point_light_system.o: src/Render/Render_Systems/vv_point_light_system.cpp.o
-.PHONY : src/Render/Render_Systems/vv_point_light_system.o
+src/VectorVertex/Layers/Imgui_Layer.o: src/VectorVertex/Layers/Imgui_Layer.cpp.o
+.PHONY : src/VectorVertex/Layers/Imgui_Layer.o
 
 # target to build an object file
-src/Render/Render_Systems/vv_point_light_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.o
-.PHONY : src/Render/Render_Systems/vv_point_light_system.cpp.o
+src/VectorVertex/Layers/Imgui_Layer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o
+.PHONY : src/VectorVertex/Layers/Imgui_Layer.cpp.o
 
-src/Render/Render_Systems/vv_point_light_system.i: src/Render/Render_Systems/vv_point_light_system.cpp.i
-.PHONY : src/Render/Render_Systems/vv_point_light_system.i
+src/VectorVertex/Layers/Imgui_Layer.i: src/VectorVertex/Layers/Imgui_Layer.cpp.i
+.PHONY : src/VectorVertex/Layers/Imgui_Layer.i
 
 # target to preprocess a source file
-src/Render/Render_Systems/vv_point_light_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.i
-.PHONY : src/Render/Render_Systems/vv_point_light_system.cpp.i
+src/VectorVertex/Layers/Imgui_Layer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.i
+.PHONY : src/VectorVertex/Layers/Imgui_Layer.cpp.i
 
-src/Render/Render_Systems/vv_point_light_system.s: src/Render/Render_Systems/vv_point_light_system.cpp.s
-.PHONY : src/Render/Render_Systems/vv_point_light_system.s
+src/VectorVertex/Layers/Imgui_Layer.s: src/VectorVertex/Layers/Imgui_Layer.cpp.s
+.PHONY : src/VectorVertex/Layers/Imgui_Layer.s
 
 # target to generate assembly for a file
-src/Render/Render_Systems/vv_point_light_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_point_light_system.cpp.s
-.PHONY : src/Render/Render_Systems/vv_point_light_system.cpp.s
+src/VectorVertex/Layers/Imgui_Layer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.s
+.PHONY : src/VectorVertex/Layers/Imgui_Layer.cpp.s
 
-src/Render/Render_Systems/vv_render_system.o: src/Render/Render_Systems/vv_render_system.cpp.o
-.PHONY : src/Render/Render_Systems/vv_render_system.o
+src/VectorVertex/Panels/SceneHierarchy.o: src/VectorVertex/Panels/SceneHierarchy.cpp.o
+.PHONY : src/VectorVertex/Panels/SceneHierarchy.o
 
 # target to build an object file
-src/Render/Render_Systems/vv_render_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.o
-.PHONY : src/Render/Render_Systems/vv_render_system.cpp.o
+src/VectorVertex/Panels/SceneHierarchy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Panels/SceneHierarchy.cpp.o
+.PHONY : src/VectorVertex/Panels/SceneHierarchy.cpp.o
 
-src/Render/Render_Systems/vv_render_system.i: src/Render/Render_Systems/vv_render_system.cpp.i
-.PHONY : src/Render/Render_Systems/vv_render_system.i
+src/VectorVertex/Panels/SceneHierarchy.i: src/VectorVertex/Panels/SceneHierarchy.cpp.i
+.PHONY : src/VectorVertex/Panels/SceneHierarchy.i
 
 # target to preprocess a source file
-src/Render/Render_Systems/vv_render_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.i
-.PHONY : src/Render/Render_Systems/vv_render_system.cpp.i
+src/VectorVertex/Panels/SceneHierarchy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Panels/SceneHierarchy.cpp.i
+.PHONY : src/VectorVertex/Panels/SceneHierarchy.cpp.i
 
-src/Render/Render_Systems/vv_render_system.s: src/Render/Render_Systems/vv_render_system.cpp.s
-.PHONY : src/Render/Render_Systems/vv_render_system.s
+src/VectorVertex/Panels/SceneHierarchy.s: src/VectorVertex/Panels/SceneHierarchy.cpp.s
+.PHONY : src/VectorVertex/Panels/SceneHierarchy.s
 
 # target to generate assembly for a file
-src/Render/Render_Systems/vv_render_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Render_Systems/vv_render_system.cpp.s
-.PHONY : src/Render/Render_Systems/vv_render_system.cpp.s
+src/VectorVertex/Panels/SceneHierarchy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Panels/SceneHierarchy.cpp.s
+.PHONY : src/VectorVertex/Panels/SceneHierarchy.cpp.s
 
-src/Render/VulkanRendererSystem.o: src/Render/VulkanRendererSystem.cpp.o
-.PHONY : src/Render/VulkanRendererSystem.o
+src/VectorVertex/Scene/EditorCamera.o: src/VectorVertex/Scene/EditorCamera.cpp.o
+.PHONY : src/VectorVertex/Scene/EditorCamera.o
 
 # target to build an object file
-src/Render/VulkanRendererSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/VulkanRendererSystem.cpp.o
-.PHONY : src/Render/VulkanRendererSystem.cpp.o
+src/VectorVertex/Scene/EditorCamera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/EditorCamera.cpp.o
+.PHONY : src/VectorVertex/Scene/EditorCamera.cpp.o
 
-src/Render/VulkanRendererSystem.i: src/Render/VulkanRendererSystem.cpp.i
-.PHONY : src/Render/VulkanRendererSystem.i
+src/VectorVertex/Scene/EditorCamera.i: src/VectorVertex/Scene/EditorCamera.cpp.i
+.PHONY : src/VectorVertex/Scene/EditorCamera.i
 
 # target to preprocess a source file
-src/Render/VulkanRendererSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/VulkanRendererSystem.cpp.i
-.PHONY : src/Render/VulkanRendererSystem.cpp.i
+src/VectorVertex/Scene/EditorCamera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/EditorCamera.cpp.i
+.PHONY : src/VectorVertex/Scene/EditorCamera.cpp.i
 
-src/Render/VulkanRendererSystem.s: src/Render/VulkanRendererSystem.cpp.s
-.PHONY : src/Render/VulkanRendererSystem.s
+src/VectorVertex/Scene/EditorCamera.s: src/VectorVertex/Scene/EditorCamera.cpp.s
+.PHONY : src/VectorVertex/Scene/EditorCamera.s
 
 # target to generate assembly for a file
-src/Render/VulkanRendererSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/VulkanRendererSystem.cpp.s
-.PHONY : src/Render/VulkanRendererSystem.cpp.s
+src/VectorVertex/Scene/EditorCamera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/EditorCamera.cpp.s
+.PHONY : src/VectorVertex/Scene/EditorCamera.cpp.s
 
-src/Render/vendor/ImGuizmo/ImCurveEdit.o: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.o
+src/VectorVertex/Scene/Entity.o: src/VectorVertex/Scene/Entity.cpp.o
+.PHONY : src/VectorVertex/Scene/Entity.o
 
 # target to build an object file
-src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.o
+src/VectorVertex/Scene/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Entity.cpp.o
+.PHONY : src/VectorVertex/Scene/Entity.cpp.o
 
-src/Render/vendor/ImGuizmo/ImCurveEdit.i: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.i
+src/VectorVertex/Scene/Entity.i: src/VectorVertex/Scene/Entity.cpp.i
+.PHONY : src/VectorVertex/Scene/Entity.i
 
 # target to preprocess a source file
-src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.i
+src/VectorVertex/Scene/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Entity.cpp.i
+.PHONY : src/VectorVertex/Scene/Entity.cpp.i
 
-src/Render/vendor/ImGuizmo/ImCurveEdit.s: src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.s
+src/VectorVertex/Scene/Entity.s: src/VectorVertex/Scene/Entity.cpp.s
+.PHONY : src/VectorVertex/Scene/Entity.s
 
 # target to generate assembly for a file
-src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImCurveEdit.cpp.s
+src/VectorVertex/Scene/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Entity.cpp.s
+.PHONY : src/VectorVertex/Scene/Entity.cpp.s
 
-src/Render/vendor/ImGuizmo/ImGradient.o: src/Render/vendor/ImGuizmo/ImGradient.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImGradient.o
+src/VectorVertex/Scene/Scene.o: src/VectorVertex/Scene/Scene.cpp.o
+.PHONY : src/VectorVertex/Scene/Scene.o
 
 # target to build an object file
-src/Render/vendor/ImGuizmo/ImGradient.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGradient.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImGradient.cpp.o
+src/VectorVertex/Scene/Scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Scene.cpp.o
+.PHONY : src/VectorVertex/Scene/Scene.cpp.o
 
-src/Render/vendor/ImGuizmo/ImGradient.i: src/Render/vendor/ImGuizmo/ImGradient.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImGradient.i
+src/VectorVertex/Scene/Scene.i: src/VectorVertex/Scene/Scene.cpp.i
+.PHONY : src/VectorVertex/Scene/Scene.i
 
 # target to preprocess a source file
-src/Render/vendor/ImGuizmo/ImGradient.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGradient.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImGradient.cpp.i
+src/VectorVertex/Scene/Scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Scene.cpp.i
+.PHONY : src/VectorVertex/Scene/Scene.cpp.i
 
-src/Render/vendor/ImGuizmo/ImGradient.s: src/Render/vendor/ImGuizmo/ImGradient.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImGradient.s
+src/VectorVertex/Scene/Scene.s: src/VectorVertex/Scene/Scene.cpp.s
+.PHONY : src/VectorVertex/Scene/Scene.s
 
 # target to generate assembly for a file
-src/Render/vendor/ImGuizmo/ImGradient.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGradient.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImGradient.cpp.s
+src/VectorVertex/Scene/Scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Scene.cpp.s
+.PHONY : src/VectorVertex/Scene/Scene.cpp.s
 
-src/Render/vendor/ImGuizmo/ImGuizmo.o: src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.o
+src/VectorVertex/Scene/SceneSerializer.o: src/VectorVertex/Scene/SceneSerializer.cpp.o
+.PHONY : src/VectorVertex/Scene/SceneSerializer.o
 
 # target to build an object file
-src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.cpp.o
+src/VectorVertex/Scene/SceneSerializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/SceneSerializer.cpp.o
+.PHONY : src/VectorVertex/Scene/SceneSerializer.cpp.o
 
-src/Render/vendor/ImGuizmo/ImGuizmo.i: src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.i
+src/VectorVertex/Scene/SceneSerializer.i: src/VectorVertex/Scene/SceneSerializer.cpp.i
+.PHONY : src/VectorVertex/Scene/SceneSerializer.i
 
 # target to preprocess a source file
-src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.cpp.i
+src/VectorVertex/Scene/SceneSerializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/SceneSerializer.cpp.i
+.PHONY : src/VectorVertex/Scene/SceneSerializer.cpp.i
 
-src/Render/vendor/ImGuizmo/ImGuizmo.s: src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.s
+src/VectorVertex/Scene/SceneSerializer.s: src/VectorVertex/Scene/SceneSerializer.cpp.s
+.PHONY : src/VectorVertex/Scene/SceneSerializer.s
 
 # target to generate assembly for a file
-src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImGuizmo.cpp.s
+src/VectorVertex/Scene/SceneSerializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/SceneSerializer.cpp.s
+.PHONY : src/VectorVertex/Scene/SceneSerializer.cpp.s
 
-src/Render/vendor/ImGuizmo/ImSequencer.o: src/Render/vendor/ImGuizmo/ImSequencer.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.o
+src/vendor/ImGuizmo/ImCurveEdit.o: src/vendor/ImGuizmo/ImCurveEdit.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.o
 
 # target to build an object file
-src/Render/vendor/ImGuizmo/ImSequencer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImSequencer.cpp.o
-.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.cpp.o
+src/vendor/ImGuizmo/ImCurveEdit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.cpp.o
 
-src/Render/vendor/ImGuizmo/ImSequencer.i: src/Render/vendor/ImGuizmo/ImSequencer.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.i
+src/vendor/ImGuizmo/ImCurveEdit.i: src/vendor/ImGuizmo/ImCurveEdit.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.i
 
 # target to preprocess a source file
-src/Render/vendor/ImGuizmo/ImSequencer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImSequencer.cpp.i
-.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.cpp.i
+src/vendor/ImGuizmo/ImCurveEdit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.cpp.i
 
-src/Render/vendor/ImGuizmo/ImSequencer.s: src/Render/vendor/ImGuizmo/ImSequencer.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.s
+src/vendor/ImGuizmo/ImCurveEdit.s: src/vendor/ImGuizmo/ImCurveEdit.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.s
 
 # target to generate assembly for a file
-src/Render/vendor/ImGuizmo/ImSequencer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/ImGuizmo/ImSequencer.cpp.s
-.PHONY : src/Render/vendor/ImGuizmo/ImSequencer.cpp.s
+src/vendor/ImGuizmo/ImCurveEdit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.cpp.s
 
-src/Render/vendor/imgui/imgui.o: src/Render/vendor/imgui/imgui.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui.o
+src/vendor/ImGuizmo/ImGradient.o: src/vendor/ImGuizmo/ImGradient.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGradient.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui.cpp.o
+src/vendor/ImGuizmo/ImGradient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImGradient.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGradient.cpp.o
 
-src/Render/vendor/imgui/imgui.i: src/Render/vendor/imgui/imgui.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui.i
+src/vendor/ImGuizmo/ImGradient.i: src/vendor/ImGuizmo/ImGradient.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGradient.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui.cpp.i
+src/vendor/ImGuizmo/ImGradient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImGradient.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGradient.cpp.i
 
-src/Render/vendor/imgui/imgui.s: src/Render/vendor/imgui/imgui.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui.s
+src/vendor/ImGuizmo/ImGradient.s: src/vendor/ImGuizmo/ImGradient.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGradient.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui.cpp.s
+src/vendor/ImGuizmo/ImGradient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImGradient.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGradient.cpp.s
 
-src/Render/vendor/imgui/imgui_demo.o: src/Render/vendor/imgui/imgui_demo.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_demo.o
+src/vendor/ImGuizmo/ImGuizmo.o: src/vendor/ImGuizmo/ImGuizmo.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_demo.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_demo.cpp.o
+src/vendor/ImGuizmo/ImGuizmo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.cpp.o
 
-src/Render/vendor/imgui/imgui_demo.i: src/Render/vendor/imgui/imgui_demo.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_demo.i
+src/vendor/ImGuizmo/ImGuizmo.i: src/vendor/ImGuizmo/ImGuizmo.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_demo.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_demo.cpp.i
+src/vendor/ImGuizmo/ImGuizmo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.cpp.i
 
-src/Render/vendor/imgui/imgui_demo.s: src/Render/vendor/imgui/imgui_demo.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_demo.s
+src/vendor/ImGuizmo/ImGuizmo.s: src/vendor/ImGuizmo/ImGuizmo.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_demo.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_demo.cpp.s
+src/vendor/ImGuizmo/ImGuizmo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.cpp.s
 
-src/Render/vendor/imgui/imgui_draw.o: src/Render/vendor/imgui/imgui_draw.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_draw.o
+src/vendor/ImGuizmo/ImSequencer.o: src/vendor/ImGuizmo/ImSequencer.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImSequencer.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui_draw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_draw.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_draw.cpp.o
+src/vendor/ImGuizmo/ImSequencer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImSequencer.cpp.o
 
-src/Render/vendor/imgui/imgui_draw.i: src/Render/vendor/imgui/imgui_draw.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_draw.i
+src/vendor/ImGuizmo/ImSequencer.i: src/vendor/ImGuizmo/ImSequencer.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImSequencer.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_draw.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_draw.cpp.i
+src/vendor/ImGuizmo/ImSequencer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImSequencer.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImSequencer.cpp.i
 
-src/Render/vendor/imgui/imgui_draw.s: src/Render/vendor/imgui/imgui_draw.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_draw.s
+src/vendor/ImGuizmo/ImSequencer.s: src/vendor/ImGuizmo/ImSequencer.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImSequencer.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_draw.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_draw.cpp.s
+src/vendor/ImGuizmo/ImSequencer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/ImGuizmo/ImSequencer.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImSequencer.cpp.s
 
-src/Render/vendor/imgui/imgui_impl_glfw.o: src/Render/vendor/imgui/imgui_impl_glfw.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_impl_glfw.o
+src/vendor/imgui/imgui.o: src/vendor/imgui/imgui.cpp.o
+.PHONY : src/vendor/imgui/imgui.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui_impl_glfw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_impl_glfw.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_impl_glfw.cpp.o
+src/vendor/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui.cpp.o
+.PHONY : src/vendor/imgui/imgui.cpp.o
 
-src/Render/vendor/imgui/imgui_impl_glfw.i: src/Render/vendor/imgui/imgui_impl_glfw.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_impl_glfw.i
+src/vendor/imgui/imgui.i: src/vendor/imgui/imgui.cpp.i
+.PHONY : src/vendor/imgui/imgui.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui_impl_glfw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_impl_glfw.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_impl_glfw.cpp.i
+src/vendor/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui.cpp.i
+.PHONY : src/vendor/imgui/imgui.cpp.i
 
-src/Render/vendor/imgui/imgui_impl_glfw.s: src/Render/vendor/imgui/imgui_impl_glfw.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_impl_glfw.s
+src/vendor/imgui/imgui.s: src/vendor/imgui/imgui.cpp.s
+.PHONY : src/vendor/imgui/imgui.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui_impl_glfw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_impl_glfw.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_impl_glfw.cpp.s
+src/vendor/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui.cpp.s
+.PHONY : src/vendor/imgui/imgui.cpp.s
 
-src/Render/vendor/imgui/imgui_impl_vulkan.o: src/Render/vendor/imgui/imgui_impl_vulkan.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_impl_vulkan.o
+src/vendor/imgui/imgui_demo.o: src/vendor/imgui/imgui_demo.cpp.o
+.PHONY : src/vendor/imgui/imgui_demo.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui_impl_vulkan.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_impl_vulkan.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_impl_vulkan.cpp.o
+src/vendor/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_demo.cpp.o
+.PHONY : src/vendor/imgui/imgui_demo.cpp.o
 
-src/Render/vendor/imgui/imgui_impl_vulkan.i: src/Render/vendor/imgui/imgui_impl_vulkan.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_impl_vulkan.i
+src/vendor/imgui/imgui_demo.i: src/vendor/imgui/imgui_demo.cpp.i
+.PHONY : src/vendor/imgui/imgui_demo.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui_impl_vulkan.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_impl_vulkan.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_impl_vulkan.cpp.i
+src/vendor/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_demo.cpp.i
+.PHONY : src/vendor/imgui/imgui_demo.cpp.i
 
-src/Render/vendor/imgui/imgui_impl_vulkan.s: src/Render/vendor/imgui/imgui_impl_vulkan.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_impl_vulkan.s
+src/vendor/imgui/imgui_demo.s: src/vendor/imgui/imgui_demo.cpp.s
+.PHONY : src/vendor/imgui/imgui_demo.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui_impl_vulkan.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_impl_vulkan.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_impl_vulkan.cpp.s
+src/vendor/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_demo.cpp.s
+.PHONY : src/vendor/imgui/imgui_demo.cpp.s
 
-src/Render/vendor/imgui/imgui_tables.o: src/Render/vendor/imgui/imgui_tables.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_tables.o
+src/vendor/imgui/imgui_draw.o: src/vendor/imgui/imgui_draw.cpp.o
+.PHONY : src/vendor/imgui/imgui_draw.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui_tables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_tables.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_tables.cpp.o
+src/vendor/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_draw.cpp.o
+.PHONY : src/vendor/imgui/imgui_draw.cpp.o
 
-src/Render/vendor/imgui/imgui_tables.i: src/Render/vendor/imgui/imgui_tables.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_tables.i
+src/vendor/imgui/imgui_draw.i: src/vendor/imgui/imgui_draw.cpp.i
+.PHONY : src/vendor/imgui/imgui_draw.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui_tables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_tables.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_tables.cpp.i
+src/vendor/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_draw.cpp.i
+.PHONY : src/vendor/imgui/imgui_draw.cpp.i
 
-src/Render/vendor/imgui/imgui_tables.s: src/Render/vendor/imgui/imgui_tables.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_tables.s
+src/vendor/imgui/imgui_draw.s: src/vendor/imgui/imgui_draw.cpp.s
+.PHONY : src/vendor/imgui/imgui_draw.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui_tables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_tables.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_tables.cpp.s
+src/vendor/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_draw.cpp.s
+.PHONY : src/vendor/imgui/imgui_draw.cpp.s
 
-src/Render/vendor/imgui/imgui_widgets.o: src/Render/vendor/imgui/imgui_widgets.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_widgets.o
+src/vendor/imgui/imgui_impl_glfw.o: src/vendor/imgui/imgui_impl_glfw.cpp.o
+.PHONY : src/vendor/imgui/imgui_impl_glfw.o
 
 # target to build an object file
-src/Render/vendor/imgui/imgui_widgets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_widgets.cpp.o
-.PHONY : src/Render/vendor/imgui/imgui_widgets.cpp.o
+src/vendor/imgui/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_impl_glfw.cpp.o
+.PHONY : src/vendor/imgui/imgui_impl_glfw.cpp.o
 
-src/Render/vendor/imgui/imgui_widgets.i: src/Render/vendor/imgui/imgui_widgets.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_widgets.i
+src/vendor/imgui/imgui_impl_glfw.i: src/vendor/imgui/imgui_impl_glfw.cpp.i
+.PHONY : src/vendor/imgui/imgui_impl_glfw.i
 
 # target to preprocess a source file
-src/Render/vendor/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_widgets.cpp.i
-.PHONY : src/Render/vendor/imgui/imgui_widgets.cpp.i
+src/vendor/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_impl_glfw.cpp.i
+.PHONY : src/vendor/imgui/imgui_impl_glfw.cpp.i
 
-src/Render/vendor/imgui/imgui_widgets.s: src/Render/vendor/imgui/imgui_widgets.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_widgets.s
+src/vendor/imgui/imgui_impl_glfw.s: src/vendor/imgui/imgui_impl_glfw.cpp.s
+.PHONY : src/vendor/imgui/imgui_impl_glfw.s
 
 # target to generate assembly for a file
-src/Render/vendor/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vendor/imgui/imgui_widgets.cpp.s
-.PHONY : src/Render/vendor/imgui/imgui_widgets.cpp.s
+src/vendor/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_impl_glfw.cpp.s
+.PHONY : src/vendor/imgui/imgui_impl_glfw.cpp.s
 
-src/Render/vv_buffer.o: src/Render/vv_buffer.cpp.o
-.PHONY : src/Render/vv_buffer.o
+src/vendor/imgui/imgui_impl_vulkan.o: src/vendor/imgui/imgui_impl_vulkan.cpp.o
+.PHONY : src/vendor/imgui/imgui_impl_vulkan.o
 
 # target to build an object file
-src/Render/vv_buffer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_buffer.cpp.o
-.PHONY : src/Render/vv_buffer.cpp.o
+src/vendor/imgui/imgui_impl_vulkan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_impl_vulkan.cpp.o
+.PHONY : src/vendor/imgui/imgui_impl_vulkan.cpp.o
 
-src/Render/vv_buffer.i: src/Render/vv_buffer.cpp.i
-.PHONY : src/Render/vv_buffer.i
+src/vendor/imgui/imgui_impl_vulkan.i: src/vendor/imgui/imgui_impl_vulkan.cpp.i
+.PHONY : src/vendor/imgui/imgui_impl_vulkan.i
 
 # target to preprocess a source file
-src/Render/vv_buffer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_buffer.cpp.i
-.PHONY : src/Render/vv_buffer.cpp.i
+src/vendor/imgui/imgui_impl_vulkan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_impl_vulkan.cpp.i
+.PHONY : src/vendor/imgui/imgui_impl_vulkan.cpp.i
 
-src/Render/vv_buffer.s: src/Render/vv_buffer.cpp.s
-.PHONY : src/Render/vv_buffer.s
+src/vendor/imgui/imgui_impl_vulkan.s: src/vendor/imgui/imgui_impl_vulkan.cpp.s
+.PHONY : src/vendor/imgui/imgui_impl_vulkan.s
 
 # target to generate assembly for a file
-src/Render/vv_buffer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_buffer.cpp.s
-.PHONY : src/Render/vv_buffer.cpp.s
+src/vendor/imgui/imgui_impl_vulkan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_impl_vulkan.cpp.s
+.PHONY : src/vendor/imgui/imgui_impl_vulkan.cpp.s
 
-src/Render/vv_camera.o: src/Render/vv_camera.cpp.o
-.PHONY : src/Render/vv_camera.o
+src/vendor/imgui/imgui_tables.o: src/vendor/imgui/imgui_tables.cpp.o
+.PHONY : src/vendor/imgui/imgui_tables.o
 
 # target to build an object file
-src/Render/vv_camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_camera.cpp.o
-.PHONY : src/Render/vv_camera.cpp.o
+src/vendor/imgui/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_tables.cpp.o
+.PHONY : src/vendor/imgui/imgui_tables.cpp.o
 
-src/Render/vv_camera.i: src/Render/vv_camera.cpp.i
-.PHONY : src/Render/vv_camera.i
+src/vendor/imgui/imgui_tables.i: src/vendor/imgui/imgui_tables.cpp.i
+.PHONY : src/vendor/imgui/imgui_tables.i
 
 # target to preprocess a source file
-src/Render/vv_camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_camera.cpp.i
-.PHONY : src/Render/vv_camera.cpp.i
+src/vendor/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_tables.cpp.i
+.PHONY : src/vendor/imgui/imgui_tables.cpp.i
 
-src/Render/vv_camera.s: src/Render/vv_camera.cpp.s
-.PHONY : src/Render/vv_camera.s
+src/vendor/imgui/imgui_tables.s: src/vendor/imgui/imgui_tables.cpp.s
+.PHONY : src/vendor/imgui/imgui_tables.s
 
 # target to generate assembly for a file
-src/Render/vv_camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_camera.cpp.s
-.PHONY : src/Render/vv_camera.cpp.s
+src/vendor/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_tables.cpp.s
+.PHONY : src/vendor/imgui/imgui_tables.cpp.s
 
-src/Render/vv_descriptors.o: src/Render/vv_descriptors.cpp.o
-.PHONY : src/Render/vv_descriptors.o
+src/vendor/imgui/imgui_widgets.o: src/vendor/imgui/imgui_widgets.cpp.o
+.PHONY : src/vendor/imgui/imgui_widgets.o
 
 # target to build an object file
-src/Render/vv_descriptors.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_descriptors.cpp.o
-.PHONY : src/Render/vv_descriptors.cpp.o
+src/vendor/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o
+.PHONY : src/vendor/imgui/imgui_widgets.cpp.o
 
-src/Render/vv_descriptors.i: src/Render/vv_descriptors.cpp.i
-.PHONY : src/Render/vv_descriptors.i
-
-# target to preprocess a source file
-src/Render/vv_descriptors.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_descriptors.cpp.i
-.PHONY : src/Render/vv_descriptors.cpp.i
-
-src/Render/vv_descriptors.s: src/Render/vv_descriptors.cpp.s
-.PHONY : src/Render/vv_descriptors.s
-
-# target to generate assembly for a file
-src/Render/vv_descriptors.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_descriptors.cpp.s
-.PHONY : src/Render/vv_descriptors.cpp.s
-
-src/Render/vv_device.o: src/Render/vv_device.cpp.o
-.PHONY : src/Render/vv_device.o
-
-# target to build an object file
-src/Render/vv_device.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.o
-.PHONY : src/Render/vv_device.cpp.o
-
-src/Render/vv_device.i: src/Render/vv_device.cpp.i
-.PHONY : src/Render/vv_device.i
+src/vendor/imgui/imgui_widgets.i: src/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : src/vendor/imgui/imgui_widgets.i
 
 # target to preprocess a source file
-src/Render/vv_device.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.i
-.PHONY : src/Render/vv_device.cpp.i
+src/vendor/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : src/vendor/imgui/imgui_widgets.cpp.i
 
-src/Render/vv_device.s: src/Render/vv_device.cpp.s
-.PHONY : src/Render/vv_device.s
-
-# target to generate assembly for a file
-src/Render/vv_device.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_device.cpp.s
-.PHONY : src/Render/vv_device.cpp.s
-
-src/Render/vv_game_object.o: src/Render/vv_game_object.cpp.o
-.PHONY : src/Render/vv_game_object.o
-
-# target to build an object file
-src/Render/vv_game_object.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.o
-.PHONY : src/Render/vv_game_object.cpp.o
-
-src/Render/vv_game_object.i: src/Render/vv_game_object.cpp.i
-.PHONY : src/Render/vv_game_object.i
-
-# target to preprocess a source file
-src/Render/vv_game_object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.i
-.PHONY : src/Render/vv_game_object.cpp.i
-
-src/Render/vv_game_object.s: src/Render/vv_game_object.cpp.s
-.PHONY : src/Render/vv_game_object.s
+src/vendor/imgui/imgui_widgets.s: src/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : src/vendor/imgui/imgui_widgets.s
 
 # target to generate assembly for a file
-src/Render/vv_game_object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_game_object.cpp.s
-.PHONY : src/Render/vv_game_object.cpp.s
-
-src/Render/vv_image.o: src/Render/vv_image.cpp.o
-.PHONY : src/Render/vv_image.o
-
-# target to build an object file
-src/Render/vv_image.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.o
-.PHONY : src/Render/vv_image.cpp.o
-
-src/Render/vv_image.i: src/Render/vv_image.cpp.i
-.PHONY : src/Render/vv_image.i
-
-# target to preprocess a source file
-src/Render/vv_image.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.i
-.PHONY : src/Render/vv_image.cpp.i
-
-src/Render/vv_image.s: src/Render/vv_image.cpp.s
-.PHONY : src/Render/vv_image.s
-
-# target to generate assembly for a file
-src/Render/vv_image.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_image.cpp.s
-.PHONY : src/Render/vv_image.cpp.s
-
-src/Render/vv_material.o: src/Render/vv_material.cpp.o
-.PHONY : src/Render/vv_material.o
-
-# target to build an object file
-src/Render/vv_material.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.o
-.PHONY : src/Render/vv_material.cpp.o
-
-src/Render/vv_material.i: src/Render/vv_material.cpp.i
-.PHONY : src/Render/vv_material.i
-
-# target to preprocess a source file
-src/Render/vv_material.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.i
-.PHONY : src/Render/vv_material.cpp.i
-
-src/Render/vv_material.s: src/Render/vv_material.cpp.s
-.PHONY : src/Render/vv_material.s
-
-# target to generate assembly for a file
-src/Render/vv_material.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_material.cpp.s
-.PHONY : src/Render/vv_material.cpp.s
-
-src/Render/vv_model.o: src/Render/vv_model.cpp.o
-.PHONY : src/Render/vv_model.o
-
-# target to build an object file
-src/Render/vv_model.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.o
-.PHONY : src/Render/vv_model.cpp.o
-
-src/Render/vv_model.i: src/Render/vv_model.cpp.i
-.PHONY : src/Render/vv_model.i
-
-# target to preprocess a source file
-src/Render/vv_model.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.i
-.PHONY : src/Render/vv_model.cpp.i
-
-src/Render/vv_model.s: src/Render/vv_model.cpp.s
-.PHONY : src/Render/vv_model.s
-
-# target to generate assembly for a file
-src/Render/vv_model.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_model.cpp.s
-.PHONY : src/Render/vv_model.cpp.s
-
-src/Render/vv_offscreen.o: src/Render/vv_offscreen.cpp.o
-.PHONY : src/Render/vv_offscreen.o
-
-# target to build an object file
-src/Render/vv_offscreen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.o
-.PHONY : src/Render/vv_offscreen.cpp.o
-
-src/Render/vv_offscreen.i: src/Render/vv_offscreen.cpp.i
-.PHONY : src/Render/vv_offscreen.i
-
-# target to preprocess a source file
-src/Render/vv_offscreen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.i
-.PHONY : src/Render/vv_offscreen.cpp.i
-
-src/Render/vv_offscreen.s: src/Render/vv_offscreen.cpp.s
-.PHONY : src/Render/vv_offscreen.s
-
-# target to generate assembly for a file
-src/Render/vv_offscreen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_offscreen.cpp.s
-.PHONY : src/Render/vv_offscreen.cpp.s
-
-src/Render/vv_pipeline.o: src/Render/vv_pipeline.cpp.o
-.PHONY : src/Render/vv_pipeline.o
-
-# target to build an object file
-src/Render/vv_pipeline.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.o
-.PHONY : src/Render/vv_pipeline.cpp.o
-
-src/Render/vv_pipeline.i: src/Render/vv_pipeline.cpp.i
-.PHONY : src/Render/vv_pipeline.i
-
-# target to preprocess a source file
-src/Render/vv_pipeline.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.i
-.PHONY : src/Render/vv_pipeline.cpp.i
-
-src/Render/vv_pipeline.s: src/Render/vv_pipeline.cpp.s
-.PHONY : src/Render/vv_pipeline.s
-
-# target to generate assembly for a file
-src/Render/vv_pipeline.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_pipeline.cpp.s
-.PHONY : src/Render/vv_pipeline.cpp.s
-
-src/Render/vv_renderer.o: src/Render/vv_renderer.cpp.o
-.PHONY : src/Render/vv_renderer.o
-
-# target to build an object file
-src/Render/vv_renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.o
-.PHONY : src/Render/vv_renderer.cpp.o
-
-src/Render/vv_renderer.i: src/Render/vv_renderer.cpp.i
-.PHONY : src/Render/vv_renderer.i
-
-# target to preprocess a source file
-src/Render/vv_renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.i
-.PHONY : src/Render/vv_renderer.cpp.i
-
-src/Render/vv_renderer.s: src/Render/vv_renderer.cpp.s
-.PHONY : src/Render/vv_renderer.s
-
-# target to generate assembly for a file
-src/Render/vv_renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_renderer.cpp.s
-.PHONY : src/Render/vv_renderer.cpp.s
-
-src/Render/vv_swap_chain.o: src/Render/vv_swap_chain.cpp.o
-.PHONY : src/Render/vv_swap_chain.o
-
-# target to build an object file
-src/Render/vv_swap_chain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.o
-.PHONY : src/Render/vv_swap_chain.cpp.o
-
-src/Render/vv_swap_chain.i: src/Render/vv_swap_chain.cpp.i
-.PHONY : src/Render/vv_swap_chain.i
-
-# target to preprocess a source file
-src/Render/vv_swap_chain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.i
-.PHONY : src/Render/vv_swap_chain.cpp.i
-
-src/Render/vv_swap_chain.s: src/Render/vv_swap_chain.cpp.s
-.PHONY : src/Render/vv_swap_chain.s
-
-# target to generate assembly for a file
-src/Render/vv_swap_chain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_swap_chain.cpp.s
-.PHONY : src/Render/vv_swap_chain.cpp.s
-
-src/Render/vv_texture.o: src/Render/vv_texture.cpp.o
-.PHONY : src/Render/vv_texture.o
-
-# target to build an object file
-src/Render/vv_texture.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.o
-.PHONY : src/Render/vv_texture.cpp.o
-
-src/Render/vv_texture.i: src/Render/vv_texture.cpp.i
-.PHONY : src/Render/vv_texture.i
-
-# target to preprocess a source file
-src/Render/vv_texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.i
-.PHONY : src/Render/vv_texture.cpp.i
-
-src/Render/vv_texture.s: src/Render/vv_texture.cpp.s
-.PHONY : src/Render/vv_texture.s
-
-# target to generate assembly for a file
-src/Render/vv_texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_texture.cpp.s
-.PHONY : src/Render/vv_texture.cpp.s
-
-src/Render/vv_window.o: src/Render/vv_window.cpp.o
-.PHONY : src/Render/vv_window.o
-
-# target to build an object file
-src/Render/vv_window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.o
-.PHONY : src/Render/vv_window.cpp.o
-
-src/Render/vv_window.i: src/Render/vv_window.cpp.i
-.PHONY : src/Render/vv_window.i
-
-# target to preprocess a source file
-src/Render/vv_window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.i
-.PHONY : src/Render/vv_window.cpp.i
-
-src/Render/vv_window.s: src/Render/vv_window.cpp.s
-.PHONY : src/Render/vv_window.s
-
-# target to generate assembly for a file
-src/Render/vv_window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/vv_window.cpp.s
-.PHONY : src/Render/vv_window.cpp.s
-
-src/VectorVertex/vvpch.o: src/VectorVertex/vvpch.cpp.o
-.PHONY : src/VectorVertex/vvpch.o
-
-# target to build an object file
-src/VectorVertex/vvpch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.o
-.PHONY : src/VectorVertex/vvpch.cpp.o
-
-src/VectorVertex/vvpch.i: src/VectorVertex/vvpch.cpp.i
-.PHONY : src/VectorVertex/vvpch.i
-
-# target to preprocess a source file
-src/VectorVertex/vvpch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.i
-.PHONY : src/VectorVertex/vvpch.cpp.i
-
-src/VectorVertex/vvpch.s: src/VectorVertex/vvpch.cpp.s
-.PHONY : src/VectorVertex/vvpch.s
-
-# target to generate assembly for a file
-src/VectorVertex/vvpch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/VectorVertex/vvpch.cpp.s
-.PHONY : src/VectorVertex/vvpch.cpp.s
+src/vendor/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : src/vendor/imgui/imgui_widgets.cpp.s
 
 # Help Target
 help:
@@ -1260,126 +1260,126 @@ help:
 	@echo "... src/Core/Math/Math.o"
 	@echo "... src/Core/Math/Math.i"
 	@echo "... src/Core/Math/Math.s"
-	@echo "... src/Core/Panels/SceneHierarchy.o"
-	@echo "... src/Core/Panels/SceneHierarchy.i"
-	@echo "... src/Core/Panels/SceneHierarchy.s"
-	@echo "... src/Core/Scene/EditorCamera.o"
-	@echo "... src/Core/Scene/EditorCamera.i"
-	@echo "... src/Core/Scene/EditorCamera.s"
-	@echo "... src/Core/Scene/Entity.o"
-	@echo "... src/Core/Scene/Entity.i"
-	@echo "... src/Core/Scene/Entity.s"
-	@echo "... src/Core/Scene/Scene.o"
-	@echo "... src/Core/Scene/Scene.i"
-	@echo "... src/Core/Scene/Scene.s"
-	@echo "... src/Core/Scene/SceneSerializer.o"
-	@echo "... src/Core/Scene/SceneSerializer.i"
-	@echo "... src/Core/Scene/SceneSerializer.s"
+	@echo "... src/Core/UUID.o"
+	@echo "... src/Core/UUID.i"
+	@echo "... src/Core/UUID.s"
 	@echo "... src/Core/Utils/PlattformUtils.o"
 	@echo "... src/Core/Utils/PlattformUtils.i"
 	@echo "... src/Core/Utils/PlattformUtils.s"
-	@echo "... src/Core/VectorVertex.o"
-	@echo "... src/Core/VectorVertex.i"
-	@echo "... src/Core/VectorVertex.s"
-	@echo "... src/Core/vv_uuid.o"
-	@echo "... src/Core/vv_uuid.i"
-	@echo "... src/Core/vv_uuid.s"
+	@echo "... src/Core/vvpch.o"
+	@echo "... src/Core/vvpch.i"
+	@echo "... src/Core/vvpch.s"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_render_system.o"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_render_system.i"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_render_system.s"
+	@echo "... src/Plattform/Vulkan/VulkanRendererSystem.o"
+	@echo "... src/Plattform/Vulkan/VulkanRendererSystem.i"
+	@echo "... src/Plattform/Vulkan/VulkanRendererSystem.s"
+	@echo "... src/Plattform/Vulkan/vk_buffer.o"
+	@echo "... src/Plattform/Vulkan/vk_buffer.i"
+	@echo "... src/Plattform/Vulkan/vk_buffer.s"
+	@echo "... src/Plattform/Vulkan/vk_camera.o"
+	@echo "... src/Plattform/Vulkan/vk_camera.i"
+	@echo "... src/Plattform/Vulkan/vk_camera.s"
+	@echo "... src/Plattform/Vulkan/vk_descriptors.o"
+	@echo "... src/Plattform/Vulkan/vk_descriptors.i"
+	@echo "... src/Plattform/Vulkan/vk_descriptors.s"
+	@echo "... src/Plattform/Vulkan/vk_device.o"
+	@echo "... src/Plattform/Vulkan/vk_device.i"
+	@echo "... src/Plattform/Vulkan/vk_device.s"
+	@echo "... src/Plattform/Vulkan/vk_game_object.o"
+	@echo "... src/Plattform/Vulkan/vk_game_object.i"
+	@echo "... src/Plattform/Vulkan/vk_game_object.s"
+	@echo "... src/Plattform/Vulkan/vk_image.o"
+	@echo "... src/Plattform/Vulkan/vk_image.i"
+	@echo "... src/Plattform/Vulkan/vk_image.s"
+	@echo "... src/Plattform/Vulkan/vk_material.o"
+	@echo "... src/Plattform/Vulkan/vk_material.i"
+	@echo "... src/Plattform/Vulkan/vk_material.s"
+	@echo "... src/Plattform/Vulkan/vk_model.o"
+	@echo "... src/Plattform/Vulkan/vk_model.i"
+	@echo "... src/Plattform/Vulkan/vk_model.s"
+	@echo "... src/Plattform/Vulkan/vk_offscreen.o"
+	@echo "... src/Plattform/Vulkan/vk_offscreen.i"
+	@echo "... src/Plattform/Vulkan/vk_offscreen.s"
+	@echo "... src/Plattform/Vulkan/vk_pipeline.o"
+	@echo "... src/Plattform/Vulkan/vk_pipeline.i"
+	@echo "... src/Plattform/Vulkan/vk_pipeline.s"
+	@echo "... src/Plattform/Vulkan/vk_renderer.o"
+	@echo "... src/Plattform/Vulkan/vk_renderer.i"
+	@echo "... src/Plattform/Vulkan/vk_renderer.s"
+	@echo "... src/Plattform/Vulkan/vk_swap_chain.o"
+	@echo "... src/Plattform/Vulkan/vk_swap_chain.i"
+	@echo "... src/Plattform/Vulkan/vk_swap_chain.s"
+	@echo "... src/Plattform/Vulkan/vk_texture.o"
+	@echo "... src/Plattform/Vulkan/vk_texture.i"
+	@echo "... src/Plattform/Vulkan/vk_texture.s"
+	@echo "... src/Plattform/Vulkan/vk_window.o"
+	@echo "... src/Plattform/Vulkan/vk_window.i"
+	@echo "... src/Plattform/Vulkan/vk_window.s"
 	@echo "... src/Plattform/WindowInputs.o"
 	@echo "... src/Plattform/WindowInputs.i"
 	@echo "... src/Plattform/WindowInputs.s"
-	@echo "... src/Render/Layers/Editor_Layer.o"
-	@echo "... src/Render/Layers/Editor_Layer.i"
-	@echo "... src/Render/Layers/Editor_Layer.s"
-	@echo "... src/Render/Layers/Imgui_Layer.o"
-	@echo "... src/Render/Layers/Imgui_Layer.i"
-	@echo "... src/Render/Layers/Imgui_Layer.s"
-	@echo "... src/Render/Render_Systems/vv_point_light_system.o"
-	@echo "... src/Render/Render_Systems/vv_point_light_system.i"
-	@echo "... src/Render/Render_Systems/vv_point_light_system.s"
-	@echo "... src/Render/Render_Systems/vv_render_system.o"
-	@echo "... src/Render/Render_Systems/vv_render_system.i"
-	@echo "... src/Render/Render_Systems/vv_render_system.s"
-	@echo "... src/Render/VulkanRendererSystem.o"
-	@echo "... src/Render/VulkanRendererSystem.i"
-	@echo "... src/Render/VulkanRendererSystem.s"
-	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.o"
-	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.i"
-	@echo "... src/Render/vendor/ImGuizmo/ImCurveEdit.s"
-	@echo "... src/Render/vendor/ImGuizmo/ImGradient.o"
-	@echo "... src/Render/vendor/ImGuizmo/ImGradient.i"
-	@echo "... src/Render/vendor/ImGuizmo/ImGradient.s"
-	@echo "... src/Render/vendor/ImGuizmo/ImGuizmo.o"
-	@echo "... src/Render/vendor/ImGuizmo/ImGuizmo.i"
-	@echo "... src/Render/vendor/ImGuizmo/ImGuizmo.s"
-	@echo "... src/Render/vendor/ImGuizmo/ImSequencer.o"
-	@echo "... src/Render/vendor/ImGuizmo/ImSequencer.i"
-	@echo "... src/Render/vendor/ImGuizmo/ImSequencer.s"
-	@echo "... src/Render/vendor/imgui/imgui.o"
-	@echo "... src/Render/vendor/imgui/imgui.i"
-	@echo "... src/Render/vendor/imgui/imgui.s"
-	@echo "... src/Render/vendor/imgui/imgui_demo.o"
-	@echo "... src/Render/vendor/imgui/imgui_demo.i"
-	@echo "... src/Render/vendor/imgui/imgui_demo.s"
-	@echo "... src/Render/vendor/imgui/imgui_draw.o"
-	@echo "... src/Render/vendor/imgui/imgui_draw.i"
-	@echo "... src/Render/vendor/imgui/imgui_draw.s"
-	@echo "... src/Render/vendor/imgui/imgui_impl_glfw.o"
-	@echo "... src/Render/vendor/imgui/imgui_impl_glfw.i"
-	@echo "... src/Render/vendor/imgui/imgui_impl_glfw.s"
-	@echo "... src/Render/vendor/imgui/imgui_impl_vulkan.o"
-	@echo "... src/Render/vendor/imgui/imgui_impl_vulkan.i"
-	@echo "... src/Render/vendor/imgui/imgui_impl_vulkan.s"
-	@echo "... src/Render/vendor/imgui/imgui_tables.o"
-	@echo "... src/Render/vendor/imgui/imgui_tables.i"
-	@echo "... src/Render/vendor/imgui/imgui_tables.s"
-	@echo "... src/Render/vendor/imgui/imgui_widgets.o"
-	@echo "... src/Render/vendor/imgui/imgui_widgets.i"
-	@echo "... src/Render/vendor/imgui/imgui_widgets.s"
-	@echo "... src/Render/vv_buffer.o"
-	@echo "... src/Render/vv_buffer.i"
-	@echo "... src/Render/vv_buffer.s"
-	@echo "... src/Render/vv_camera.o"
-	@echo "... src/Render/vv_camera.i"
-	@echo "... src/Render/vv_camera.s"
-	@echo "... src/Render/vv_descriptors.o"
-	@echo "... src/Render/vv_descriptors.i"
-	@echo "... src/Render/vv_descriptors.s"
-	@echo "... src/Render/vv_device.o"
-	@echo "... src/Render/vv_device.i"
-	@echo "... src/Render/vv_device.s"
-	@echo "... src/Render/vv_game_object.o"
-	@echo "... src/Render/vv_game_object.i"
-	@echo "... src/Render/vv_game_object.s"
-	@echo "... src/Render/vv_image.o"
-	@echo "... src/Render/vv_image.i"
-	@echo "... src/Render/vv_image.s"
-	@echo "... src/Render/vv_material.o"
-	@echo "... src/Render/vv_material.i"
-	@echo "... src/Render/vv_material.s"
-	@echo "... src/Render/vv_model.o"
-	@echo "... src/Render/vv_model.i"
-	@echo "... src/Render/vv_model.s"
-	@echo "... src/Render/vv_offscreen.o"
-	@echo "... src/Render/vv_offscreen.i"
-	@echo "... src/Render/vv_offscreen.s"
-	@echo "... src/Render/vv_pipeline.o"
-	@echo "... src/Render/vv_pipeline.i"
-	@echo "... src/Render/vv_pipeline.s"
-	@echo "... src/Render/vv_renderer.o"
-	@echo "... src/Render/vv_renderer.i"
-	@echo "... src/Render/vv_renderer.s"
-	@echo "... src/Render/vv_swap_chain.o"
-	@echo "... src/Render/vv_swap_chain.i"
-	@echo "... src/Render/vv_swap_chain.s"
-	@echo "... src/Render/vv_texture.o"
-	@echo "... src/Render/vv_texture.i"
-	@echo "... src/Render/vv_texture.s"
-	@echo "... src/Render/vv_window.o"
-	@echo "... src/Render/vv_window.i"
-	@echo "... src/Render/vv_window.s"
-	@echo "... src/VectorVertex/vvpch.o"
-	@echo "... src/VectorVertex/vvpch.i"
-	@echo "... src/VectorVertex/vvpch.s"
+	@echo "... src/VectorVertex/Application.o"
+	@echo "... src/VectorVertex/Application.i"
+	@echo "... src/VectorVertex/Application.s"
+	@echo "... src/VectorVertex/Layers/Editor_Layer.o"
+	@echo "... src/VectorVertex/Layers/Editor_Layer.i"
+	@echo "... src/VectorVertex/Layers/Editor_Layer.s"
+	@echo "... src/VectorVertex/Layers/Imgui_Layer.o"
+	@echo "... src/VectorVertex/Layers/Imgui_Layer.i"
+	@echo "... src/VectorVertex/Layers/Imgui_Layer.s"
+	@echo "... src/VectorVertex/Panels/SceneHierarchy.o"
+	@echo "... src/VectorVertex/Panels/SceneHierarchy.i"
+	@echo "... src/VectorVertex/Panels/SceneHierarchy.s"
+	@echo "... src/VectorVertex/Scene/EditorCamera.o"
+	@echo "... src/VectorVertex/Scene/EditorCamera.i"
+	@echo "... src/VectorVertex/Scene/EditorCamera.s"
+	@echo "... src/VectorVertex/Scene/Entity.o"
+	@echo "... src/VectorVertex/Scene/Entity.i"
+	@echo "... src/VectorVertex/Scene/Entity.s"
+	@echo "... src/VectorVertex/Scene/Scene.o"
+	@echo "... src/VectorVertex/Scene/Scene.i"
+	@echo "... src/VectorVertex/Scene/Scene.s"
+	@echo "... src/VectorVertex/Scene/SceneSerializer.o"
+	@echo "... src/VectorVertex/Scene/SceneSerializer.i"
+	@echo "... src/VectorVertex/Scene/SceneSerializer.s"
+	@echo "... src/vendor/ImGuizmo/ImCurveEdit.o"
+	@echo "... src/vendor/ImGuizmo/ImCurveEdit.i"
+	@echo "... src/vendor/ImGuizmo/ImCurveEdit.s"
+	@echo "... src/vendor/ImGuizmo/ImGradient.o"
+	@echo "... src/vendor/ImGuizmo/ImGradient.i"
+	@echo "... src/vendor/ImGuizmo/ImGradient.s"
+	@echo "... src/vendor/ImGuizmo/ImGuizmo.o"
+	@echo "... src/vendor/ImGuizmo/ImGuizmo.i"
+	@echo "... src/vendor/ImGuizmo/ImGuizmo.s"
+	@echo "... src/vendor/ImGuizmo/ImSequencer.o"
+	@echo "... src/vendor/ImGuizmo/ImSequencer.i"
+	@echo "... src/vendor/ImGuizmo/ImSequencer.s"
+	@echo "... src/vendor/imgui/imgui.o"
+	@echo "... src/vendor/imgui/imgui.i"
+	@echo "... src/vendor/imgui/imgui.s"
+	@echo "... src/vendor/imgui/imgui_demo.o"
+	@echo "... src/vendor/imgui/imgui_demo.i"
+	@echo "... src/vendor/imgui/imgui_demo.s"
+	@echo "... src/vendor/imgui/imgui_draw.o"
+	@echo "... src/vendor/imgui/imgui_draw.i"
+	@echo "... src/vendor/imgui/imgui_draw.s"
+	@echo "... src/vendor/imgui/imgui_impl_glfw.o"
+	@echo "... src/vendor/imgui/imgui_impl_glfw.i"
+	@echo "... src/vendor/imgui/imgui_impl_glfw.s"
+	@echo "... src/vendor/imgui/imgui_impl_vulkan.o"
+	@echo "... src/vendor/imgui/imgui_impl_vulkan.i"
+	@echo "... src/vendor/imgui/imgui_impl_vulkan.s"
+	@echo "... src/vendor/imgui/imgui_tables.o"
+	@echo "... src/vendor/imgui/imgui_tables.i"
+	@echo "... src/vendor/imgui/imgui_tables.s"
+	@echo "... src/vendor/imgui/imgui_widgets.o"
+	@echo "... src/vendor/imgui/imgui_widgets.i"
+	@echo "... src/vendor/imgui/imgui_widgets.s"
 .PHONY : help
 
 

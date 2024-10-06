@@ -1,6 +1,6 @@
 #pragma once
-#include "../Render/vv_game_object.hpp"
-#include "../Render/vv_window.hpp"
+#include "vk_game_object.hpp"
+#include "vk_window.hpp"
 
 namespace VectorVertex
 {

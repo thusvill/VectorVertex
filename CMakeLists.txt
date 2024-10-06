@@ -7,57 +7,62 @@ find_package(glfw3 REQUIRED)
 find_package(Vulkan REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
-# Set the path to the FBX SDK
-set(FBX_SDK_DIR "src/Render/Model_Loaders/fbx")
+# Set the path to the FBX SDK (inside the src folder)
+set(FBX_SDK_DIR "${CMAKE_SOURCE_DIR}/src/vendor/fbx")
 
 # Include directories
 include_directories(
     ${GLFW_INCLUDE_DIRS}
     ${Vulkan_INCLUDE_DIRS}
-    "src/Render/Model_Loaders"
-    "src/Render/Render_Systems"
-    "src/Render/vendor"
-    "src/Core"
-    "src/Core/vendor"
-    "src/Core/Panels"
-    "src/Core/Scene"
-    "src/Render/Layers"
-    "src/Render/vendor/imgui"
-    "src/vendor/entt"
-    "src/Plattform"
-    "src/VectorVertex/"
-    "src/VectorVertex/Events"
-    ${FBX_SDK_DIR}/include
-)
 
-# Collect all .cpp, .h, and .hpp files in the source directory
-file(GLOB IMGUI_SOURCES "src/Render/vendor/imgui/*.cpp")
+    # FBX SDK directory (in src)
+    ${FBX_SDK_DIR}/include  # Path to fbxsdk.h inside the src folder
+
+    # Core directories
+    "src/Core"
+    "src/Core/Math"
+    "src/Core/Utils"
+
+    # Plattform directories
+    "src/Plattform"
+    "src/Plattform/Vulkan"
+    "src/Plattform/Vulkan/Render_Systems"
+
+    # Render directories
+    "src/Render"
+
+    # VectorVertex directories
+    "src/VectorVertex"
+    "src/VectorVertex/Events"
+    "src/VectorVertex/Layers"
+    "src/VectorVertex/Panels"
+    "src/VectorVertex/Scene"
+
+    # Vendor libraries
+    "src/vendor"
+    "src/vendor/entt"
+    "src/vendor/imgui"
+    "src/vendor/imgui/backends/vulkan"
+    "src/vendor/ImGuizmo"
+    "src/vendor/yaml-cpp/include"
+)
 
 # Collect source files
-# Copy the entire Resources directory to the build output
-file(COPY ${CMAKE_SOURCE_DIR}/Resources DESTINATION ${CMAKE_BINARY_DIR})
-
 file(GLOB_RECURSE SOURCES 
-    ${IMGUI_SOURCES}
-    "src/Render/**.cpp" 
-    "src/Core/Scene/**.cpp" 
-    "src/Core/Scene/**.hpp" 
-    "src/Core/Panels/**.cpp" 
-    "src/Core/Panels/**.hpp"  
-    "src/Plattform/**.cpp" 
-    "src/Plattform/**.hpp" 
     "src/Core/**.cpp"
-    "src/Core/**.h" 
-    "src/Render/Layers/*.cpp" 
-    "src/Render/Layers/Editor_Layer.cpp" 
-    "src/Render/Layers/Editor_Layer.hpp" 
-    "src/Render/Layers/Imgui_Layer.cpp" 
-    "src/Render/Layers/Imgui_Layer.hpp"
+    "src/Core/**.h"
+    "src/Plattform/**.cpp"
+    "src/Plattform/**.hpp"
+    "src/Render/**.cpp"
+    "src/Render/**.hpp"
     "src/VectorVertex/**.cpp"
     "src/VectorVertex/**.hpp"
-    "src/VectorVertex/Events/**.cpp"
-    "src/VectorVertex/Events/**.hpp"
+    "src/vendor/imgui/*.cpp"
+    "src/vendor/ImGuizmo/*.cpp"
 )
+
+# Copy the entire Resources directory to the build output
+file(COPY ${CMAKE_SOURCE_DIR}/Resources DESTINATION ${CMAKE_BINARY_DIR})
 
 # Add executable
 add_executable(VectorVertex main.cpp ${SOURCES})
@@ -67,21 +72,18 @@ target_link_libraries(VectorVertex
     glfw 
     fmt 
     ${Vulkan_LIBRARIES}
+    yaml-cpp
 )
+
+# Find the FBX SDK library (in src/vendor/fbx/lib/debug or release)
+find_library(FBX_LIBRARY fbxsdk HINTS ${FBX_SDK_DIR}/lib/debug ${FBX_SDK_DIR}/lib/release)
 
 # Link the FBX SDK library
-find_library(FBX_LIBRARY fbxsdk HINTS ${FBX_SDK_DIR}/lib/debug)
-target_link_libraries(VectorVertex ${FBX_LIBRARY} yaml-cpp)
+if (FBX_LIBRARY)
+    target_link_libraries(VectorVertex ${FBX_LIBRARY})
+else()
+    message(FATAL_ERROR "FBX SDK library not found!")
+endif()
 
-# Add ImGui library
-target_include_directories(VectorVertex PUBLIC 
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/Core"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/Render"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/Render/Model_Loaders"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/Render/Render_Systems"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/Render/Layers"
-    "src/Render/vendor/imgui"
-)
-
-# Set debug flags
+# Add debug flags
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -w -g")

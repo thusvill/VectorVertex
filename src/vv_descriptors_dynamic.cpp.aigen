@@ -5,17 +5,17 @@
 namespace VectorVertex {
 
     VVDescriptorPool::VVDescriptorPool(
-        VVDevice &vvDevice,
+        VKDevice &VKDevice,
         uint32_t maxSets,
         VkDescriptorPoolCreateFlags poolFlags,
         const std::vector<VkDescriptorPoolSize> &poolSizes)
-        : vvDevice{vvDevice}, maxSets{maxSets}, poolFlags{poolFlags}, poolSizes{poolSizes} {
+        : VKDevice{VKDevice}, maxSets{maxSets}, poolFlags{poolFlags}, poolSizes{poolSizes} {
         createPool();
     }
 
     VVDescriptorPool::~VVDescriptorPool() {
         for (auto pool : descriptorPools) {
-            vkDestroyDescriptorPool(vvDevice.device(), pool, nullptr);
+            vkDestroyDescriptorPool(VKDevice.device(), pool, nullptr);
         }
     }
 
@@ -27,7 +27,7 @@ namespace VectorVertex {
         poolInfo.maxSets = maxSets;
         poolInfo.flags = poolFlags;
 
-        if (vkCreateDescriptorPool(vvDevice.device(), &poolInfo, nullptr, &currentPool) != VK_SUCCESS) {
+        if (vkCreateDescriptorPool(VKDevice.device(), &poolInfo, nullptr, &currentPool) != VK_SUCCESS) {
             throw std::runtime_error("Failed to create descriptor pool");
         }
 
@@ -45,7 +45,7 @@ namespace VectorVertex {
         allocInfo.pSetLayouts = &descriptorSetLayout;
         allocInfo.descriptorSetCount = 1;
 
-        if (vkAllocateDescriptorSets(vvDevice.device(), &allocInfo, &descriptor) == VK_SUCCESS) {
+        if (vkAllocateDescriptorSets(VKDevice.device(), &allocInfo, &descriptor) == VK_SUCCESS) {
             allocatedSets++;
             return true;
         } else {
@@ -54,12 +54,12 @@ namespace VectorVertex {
     }
 
     void VVDescriptorPool::freeDescriptors(std::vector<VkDescriptorSet> &descriptors) {
-        vkFreeDescriptorSets(vvDevice.device(), currentPool, static_cast<uint32_t>(descriptors.size()), descriptors.data());
+        vkFreeDescriptorSets(VKDevice.device(), currentPool, static_cast<uint32_t>(descriptors.size()), descriptors.data());
     }
 
     void VVDescriptorPool::resetPool() {
         for (auto pool : descriptorPools) {
-            vkResetDescriptorPool(vvDevice.device(), pool, 0);
+            vkResetDescriptorPool(VKDevice.device(), pool, 0);
         }
         allocatedSets = 0;
     }

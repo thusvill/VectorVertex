@@ -1,7 +1,7 @@
 #include <Input.hpp>
 #include <MouseCodes.hpp>
 #include <KeyCodes.hpp>
-#include <VectorVertex.hpp>
+#include <Application.hpp>
 #include <GLFW/glfw3.h>
 
 namespace VectorVertex {
