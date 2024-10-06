@@ -13,6 +13,6 @@ namespace VectorVertex
         virtual Extent2D getViewSize() =0;
         virtual void* GetFrameBufferImage() =0;
 
-        Ref<FrameBuffer> Create(Extent2D size);
+        static Ref<FrameBuffer> Create(Extent2D size);
     };
 } // namespace VectorVertex

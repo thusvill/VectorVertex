@@ -14,19 +14,19 @@ namespace VectorVertex
 
     void EditorLayer::SetupImgui()
     {
-        VkInstance instance = Application::Get().GetDevice().getInstance();
+        VkInstance instance = VKDevice::Get().getInstance();
         VV_CORE_ASSERT(instance, "Vulkan Instance should not be null!");
 
         ImguiConfig imguiConfig;
         imguiConfig.instance = instance; // Assign Vulkan instance handle
-        imguiConfig.Device = Application::Get().GetDevice().device();
-        imguiConfig.renderer = &Application::Get().GetRenderer();
-        imguiConfig.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
-        imguiConfig.PhysicalDevice = Application::Get().GetDevice().getPhysicalDevice();
-        imguiConfig.graphicsQueue = Application::Get().GetDevice().graphicsQueue();
-        imguiConfig.imageCount = static_cast<uint32_t>(Application::Get().GetRenderer().GetSwapchainImageCount());
+        imguiConfig.Device = VKDevice::Get().device();
+        imguiConfig.renderer = &VKRenderer::Get();
+        imguiConfig.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
+        imguiConfig.PhysicalDevice = VKDevice::Get().getPhysicalDevice();
+        imguiConfig.graphicsQueue = VKDevice::Get().graphicsQueue();
+        imguiConfig.imageCount = static_cast<uint32_t>(VKRenderer::Get().GetSwapchainImageCount());
 
-        imgui_layer.InitializeImgui(imguiConfig, Application::Get().GetWindow().getGLFWwindow());
+        imgui_layer.InitializeImgui(imguiConfig, reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()));
 
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
@@ -36,9 +36,9 @@ namespace VectorVertex
 
         io.Fonts->Build();
 
-        VkCommandBuffer command_buffer = Application::Get().GetDevice().beginSingleTimeCommands(); // Vulkan-specific setup
+        VkCommandBuffer command_buffer = VKDevice::Get().beginSingleTimeCommands(); // Vulkan-specific setup
         ImGui_ImplVulkan_CreateFontsTexture();
-        Application::Get().GetDevice().endSingleTimeCommands(command_buffer);
+        VKDevice::Get().endSingleTimeCommands(command_buffer);
         // ImGui_ImplVulkan_DestroyFontUploadObjects();
         {
             ImVec4 *colors = ImGui::GetStyle().Colors;
@@ -98,13 +98,13 @@ namespace VectorVertex
             colors[ImGuiCol_NavWindowingDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.20f);
             colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.35f);
         }
-        m_Offscreen = CreateRef<VKOffscreen>(Viewport_Extent);
+        m_OffScreen = FrameBuffer::Create(Viewport_Extent);
     }
 
     void EditorLayer::OnAttach()
     {
 
-        VVMaterialLibrary::InitMaterialLib();
+        MaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
 
         if (!m_Info.path.empty())
@@ -148,7 +148,7 @@ namespace VectorVertex
             {
                 if (is_viewport_resized)
                 {
-                    m_Offscreen->Resize(Viewport_Extent);
+                    m_OffScreen->Resize(Viewport_Extent);
                     if (m_ActiveScene)
                         m_ActiveScene->GetVulkanRenderer()->ResizeViewport(Viewport_Extent);
 
@@ -277,26 +277,25 @@ namespace VectorVertex
             ImGui::Image(sceneImageView, windowSize);
 
             {
-                if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
+                if (glfwGetMouseButton(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
                 {
-                    if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_Q) == GLFW_PRESS)
+                    if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_Q) == GLFW_PRESS)
                     {
                         m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
                     }
-                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_W) == GLFW_PRESS)
+                    else if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_W) == GLFW_PRESS)
                     {
                         m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
                     }
-                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_E) == GLFW_PRESS)
+                    else if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_E) == GLFW_PRESS)
                     {
                         m_GuizmoType = ImGuizmo::OPERATION::SCALE;
                     }
-                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+                    else if (glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_ESCAPE) == GLFW_PRESS)
                     {
                         m_GuizmoType = -1;
                     }
                 }
-                
 
                 Entity selected_entity = m_SceneHierarchyPanel.getSelectedEntity();
                 if (selected_entity && m_GuizmoType != -1)
@@ -320,12 +319,13 @@ namespace VectorVertex
 
                     glm::vec3 original_Rotation = tc.rotation;
 
-                    bool snap = glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_LEFT_CONTROL) || glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_RIGHT_CONTROL);
+                    bool snap = glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_LEFT_CONTROL) || glfwGetKey(reinterpret_cast<GLFWwindow *>(VKRenderer::Get().GetWindow().GetNativeWindow()), GLFW_KEY_RIGHT_CONTROL);
                     float snapValue = 0.5f;
-                    if(m_GuizmoType == ImGuizmo::OPERATION::ROTATE){
+                    if (m_GuizmoType == ImGuizmo::OPERATION::ROTATE)
+                    {
                         snapValue = 45.0f;
                     }
-                    float snapValues[3] = {snapValue,snapValue,snapValue};
+                    float snapValues[3] = {snapValue, snapValue, snapValue};
 
                     ImGuizmo::Manipulate(glm::value_ptr(cam_View), glm::value_ptr(proj), (ImGuizmo::OPERATION)m_GuizmoType, ImGuizmo::MODE::LOCAL, glm::value_ptr(transform), nullptr, snap ? snapValues : nullptr);
                     if (ImGuizmo::IsUsing())
@@ -353,8 +353,6 @@ namespace VectorVertex
                             };
 
                             tc.SetRotationEuler(rotation);
-
-                           
                         }
                         if (m_GuizmoType == ImGuizmo::OPERATION::SCALE)
                         {
@@ -385,7 +383,7 @@ namespace VectorVertex
         new_Cam.AddComponent<CameraComponent>();
         m_ActiveScene->SetMainCamera(&new_Cam);
         is_viewport_resized = true;
-        
+
         loading_scene = false;
     }
 
@@ -420,7 +418,7 @@ namespace VectorVertex
             serializer.Deserialize(path);
             m_ActiveScene->Init();
             VVTextureLibrary::UpdateDescriptors();
-            //std::this_thread::sleep_for(std::chrono::milliseconds(2));
+            // std::this_thread::sleep_for(std::chrono::milliseconds(2));
             loading_scene = false;
             is_viewport_resized = true;
             m_Info.path = path;
@@ -459,11 +457,11 @@ namespace VectorVertex
 
         if (m_ActiveScene->GetMainCamera() != nullptr && !loading_scene)
         {
-            FrameBuffer::Start();
+            m_OffScreen->BeginRender();
             m_ActiveScene->RenderScene(frameInfo);
-            FrameBuffer::Stop();
+            m_OffScreen->EndRender();
         }
-        sceneImageView =FrameBuffer::getFramebufferImage();
+        sceneImageView = m_OffScreen->GetFrameBufferImage();
     }
 
     void EditorLayer::OnDetach()

@@ -4,7 +4,7 @@ namespace VectorVertex
 {
     VKRendererAPI::VKRendererAPI(Window *window) : m_Window(*window)
     {
-        Init();
+        VV_CORE_INFO("Vulkan Render API Created!");
     }
 
     void VKRendererAPI::Init()
@@ -104,11 +104,83 @@ namespace VectorVertex
     void VKRendererAPI::EndRenderPass()
     {
         auto commandBuffer = GetCurrentCommandBuffer();
-        
+
         assert(isFrameStarted && "Can't call EndSwapchainRenderPass if frame is not in progress!");
         assert(commandBuffer == GetCurrentCommandBuffer() && "Can't end render pass on command buffer from a different frame");
 
         vkCmdEndRenderPass(commandBuffer);
+    }
+
+    void VKRendererAPI::DrawMesh(MeshData data)
+    {
+        auto commandBuffer = GetCurrentCommandBuffer();
+        std::vector<VkBuffer> buffers;
+        for (auto &buffer : data.m_VertexBuffers)
+        {
+            buffers.push_back(reinterpret_cast<VkBuffer>(buffer.getBuffer()));
+        }
+
+        VkDeviceSize offsets[] = {0};
+        vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers.data(), offsets);
+        if (data.m_IndexBuffer.getBuffer())
+        {
+            vkCmdBindIndexBuffer(commandBuffer, reinterpret_cast<VkBuffer>(data.m_IndexBuffer.getBuffer()), 0, VK_INDEX_TYPE_UINT32);
+            vkCmdDrawIndexed(commandBuffer, data.m_IndexCount, 1, 0, 0, 0);
+        }
+        else
+        {
+            vkCmdDraw(commandBuffer, data.m_VertexCount, 1, 0, 0);
+        }
+    }
+
+    void VKRendererAPI::CreateCommandBuffers()
+    {
+        auto &vkDevice = VKDevice::Get();
+        commandBuffers.resize(VKSwapChain::MAX_FRAMES_IN_FLIGHT);
+        VkCommandBufferAllocateInfo allocInfo{};
+        allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+        allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+        allocInfo.commandPool = vkDevice.getCommandPool();
+        allocInfo.commandBufferCount = static_cast<uint32_t>(commandBuffers.size());
+
+        if (vkAllocateCommandBuffers(vkDevice.device(), &allocInfo, commandBuffers.data()) != VK_SUCCESS)
+        {
+            VV_CORE_ERROR("Failed to allocate command buffers");
+            throw std::runtime_error("Failed to create commandbuffers");
+        }
+    }
+
+    void VKRendererAPI::FreeCommandBuffers()
+    {
+        vkFreeCommandBuffers(VKDevice::Get().device(), VKDevice::Get().getCommandPool(), static_cast<uint32_t>(commandBuffers.size()), commandBuffers.data());
+        commandBuffers.clear();
+    }
+
+    void VKRendererAPI::recreateSwapChain()
+    {
+        auto &vkDevice = VKDevice::Get();
+        auto extent = m_Window.getExtent();
+        while (extent.width == 0 || extent.height == 0)
+        {
+            extent = m_Window.getExtent();
+            glfwWaitEvents();
+        }
+
+        vkDeviceWaitIdle(vkDevice.device());
+        if (m_SwapChain == nullptr)
+        {
+            m_SwapChain = std::make_unique<VKSwapChain>(vkDevice, extent);
+        }
+        else
+        {
+            std::shared_ptr<VKSwapChain> oldSwapChain = std::move(m_SwapChain);
+            m_SwapChain = std::make_unique<VKSwapChain>(vkDevice, extent, oldSwapChain);
+            if (!oldSwapChain->compareSwapFormats(*m_SwapChain.get()))
+            {
+                VV_CORE_ERROR("Swap chain image(or depth) format does not match!");
+                throw std::runtime_error("Swap chain image(or depth) format does not match!");
+            }
+        }
     }
 
 } // namespace VectorVertex

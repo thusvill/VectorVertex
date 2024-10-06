@@ -9,6 +9,7 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include <ApplicationEvent.hpp>
+#include <GraphicsContext.hpp>
 
 namespace VectorVertex
 {
@@ -40,6 +41,7 @@ namespace VectorVertex
         std::string project_name;
         void run();
         static Application &Get() { return *s_Instance; }
+
 
     private:
     

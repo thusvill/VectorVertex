@@ -48,12 +48,12 @@ namespace VectorVertex
     }
     void VKModel::Bind(VkCommandBuffer commandBuffer)
     {
-        VkBuffer buffers[] = {vertexBuffer->getBuffer()};
+        VkBuffer buffers[] = {vertexBuffer->getVKBuffer()};
         VkDeviceSize offsets[] = {0};
         vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers, offsets);
         if (hasIndexBuffer)
         {
-            vkCmdBindIndexBuffer(commandBuffer, indexBuffer->getBuffer(), 0, VK_INDEX_TYPE_UINT32);
+            vkCmdBindIndexBuffer(commandBuffer, indexBuffer->getVKBuffer(), 0, VK_INDEX_TYPE_UINT32);
         }
     }
     void VKModel::Draw(VkCommandBuffer commandBuffer)
@@ -85,7 +85,7 @@ namespace VectorVertex
             vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        VKDevice::Get().copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
+        VKDevice::Get().copyBuffer(stagingBuffer.getVKBuffer(), vertexBuffer->getVKBuffer(), bufferSize);
     }
 
     void VKModel::CreateIndexBuffers(const std::vector<uint32_t> &indices)
@@ -108,7 +108,7 @@ namespace VectorVertex
             indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        VKDevice::Get().copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
+        VKDevice::Get().copyBuffer(stagingBuffer.getVKBuffer(), indexBuffer->getVKBuffer(), bufferSize);
     }
     std::vector<VkVertexInputAttributeDescription> VKModel::Vertex::getAttributeDescriptions()
     {

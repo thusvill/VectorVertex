@@ -6,6 +6,7 @@
 #include "vk_device.hpp"
 #include "vk_swap_chain.hpp"
 #include <Window.hpp>
+#include <Buffer.hpp>
 
 namespace VectorVertex
 {
@@ -22,6 +23,8 @@ namespace VectorVertex
         virtual void EndFrame() override;
         virtual void BeginRenderPass() override;
         virtual void EndRenderPass() override;
+
+        virtual void DrawMesh(MeshData data) override;
 
     private:
         void

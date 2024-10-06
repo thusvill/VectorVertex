@@ -6,23 +6,15 @@
 #include <GraphicsContext.hpp>
 namespace VectorVertex
 {
+
     class Renderer
     {
-        public:
-
+    public:
         virtual ~Renderer() = default;
-        static void Init();
-        static void StartScene();
-        static void EndScene();
 
-        static void BeginFrame();
-        static void EndFrame();
+        static void Draw(MeshData data);
 
-        static void WaitForIdle();
-        
-        inline static RendererAPI::API GetAPI() {return RendererAPI::GetAPI();}
-
+        inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
     };
-    
 
 } // namespace VectorVertex

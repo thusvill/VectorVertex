@@ -1,14 +1,10 @@
 #include "Renderer.hpp"
+#include <RenderCommand.hpp>
 
 namespace VectorVertex
 {
-    void Renderer::Init()
+    void Renderer::Draw(MeshData data)
     {
-        
-    }
-
-    void Renderer::StartScene()
-    {
-        
+        RenderCommand::DrawMesh(data);
     }
 }

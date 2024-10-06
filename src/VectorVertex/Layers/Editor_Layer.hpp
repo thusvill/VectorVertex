@@ -6,6 +6,7 @@
 #include <SceneHierarchy.hpp>
 #include <Entity.hpp>
 #include <SceneSerializer.hpp>
+#include <FrameBuffer.hpp>
 namespace VectorVertex
 {
     class Scene;
@@ -22,7 +23,7 @@ namespace VectorVertex
         virtual void OnImGuiRender(FrameInfo &frameInfo) override;
 
         ImTextureID sceneImageView;
-        VkExtent2D Viewport_Extent{800, 800};
+        Extent2D Viewport_Extent{800, 800};
 
         bool is_viewport_resized = false;
         Ref<Scene> GetActiveScene() { return m_ActiveScene; }
@@ -40,6 +41,7 @@ namespace VectorVertex
         ImVec2 prev_size;
         Ref<Scene> m_ActiveScene;
         SceneHierarchy m_SceneHierarchyPanel;
+        Ref<FrameBuffer> m_OffScreen;
         
 
     private:

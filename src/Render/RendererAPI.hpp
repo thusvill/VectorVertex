@@ -5,6 +5,14 @@
 
 namespace VectorVertex
 {
+    struct MeshData
+    {
+        uint32_t m_IndexCount;
+        uint32_t m_VertexCount;
+        std::vector<Buffer> m_VertexBuffers;
+        Buffer m_IndexBuffer;
+    };
+
     class RendererAPI
     {
     public:
@@ -23,8 +31,13 @@ namespace VectorVertex
         virtual void BeginRenderPass();
         virtual void EndRenderPass();
 
-        static API GetAPI() { return s_API; }
-        static Scope<RendererAPI> Create(Window* window);
+        virtual void DrawMesh(MeshData data);
+
+        static API GetAPI()
+        {
+            return s_API;
+        }
+        static Scope<RendererAPI> Create(Window *window);
 
     private:
         static API s_API;
