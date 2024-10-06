@@ -223,6 +223,20 @@ CMakeFiles/VectorVertex.dir/src/Core/Utils/PlattformUtils.cpp.o: \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
+ /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
+ /usr/include/vulkan/vulkan_core.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std.h \
+ /usr/include/vk_video/vulkan_video_codecs_common.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/glm/detail/setup.hpp \

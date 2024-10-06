@@ -30,6 +30,7 @@ namespace VectorVertex
         vkWindow->framebufferResized = true;
         vkWindow->width = width;
         vkWindow->height = height;
+        
     }
 
     void VKWindow::initWindow()

@@ -324,11 +324,11 @@ namespace VectorVertex
 
         DrawComponent<MaterialComponent>("Material", entity, [](auto &component)
                                          {
-                auto material = VVMaterialLibrary::getMaterial(component.m_ID);
+                auto material = MaterialLibrary::getMaterial(component.m_ID);
                 
                 if (ImGui::ColorEdit4("Material Color ##material", glm::value_ptr(material.m_MaterialData.color)))
                 {
-                    VVMaterialLibrary::updateMaterial(material.m_MaterialData.m_ID, material.m_MaterialData);
+                    MaterialLibrary::updateMaterial(material.m_MaterialData.m_ID, material.m_MaterialData);
                 } });
 
         DrawComponent<TextureComponent>("Texture", entity, [](auto &component)

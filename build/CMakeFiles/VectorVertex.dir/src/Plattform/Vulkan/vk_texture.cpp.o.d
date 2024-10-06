@@ -499,6 +499,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_swap_chain.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/UUID.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Flags.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/stb_image.h \
  /usr/include/c++/13/stdlib.h /usr/include/c++/13/math.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h \
@@ -506,8 +508,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Application.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_renderer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_game_object.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Components.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_model.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h \
@@ -726,17 +728,15 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_material.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Components.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_camera.hpp \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/type_ptr.inl \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_offscreen.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imconfig.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui_impl_vulkan.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Material.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/LayerStack.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_frame_info.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/Event.hpp
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Window.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/Event.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imconfig.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/ApplicationEvent.hpp

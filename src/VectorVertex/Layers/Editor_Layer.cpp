@@ -459,11 +459,11 @@ namespace VectorVertex
 
         if (m_ActiveScene->GetMainCamera() != nullptr && !loading_scene)
         {
-            m_Offscreen->StartRenderpass(frameInfo.command_buffer);
+            FrameBuffer::Start();
             m_ActiveScene->RenderScene(frameInfo);
-            m_Offscreen->EndRendrepass(frameInfo.command_buffer);
+            FrameBuffer::Stop();
         }
-        sceneImageView = m_Offscreen->getFramebufferImage();
+        sceneImageView =FrameBuffer::getFramebufferImage();
     }
 
     void EditorLayer::OnDetach()

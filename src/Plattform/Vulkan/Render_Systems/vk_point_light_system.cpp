@@ -3,7 +3,7 @@
 #include <stdexcept>
 #include <Components.hpp>
 #include <Entity.hpp>
-
+#include <Renderer.hpp>
 #include <Application.hpp>
 
 namespace VectorVertex
@@ -29,7 +29,7 @@ namespace VectorVertex
 
     PointLightSystem::~PointLightSystem()
     {
-        vkDestroyPipelineLayout(Application::Get().GetDevice().device(), pipelineLayout, nullptr);
+        vkDestroyPipelineLayout(VKDevice::Get().device(), pipelineLayout, nullptr);
     }
 
     void PointLightSystem::CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout)
@@ -46,7 +46,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(VKDevice::Get().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -67,7 +67,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(VKDevice::Get().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -81,7 +81,7 @@ namespace VectorVertex
         VKPipeline::enableAlphaBlending(pipelineConfig);
         pipelineConfig.attribute_descriptions.clear();
         pipelineConfig.bind_descriptions.clear();
-        pipelineConfig.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
+        pipelineConfig.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
         pipelineConfig.pipelineLayout = pipelineLayout;
         pipeline = std::make_unique<VKPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
     }

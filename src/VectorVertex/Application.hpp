@@ -1,15 +1,5 @@
 #pragma once
 #include <vvpch.hpp>
-#include <vk_window.hpp>
-#include <vk_device.hpp>
-#include <vk_renderer.hpp>
-#include <vk_buffer.hpp>
-#include <vk_game_object.hpp>
-#include <vk_camera.hpp>
-#include <vk_descriptors.hpp>
-#include <vk_material.hpp>
-#include <vk_offscreen.hpp>
-// #include "../Render/vv_framebuffer.hpp"
 
 #include <vk_texture.hpp>
 #include "Keyboard_inputs.hpp"
@@ -41,11 +31,6 @@ namespace VectorVertex
         Application(const Application &) = delete;
         Application &operator=(const Application &) = delete;
 
-        GLFWwindow *GetNativeWindow() { return VKWindow.getGLFWwindow(); }
-        VKDevice &GetDevice() { return VKDevice; }
-        VKWindow &GetWindow() { return VKWindow; }
-        VKRenderer &GetRenderer() {return renderer;}
-
         void Close()
         {
             m_Running = false;
@@ -57,12 +42,10 @@ namespace VectorVertex
         static Application &Get() { return *s_Instance; }
 
     private:
+    
         static Application *s_Instance;
         bool m_Running = true;
-        VKWindow VKWindow{WIDTH, HEIGHT, project_name};
-        VKDevice VKDevice{VKWindow};
-        VKRenderer renderer{VKWindow, VKDevice};
-
+        
         EditorLayer *editor_layer;
 
         LayerStack layers{};

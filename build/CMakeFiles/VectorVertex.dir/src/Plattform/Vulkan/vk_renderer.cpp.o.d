@@ -466,19 +466,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/fmt/format.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
- /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
- /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
- /usr/include/c++/13/bits/locale_facets_nonio.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
- /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
- /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
- /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
- /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_window.hpp \
- /usr/include/GLFW/glfw3.h /usr/include/vulkan/vulkan.h \
- /usr/include/vulkan/vk_platform.h /usr/include/vulkan/vulkan_core.h \
+ /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
+ /usr/include/vulkan/vulkan_core.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
  /usr/include/vk_video/vulkan_video_codecs_common.h \
  /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
@@ -490,10 +479,24 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
- /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
- /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
+ /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
+ /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
+ /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_window.hpp \
+ /usr/include/GLFW/glfw3.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
+ /usr/include/KHR/khrplatform.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_device.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_swap_chain.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Window.hpp \
+ /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_texture.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_image.hpp \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_descriptors.hpp \

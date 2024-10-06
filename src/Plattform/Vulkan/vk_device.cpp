@@ -56,8 +56,10 @@ namespace VectorVertex
   }
 
   // class member functions
-  VKDevice::VKDevice(VKWindow &window) : window{window}
+  VKDevice::VKDevice(GLFWwindow* window) : window{window}
   {
+    VV_CORE_ASSERT(!s_Instance, "Device already created!");
+    s_Instance = this;
     createInstance();
     setupDebugMessenger();
     createSurface();
@@ -243,7 +245,15 @@ namespace VectorVertex
     }
   }
 
-  void VKDevice::createSurface() { window.createWindowSurface(instance, &surface_); }
+  void VKDevice::createSurface()
+  {
+
+    if (glfwCreateWindowSurface(instance, window, nullptr, &surface_) != VK_SUCCESS)
+    {
+      VV_CORE_ERROR("failed to create window surface!");
+      throw std::runtime_error("failed to create window surface!");
+    }
+  }
 
   bool VKDevice::isDeviceSuitable(VkPhysicalDevice device)
   {
@@ -333,7 +343,6 @@ namespace VectorVertex
     {
       extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
     }
-    
 
     return extensions;
   }

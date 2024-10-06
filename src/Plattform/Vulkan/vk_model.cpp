@@ -75,18 +75,17 @@ namespace VectorVertex
 
         uint32_t vertexSize = sizeof(vertices[0]);
 
-        VKBuffer stagingBuffer{
-            Application::Get().GetDevice(), vertexSize, vertexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+        VKBuffer stagingBuffer{            vertexSize, vertexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT};
 
         stagingBuffer.map();
         stagingBuffer.writeToBuffer((void *)vertices.data());
 
         vertexBuffer = std::make_unique<VKBuffer>(
-            Application::Get().GetDevice(), vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+            vertexSize, vertexCount, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        Application::Get().GetDevice().copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
+        VKDevice::Get().copyBuffer(stagingBuffer.getBuffer(), vertexBuffer->getBuffer(), bufferSize);
     }
 
     void VKModel::CreateIndexBuffers(const std::vector<uint32_t> &indices)
@@ -100,16 +99,16 @@ namespace VectorVertex
         VkDeviceSize bufferSize = sizeof(indices[0]) * indexCount;
         uint32_t indexSize = sizeof(indices[0]);
         VKBuffer stagingBuffer{
-            Application::Get().GetDevice(), indexSize, indexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+            indexSize, indexCount, VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT};
         stagingBuffer.map();
         stagingBuffer.writeToBuffer((void *)indices.data());
 
         indexBuffer = std::make_unique<VKBuffer>(
-            Application::Get().GetDevice(), indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
+            indexSize, indexCount, VK_BUFFER_USAGE_INDEX_BUFFER_BIT | VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
 
-        Application::Get().GetDevice().copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
+        VKDevice::Get().copyBuffer(stagingBuffer.getBuffer(), indexBuffer->getBuffer(), bufferSize);
     }
     std::vector<VkVertexInputAttributeDescription> VKModel::Vertex::getAttributeDescriptions()
     {

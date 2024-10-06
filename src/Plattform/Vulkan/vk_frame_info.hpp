@@ -1,17 +1,17 @@
 #pragma once
 #include <vvpch.hpp>
 #include "vk_camera.hpp"
-#include "vk_game_object.hpp"
 #include "vk_descriptors.hpp"
 #include "vk_renderer.hpp"
 #include <imgui.h>
+#include <UUID.hpp>
 #include <vulkan/vulkan.h>
 //#include <Entity.hpp>
 
 namespace VectorVertex
 {
     class Entity;
-#define MAX_LIGHTS 10
+    #define MAX_LIGHTS 10
 
     struct PointLight
     {

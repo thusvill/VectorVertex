@@ -32,7 +32,7 @@ namespace VectorVertex
     const bool enableValidationLayers = true;
 #endif
 VKDevice() = default;
-    VKDevice(VKWindow &window);
+    VKDevice(GLFWwindow* window);
     ~VKDevice();
 
     // Not copyable or movable
@@ -77,7 +77,12 @@ VKDevice() = default;
     VkPhysicalDeviceProperties properties;
     VkInstance instance_;
 
+    static VKDevice& Get() {
+      return *s_Instance;
+    }
+
   private:
+    static VKDevice* s_Instance;
     void createInstance();
     void setupDebugMessenger();
     void createSurface();
@@ -98,7 +103,7 @@ VKDevice() = default;
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-    VKWindow &window;
+    GLFWwindow *window;
     VkCommandPool commandPool;
 
     VkDevice device_;

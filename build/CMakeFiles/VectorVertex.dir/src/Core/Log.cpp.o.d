@@ -455,6 +455,20 @@ CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/fmt/format.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
+ /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
+ /usr/include/vulkan/vulkan_core.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std.h \
+ /usr/include/vk_video/vulkan_video_codecs_common.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_encode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std.h \
+ /usr/include/vk_video/vulkan_video_codec_h264std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_h265std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
+ /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
  /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
  /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \

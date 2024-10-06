@@ -2,7 +2,6 @@
 
 #include "../vk_pipeline.hpp"
 #include "../vk_camera.hpp"
-#include "../vk_game_object.hpp"
 #include "../vk_frame_info.hpp"
 
 #define GLM_FORCE_RADIANS

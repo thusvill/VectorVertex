@@ -40,7 +40,7 @@ namespace VectorVertex
         ImVec2 prev_size;
         Ref<Scene> m_ActiveScene;
         SceneHierarchy m_SceneHierarchyPanel;
-        Ref<VKOffscreen> m_Offscreen;
+        
 
     private:
         float frameTime;

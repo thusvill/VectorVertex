@@ -22,8 +22,21 @@
 #define VV_ENABLE_ASSERTS
 #endif
 
+#include <vulkan/vulkan.h>
+
 namespace VectorVertex
 {
+    struct Extent2D
+    {
+        uint32_t width;
+        uint32_t height;
+
+        operator VkExtent2D() const
+        {
+            return {width, height};
+        }
+    };
+
     template <typename T>
     using Scope = std::unique_ptr<T>;
     template <typename T, typename... Args>
@@ -42,7 +55,6 @@ namespace VectorVertex
 
 #define CONVERT_REF(type, ptr) std::shared_ptr<type>(ptr)
 
-
 #if defined(_WIN32) || defined(_WIN64)
 #define VV_PLATTFORM WINDOWS
 #elif defined(__APPLE__) || defined(__MACH__)
@@ -52,6 +64,7 @@ namespace VectorVertex
 #else
 #error "Unknown platform!"
 #endif
+
 }
 #include "Log.h"
 #include "Assert.h"

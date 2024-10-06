@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include <iostream>
 #include <Entity.hpp>
+#include <Renderer.hpp>
+#include <GraphicsContext.hpp>
 #include <Application.hpp>
 namespace VectorVertex
 {
@@ -22,7 +24,7 @@ namespace VectorVertex
 
     LveRenderSystem::~LveRenderSystem()
     {
-        vkDestroyPipelineLayout(Application::Get().GetDevice().device(), pipelineLayout, nullptr);
+        vkDestroyPipelineLayout(VKDevice::Get().device(), pipelineLayout, nullptr);
     }
 
     void LveRenderSystem::CreatePipelineLayout(VkDescriptorSetLayout des_set_layout)
@@ -42,7 +44,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(VKDevice::Get().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -67,7 +69,7 @@ namespace VectorVertex
         pipelineLayoutInfo.pushConstantRangeCount = 1;
         pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
 
-        if (vkCreatePipelineLayout(Application::Get().GetDevice().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
+        if (vkCreatePipelineLayout(VKDevice::Get().device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create pipeline layout!");
         }
@@ -79,7 +81,7 @@ namespace VectorVertex
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
         VKPipeline::enableAlphaBlending(pipelineConfig);
-        pipelineConfig.renderPass = Application::Get().GetRenderer().GetSwapchainRenderPass();
+        pipelineConfig.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
         pipelineConfig.pipelineLayout = pipelineLayout;
         pipeline = std::make_unique<VKPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
     }
@@ -104,7 +106,7 @@ namespace VectorVertex
                 MaterialComponent _material = obj.GetComponent<MaterialComponent>();
                 if (_material.m_ID > -1.0f)
                 {
-                    push.materialData = VVMaterialLibrary::getMaterial(_material.m_ID).m_MaterialData.getPushData();
+                    push.materialData = MaterialLibrary::getMaterial(_material.m_ID).m_MaterialData.getPushData();
                 }
                 else
                 {
@@ -124,7 +126,7 @@ namespace VectorVertex
                                         pipelineLayout, des.first, 1, &des.second, 0, nullptr);
             }
 
-            if (!Application::Get().GetRenderer().Get_Swapchain().isWaitingForFence)
+            if (!reinterpret_cast<VKSwapChain*>(GraphicsContext::Get()->GetSwapchain())->isWaitingForFence)
             {
                 VVTexture* tex = &VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID);
                 if (obj.HasComponent<TextureComponent>() && tex !=nullptr)

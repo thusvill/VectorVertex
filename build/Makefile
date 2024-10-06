@@ -345,6 +345,30 @@ src/Core/vvpch.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Core/vvpch.cpp.s
 .PHONY : src/Core/vvpch.cpp.s
 
+src/Plattform/Linux/LinuxWindow.o: src/Plattform/Linux/LinuxWindow.cpp.o
+.PHONY : src/Plattform/Linux/LinuxWindow.o
+
+# target to build an object file
+src/Plattform/Linux/LinuxWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.o
+.PHONY : src/Plattform/Linux/LinuxWindow.cpp.o
+
+src/Plattform/Linux/LinuxWindow.i: src/Plattform/Linux/LinuxWindow.cpp.i
+.PHONY : src/Plattform/Linux/LinuxWindow.i
+
+# target to preprocess a source file
+src/Plattform/Linux/LinuxWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.i
+.PHONY : src/Plattform/Linux/LinuxWindow.cpp.i
+
+src/Plattform/Linux/LinuxWindow.s: src/Plattform/Linux/LinuxWindow.cpp.s
+.PHONY : src/Plattform/Linux/LinuxWindow.s
+
+# target to generate assembly for a file
+src/Plattform/Linux/LinuxWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.s
+.PHONY : src/Plattform/Linux/LinuxWindow.cpp.s
+
 src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
 .PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o
 
@@ -465,6 +489,30 @@ src/Plattform/Vulkan/vk_camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_camera.cpp.s
 .PHONY : src/Plattform/Vulkan/vk_camera.cpp.s
 
+src/Plattform/Vulkan/vk_context.o: src/Plattform/Vulkan/vk_context.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_context.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_context.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_context.cpp.o
+
+src/Plattform/Vulkan/vk_context.i: src/Plattform/Vulkan/vk_context.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_context.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_context.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_context.cpp.i
+
+src/Plattform/Vulkan/vk_context.s: src/Plattform/Vulkan/vk_context.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_context.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_context.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_context.cpp.s
+
 src/Plattform/Vulkan/vk_descriptors.o: src/Plattform/Vulkan/vk_descriptors.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_descriptors.o
 
@@ -513,29 +561,29 @@ src/Plattform/Vulkan/vk_device.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_device.cpp.s
 .PHONY : src/Plattform/Vulkan/vk_device.cpp.s
 
-src/Plattform/Vulkan/vk_game_object.o: src/Plattform/Vulkan/vk_game_object.cpp.o
-.PHONY : src/Plattform/Vulkan/vk_game_object.o
+src/Plattform/Vulkan/vk_framebuffer.o: src/Plattform/Vulkan/vk_framebuffer.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_framebuffer.o
 
 # target to build an object file
-src/Plattform/Vulkan/vk_game_object.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_game_object.cpp.o
-.PHONY : src/Plattform/Vulkan/vk_game_object.cpp.o
+src/Plattform/Vulkan/vk_framebuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_framebuffer.cpp.o
 
-src/Plattform/Vulkan/vk_game_object.i: src/Plattform/Vulkan/vk_game_object.cpp.i
-.PHONY : src/Plattform/Vulkan/vk_game_object.i
+src/Plattform/Vulkan/vk_framebuffer.i: src/Plattform/Vulkan/vk_framebuffer.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_framebuffer.i
 
 # target to preprocess a source file
-src/Plattform/Vulkan/vk_game_object.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_game_object.cpp.i
-.PHONY : src/Plattform/Vulkan/vk_game_object.cpp.i
+src/Plattform/Vulkan/vk_framebuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_framebuffer.cpp.i
 
-src/Plattform/Vulkan/vk_game_object.s: src/Plattform/Vulkan/vk_game_object.cpp.s
-.PHONY : src/Plattform/Vulkan/vk_game_object.s
+src/Plattform/Vulkan/vk_framebuffer.s: src/Plattform/Vulkan/vk_framebuffer.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_framebuffer.s
 
 # target to generate assembly for a file
-src/Plattform/Vulkan/vk_game_object.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_game_object.cpp.s
-.PHONY : src/Plattform/Vulkan/vk_game_object.cpp.s
+src/Plattform/Vulkan/vk_framebuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_framebuffer.cpp.s
 
 src/Plattform/Vulkan/vk_image.o: src/Plattform/Vulkan/vk_image.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_image.o
@@ -560,30 +608,6 @@ src/Plattform/Vulkan/vk_image.s: src/Plattform/Vulkan/vk_image.cpp.s
 src/Plattform/Vulkan/vk_image.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_image.cpp.s
 .PHONY : src/Plattform/Vulkan/vk_image.cpp.s
-
-src/Plattform/Vulkan/vk_material.o: src/Plattform/Vulkan/vk_material.cpp.o
-.PHONY : src/Plattform/Vulkan/vk_material.o
-
-# target to build an object file
-src/Plattform/Vulkan/vk_material.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_material.cpp.o
-.PHONY : src/Plattform/Vulkan/vk_material.cpp.o
-
-src/Plattform/Vulkan/vk_material.i: src/Plattform/Vulkan/vk_material.cpp.i
-.PHONY : src/Plattform/Vulkan/vk_material.i
-
-# target to preprocess a source file
-src/Plattform/Vulkan/vk_material.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_material.cpp.i
-.PHONY : src/Plattform/Vulkan/vk_material.cpp.i
-
-src/Plattform/Vulkan/vk_material.s: src/Plattform/Vulkan/vk_material.cpp.s
-.PHONY : src/Plattform/Vulkan/vk_material.s
-
-# target to generate assembly for a file
-src/Plattform/Vulkan/vk_material.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_material.cpp.s
-.PHONY : src/Plattform/Vulkan/vk_material.cpp.s
 
 src/Plattform/Vulkan/vk_model.o: src/Plattform/Vulkan/vk_model.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_model.o
@@ -776,6 +800,126 @@ src/Plattform/WindowInputs.s: src/Plattform/WindowInputs.cpp.s
 src/Plattform/WindowInputs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.s
 .PHONY : src/Plattform/WindowInputs.cpp.s
+
+src/Render/Buffer.o: src/Render/Buffer.cpp.o
+.PHONY : src/Render/Buffer.o
+
+# target to build an object file
+src/Render/Buffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Buffer.cpp.o
+.PHONY : src/Render/Buffer.cpp.o
+
+src/Render/Buffer.i: src/Render/Buffer.cpp.i
+.PHONY : src/Render/Buffer.i
+
+# target to preprocess a source file
+src/Render/Buffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Buffer.cpp.i
+.PHONY : src/Render/Buffer.cpp.i
+
+src/Render/Buffer.s: src/Render/Buffer.cpp.s
+.PHONY : src/Render/Buffer.s
+
+# target to generate assembly for a file
+src/Render/Buffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Buffer.cpp.s
+.PHONY : src/Render/Buffer.cpp.s
+
+src/Render/FrameBuffer.o: src/Render/FrameBuffer.cpp.o
+.PHONY : src/Render/FrameBuffer.o
+
+# target to build an object file
+src/Render/FrameBuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.o
+.PHONY : src/Render/FrameBuffer.cpp.o
+
+src/Render/FrameBuffer.i: src/Render/FrameBuffer.cpp.i
+.PHONY : src/Render/FrameBuffer.i
+
+# target to preprocess a source file
+src/Render/FrameBuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.i
+.PHONY : src/Render/FrameBuffer.cpp.i
+
+src/Render/FrameBuffer.s: src/Render/FrameBuffer.cpp.s
+.PHONY : src/Render/FrameBuffer.s
+
+# target to generate assembly for a file
+src/Render/FrameBuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.s
+.PHONY : src/Render/FrameBuffer.cpp.s
+
+src/Render/GraphicsContext.o: src/Render/GraphicsContext.cpp.o
+.PHONY : src/Render/GraphicsContext.o
+
+# target to build an object file
+src/Render/GraphicsContext.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/GraphicsContext.cpp.o
+.PHONY : src/Render/GraphicsContext.cpp.o
+
+src/Render/GraphicsContext.i: src/Render/GraphicsContext.cpp.i
+.PHONY : src/Render/GraphicsContext.i
+
+# target to preprocess a source file
+src/Render/GraphicsContext.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/GraphicsContext.cpp.i
+.PHONY : src/Render/GraphicsContext.cpp.i
+
+src/Render/GraphicsContext.s: src/Render/GraphicsContext.cpp.s
+.PHONY : src/Render/GraphicsContext.s
+
+# target to generate assembly for a file
+src/Render/GraphicsContext.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/GraphicsContext.cpp.s
+.PHONY : src/Render/GraphicsContext.cpp.s
+
+src/Render/Material.o: src/Render/Material.cpp.o
+.PHONY : src/Render/Material.o
+
+# target to build an object file
+src/Render/Material.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Material.cpp.o
+.PHONY : src/Render/Material.cpp.o
+
+src/Render/Material.i: src/Render/Material.cpp.i
+.PHONY : src/Render/Material.i
+
+# target to preprocess a source file
+src/Render/Material.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Material.cpp.i
+.PHONY : src/Render/Material.cpp.i
+
+src/Render/Material.s: src/Render/Material.cpp.s
+.PHONY : src/Render/Material.s
+
+# target to generate assembly for a file
+src/Render/Material.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Material.cpp.s
+.PHONY : src/Render/Material.cpp.s
+
+src/Render/Window.o: src/Render/Window.cpp.o
+.PHONY : src/Render/Window.o
+
+# target to build an object file
+src/Render/Window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Window.cpp.o
+.PHONY : src/Render/Window.cpp.o
+
+src/Render/Window.i: src/Render/Window.cpp.i
+.PHONY : src/Render/Window.i
+
+# target to preprocess a source file
+src/Render/Window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Window.cpp.i
+.PHONY : src/Render/Window.cpp.i
+
+src/Render/Window.s: src/Render/Window.cpp.s
+.PHONY : src/Render/Window.s
+
+# target to generate assembly for a file
+src/Render/Window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Window.cpp.s
+.PHONY : src/Render/Window.cpp.s
 
 src/VectorVertex/Application.o: src/VectorVertex/Application.cpp.o
 .PHONY : src/VectorVertex/Application.o
@@ -1269,6 +1413,9 @@ help:
 	@echo "... src/Core/vvpch.o"
 	@echo "... src/Core/vvpch.i"
 	@echo "... src/Core/vvpch.s"
+	@echo "... src/Plattform/Linux/LinuxWindow.o"
+	@echo "... src/Plattform/Linux/LinuxWindow.i"
+	@echo "... src/Plattform/Linux/LinuxWindow.s"
 	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o"
 	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i"
 	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s"
@@ -1284,21 +1431,21 @@ help:
 	@echo "... src/Plattform/Vulkan/vk_camera.o"
 	@echo "... src/Plattform/Vulkan/vk_camera.i"
 	@echo "... src/Plattform/Vulkan/vk_camera.s"
+	@echo "... src/Plattform/Vulkan/vk_context.o"
+	@echo "... src/Plattform/Vulkan/vk_context.i"
+	@echo "... src/Plattform/Vulkan/vk_context.s"
 	@echo "... src/Plattform/Vulkan/vk_descriptors.o"
 	@echo "... src/Plattform/Vulkan/vk_descriptors.i"
 	@echo "... src/Plattform/Vulkan/vk_descriptors.s"
 	@echo "... src/Plattform/Vulkan/vk_device.o"
 	@echo "... src/Plattform/Vulkan/vk_device.i"
 	@echo "... src/Plattform/Vulkan/vk_device.s"
-	@echo "... src/Plattform/Vulkan/vk_game_object.o"
-	@echo "... src/Plattform/Vulkan/vk_game_object.i"
-	@echo "... src/Plattform/Vulkan/vk_game_object.s"
+	@echo "... src/Plattform/Vulkan/vk_framebuffer.o"
+	@echo "... src/Plattform/Vulkan/vk_framebuffer.i"
+	@echo "... src/Plattform/Vulkan/vk_framebuffer.s"
 	@echo "... src/Plattform/Vulkan/vk_image.o"
 	@echo "... src/Plattform/Vulkan/vk_image.i"
 	@echo "... src/Plattform/Vulkan/vk_image.s"
-	@echo "... src/Plattform/Vulkan/vk_material.o"
-	@echo "... src/Plattform/Vulkan/vk_material.i"
-	@echo "... src/Plattform/Vulkan/vk_material.s"
 	@echo "... src/Plattform/Vulkan/vk_model.o"
 	@echo "... src/Plattform/Vulkan/vk_model.i"
 	@echo "... src/Plattform/Vulkan/vk_model.s"
@@ -1323,6 +1470,21 @@ help:
 	@echo "... src/Plattform/WindowInputs.o"
 	@echo "... src/Plattform/WindowInputs.i"
 	@echo "... src/Plattform/WindowInputs.s"
+	@echo "... src/Render/Buffer.o"
+	@echo "... src/Render/Buffer.i"
+	@echo "... src/Render/Buffer.s"
+	@echo "... src/Render/FrameBuffer.o"
+	@echo "... src/Render/FrameBuffer.i"
+	@echo "... src/Render/FrameBuffer.s"
+	@echo "... src/Render/GraphicsContext.o"
+	@echo "... src/Render/GraphicsContext.i"
+	@echo "... src/Render/GraphicsContext.s"
+	@echo "... src/Render/Material.o"
+	@echo "... src/Render/Material.i"
+	@echo "... src/Render/Material.s"
+	@echo "... src/Render/Window.o"
+	@echo "... src/Render/Window.i"
+	@echo "... src/Render/Window.s"
 	@echo "... src/VectorVertex/Application.o"
 	@echo "... src/VectorVertex/Application.i"
 	@echo "... src/VectorVertex/Application.s"

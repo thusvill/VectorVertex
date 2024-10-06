@@ -5,7 +5,7 @@ namespace VectorVertex
     void VulkanRendererSystem::Create()
     {
         VVTextureLibrary::UpdateDescriptors();
-        m_global_pool = VKDescriptorPool::Builder(Application::Get().GetDevice())
+        m_global_pool = VKDescriptorPool::Builder(VKDevice::Get())
                             .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT)
                             .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
                             //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -15,12 +15,12 @@ namespace VectorVertex
 
         for (int i = 0; i < m_ubo_buffers.size(); i++)
         {
-            m_ubo_buffers[i] = std::make_unique<VKBuffer>(Application::Get().GetDevice(), sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
+            m_ubo_buffers[i] = std::make_unique<VKBuffer>(sizeof(GlobalUBO), 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
                                                           VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
             m_ubo_buffers[i]->map();
         }
 
-        m_global_set_layout = VKDescriptorSetLayout::Builder(Application::Get().GetDevice())
+        m_global_set_layout = VKDescriptorSetLayout::Builder(VKDevice::Get())
                                   .addBinding(0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                   //.addBinding(1, VK_DESCRIPTOR_TYPE_SAMPLER, VK_SHADER_STAGE_ALL_GRAPHICS)
                                   .build();
@@ -105,7 +105,7 @@ namespace VectorVertex
         {
             auto &m_Camera = m_SceneCamera->GetComponent<CameraComponent>().m_Camera;
 
-            camControl.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameTime, m_SceneCamera->GetComponent<TransformComponent>());
+            camControl.moveInPlaneXZ(static_cast<GLFWwindow*>(VKRenderer::Get().GetWindow().GetNativeWindow()), frameTime, m_SceneCamera->GetComponent<TransformComponent>());
             m_Camera.SetViewYXZ(m_SceneCamera->GetComponent<TransformComponent>().translation, m_SceneCamera->GetComponent<TransformComponent>().rotation);
 
             auto aspectRatio = static_cast<float>(m_ViewportSize.width) / static_cast<float>(m_ViewportSize.height); // renderer.GetAspectRatio();

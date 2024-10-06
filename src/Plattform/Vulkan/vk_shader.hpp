@@ -18,7 +18,7 @@ namespace VectorVertex
         {
             if (shaderModule != VK_NULL_HANDLE)
             {
-                vkDestroyShaderModule(Application::Get().GetDevice().device(), shaderModule, nullptr);
+                vkDestroyShaderModule(VKDevice::Get().device(), shaderModule, nullptr);
             }
         }
 
@@ -65,7 +65,7 @@ namespace VectorVertex
             createInfo.codeSize = code.size();
             createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
 
-            if (vkCreateShaderModule(Application::Get().GetDevice().device(), &createInfo, nullptr, &shaderModule) != VK_SUCCESS)
+            if (vkCreateShaderModule(VKDevice::Get().device(), &createInfo, nullptr, &shaderModule) != VK_SUCCESS)
             {
                 throw std::runtime_error("failed to create shader module!");
             }

@@ -6,7 +6,7 @@
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-#include <vk_material.hpp>
+#include <Material.hpp>
 
 namespace VectorVertex
 {
@@ -35,11 +35,11 @@ namespace VectorVertex
 
         MaterialComponent()
         {
-            m_ID = VVMaterialLibrary::getDefaultID();
+            m_ID = MaterialLibrary::getDefaultID();
         }
         MaterialComponent(std::string name, MaterialData materialData)
         {
-            m_ID = VVMaterialLibrary::createMaterial(name, materialData);
+            m_ID = MaterialLibrary::createMaterial(name, materialData);
         }
         uint64_t m_ID;
     };

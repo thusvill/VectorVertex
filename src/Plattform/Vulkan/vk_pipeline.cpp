@@ -13,7 +13,7 @@ namespace VectorVertex
 
     VKPipeline::~VKPipeline()
     {
-        vkDestroyPipeline(Application::Get().GetDevice().device(), graphiscPipeline, nullptr);
+        vkDestroyPipeline(VKDevice::Get().device(), graphiscPipeline, nullptr);
     }
 
     void VKPipeline::Bind(VkCommandBuffer commandBUffer)
@@ -185,7 +185,7 @@ namespace VectorVertex
         pipelineInfo.basePipelineIndex = -1;
         pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
-        if (vkCreateGraphicsPipelines(Application::Get().GetDevice().device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphiscPipeline) != VK_SUCCESS)
+        if (vkCreateGraphicsPipelines(VKDevice::Get().device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphiscPipeline) != VK_SUCCESS)
         {
             throw std::runtime_error("Failed to create graphics pipeline");
         }

@@ -4,17 +4,13 @@
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
 #include <iostream>
+#include <Renderer.hpp>
 
 namespace VectorVertex
 {
     Application *Application::s_Instance = nullptr;
 
-    VkImageView CreateColorAttachmentImageView(VkDevice device, VkImage image, VkFormat format);
-    VkImage CreateImage(VKDevice &VKDevice, VkImageUsageFlags usage, uint32_t width, uint32_t height);
-    void TransitionImageLayout(VKDevice *VKDevice, VkImage image, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout);
-    bool hasStencilComponent(VkFormat format);
-
-    Application::Application(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
+        Application::Application(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
     {
         VV_CORE_ASSERT(!s_Instance, "Application already exists!");
         s_Instance = this;
@@ -40,7 +36,7 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        while (m_Running && !VKWindow.shouldClose())
+        while (m_Running && !Window::shouldClose())
         {
             layers.UpdateAll();
 
@@ -52,29 +48,19 @@ namespace VectorVertex
 
             glfwPollEvents();
 
-            if (auto commandBuffer = renderer.BeginFrame())
-            {
+            Renderer::StartScene();
 
-                int frame_index = renderer.GetFrameIndex();
-                std::unordered_map<int, VkDescriptorSet> descriptor_sets;
-                FrameInfo frameInfo{
-                    frame_index,
-                    frameTime,
-                    commandBuffer};
+            editor_layer->OnRender();
 
-                editor_layer->OnRender(frameInfo);
-                // Main Window Renderer
-                {
-                    renderer.BeginSwapchainRenderPass(commandBuffer);
-                    editor_layer->OnImGuiRender(frameInfo);
-                    renderer.EndSwapchainRenderPass(commandBuffer);
-                }
+            Renderer::BeginFrame();
+            editor_layer->OnImGuiRender();
+            Renderer::EndFrame();
 
-                renderer.EndFrame();
-            }
+            Renderer::EndScene();
+            
         }
 
-        vkDeviceWaitIdle(VKDevice.device());
+        Renderer::WaitForIdle();
     }
 
 } // namespace VectorVertex

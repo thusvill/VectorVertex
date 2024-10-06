@@ -9,17 +9,17 @@ namespace VectorVertex
     {
         if (imageMemory != VK_NULL_HANDLE)
         {
-            vkFreeMemory(Application::Get().GetDevice().device(), imageMemory, nullptr);
+            vkFreeMemory(VKDevice::Get().device(), imageMemory, nullptr);
         }
         if (image != VK_NULL_HANDLE)
         {
-            vkDestroyImage(Application::Get().GetDevice().device(), image, nullptr);
+            vkDestroyImage(VKDevice::Get().device(), image, nullptr);
         }
     }
     void VKImage::createImage(uint32_t width, uint32_t height, VkFormat format, VkImageTiling tiling, VkImageUsageFlags usage, VkMemoryPropertyFlags properties)
     {
         VkPhysicalDeviceProperties deviceProperties;
-        vkGetPhysicalDeviceProperties(Application::Get().GetDevice().getPhysicalDevice(), &deviceProperties);
+        vkGetPhysicalDeviceProperties(VKDevice::Get().getPhysicalDevice(), &deviceProperties);
         uint32_t maxFramebufferWidth = deviceProperties.limits.maxFramebufferWidth;
         uint32_t maxFramebufferHeight = deviceProperties.limits.maxFramebufferHeight;
 
@@ -38,17 +38,17 @@ namespace VectorVertex
         imageInfo.samples = VK_SAMPLE_COUNT_1_BIT;
         imageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
 
-        if (vkCreateImage(Application::Get().GetDevice().device(), &imageInfo, nullptr, &image) != VK_SUCCESS)
+        if (vkCreateImage(VKDevice::Get().device(), &imageInfo, nullptr, &image) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to create image!");
         }
 
         VkMemoryRequirements memRequirements;
-        vkGetImageMemoryRequirements(Application::Get().GetDevice().device(), image, &memRequirements);
+        vkGetImageMemoryRequirements(VKDevice::Get().device(), image, &memRequirements);
 
         allocateMemory(properties, memRequirements);
 
-        vkBindImageMemory(Application::Get().GetDevice().device(), image, imageMemory, 0);
+        vkBindImageMemory(VKDevice::Get().device(), image, imageMemory, 0);
     }
     VkImageView VKImage::createImageView(VkFormat format, VkImageAspectFlags aspectFlags)
     {
@@ -64,7 +64,7 @@ namespace VectorVertex
         viewInfo.subresourceRange.layerCount = 1;
 
         VkImageView imageView;
-        if (vkCreateImageView(Application::Get().GetDevice().device(), &viewInfo, nullptr, &imageView) != VK_SUCCESS)
+        if (vkCreateImageView(VKDevice::Get().device(), &viewInfo, nullptr, &imageView) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to create image view!");
         }
@@ -73,7 +73,7 @@ namespace VectorVertex
     }
     void VKImage::transitionImageLayout(VkCommandPool commandPool, VkQueue graphicsQueue, VkFormat format, VkImageLayout oldLayout, VkImageLayout newLayout)
     {
-        VkCommandBuffer commandBuffer = Application::Get().GetDevice().beginSingleTimeCommands();
+        VkCommandBuffer commandBuffer = VKDevice::Get().beginSingleTimeCommands();
 
         VkImageMemoryBarrier barrier{};
         barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
@@ -120,16 +120,16 @@ namespace VectorVertex
             0, nullptr,
             1, &barrier);
 
-        Application::Get().GetDevice().endSingleTimeCommands(commandBuffer);
+        VKDevice::Get().endSingleTimeCommands(commandBuffer);
     }
     void VKImage::allocateMemory(VkMemoryPropertyFlags properties, VkMemoryRequirements memRequirements)
     {
         VkMemoryAllocateInfo allocInfo{};
         allocInfo.sType = VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
         allocInfo.allocationSize = memRequirements.size;
-        allocInfo.memoryTypeIndex = Application::Get().GetDevice().findMemoryType(memRequirements.memoryTypeBits, properties);
+        allocInfo.memoryTypeIndex = VKDevice::Get().findMemoryType(memRequirements.memoryTypeBits, properties);
 
-        if (vkAllocateMemory(Application::Get().GetDevice().device(), &allocInfo, nullptr, &imageMemory) != VK_SUCCESS)
+        if (vkAllocateMemory(VKDevice::Get().device(), &allocInfo, nullptr, &imageMemory) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to allocate image memory!");
         }

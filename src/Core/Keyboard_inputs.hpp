@@ -1,7 +1,7 @@
 #pragma once
-#include "vk_game_object.hpp"
 #include "vk_window.hpp"
 
+#include <Components.hpp>
 namespace VectorVertex
 {
     class KeyboardInputs

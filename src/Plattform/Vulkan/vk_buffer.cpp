@@ -6,6 +6,7 @@
  */
 
 #include "vk_buffer.hpp"
+#include <Log.h>
 
 // std
 #include <cassert>
@@ -13,7 +14,6 @@
 
 namespace VectorVertex
 {
-
     /**
      * Returns the minimum instance size required to be compatible with devices minOffsetAlignment
      *
@@ -33,13 +33,12 @@ namespace VectorVertex
     }
 
     VKBuffer::VKBuffer(
-        VKDevice &device,
         VkDeviceSize instanceSize,
         uint32_t instanceCount,
         VkBufferUsageFlags usageFlags,
         VkMemoryPropertyFlags memoryPropertyFlags,
         VkDeviceSize minOffsetAlignment)
-        : vkDevice{device},
+        : vkDevice{VKDevice::Get()},
           instanceSize{instanceSize},
           instanceCount{instanceCount},
           usageFlags{usageFlags},
@@ -47,7 +46,7 @@ namespace VectorVertex
     {
         alignmentSize = getAlignment(instanceSize, minOffsetAlignment);
         bufferSize = alignmentSize * instanceCount;
-        device.createBuffer(bufferSize, usageFlags, memoryPropertyFlags, buffer, memory);
+        vkDevice.createBuffer(bufferSize, usageFlags, memoryPropertyFlags, buffer, memory);
     }
 
     VKBuffer::~VKBuffer()
@@ -66,10 +65,20 @@ namespace VectorVertex
      *
      * @return VkResult of the buffer mapping call
      */
-    VkResult VKBuffer::map(VkDeviceSize size, VkDeviceSize offset)
+    // VkResult VKBuffer::map(VkDeviceSize size, VkDeviceSize offset)
+    // {
+    //     assert(buffer && memory && "Called map on buffer before create");
+    //     return vkMapMemory(vkDevice.device(), memory, offset, size, 0, &mapped);
+    // }
+
+    void VKBuffer::map(VkDeviceSize size, VkDeviceSize offset)
     {
         assert(buffer && memory && "Called map on buffer before create");
-        return vkMapMemory(vkDevice.device(), memory, offset, size, 0, &mapped);
+        VkResult result = vkMapMemory(vkDevice.device(), memory, offset, size, 0, &mapped);
+        if (result != VK_SUCCESS)
+        {
+            VV_CORE_ERROR(result);
+        }
     }
 
     /**
@@ -122,14 +131,27 @@ namespace VectorVertex
      *
      * @return VkResult of the flush call
      */
-    VkResult VKBuffer::flush(VkDeviceSize size, VkDeviceSize offset)
+    // VkResult VKBuffer::flush(VkDeviceSize size, VkDeviceSize offset)
+    // {
+    //     VkMappedMemoryRange mappedRange = {};
+    //     mappedRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
+    //     mappedRange.memory = memory;
+    //     mappedRange.offset = offset;
+    //     mappedRange.size = size;
+    //     return vkFlushMappedMemoryRanges(vkDevice.device(), 1, &mappedRange);
+    // }
+    void VKBuffer::flush(VkDeviceSize size, VkDeviceSize offset)
     {
         VkMappedMemoryRange mappedRange = {};
         mappedRange.sType = VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
         mappedRange.memory = memory;
         mappedRange.offset = offset;
         mappedRange.size = size;
-        return vkFlushMappedMemoryRanges(vkDevice.device(), 1, &mappedRange);
+        VkResult result = vkFlushMappedMemoryRanges(vkDevice.device(), 1, &mappedRange);
+        if (result != VK_SUCCESS)
+        {
+            VV_CORE_ERROR(result);
+        }
     }
 
     /**
@@ -188,7 +210,7 @@ namespace VectorVertex
      * @param index Used in offset calculation
      *
      */
-    VkResult VKBuffer::flushIndex(int index) { return flush(alignmentSize, index * alignmentSize); }
+    void VKBuffer::flushIndex(int index) { flush(alignmentSize, index * alignmentSize); }
 
     /**
      * Create a buffer info descriptor

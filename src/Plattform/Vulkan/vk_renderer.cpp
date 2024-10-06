@@ -5,10 +5,10 @@
 #include <vk_texture.hpp>
 namespace VectorVertex
 {
-    VKRenderer::VKRenderer(VKWindow &window, VKDevice &device)
-        : vkWindow{window}, vkDevice{device}
+    VKRenderer::VKRenderer(Window *window)
+        : vkWindow{*window}, vkDevice{VKDevice::Get()}
     {
-
+        s_Instance = this;
         recreateSwapChain();
         CreateCommandBuffers();
     }
@@ -48,15 +48,15 @@ namespace VectorVertex
         }
 
         vkDeviceWaitIdle(vkDevice.device());
-        if (lveSwapChain == nullptr)
+        if (m_SwapChain == nullptr)
         {
-            lveSwapChain = std::make_unique<VKSwapChain>(vkDevice, extent);
+            m_SwapChain = std::make_unique<VKSwapChain>(vkDevice, extent);
         }
         else
         {
-            std::shared_ptr<VKSwapChain> oldSwapChain = std::move(lveSwapChain);
-            lveSwapChain = std::make_unique<VKSwapChain>(vkDevice, extent, oldSwapChain);
-            if (!oldSwapChain->compareSwapFormats(*lveSwapChain.get()))
+            std::shared_ptr<VKSwapChain> oldSwapChain = std::move(m_SwapChain);
+            m_SwapChain = std::make_unique<VKSwapChain>(vkDevice, extent, oldSwapChain);
+            if (!oldSwapChain->compareSwapFormats(*m_SwapChain.get()))
             {
                 VV_CORE_ERROR("Swap chain image(or depth) format does not match!");
                 throw std::runtime_error("Swap chain image(or depth) format does not match!");
@@ -67,10 +67,10 @@ namespace VectorVertex
     VkCommandBuffer VKRenderer::BeginFrame()
     {
         // assert(!isFrameStarted && "Can't call EndFrame while frame is in progress!");
-        VV_CORE_ASSERT(lveSwapChain != nullptr, "lveSwapChain is nullptr");
+        VV_CORE_ASSERT(m_SwapChain != nullptr, "m_SwapChain is nullptr");
 
         
-        auto result = lveSwapChain->acquireNextImage(&currentImageIndex);
+        auto result = m_SwapChain->acquireNextImage(&currentImageIndex);
 
         if (result == VK_ERROR_OUT_OF_DATE_KHR)
         {
@@ -105,7 +105,7 @@ namespace VectorVertex
             throw std::runtime_error("Failed to record command buffer!");
         }
         
-         auto result = lveSwapChain->submitCommandBuffers(&commandBuffer, &currentImageIndex);
+         auto result = m_SwapChain->submitCommandBuffers(&commandBuffer, &currentImageIndex);
         
         if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR || vkWindow.wasWindowResized())
         {
@@ -127,11 +127,11 @@ namespace VectorVertex
 
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-        renderPassInfo.renderPass = lveSwapChain->getRenderPass();
-        renderPassInfo.framebuffer = lveSwapChain->getFrameBuffer(currentImageIndex);
+        renderPassInfo.renderPass = m_SwapChain->getRenderPass();
+        renderPassInfo.framebuffer = m_SwapChain->getFrameBuffer(currentImageIndex);
 
         renderPassInfo.renderArea.offset = {0, 0};
-        renderPassInfo.renderArea.extent = lveSwapChain->getSwapChainExtent();
+        renderPassInfo.renderArea.extent = m_SwapChain->getSwapChainExtent();
 
         std::array<VkClearValue, 2> clearValues{};
         clearValues[0].color = {0.01f, 0.01f, 0.01f, 1.0f};
@@ -144,11 +144,11 @@ namespace VectorVertex
         VkViewport viewport{};
         viewport.x = 0.0f;
         viewport.y = 0.0f;
-        viewport.width = static_cast<float>(lveSwapChain->getSwapChainExtent().width);
-        viewport.height = static_cast<float>(lveSwapChain->getSwapChainExtent().height);
+        viewport.width = static_cast<float>(m_SwapChain->getSwapChainExtent().width);
+        viewport.height = static_cast<float>(m_SwapChain->getSwapChainExtent().height);
         viewport.minDepth = 0.0f;
         viewport.maxDepth = 1.0f;
-        VkRect2D scissor{{0, 0}, lveSwapChain->getSwapChainExtent()};
+        VkRect2D scissor{{0, 0}, m_SwapChain->getSwapChainExtent()};
         vkCmdSetViewport(commandBuffer, 0, 1, &viewport);
         vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
     }
@@ -159,11 +159,11 @@ namespace VectorVertex
 
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-        renderPassInfo.renderPass = lveSwapChain->getRenderPass();
+        renderPassInfo.renderPass = m_SwapChain->getRenderPass();
         renderPassInfo.framebuffer = framebuffer;
 
         renderPassInfo.renderArea.offset = {0, 0};
-        renderPassInfo.renderArea.extent = lveSwapChain->getSwapChainExtent();
+        renderPassInfo.renderArea.extent = m_SwapChain->getSwapChainExtent();
 
         std::array<VkClearValue, 2> clearValues{};
         clearValues[0].color = {0.01f, 0.01f, 0.01f, 1.0f};
@@ -176,11 +176,11 @@ namespace VectorVertex
         VkViewport viewport{};
         viewport.x = 0.0f;
         viewport.y = 0.0f;
-        viewport.width = static_cast<float>(lveSwapChain->getSwapChainExtent().width);
-        viewport.height = static_cast<float>(lveSwapChain->getSwapChainExtent().height);
+        viewport.width = static_cast<float>(m_SwapChain->getSwapChainExtent().width);
+        viewport.height = static_cast<float>(m_SwapChain->getSwapChainExtent().height);
         viewport.minDepth = 0.0f;
         viewport.maxDepth = 1.0f;
-        VkRect2D scissor{{0, 0}, lveSwapChain->getSwapChainExtent()};
+        VkRect2D scissor{{0, 0}, m_SwapChain->getSwapChainExtent()};
         vkCmdSetViewport(commandBuffer, 0, 1, &viewport);
         vkCmdSetScissor(commandBuffer, 0, 1, &scissor);
     }

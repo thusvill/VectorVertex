@@ -154,7 +154,7 @@ namespace VectorVertex
             out << YAML::Key << "MaterialComponent";
             out << YAML::BeginMap;
 
-            auto mC = VVMaterialLibrary::getMaterial(entity.GetComponent<MaterialComponent>().m_ID).m_MaterialData;
+            auto mC = MaterialLibrary::getMaterial(entity.GetComponent<MaterialComponent>().m_ID).m_MaterialData;
             out << YAML::Key << "m_ID" << YAML::Value << mC.m_ID;
             out << YAML::Key << "m_Name" << YAML::Value << mC.m_Name;
             out << YAML::Key << "color" << YAML::Value << mC.color;
@@ -270,7 +270,7 @@ namespace VectorVertex
                             _data.color = mComponent["color"].as<glm::vec4>();
                             _data.m_ID = mComponent["m_ID"].as<UUID>();
                             _data.m_Name = mComponent["m_Name"].as<std::string>();
-                            mc.m_ID = VVMaterialLibrary::createMaterialwithUUID(mComponent["m_ID"].as<UUID>(),mComponent["m_Name"].as<std::string>(), _data);
+                            mc.m_ID = MaterialLibrary::createMaterialwithUUID(mComponent["m_ID"].as<UUID>(),mComponent["m_Name"].as<std::string>(), _data);
                         }
                     }
                     if (entity["TextureComponent"])

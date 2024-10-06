@@ -21,13 +21,13 @@ namespace VectorVertex
     }
     VVTexture::~VVTexture()
     {
-        if (data.m_textureSampler != VK_NULL_HANDLE && Application::Get().GetDevice().device() != VK_NULL_HANDLE)
+        if (data.m_textureSampler != VK_NULL_HANDLE && VKDevice::Get().device() != VK_NULL_HANDLE)
         {
-            vkDestroySampler(Application::Get().GetDevice().device(), data.m_textureSampler, nullptr);
+            vkDestroySampler(VKDevice::Get().device(), data.m_textureSampler, nullptr);
         }
         if (data.m_textureImageView != VK_NULL_HANDLE)
         {
-            vkDestroyImageView(Application::Get().GetDevice().device(), data.m_textureImageView, nullptr);
+            vkDestroyImageView(VKDevice::Get().device(), data.m_textureImageView, nullptr);
         }
         if(data.m_descriptorSet != VK_NULL_HANDLE){
             std::vector<VkDescriptorSet> descriptorSetsToFree = {data.m_descriptorSet};
@@ -84,7 +84,7 @@ namespace VectorVertex
         samplerInfo.compareOp = VK_COMPARE_OP_ALWAYS;
         samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
 
-        if (vkCreateSampler(Application::Get().GetDevice().device(), &samplerInfo, nullptr, &data.m_textureSampler) != VK_SUCCESS)
+        if (vkCreateSampler(VKDevice::Get().device(), &samplerInfo, nullptr, &data.m_textureSampler) != VK_SUCCESS)
         {
             throw std::runtime_error("failed to create texture sampler!");
         }
@@ -97,11 +97,11 @@ namespace VectorVertex
     }
     void VVTexture::transitionImageLayout(VkImageLayout oldLayout, VkImageLayout newLayout)
     {
-        data.m_textureImage->transitionImageLayout(Application::Get().GetDevice().getCommandPool(), Application::Get().GetDevice().graphicsQueue(), VK_FORMAT_R8G8B8A8_SRGB, oldLayout, newLayout);
+        data.m_textureImage->transitionImageLayout(VKDevice::Get().getCommandPool(), VKDevice::Get().graphicsQueue(), VK_FORMAT_R8G8B8A8_SRGB, oldLayout, newLayout);
     }
     void VVTexture::copyBufferToImage(VkBuffer buffer, uint32_t width, uint32_t height)
     {
-        VkCommandBuffer commandBuffer = Application::Get().GetDevice().beginSingleTimeCommands();
+        VkCommandBuffer commandBuffer = VKDevice::Get().beginSingleTimeCommands();
 
         VkBufferImageCopy region{};
         region.bufferOffset = 0;
@@ -116,39 +116,39 @@ namespace VectorVertex
 
         vkCmdCopyBufferToImage(commandBuffer, buffer, data.m_textureImage->getImage(), VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL, 1, &region);
 
-        Application::Get().GetDevice().endSingleTimeCommands(commandBuffer);
+        VKDevice::Get().endSingleTimeCommands(commandBuffer);
     }
     VkBuffer VVTexture::createStagingBuffer(const void *data, VkDeviceSize size)
     {
 
-        Application::Get().GetDevice().createBuffer(size,
+        VKDevice::Get().createBuffer(size,
                             VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
                             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
                             m_stagingBuffer, m_stagingBufferMemory);
 
         void *mappedData;
-        vkMapMemory(Application::Get().GetDevice().device(), m_stagingBufferMemory, 0, size, 0, &mappedData);
+        vkMapMemory(VKDevice::Get().device(), m_stagingBufferMemory, 0, size, 0, &mappedData);
         memcpy(mappedData, data, (size_t)size);
-        vkUnmapMemory(Application::Get().GetDevice().device(), m_stagingBufferMemory);
+        vkUnmapMemory(VKDevice::Get().device(), m_stagingBufferMemory);
 
         return m_stagingBuffer;
     }
     void VVTexture::destroyStagingBuffer(VkBuffer buffer, VkDeviceMemory bufferMemory)
     {
-        vkDestroyBuffer(Application::Get().GetDevice().device(), buffer, nullptr);
-        vkFreeMemory(Application::Get().GetDevice().device(), bufferMemory, nullptr);
+        vkDestroyBuffer(VKDevice::Get().device(), buffer, nullptr);
+        vkFreeMemory(VKDevice::Get().device(), bufferMemory, nullptr);
     }
 
     void VVTextureLibrary::InitTextureLib()
     {
         
-        texture_pool = VKDescriptorPool::Builder(Application::Get().GetDevice())
+        texture_pool = VKDescriptorPool::Builder(VKDevice::Get())
                            .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
                            .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
                            .setPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
                            .build();
 
-        textureImageDescriptorLayout = VKDescriptorSetLayout::Builder(Application::Get().GetDevice())
+        textureImageDescriptorLayout = VKDescriptorSetLayout::Builder(VKDevice::Get())
                                            .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
                                            .build();
         VV_CORE_INFO("Initilized Texture Library!");

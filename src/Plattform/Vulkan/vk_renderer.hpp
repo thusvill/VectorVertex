@@ -5,13 +5,15 @@
 #include "vk_device.hpp"
 #include "vk_swap_chain.hpp"
 
+#include <Window.hpp>
+
 namespace VectorVertex
 {
     class VKRenderer
     {
     public:
         VKRenderer() = default;
-        VKRenderer(VKWindow &window, VKDevice &device);
+        VKRenderer(Window *window);
         ~VKRenderer();
 
         VKRenderer(const VKRenderer &) = delete;
@@ -19,11 +21,11 @@ namespace VectorVertex
 
         VkRenderPass GetSwapchainRenderPass() const
         {
-            return lveSwapChain->getRenderPass();
+            return m_SwapChain->getRenderPass();
         }
         float GetAspectRatio() const
         {
-            return lveSwapChain->extentAspectRatio();
+            return m_SwapChain->extentAspectRatio();
         }
 
         bool IsFrameInProgress() { return isFrameStarted; }
@@ -43,20 +45,23 @@ namespace VectorVertex
         void BeginSwapchainRenderPass(VkCommandBuffer commandBuffer);
         void BeginSwapchainRenderPass(VkCommandBuffer commandBuffer, VkFramebuffer framebuffer);
         void EndSwapchainRenderPass(VkCommandBuffer commandBuffer);
-        uint32_t GetSwapchainImageCount() const { return lveSwapChain->getImageCount(); }
-        VKSwapChain &Get_Swapchain() const { return *lveSwapChain; }
+        uint32_t GetSwapchainImageCount() const { return m_SwapChain->getImageCount(); }
+        VKSwapChain *Get_Swapchain() const { return m_SwapChain.get(); }
+        Window& GetWindow() {return vkWindow;}
 
+        static VKRenderer& Get() {return *s_Instance;}
 
     private:
+        static VKRenderer* s_Instance;
         void
         CreateCommandBuffers();
         void FreeCommandBuffers();
 
         void recreateSwapChain();
 
-        VKWindow &vkWindow;
+        Window &vkWindow;
         VKDevice &vkDevice;
-        std::unique_ptr<VKSwapChain> lveSwapChain;
+        std::unique_ptr<VKSwapChain> m_SwapChain;
 
         std::vector<VkCommandBuffer> commandBuffers;
 
