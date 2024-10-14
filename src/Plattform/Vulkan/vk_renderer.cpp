@@ -5,6 +5,9 @@
 #include <vk_texture.hpp>
 namespace VectorVertex
 {
+
+    VKRenderer* VKRenderer::s_Instance = nullptr;
+    
     VKRenderer::VKRenderer(Window *window)
         : vkWindow{*window}, vkDevice{VKDevice::Get()}
     {

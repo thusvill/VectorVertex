@@ -36,7 +36,7 @@ namespace VectorVertex
 
         virtual void WaitForDeviceIdle();
 
-        static API GetAPI()
+        static API GetRenderAPI()
         {
             return s_API;
         }
@@ -45,5 +45,7 @@ namespace VectorVertex
     private:
         static API s_API;
     };
+
+    
 
 } // namespace VectorVertex

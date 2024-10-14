@@ -705,6 +705,30 @@ src/Plattform/Vulkan/vk_renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer.cpp.s
 .PHONY : src/Plattform/Vulkan/vk_renderer.cpp.s
 
+src/Plattform/Vulkan/vk_renderer_api.o: src/Plattform/Vulkan/vk_renderer_api.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_renderer_api.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_renderer_api.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_renderer_api.cpp.o
+
+src/Plattform/Vulkan/vk_renderer_api.i: src/Plattform/Vulkan/vk_renderer_api.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_renderer_api.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_renderer_api.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_renderer_api.cpp.i
+
+src/Plattform/Vulkan/vk_renderer_api.s: src/Plattform/Vulkan/vk_renderer_api.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_renderer_api.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_renderer_api.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_renderer_api.cpp.s
+
 src/Plattform/Vulkan/vk_swap_chain.o: src/Plattform/Vulkan/vk_swap_chain.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_swap_chain.o
 
@@ -896,6 +920,78 @@ src/Render/Material.s: src/Render/Material.cpp.s
 src/Render/Material.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Material.cpp.s
 .PHONY : src/Render/Material.cpp.s
+
+src/Render/RenderCommand.o: src/Render/RenderCommand.cpp.o
+.PHONY : src/Render/RenderCommand.o
+
+# target to build an object file
+src/Render/RenderCommand.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/RenderCommand.cpp.o
+.PHONY : src/Render/RenderCommand.cpp.o
+
+src/Render/RenderCommand.i: src/Render/RenderCommand.cpp.i
+.PHONY : src/Render/RenderCommand.i
+
+# target to preprocess a source file
+src/Render/RenderCommand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/RenderCommand.cpp.i
+.PHONY : src/Render/RenderCommand.cpp.i
+
+src/Render/RenderCommand.s: src/Render/RenderCommand.cpp.s
+.PHONY : src/Render/RenderCommand.s
+
+# target to generate assembly for a file
+src/Render/RenderCommand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/RenderCommand.cpp.s
+.PHONY : src/Render/RenderCommand.cpp.s
+
+src/Render/Renderer.o: src/Render/Renderer.cpp.o
+.PHONY : src/Render/Renderer.o
+
+# target to build an object file
+src/Render/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Renderer.cpp.o
+.PHONY : src/Render/Renderer.cpp.o
+
+src/Render/Renderer.i: src/Render/Renderer.cpp.i
+.PHONY : src/Render/Renderer.i
+
+# target to preprocess a source file
+src/Render/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Renderer.cpp.i
+.PHONY : src/Render/Renderer.cpp.i
+
+src/Render/Renderer.s: src/Render/Renderer.cpp.s
+.PHONY : src/Render/Renderer.s
+
+# target to generate assembly for a file
+src/Render/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/Renderer.cpp.s
+.PHONY : src/Render/Renderer.cpp.s
+
+src/Render/RendererAPI.o: src/Render/RendererAPI.cpp.o
+.PHONY : src/Render/RendererAPI.o
+
+# target to build an object file
+src/Render/RendererAPI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o
+.PHONY : src/Render/RendererAPI.cpp.o
+
+src/Render/RendererAPI.i: src/Render/RendererAPI.cpp.i
+.PHONY : src/Render/RendererAPI.i
+
+# target to preprocess a source file
+src/Render/RendererAPI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.i
+.PHONY : src/Render/RendererAPI.cpp.i
+
+src/Render/RendererAPI.s: src/Render/RendererAPI.cpp.s
+.PHONY : src/Render/RendererAPI.s
+
+# target to generate assembly for a file
+src/Render/RendererAPI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.s
+.PHONY : src/Render/RendererAPI.cpp.s
 
 src/Render/Window.o: src/Render/Window.cpp.o
 .PHONY : src/Render/Window.o
@@ -1458,6 +1554,9 @@ help:
 	@echo "... src/Plattform/Vulkan/vk_renderer.o"
 	@echo "... src/Plattform/Vulkan/vk_renderer.i"
 	@echo "... src/Plattform/Vulkan/vk_renderer.s"
+	@echo "... src/Plattform/Vulkan/vk_renderer_api.o"
+	@echo "... src/Plattform/Vulkan/vk_renderer_api.i"
+	@echo "... src/Plattform/Vulkan/vk_renderer_api.s"
 	@echo "... src/Plattform/Vulkan/vk_swap_chain.o"
 	@echo "... src/Plattform/Vulkan/vk_swap_chain.i"
 	@echo "... src/Plattform/Vulkan/vk_swap_chain.s"
@@ -1482,6 +1581,15 @@ help:
 	@echo "... src/Render/Material.o"
 	@echo "... src/Render/Material.i"
 	@echo "... src/Render/Material.s"
+	@echo "... src/Render/RenderCommand.o"
+	@echo "... src/Render/RenderCommand.i"
+	@echo "... src/Render/RenderCommand.s"
+	@echo "... src/Render/Renderer.o"
+	@echo "... src/Render/Renderer.i"
+	@echo "... src/Render/Renderer.s"
+	@echo "... src/Render/RendererAPI.o"
+	@echo "... src/Render/RendererAPI.i"
+	@echo "... src/Render/RendererAPI.s"
 	@echo "... src/Render/Window.o"
 	@echo "... src/Render/Window.i"
 	@echo "... src/Render/Window.s"

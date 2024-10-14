@@ -9,6 +9,8 @@
 namespace VectorVertex
 {
 
+  VKDevice* VKDevice::s_Device = nullptr;
+
   // local callback functions
   static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
       VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
@@ -58,8 +60,8 @@ namespace VectorVertex
   // class member functions
   VKDevice::VKDevice(GLFWwindow* window) : window{window}
   {
-    VV_CORE_ASSERT(!s_Instance, "Device already created!");
-    s_Instance = this;
+    VV_CORE_ASSERT(!s_Device, "Device already created!");
+    s_Device = this;
     createInstance();
     setupDebugMessenger();
     createSurface();

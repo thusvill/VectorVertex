@@ -14,7 +14,7 @@ namespace VectorVertex
             VkBufferUsageFlags usageFlags,
             VkMemoryPropertyFlags memoryPropertyFlags,
             VkDeviceSize minOffsetAlignment = 1);
-        ~VKBuffer();
+        virtual ~VKBuffer() override;
         
 
         VKBuffer(const VKBuffer &) = delete;

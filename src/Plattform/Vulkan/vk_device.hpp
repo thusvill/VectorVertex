@@ -78,11 +78,11 @@ VKDevice() = default;
     VkInstance instance_;
 
     static VKDevice& Get() {
-      return *s_Instance;
+      return *s_Device;
     }
 
   private:
-    static VKDevice* s_Instance;
+    static VKDevice* s_Device;
     void createInstance();
     void setupDebugMessenger();
     void createSurface();
@@ -115,5 +115,6 @@ VKDevice() = default;
     const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_KHR_MAINTENANCE1_EXTENSION_NAME};
 
   };
+
 
 } // namespace VectorVertex

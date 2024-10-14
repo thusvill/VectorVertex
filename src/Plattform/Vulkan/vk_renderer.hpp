@@ -69,4 +69,5 @@ namespace VectorVertex
         int currentFrameIndex{0};
         bool isFrameStarted{false};
     };
+
 } // namespace VectorVertex

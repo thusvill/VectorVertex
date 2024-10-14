@@ -7,9 +7,12 @@
 
 namespace VectorVertex
 {
+	Ref<GraphicsContext> GraphicsContext::s_Instance = nullptr;
+
+
 	Ref<GraphicsContext> GraphicsContext::Create(void *window)
 	{
-		switch (RendererAPI::GetAPI())
+		switch (RendererAPI::GetRenderAPI())
 		{
 		case RendererAPI::API::None:
 			VV_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");

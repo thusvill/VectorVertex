@@ -14,7 +14,7 @@ namespace VectorVertex
 
         static void Draw(MeshData data);
 
-        inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
+        inline static RendererAPI::API GetAPI() { return RendererAPI::GetRenderAPI(); }
     };
 
 } // namespace VectorVertex

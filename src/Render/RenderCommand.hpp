@@ -37,7 +37,8 @@ namespace VectorVertex
             s_RendererAPI->DrawMesh(data);
         }
 
-        static void WaitForDeviceIdl(){
+        static void WaitForDeviceIdl()
+        {
             s_RendererAPI->WaitForDeviceIdle();
         }
 

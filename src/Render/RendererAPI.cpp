@@ -4,9 +4,11 @@
 
 namespace VectorVertex
 {
+    RendererAPI::API RendererAPI::s_API = RendererAPI::API::Vulkan;
+    
     Scope<RendererAPI> RendererAPI::Create(Window *window)
     {
-        switch (GetAPI())
+        switch (GetRenderAPI())
         {
         case RendererAPI::API::None:
             VV_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");

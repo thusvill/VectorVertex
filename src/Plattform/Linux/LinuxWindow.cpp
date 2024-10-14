@@ -19,6 +19,16 @@ namespace VectorVertex
     {
         Shutdown();
     }
+    void LinuxWindow::OnUpdate()
+    {
+    }
+    void LinuxWindow::SetVSync(bool enabled)
+    {
+    }
+    bool LinuxWindow::IsVSync() const
+    {
+        return false;
+    }
     bool LinuxWindow::wasWindowResized()
     {
         return m_Data.resized;
@@ -43,7 +53,7 @@ namespace VectorVertex
             glfwSetErrorCallback(GLFWErrorCallback);
         }
 
-        if (RendererAPI::GetAPI() == RendererAPI::API::Vulkan)
+        if (RendererAPI::GetRenderAPI() == RendererAPI::API::Vulkan)
         {
 
             glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
@@ -55,7 +65,7 @@ namespace VectorVertex
             ++s_GLFWWindowCount;
         }
 
-        m_Context = GraphicsContext::Create(static_cast<Window*>(this));
+        m_Context = GraphicsContext::Create(static_cast<Window *>(this));
         m_Context->Init();
 
         glfwSetWindowUserPointer(m_Window, &m_Data);
@@ -70,8 +80,7 @@ namespace VectorVertex
             data.resized = true;
 
 			WindowResizeEvent event(width, height);
-			data.EventCallback(event); 
-            });
+			data.EventCallback(event); });
 
         glfwSetWindowCloseCallback(m_Window, [](GLFWwindow *window)
                                    {

@@ -9,6 +9,7 @@ namespace VectorVertex
     class Buffer
     {
     public:
+        virtual ~Buffer() = default;
         virtual void map(uint64_t size,uint64_t offset);
         virtual void unmap();
         virtual void writeToBuffer(void *data,uint64_t size, uint64_t offset);
