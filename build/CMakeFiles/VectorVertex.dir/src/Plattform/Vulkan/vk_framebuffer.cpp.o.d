@@ -501,4 +501,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp

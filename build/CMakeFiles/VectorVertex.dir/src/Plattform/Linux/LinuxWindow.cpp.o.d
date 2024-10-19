@@ -502,4 +502,5 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp

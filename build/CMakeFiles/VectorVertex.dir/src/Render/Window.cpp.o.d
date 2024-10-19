@@ -490,4 +490,8 @@ CMakeFiles/VectorVertex.dir/src/Render/Window.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/../Plattform/Linux/LinuxWindow.hpp \
+ /usr/include/GLFW/glfw3.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
+ /usr/include/KHR/khrplatform.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp

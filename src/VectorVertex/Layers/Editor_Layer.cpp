@@ -5,6 +5,7 @@
 #include <ImGuizmo/ImGuizmo.h>
 #include <Utils/PlattformUtils.hpp>
 #include <Math/Math.hpp>
+#include <RenderCommand.hpp>
 namespace VectorVertex
 {
     EditorLayer::EditorLayer(ProjectInfo _info) : m_Info(_info), Layer("EditorLayer")
@@ -21,10 +22,10 @@ namespace VectorVertex
         imguiConfig.instance = instance; // Assign Vulkan instance handle
         imguiConfig.Device = VKDevice::Get().device();
         imguiConfig.renderer = &VKRenderer::Get();
-        imguiConfig.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
+        imguiConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         imguiConfig.PhysicalDevice = VKDevice::Get().getPhysicalDevice();
         imguiConfig.graphicsQueue = VKDevice::Get().graphicsQueue();
-        imguiConfig.imageCount = static_cast<uint32_t>(VKRenderer::Get().GetSwapchainImageCount());
+        imguiConfig.imageCount = RenderCommand::GetRendererAPI()->GetSwapchainImageCount();
 
         imgui_layer.InitializeImgui(imguiConfig, Application::Get().GetNativeWindow());
 

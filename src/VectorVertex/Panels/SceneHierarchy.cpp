@@ -193,7 +193,7 @@ namespace VectorVertex
             {
                 if (ImGui::MenuItem("Mesh Renderer"))
                 {
-                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/cube.obj"));
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj"));
                     if(!m_SelectedEntity.HasComponent<TextureComponent>())
                         RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
                     ImGui::CloseCurrentPopup();

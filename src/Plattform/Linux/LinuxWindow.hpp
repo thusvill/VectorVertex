@@ -10,7 +10,7 @@ namespace VectorVertex
 	{
 	public:
 		LinuxWindow(const WindowProps &props);
-		virtual ~LinuxWindow();
+		virtual ~LinuxWindow() override;
 		
 		virtual void OnUpdate() override;
 		virtual unsigned int GetWidth() const override { return m_Data.size.width; }
@@ -21,11 +21,14 @@ namespace VectorVertex
 		virtual bool wasWindowResized() override;
 		virtual void resetWindowResizedFlag() override;
 
-		virtual void *GetNativeWindow() const { return m_Window; }
+		virtual void *GetNativeWindow() const override { return m_Window; }
+
+		virtual Extent2D getExtent() override;
+		virtual bool shouldClose() override;
 
 	private:
-		virtual void Init(const WindowProps &props);
-		virtual void Shutdown();
+		void Init(const WindowProps &props);
+		void Shutdown();
 
 	private:
 		GLFWwindow *m_Window;

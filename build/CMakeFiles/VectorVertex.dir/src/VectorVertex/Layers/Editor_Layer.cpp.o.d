@@ -762,4 +762,6 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/FrameBuffer.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/ImGuizmo/ImGuizmo.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Utils/PlattformUtils.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Math/Math.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Math/Math.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp

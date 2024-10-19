@@ -754,4 +754,5 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_s
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_render_system.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/VulkanRendererSystem.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Renderer.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp

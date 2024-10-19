@@ -24,7 +24,7 @@ namespace VectorVertex
 
         m_Window = Window::Create(props);
 
-        RenderCommand::Init(m_Window.get());
+        // RenderCommand::Init(m_Window.get());
 
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");

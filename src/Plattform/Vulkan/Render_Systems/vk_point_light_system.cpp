@@ -5,7 +5,7 @@
 #include <Entity.hpp>
 #include <Renderer.hpp>
 #include <Application.hpp>
-
+#include <RenderCommand.hpp>
 namespace VectorVertex
 {
     struct PointLightPushConstants
@@ -81,9 +81,9 @@ namespace VectorVertex
         VKPipeline::enableAlphaBlending(pipelineConfig);
         pipelineConfig.attribute_descriptions.clear();
         pipelineConfig.bind_descriptions.clear();
-        pipelineConfig.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
+        pipelineConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VKPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/point_light.frag.spv");
+        pipeline = std::make_unique<VKPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
 
     void PointLightSystem::Update(FrameInfo &frame_info,  SceneRenderInfo &scene_info, GlobalUBO &ubo)

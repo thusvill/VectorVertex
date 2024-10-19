@@ -2,6 +2,7 @@
 #include <iostream>
 #include <GraphicsContext.hpp>
 #include <Application.hpp>
+#include <RenderCommand.hpp>
 namespace VectorVertex
 {
     VKOffscreen::VKOffscreen(VkExtent2D size) : ViewExtent(size)
@@ -23,7 +24,7 @@ namespace VectorVertex
     {
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
-        renderPassInfo.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
+        renderPassInfo.renderPass = reinterpret_cast<VkRenderPass>(GraphicsContext::Get()->GetRenderpass());
         renderPassInfo.framebuffer = offscreenFramebuffer;
         renderPassInfo.renderArea.offset = {0, 0};
         renderPassInfo.renderArea.extent = ViewExtent;
@@ -242,7 +243,7 @@ namespace VectorVertex
 
         VkFramebufferCreateInfo framebufferInfo{};
         framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
-        framebufferInfo.renderPass = VKRenderer::Get().GetSwapchainRenderPass(); // Assuming it is compatible with both color and depth
+        framebufferInfo.renderPass = reinterpret_cast<VkRenderPass>(GraphicsContext::Get()->GetRenderpass());; // Assuming it is compatible with both color and depth
         framebufferInfo.attachmentCount = static_cast<uint32_t>(framebufferAttachments.size());
         framebufferInfo.pAttachments = framebufferAttachments.data();
         framebufferInfo.width = ViewExtent.width;

@@ -6,6 +6,7 @@
 #include <Renderer.hpp>
 #include <GraphicsContext.hpp>
 #include <Application.hpp>
+#include <RenderCommand.hpp>
 namespace VectorVertex
 {
 
@@ -81,9 +82,9 @@ namespace VectorVertex
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
         VKPipeline::enableAlphaBlending(pipelineConfig);
-        pipelineConfig.renderPass = VKRenderer::Get().GetSwapchainRenderPass();
+        pipelineConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VKPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Shaders/default.frag.spv");
+        pipeline = std::make_unique<VKPipeline>(pipelineConfig, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
 
     void LveRenderSystem::renderGameobjects(FrameInfo &frame_info, SceneRenderInfo &scene_info)

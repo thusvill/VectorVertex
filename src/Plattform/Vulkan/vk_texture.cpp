@@ -192,7 +192,7 @@ namespace VectorVertex
     }
     uint64_t VVTextureLibrary::GetDefaultTexture()
     {
-        return Create("default", "/home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png");
+        return Create("default", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png");
     }
     void VVTextureLibrary::DeleteTexture(UUID ID)
     {   
