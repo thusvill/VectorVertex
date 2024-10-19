@@ -19,7 +19,6 @@ namespace VectorVertex
         ImguiConfig() = default;
         VkPhysicalDevice PhysicalDevice;
         VkDevice Device;
-        VKRenderer *renderer;
         VkRenderPass renderPass;
         VkInstance instance;
         VkQueue graphicsQueue;

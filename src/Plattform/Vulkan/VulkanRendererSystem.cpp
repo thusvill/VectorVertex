@@ -8,6 +8,7 @@ namespace VectorVertex
         m_global_pool = VKDescriptorPool::Builder(VKDevice::Get())
                             .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT)
                             .addPoolSize(VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
+                            .setPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
                             //.addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
                             .build();
 
@@ -105,7 +106,7 @@ namespace VectorVertex
         {
             auto &m_Camera = m_SceneCamera->GetComponent<CameraComponent>().m_Camera;
 
-            camControl.moveInPlaneXZ(static_cast<GLFWwindow*>(VKRenderer::Get().GetWindow().GetNativeWindow()), frameTime, m_SceneCamera->GetComponent<TransformComponent>());
+            camControl.moveInPlaneXZ(static_cast<GLFWwindow *>(Application::Get().GetCurrentWindow()->GetNativeWindow()), frameTime, m_SceneCamera->GetComponent<TransformComponent>());
             m_Camera.SetViewYXZ(m_SceneCamera->GetComponent<TransformComponent>().translation, m_SceneCamera->GetComponent<TransformComponent>().rotation);
 
             auto aspectRatio = static_cast<float>(m_ViewportSize.width) / static_cast<float>(m_ViewportSize.height); // renderer.GetAspectRatio();
