@@ -1,7 +1,7 @@
 CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o: \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.cpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/13/cmath \
  /usr/include/c++/13/bits/requires_hosted.h \
@@ -454,7 +454,7 @@ CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/fmt/format.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
  /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
  /usr/include/vulkan/vulkan_core.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
@@ -469,7 +469,7 @@ CMakeFiles/VectorVertex.dir/src/Core/Log.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
  /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
  /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h \

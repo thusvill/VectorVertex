@@ -1,7 +1,7 @@
 CMakeFiles/VectorVertex.dir/src/Core/Math/Math.cpp.o: \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.cpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Math/Math.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Math/Math.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Math/Math.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/13/cmath /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

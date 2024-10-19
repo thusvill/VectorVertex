@@ -1,8 +1,8 @@
 CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_framebuffer.cpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_framebuffer.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_framebuffer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/FrameBuffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_framebuffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/FrameBuffer.hpp \
  /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -34,7 +34,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -168,7 +168,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /usr/include/c++/13/bits/basic_string.tcc \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator_args.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/c++/13/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -470,7 +470,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/fmt/format.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
  /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
  /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h \
@@ -481,9 +481,9 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/GraphicsContext.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_renderer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vvpch.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/random \
  /usr/include/c++/13/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
@@ -492,13 +492,13 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_window.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
  /usr/include/GLFW/glfw3.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_device.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_swap_chain.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Window.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/VectorVertex/Events/Event.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui_impl_vulkan.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imgui.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/vendor/imgui/imconfig.h
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h

@@ -1,9 +1,9 @@
 CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o: \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_buffer.cpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vvpch.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -223,7 +223,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o: \
  /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Base.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
  /usr/include/vulkan/vulkan.h /usr/include/vulkan/vk_platform.h \
  /usr/include/vulkan/vulkan_core.h \
  /usr/include/vk_video/vulkan_video_codec_h264std.h \
@@ -238,7 +238,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Log.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/glm/detail/setup.hpp \
  /usr/include/c++/13/cassert /usr/include/assert.h \
@@ -481,7 +481,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/fmt/format.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/Assert.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
  /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
  /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h \
@@ -491,8 +491,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Render/Flags.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_device.hpp \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Plattform/Vulkan/vk_window.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
  /usr/include/GLFW/glfw3.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h

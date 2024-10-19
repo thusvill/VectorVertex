@@ -14,10 +14,7 @@ namespace VectorVertex
     {
     public:
         VKRendererAPI(Window* window);
-        virtual ~VKRendererAPI() override
-        {
-            FreeCommandBuffers();
-        }
+        virtual ~VKRendererAPI() override;
         virtual void Init() override;
         virtual void BeginFrame() override;
         virtual void EndFrame() override;

@@ -4,14 +4,15 @@
 #include <glm/glm.hpp>
 #include <Buffer.hpp>
 #include <Window.hpp>
+
 namespace VectorVertex
 {
     struct MeshData
     {
         uint32_t m_IndexCount;
         uint32_t m_VertexCount;
-        std::vector<Buffer> m_VertexBuffers;
-        Buffer m_IndexBuffer;
+        std::vector<Ref<Buffer>> m_VertexBuffers;
+        Ref<Buffer> m_IndexBuffer;
     };
 
     class RendererAPI
@@ -27,14 +28,14 @@ namespace VectorVertex
         virtual ~RendererAPI() = default;
         virtual void Init() = 0;
 
-        virtual void BeginFrame();
-        virtual void EndFrame();
-        virtual void BeginRenderPass();
-        virtual void EndRenderPass();
+        virtual void BeginFrame() = 0;      
+        virtual void EndFrame() = 0;        
+        virtual void BeginRenderPass() = 0; 
+        virtual void EndRenderPass() = 0;   
 
-        virtual void DrawMesh(MeshData data);
+        virtual void DrawMesh(MeshData data) = 0; 
 
-        virtual void WaitForDeviceIdle();
+        virtual void WaitForDeviceIdle() = 0; 
 
         static API GetRenderAPI()
         {
@@ -45,7 +46,5 @@ namespace VectorVertex
     private:
         static API s_API;
     };
-
-    
 
 } // namespace VectorVertex

@@ -6,6 +6,10 @@ namespace VectorVertex
     {
         VV_CORE_INFO("Vulkan Render API Created!");
     }
+    VKRendererAPI::~VKRendererAPI()
+    {
+        FreeCommandBuffers();
+    }
 
     void VKRendererAPI::Init()
     {
@@ -117,14 +121,14 @@ namespace VectorVertex
         std::vector<VkBuffer> buffers;
         for (auto &buffer : data.m_VertexBuffers)
         {
-            buffers.push_back(reinterpret_cast<VkBuffer>(buffer.getBuffer()));
+            buffers.push_back(reinterpret_cast<VkBuffer>(buffer->getBuffer()));
         }
 
         VkDeviceSize offsets[] = {0};
         vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers.data(), offsets);
-        if (data.m_IndexBuffer.getBuffer())
+        if (data.m_IndexBuffer->getBuffer())
         {
-            vkCmdBindIndexBuffer(commandBuffer, reinterpret_cast<VkBuffer>(data.m_IndexBuffer.getBuffer()), 0, VK_INDEX_TYPE_UINT32);
+            vkCmdBindIndexBuffer(commandBuffer, reinterpret_cast<VkBuffer>(data.m_IndexBuffer->getBuffer()), 0, VK_INDEX_TYPE_UINT32);
             vkCmdDrawIndexed(commandBuffer, data.m_IndexCount, 1, 0, 0, 0);
         }
         else
