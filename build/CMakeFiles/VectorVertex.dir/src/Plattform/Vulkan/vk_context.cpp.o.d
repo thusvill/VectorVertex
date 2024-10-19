@@ -498,4 +498,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Linux/LinuxWindow.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp

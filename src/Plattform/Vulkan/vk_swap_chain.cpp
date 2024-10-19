@@ -261,10 +261,10 @@ namespace VectorVertex
 
     createInfo.oldSwapchain = oldSwapChain == nullptr ? VK_NULL_HANDLE : oldSwapChain->swapChain;
 
-    if (vkCreateSwapchainKHR(device.device(), &createInfo, nullptr, &swapChain) != VK_SUCCESS)
-    {
+    auto result = vkCreateSwapchainKHR(device.device(), &createInfo, nullptr, &swapChain);
+    if(result != VK_SUCCESS){
       VV_CORE_ERROR("failed to create swap chain!");
-      throw std::runtime_error("failed to create swap chain!");
+      throw std::runtime_error(std::to_string(result));
     }
 
     // we only specified a minimum number of images in the swap chain, so the implementation is

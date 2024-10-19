@@ -137,6 +137,21 @@ namespace VectorVertex
         }
     }
 
+    void *VKRendererAPI::GetSwapchain()
+    {
+        return m_SwapChain.get();
+    }
+
+    void *VKRendererAPI::GetRenderpass()
+    {
+        return m_SwapChain->getRenderPass();
+    }
+
+    uint32_t VKRendererAPI::GetSwapchainImageCount()
+    {
+        return m_SwapChain->getImageCount();
+    }
+
     void VKRendererAPI::CreateCommandBuffers()
     {
         auto &vkDevice = VKDevice::Get();

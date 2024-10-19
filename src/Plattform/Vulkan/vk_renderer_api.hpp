@@ -23,7 +23,12 @@ namespace VectorVertex
 
         virtual void DrawMesh(MeshData data) override;
 
-        virtual void WaitForDeviceIdle() override{
+        virtual void *GetSwapchain() override;
+        virtual void *GetRenderpass() override;
+        virtual uint32_t GetSwapchainImageCount() override;
+
+        virtual void WaitForDeviceIdle() override
+        {
             vkDeviceWaitIdle(VKDevice::Get().device());
         }
 

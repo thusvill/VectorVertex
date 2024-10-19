@@ -3,6 +3,7 @@
 #include <KeyEvent.hpp>
 #include <ApplicationEvent.hpp>
 #include <RendererAPI.hpp>
+#include <RenderCommand.hpp>
 namespace VectorVertex
 {
     static uint8_t s_GLFWWindowCount = 0;
@@ -37,6 +38,14 @@ namespace VectorVertex
     {
         m_Data.resized = false;
     }
+    Extent2D LinuxWindow::getExtent()
+    {
+        return m_Data.size;
+    }
+    bool LinuxWindow::shouldClose()
+    {
+        return glfwWindowShouldClose(m_Window);
+    }
     void LinuxWindow::Init(const WindowProps &props)
     {
 
@@ -67,6 +76,7 @@ namespace VectorVertex
 
         m_Context = GraphicsContext::Create(static_cast<Window *>(this));
         m_Context->Init();
+        RenderCommand::Init(this);
 
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
@@ -80,7 +90,8 @@ namespace VectorVertex
             data.resized = true;
 
 			WindowResizeEvent event(width, height);
-			data.EventCallback(event); });
+			data.EventCallback(event); 
+             });
 
         glfwSetWindowCloseCallback(m_Window, [](GLFWwindow *window)
                                    {

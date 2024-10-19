@@ -3,6 +3,7 @@
 #include <vk_renderer.hpp>
 #include <vk_swap_chain.hpp>
 #include <imgui_impl_vulkan.h>
+#include <RenderCommand.hpp>
 namespace VectorVertex
 {
     VKFrameBuffer::VKFrameBuffer(Extent2D size)
@@ -200,7 +201,7 @@ namespace VectorVertex
 
         VkFramebufferCreateInfo framebufferInfo{};
         framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
-        framebufferInfo.renderPass = VKRenderer::Get().GetSwapchainRenderPass(); // Assuming it is compatible with both color and depth
+        framebufferInfo.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass()); // Assuming it is compatible with both color and depth
         framebufferInfo.attachmentCount = static_cast<uint32_t>(framebufferAttachments.size());
         framebufferInfo.pAttachments = framebufferAttachments.data();
         framebufferInfo.width = ViewExtent.width;

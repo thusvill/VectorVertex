@@ -1,4 +1,5 @@
 #include "vk_context.hpp"
+#include <RenderCommand.hpp>
 
 namespace VectorVertex
 {

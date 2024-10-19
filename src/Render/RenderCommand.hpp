@@ -10,7 +10,9 @@ namespace VectorVertex
     public:
         static void Init(Window *window)
         {
-            s_RendererAPI = RendererAPI::Create(window);
+            s_RendererAPI = RendererAPI::Create(window, RendererAPI::API::Vulkan);
+
+            
 
             s_RendererAPI->Init();
         }
@@ -40,6 +42,10 @@ namespace VectorVertex
         static void WaitForDeviceIdl()
         {
             s_RendererAPI->WaitForDeviceIdle();
+        }
+        static Scope<RendererAPI>& GetRendererAPI()
+        {
+            return s_RendererAPI;
         }
 
     private:
