@@ -35,7 +35,7 @@ namespace VectorVertex
             throw std::runtime_error("Failed to acquire swap chain image!");
         }
         isFrameStarted = true;
-        auto commandBuffer = GetCurrentCommandBuffer();
+        auto commandBuffer = VKGetCurrentCommandBuffer();
         VkCommandBufferBeginInfo beginInfo{};
         beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
 
@@ -48,7 +48,7 @@ namespace VectorVertex
 
     void VKRendererAPI::EndFrame()
     {
-        auto commandBuffer = GetCurrentCommandBuffer();
+        auto commandBuffer = VKGetCurrentCommandBuffer();
         if (vkEndCommandBuffer(commandBuffer) != VK_SUCCESS)
         {
             VV_CORE_ERROR("Failed to record command buffer!");
@@ -73,9 +73,9 @@ namespace VectorVertex
 
     void VKRendererAPI::BeginRenderPass()
     {
-        auto commandBuffer = GetCurrentCommandBuffer();
+        auto commandBuffer = VKGetCurrentCommandBuffer();
         assert(isFrameStarted && "Can't call BeginSwapchainRenderPass if frame is not in progress!");
-        assert(commandBuffer == GetCurrentCommandBuffer() && "Can't begin render pass on command buffer from a different frame");
+        assert(commandBuffer == VKGetCurrentCommandBuffer() && "Can't begin render pass on command buffer from a different frame");
 
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -107,17 +107,17 @@ namespace VectorVertex
 
     void VKRendererAPI::EndRenderPass()
     {
-        auto commandBuffer = GetCurrentCommandBuffer();
+        auto commandBuffer = VKGetCurrentCommandBuffer();
 
         assert(isFrameStarted && "Can't call EndSwapchainRenderPass if frame is not in progress!");
-        assert(commandBuffer == GetCurrentCommandBuffer() && "Can't end render pass on command buffer from a different frame");
+        assert(commandBuffer == VKGetCurrentCommandBuffer() && "Can't end render pass on command buffer from a different frame");
 
         vkCmdEndRenderPass(commandBuffer);
     }
 
     void VKRendererAPI::DrawMesh(MeshData data)
     {
-        auto commandBuffer = GetCurrentCommandBuffer();
+        auto commandBuffer = VKGetCurrentCommandBuffer();
         std::vector<VkBuffer> buffers;
         for (auto &buffer : data.m_VertexBuffers)
         {
@@ -150,6 +150,11 @@ namespace VectorVertex
     uint32_t VKRendererAPI::GetSwapchainImageCount()
     {
         return m_SwapChain->getImageCount();
+    }
+
+    void *VKRendererAPI::GetCurrentCommandBuffer()
+    {
+        return VKGetCurrentCommandBuffer();
     }
 
     void VKRendererAPI::CreateCommandBuffers()

@@ -9,11 +9,11 @@ namespace VectorVertex
     Scene::Scene(std::string name) : m_Name(name)
     {
         VV_CORE_INFO("Scene {} Created!", name.c_str());
-        m_RendererSystem = CreateRef<VulkanRendererSystem>();
+        //m_RendererSystem = CreateRef<VulkanRendererSystem>();
     }
     void Scene::Init()
     {
-        m_RendererSystem->Create();
+        //m_RendererSystem->Create();
     }
     Scene::~Scene()
     {
@@ -114,11 +114,11 @@ namespace VectorVertex
             }
         }
 
-        m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
+        //m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
     }
 
     void Scene::RenderScene(FrameInfo &frameInfo)
     {
-        m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
+        //m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
     }
 }

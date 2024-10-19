@@ -6449,6 +6449,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \

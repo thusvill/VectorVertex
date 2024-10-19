@@ -17,7 +17,7 @@ namespace VectorVertex
 
     void VKFrameBuffer::BeginRender()
     {
-        auto commandBuffer = VKRenderer::Get().GetCurrentCommandBuffer();
+        auto commandBuffer = reinterpret_cast<VkCommandBuffer>(RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer());
         VkRenderPassBeginInfo renderPassInfo{};
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
         renderPassInfo.renderPass = reinterpret_cast<VkRenderPass>(GraphicsContext::Get()->GetRenderpass());
@@ -46,7 +46,7 @@ namespace VectorVertex
     }
     void VKFrameBuffer::EndRender()
     {
-        auto commandBuffer = VKRenderer::Get().GetCurrentCommandBuffer();
+        auto commandBuffer = reinterpret_cast<VkCommandBuffer>(RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer());
 
         vkCmdEndRenderPass(commandBuffer);
 

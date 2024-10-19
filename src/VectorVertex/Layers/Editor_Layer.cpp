@@ -21,7 +21,6 @@ namespace VectorVertex
         ImguiConfig imguiConfig;
         imguiConfig.instance = instance; // Assign Vulkan instance handle
         imguiConfig.Device = VKDevice::Get().device();
-        imguiConfig.renderer = &VKRenderer::Get();
         imguiConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         imguiConfig.PhysicalDevice = VKDevice::Get().getPhysicalDevice();
         imguiConfig.graphicsQueue = VKDevice::Get().graphicsQueue();
@@ -151,7 +150,7 @@ namespace VectorVertex
                 {
                     m_OffScreen->Resize(Viewport_Extent);
                     if (m_ActiveScene)
-                        m_ActiveScene->GetVulkanRenderer()->ResizeViewport(Viewport_Extent);
+                        //m_ActiveScene->GetVulkanRenderer()->ResizeViewport(Viewport_Extent);
 
                     is_viewport_resized = false;
                 }
@@ -262,7 +261,7 @@ namespace VectorVertex
             ImGui::Begin("Viewport");
 
             // camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
-            m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
+            //m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
 
             // Get the size of your ImGui window or set your desired size
             ImVec2 windowSize = ImGui::GetContentRegionAvail();

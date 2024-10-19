@@ -45,6 +45,7 @@ namespace VectorVertex
         GLFWwindow* GetNativeWindow() {
             return reinterpret_cast<GLFWwindow*>(m_Window->GetNativeWindow());
         }
+        Scope<Window>& GetCurrentWindow() { return m_Window; }
 
 
     private:

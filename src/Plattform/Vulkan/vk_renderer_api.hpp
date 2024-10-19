@@ -26,6 +26,7 @@ namespace VectorVertex
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
         virtual uint32_t GetSwapchainImageCount() override;
+        virtual void* GetCurrentCommandBuffer() override;
 
         virtual void WaitForDeviceIdle() override
         {
@@ -39,7 +40,7 @@ namespace VectorVertex
 
         void recreateSwapChain();
 
-        VkCommandBuffer GetCurrentCommandBuffer() const
+        VkCommandBuffer VKGetCurrentCommandBuffer() const
         {
             VV_CORE_ASSERT(isFrameStarted, "Cannot get command buffer when frame not in progress");
             return commandBuffers[currentFrameIndex];
