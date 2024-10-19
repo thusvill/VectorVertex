@@ -1,7 +1,7 @@
 CMakeFiles/VectorVertex.dir/src/Core/vvpch.cpp.o: \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vvpch.cpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.cpp \
  /usr/include/stdc-predef.h \
- /home/bios/CLionProjects/VectorVertex/3DEngine/src/Core/vvpch.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

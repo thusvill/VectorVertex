@@ -10,14 +10,14 @@ namespace VectorVertex
     {
     public:
         virtual ~Buffer() = default;
-        virtual void map(uint64_t size,uint64_t offset);
-        virtual void unmap();
-        virtual void writeToBuffer(void *data,uint64_t size, uint64_t offset);
-        virtual void flush(uint64_t size, uint64_t offset);
-        virtual void writeToIndex(void *data, int index);
-        virtual void flushIndex(int index);
+        virtual void map(uint64_t size,uint64_t offset) = 0;
+        virtual void unmap() = 0;
+        virtual void writeToBuffer(void *data,uint64_t size, uint64_t offset) = 0;
+        virtual void flush(uint64_t size, uint64_t offset) = 0;
+        virtual void writeToIndex(void *data, int index) = 0;
+        virtual void flushIndex(int index) = 0;
 
-        virtual void* getBuffer();
+        virtual void* getBuffer() = 0;
 
         static Ref<Buffer> Create(uint64_t instanceSize, uint32_t instanceCount, BufferUsageFlagBits usageFlags, MemoryPropertyFlagBits memoryPropertyFlags,uint64_t minOffsetAlignment = 1);
     };
