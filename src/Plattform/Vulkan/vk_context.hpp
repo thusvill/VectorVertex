@@ -11,9 +11,9 @@ namespace VectorVertex
     class VKContext : public GraphicsContext
     {
         public:
-            VKContext(WindowProps &props);
+            VKContext();
             virtual ~VKContext() override {}
-            virtual void Init() override;
+            virtual void Init(Window* window) override;
             virtual void SwapBuffers() override;
 
             virtual void *GetRenderpass() override
@@ -29,7 +29,6 @@ namespace VectorVertex
         private:
         
         Ref<VKDevice> m_Device;    
-        //VKRenderer m_Renderer{m_Window};
 
             
     };

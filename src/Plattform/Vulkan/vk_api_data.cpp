@@ -8,7 +8,6 @@ namespace VectorVertex
     {
         VV_CORE_ASSERT(!s_Instance, "Vulkan API Data already exists!");
         s_Instance = this;
-        Init();
     }
 
     void VulkanAPIData::Init()

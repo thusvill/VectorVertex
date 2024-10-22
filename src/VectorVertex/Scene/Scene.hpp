@@ -3,8 +3,7 @@
 #include <Components.hpp>
 #include <Base.h>
 #include <vk_offscreen.hpp>
-// #include <vk_point_light_system.hpp>
-//#include <vk_render_system.hpp>
+#include <vk_render_system.hpp>
 #include <vk_frame_info.hpp>
 #include <Keyboard_inputs.hpp>
 
@@ -48,6 +47,7 @@ namespace VectorVertex
         std::unordered_map<UUID, Entity> m_Entities;
         std::unordered_map<UUID, Entity> m_Pending_Delete_Entities;
         //Ref<VulkanRendererSystem> m_RendererSystem;
+        Ref<VulkanRenderSystem> mesh_Renderer;
 
         friend class SceneHierarchy;
         friend class SceneSerializer;

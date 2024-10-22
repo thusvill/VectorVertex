@@ -1,13 +1,14 @@
 #pragma once
 #include <vvpch.hpp>
-
-#include <vk_texture.hpp>
 #include "Keyboard_inputs.hpp"
 #include "LayerStack.h"
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
+
+
+#include <Event.hpp>
 #include <ApplicationEvent.hpp>
 #include <GraphicsContext.hpp>
 
@@ -40,21 +41,31 @@ namespace VectorVertex
         int WIDTH, HEIGHT;
         std::string project_name;
         void run();
+        void OnEvent(Event &e);
+
         static Application &Get() { return *s_Instance; }
 
-        GLFWwindow* GetNativeWindow() {
-            return m_GraphicsContext->m_Window->GetNativeWindow();
+        GLFWwindow *GetNativeWindow()
+        {
+            return m_Window->GetNativeWindow();
         }
-        
+        Window *GetWindow()
+        {
+            return m_Window.get();
+        }
+
     private:
+        bool OnWindowClose(WindowCloseEvent &e);
+
         Ref<GraphicsContext> m_GraphicsContext;
 
         static Application *s_Instance;
         bool m_Running = true;
-        
+
         EditorLayer *editor_layer;
 
         LayerStack layers{};
 
+        Scope<Window> m_Window;
     };
 } // namespace VectorVertex

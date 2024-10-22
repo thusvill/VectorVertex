@@ -746,5 +746,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/type_ptr.inl \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp

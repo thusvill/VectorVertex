@@ -9,6 +9,9 @@
 
 namespace VectorVertex
 {
+
+#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
     Application *Application::s_Instance = nullptr;
 
     Application::Application(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
@@ -22,7 +25,10 @@ namespace VectorVertex
         props.Width = info.width;
         props.Height = info.height;
 
-        m_GraphicsContext = GraphicsContext::Create(props);
+        m_GraphicsContext = GraphicsContext::Create();
+
+        m_Window = Window::Create(props);
+        m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
@@ -34,6 +40,19 @@ namespace VectorVertex
         VV_CORE_WARN("Initialized!");
         WindowResizeEvent e(info.width, info.height);
         VV_TRACE(e.ToString());
+    }
+    void Application::OnEvent(Event &e)
+    {
+        EventDispatcher dispatcher(e);
+        dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+
+        VV_CORE_TRACE("{0}", e.ToString());
+    }
+
+    bool Application::OnWindowClose(WindowCloseEvent &e)
+    {
+        m_Running = false;
+        return true;
     }
 
     Application::~Application()
@@ -62,40 +81,40 @@ namespace VectorVertex
             FrameInfo info;
             info.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
             editor_layer->OnImGuiRender(info);
-            {
-                auto commandBuffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
-                ImGui::Render();
-                ImDrawData *draw_data = ImGui::GetDrawData();
+            // {
+            //     auto commandBuffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
+            //     ImGui::Render();
+            //     ImDrawData *draw_data = ImGui::GetDrawData();
 
-                // Check if there are any ImGui draw commands
-                if (draw_data->CmdListsCount > 0)
-                {
-                    // Iterate over each command list
-                    for (int32_t i = 0; i < draw_data->CmdListsCount; ++i)
-                    {
-                        const ImDrawList *cmd_list = draw_data->CmdLists[i];
+            //     // Check if there are any ImGui draw commands
+            //     if (draw_data->CmdListsCount > 0)
+            //     {
+            //         // Iterate over each command list
+            //         for (int32_t i = 0; i < draw_data->CmdListsCount; ++i)
+            //         {
+            //             const ImDrawList *cmd_list = draw_data->CmdLists[i];
 
-                        // Iterate over each command in the command list
-                        for (int32_t j = 0; j < cmd_list->CmdBuffer.Size; ++j)
-                        {
-                            const ImDrawCmd *pcmd = &cmd_list->CmdBuffer[j];
+            //             // Iterate over each command in the command list
+            //             for (int32_t j = 0; j < cmd_list->CmdBuffer.Size; ++j)
+            //             {
+            //                 const ImDrawCmd *pcmd = &cmd_list->CmdBuffer[j];
 
-                            // Example code to execute ImGui draw commands
-                            // Bind ImGui textures if needed
-                            // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &imguiTextureDescriptorSet, 0, nullptr);
+            //                 // Example code to execute ImGui draw commands
+            //                 // Bind ImGui textures if needed
+            //                 // vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout, 0, 1, &imguiTextureDescriptorSet, 0, nullptr);
 
-                            // Set scissor rectangle
-                            VkRect2D scissorRect;
-                            scissorRect.offset = {static_cast<int32_t>(pcmd->ClipRect.x), static_cast<int32_t>(pcmd->ClipRect.y)};
-                            scissorRect.extent = {static_cast<uint32_t>(pcmd->ClipRect.z - pcmd->ClipRect.x), static_cast<uint32_t>(pcmd->ClipRect.w - pcmd->ClipRect.y)};
-                            vkCmdSetScissor(commandBuffer, 0, 1, &scissorRect);
+            //                 // Set scissor rectangle
+            //                 VkRect2D scissorRect;
+            //                 scissorRect.offset = {static_cast<int32_t>(pcmd->ClipRect.x), static_cast<int32_t>(pcmd->ClipRect.y)};
+            //                 scissorRect.extent = {static_cast<uint32_t>(pcmd->ClipRect.z - pcmd->ClipRect.x), static_cast<uint32_t>(pcmd->ClipRect.w - pcmd->ClipRect.y)};
+            //                 vkCmdSetScissor(commandBuffer, 0, 1, &scissorRect);
 
-                            // Draw indexed
-                            vkCmdDrawIndexed(commandBuffer, pcmd->ElemCount, 1, pcmd->IdxOffset, pcmd->VtxOffset, 0);
-                        }
-                    }
-                }
-            }
+            //                 // Draw indexed
+            //                 vkCmdDrawIndexed(commandBuffer, pcmd->ElemCount, 1, pcmd->IdxOffset, pcmd->VtxOffset, 0);
+            //             }
+            //         }
+            //     }
+            // }
             RenderCommand::EndRenderPass();
 
             RenderCommand::EndFrame();

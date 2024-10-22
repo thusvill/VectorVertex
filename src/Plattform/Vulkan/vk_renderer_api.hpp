@@ -16,7 +16,7 @@ namespace VectorVertex
 {
     class Entity;
     class VKRendererAPI : public RendererAPI
-    {
+        {
     public:
         VKRendererAPI(Window *window);
         virtual ~VKRendererAPI() override;
@@ -43,7 +43,7 @@ namespace VectorVertex
         }
 
     private:
-        VulkanAPIData VKData();
+        VulkanAPIData VKData{};
         Ref<VulkanRenderSystem> MeshRenderSystem;
 
         void UploadShaderData(Entity entity);

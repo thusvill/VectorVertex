@@ -1,6 +1,9 @@
 #include "vk_render_system.hpp"
 #include <vk_api_data.hpp>
 #include <Components.hpp>
+#include <Entity.hpp>
+#include <RenderCommand.hpp>
+#include <GraphicsContext.hpp>
 namespace VectorVertex
 {
     VulkanRenderSystem::VulkanRenderSystem(std::string vertex_shader, std::string fragment_shader)
@@ -11,9 +14,13 @@ namespace VectorVertex
     }
     VulkanRenderSystem::VulkanRenderSystem(std::vector<VkDescriptorSetLayout> additional_layouts, std::string vertex_shader, std::string fragment_shader)
     {
-        std::vector<VkDescriptorSetLayout> layout = {VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()};
-        layout.insert(layout.end(), additional_layouts.begin(), additional_layouts.end());
-        CreatePipelineLayout(layout);
+        // std::vector<VkDescriptorSetLayout> layout = {VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()};
+        // layout.insert(layout.end(), additional_layouts.begin(), additional_layouts.end());
+        if(std::find(additional_layouts.begin(), additional_layouts.end(), VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()) == additional_layouts.end()){
+            additional_layouts.push_back(VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout());
+        }
+
+        CreatePipelineLayout(additional_layouts);
         CreatePipeline(vertex_shader, fragment_shader);
     }
     void VulkanRenderSystem::Bind(Entity object)
@@ -68,7 +75,7 @@ namespace VectorVertex
             throw std::runtime_error("Failed to create pipeline layout!");
         }
     }
-    void VulkanRenderSystem::CreatePipeline(std::string vertex_shader, std::string fragment_shader)
+    void VulkanRenderSystem::CreatePipeline(const std::string vertex_shader,const std::string fragment_shader)
     {
 
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
@@ -83,8 +90,6 @@ namespace VectorVertex
     void VulkanRenderSystem::UploadShaderData(Entity object)
     {
         auto &obj = object;
-        if (!obj.HasComponent<MeshComponent>()) // Preformance drop when go through all objects
-            return;
 
         TransformComponent _transform = obj.GetComponent<TransformComponent>();
 

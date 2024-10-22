@@ -15,6 +15,7 @@ namespace VectorVertex
 
     void VKRendererAPI::Init()
     {
+        VKData.Init();
         recreateSwapChain();
         CreateCommandBuffers();
 
@@ -24,7 +25,7 @@ namespace VectorVertex
         VVTextureLibrary::UpdateDescriptors();
 
         std::vector<VkDescriptorSetLayout> layout = {VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
-        MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+        //MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
 
     void VKRendererAPI::BeginFrame()
@@ -127,7 +128,7 @@ namespace VectorVertex
 
     void VKRendererAPI::DrawMesh(Entity object)
     {
-        MeshRenderSystem->Bind(object);
+        //MeshRenderSystem->Bind(object);
         auto m_data = object.GetComponent<MeshComponent>().GetMeshData();
         auto commandBuffer = VKGetCurrentCommandBuffer();
         std::vector<VkBuffer> buffers = {m_data.m_VertexBuffers->getVKBuffer()};

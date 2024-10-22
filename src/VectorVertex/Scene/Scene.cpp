@@ -3,6 +3,7 @@
 #include <Log.h>
 #include <vk_frame_info.hpp>
 #include <RenderCommand.hpp>
+#include <vk_api_data.hpp>
 
 namespace VectorVertex
 {
@@ -15,6 +16,8 @@ namespace VectorVertex
     void Scene::Init()
     {
         //m_RendererSystem->Create();
+        std::vector<VkDescriptorSetLayout> layouts = {VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()};
+        mesh_Renderer = CreateRef<VulkanRenderSystem>(layouts, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
     Scene::~Scene()
     {
@@ -124,7 +127,7 @@ namespace VectorVertex
         {
             if (kv.second.HasComponent<MeshComponent>())
             {
-                
+                mesh_Renderer->Bind(kv.second);
                 RenderCommand::DrawMesh(kv.second);
             }
         }
