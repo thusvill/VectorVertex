@@ -29,7 +29,7 @@ namespace VectorVertex
         virtual ~RendererAPI() = default;
         virtual void Init() = 0;
 
-        virtual void BeginFrame() = 0;
+        virtual bool BeginFrame() = 0;
         virtual void EndFrame() = 0;
         virtual void BeginRenderPass() = 0;
         virtual void EndRenderPass() = 0;
@@ -46,7 +46,9 @@ namespace VectorVertex
 
         virtual VkCommandBuffer GetCurrentCommandBuffer() = 0;
 
-        static API GetRenderAPI()
+        virtual void WindowResized() =0;
+
+            static API GetRenderAPI()
         {
             return s_API;
         }

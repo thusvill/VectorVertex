@@ -38,20 +38,26 @@ namespace VectorVertex
         layers.PushLayer(editor_layer);
         editor_layer->SetupImgui();
         VV_CORE_WARN("Initialized!");
-        WindowResizeEvent e(info.width, info.height);
-        VV_TRACE(e.ToString());
     }
     void Application::OnEvent(Event &e)
     {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+        dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
 
-        VV_CORE_TRACE("{0}", e.ToString());
+        //        VV_CORE_TRACE("{0}", e.ToString());
     }
 
     bool Application::OnWindowClose(WindowCloseEvent &e)
     {
         m_Running = false;
+        return true;
+    }
+
+    bool Application::OnWindowResize(WindowResizeEvent &e)
+    {
+        RenderCommand::WindowResize();
+        VV_CORE_INFO("{0}", e.ToString());
         return true;
     }
 
@@ -77,20 +83,21 @@ namespace VectorVertex
 
             editor_layer->OnUpdate();
 
-            RenderCommand::BeginFrame();
-            FrameInfo info;
-            info.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
-            info.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
-            info.frame_time = frameTime;
+            if (RenderCommand::BeginFrame())
+            {
+                FrameInfo info;
+                info.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
+                info.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
+                info.frame_time = frameTime;
 
-            editor_layer->OnRender(info);
+                editor_layer->OnRender(info);
 
-            RenderCommand::BeginRenderPass();
-            
-            editor_layer->OnImGuiRender(info);
-            
-            RenderCommand::EndRenderPass();
+                RenderCommand::BeginRenderPass();
 
+                editor_layer->OnImGuiRender(info);
+
+                RenderCommand::EndRenderPass();
+            }
             RenderCommand::EndFrame();
 
             RenderCommand::WaitForDeviceIdl();

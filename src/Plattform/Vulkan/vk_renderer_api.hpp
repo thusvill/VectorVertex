@@ -21,7 +21,7 @@ namespace VectorVertex
         VKRendererAPI(Window *window);
         virtual ~VKRendererAPI() override;
         virtual void Init() override;
-        virtual void BeginFrame() override;
+        virtual bool BeginFrame() override;
         virtual void EndFrame() override;
         virtual void BeginRenderPass() override;
         virtual void EndRenderPass() override;
@@ -41,6 +41,10 @@ namespace VectorVertex
         virtual void WaitForDeviceIdle() override
         {
             vkDeviceWaitIdle(VKDevice::Get().device());
+        }
+
+        virtual void WindowResized() override{
+            recreateSwapChain();
         }
 
     private:

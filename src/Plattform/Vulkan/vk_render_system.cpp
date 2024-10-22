@@ -21,12 +21,15 @@ namespace VectorVertex
         {
             layouts.push_back(VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout());
         }
+        
         for (auto &layout : additional_layouts)
         {
             layouts.push_back(layout);
         }
 
-        CreatePipelineLayout(additional_layouts);
+        VV_CORE_TRACE("{} Pipeline layouts created", layouts.size());
+
+        CreatePipelineLayout(layouts);
         CreatePipeline(vertex_shader, fragment_shader);
     }
     void VulkanRenderSystem::Bind(Entity object)

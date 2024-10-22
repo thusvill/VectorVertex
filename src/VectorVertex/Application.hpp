@@ -56,6 +56,7 @@ namespace VectorVertex
 
     private:
         bool OnWindowClose(WindowCloseEvent &e);
+        bool OnWindowResize(WindowResizeEvent &e);
 
         Ref<GraphicsContext> m_GraphicsContext;
 
