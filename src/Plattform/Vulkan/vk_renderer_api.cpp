@@ -25,10 +25,10 @@ namespace VectorVertex
         VVTextureLibrary::UpdateDescriptors();
 
         std::vector<VkDescriptorSetLayout> layout = {VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
-        //MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+        // MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
 
-    void VKRendererAPI::BeginFrame()
+    bool VKRendererAPI::BeginFrame()
     {
         VV_CORE_ASSERT(m_SwapChain != nullptr, "m_SwapChain is nullptr");
 
@@ -37,7 +37,7 @@ namespace VectorVertex
         if (result == VK_ERROR_OUT_OF_DATE_KHR)
         {
             recreateSwapChain();
-            return;
+            return false;
         }
 
         if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR)
@@ -54,7 +54,12 @@ namespace VectorVertex
         {
             VV_CORE_ERROR("Failed to begin recording command buffer!");
             throw std::runtime_error("Failed to begin recording command buffer!");
-        };
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     void VKRendererAPI::EndFrame()
@@ -128,7 +133,7 @@ namespace VectorVertex
 
     void VKRendererAPI::DrawMesh(Entity object)
     {
-        //MeshRenderSystem->Bind(object);
+        // MeshRenderSystem->Bind(object);
         auto m_data = object.GetComponent<MeshComponent>().GetMeshData();
         auto commandBuffer = VKGetCurrentCommandBuffer();
         std::vector<VkBuffer> buffers = {m_data.m_VertexBuffers->getVKBuffer()};
@@ -165,7 +170,6 @@ namespace VectorVertex
     {
         return m_SwapChain->getImageCount();
     }
-
 
     void VKRendererAPI::CreateCommandBuffers()
     {

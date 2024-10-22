@@ -16,9 +16,9 @@ namespace VectorVertex
             s_RendererAPI->Init();
         }
 
-        static void BeginFrame()
+        static bool BeginFrame()
         {
-            s_RendererAPI->BeginFrame();
+           return s_RendererAPI->BeginFrame();
         }
         static void EndFrame()
         {
@@ -38,6 +38,10 @@ namespace VectorVertex
             s_RendererAPI->DrawMesh(object);
         }
 
+        static void WindowResize(){
+            s_RendererAPI->WindowResized();
+        }
+
         static void WaitForDeviceIdl()
         {
             s_RendererAPI->WaitForDeviceIdle();
@@ -46,6 +50,7 @@ namespace VectorVertex
         {
             return s_RendererAPI;
         }
+        
 
     private:
         static Scope<RendererAPI> s_RendererAPI;

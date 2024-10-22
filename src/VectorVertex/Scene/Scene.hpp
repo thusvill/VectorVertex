@@ -37,6 +37,7 @@ namespace VectorVertex
         Entity* GetMainCamera(){
             return m_MainCamera;
         }
+        Extent2D m_ViewportSize{800,800};
 
     private:
         Entity *m_MainCamera;
@@ -48,6 +49,7 @@ namespace VectorVertex
         std::unordered_map<UUID, Entity> m_Pending_Delete_Entities;
         //Ref<VulkanRendererSystem> m_RendererSystem;
         Ref<VulkanRenderSystem> mesh_Renderer;
+        Ref<VulkanRenderSystem> light_Renderer;
 
         friend class SceneHierarchy;
         friend class SceneSerializer;

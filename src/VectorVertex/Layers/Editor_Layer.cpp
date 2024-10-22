@@ -271,6 +271,9 @@ namespace VectorVertex
                 is_viewport_resized = true;
             }
             Viewport_Extent = {static_cast<uint32_t>(windowSize.x), static_cast<uint32_t>(windowSize.y)};
+            if(m_ActiveScene != nullptr){
+                m_ActiveScene->m_ViewportSize = Viewport_Extent;
+            }
             // Display the offscreen image
             ImGui::Image(sceneImageView, windowSize);
 

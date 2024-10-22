@@ -1,441 +1,114 @@
-[19:31:08] [info] VV-CORE: DEBUGGING STARTED!
-[19:31:08] [info] VV-CORE: Vulkan Context Created!
-[19:31:08] [info] VV-CORE: Creating window VectorVertex (1600, 900)
-[19:31:08] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
-[19:31:08] [info] VV-CORE: Vulkan Render API Created!
-[19:31:08] [info] VV-CORE: Vulkan API Data Initialized!
-[19:31:09] [info] VV-CORE: Initialized Material Library
-[19:31:09] [info] VV-CORE: Initilized Texture Library!
-[19:31:09] [warning] VV-CORE: Application is Started!
-[19:31:09] [warning] VV-CORE: Initializing ...
-[19:31:09] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[19:31:09] [info] VV-CORE: [Layer]:EditorLayer Created!
-[19:31:09] [info] VV-CORE: Texture Library cleared!
-[19:31:09] [info] VV-CORE: Scene New Scene Created!
-[19:31:09] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-layout-07988 ] Object 0: handle = 0xba7514000000002a, type = VK_OBJECT_TYPE_SHADER_MODULE; Object 1: handle = 0x3fbcd60000000028, type = VK_OBJECT_TYPE_PIPELINE_LAYOUT; | MessageID = 0x215f02cd | vkCreateGraphicsPipelines(): pCreateInfos[0].pStages[1] SPIR-V (VK_SHADER_STAGE_FRAGMENT_BIT) uses descriptor [Set 1, Binding 0, variable "material_texture"] (type VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER) but was not declared in the pipeline layout.
+[21:12:41] [info] VV-CORE: DEBUGGING STARTED!
+[21:12:41] [info] VV-CORE: Vulkan Context Created!
+[21:12:41] [info] VV-CORE: Creating window VectorVertex (1600, 900)
+[21:12:41] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
+[21:12:41] [info] VV-CORE: Vulkan Render API Created!
+[21:12:41] [info] VV-CORE: Vulkan API Data Initialized!
+[21:12:41] [info] VV-CORE: Initialized Material Library
+[21:12:41] [info] VV-CORE: Initilized Texture Library!
+[21:12:41] [warning] VV-CORE: Application is Started!
+[21:12:41] [warning] VV-CORE: Initializing ...
+[21:12:41] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[21:12:41] [info] VV-CORE: [Layer]:EditorLayer Created!
+[21:12:41] [info] VV-CORE: Texture Library cleared!
+[21:12:41] [info] VV-CORE: Scene New Scene Created!
+[21:12:41] [trace] VV-CORE: 1 Pipeline layouts created
+[21:12:41] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-layout-07988 ] Object 0: handle = 0xba7514000000002a, type = VK_OBJECT_TYPE_SHADER_MODULE; Object 1: handle = 0x3fbcd60000000028, type = VK_OBJECT_TYPE_PIPELINE_LAYOUT; | MessageID = 0x215f02cd | vkCreateGraphicsPipelines(): pCreateInfos[0].pStages[1] SPIR-V (VK_SHADER_STAGE_FRAGMENT_BIT) uses descriptor [Set 1, Binding 0, variable "material_texture"] (type VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER) but was not declared in the pipeline layout.
 The Vulkan spec states: If a resource variables is declared in a shader, a descriptor slot in layout must match the shader stage (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-layout-07988)
-[19:31:09] [info] VV-CORE: Created Material: default ID: 3804791891768153200
-[19:31:09] [info] VV-CORE: Entity Created with name:Camera , ID:4116082148449580768
-[19:31:09] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[19:31:09] [warning] VV-CORE: Initialized!
-[19:31:09] [trace] APPLICATION: WindowResizeEvent: 1600, 900
-[19:31:09] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
-[19:31:09] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 858 at 1.8648019 aspect ratio.
-[19:31:09] [info] VV-CORE: Extent Resized with WIDTH: 936, HEIGHT 858 at 1.0909091 aspect ratio.
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 3, 57
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 20, 59
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 34, 59
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 51, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 65, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 75, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 81, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 87, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 88, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 89, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 90, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 91, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 92, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 93, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 94, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 95, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 96, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 97, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 100, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 102, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 105, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 110, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 113, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 118, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 123, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 127, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 131, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 137, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 145, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 151, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 159, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 165, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 173, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 182, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 188, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 191, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 196, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 199, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 204, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 207, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 210, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 213, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 215, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 218, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 221, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 224, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 225, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 228, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 233, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 236, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 239, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 242, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 245, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 246, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 248, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 249, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 250, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 252, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 253, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 254, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 255, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 256, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 257, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 258, 70
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 259, 69
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 260, 68
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 261, 68
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 262, 68
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 262, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 263, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 264, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 265, 67
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 267, 66
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 269, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 271, 65
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 274, 63
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 275, 62
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 278, 60
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 281, 59
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 284, 59
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 286, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 287, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 290, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 291, 57
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 292, 57
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 292, 56
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 293, 56
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 294, 55
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 295, 55
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 295, 54
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 296, 54
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 296, 55
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 295, 55
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 293, 56
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 290, 56
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 287, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 284, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 279, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 274, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 266, 58
-[19:31:09] [trace] VV-CORE: MouseMovedEvent: 260, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 254, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 249, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 244, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 238, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 233, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 227, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 222, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 217, 56
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 211, 54
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 203, 51
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 200, 51
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 197, 49
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 196, 49
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 195, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 194, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 193, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 192, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 191, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 190, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 189, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 188, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 187, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 186, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 185, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 184, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 183, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 182, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 180, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 179, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 178, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 175, 46
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 172, 46
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 169, 46
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 164, 45
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 161, 45
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 158, 43
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 155, 43
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 152, 42
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 149, 42
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 146, 40
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 145, 40
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 142, 39
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 139, 39
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 138, 39
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 135, 37
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 133, 37
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 132, 37
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 131, 37
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 130, 37
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 129, 37
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 128, 38
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 127, 39
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 126, 40
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 125, 40
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 125, 41
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 124, 41
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 124, 42
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 123, 42
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 122, 43
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 121, 43
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 121, 44
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 120, 44
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 119, 44
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 119, 45
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 118, 45
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 118, 46
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 117, 46
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 117, 47
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 115, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 114, 48
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 114, 49
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 113, 50
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 113, 51
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 112, 52
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 112, 55
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 111, 56
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 111, 57
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 110, 58
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 110, 61
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 110, 64
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 108, 67
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 108, 69
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 108, 74
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 107, 78
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 107, 80
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 85
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 89
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 91
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 96
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 99
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 102
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 105
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 108
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 111
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 114
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 116
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 118
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 119
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 120
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 121
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 122
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 104, 123
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 123
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 105, 124
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 106, 124
-[19:31:10] [trace] VV-CORE: MouseButtonPressedEvent: 1
-[19:31:10] [trace] VV-CORE: MouseButtonReleasedEvent: 1
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 107, 124
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 108, 124
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 108, 125
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 109, 125
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 110, 126
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 111, 126
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 112, 126
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 113, 126
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 114, 127
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 115, 127
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 116, 128
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 117, 128
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 118, 129
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 119, 129
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 120, 129
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 121, 130
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 122, 130
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 123, 131
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 124, 132
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 125, 132
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 125, 133
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 126, 133
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 126, 135
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 127, 135
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 127, 136
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 127, 137
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 128, 138
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 130, 139
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 130, 141
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 130, 142
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 131, 142
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 131, 143
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 131, 144
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 132, 145
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 133, 146
-[19:31:10] [trace] VV-CORE: MouseMovedEvent: 133, 147
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 134, 148
-[19:31:11] [trace] VV-CORE: MouseButtonPressedEvent: 0
-[19:31:11] [trace] VV-CORE: MouseButtonReleasedEvent: 0
-[19:31:11] [info] VV-CORE: Created Material: default ID: 6591016948828328898
-[19:31:11] [info] VV-CORE: Entity Created with name:new Entity , ID:8598542040756813993
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 135, 148
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 136, 148
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 140, 148
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 148, 148
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 160, 148
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 170, 150
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 185, 150
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 206, 153
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 229, 159
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 262, 162
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 297, 168
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 377, 177
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 424, 185
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 477, 191
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 530, 197
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 586, 206
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 639, 215
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 689, 221
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 739, 230
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 789, 236
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 836, 241
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 886, 247
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 937, 253
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 984, 259
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1028, 262
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1069, 268
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1143, 274
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1178, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1208, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1237, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1261, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1284, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1302, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1316, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1325, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1329, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1330, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1333, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1334, 277
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1334, 276
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1335, 276
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1335, 275
-[19:31:11] [trace] VV-CORE: MouseMovedEvent: 1335, 274
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1335, 273
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1335, 272
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1336, 271
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1336, 270
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1336, 269
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1337, 269
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1337, 268
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1337, 267
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1337, 266
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1337, 265
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1337, 264
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1336, 263
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1336, 262
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1335, 262
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1335, 261
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1334, 260
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1332, 259
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1331, 259
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1329, 257
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1328, 257
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1327, 255
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1326, 254
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1325, 254
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1324, 253
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1323, 252
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1322, 252
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1321, 251
-[19:31:12] [trace] VV-CORE: MouseButtonPressedEvent: 0
-[19:31:12] [trace] VV-CORE: MouseButtonReleasedEvent: 0
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1322, 251
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1323, 251
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1324, 252
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1325, 253
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1326, 253
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1326, 254
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1327, 254
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1328, 255
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1329, 256
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1330, 257
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1331, 260
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1332, 261
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1334, 264
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1335, 265
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1336, 268
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1338, 270
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1339, 272
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1339, 273
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1340, 276
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1342, 277
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1342, 280
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1343, 281
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1344, 284
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1344, 285
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1346, 288
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1346, 290
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1347, 293
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1349, 296
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1349, 298
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1351, 300
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1353, 302
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1354, 304
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1355, 305
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1355, 306
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1356, 309
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1358, 310
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1359, 311
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1360, 312
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1361, 313
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1361, 314
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1361, 315
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1362, 315
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1362, 314
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1364, 314
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1365, 313
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1365, 312
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1367, 311
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1368, 309
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1369, 308
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1370, 307
-[19:31:12] [trace] VV-CORE: MouseMovedEvent: 1371, 307
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1371, 306
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1372, 305
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1372, 304
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1373, 303
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1373, 302
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1374, 301
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1374, 300
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1375, 298
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1375, 297
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1377, 296
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1378, 294
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1379, 293
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1380, 292
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1380, 291
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1380, 290
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1381, 289
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1381, 287
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1382, 287
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1382, 286
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 285
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 284
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 283
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 282
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 282
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 281
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 280
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 279
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 278
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 277
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1384, 275
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 274
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 273
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 272
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1383, 271
-[19:31:13] [trace] VV-CORE: MouseMovedEvent: 1382, 270
-[19:31:13] [trace] VV-CORE: MouseButtonPressedEvent: 0
-[19:31:13] [trace] VV-CORE: MouseButtonReleasedEvent: 0
-[19:31:13] [info] VV-CORE: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj
-[19:31:13] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj
-[19:31:13] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:1058596747374563128
-[19:31:13] [info] VV-CORE: Default Texture Loaded 1058596747374563128
-[19:31:13] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkCmdBindDescriptorSets-pDescriptorSets-00358 ] Object 0: handle = 0x5a531172dbd0, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0xec4bec000000000b, type = VK_OBJECT_TYPE_DESCRIPTOR_SET; | MessageID = 0xe1b89b63 | vkCmdBindDescriptorSets(): pDescriptorSets[0] (VkDescriptorSet 0xec4bec000000000b[]) being bound is not compatible with overlapping descriptorSetLayout at index 1 of VkPipelineLayout 0x3fbcd60000000028[] due to: VkPipelineLayout 0x3fbcd60000000028[]) only contains 1 setLayout, corresponding to index 0, but you're attempting to bind set to index 1.
-The Vulkan spec states: Each element of pDescriptorSets must have been allocated with a VkDescriptorSetLayout that matches (is the same as, or identically defined as) the VkDescriptorSetLayout at set n in layout, where n is the sum of firstSet and the index into pDescriptorSets (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkCmdBindDescriptorSets-pDescriptorSets-00358)
-[19:31:13] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkCmdBindDescriptorSets-firstSet-00360 ] Object 0: handle = 0x5a531172dbd0, type = VK_OBJECT_TYPE_COMMAND_BUFFER; | MessageID = 0x1893ae29 | vkCmdBindDescriptorSets():  Sum of firstSet (1) and descriptorSetCount (1) is greater than VkPipelineLayoutCreateInfo::setLayoutCount (1) when pipeline layout was created.
-The Vulkan spec states: The sum of firstSet and descriptorSetCount must be less than or equal to VkPipelineLayoutCreateInfo::setLayoutCount provided when layout was created (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkCmdBindDescriptorSets-firstSet-00360)
+[21:12:41] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa43473000000002d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
+[21:12:41] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa43473000000002d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
+[21:12:41] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa43473000000002d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
+[21:12:41] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa43473000000002d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
+[21:12:41] [info] VV-CORE: Created Material: default ID: 4773316990045540970
+[21:12:41] [info] VV-CORE: Entity Created with name:Camera , ID:17706548488003267817
+[21:12:41] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[21:12:41] [warning] VV-CORE: Initialized!
+[21:12:41] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
+[21:12:41] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 858 at 1.8648019 aspect ratio.
+[21:12:41] [info] VV-CORE: Extent Resized with WIDTH: 936, HEIGHT 858 at 1.0909091 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 934, HEIGHT 858 at 1.0885781 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 932, HEIGHT 858 at 1.0862471 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 931, HEIGHT 858 at 1.0850816 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 926, HEIGHT 858 at 1.079254 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 919, HEIGHT 858 at 1.0710956 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 909, HEIGHT 858 at 1.0594406 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 895, HEIGHT 858 at 1.0431235 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 881, HEIGHT 858 at 1.0268065 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 869, HEIGHT 858 at 1.0128205 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 860, HEIGHT 858 at 1.002331 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 852, HEIGHT 858 at 0.993007 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 847, HEIGHT 858 at 0.98717946 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 844, HEIGHT 858 at 0.983683 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 842, HEIGHT 858 at 0.981352 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 836, HEIGHT 858 at 0.974359 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 830, HEIGHT 858 at 0.967366 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 824, HEIGHT 858 at 0.960373 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 816, HEIGHT 858 at 0.951049 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 812, HEIGHT 858 at 0.94638693 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 805, HEIGHT 858 at 0.9382284 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 803, HEIGHT 858 at 0.9358974 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 799, HEIGHT 858 at 0.93123543 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 793, HEIGHT 858 at 0.92424244 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 783, HEIGHT 858 at 0.9125874 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 780, HEIGHT 858 at 0.90909094 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 776, HEIGHT 858 at 0.9044289 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 762, HEIGHT 858 at 0.8881119 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 751, HEIGHT 858 at 0.87529135 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 735, HEIGHT 858 at 0.8566434 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 710, HEIGHT 858 at 0.8275058 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 682, HEIGHT 858 at 0.7948718 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 666, HEIGHT 858 at 0.7762238 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 650, HEIGHT 858 at 0.75757575 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 628, HEIGHT 858 at 0.7319347 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 606, HEIGHT 858 at 0.7062937 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 590, HEIGHT 858 at 0.6876457 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 569, HEIGHT 858 at 0.66317016 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 544, HEIGHT 858 at 0.6340326 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 538, HEIGHT 858 at 0.6270396 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 530, HEIGHT 858 at 0.6177156 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 516, HEIGHT 858 at 0.6013986 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 502, HEIGHT 858 at 0.5850816 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 488, HEIGHT 858 at 0.56876457 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 478, HEIGHT 858 at 0.55710953 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 467, HEIGHT 858 at 0.54428905 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 457, HEIGHT 858 at 0.532634 aspect ratio.
+[21:12:45] [info] VV-CORE: Extent Resized with WIDTH: 449, HEIGHT 858 at 0.52331 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 443, HEIGHT 858 at 0.516317 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 436, HEIGHT 858 at 0.5081585 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 429, HEIGHT 858 at 0.5 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 422, HEIGHT 858 at 0.4918415 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 417, HEIGHT 858 at 0.48601398 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 411, HEIGHT 858 at 0.47902098 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 405, HEIGHT 858 at 0.47202796 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 400, HEIGHT 858 at 0.46620047 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 398, HEIGHT 858 at 0.46386945 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 393, HEIGHT 858 at 0.45804197 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 389, HEIGHT 858 at 0.45337996 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 381, HEIGHT 858 at 0.44405594 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 375, HEIGHT 858 at 0.43706295 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 369, HEIGHT 858 at 0.43006992 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 365, HEIGHT 858 at 0.42540792 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 363, HEIGHT 858 at 0.42307693 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 362, HEIGHT 858 at 0.42191142 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 361, HEIGHT 858 at 0.4207459 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 363, HEIGHT 858 at 0.42307693 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 364, HEIGHT 858 at 0.42424244 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 372, HEIGHT 858 at 0.43356642 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 390, HEIGHT 858 at 0.45454547 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 412, HEIGHT 858 at 0.4801865 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 464, HEIGHT 858 at 0.5407925 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 493, HEIGHT 858 at 0.57459205 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 549, HEIGHT 858 at 0.63986015 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 693, HEIGHT 858 at 0.8076923 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 797, HEIGHT 858 at 0.9289044 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 883, HEIGHT 858 at 1.0291375 aspect ratio.
+[21:12:46] [info] VV-CORE: Extent Resized with WIDTH: 936, HEIGHT 858 at 1.0909091 aspect ratio.
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1597, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1580, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1556, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1533, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1521, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1501, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1480, 900
+[21:12:48] [info] VV-CORE: WindowResizeEvent: 1472, 900
+[21:12:48] [error] VV-CORE: Assertion failed: Cannot get command buffer when frame not in progress

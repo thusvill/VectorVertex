@@ -18,6 +18,7 @@ namespace VectorVertex
         //m_RendererSystem->Create();
         std::vector<VkDescriptorSetLayout> layouts = {VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()};
         mesh_Renderer = CreateRef<VulkanRenderSystem>(layouts, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+        light_Renderer = CreateRef<VulkanRenderSystem>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
     Scene::~Scene()
     {
@@ -117,12 +118,32 @@ namespace VectorVertex
                 m_MainCamera = nullptr;
             }
         }
+        auto& m_Camera = m_MainCamera->GetComponent<CameraComponent>().m_Camera;
+
+        m_Camera.SetViewYXZ(m_MainCamera->GetComponent<TransformComponent>().translation, m_MainCamera->GetComponent<TransformComponent>().rotation);
+
+        auto aspectRatio = static_cast<float>(m_ViewportSize.width) / static_cast<float>(m_ViewportSize.height); // renderer.GetAspectRatio();
+        // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
+        if (m_Camera.GetProjectionType() == VKCamera::ProjectionType::Perspective)
+        {
+            m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
+        }
 
         //m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
     }
 
     void Scene::RenderScene(FrameInfo &frameInfo)
     {
+        GlobalUBO ubo{};
+        ubo.view = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetView();
+        ubo.projection = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetProjection();
+        ubo.inverse_view_matrix = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetInverseViewMatrix();
+
+        // Update point lights
+
+        VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
+        VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->flush();
+
         for (auto &kv : m_Entities)
         {
             if (kv.second.HasComponent<MeshComponent>())
