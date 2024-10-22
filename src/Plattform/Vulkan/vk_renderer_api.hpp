@@ -30,6 +30,7 @@ namespace VectorVertex
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
+        virtual int GetCurrentFrameIndex() override;
         virtual uint32_t GetSwapchainImageCount() override;
 
         virtual VkCommandBuffer GetCurrentCommandBuffer() override

@@ -378,7 +378,7 @@ namespace VectorVertex
         m_SceneHierarchyPanel.SetContext(m_ActiveScene);
         m_ActiveScene->Init();
         auto new_Cam = m_ActiveScene->CreateEntity("Camera");
-        new_Cam.AddComponent<CameraComponent>();
+        new_Cam.AddComponent<CameraComponent>().mainCamera = true;
         m_ActiveScene->SetMainCamera(&new_Cam);
         is_viewport_resized = true;
 
