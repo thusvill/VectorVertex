@@ -3,11 +3,10 @@
 #include <Components.hpp>
 #include <Base.h>
 #include <vk_offscreen.hpp>
-#include <vk_point_light_system.hpp>
-#include <vk_render_system.hpp>
+// #include <vk_point_light_system.hpp>
+//#include <vk_render_system.hpp>
 #include <vk_frame_info.hpp>
 #include <Keyboard_inputs.hpp>
-#include <VulkanRendererSystem.hpp>
 
 namespace VectorVertex
 {

@@ -1,4 +1,5 @@
 #pragma once
+#include <vulkan/vulkan.h>
 #include <RendererAPI.hpp>
 #include <vvpch.hpp>
 #include <Log.h>
@@ -7,13 +8,17 @@
 #include "vk_swap_chain.hpp"
 #include <Window.hpp>
 #include <Buffer.hpp>
+#include <vk_api_data.hpp>
+#include <vk_render_system.hpp>
+#include <vk_texture.hpp>
 
 namespace VectorVertex
 {
+    class Entity;
     class VKRendererAPI : public RendererAPI
     {
     public:
-        VKRendererAPI(Window* window);
+        VKRendererAPI(Window *window);
         virtual ~VKRendererAPI() override;
         virtual void Init() override;
         virtual void BeginFrame() override;
@@ -21,12 +26,16 @@ namespace VectorVertex
         virtual void BeginRenderPass() override;
         virtual void EndRenderPass() override;
 
-        virtual void DrawMesh(MeshData data) override;
+        virtual void DrawMesh(Entity object) override;
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
         virtual uint32_t GetSwapchainImageCount() override;
-        virtual void* GetCurrentCommandBuffer() override;
+
+        virtual VkCommandBuffer GetCurrentCommandBuffer() override
+        {
+            return VKGetCurrentCommandBuffer();
+        }
 
         virtual void WaitForDeviceIdle() override
         {
@@ -34,6 +43,10 @@ namespace VectorVertex
         }
 
     private:
+        VulkanAPIData VKData();
+        Ref<VulkanRenderSystem> MeshRenderSystem;
+
+        void UploadShaderData(Entity entity);
         void
         CreateCommandBuffers();
         void FreeCommandBuffers();
@@ -54,6 +67,6 @@ namespace VectorVertex
         int currentFrameIndex{0};
         bool isFrameStarted{false};
 
-        Window& m_Window;
+        Window &m_Window;
     };
 } // namespace VectorVertex

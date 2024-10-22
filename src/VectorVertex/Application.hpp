@@ -52,9 +52,9 @@ namespace VectorVertex
         static Application *s_Instance;
         bool m_Running = true;
         
-        //EditorLayer *editor_layer;
+        EditorLayer *editor_layer;
 
-        //LayerStack layers{};
+        LayerStack layers{};
 
     };
 } // namespace VectorVertex

@@ -737,13 +737,7 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Layers/Imgui_Layer.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_glfw.h \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Panels/SceneHierarchy.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/entt/entt.hpp \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
@@ -755,10 +749,13 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: \
  /usr/include/c++/13/bits/stl_set.h \
  /usr/include/c++/13/bits/stl_multiset.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_render_system.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/VulkanRendererSystem.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Layers/Imgui_Layer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_glfw.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Panels/SceneHierarchy.hpp \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/SceneSerializer.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/FrameBuffer.hpp \

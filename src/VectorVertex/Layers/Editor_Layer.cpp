@@ -104,8 +104,6 @@ namespace VectorVertex
     void EditorLayer::OnAttach()
     {
 
-        MaterialLibrary::InitMaterialLib();
-        VVTextureLibrary::InitTextureLib();
 
         if (!m_Info.path.empty())
         {

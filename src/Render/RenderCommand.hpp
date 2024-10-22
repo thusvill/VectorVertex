@@ -2,6 +2,7 @@
 #include <Base.h>
 #include <RendererAPI.hpp>
 #include <Window.hpp>
+#include <Entity.hpp>
 namespace VectorVertex
 {
     class RenderCommand
@@ -11,8 +12,6 @@ namespace VectorVertex
         static void Init(Window *window)
         {
             s_RendererAPI = RendererAPI::Create(window, RendererAPI::API::Vulkan);
-
-            
 
             s_RendererAPI->Init();
         }
@@ -34,16 +33,16 @@ namespace VectorVertex
             s_RendererAPI->EndRenderPass();
         }
 
-        static void DrawMesh(MeshData data)
+        static void DrawMesh(Entity object)
         {
-            s_RendererAPI->DrawMesh(data);
+            s_RendererAPI->DrawMesh(object);
         }
 
         static void WaitForDeviceIdl()
         {
             s_RendererAPI->WaitForDeviceIdle();
         }
-        static Scope<RendererAPI>& GetRendererAPI()
+        static Scope<RendererAPI> &GetRendererAPI()
         {
             return s_RendererAPI;
         }
