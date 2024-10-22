@@ -4,6 +4,7 @@
 #include <Window.hpp>
 #include <RendererAPI.hpp>
 #include <GraphicsContext.hpp>
+
 namespace VectorVertex
 {
 
@@ -12,7 +13,7 @@ namespace VectorVertex
     public:
         virtual ~Renderer() = default;
 
-        static void Draw(MeshData data);
+        static void Draw(Entity object);
 
         inline static RendererAPI::API GetAPI() { return RendererAPI::GetRenderAPI(); }
     };

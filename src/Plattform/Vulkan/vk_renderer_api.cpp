@@ -1,5 +1,7 @@
 #include "vk_renderer_api.hpp"
 
+#include <Entity.hpp>
+
 namespace VectorVertex
 {
     VKRendererAPI::VKRendererAPI(Window *window) : m_Window(*window)
@@ -15,6 +17,14 @@ namespace VectorVertex
     {
         recreateSwapChain();
         CreateCommandBuffers();
+
+        MaterialLibrary::InitMaterialLib();
+        VVTextureLibrary::InitTextureLib();
+
+        VVTextureLibrary::UpdateDescriptors();
+
+        std::vector<VkDescriptorSetLayout> layout = {VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+        MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
 
     void VKRendererAPI::BeginFrame()
@@ -115,21 +125,23 @@ namespace VectorVertex
         vkCmdEndRenderPass(commandBuffer);
     }
 
-    void VKRendererAPI::DrawMesh(MeshData data)
+    void VKRendererAPI::DrawMesh(Entity object)
     {
+        MeshRenderSystem->Bind(object);
+        auto m_data = object.GetComponent<MeshComponent>().GetMeshData();
         auto commandBuffer = VKGetCurrentCommandBuffer();
-        std::vector<VkBuffer> buffers = {data.m_VertexBuffers->getVKBuffer()};
+        std::vector<VkBuffer> buffers = {m_data.m_VertexBuffers->getVKBuffer()};
 
         VkDeviceSize offsets[] = {0};
         vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers.data(), offsets);
-        if (data.m_IndexCount > 0)
+        if (m_data.m_IndexCount > 0)
         {
-            vkCmdBindIndexBuffer(commandBuffer, data.m_IndexBuffer->getVKBuffer(), 0, VK_INDEX_TYPE_UINT32);
-            vkCmdDrawIndexed(commandBuffer, data.m_IndexCount, 1, 0, 0, 0);
+            vkCmdBindIndexBuffer(commandBuffer, m_data.m_IndexBuffer->getVKBuffer(), 0, VK_INDEX_TYPE_UINT32);
+            vkCmdDrawIndexed(commandBuffer, m_data.m_IndexCount, 1, 0, 0, 0);
         }
         else
         {
-            vkCmdDraw(commandBuffer, data.m_VertexCount, 1, 0, 0);
+            vkCmdDraw(commandBuffer, m_data.m_VertexCount, 1, 0, 0);
         }
     }
 
@@ -148,10 +160,6 @@ namespace VectorVertex
         return m_SwapChain->getImageCount();
     }
 
-    void *VKRendererAPI::GetCurrentCommandBuffer()
-    {
-        return VKGetCurrentCommandBuffer();
-    }
 
     void VKRendererAPI::CreateCommandBuffers()
     {

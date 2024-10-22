@@ -2,6 +2,7 @@
 #include "Entity.hpp"
 #include <Log.h>
 #include <vk_frame_info.hpp>
+#include <RenderCommand.hpp>
 
 namespace VectorVertex
 {
@@ -119,6 +120,14 @@ namespace VectorVertex
 
     void Scene::RenderScene(FrameInfo &frameInfo)
     {
+        for (auto &kv : m_Entities)
+        {
+            if (kv.second.HasComponent<MeshComponent>())
+            {
+                
+                RenderCommand::DrawMesh(kv.second);
+            }
+        }
         //m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
     }
 }

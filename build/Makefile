@@ -369,77 +369,29 @@ src/Plattform/Linux/LinuxWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.s
 .PHONY : src/Plattform/Linux/LinuxWindow.cpp.s
 
-src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o
+src/Plattform/Vulkan/vk_api_data.o: src/Plattform/Vulkan/vk_api_data.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_api_data.o
 
 # target to build an object file
-src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.o
+src/Plattform/Vulkan/vk_api_data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_api_data.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_api_data.cpp.o
 
-src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i
-
-# target to preprocess a source file
-src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.i
-
-src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s: src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s
-
-# target to generate assembly for a file
-src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_point_light_system.cpp.s
-
-src/Plattform/Vulkan/Render_Systems/vk_render_system.o: src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.o
-
-# target to build an object file
-src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.o
-
-src/Plattform/Vulkan/Render_Systems/vk_render_system.i: src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.i
+src/Plattform/Vulkan/vk_api_data.i: src/Plattform/Vulkan/vk_api_data.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_api_data.i
 
 # target to preprocess a source file
-src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.i
+src/Plattform/Vulkan/vk_api_data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_api_data.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_api_data.cpp.i
 
-src/Plattform/Vulkan/Render_Systems/vk_render_system.s: src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.s
-
-# target to generate assembly for a file
-src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s
-.PHONY : src/Plattform/Vulkan/Render_Systems/vk_render_system.cpp.s
-
-src/Plattform/Vulkan/VulkanRendererSystem.o: src/Plattform/Vulkan/VulkanRendererSystem.cpp.o
-.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.o
-
-# target to build an object file
-src/Plattform/Vulkan/VulkanRendererSystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.o
-.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.cpp.o
-
-src/Plattform/Vulkan/VulkanRendererSystem.i: src/Plattform/Vulkan/VulkanRendererSystem.cpp.i
-.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.i
-
-# target to preprocess a source file
-src/Plattform/Vulkan/VulkanRendererSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.i
-.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.cpp.i
-
-src/Plattform/Vulkan/VulkanRendererSystem.s: src/Plattform/Vulkan/VulkanRendererSystem.cpp.s
-.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.s
+src/Plattform/Vulkan/vk_api_data.s: src/Plattform/Vulkan/vk_api_data.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_api_data.s
 
 # target to generate assembly for a file
-src/Plattform/Vulkan/VulkanRendererSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.s
-.PHONY : src/Plattform/Vulkan/VulkanRendererSystem.cpp.s
+src/Plattform/Vulkan/vk_api_data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_api_data.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_api_data.cpp.s
 
 src/Plattform/Vulkan/vk_buffer.o: src/Plattform/Vulkan/vk_buffer.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_buffer.o
@@ -680,6 +632,30 @@ src/Plattform/Vulkan/vk_pipeline.s: src/Plattform/Vulkan/vk_pipeline.cpp.s
 src/Plattform/Vulkan/vk_pipeline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_pipeline.cpp.s
 .PHONY : src/Plattform/Vulkan/vk_pipeline.cpp.s
+
+src/Plattform/Vulkan/vk_render_system.o: src/Plattform/Vulkan/vk_render_system.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_render_system.o
+
+# target to build an object file
+src/Plattform/Vulkan/vk_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_render_system.cpp.o
+.PHONY : src/Plattform/Vulkan/vk_render_system.cpp.o
+
+src/Plattform/Vulkan/vk_render_system.i: src/Plattform/Vulkan/vk_render_system.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_render_system.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/vk_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_render_system.cpp.i
+.PHONY : src/Plattform/Vulkan/vk_render_system.cpp.i
+
+src/Plattform/Vulkan/vk_render_system.s: src/Plattform/Vulkan/vk_render_system.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_render_system.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/vk_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_render_system.cpp.s
+.PHONY : src/Plattform/Vulkan/vk_render_system.cpp.s
 
 src/Plattform/Vulkan/vk_renderer.o: src/Plattform/Vulkan/vk_renderer.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_renderer.o
@@ -1512,15 +1488,9 @@ help:
 	@echo "... src/Plattform/Linux/LinuxWindow.o"
 	@echo "... src/Plattform/Linux/LinuxWindow.i"
 	@echo "... src/Plattform/Linux/LinuxWindow.s"
-	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.o"
-	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.i"
-	@echo "... src/Plattform/Vulkan/Render_Systems/vk_point_light_system.s"
-	@echo "... src/Plattform/Vulkan/Render_Systems/vk_render_system.o"
-	@echo "... src/Plattform/Vulkan/Render_Systems/vk_render_system.i"
-	@echo "... src/Plattform/Vulkan/Render_Systems/vk_render_system.s"
-	@echo "... src/Plattform/Vulkan/VulkanRendererSystem.o"
-	@echo "... src/Plattform/Vulkan/VulkanRendererSystem.i"
-	@echo "... src/Plattform/Vulkan/VulkanRendererSystem.s"
+	@echo "... src/Plattform/Vulkan/vk_api_data.o"
+	@echo "... src/Plattform/Vulkan/vk_api_data.i"
+	@echo "... src/Plattform/Vulkan/vk_api_data.s"
 	@echo "... src/Plattform/Vulkan/vk_buffer.o"
 	@echo "... src/Plattform/Vulkan/vk_buffer.i"
 	@echo "... src/Plattform/Vulkan/vk_buffer.s"
@@ -1551,6 +1521,9 @@ help:
 	@echo "... src/Plattform/Vulkan/vk_pipeline.o"
 	@echo "... src/Plattform/Vulkan/vk_pipeline.i"
 	@echo "... src/Plattform/Vulkan/vk_pipeline.s"
+	@echo "... src/Plattform/Vulkan/vk_render_system.o"
+	@echo "... src/Plattform/Vulkan/vk_render_system.i"
+	@echo "... src/Plattform/Vulkan/vk_render_system.s"
 	@echo "... src/Plattform/Vulkan/vk_renderer.o"
 	@echo "... src/Plattform/Vulkan/vk_renderer.i"
 	@echo "... src/Plattform/Vulkan/vk_renderer.s"

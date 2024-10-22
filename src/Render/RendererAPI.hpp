@@ -7,6 +7,7 @@
 
 namespace VectorVertex
 {
+    class Entity;
     struct MeshData
     {
         uint32_t m_IndexCount;
@@ -28,26 +29,27 @@ namespace VectorVertex
         virtual ~RendererAPI() = default;
         virtual void Init() = 0;
 
-        virtual void BeginFrame() = 0;      
-        virtual void EndFrame() = 0;        
-        virtual void BeginRenderPass() = 0; 
-        virtual void EndRenderPass() = 0;   
+        virtual void BeginFrame() = 0;
+        virtual void EndFrame() = 0;
+        virtual void BeginRenderPass() = 0;
+        virtual void EndRenderPass() = 0;
 
-        virtual void DrawMesh(MeshData data) = 0; 
+        virtual void DrawMesh(Entity object) = 0;
 
         virtual void WaitForDeviceIdle() = 0;
 
-        virtual void* GetSwapchain() = 0;
-        virtual void* GetRenderpass() = 0;
+        virtual void *GetSwapchain() = 0;
+        virtual void *GetRenderpass() = 0;
         virtual uint32_t GetSwapchainImageCount() = 0;
-        virtual void* GetCurrentCommandBuffer() = 0;
+        // virtual void* GetCurrentCommandBuffer() = 0;
+
+        virtual VkCommandBuffer GetCurrentCommandBuffer() = 0;
 
         static API GetRenderAPI()
         {
             return s_API;
         }
         static Scope<RendererAPI> Create(Window *window, API api = API::Vulkan);
-
 
     private:
         static API s_API;
