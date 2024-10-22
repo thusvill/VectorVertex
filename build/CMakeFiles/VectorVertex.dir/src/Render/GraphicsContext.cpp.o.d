@@ -746,5 +746,8 @@ CMakeFiles/VectorVertex.dir/src/Render/GraphicsContext.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp

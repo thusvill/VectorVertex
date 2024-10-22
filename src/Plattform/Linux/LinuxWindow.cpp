@@ -53,8 +53,6 @@ namespace VectorVertex
         m_Data.size.width = props.Width;
         m_Data.size.height = props.Height;
 
-
-
         VV_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
         if (s_GLFWWindowCount == 0)
@@ -73,6 +71,7 @@ namespace VectorVertex
 
         {
             m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
+            GraphicsContext::Get()->Init(this);
             ++s_GLFWWindowCount;
         }
 
@@ -89,16 +88,14 @@ namespace VectorVertex
 
 			WindowResizeEvent event(width, height);
 			if(data.EventCallback)
-                data.EventCallback(event); 
-             });
+                data.EventCallback(event); });
 
         glfwSetWindowCloseCallback(m_Window, [](GLFWwindow *window)
                                    {
 			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 			WindowCloseEvent event;
 			if(data.EventCallback)
-                data.EventCallback(event);
-             });
+                data.EventCallback(event); });
 
         glfwSetKeyCallback(m_Window, [](GLFWwindow *window, int key, int scancode, int action, int mods)
                            {
@@ -173,8 +170,7 @@ namespace VectorVertex
 
 			MouseMovedEvent event((float)xPos, (float)yPos);
             if(data.EventCallback)
-                data.EventCallback(event);
-                 });
+                data.EventCallback(event); });
     }
     void LinuxWindow::Shutdown()
     {

@@ -18,7 +18,10 @@ CMakeFiles/VectorVertex.dir/main.cpp.o: /home/bios/CLionProjects/VectorVertex/Ve
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -4976,7 +4979,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.o: /home/bios/CL
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -7636,6 +7642,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.o: /home/bios/CL
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
@@ -7649,7 +7657,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.o: /home/bios/CL
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -7660,7 +7671,9 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_context.cpp.o: /home/bios/CL
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
@@ -9719,7 +9732,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: /home/bio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -10584,7 +10600,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_image.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -11451,7 +11470,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -12320,7 +12342,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_offscreen.cpp.o: /home/bios/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -13187,6 +13212,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_pipeline.cpp.o: /home/bios/C
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
@@ -14041,8 +14067,6 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_render_system.cpp.o: /home/b
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
@@ -14069,9 +14093,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_render_system.cpp.o: /home/b
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
@@ -15520,8 +15542,6 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.o: /home/bi
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
@@ -15544,14 +15564,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.o: /home/bi
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
@@ -17010,7 +17026,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o: /home/bios/CL
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -18473,7 +18492,10 @@ CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.o: /home/bios/CLionPr
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -20556,7 +20578,10 @@ CMakeFiles/VectorVertex.dir/src/Render/GraphicsContext.cpp.o: /home/bios/CLionPr
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -22025,7 +22050,10 @@ CMakeFiles/VectorVertex.dir/src/Render/RenderCommand.cpp.o: /home/bios/CLionProj
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -22886,7 +22914,10 @@ CMakeFiles/VectorVertex.dir/src/Render/Renderer.cpp.o: /home/bios/CLionProjects/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -23737,9 +23768,6 @@ CMakeFiles/VectorVertex.dir/src/Render/Renderer.cpp.o: /home/bios/CLionProjects/
 CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.cpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
@@ -23750,8 +23778,6 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
@@ -23762,237 +23788,12 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/entt/entt.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxevent.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxobject.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxquery.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxstream.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxxref.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
@@ -24030,7 +23831,6 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
-  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
@@ -24049,7 +23849,6 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
-  /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/locale_conv.h \
@@ -24089,23 +23888,16 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
-  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
-  /usr/include/c++/13/bits/stl_list.h \
-  /usr/include/c++/13/bits/stl_map.h \
-  /usr/include/c++/13/bits/stl_multimap.h \
-  /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
-  /usr/include/c++/13/bits/stl_set.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
-  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stream_iterator.h \
@@ -24145,7 +23937,6 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
-  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -24165,10 +23956,7 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/istream \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
-  /usr/include/c++/13/list \
   /usr/include/c++/13/locale \
-  /usr/include/c++/13/map \
-  /usr/include/c++/13/math.h \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
@@ -24181,10 +23969,8 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/random \
   /usr/include/c++/13/ratio \
-  /usr/include/c++/13/set \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
-  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -24380,8 +24166,6 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/glm/gtc/quaternion.inl \
   /usr/include/glm/gtc/type_precision.hpp \
   /usr/include/glm/gtc/type_precision.inl \
-  /usr/include/glm/gtc/type_ptr.hpp \
-  /usr/include/glm/gtc/type_ptr.inl \
   /usr/include/glm/gtc/vec1.hpp \
   /usr/include/glm/gtx/dual_quaternion.hpp \
   /usr/include/glm/gtx/dual_quaternion.inl \
@@ -24416,7 +24200,6 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: /home/bios/CLionProjec
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -25226,6 +25009,7 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Application.cpp.o: /home/bios/CLion
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
@@ -26105,6 +25889,7 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: /home/bi
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
@@ -26967,258 +26752,23 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Editor_Layer.cpp.o: /home/bi
 CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Layers/Imgui_Layer.cpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Layers/Imgui_Layer.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/ImGuizmo/ImGuizmo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/entt/entt.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxevent.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxobject.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxquery.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxstream.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxxref.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_glfw.h \
@@ -27260,7 +26810,6 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
-  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
@@ -27279,7 +26828,6 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
-  /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/locale_conv.h \
@@ -27319,23 +26867,16 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
-  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
-  /usr/include/c++/13/bits/stl_list.h \
-  /usr/include/c++/13/bits/stl_map.h \
-  /usr/include/c++/13/bits/stl_multimap.h \
-  /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
-  /usr/include/c++/13/bits/stl_set.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
-  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/stream_iterator.h \
@@ -27375,7 +26916,6 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
-  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -27395,10 +26935,7 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/c++/13/istream \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
-  /usr/include/c++/13/list \
   /usr/include/c++/13/locale \
-  /usr/include/c++/13/map \
-  /usr/include/c++/13/math.h \
   /usr/include/c++/13/memory \
   /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
@@ -27411,10 +26948,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/random \
   /usr/include/c++/13/ratio \
-  /usr/include/c++/13/set \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
-  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -27610,8 +27145,6 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/glm/gtc/quaternion.inl \
   /usr/include/glm/gtc/type_precision.hpp \
   /usr/include/glm/gtc/type_precision.inl \
-  /usr/include/glm/gtc/type_ptr.hpp \
-  /usr/include/glm/gtc/type_ptr.inl \
   /usr/include/glm/gtc/vec1.hpp \
   /usr/include/glm/gtx/dual_quaternion.hpp \
   /usr/include/glm/gtx/dual_quaternion.inl \
@@ -27646,7 +27179,6 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -27851,7 +27383,10 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Panels/SceneHierarchy.cpp.o: /home/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -29434,7 +28969,10 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Entity.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -30286,6 +29824,7 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Scene.cpp.o: /home/bios/CLion
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_api_data.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
@@ -30294,7 +29833,10 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Scene.cpp.o: /home/bios/CLion
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -31155,7 +30697,10 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/SceneSerializer.cpp.o: /home/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -34151,8 +33696,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_tables.cpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
 /usr/include/glm/ext/matrix_double3x2_precision.hpp:
@@ -34167,9 +33710,9 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/features-time64.h:
 
-/usr/include/c++/13/type_traits:
-
 /usr/include/c++/13/bits/list.tcc:
+
+/usr/include/c++/13/type_traits:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxreader.h:
 
@@ -34427,8 +33970,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/glm/vector_relational.hpp:
 
-/usr/include/glm/ext/matrix_double4x2.hpp:
-
 /usr/include/c++/13/bits/ostream.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
@@ -34446,14 +33987,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/yaml-cpp/include/yaml-cpp/exceptions.h:
 
 /usr/include/c++/13/bits/new_allocator.h:
-
-/usr/include/glm/detail/type_vec2.hpp:
-
-/usr/include/glm/detail/type_mat2x3.inl:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcontainerallocators.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/f16cintrin.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
@@ -34593,13 +34126,15 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/KHR/khrplatform.h:
 
-/usr/include/glm/detail/func_packing.inl:
+/usr/include/c++/13/bits/streambuf_iterator.h:
 
-/usr/include/c++/13/bits/locale_conv.h:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Camera.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+/usr/include/GLFW/glfw3.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxwriter.h:
+/usr/include/GL/glext.h:
+
+/usr/include/c++/13/bits/requires_hosted.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxnew.h:
 
@@ -34630,6 +34165,12 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxglobalcamerasettings.h:
 
 /usr/include/glm/ext/matrix_float3x4_precision.hpp:
+
+/usr/include/c++/13/bits/ptr_traits.h:
+
+/usr/include/spdlog/details/log_msg-inl.h:
+
+/usr/include/spdlog/pattern_formatter.h:
 
 /usr/include/c++/13/pstl/pstl_config.h:
 
@@ -34695,16 +34236,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxxref.h:
 
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/c++/13/tr1/bessel_function.tcc:
-
-/usr/include/c++/13/initializer_list:
-
-/usr/include/c++/13/bits/std_thread.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxquery.h:
-
 /usr/include/c++/13/tr1/ell_integral.tcc:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp:
@@ -34743,14 +34274,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/c++/13/bits/sstream.tcc:
 
-/usr/include/glm/ext/matrix_double3x4.hpp:
-
-/usr/include/glm/ext/vector_bool3_precision.hpp:
-
-/usr/include/c++/13/atomic:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxstatistics.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imstb_truetype.h:
@@ -34787,29 +34310,45 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/entt/entt.hpp:
 
+/usr/include/c++/13/bits/locale_conv.h:
+
+/usr/include/glm/detail/func_packing.inl:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
 /usr/include/c++/13/bits/istream.tcc:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmanipulators.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxlibrary.h:
+/usr/include/glm/detail/type_mat2x4.hpp:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxplugin.h:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxclonemanager.h:
 
-/usr/include/glm/detail/compute_common.hpp:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxemitter.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxshape.h:
+/usr/include/c++/13/filesystem:
 
-/usr/include/c++/13/bits/deque.tcc:
+/usr/include/glm/ext/vector_double2_precision.hpp:
 
-/usr/include/glm/ext/matrix_clip_space.hpp:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcachedeffect.h:
 
-/usr/include/glm/exponential.hpp:
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxweightedmapping.h:
+/usr/include/spdlog/sinks/ansicolor_sink.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxperipheral.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/13/cstddef:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxgobo.h:
 
@@ -34833,79 +34372,35 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/c++/13/bits/stringfwd.h:
 
-/usr/include/glm/detail/type_mat2x4.hpp:
+/usr/include/c++/13/tr1/bessel_function.tcc:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxclonemanager.h:
+/usr/include/c++/13/initializer_list:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxemitter.h:
+/usr/include/c++/13/bits/std_thread.h:
 
-/usr/include/c++/13/filesystem:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxquery.h:
 
-/usr/include/glm/ext/vector_double2_precision.hpp:
+/usr/include/glm/detail/type_vec2.hpp:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcachedeffect.h:
+/usr/include/glm/detail/type_mat2x3.inl:
 
-/usr/include/c++/13/cstddef:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcontainerallocators.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/f16cintrin.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp:
 
-/usr/include/spdlog/sinks/ansicolor_sink.h:
+/usr/include/c++/13/bits/charconv.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxperipheral.h:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingsentryview.h:
 
-/usr/include/asm-generic/errno-base.h:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxarray.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/main.cpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxcallbacks.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxconstantentryview.h:
-
-/usr/include/c++/13/cwctype:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h:
-
-/usr/include/c++/13/stdlib.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/c++/13/bits/stl_heap.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbssurface.h:
-
-/usr/include/glm/gtx/hash.inl:
-
-/usr/include/glm/ext/vector_double1.hpp:
-
-/usr/include/glm/detail/func_vector_relational.inl:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxselectionset.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/clwbintrin.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlodgroup.h:
-
-/usr/include/spdlog/logger.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxsystemunit.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp:
-
-/usr/include/c++/13/tr1/legendre_function.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Input.hpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp:
 
@@ -34921,6 +34416,12 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxlodgroup.h:
+
+/usr/include/spdlog/logger.h:
+
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxalloc.h:
@@ -34930,6 +34431,12 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevalclassic.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxstatisticsfbx.h:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxnurbssurface.h:
+
+/usr/include/glm/gtx/hash.inl:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxscopedloadingdirectory.h:
 
@@ -35021,6 +34528,10 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiopluginregistry.h:
 
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxweightedmapping.h:
+
 /usr/include/glm/detail/type_mat3x4.inl:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxtimecode.h:
@@ -35044,6 +34555,14 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvebase.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxplugin.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxlibrary.h:
+
+/usr/include/glm/detail/compute_common.hpp:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxshape.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
@@ -35069,15 +34588,57 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxintrusivelist.h:
 
+/usr/include/glm/detail/type_half.inl:
+
+/usr/include/spdlog/details/log_msg_buffer-inl.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcharptrset.h:
+
+/usr/include/c++/13/cwctype:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h:
+
+/usr/include/c++/13/stdlib.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/glm/ext/vector_double1.hpp:
+
+/usr/include/glm/detail/func_vector_relational.inl:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxselectionset.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/clwbintrin.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp:
+
+/usr/include/c++/13/bits/deque.tcc:
+
+/usr/include/glm/ext/matrix_clip_space.hpp:
+
+/usr/include/glm/exponential.hpp:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxsystemunit.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp:
+
+/usr/include/c++/13/tr1/legendre_function.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Input.hpp:
+
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamera.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettingspath.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.cpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxpatch.h:
 
@@ -35137,11 +34698,7 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxarray.h:
-
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxdynamicarray.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmanipulators.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxhashmap.h:
 
@@ -35191,11 +34748,7 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/cldemoteintrin.h:
 
-/usr/include/glm/detail/type_half.inl:
-
-/usr/include/spdlog/details/log_msg_buffer-inl.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcharptrset.h:
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxwriter.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimcurvenode.h:
 
@@ -35331,12 +34884,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h:
 
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Camera.hpp:
-
-/usr/include/GLFW/glfw3.h:
-
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaxissystem.h:
 
 /usr/include/glm/detail/type_mat4x2.inl:
@@ -35382,10 +34929,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /usr/include/c++/13/unordered_map:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingoperator.h:
-
-/usr/include/c++/13/bits/charconv.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingsentryview.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxbindingtable.h:
 
@@ -35443,13 +34986,21 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h:
 
-/usr/include/GL/glext.h:
+/usr/include/glm/ext/matrix_double3x4.hpp:
 
-/usr/include/c++/13/bits/ptr_traits.h:
+/usr/include/glm/ext/vector_bool3_precision.hpp:
 
-/usr/include/spdlog/pattern_formatter.h:
+/usr/include/c++/13/atomic:
 
-/usr/include/spdlog/details/log_msg-inl.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:
+
+/usr/include/glm/ext/matrix_double4x2.hpp:
 
 /usr/include/glm/ext/matrix_double4x4_precision.hpp:
 
@@ -36098,12 +35649,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrenamingstrategybase.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.cpp:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.cpp:
 

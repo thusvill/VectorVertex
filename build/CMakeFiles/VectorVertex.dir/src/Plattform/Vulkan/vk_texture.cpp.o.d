@@ -754,4 +754,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o: \
  /usr/include/c++/13/bits/stl_multiset.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui_impl_vulkan.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp

@@ -1,23 +1,23 @@
 #include "vk_context.hpp"
 #include <RenderCommand.hpp>
+#include <Application.hpp>
 
 namespace VectorVertex
 {
-    VKContext::VKContext(WindowProps &props)
+    VKContext::VKContext()
     {
-        m_Window = Window::Create(props);
-        m_Device = CreateRef<VKDevice>(m_Window->GetNativeWindow());
+
         VV_CORE_INFO("Vulkan Context Created!");
-        Init();
     }
 
-    void VKContext::Init()
+    void VKContext::Init(Window *window)
     {
-        RenderCommand::Init(m_Window.get());
+        m_Device = CreateRef<VKDevice>(window->GetNativeWindow());
+        RenderCommand::Init(window);
     }
 
     void VKContext::SwapBuffers()
-    {   
+    {
     }
 
 } // namespace VectorVertex
