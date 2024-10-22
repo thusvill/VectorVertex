@@ -156,6 +156,11 @@ namespace VectorVertex
         return m_SwapChain->getRenderPass();
     }
 
+    int VKRendererAPI::GetCurrentFrameIndex()
+    {
+        return currentFrameIndex;
+    }
+
     uint32_t VKRendererAPI::GetSwapchainImageCount()
     {
         return m_SwapChain->getImageCount();

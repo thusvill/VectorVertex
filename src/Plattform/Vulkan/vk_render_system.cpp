@@ -16,8 +16,14 @@ namespace VectorVertex
     {
         // std::vector<VkDescriptorSetLayout> layout = {VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()};
         // layout.insert(layout.end(), additional_layouts.begin(), additional_layouts.end());
-        if(std::find(additional_layouts.begin(), additional_layouts.end(), VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()) == additional_layouts.end()){
-            additional_layouts.push_back(VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout());
+        std::vector<VkDescriptorSetLayout> layouts;
+        if (std::find(additional_layouts.begin(), additional_layouts.end(), VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()) == additional_layouts.end())
+        {
+            layouts.push_back(VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout());
+        }
+        for (auto &layout : additional_layouts)
+        {
+            layouts.push_back(layout);
         }
 
         CreatePipelineLayout(additional_layouts);
@@ -75,7 +81,7 @@ namespace VectorVertex
             throw std::runtime_error("Failed to create pipeline layout!");
         }
     }
-    void VulkanRenderSystem::CreatePipeline(const std::string vertex_shader,const std::string fragment_shader)
+    void VulkanRenderSystem::CreatePipeline(const std::string vertex_shader, const std::string fragment_shader)
     {
 
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");

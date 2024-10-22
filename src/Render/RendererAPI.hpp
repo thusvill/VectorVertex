@@ -40,6 +40,7 @@ namespace VectorVertex
 
         virtual void *GetSwapchain() = 0;
         virtual void *GetRenderpass() = 0;
+        virtual int GetCurrentFrameIndex() = 0;
         virtual uint32_t GetSwapchainImageCount() = 0;
         // virtual void* GetCurrentCommandBuffer() = 0;
 
