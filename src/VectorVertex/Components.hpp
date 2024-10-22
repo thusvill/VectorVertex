@@ -7,9 +7,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <Material.hpp>
+#include <RendererAPI.hpp>
 
 namespace VectorVertex
 {
+    
     struct TextureComponent
     {
         TextureComponent()
@@ -121,6 +123,7 @@ namespace VectorVertex
         float light_intensity = 1.0f;
         float radius = 10.0f;
     };
+    
     struct MeshComponent
     {
         MeshComponent() = default;
@@ -134,6 +137,12 @@ namespace VectorVertex
             m_Model.reset();
             m_Model = VKModel::createModelFromFile(path);
         }
+
+        MeshData GetMeshData()
+        {
+            return m_Model->GetMeshData();
+        }
+
         Scope<VKModel> m_Model;
         UUID m_ID;
         std::string path;

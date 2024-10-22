@@ -491,6 +491,8 @@ CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.o: \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
+ /usr/include/GLFW/glfw3.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
+ /usr/include/KHR/khrplatform.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \

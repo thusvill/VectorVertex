@@ -1,5 +1,6 @@
 #pragma once
 #include <Base.h>
+#include <Window.hpp>
 
 namespace VectorVertex {
 
@@ -14,11 +15,14 @@ namespace VectorVertex {
 		virtual void* GetRenderpass() = 0;
 		virtual void* GetSwapchain() = 0;
 
-		static Ref<GraphicsContext> Create(void* window);
+		static Ref<GraphicsContext> Create(WindowProps& props);
 
 		static Ref<GraphicsContext>& Get(){
 			return s_Instance;
 		}
+
+		public:
+		Scope<Window> m_Window;
 
 		private:
 		static Ref<GraphicsContext> s_Instance;

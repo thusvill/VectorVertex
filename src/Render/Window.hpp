@@ -1,4 +1,5 @@
 #pragma once
+#include <GLFW/glfw3.h>
 #include <vvpch.hpp>
 #include <Base.h>
 #include <Event.hpp>
@@ -39,7 +40,7 @@ namespace VectorVertex
 
         virtual bool shouldClose() = 0;
 
-        virtual void *GetNativeWindow() const = 0;
+        virtual GLFWwindow *GetNativeWindow() = 0;
 
         virtual bool wasWindowResized() = 0;
         virtual void resetWindowResizedFlag() = 0;

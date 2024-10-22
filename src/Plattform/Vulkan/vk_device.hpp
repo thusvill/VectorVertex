@@ -1,7 +1,7 @@
 #pragma once
 
 #include "vk_window.hpp"
-
+#include <Log.h>
 #include <vvpch.hpp>
 
 namespace VectorVertex
@@ -78,6 +78,7 @@ VKDevice() = default;
     VkInstance instance_;
 
     static VKDevice& Get() {
+      VV_CORE_ASSERT(s_Device, "Device is NULL!");
       return *s_Device;
     }
 

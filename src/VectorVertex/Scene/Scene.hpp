@@ -31,7 +31,7 @@ namespace VectorVertex
         void RenderScene(FrameInfo &frameInfo);
 
         std::unordered_map<UUID, Entity> &GetEntities() { return m_Entities; }
-        Ref<VulkanRendererSystem> &GetVulkanRenderer() { return m_RendererSystem; }
+        //Ref<VulkanRendererSystem> &GetVulkanRenderer() { return m_RendererSystem; }
 
         void SetMainCamera(Entity* camera){
             m_MainCamera = camera;

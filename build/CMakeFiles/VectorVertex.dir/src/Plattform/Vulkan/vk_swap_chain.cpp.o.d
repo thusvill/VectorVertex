@@ -239,10 +239,6 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_swap_chain.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
- /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/13/set /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/stl_set.h \
- /usr/include/c++/13/bits/stl_multiset.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/glm/detail/setup.hpp \
@@ -419,10 +415,11 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_swap_chain.cpp.o: \
  /usr/include/spdlog/spdlog.h /usr/include/spdlog/common.h \
  /usr/include/spdlog/tweakme.h /usr/include/spdlog/details/null_mutex.h \
  /usr/include/c++/13/atomic /usr/include/spdlog/fmt/fmt.h \
- /usr/include/fmt/core.h /usr/include/c++/13/iterator \
- /usr/include/c++/13/bits/stream_iterator.h /usr/include/fmt/format.h \
- /usr/include/fmt/core.h /usr/include/spdlog/common-inl.h \
- /usr/include/spdlog/details/registry.h \
+ /usr/include/fmt/core.h /usr/include/c++/13/cstring \
+ /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/include/fmt/format.h /usr/include/fmt/core.h \
+ /usr/include/spdlog/common-inl.h /usr/include/spdlog/details/registry.h \
  /usr/include/spdlog/details/periodic_worker.h \
  /usr/include/c++/13/condition_variable \
  /usr/include/c++/13/bits/std_mutex.h \
@@ -495,4 +492,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_swap_chain.cpp.o: \
  /usr/include/libintl.h /usr/include/c++/13/bits/locale_facets_nonio.tcc \
  /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
- /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h
+ /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
+ /usr/include/c++/13/set /usr/include/c++/13/bits/stl_tree.h \
+ /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h

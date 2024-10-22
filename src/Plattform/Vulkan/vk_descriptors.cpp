@@ -60,7 +60,12 @@ namespace VectorVertex
 
     VKDescriptorSetLayout::~VKDescriptorSetLayout()
     {
-        vkDestroyDescriptorSetLayout(vkDevice.device(), descriptorSetLayout, nullptr);
+
+        if (descriptorSetLayout != VK_NULL_HANDLE && VKDevice::Get().device() != VK_NULL_HANDLE)
+        {
+            vkDestroyDescriptorSetLayout(VKDevice::Get().device(), descriptorSetLayout, nullptr);
+            descriptorSetLayout = VK_NULL_HANDLE;
+        }
     }
 
     // *************** Descriptor Pool Builder *********************

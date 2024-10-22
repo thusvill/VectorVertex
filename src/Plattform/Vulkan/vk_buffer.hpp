@@ -15,7 +15,6 @@ namespace VectorVertex
             VkMemoryPropertyFlags memoryPropertyFlags,
             VkDeviceSize minOffsetAlignment = 1);
         virtual ~VKBuffer() override;
-        
 
         VKBuffer(const VKBuffer &) = delete;
         VKBuffer &operator=(const VKBuffer &) = delete;
@@ -35,11 +34,12 @@ namespace VectorVertex
         VkDescriptorBufferInfo descriptorInfoForIndex(int index);
         VkResult invalidateIndex(int index);
 
-        virtual void* getBuffer() override{
-            return reinterpret_cast<void*>(getBuffer());
+        virtual VkBuffer getVKBuffer() override
+        {
+            return buffer;
         }
 
-        VkBuffer getVKBuffer() const { return buffer; }
+        //VkBuffer getVKBuffer() const { return buffer; }
         void *getMappedMemory() const { return mapped; }
         uint32_t getInstanceCount() const { return instanceCount; }
         VkDeviceSize getInstanceSize() const { return instanceSize; }

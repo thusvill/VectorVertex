@@ -11,14 +11,15 @@ namespace VectorVertex
     class VKContext : public GraphicsContext
     {
         public:
-        VKContext(Window* window);
-        virtual ~VKContext() override {}
-        virtual void Init() override;
-        virtual void SwapBuffers() override;
+            VKContext(WindowProps &props);
+            virtual ~VKContext() override {}
+            virtual void Init() override;
+            virtual void SwapBuffers() override;
 
-        virtual void* GetRenderpass() override{
+            virtual void *GetRenderpass() override
+            {
 
-            return RenderCommand::GetRendererAPI()->GetRenderpass();
+                return RenderCommand::GetRendererAPI()->GetRenderpass();
         }
 
         virtual void* GetSwapchain() override{
@@ -27,8 +28,7 @@ namespace VectorVertex
 
         private:
         
-        Window* m_Window;
-        VKDevice m_Device{static_cast<GLFWwindow*>(m_Window->GetNativeWindow())};    
+        Ref<VKDevice> m_Device;    
         //VKRenderer m_Renderer{m_Window};
 
             
