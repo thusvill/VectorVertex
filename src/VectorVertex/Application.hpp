@@ -43,22 +43,18 @@ namespace VectorVertex
         static Application &Get() { return *s_Instance; }
 
         GLFWwindow* GetNativeWindow() {
-            return reinterpret_cast<GLFWwindow*>(m_Window->GetNativeWindow());
+            return m_GraphicsContext->m_Window->GetNativeWindow();
         }
-        Scope<Window>& GetCurrentWindow() { return m_Window; }
-
-
+        
     private:
+        Ref<GraphicsContext> m_GraphicsContext;
 
-        Scope<Window> m_Window;
         static Application *s_Instance;
         bool m_Running = true;
         
-        EditorLayer *editor_layer;
+        //EditorLayer *editor_layer;
 
-        LayerStack layers{};
+        //LayerStack layers{};
 
-        // Scope<VVDescriptorSetLayout> textureImageDescriptorLayout{};
-        // VVTexture base_texture;
     };
 } // namespace VectorVertex

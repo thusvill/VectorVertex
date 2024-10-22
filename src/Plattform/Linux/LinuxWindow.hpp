@@ -21,7 +21,7 @@ namespace VectorVertex
 		virtual bool wasWindowResized() override;
 		virtual void resetWindowResizedFlag() override;
 
-		virtual void *GetNativeWindow() const override { return m_Window; }
+		virtual GLFWwindow *GetNativeWindow() override { return m_Window; }
 
 		virtual Extent2D getExtent() override;
 		virtual bool shouldClose() override;
@@ -32,7 +32,6 @@ namespace VectorVertex
 
 	private:
 		GLFWwindow *m_Window;
-		Ref<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

@@ -17,7 +17,7 @@ namespace VectorVertex
         virtual void writeToIndex(void *data, int index) = 0;
         virtual void flushIndex(int index) = 0;
 
-        virtual void* getBuffer() = 0;
+        virtual VkBuffer getVKBuffer() = 0;
 
         static Ref<Buffer> Create(uint64_t instanceSize, uint32_t instanceCount, BufferUsageFlagBits usageFlags, MemoryPropertyFlagBits memoryPropertyFlags,uint64_t minOffsetAlignment = 1);
     };

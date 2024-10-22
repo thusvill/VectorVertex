@@ -118,17 +118,13 @@ namespace VectorVertex
     void VKRendererAPI::DrawMesh(MeshData data)
     {
         auto commandBuffer = VKGetCurrentCommandBuffer();
-        std::vector<VkBuffer> buffers;
-        for (auto &buffer : data.m_VertexBuffers)
-        {
-            buffers.push_back(reinterpret_cast<VkBuffer>(buffer->getBuffer()));
-        }
+        std::vector<VkBuffer> buffers = {data.m_VertexBuffers->getVKBuffer()};
 
         VkDeviceSize offsets[] = {0};
         vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers.data(), offsets);
-        if (data.m_IndexBuffer->getBuffer())
+        if (data.m_IndexCount > 0)
         {
-            vkCmdBindIndexBuffer(commandBuffer, reinterpret_cast<VkBuffer>(data.m_IndexBuffer->getBuffer()), 0, VK_INDEX_TYPE_UINT32);
+            vkCmdBindIndexBuffer(commandBuffer, data.m_IndexBuffer->getVKBuffer(), 0, VK_INDEX_TYPE_UINT32);
             vkCmdDrawIndexed(commandBuffer, data.m_IndexCount, 1, 0, 0, 0);
         }
         else

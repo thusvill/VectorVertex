@@ -9,8 +9,7 @@ namespace VectorVertex
 {
 	Ref<GraphicsContext> GraphicsContext::s_Instance = nullptr;
 
-
-	Ref<GraphicsContext> GraphicsContext::Create(void *window)
+	Ref<GraphicsContext> GraphicsContext::Create(WindowProps &props)
 	{
 		switch (RendererAPI::GetRenderAPI())
 		{
@@ -18,7 +17,7 @@ namespace VectorVertex
 			VV_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");
 			return nullptr;
 		case RendererAPI::API::Vulkan:
-			auto gc = CreateRef<VKContext>(static_cast<LinuxWindow *>(window));
+			auto gc = CreateRef<VKContext>(props);
 			s_Instance = gc;
 			return gc;
 		}

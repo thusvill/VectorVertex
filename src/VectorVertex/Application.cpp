@@ -11,7 +11,7 @@ namespace VectorVertex
 {
     Application *Application::s_Instance = nullptr;
 
-        Application::Application(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
+    Application::Application(ProjectInfo &info) : WIDTH(info.width), HEIGHT(info.height), project_name(info.title)
     {
 
         VV_CORE_ASSERT(!s_Instance, "Application already exists!");
@@ -22,17 +22,15 @@ namespace VectorVertex
         props.Width = info.width;
         props.Height = info.height;
 
-        m_Window = Window::Create(props);
-
-        // RenderCommand::Init(m_Window.get());
+        m_GraphicsContext = GraphicsContext::Create(props);
 
         VV_CORE_WARN("Application is Started!");
         VV_CORE_WARN("Initializing ...");
 
-        editor_layer = new EditorLayer(info);
+        //         editor_layer = new EditorLayer(info);
 
-        layers.PushLayer(editor_layer);
-        editor_layer->SetupImgui();
+        //         layers.PushLayer(editor_layer);
+        //         editor_layer->SetupImgui();
         VV_CORE_WARN("Initialized!");
         WindowResizeEvent e(info.width, info.height);
         VV_TRACE(e.ToString());
@@ -47,32 +45,29 @@ namespace VectorVertex
 
         auto currentTime = std::chrono::high_resolution_clock::now();
 
-        while (m_Running && !m_Window->shouldClose())
+        // while (m_Running && !m_Window->shouldClose())
+        while (m_Running)
         {
-            layers.UpdateAll();
+            // layers.UpdateAll();
 
             auto newTime = std::chrono::high_resolution_clock::now();
             float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
-            VVTextureLibrary::UpdateDescriptors();
-
             glfwPollEvents();
 
             RenderCommand::BeginFrame();
 
-            // editor_layer->OnRender();
-
             RenderCommand::BeginRenderPass();
-            // editor_layer->OnImGuiRender();
+            Entity mesh;
+            mesh.AddComponent<MeshComponent>("Resources/Models/cube.obj");
+            RenderCommand::DrawMesh(mesh.GetComponent<MeshComponent>().GetMeshData());
             RenderCommand::EndRenderPass();
 
             RenderCommand::EndFrame();
 
             RenderCommand::WaitForDeviceIdl();
-            
         }
-
     }
 
 } // namespace VectorVertex

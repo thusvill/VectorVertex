@@ -7,6 +7,9 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include <fbxsdk.h>
+
+#include <RendererAPI.hpp>
+
 namespace VectorVertex
 {
 
@@ -51,14 +54,24 @@ namespace VectorVertex
         Bind(VkCommandBuffer commandBuffer);
         void Draw(VkCommandBuffer commandBuffer);
 
+        MeshData GetMeshData(){
+            MeshData data;
+            data.m_VertexBuffers = vertexBuffer;
+            data.m_IndexBuffer = indexBuffer;
+            data.m_IndexCount = indexCount;
+            data.m_VertexCount = vertexCount;
+            
+            return data;
+        }
+
     private:
         void CreateVertexBuffers(const std::vector<Vertex> &vertices);
         void CreateIndexBuffers(const std::vector<uint32_t> &indices);
-        std::unique_ptr<VKBuffer> vertexBuffer;
+        Ref<Buffer> vertexBuffer;
         uint32_t vertexCount;
 
         bool hasIndexBuffer = false;
-        std::unique_ptr<VKBuffer> indexBuffer;
+        Ref<Buffer> indexBuffer;
         uint32_t indexCount;
     };
 } // namespace VectorVertex

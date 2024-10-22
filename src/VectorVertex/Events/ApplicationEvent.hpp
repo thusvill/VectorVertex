@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Event.hpp"
-
+#include <RenderCommand.hpp>
 namespace VectorVertex {
 
 	class WindowResizeEvent : public Event

@@ -11,7 +11,7 @@ namespace VectorVertex
     {
         uint32_t m_IndexCount;
         uint32_t m_VertexCount;
-        std::vector<Ref<Buffer>> m_VertexBuffers;
+        Ref<Buffer> m_VertexBuffers;
         Ref<Buffer> m_IndexBuffer;
     };
 

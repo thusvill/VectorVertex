@@ -239,9 +239,6 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: \
  /usr/include/vk_video/vulkan_video_codec_av1std_decode.h \
  /usr/include/vk_video/vulkan_video_codec_av1std.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
  /usr/include/glm/gtx/string_cast.hpp /usr/include/glm/glm.hpp \
  /usr/include/glm/detail/_fixes.hpp /usr/include/glm/detail/setup.hpp \
@@ -485,6 +482,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/fmt/format.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
  /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
  /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
@@ -495,6 +493,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_def.h \
@@ -714,6 +714,9 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Utils.hpp \
  /usr/include/glm/gtx/hash.hpp /usr/include/glm/gtx/hash.inl \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/tiny_obj_loader.h \
@@ -737,9 +740,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp

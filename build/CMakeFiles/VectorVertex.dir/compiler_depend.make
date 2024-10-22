@@ -25,6 +25,8 @@ CMakeFiles/VectorVertex.dir/main.cpp.o: /home/bios/CLionProjects/VectorVertex/Ve
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -866,7 +868,10 @@ CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o: /home/bios/CLionProj
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxalloc.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/arch/fbxarch.h \
@@ -7321,6 +7326,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/VulkanRendererSystem.cpp.o: /ho
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -11807,6 +11814,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_image.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -12654,6 +12663,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_model.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -14362,6 +14373,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_pipeline.cpp.o: /home/bios/C
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -17031,6 +17044,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_texture.cpp.o: /home/bios/CL
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -18474,6 +18489,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/WindowInputs.cpp.o: /home/bios/CLionPr
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -19919,6 +19936,10 @@ CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.o: /home/bios/CLionProjec
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+  /usr/include/GL/gl.h \
+  /usr/include/GL/glext.h \
+  /usr/include/GLFW/glfw3.h \
+  /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -21739,6 +21760,10 @@ CMakeFiles/VectorVertex.dir/src/Render/RenderCommand.cpp.o: /home/bios/CLionProj
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+  /usr/include/GL/gl.h \
+  /usr/include/GL/glext.h \
+  /usr/include/GLFW/glfw3.h \
+  /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -22342,6 +22367,10 @@ CMakeFiles/VectorVertex.dir/src/Render/Renderer.cpp.o: /home/bios/CLionProjects/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+  /usr/include/GL/gl.h \
+  /usr/include/GL/glext.h \
+  /usr/include/GLFW/glfw3.h \
+  /usr/include/KHR/khrplatform.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -25931,6 +25960,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Layers/Imgui_Layer.cpp.o: /home/bio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -26788,6 +26819,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Panels/SceneHierarchy.cpp.o: /home/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -28380,6 +28413,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Entity.cpp.o: /home/bios/CLio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -29249,6 +29284,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/Scene.cpp.o: /home/bios/CLion
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -30118,6 +30155,8 @@ CMakeFiles/VectorVertex.dir/src/VectorVertex/Scene/SceneSerializer.cpp.o: /home/
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Application.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Components.hpp \
@@ -33442,14 +33481,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxthumbnail.h:
 
-/usr/include/c++/13/bits/locale_conv.h:
-
-/usr/include/glm/detail/func_packing.inl:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/c++/13/bits/istream.tcc:
-
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/fbxaudio.h:
 
 /usr/include/c++/13/bits/invoke.h:
@@ -33552,11 +33583,17 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/glm/ext/quaternion_trigonometric.inl:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevaluator.h:
+/usr/include/asm-generic/posix_types.h:
 
-/usr/include/c++/13/bits/stl_algo.h:
+/usr/include/asm-generic/int-ll64.h:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxdynamicarray.h:
+/usr/include/vulkan/vulkan.h:
+
+/usr/include/glm/detail/func_packing.inl:
+
+/usr/include/c++/13/bits/locale_conv.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxwriter.h:
 
@@ -33635,6 +33672,10 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/ImGuizmo/ImGradient.cpp:
+
+/usr/include/c++/13/bits/stl_algo.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/animation/fbxanimevaluator.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/shading/fbxsurfacephong.h:
 
@@ -33722,6 +33763,20 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/linux/stddef.h:
 
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintposition.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxconnectionpoint.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxclassid.h:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp:
+
 /usr/include/glm/ext/matrix_float3x3_precision.hpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp:
@@ -33778,16 +33833,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp:
 
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.cpp:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamera.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettingspath.h:
-
 /home/bios/CLionProjects/VectorVertex/VectorVertex/main.cpp:
 
 /usr/include/c++/13/cwctype:
@@ -33829,16 +33874,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Input.hpp:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/constraint/fbxconstraintposition.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxconnectionpoint.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxclassid.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp:
 
@@ -33958,6 +33993,10 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h:
 
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxiosettingspath.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxcamera.h:
+
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/scene/geometry/fbxpatch.h:
 
 /usr/include/glm/detail/type_mat4x4.hpp:
@@ -33971,14 +34010,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxtimecode.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/KeyEvent.hpp:
-
-/usr/include/glm/ext/matrix_float4x2_precision.hpp:
-
-/usr/include/spdlog/details/periodic_worker-inl.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_nsend.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveintrin.h:
 
 /usr/include/c++/13/bits/erase_if.h:
 
@@ -34029,6 +34060,12 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /usr/include/spdlog/logger-inl.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxintrusivelist.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.cpp:
 
 /usr/include/c++/13/bits/exception_defines.h:
 
@@ -34088,6 +34125,8 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxarray.h:
 
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxdynamicarray.h:
+
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxmanipulators.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxhashmap.h:
@@ -34101,6 +34140,22 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /usr/include/c++/13/exception:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Math/Math.cpp:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxtransforms.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstring.h:
+
+/usr/include/c++/13/bits/hashtable.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertypage.h:
+
+/usr/include/c++/13/map:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmap.h:
+
+/usr/include/c++/13/backward/binders.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fileio/fbxgloballightsettings.h:
 
@@ -34131,22 +34186,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /usr/include/spdlog/details/log_msg_buffer-inl.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxcharptrset.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/math/fbxtransforms.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxmap.h:
-
-/usr/include/c++/13/backward/binders.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/base/fbxstring.h:
-
-/usr/include/c++/13/bits/hashtable.h:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/core/fbxpropertypage.h:
-
-/usr/include/c++/13/map:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h:
 
@@ -34326,10 +34365,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h:
 
-/usr/include/asm-generic/int-ll64.h:
-
-/usr/include/vulkan/vulkan.h:
-
 /usr/include/c++/13/bits/fs_path.h:
 
 /usr/include/glm/gtc/matrix_transform.inl:
@@ -34428,7 +34463,13 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 
 /usr/include/asm-generic/bitsperlong.h:
 
-/usr/include/asm-generic/posix_types.h:
+/usr/include/glm/ext/matrix_float4x2_precision.hpp:
+
+/usr/include/spdlog/details/periodic_worker-inl.h:
+
+/home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/fbxsdk_nsend.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveintrin.h:
 
 /usr/include/glm/gtc/type_ptr.inl:
 
@@ -34995,8 +35036,6 @@ CMakeFiles/VectorVertex.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/CLi
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/KeyCodes.hpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/MouseCodes.hpp:
-
-/home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp:
 
 /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/MouseEvent.hpp:
 

@@ -106,7 +106,7 @@ namespace VectorVertex
         {
             auto &m_Camera = m_SceneCamera->GetComponent<CameraComponent>().m_Camera;
 
-            camControl.moveInPlaneXZ(static_cast<GLFWwindow *>(Application::Get().GetCurrentWindow()->GetNativeWindow()), frameTime, m_SceneCamera->GetComponent<TransformComponent>());
+            camControl.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameTime, m_SceneCamera->GetComponent<TransformComponent>());
             m_Camera.SetViewYXZ(m_SceneCamera->GetComponent<TransformComponent>().translation, m_SceneCamera->GetComponent<TransformComponent>().rotation);
 
             auto aspectRatio = static_cast<float>(m_ViewportSize.width) / static_cast<float>(m_ViewportSize.height); // renderer.GetAspectRatio();
