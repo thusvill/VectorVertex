@@ -54,9 +54,12 @@ namespace VectorVertex
             return m_Window.get();
         }
 
+        float GetFrameTime() {return frameTime;}
+
     private:
         bool OnWindowClose(WindowCloseEvent &e);
         bool OnWindowResize(WindowResizeEvent &e);
+        float frameTime;
 
         Ref<GraphicsContext> m_GraphicsContext;
 

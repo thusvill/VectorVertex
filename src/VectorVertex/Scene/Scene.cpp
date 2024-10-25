@@ -4,6 +4,7 @@
 #include <vk_frame_info.hpp>
 #include <RenderCommand.hpp>
 #include <vk_api_data.hpp>
+#include <Application.hpp>
 
 namespace VectorVertex
 {
@@ -102,7 +103,7 @@ namespace VectorVertex
         }
         m_Pending_Delete_Entities.clear();
     }
-    void Scene::OnUpdate(float frameTime)
+    void Scene::OnUpdate()
     {
         for (auto &kv : m_Entities)
         {
@@ -126,23 +127,30 @@ namespace VectorVertex
         {
             m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
         }
+        GlobalUBO ubo{};
+        ubo.view = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetView();
+        ubo.projection = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetProjection();
+        ubo.inverse_view_matrix = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetInverseViewMatrix();
+
+        FrameInfo frameInfo;
+        frameInfo.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
+        frameInfo.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
+        frameInfo.frame_time = Application::Get().GetFrameTime();
+        frameInfo.ubo = ubo;
+
+        RenderCommand::UpdateObjects(m_Entities, m_MainCamera, frameInfo);
+
+        VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
+        VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->flush();
+
+        
+
 
         // m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
     }
 
     void Scene::RenderScene(FrameInfo &frameInfo)
     {
-        GlobalUBO ubo{};
-        ubo.view = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetView();
-        ubo.projection = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetProjection();
-        ubo.inverse_view_matrix = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetInverseViewMatrix();
-
-        // Update point lights
-
-
-        VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
-        VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->flush();
-
 
         // for (auto &kv : m_Entities)
         // {

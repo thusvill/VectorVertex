@@ -31,7 +31,7 @@ namespace VectorVertex
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", 15.f);
+        io.Fonts->AddFontDefault();
         io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", 15.f);
 
         io.Fonts->Build();
@@ -104,7 +104,6 @@ namespace VectorVertex
     void EditorLayer::OnAttach()
     {
 
-
         if (!m_Info.path.empty())
         {
             OpenScene(m_Info.path);
@@ -148,15 +147,16 @@ namespace VectorVertex
                 {
                     m_OffScreen->Resize(Viewport_Extent);
                     if (m_ActiveScene)
-                        //m_ActiveScene->GetVulkanRenderer()->ResizeViewport(Viewport_Extent);
+                        // m_ActiveScene->GetVulkanRenderer()->ResizeViewport(Viewport_Extent);
 
-                    is_viewport_resized = false;
+                        is_viewport_resized = false;
                 }
             }
 
             if (m_ActiveScene)
             {
-                m_ActiveScene->OnUpdate(frameTime);
+
+                m_ActiveScene->OnUpdate();
             }
         }
     }
@@ -259,7 +259,7 @@ namespace VectorVertex
             ImGui::Begin("Viewport");
 
             // camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
-            //m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
+            // m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
 
             // Get the size of your ImGui window or set your desired size
             ImVec2 windowSize = ImGui::GetContentRegionAvail();
@@ -271,7 +271,8 @@ namespace VectorVertex
                 is_viewport_resized = true;
             }
             Viewport_Extent = {static_cast<uint32_t>(windowSize.x), static_cast<uint32_t>(windowSize.y)};
-            if(m_ActiveScene != nullptr){
+            if (m_ActiveScene != nullptr)
+            {
                 m_ActiveScene->m_ViewportSize = Viewport_Extent;
             }
             // Display the offscreen image

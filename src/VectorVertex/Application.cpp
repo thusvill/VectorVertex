@@ -76,22 +76,20 @@ namespace VectorVertex
             // layers.UpdateAll();
 
             auto newTime = std::chrono::high_resolution_clock::now();
-            float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
+            frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
             currentTime = newTime;
 
             glfwPollEvents();
 
-            editor_layer->OnUpdate();
-
             if (RenderCommand::BeginFrame())
             {
+
                 FrameInfo info;
                 info.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
                 info.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
                 info.frame_time = frameTime;
 
-                
-
+                editor_layer->OnUpdate();
                 editor_layer->OnRender(info);
 
                 RenderCommand::BeginRenderPass();
@@ -101,7 +99,6 @@ namespace VectorVertex
                 RenderCommand::EndRenderPass();
                 RenderCommand::EndFrame();
             }
-            
 
             RenderCommand::WaitForDeviceIdl();
         }

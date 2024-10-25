@@ -28,6 +28,7 @@ namespace VectorVertex
         bool is_viewport_resized = false;
         Ref<Scene> GetActiveScene() { return m_ActiveScene; }
 
+
     
     public:
     void NewScene();

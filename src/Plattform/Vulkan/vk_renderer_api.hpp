@@ -11,6 +11,7 @@
 #include <vk_api_data.hpp>
 #include <vk_render_system.hpp>
 #include <vk_mesh_render_system.hpp>
+#include <vk_light_render_system.hpp>
 #include <vk_texture.hpp>
 
 namespace VectorVertex
@@ -28,7 +29,8 @@ namespace VectorVertex
         virtual void EndRenderPass() override;
 
         virtual void DrawMesh(Entity object, FrameInfo info) override;
-        virtual void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo info) override;
+        virtual void DrawScene(std::unordered_map<UUID, Entity> objects,  FrameInfo info) override;
+        virtual void UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity* camera, FrameInfo info) override;
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
@@ -53,6 +55,7 @@ namespace VectorVertex
     private:
         VulkanAPIData VKData{};
         Ref<VulkanMeshRenderer> MeshRenderSystem;
+        Ref<VulkanLightRenderer> LightRenderSystem;
 
         void UploadShaderData(Entity entity);
         void

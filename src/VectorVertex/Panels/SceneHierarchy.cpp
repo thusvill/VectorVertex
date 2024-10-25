@@ -285,7 +285,7 @@ namespace VectorVertex
 
         DrawComponent<TransformComponent>("Transform", entity, [](auto &transform)
                                           {
-                            DrawVec3Control("Position", transform.translation);
+                DrawVec3Control("Position", transform.translation);
                 DrawVec3Control("Rotation", transform.rotation);
                 transform.SetRotationEuler(transform.rotation);
                 DrawVec3Control("Scale", transform.scale, 1.0f); });
