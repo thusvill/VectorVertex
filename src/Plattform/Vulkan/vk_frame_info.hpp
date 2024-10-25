@@ -33,6 +33,7 @@ namespace VectorVertex
         int frame_index = 0;
         float frame_time = 0.0f;
         VkCommandBuffer command_buffer = VK_NULL_HANDLE;
+        
     };
 
     struct SceneRenderInfo

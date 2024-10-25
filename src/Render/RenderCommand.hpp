@@ -37,17 +37,11 @@ namespace VectorVertex
         {
             s_RendererAPI->DrawMesh(object, info);
         }
-
-        static void UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo)
-        {
-            s_RendererAPI->UpdateLights(objects, ubo);
-        }
-        static void DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera)
-        {
-            s_RendererAPI->DrawLights(objects, camera);
+        static void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo info){
+            s_RendererAPI->DrawScene(objects, info);
         }
 
-        static void WindowResize()
+            static void WindowResize()
         {
             s_RendererAPI->WindowResized();
         }

@@ -1,49 +1,83 @@
-[19:52:18] [info] VV-CORE: DEBUGGING STARTED!
-[19:52:18] [info] VV-CORE: Vulkan Context Created!
-[19:52:18] [info] VV-CORE: Creating window VectorVertex (1600, 900)
-[19:52:19] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
-[19:52:19] [info] VV-CORE: Vulkan Render API Created!
-[19:52:19] [info] VV-CORE: Vulkan API Data Initialized!
-[19:52:19] [info] VV-CORE: Initialized Material Library
-[19:52:19] [info] VV-CORE: Initilized Texture Library!
-[19:52:19] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:1128850205093644648
-[19:52:19] [trace] VV-CORE: Layouts befor create render syste: 2
-[19:52:19] [trace] VV-CORE: 2 Pipeline layouts created
-[19:52:19] [warning] VV-CORE: Application is Started!
-[19:52:19] [warning] VV-CORE: Initializing ...
-[19:52:19] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[19:52:19] [info] VV-CORE: [Layer]:EditorLayer Created!
-[19:52:19] [info] VV-CORE: Texture Library cleared!
-[19:52:19] [info] VV-CORE: Scene New Scene Created!
-[19:52:19] [info] VV-CORE: Created Material: default ID: 10866919198650572846
-[19:52:19] [info] VV-CORE: Entity Created with name:Camera , ID:4775081148271405386
-[19:52:19] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[19:52:19] [warning] VV-CORE: Initialized!
-[19:52:19] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
-[19:52:19] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 858 at 1.8648019 aspect ratio.
-[19:52:19] [info] VV-CORE: Extent Resized with WIDTH: 754, HEIGHT 858 at 0.8787879 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1600, 899
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1593, 767
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1546, 505
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1509, 427
-[19:52:20] [info] VV-CORE: Extent Resized with WIDTH: 700, HEIGHT 463 at 1.5118791 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1508, 426
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1507, 426
-[19:52:20] [info] VV-CORE: Extent Resized with WIDTH: 663, HEIGHT 385 at 1.722078 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1505, 426
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1501, 426
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1492, 426
-[19:52:20] [info] VV-CORE: Extent Resized with WIDTH: 661, HEIGHT 384 at 1.7213541 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1489, 426
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1486, 426
-[19:52:20] [info] VV-CORE: Extent Resized with WIDTH: 646, HEIGHT 384 at 1.6822916 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1484, 426
-[19:52:20] [info] VV-CORE: Extent Resized with WIDTH: 640, HEIGHT 384 at 1.6666666 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1481, 426
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1478, 426
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1473, 425
-[19:52:20] [info] VV-CORE: Extent Resized with WIDTH: 635, HEIGHT 384 at 1.6536459 aspect ratio.
-[19:52:20] [info] VV-CORE: WindowResizeEvent: 1469, 425
-[19:52:21] [info] VV-CORE: WindowResizeEvent: 1464, 425
-[19:52:21] [info] VV-CORE: Extent Resized with WIDTH: 623, HEIGHT 383 at 1.6266319 aspect ratio.
-[19:52:21] [error] VV-CORE: Assertion failed: Cannot get command buffer when frame not in progress
+[21:26:45] [info] VV-CORE: DEBUGGING STARTED!
+[21:26:45] [info] VV-CORE: Vulkan Context Created!
+[21:26:45] [info] VV-CORE: Creating window VectorVertex (1600, 900)
+[21:26:46] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
+[21:26:46] [info] VV-CORE: Vulkan Render API Created!
+[21:26:46] [info] VV-CORE: Vulkan API Data Initialized!
+[21:26:46] [info] VV-CORE: Initialized Material Library
+[21:26:46] [info] VV-CORE: Initilized Texture Library!
+[21:26:46] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:4727710495007742615
+[21:26:46] [trace] VV-CORE: Layouts befor create render syste: 2
+[21:26:46] [warning] VV-CORE: Application is Started!
+[21:26:46] [warning] VV-CORE: Initializing ...
+[21:26:46] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[21:26:46] [info] VV-CORE: [Layer]:EditorLayer Created!
+[21:26:46] [info] VV-CORE: Texture Library cleared!
+[21:26:46] [info] VV-CORE: Scene New Scene Created!
+[21:26:46] [info] VV-CORE: Created Material: default ID: 16132433464672875662
+[21:26:46] [info] VV-CORE: Entity Created with name:Camera , ID:1175010200397087274
+[21:26:46] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[21:26:46] [warning] VV-CORE: Initialized!
+[21:26:46] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
+[21:26:46] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 858 at 1.8648019 aspect ratio.
+[21:26:46] [info] VV-CORE: Extent Resized with WIDTH: 864, HEIGHT 858 at 1.006993 aspect ratio.
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1599, 899
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1578, 883
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1530, 840
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1451, 773
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1408, 743
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1353, 716
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1330, 706
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1281, 691
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1271, 689
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1250, 684
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1242, 681
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1221, 676
+[21:26:48] [info] VV-CORE: Extent Resized with WIDTH: 617, HEIGHT 674 at 0.91543025 aspect ratio.
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1211, 673
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1190, 667
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1184, 666
+[21:26:48] [info] VV-CORE: Extent Resized with WIDTH: 475, HEIGHT 631 at 0.7527734 aspect ratio.
+[21:26:48] [info] VV-CORE: WindowResizeEvent: 1161, 655
+[21:26:48] [info] VV-CORE: Extent Resized with WIDTH: 448, HEIGHT 624 at 0.71794873 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1142, 648
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1120, 637
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1097, 627
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1074, 615
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1069, 612
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1068, 611
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1073, 591
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 406, HEIGHT 606 at 0.669967 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1085, 567
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1096, 550
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 337, HEIGHT 549 at 0.6138433 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1102, 538
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 360, HEIGHT 508 at 0.70866144 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1109, 530
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1113, 527
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1118, 524
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 373, HEIGHT 488 at 0.7643443 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1125, 521
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 382, HEIGHT 482 at 0.79253113 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1152, 517
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1165, 514
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 389, HEIGHT 479 at 0.8121086 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1180, 514
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1183, 514
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1193, 517
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1207, 521
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 429, HEIGHT 472 at 0.9088983 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1219, 529
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1227, 537
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1256, 568
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 471, HEIGHT 479 at 0.98329854 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1271, 587
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1287, 606
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1295, 614
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 520, HEIGHT 526 at 0.98859316 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1312, 634
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1323, 650
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 559, HEIGHT 572 at 0.97727275 aspect ratio.
+[21:26:49] [info] VV-CORE: WindowResizeEvent: 1327, 656
+[21:26:49] [info] VV-CORE: Extent Resized with WIDTH: 587, HEIGHT 608 at 0.96546054 aspect ratio.
+[21:26:50] [error] VV-CORE: Assertion failed: Cannot get command buffer when frame not in progress

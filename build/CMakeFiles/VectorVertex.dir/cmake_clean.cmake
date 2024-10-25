@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertex.dir/src/Core/vvpch.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.o.d"
+  "CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.o"
+  "CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_api_data.cpp.o"
   "CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_api_data.cpp.o.d"
   "CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_buffer.cpp.o"
