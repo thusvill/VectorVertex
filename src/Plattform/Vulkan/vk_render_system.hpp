@@ -25,27 +25,17 @@ namespace VectorVertex
     {
     public:
         VulkanRenderSystem() = default;
-        VulkanRenderSystem(std::string vertex_shader, std::string fragment_shader);
-        VulkanRenderSystem(VkDescriptorSetLayout layout, std::string vertex_shader, std::string fragment_shader);
-        VulkanRenderSystem(std::vector<VkDescriptorSetLayout> additional_layouts, std::string vertex_shader, std::string fragment_shader);
-        VulkanRenderSystem(std::vector<VkDescriptorSetLayout> additional_layouts, uint32_t push_constant_size, std::string vertex_shader, std::string fragment_shader);
         ~VulkanRenderSystem() {}
 
-        void UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo);
-        void RenderLights(std::unordered_map<UUID, Entity> objects, Entity Camera);
-        void Bind(Entity object, FrameInfo info);
-        void BindLight(Entity object, Entity Camera);
+        virtual void Update(std::unordered_map<UUID, Entity> objects, FrameInfo info) = 0;
+        virtual void Render(std::unordered_map<UUID, Entity> objects, FrameInfo info) = 0;
 
-    private:
-        void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout);
-        void CreatePipelineLayout(VkDescriptorSetLayout des_set_layout);
+    protected:
+        virtual void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout) = 0;
         void CreatePipeline(const std::string vertex_shader, const std::string fragment_shader);
 
         Scope<VKPipeline> pipeline;
 
         VkPipelineLayout pipelineLayout;
-
-        void UploadShaderData(Entity object, FrameInfo info);
-        void UploadLightData(Entity object, Entity Camera);
     };
 }

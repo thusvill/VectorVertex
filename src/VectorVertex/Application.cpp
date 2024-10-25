@@ -90,6 +90,8 @@ namespace VectorVertex
                 info.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
                 info.frame_time = frameTime;
 
+                
+
                 editor_layer->OnRender(info);
 
                 RenderCommand::BeginRenderPass();
@@ -97,8 +99,9 @@ namespace VectorVertex
                 editor_layer->OnImGuiRender(info);
 
                 RenderCommand::EndRenderPass();
+                RenderCommand::EndFrame();
             }
-            RenderCommand::EndFrame();
+            
 
             RenderCommand::WaitForDeviceIdl();
         }

@@ -139,23 +139,22 @@ namespace VectorVertex
 
         // Update point lights
 
-        RenderCommand::UpdateLights(m_Entities, ubo);
 
         VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
         VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->flush();
 
 
-        for (auto &kv : m_Entities)
-        {
-            if (kv.second.HasComponent<MeshComponent>())
-            {
+        // for (auto &kv : m_Entities)
+        // {
+        //     if (kv.second.HasComponent<MeshComponent>())
+        //     {
 
-                RenderCommand::DrawMesh(kv.second, frameInfo);
-            }
-        }
+        //         RenderCommand::DrawMesh(kv.second, frameInfo);
+        //     }
+        // }
 
-        RenderCommand::DrawLights(m_Entities, *m_MainCamera);
+        RenderCommand::DrawScene(m_Entities, frameInfo);
 
-                // m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
+        // m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
     }
 }

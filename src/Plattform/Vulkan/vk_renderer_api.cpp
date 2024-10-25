@@ -26,7 +26,7 @@ namespace VectorVertex
 
         std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
         VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
-        MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
 
         //LightRenderSystem = CreateRef<VulkanRenderSystem>(layout, sizeof(PointLightPushConstantData), "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
@@ -137,7 +137,7 @@ namespace VectorVertex
     void VKRendererAPI::DrawMesh(Entity object,FrameInfo info)
     {
 
-        MeshRenderSystem->Bind(object, info);
+        //MeshRenderSystem->Bind(object, info);
         // auto m_data = object.GetComponent<MeshComponent>().GetMeshData();
         // auto commandBuffer = VKGetCurrentCommandBuffer();
         // std::vector<VkBuffer> buffers = {m_data.m_VertexBuffers->getVKBuffer()};
@@ -155,15 +155,9 @@ namespace VectorVertex
         // }
     }
 
-    void VKRendererAPI::UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo)
+    void VKRendererAPI::DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo info)
     {
-        //LightRenderSystem->UpdateLights(objects, ubo);
-    }
-
-    void VKRendererAPI::DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera)
-    {
-        
-        //LightRenderSystem->RenderLights(objects, camera);
+        MeshRenderSystem->Render(objects, info);
     }
 
     void *VKRendererAPI::GetSwapchain()

@@ -10,13 +10,14 @@
 #include <Buffer.hpp>
 #include <vk_api_data.hpp>
 #include <vk_render_system.hpp>
+#include <vk_mesh_render_system.hpp>
 #include <vk_texture.hpp>
 
 namespace VectorVertex
 {
     class Entity;
     class VKRendererAPI : public RendererAPI
-        {
+    {
     public:
         VKRendererAPI(Window *window);
         virtual ~VKRendererAPI() override;
@@ -27,8 +28,7 @@ namespace VectorVertex
         virtual void EndRenderPass() override;
 
         virtual void DrawMesh(Entity object, FrameInfo info) override;
-        virtual void UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo) override;
-        virtual void DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera) override;
+        virtual void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo info) override;
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
@@ -36,23 +36,23 @@ namespace VectorVertex
         virtual uint32_t GetSwapchainImageCount() override;
 
         virtual VkCommandBuffer GetCurrentCommandBuffer() override
-        { 
+        {
             return VKGetCurrentCommandBuffer();
-    }
+        }
 
         virtual void WaitForDeviceIdle() override
         {
             vkDeviceWaitIdle(VKDevice::Get().device());
         }
 
-        virtual void WindowResized() override{
+        virtual void WindowResized() override
+        {
             recreateSwapChain();
         }
 
     private:
         VulkanAPIData VKData{};
-        Ref<VulkanRenderSystem> MeshRenderSystem;
-        Ref<VulkanRenderSystem> LightRenderSystem;
+        Ref<VulkanMeshRenderer> MeshRenderSystem;
 
         void UploadShaderData(Entity entity);
         void

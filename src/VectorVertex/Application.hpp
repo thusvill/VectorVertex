@@ -62,6 +62,7 @@ namespace VectorVertex
 
         static Application *s_Instance;
         bool m_Running = true;
+        
 
         EditorLayer *editor_layer;
 

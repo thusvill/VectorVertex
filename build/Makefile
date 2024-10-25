@@ -369,6 +369,30 @@ src/Plattform/Linux/LinuxWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Linux/LinuxWindow.cpp.s
 .PHONY : src/Plattform/Linux/LinuxWindow.cpp.s
 
+src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.o: src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.o
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.o
+
+# target to build an object file
+src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.o
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.o
+
+src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.i: src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.i
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.i
+
+# target to preprocess a source file
+src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.i
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.i
+
+src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.s: src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.s
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.s
+
+# target to generate assembly for a file
+src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertex.dir/build.make CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.s
+.PHONY : src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.cpp.s
+
 src/Plattform/Vulkan/vk_api_data.o: src/Plattform/Vulkan/vk_api_data.cpp.o
 .PHONY : src/Plattform/Vulkan/vk_api_data.o
 
@@ -1488,6 +1512,9 @@ help:
 	@echo "... src/Plattform/Linux/LinuxWindow.o"
 	@echo "... src/Plattform/Linux/LinuxWindow.i"
 	@echo "... src/Plattform/Linux/LinuxWindow.s"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.o"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.i"
+	@echo "... src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.s"
 	@echo "... src/Plattform/Vulkan/vk_api_data.o"
 	@echo "... src/Plattform/Vulkan/vk_api_data.i"
 	@echo "... src/Plattform/Vulkan/vk_api_data.s"
