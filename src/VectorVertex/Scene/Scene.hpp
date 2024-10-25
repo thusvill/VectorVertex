@@ -25,7 +25,7 @@ namespace VectorVertex
         void DestroyEntityImmidiatly(Entity entity);
         void DeletePendingEntities();
 
-        void OnUpdate(float frameTime);
+        void OnUpdate();
         void RenderScene(FrameInfo &frameInfo);
 
         std::unordered_map<UUID, Entity> &GetEntities() { return m_Entities; }

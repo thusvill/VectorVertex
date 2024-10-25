@@ -515,4 +515,5 @@ CMakeFiles/VectorVertex.dir/src/Render/RendererAPI.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_light_render_system.hpp
