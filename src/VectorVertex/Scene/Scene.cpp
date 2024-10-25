@@ -11,14 +11,10 @@ namespace VectorVertex
     Scene::Scene(std::string name) : m_Name(name)
     {
         VV_CORE_INFO("Scene {} Created!", name.c_str());
-        //m_RendererSystem = CreateRef<VulkanRendererSystem>();
+        // m_RendererSystem = CreateRef<VulkanRendererSystem>();
     }
     void Scene::Init()
     {
-        //m_RendererSystem->Create();
-        std::vector<VkDescriptorSetLayout> layouts = {VulkanAPIData::Get().m_global_set_layout->getDescriptorSetLayout()};
-        mesh_Renderer = CreateRef<VulkanRenderSystem>(layouts, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
-        light_Renderer = CreateRef<VulkanRenderSystem>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
     Scene::~Scene()
     {
@@ -114,11 +110,13 @@ namespace VectorVertex
             {
                 m_MainCamera = &kv.second;
                 break;
-            }else{
+            }
+            else
+            {
                 m_MainCamera = nullptr;
             }
         }
-        auto& m_Camera = m_MainCamera->GetComponent<CameraComponent>().m_Camera;
+        auto &m_Camera = m_MainCamera->GetComponent<CameraComponent>().m_Camera;
 
         m_Camera.SetViewYXZ(m_MainCamera->GetComponent<TransformComponent>().translation, m_MainCamera->GetComponent<TransformComponent>().rotation);
 
@@ -129,7 +127,7 @@ namespace VectorVertex
             m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
         }
 
-        //m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
+        // m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
     }
 
     void Scene::RenderScene(FrameInfo &frameInfo)
@@ -141,17 +139,23 @@ namespace VectorVertex
 
         // Update point lights
 
+        RenderCommand::UpdateLights(m_Entities, ubo);
+
         VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
         VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->flush();
+
 
         for (auto &kv : m_Entities)
         {
             if (kv.second.HasComponent<MeshComponent>())
             {
-                mesh_Renderer->Bind(kv.second);
-                RenderCommand::DrawMesh(kv.second);
+
+                RenderCommand::DrawMesh(kv.second, frameInfo);
             }
         }
-        //m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
+
+        RenderCommand::DrawLights(m_Entities, *m_MainCamera);
+
+                // m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
     }
 }

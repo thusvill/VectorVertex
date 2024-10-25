@@ -730,13 +730,13 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_offscreen.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/type_ptr.inl \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/LayerStack.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Layer.h \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/ApplicationEvent.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RenderCommand.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \

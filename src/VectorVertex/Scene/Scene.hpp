@@ -48,8 +48,7 @@ namespace VectorVertex
         std::unordered_map<UUID, Entity> m_Entities;
         std::unordered_map<UUID, Entity> m_Pending_Delete_Entities;
         //Ref<VulkanRendererSystem> m_RendererSystem;
-        Ref<VulkanRenderSystem> mesh_Renderer;
-        Ref<VulkanRenderSystem> light_Renderer;
+        
 
         friend class SceneHierarchy;
         friend class SceneSerializer;

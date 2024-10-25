@@ -152,6 +152,12 @@ namespace VectorVertex
                                            .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
                                            .build();
         VV_CORE_INFO("Initilized Texture Library!");
+
+        if(m_Textures.size() <= 0){
+            uint64_t default_text = GetDefaultTexture();
+        }
+
+        UpdateDescriptors();
     }
 
     uint64_t VVTextureLibrary::Create(std::string name, std::string path)

@@ -15,17 +15,20 @@ namespace VectorVertex
 
     void VKRendererAPI::Init()
     {
-        VKData.Init();
+
+
         recreateSwapChain();
         CreateCommandBuffers();
 
+        VKData.Init();
         MaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
 
-        VVTextureLibrary::UpdateDescriptors();
+        std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+        VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
+        MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
 
-        std::vector<VkDescriptorSetLayout> layout = {VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
-        // MeshRenderSystem = CreateRef<VulkanRenderSystem>(layout, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+        //LightRenderSystem = CreateRef<VulkanRenderSystem>(layout, sizeof(PointLightPushConstantData), "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
 
     bool VKRendererAPI::BeginFrame()
@@ -131,24 +134,36 @@ namespace VectorVertex
         vkCmdEndRenderPass(commandBuffer);
     }
 
-    void VKRendererAPI::DrawMesh(Entity object)
+    void VKRendererAPI::DrawMesh(Entity object,FrameInfo info)
     {
-        // MeshRenderSystem->Bind(object);
-        auto m_data = object.GetComponent<MeshComponent>().GetMeshData();
-        auto commandBuffer = VKGetCurrentCommandBuffer();
-        std::vector<VkBuffer> buffers = {m_data.m_VertexBuffers->getVKBuffer()};
 
-        VkDeviceSize offsets[] = {0};
-        vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers.data(), offsets);
-        if (m_data.m_IndexCount > 0)
-        {
-            vkCmdBindIndexBuffer(commandBuffer, m_data.m_IndexBuffer->getVKBuffer(), 0, VK_INDEX_TYPE_UINT32);
-            vkCmdDrawIndexed(commandBuffer, m_data.m_IndexCount, 1, 0, 0, 0);
-        }
-        else
-        {
-            vkCmdDraw(commandBuffer, m_data.m_VertexCount, 1, 0, 0);
-        }
+        MeshRenderSystem->Bind(object, info);
+        // auto m_data = object.GetComponent<MeshComponent>().GetMeshData();
+        // auto commandBuffer = VKGetCurrentCommandBuffer();
+        // std::vector<VkBuffer> buffers = {m_data.m_VertexBuffers->getVKBuffer()};
+
+        // VkDeviceSize offsets[] = {0};
+        // vkCmdBindVertexBuffers(commandBuffer, 0, 1, buffers.data(), offsets);
+        // if (m_data.m_IndexCount > 0)
+        // {
+        //     vkCmdBindIndexBuffer(commandBuffer, m_data.m_IndexBuffer->getVKBuffer(), 0, VK_INDEX_TYPE_UINT32);
+        //     vkCmdDrawIndexed(commandBuffer, m_data.m_IndexCount, 1, 0, 0, 0);
+        // }
+        // else
+        // {
+        //     vkCmdDraw(commandBuffer, m_data.m_VertexCount, 1, 0, 0);
+        // }
+    }
+
+    void VKRendererAPI::UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo)
+    {
+        //LightRenderSystem->UpdateLights(objects, ubo);
+    }
+
+    void VKRendererAPI::DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera)
+    {
+        
+        //LightRenderSystem->RenderLights(objects, camera);
     }
 
     void *VKRendererAPI::GetSwapchain()

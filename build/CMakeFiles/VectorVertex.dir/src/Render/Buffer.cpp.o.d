@@ -497,7 +497,15 @@ CMakeFiles/VectorVertex.dir/src/Render/Buffer.cpp.o: \
  /usr/include/KHR/khrplatform.h \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/GraphicsContext.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp

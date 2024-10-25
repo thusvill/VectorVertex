@@ -18,7 +18,7 @@ namespace VectorVertex
 
         static bool BeginFrame()
         {
-           return s_RendererAPI->BeginFrame();
+            return s_RendererAPI->BeginFrame();
         }
         static void EndFrame()
         {
@@ -33,12 +33,22 @@ namespace VectorVertex
             s_RendererAPI->EndRenderPass();
         }
 
-        static void DrawMesh(Entity object)
+        static void DrawMesh(Entity object, FrameInfo info)
         {
-            s_RendererAPI->DrawMesh(object);
+            s_RendererAPI->DrawMesh(object, info);
         }
 
-        static void WindowResize(){
+        static void UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo)
+        {
+            s_RendererAPI->UpdateLights(objects, ubo);
+        }
+        static void DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera)
+        {
+            s_RendererAPI->DrawLights(objects, camera);
+        }
+
+        static void WindowResize()
+        {
             s_RendererAPI->WindowResized();
         }
 
@@ -50,7 +60,6 @@ namespace VectorVertex
         {
             return s_RendererAPI;
         }
-        
 
     private:
         static Scope<RendererAPI> s_RendererAPI;
