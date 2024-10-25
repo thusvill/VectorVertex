@@ -26,7 +26,9 @@ namespace VectorVertex
         virtual void BeginRenderPass() override;
         virtual void EndRenderPass() override;
 
-        virtual void DrawMesh(Entity object) override;
+        virtual void DrawMesh(Entity object, FrameInfo info) override;
+        virtual void UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo) override;
+        virtual void DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera) override;
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
@@ -34,9 +36,9 @@ namespace VectorVertex
         virtual uint32_t GetSwapchainImageCount() override;
 
         virtual VkCommandBuffer GetCurrentCommandBuffer() override
-        {
+        { 
             return VKGetCurrentCommandBuffer();
-        }
+    }
 
         virtual void WaitForDeviceIdle() override
         {
@@ -50,6 +52,7 @@ namespace VectorVertex
     private:
         VulkanAPIData VKData{};
         Ref<VulkanRenderSystem> MeshRenderSystem;
+        Ref<VulkanRenderSystem> LightRenderSystem;
 
         void UploadShaderData(Entity entity);
         void

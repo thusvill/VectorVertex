@@ -4,6 +4,7 @@
 #include <Window.hpp>
 #include <RendererAPI.hpp>
 #include <GraphicsContext.hpp>
+#include <vk_frame_info.hpp>
 
 namespace VectorVertex
 {
@@ -13,7 +14,7 @@ namespace VectorVertex
     public:
         virtual ~Renderer() = default;
 
-        static void Draw(Entity object);
+        static void Draw(Entity object, FrameInfo info);
 
         inline static RendererAPI::API GetAPI() { return RendererAPI::GetRenderAPI(); }
     };

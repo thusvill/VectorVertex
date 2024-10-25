@@ -3,8 +3,8 @@
 
 namespace VectorVertex
 {
-    void Renderer::Draw(Entity object)
+    void Renderer::Draw(Entity object, FrameInfo info)
     {
-        RenderCommand::DrawMesh(object);
+        RenderCommand::DrawMesh(object, info);
     }
 }

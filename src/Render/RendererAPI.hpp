@@ -4,6 +4,8 @@
 #include <glm/glm.hpp>
 #include <Buffer.hpp>
 #include <Window.hpp>
+#include <UUID.hpp>
+#include <vk_frame_info.hpp>
 
 namespace VectorVertex
 {
@@ -34,7 +36,9 @@ namespace VectorVertex
         virtual void BeginRenderPass() = 0;
         virtual void EndRenderPass() = 0;
 
-        virtual void DrawMesh(Entity object) = 0;
+        virtual void DrawMesh(Entity object, FrameInfo info) = 0;
+        virtual void UpdateLights(std::unordered_map<UUID, Entity> objects, GlobalUBO ubo) = 0;
+        virtual void DrawLights(std::unordered_map<UUID, Entity> objects, Entity camera) = 0;
 
         virtual void WaitForDeviceIdle() = 0;
 

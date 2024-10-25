@@ -881,8 +881,10 @@ CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o: /home/bios/CLionProj
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_texture.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
@@ -1109,6 +1111,8 @@ CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o: /home/bios/CLionProj
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxrootnodeutility.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxscenecheckutility.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/fbx/include/fbxsdk/utils/fbxusernotification.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
@@ -19348,9 +19352,15 @@ CMakeFiles/VectorVertex.dir/src/Render/Buffer.cpp.o: /home/bios/CLionProjects/Ve
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
@@ -19359,6 +19369,8 @@ CMakeFiles/VectorVertex.dir/src/Render/Buffer.cpp.o: /home/bios/CLionProjects/Ve
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \
@@ -19957,8 +19969,16 @@ CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.o: /home/bios/CLionProjec
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Assert.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Base.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_framebuffer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_swap_chain.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/FrameBuffer.hpp \
@@ -19967,6 +19987,8 @@ CMakeFiles/VectorVertex.dir/src/Render/FrameBuffer.cpp.o: /home/bios/CLionProjec
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/GLFW/glfw3.h \

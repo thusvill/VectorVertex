@@ -724,6 +724,10 @@ CMakeFiles/VectorVertex.dir/src/Core/Keyboard_inputs.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Events/Event.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_renderer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imgui.h \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/imgui/imconfig.h \
  /usr/include/glm/gtc/type_ptr.hpp /usr/include/glm/gtc/type_ptr.inl \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp
