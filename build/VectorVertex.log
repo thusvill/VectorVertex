@@ -1,88 +1,31 @@
-[12:04:23] [info] VV-CORE: DEBUGGING STARTED!
-[12:04:23] [info] VV-CORE: Vulkan Context Created!
-[12:04:23] [info] VV-CORE: Creating window VectorVertex (1600, 900)
-[12:04:23] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
-[12:04:23] [info] VV-CORE: Vulkan Render API Created!
-[12:04:23] [info] VV-CORE: Vulkan API Data Initialized!
-[12:04:23] [info] VV-CORE: Initialized Material Library
-[12:04:23] [info] VV-CORE: Initilized Texture Library!
-[12:04:23] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:1238194824639347846
-[12:04:23] [trace] VV-CORE: Layouts befor create render syste: 2
-[12:04:23] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
-[12:04:23] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
-[12:04:23] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
-[12:04:23] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
-[12:04:23] [warning] VV-CORE: Application is Started!
-[12:04:23] [warning] VV-CORE: Initializing ...
-[12:04:23] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[12:04:23] [info] VV-CORE: [Layer]:EditorLayer Created!
-[12:04:23] [info] VV-CORE: Texture Library cleared!
-[12:04:23] [info] VV-CORE: Scene New Scene Created!
-[12:04:23] [info] VV-CORE: Created Material: default ID: 2503402231705514636
-[12:04:23] [info] VV-CORE: Entity Created with name:Camera , ID:4840529970863896467
-[12:04:23] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[12:04:23] [warning] VV-CORE: Initialized!
-[12:04:23] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
-[12:04:23] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 862 at 1.8561485 aspect ratio.
-[12:04:23] [info] VV-CORE: Extent Resized with WIDTH: 936, HEIGHT 862 at 1.0858469 aspect ratio.
-[12:04:26] [info] VV-CORE: Created Material: default ID: 1694554756596425866
-[12:04:26] [info] VV-CORE: Entity Created with name:new Entity , ID:6472194165241188383
-[12:04:30] [info] VV-CORE: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj
-[12:04:30] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj
-[12:04:30] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:1220162274608895642
-[12:04:30] [info] VV-CORE: Default Texture Loaded 1220162274608895642
-[12:04:36] [info] VV-CORE: Created Material: default ID: 7081300727108045464
-[12:04:36] [info] VV-CORE: Entity Created with name:new Entity , ID:16905145314334419439
-[12:05:02] [info] VV-CORE: WindowResizeEvent: 1920, 1012
-[12:05:02] [info] VV-CORE: Extent Resized with WIDTH: 1256, HEIGHT 974 at 1.2895278 aspect ratio.
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: GLFW Error (65537): The GLFW library is not initialized
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xcc8fd50000000120, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkImage 0xcc8fd50000000120[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xd27c3e0000000123, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkImage 0xd27c3e0000000123[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x1c252400000000b5, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkImage 0x1c252400000000b5[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xdb987f00000000b6, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkDeviceMemory 0xdb987f00000000b6[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x2d0f10000000124, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkDeviceMemory 0x2d0f10000000124[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x8320c0000000121, type = VK_OBJECT_TYPE_DEVICE_MEMORY; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkDeviceMemory 0x8320c0000000121[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xad19770000000122, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkImageView 0xad19770000000122[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xd507b00000000125, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkImageView 0xd507b00000000125[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x95ff2600000000b7, type = VK_OBJECT_TYPE_IMAGE_VIEW; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkImageView 0x95ff2600000000b7[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xa808d50000000033, type = VK_OBJECT_TYPE_PIPELINE_LAYOUT; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkPipelineLayout 0xa808d50000000033[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x4b7df1000000002f, type = VK_OBJECT_TYPE_PIPELINE_LAYOUT; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkPipelineLayout 0x4b7df1000000002f[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xb097c90000000027, type = VK_OBJECT_TYPE_DESCRIPTOR_SET_LAYOUT; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkDescriptorSetLayout 0xb097c90000000027[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x2602c100000000b8, type = VK_OBJECT_TYPE_SAMPLER; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkSampler 0x2602c100000000b8[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0x590d20000000127, type = VK_OBJECT_TYPE_SAMPLER; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkSampler 0x590d20000000127[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xd6c9a000000000b9, type = VK_OBJECT_TYPE_DESCRIPTOR_SET; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkDescriptorSet 0xd6c9a000000000b9[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xa2eb680000000026, type = VK_OBJECT_TYPE_DESCRIPTOR_POOL; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkDescriptorPool 0xa2eb680000000026[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
-[12:06:03] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkDestroyDevice-device-05137 ] Object 0: handle = 0xd84b930000000126, type = VK_OBJECT_TYPE_FRAMEBUFFER; | MessageID = 0x4872eaa0 | vkDestroyDevice():  OBJ ERROR : For VkDevice 0x5ae3b722bda0[], VkFramebuffer 0xd84b930000000126[] has not been destroyed.
-The Vulkan spec states: All child objects created on device must have been destroyed prior to destroying device (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkDestroyDevice-device-05137)
+[12:26:54] [info] VV-CORE: DEBUGGING STARTED!
+[12:26:54] [info] VV-CORE: Vulkan Context Created!
+[12:26:54] [info] VV-CORE: Creating window VectorVertex (1600, 900)
+[12:26:54] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
+[12:26:54] [info] VV-CORE: Vulkan Render API Created!
+[12:26:54] [info] VV-CORE: Vulkan API Data Initialized!
+[12:26:54] [info] VV-CORE: Initialized Material Library
+[12:26:54] [info] VV-CORE: Initilized Texture Library!
+[12:26:54] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:8387214181239478080
+[12:26:54] [trace] VV-CORE: Layouts befor create render syste: 2
+[12:26:54] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
+[12:26:54] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
+[12:26:54] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
+[12:26:54] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x2b424a0000000034, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
+[12:26:54] [warning] VV-CORE: Application is Started!
+[12:26:54] [warning] VV-CORE: Initializing ...
+[12:26:54] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[12:26:54] [info] VV-CORE: [Layer]:EditorLayer Created!
+[12:26:54] [info] VV-CORE: Texture Library cleared!
+[12:26:54] [info] VV-CORE: Scene New Scene Created!
+[12:26:54] [info] VV-CORE: Created Material: default ID: 5904747572911566489
+[12:26:54] [info] VV-CORE: Entity Created with name:Camera , ID:9193451029384846288
+[12:26:55] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[12:26:55] [warning] VV-CORE: Initialized!
+[12:26:55] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
+[12:26:55] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 862 at 1.8561485 aspect ratio.
+[12:26:55] [info] VV-CORE: Extent Resized with WIDTH: 936, HEIGHT 862 at 1.0858469 aspect ratio.
+[12:26:56] [info] VV-CORE: WindowResizeEvent: 1920, 1012
+[12:26:56] [info] VV-CORE: Extent Resized with WIDTH: 1256, HEIGHT 974 at 1.2895278 aspect ratio.
+[12:27:00] [info] VV-CORE: Created Material: default ID: 7517903756045166280
+[12:27:00] [info] VV-CORE: Entity Created with name:new Entity , ID:7730557655430449116

@@ -7,6 +7,9 @@
 #include <Entity.hpp>
 #include <SceneSerializer.hpp>
 #include <FrameBuffer.hpp>
+
+
+#include <Keyboard_inputs.hpp>
 namespace VectorVertex
 {
     class Scene;
@@ -43,7 +46,9 @@ namespace VectorVertex
         Ref<Scene> m_ActiveScene;
         SceneHierarchy m_SceneHierarchyPanel;
         Ref<FrameBuffer> m_OffScreen;
-        
+        Entity* m_EditorCamera;
+
+        KeyboardInputs camControl;
 
     private:
         float frameTime;
