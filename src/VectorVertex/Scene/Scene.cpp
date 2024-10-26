@@ -105,6 +105,7 @@ namespace VectorVertex
     }
     void Scene::OnUpdate()
     {
+
         for (auto &kv : m_Entities)
         {
             if (kv.second.HasComponent<CameraComponent>() && kv.second.GetComponent<CameraComponent>().mainCamera)
@@ -117,6 +118,7 @@ namespace VectorVertex
                 m_MainCamera = nullptr;
             }
         }
+
         auto &m_Camera = m_MainCamera->GetComponent<CameraComponent>().m_Camera;
 
         m_Camera.SetViewYXZ(m_MainCamera->GetComponent<TransformComponent>().translation, m_MainCamera->GetComponent<TransformComponent>().rotation);
@@ -132,19 +134,15 @@ namespace VectorVertex
         ubo.projection = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetProjection();
         ubo.inverse_view_matrix = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetInverseViewMatrix();
 
-        FrameInfo frameInfo;
-        frameInfo.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
-        frameInfo.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
-        frameInfo.frame_time = Application::Get().GetFrameTime();
-        frameInfo.ubo = ubo;
+        FrameInfo frameInfo{
+            RenderCommand::GetRendererAPI()->GetCurrentFrameIndex(),
+            Application::Get().GetFrameTime(), RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer(),ubo
+        };
 
         RenderCommand::UpdateObjects(m_Entities, m_MainCamera, frameInfo);
 
         VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->writeToBuffer(&ubo);
         VulkanAPIData::Get().m_ubo_buffers[frameInfo.frame_index]->flush();
-
-        
-
 
         // m_RendererSystem->OnUpdate(frameTime, m_MainCamera);
     }
@@ -152,17 +150,9 @@ namespace VectorVertex
     void Scene::RenderScene(FrameInfo &frameInfo)
     {
 
-        // for (auto &kv : m_Entities)
-        // {
-        //     if (kv.second.HasComponent<MeshComponent>())
-        //     {
-
-        //         RenderCommand::DrawMesh(kv.second, frameInfo);
-        //     }
-        // }
 
         RenderCommand::DrawScene(m_Entities, frameInfo);
 
-        // m_RendererSystem->OnRender(frameInfo, m_Entities, m_MainCamera);
+
     }
 }

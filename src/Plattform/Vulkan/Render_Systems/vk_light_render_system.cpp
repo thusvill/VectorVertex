@@ -18,9 +18,9 @@ namespace VectorVertex
         CreatePipeline(vertex_shader, fragment_shader);
     }
 
-    void VulkanLightRenderer::Update(std::unordered_map<UUID, Entity> objects, FrameInfo info)
+    void VulkanLightRenderer::Update(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
     {
-        auto ubo = info.ubo;
+        auto& ubo = info.ubo;
         int light_index = 0;
         for (auto &kv : objects)
         {
@@ -40,7 +40,7 @@ namespace VectorVertex
         ubo.num_lights = light_index;
     }
 
-    void VulkanLightRenderer::Render(std::unordered_map<UUID, Entity> objects, FrameInfo info)
+    void VulkanLightRenderer::Render(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
     {
         if(!m_Camera && !m_Camera->HasComponent<CameraComponent>()){
             VV_CORE_ERROR("No Camera Set to render lights!!");

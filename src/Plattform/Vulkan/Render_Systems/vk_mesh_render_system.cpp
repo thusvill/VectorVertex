@@ -17,10 +17,10 @@ namespace VectorVertex
         CreatePipelineLayout(layouts);
         CreatePipeline(vertex_shader, fragment_shader);
     }
-    void VulkanMeshRenderer::Update(std::unordered_map<UUID, Entity> objects, FrameInfo info)
+    void VulkanMeshRenderer::Update(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
     {
     }
-    void VulkanMeshRenderer::Render(std::unordered_map<UUID, Entity> objects, FrameInfo info)
+    void VulkanMeshRenderer::Render(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
     {
         
         pipeline->Bind(info.command_buffer);
