@@ -73,7 +73,10 @@
     "charconv": "cpp",
     "span": "cpp",
     "format": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "forward_list": "cpp",
+    "valarray": "cpp",
+    "rendercommand.hpp": "c"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

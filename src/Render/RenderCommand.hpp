@@ -37,11 +37,11 @@ namespace VectorVertex
         {
             s_RendererAPI->DrawMesh(object, info);
         }
-        static void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo info){
+        static void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo& info){
             s_RendererAPI->DrawScene(objects, info);
         }
 
-        static void UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity* camera, FrameInfo info){
+        static void UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity* camera, FrameInfo& info){
             s_RendererAPI->UpdateObjects(objects, camera, info);
         }
 

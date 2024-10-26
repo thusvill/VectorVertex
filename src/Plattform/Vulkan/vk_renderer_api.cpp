@@ -155,7 +155,7 @@ namespace VectorVertex
         // }
     }
 
-    void VKRendererAPI::UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity *camera, FrameInfo info)
+    void VKRendererAPI::UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity *camera, FrameInfo& info)
     {
         if (!camera)
         {
@@ -166,7 +166,7 @@ namespace VectorVertex
         LightRenderSystem->Update(objects, info);
     }
 
-    void VKRendererAPI::DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo info)
+    void VKRendererAPI::DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
     {
 
         MeshRenderSystem->Render(objects, info);
@@ -209,6 +209,8 @@ namespace VectorVertex
             throw std::runtime_error("Failed to create commandbuffers");
         }
     }
+
+
 
     void VKRendererAPI::FreeCommandBuffers()
     {

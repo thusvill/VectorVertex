@@ -27,8 +27,8 @@ namespace VectorVertex
         VulkanRenderSystem() = default;
         ~VulkanRenderSystem() {}
 
-        virtual void Update(std::unordered_map<UUID, Entity> objects, FrameInfo info) = 0;
-        virtual void Render(std::unordered_map<UUID, Entity> objects, FrameInfo info) = 0;
+        virtual void Update(std::unordered_map<UUID, Entity> objects, FrameInfo& info) = 0;
+        virtual void Render(std::unordered_map<UUID, Entity> objects, FrameInfo& info) = 0;
 
     protected:
         virtual void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout) = 0;

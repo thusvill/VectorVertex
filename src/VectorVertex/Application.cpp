@@ -84,10 +84,12 @@ namespace VectorVertex
             if (RenderCommand::BeginFrame())
             {
 
-                FrameInfo info;
-                info.command_buffer = RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer();
-                info.frame_index = RenderCommand::GetRendererAPI()->GetCurrentFrameIndex();
-                info.frame_time = frameTime;
+                GlobalUBO temp_ubo;
+                FrameInfo info{
+                    RenderCommand::GetRendererAPI()->GetCurrentFrameIndex(),
+                    Application::Get().GetFrameTime(),
+                    RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer(),temp_ubo
+                };
 
                 editor_layer->OnUpdate();
                 editor_layer->OnRender(info);

@@ -26,7 +26,7 @@ namespace VectorVertex
         glm::mat4 inverse_view_matrix{1.f};
         glm::vec4 ambient_color{1.f, 1.f, 1.f, .02f};
         PointLight point_lights[MAX_LIGHTS];
-        int num_lights=0;
+        int num_lights;
     };
 
     struct FrameInfo
@@ -34,7 +34,7 @@ namespace VectorVertex
         int frame_index = 0;
         float frame_time = 0.0f;
         VkCommandBuffer command_buffer = VK_NULL_HANDLE;
-        GlobalUBO ubo{};
+        GlobalUBO& ubo;
         
     };
 
