@@ -1,5 +1,7 @@
 #include "vk_renderer_api.hpp"
 
+#include <FrameBuffer.hpp>
+#include <vk_framebuffer.hpp>
 #include <Entity.hpp>
 
 namespace VectorVertex
@@ -22,7 +24,6 @@ namespace VectorVertex
         VKData.Init();
         MaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
-
         std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
         VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
         MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
@@ -134,6 +135,19 @@ namespace VectorVertex
         vkCmdEndRenderPass(commandBuffer);
     }
 
+    void VKRendererAPI::DedicateToFrameBuffer(FrameBuffer *framebuffer)
+    {
+        recreateSwapChain();
+        CreateCommandBuffers();
+
+        std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+        VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
+        VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(framebuffer->GetFrameBufferAPI())->getRenderpass();
+        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, renderpass);
+        LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, renderpass);
+        VV_CORE_INFO("Renderer Dedicated to a FrameBuffer");
+    }
+
     void VKRendererAPI::DrawMesh(Entity object, FrameInfo info)
     {
 
@@ -155,7 +169,7 @@ namespace VectorVertex
         // }
     }
 
-    void VKRendererAPI::UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity *camera, FrameInfo& info)
+    void VKRendererAPI::UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity *camera, FrameInfo &info)
     {
         if (!camera)
         {
@@ -166,7 +180,7 @@ namespace VectorVertex
         LightRenderSystem->Update(objects, info);
     }
 
-    void VKRendererAPI::DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
+    void VKRendererAPI::DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo &info)
     {
 
         MeshRenderSystem->Render(objects, info);
@@ -209,8 +223,6 @@ namespace VectorVertex
             throw std::runtime_error("Failed to create commandbuffers");
         }
     }
-
-
 
     void VKRendererAPI::FreeCommandBuffers()
     {

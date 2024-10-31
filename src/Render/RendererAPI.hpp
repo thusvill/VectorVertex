@@ -5,10 +5,12 @@
 #include <Buffer.hpp>
 #include <Window.hpp>
 #include <UUID.hpp>
+
 #include <vk_frame_info.hpp>
 
 namespace VectorVertex
 {
+    class FrameBuffer;
     class Entity;
     struct MeshData
     {
@@ -35,6 +37,8 @@ namespace VectorVertex
         virtual void EndFrame() = 0;
         virtual void BeginRenderPass() = 0;
         virtual void EndRenderPass() = 0;
+
+        virtual void DedicateToFrameBuffer(FrameBuffer* framebuffer) = 0;
 
         virtual void DrawMesh(Entity object, FrameInfo info) = 0;
         virtual void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo& info) =0;

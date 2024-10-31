@@ -6,11 +6,11 @@
 
 namespace VectorVertex
 {
-    Ref<FrameBuffer> FrameBuffer::Create(Extent2D size)
+    Ref<FrameBuffer> FrameBuffer::Create(FrameBufferSpecification& specification)
     {
         switch(Renderer::GetAPI()){
             case RendererAPI::API::None:    VV_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-			case RendererAPI::API::Vulkan:  return CreateRef<VKFrameBuffer>(size);
+			case RendererAPI::API::Vulkan:  return CreateRef<VKFrameBuffer>(specification);
 
         }
     }

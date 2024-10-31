@@ -9,6 +9,7 @@ namespace VectorVertex
     public:
         VulkanLightRenderer() = default;
         VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts);
+        VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts, VkRenderPass renderpass);
         VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts, std::string vertex_shader, std::string fragment_shader);
 
         virtual void Update(std::unordered_map<UUID, Entity> objects, FrameInfo& info) override; 

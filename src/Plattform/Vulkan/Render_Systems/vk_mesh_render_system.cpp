@@ -12,17 +12,22 @@ namespace VectorVertex
         CreatePipelineLayout(layouts);
         CreatePipeline("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
+    VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, VkRenderPass renderpass)
+    {
+        CreatePipelineLayout(layouts);
+        CreatePipeline(renderpass, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+    }
     VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, std::string vertex_shader, std::string fragment_shader)
     {
         CreatePipelineLayout(layouts);
         CreatePipeline(vertex_shader, fragment_shader);
     }
-    void VulkanMeshRenderer::Update(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
+    void VulkanMeshRenderer::Update(std::unordered_map<UUID, Entity> objects, FrameInfo &info)
     {
     }
-    void VulkanMeshRenderer::Render(std::unordered_map<UUID, Entity> objects, FrameInfo& info)
+    void VulkanMeshRenderer::Render(std::unordered_map<UUID, Entity> objects, FrameInfo &info)
     {
-        
+
         pipeline->Bind(info.command_buffer);
 
         for (auto &kv : objects)
