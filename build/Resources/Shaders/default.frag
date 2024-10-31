@@ -1,7 +1,6 @@
 #version 450
 
 layout (location =0) out vec4 outColor;
-layout (location =1) out int enttID;
 
 layout(location = 0) in vec3 fragColor;
 layout(location = 1) in vec3 fragPosWorld;
@@ -96,5 +95,4 @@ void main() {
     d_light.color = lightColor;
     
     outColor = (vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light())*texture(material_texture, fragUV).rgba;
-    enttID = 50;
 }

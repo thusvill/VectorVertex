@@ -98,17 +98,7 @@ namespace VectorVertex
             colors[ImGuiCol_NavWindowingDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.20f);
             colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.35f);
         }
-        FrameBufferSpecification spec;
-        spec.size = Viewport_Extent;
-        spec.attachments = {FrameBufferAttachmentType::RGBA8_UNORM, FrameBufferAttachmentType::R32_INT, FrameBufferAttachmentType::Depth};
-        // spec.attachments = {FrameBufferAttachmentType::RGBA8_UNORM,FrameBufferAttachmentType::Depth};
-        spec.clearValues.resize(spec.attachments.size());
-        spec.clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
-        spec.clearValues[1].color = {0, 0, 0, 0};
-        spec.clearValues[2].depthStencil = {1.0f, 0};
-        spec.seperate_renderpass = false;
-        // spec.attachments = {FrameBufferAttachmentType::RGBA8_UNORM};
-        m_OffScreen = FrameBuffer::Create(spec);
+        m_OffScreen = FrameBuffer::Create(Viewport_Extent);
     }
 
     void EditorLayer::OnAttach()
@@ -266,9 +256,7 @@ namespace VectorVertex
         }
         { // Inside your ImGui rendering loop
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
-
             ImGui::Begin("Viewport");
-            auto viewportOffset = ImGui::GetCursorPos();
 
             camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
             // m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
@@ -289,15 +277,6 @@ namespace VectorVertex
             }
             // Display the offscreen image
             ImGui::Image(sceneImageView, windowSize);
-
-            windowSize = ImGui::GetWindowSize();
-            ImVec2 minBound = ImGui::GetWindowPos();
-            minBound.x += viewportOffset.x;
-            minBound.y += viewportOffset.y;
-
-            ImVec2 maxBound = {minBound.x + windowSize.x, minBound.y + windowSize.y};
-            m_ViewportBounds[0] = {minBound.x, minBound.y};
-            m_ViewportBounds[1] = {maxBound.x, maxBound.y};
 
             {
                 if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
@@ -487,21 +466,6 @@ namespace VectorVertex
             }
             m_OffScreen->BeginRender();
             m_ActiveScene->RenderScene(frameInfo);
-
-            auto [mx, my] = ImGui::GetMousePos();
-            mx -= m_ViewportBounds[0].x;
-            my -= m_ViewportBounds[0].y;
-            glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
-            my = viewportSize.y - my;
-
-            int mouseX = (int)mx;
-            int mouseY = (int)my;
-            if (mouseX >= 0 && mouseY >= 0 && mouseX <= (int)viewportSize.x && mouseY <= (int)viewportSize.y)
-            {
-                int pixelData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
-                VV_CORE_WARN("Pixel data {0}", pixelData);
-            }
-
             m_OffScreen->EndRender();
         }
         sceneImageView = m_OffScreen->GetFrameBufferImage();
