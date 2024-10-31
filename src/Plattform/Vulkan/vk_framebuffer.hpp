@@ -4,30 +4,47 @@
 
 namespace VectorVertex
 {
+    struct VKFrameBufferImageAttachment
+    {
+        VkImage image;
+        VkDeviceMemory imageMemory;
+        VkImageView imageView;
+    };
     class VKFrameBuffer : public FrameBuffer
     {
     public:
-        VKFrameBuffer(Extent2D size);
+        VKFrameBuffer(FrameBufferSpecification &specification);
         ~VKFrameBuffer() = default;
         virtual void BeginRender() override;
         virtual void EndRender() override;
         virtual void Resize(Extent2D size) override;
-        virtual Extent2D getViewSize() override { return {ViewExtent.width, ViewExtent.height}; }
-        virtual void *GetFrameBufferImage() override {return framebufferimageID;}
+        virtual Extent2D getViewSize() override { return {m_Specification.size.width, m_Specification.size.height}; }
+        virtual void *GetFrameBufferImage() override { return framebufferimageID; }
+        virtual void *GetFrameBufferAPI() override
+        {
+            return this;
+        }
+        virtual void* ReadPixel(uint32_t attachment_index, uint32_t x, uint32_t y) override;
+        VkRenderPass &getRenderpass() { return m_Renderpass; }
 
     private:
+        FrameBufferSpecification m_Specification;
         void create_resources();
         void clean();
-        VkExtent2D ViewExtent{800, 800};
         void *framebufferimageID;
-        VkImage offscreenImage;
-        VkImage depthImage;
-        VkDeviceMemory depthImageMemory;
-        VkImageView depthImageView;
-        VkDeviceMemory offscreenImageMemory;
-        VkImageView offscreenImageView;
-        VkFramebuffer offscreenFramebuffer;
+        std::vector<VKFrameBufferImageAttachment> color_attachments{};
+        VKFrameBufferImageAttachment depth_atachment{};
+
+        VkFramebuffer m_Framebuffer;
         VkSampler sampler;
         VkDescriptorSet descriptorSet;
+
+    private:
+        VkRenderPass m_Renderpass;
+        std::vector<VkFormat> colorFormats;
+        VkFormat depthFormat;
+        void CreateRenderpass();
+        void BeginRenderpass();
+        void EndRenderpass();
     };
 }

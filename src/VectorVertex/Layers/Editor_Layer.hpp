@@ -43,7 +43,10 @@ namespace VectorVertex
         Ref<Scene> m_ActiveScene;
         SceneHierarchy m_SceneHierarchyPanel;
         Ref<FrameBuffer> m_OffScreen;
-        
+
+        glm::vec2 m_ViewportBounds[2];
+
+        KeyboardInputs cam_control;
 
     private:
         float frameTime;

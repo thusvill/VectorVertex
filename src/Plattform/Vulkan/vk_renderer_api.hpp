@@ -17,6 +17,7 @@
 namespace VectorVertex
 {
     class Entity;
+    class FrameBuffer;
     class VKRendererAPI : public RendererAPI
     {
     public:
@@ -28,9 +29,11 @@ namespace VectorVertex
         virtual void BeginRenderPass() override;
         virtual void EndRenderPass() override;
 
+        virtual void DedicateToFrameBuffer(FrameBuffer *framebuffer) override;
+
         virtual void DrawMesh(Entity object, FrameInfo info) override;
-        virtual void DrawScene(std::unordered_map<UUID, Entity> objects,  FrameInfo& info) override;
-        virtual void UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity* camera, FrameInfo& info) override;
+        virtual void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo &info) override;
+        virtual void UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity *camera, FrameInfo &info) override;
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;

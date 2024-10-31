@@ -11459,6 +11459,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: /home/bio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_api_data.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
@@ -17289,6 +17290,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.o: /home/bi
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_device.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_frame_info.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_framebuffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_image.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_model.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_offscreen.hpp \
@@ -17302,6 +17304,7 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.o: /home/bi
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_window.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Flags.hpp \
+  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/FrameBuffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/RendererAPI.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Window.hpp \

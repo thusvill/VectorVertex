@@ -516,6 +516,8 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_renderer_api.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/Material.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_mesh_render_system.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/Render_Systems/vk_light_render_system.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Render/FrameBuffer.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_framebuffer.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Entity.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/VectorVertex/Scene/Scene.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/vendor/entt/entt.hpp \

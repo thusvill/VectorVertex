@@ -27,6 +27,7 @@ layout(push_constant) uniform Push {
 
 const float M_PI = 3.14159265358979323846;
 void main() {
+    discard;//discaed point light shape render
     float dis = sqrt(dot(frag_offset, frag_offset));
     if(dis >= 1.0) discard;
     

@@ -15,6 +15,9 @@ namespace VectorVertex
 
             s_RendererAPI->Init();
         }
+        static void DedicateToFrameBuffer(FrameBuffer* framebuffer){
+            s_RendererAPI->DedicateToFrameBuffer(framebuffer);
+        }
 
         static bool BeginFrame()
         {

@@ -98,7 +98,14 @@ namespace VectorVertex
             colors[ImGuiCol_NavWindowingDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.20f);
             colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.35f);
         }
-        m_OffScreen = FrameBuffer::Create(Viewport_Extent);
+        FrameBufferSpecification specs;
+        specs.size = Viewport_Extent;
+        specs.render_image_index = 0;
+        specs.attachments = {FrameBufferFormat::RGBA8, FrameBufferFormat::R32S, FrameBufferFormat::Depth32};
+        specs.seperate_renderpass = true;
+        m_OffScreen = FrameBuffer::Create(specs);
+
+        RenderCommand::DedicateToFrameBuffer(m_OffScreen.get());
     }
 
     void EditorLayer::OnAttach()
@@ -130,6 +137,7 @@ namespace VectorVertex
 
     void EditorLayer::OnUpdate()
     {
+
         RunDeferredActions();
         m_ActiveScene->DeletePendingEntities();
         {
@@ -258,10 +266,8 @@ namespace VectorVertex
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
             ImGui::Begin("Viewport");
 
-            // camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
-            // m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
+            auto viewportOffset = ImGui::GetCursorPos();
 
-            // Get the size of your ImGui window or set your desired size
             ImVec2 windowSize = ImGui::GetContentRegionAvail();
 
             if (prev_size.x != windowSize.x || prev_size.y != windowSize.y)
@@ -278,7 +284,22 @@ namespace VectorVertex
             // Display the offscreen image
             ImGui::Image(sceneImageView, windowSize);
 
+            windowSize = ImGui::GetWindowSize();
+            ImVec2 minBound = ImGui::GetWindowPos();
+            minBound.x += viewportOffset.x;
+            minBound.y += viewportOffset.y;
+
+            ImVec2 maxBound = {minBound.x + windowSize.x, minBound.y + windowSize.y};
+            m_ViewportBounds[0] = {minBound.x, minBound.y};
+            m_ViewportBounds[1] = {maxBound.x, maxBound.y};
+
             {
+
+                cam_control.isClickedOnViewport = glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT);
+            }
+
+            {
+
                 if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
                 {
                     if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_Q) == GLFW_PRESS)
@@ -459,10 +480,33 @@ namespace VectorVertex
 
         if (m_ActiveScene->GetMainCamera() != nullptr && !loading_scene)
         {
+            cam_control.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameInfo.frame_time, m_ActiveScene->GetMainCamera()->GetComponent<TransformComponent>());
             m_OffScreen->BeginRender();
             m_ActiveScene->RenderScene(frameInfo);
+
             m_OffScreen->EndRender();
+
+            auto [mx, my] = ImGui::GetMousePos();
+            mx -= m_ViewportBounds[0].x;
+            my -= m_ViewportBounds[0].y;
+            glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
+            my = viewportSize.y - my;
+
+            int mouseX = (int)mx;
+            int mouseY = (int)my;
+            if (mouseX >= 0 && mouseY >= 0 && mouseX <= (int)viewportSize.x && mouseY <= (int)viewportSize.y)
+            {
+
+                void *intData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
+
+                int32_t intValue = *(int32_t *)intData; // Make sure to cast to int32_t for R32_SINT format
+
+                VV_CORE_INFO("Pixel integer value: {0}", intValue);
+
+                free(intData);
+            }
         }
+
         sceneImageView = m_OffScreen->GetFrameBufferImage();
     }
 
