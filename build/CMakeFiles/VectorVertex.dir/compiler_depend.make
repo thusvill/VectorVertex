@@ -11459,7 +11459,6 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: /home/bio
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Log.h \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/UUID.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/vvpch.hpp \
-  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_api_data.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_camera.hpp \
   /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_descriptors.hpp \
