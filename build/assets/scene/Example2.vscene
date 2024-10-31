@@ -15,10 +15,10 @@ Entities:
     TextureComponent:
       m_ID: 13962666851890101714
       m_Name: Ground
-      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png
+      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_grey2.png
     MeshComponent:
       m_ID: 1950351198923614989
-      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/quad.obj
+      path: /home/bios/CLionProjects/VectorVertex/3DEngine/build/Resources/Models/quad.obj
   - Entity: 2401656190155733396
     IDComponent:
       UUID: 2401656190155733396
@@ -112,7 +112,7 @@ Entities:
     TextureComponent:
       m_ID: 18188789077180358914
       m_Name: S15
-      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png
+      m_path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Textures/prototype_512x512_white.png
     MeshComponent:
       m_ID: 13473374103530659548
-      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/S15/source/S15_Nobonnet.obj
+      path: /home/bios/CLionProjects/VectorVertex/3DEngine/Resources/Models/S15/source/S15_Nobonnet.obj

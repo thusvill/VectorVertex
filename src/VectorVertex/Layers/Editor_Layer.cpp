@@ -258,7 +258,7 @@ namespace VectorVertex
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
             ImGui::Begin("Viewport");
 
-            camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
+            // camControl.isClickedOnViewport = ImGui::IsWindowHovered() && ImGui::IsMouseDown(1);
             // m_ActiveScene->GetVulkanRenderer()->OnImguiViewport();
 
             // Get the size of your ImGui window or set your desired size
@@ -381,10 +381,9 @@ namespace VectorVertex
         m_ActiveScene = CreateRef<Scene>("New Scene");
         m_SceneHierarchyPanel.SetContext(m_ActiveScene);
         m_ActiveScene->Init();
-        auto cam = m_ActiveScene->CreateEntity("Camera");
-        cam.AddComponent<CameraComponent>().mainCamera = true;
-        m_ActiveScene->SetMainCamera(&cam);
-        m_EditorCamera = m_ActiveScene->GetMainCamera();
+        auto new_Cam = m_ActiveScene->CreateEntity("Camera");
+        new_Cam.AddComponent<CameraComponent>().mainCamera = true;
+        m_ActiveScene->SetMainCamera(&new_Cam);
         is_viewport_resized = true;
 
         loading_scene = false;
@@ -460,10 +459,6 @@ namespace VectorVertex
 
         if (m_ActiveScene->GetMainCamera() != nullptr && !loading_scene)
         {
-            if (m_ActiveScene->GetMainCamera()->HasComponent<TransformComponent>())
-            {
-                camControl.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameInfo.frame_time, m_ActiveScene->GetMainCamera()->GetComponent<TransformComponent>());
-            }
             m_OffScreen->BeginRender();
             m_ActiveScene->RenderScene(frameInfo);
             m_OffScreen->EndRender();
