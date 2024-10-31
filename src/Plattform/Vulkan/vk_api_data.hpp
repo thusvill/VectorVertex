@@ -19,6 +19,8 @@ namespace VectorVertex
         std::vector<Scope<VKBuffer>> m_ubo_buffers;
         std::vector<VkDescriptorSet> m_global_descriptor_sets;
         Scope<VKDescriptorSetLayout> m_global_set_layout;
+        bool render_in_seperate_renderpass = false;
+        VkRenderPass *custom_renderpass = nullptr;
 
         static VulkanAPIData& Get()
         {
