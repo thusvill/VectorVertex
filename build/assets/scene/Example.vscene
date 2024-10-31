@@ -1,47 +1,47 @@
-Scene: New Scene
+Scene: _temp
 Entities:
-  - Entity: 16905145314334419439
+  - Entity: 450168802180213234
     IDComponent:
-      UUID: 16905145314334419439
-      Name: Light
+      UUID: 450168802180213234
+      Name: Light 2
     TransformComponent:
-      Position: [0.887516737, -0.0490366518, 8.89999962]
-      Rotation: [0, 0, 0]
+      Position: [1.17443204, -0.0453834832, 11.7319918]
+      Rotation: [0, 1.29999995, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
-      m_ID: 7081300727108045464
+      m_ID: 457504522379313927
       m_Name: ""
       color: [1, 1, 1, 1]
     PointLightComponent:
-      color: [1, 1, 1]
-      light_intensity: 13.3000002
-      radius: 12.1999998
-  - Entity: 6472194165241188383
+      color: [1, 0.186274529, 0.186274529]
+      light_intensity: 11.3999996
+      radius: 10
+  - Entity: 11061700249060719002
     IDComponent:
-      UUID: 6472194165241188383
-      Name: Cube
+      UUID: 11061700249060719002
+      Name: Ground
     TransformComponent:
-      Position: [0, 2.13690042, 11.5]
+      Position: [-0.0225048326, 3.38477373, 10.5273046]
       Rotation: [0, 0, 0]
-      Scale: [1, 1, 1]
+      Scale: [4.46000004, 4.46000004, 4.46000004]
     MaterialComponent:
-      m_ID: 1694554756596425866
+      m_ID: 6407804991736477060
       m_Name: ""
       color: [1, 1, 1, 1]
     TextureComponent:
-      m_ID: 1220162274608895642
+      m_ID: 6574741497852749623
       m_Name: default
-      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Textures/prototype_512x512_white.png
     MeshComponent:
-      m_ID: 583109983794870200
-      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj
+      m_ID: 8168231961076950667
+      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/quad.obj
   - Entity: 4840529970863896467
     IDComponent:
       UUID: 4840529970863896467
       Name: Camera
     TransformComponent:
-      Position: [0, 0, 0]
-      Rotation: [0, 0, 0]
+      Position: [8.94155884, -3.3179009, -0.252875149]
+      Rotation: [-0.413502663, 5.66759872, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
       m_ID: 2503402231705514636
@@ -58,3 +58,38 @@ Entities:
       orthoNear: 0
       orthoFar: 0
       mainCamera: true
+  - Entity: 6472194165241188383
+    IDComponent:
+      UUID: 6472194165241188383
+      Name: Cube
+    TransformComponent:
+      Position: [-0.0674887002, 2.11782455, 11.1167107]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 1694554756596425866
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 1220162274608895642
+      m_Name: default
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png
+    MeshComponent:
+      m_ID: 583109983794870200
+      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj
+  - Entity: 16905145314334419439
+    IDComponent:
+      UUID: 16905145314334419439
+      Name: Light
+    TransformComponent:
+      Position: [-1.00785506, -0.254749298, 9.59361553]
+      Rotation: [0, 0, 0]
+      Scale: [4.5, 5, 3.29999995]
+    MaterialComponent:
+      m_ID: 7081300727108045464
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0, 0.705882549, 1]
+      light_intensity: 10.8000002
+      radius: 15.8000002

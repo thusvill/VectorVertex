@@ -7,7 +7,6 @@
 namespace VectorVertex
 {
 
-
     void VulkanRenderSystem::CreatePipeline(const std::string vertex_shader, const std::string fragment_shader)
     {
 
@@ -15,10 +14,16 @@ namespace VectorVertex
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
         VKPipeline::enableAlphaBlending(pipelineConfig);
-        pipelineConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
+        if (VulkanAPIData::Get().render_in_seperate_renderpass)
+        {
+            pipelineConfig.renderPass = *VulkanAPIData::Get().custom_renderpass;
+        }
+        else
+        {
+            pipelineConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
+        }
         pipelineConfig.pipelineLayout = pipelineLayout;
         pipeline = std::make_unique<VKPipeline>(pipelineConfig, vertex_shader, fragment_shader);
     }
 
-    
 }

@@ -750,4 +750,5 @@ CMakeFiles/VectorVertex.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_render_system.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp \
  /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_shader.hpp \
- /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Core/Keyboard_inputs.hpp \
+ /home/bios/CLionProjects/VectorVertex/VectorVertex/src/Plattform/Vulkan/vk_api_data.hpp

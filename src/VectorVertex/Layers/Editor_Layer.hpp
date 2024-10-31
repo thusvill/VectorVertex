@@ -50,6 +50,8 @@ namespace VectorVertex
 
         KeyboardInputs camControl;
 
+        glm::vec2 m_ViewportBounds[2];
+
     private:
         float frameTime;
         bool loading_scene = false;
