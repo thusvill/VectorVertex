@@ -101,6 +101,7 @@ namespace VectorVertex
                 RenderCommand::EndRenderPass();
                 RenderCommand::EndFrame();
             }
+            editor_layer->AfterCommandBuffer();
 
             RenderCommand::WaitForDeviceIdl();
         }

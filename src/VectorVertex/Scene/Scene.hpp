@@ -34,13 +34,12 @@ namespace VectorVertex
         void SetMainCamera(Entity* camera){
             m_MainCamera = camera;
         }
-        Entity* GetMainCamera(){
-            return m_MainCamera;
-        }
-        Extent2D m_ViewportSize{800,800};
+        Entity *GetMainCamera();
+        Extent2D m_ViewportSize{800, 800};
 
     private:
         Entity *m_MainCamera;
+        void FindANewCamera();
 
     private:
         std::string m_Name;

@@ -136,8 +136,7 @@ namespace VectorVertex
 
         FrameInfo frameInfo{
             RenderCommand::GetRendererAPI()->GetCurrentFrameIndex(),
-            Application::Get().GetFrameTime(), RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer(),ubo
-        };
+            Application::Get().GetFrameTime(), RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer(), ubo};
 
         RenderCommand::UpdateObjects(m_Entities, m_MainCamera, frameInfo);
 
@@ -150,9 +149,28 @@ namespace VectorVertex
     void Scene::RenderScene(FrameInfo &frameInfo)
     {
 
-
         RenderCommand::DrawScene(m_Entities, frameInfo);
+    }
+    Entity *Scene::GetMainCamera()
+    {
+        if (!m_MainCamera->GetComponent<CameraComponent>().mainCamera)
+        {
+            m_MainCamera = nullptr;
+            FindANewCamera();
+        }
 
-
+        return m_MainCamera;
+    }
+    void Scene::FindANewCamera()
+    {
+        for (auto &kv : m_Entities)
+        {
+            auto &obj = kv.second;
+            if (obj.GetComponent<CameraComponent>().mainCamera)
+            {
+                m_MainCamera = &kv.second;
+                break;
+            }
+        }
     }
 }
