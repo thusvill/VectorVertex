@@ -501,15 +501,15 @@ namespace VectorVertex
             if (mouseX >= 0 && mouseY >= 0 && mouseX <= (int)viewportSize.x && mouseY <= (int)viewportSize.y)
             {
 
-                void *intData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
+                // void *intData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
 
-                int32_t intValue = *(int32_t *)intData; // Make sure to cast to int32_t for R32_SINT format
+                // int32_t intValue = *(int32_t *)intData; // Make sure to cast to int32_t for R32_SINT format
 
-                VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
+                // VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
 
-                VV_CORE_TRACE("Pixel integer value: {0}", intValue);
+                // VV_CORE_TRACE("Pixel integer value: {0}", intValue);
 
-                free(intData);
+                // free(intData);
             }
             sceneImageView = m_OffScreen->GetFrameBufferImage();
         }else{
