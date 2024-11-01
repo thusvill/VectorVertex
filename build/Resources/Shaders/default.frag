@@ -98,5 +98,5 @@ void main() {
     outColor = (vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light())*texture(material_texture, fragUV).rgba;
     //outColor = vec4(1.0, 0.0, 0.0, 1.0);
 
-    outID =20;
+    outID = 20;
 }

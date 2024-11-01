@@ -45,7 +45,7 @@ namespace VectorVertex
         // Transition from SHADER_READ_ONLY_OPTIMAL to COLOR_ATTACHMENT_OPTIMAL
         VkImageMemoryBarrier barrier{};
         barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
-        barrier.oldLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL; // Changed from SHADER_READ_ONLY_OPTIMAL
+        barrier.oldLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL; // Changed from SHADER_READ_ONLY_OPTIMAL
         barrier.newLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
         barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
         barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
@@ -172,30 +172,29 @@ namespace VectorVertex
     }
     void *VKFrameBuffer::ReadPixel(uint32_t attachment_index, uint32_t x, uint32_t y)
     {
+        VV_CORE_ASSERT(attachment_index < color_attachments.size());
+
         VkDevice device = VKDevice::Get().device();
         VkFormat format = getVKFormat(m_Specification.attachments[attachment_index]);
 
         // Determine pixel size based on format
-        VkDeviceSize pixel_size;
-        if (format == VK_FORMAT_R32_SINT)
-            pixel_size = sizeof(int32_t);
-        else if (format == VK_FORMAT_R8G8B8A8_UNORM)
-            pixel_size = 4 * sizeof(uint8_t);
-        else
-            pixel_size = 4; // Default
-        VkDeviceSize buffer_size = pixel_size;
+        VkDeviceSize pixelSize = (format == VK_FORMAT_R32_SINT) ? sizeof(int32_t) : sizeof(uint32_t);
+        VkDeviceSize bufferSize = pixelSize;
 
-        // Create staging buffer
+        // Create a staging buffer to hold the pixel data
         VkBuffer stagingBuffer;
         VkDeviceMemory stagingBufferMemory;
 
         VkBufferCreateInfo bufferInfo{};
         bufferInfo.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
-        bufferInfo.size = buffer_size;
-        bufferInfo.usage = VK_BUFFER_USAGE_TRANSFER_DST_BIT;
+        bufferInfo.size = bufferSize;
+        bufferInfo.usage = VK_BUFFER_USAGE_TRANSFER_DST_BIT; // Only for copying data
         bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
 
-        vkCreateBuffer(device, &bufferInfo, nullptr, &stagingBuffer);
+        if (vkCreateBuffer(device, &bufferInfo, nullptr, &stagingBuffer) != VK_SUCCESS)
+        {
+            throw std::runtime_error("failed to create staging buffer!");
+        }
 
         VkMemoryRequirements memRequirements;
         vkGetBufferMemoryRequirements(device, stagingBuffer, &memRequirements);
@@ -207,12 +206,14 @@ namespace VectorVertex
             memRequirements.memoryTypeBits,
             VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
 
-        vkAllocateMemory(device, &allocInfo, nullptr, &stagingBufferMemory);
+        if (vkAllocateMemory(device, &allocInfo, nullptr, &stagingBufferMemory) != VK_SUCCESS)
+        {
+            throw std::runtime_error("failed to allocate staging buffer memory!");
+        }
         vkBindBufferMemory(device, stagingBuffer, stagingBufferMemory, 0);
 
         VkCommandBuffer commandBuffer = VKDevice::Get().beginSingleTimeCommands();
 
-        // Transition to transfer src layout
         VkImageMemoryBarrier barrier{};
         barrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
         barrier.oldLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
@@ -237,7 +238,7 @@ namespace VectorVertex
             0, nullptr,
             1, &barrier);
 
-        // Copy image to buffer
+        // Copy the pixel from the image to the staging buffer
         VkBufferImageCopy region{};
         region.bufferOffset = 0;
         region.bufferRowLength = 0;
@@ -252,12 +253,12 @@ namespace VectorVertex
         vkCmdCopyImageToBuffer(
             commandBuffer,
             color_attachments[attachment_index].image,
-            VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL, // Changed layout
+            VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
             stagingBuffer,
             1,
             &region);
 
-        // Transition back to color attachment optimal
+        // Transition back to VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL
         barrier.oldLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL;
         barrier.newLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
         barrier.srcAccessMask = VK_ACCESS_TRANSFER_READ_BIT;
@@ -275,12 +276,19 @@ namespace VectorVertex
         VKDevice::Get().endSingleTimeCommands(commandBuffer);
 
         // Allocate memory for the result
-        void *result = malloc(buffer_size);
+        void *result = malloc(bufferSize);
 
         // Map memory and read data
         void *data;
-        vkMapMemory(device, stagingBufferMemory, 0, buffer_size, 0, &data);
-        memcpy(result, data, buffer_size);
+        vkMapMemory(device, stagingBufferMemory, 0, bufferSize, 0, &data);
+
+        {
+            int pixelData;
+            memcpy(&pixelData, data, bufferSize);
+
+            printf("Int value: %f\n", pixelData);
+        }
+        memcpy(result, data, bufferSize);
         vkUnmapMemory(device, stagingBufferMemory);
 
         // Cleanup
@@ -289,9 +297,9 @@ namespace VectorVertex
 
         return result;
     }
+
     void VKFrameBuffer::create_resources()
     {
-        
 
         if (m_Specification.seperate_renderpass)
         {
@@ -329,7 +337,7 @@ namespace VectorVertex
             imageInfo.tiling = VK_IMAGE_TILING_OPTIMAL;
             if (m_Specification.attachments[i] == FrameBufferFormat::R32S)
             {
-                imageInfo.usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT |
+                imageInfo.usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT |
                                   VK_IMAGE_USAGE_TRANSFER_SRC_BIT;
             }
             else
@@ -552,7 +560,7 @@ namespace VectorVertex
             attachments.push_back(depthAttachment);
         }
         std::vector<VkAttachmentReference> colorAttachmentRefs;
-        for (size_t i = 0; i < colorFormats.size(); ++i)
+        for (size_t i = 0; i < colorFormats.capacity(); ++i)
         {
             VkAttachmentReference colorRef{};
             colorRef.attachment = static_cast<uint32_t>(i);
@@ -606,9 +614,9 @@ namespace VectorVertex
 
         // TODO:make this set o framebuffer creation
         std::array<VkClearValue, 3> clearValues{};
-        clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}}; // Clear color attachment to black
-        clearValues[1].color = {{-1.f, -1.f, -1.f, -1.f}};
-        clearValues[2].depthStencil = {1.0f, 0}; // Clear depth attachment to max depth (1.0)
+        clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
+        // clearValues[1].color = {{0.0f, 0.0f, 0.0f, 0.0f}};
+        clearValues[2].depthStencil = {1.0f, 0};
 
         renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
         renderPassInfo.pClearValues = clearValues.data();

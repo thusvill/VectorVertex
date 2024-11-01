@@ -21,6 +21,7 @@ namespace VectorVertex
         virtual void OnUpdate() override;
         virtual void OnRender(FrameInfo &frameInfo) override;
         virtual void OnImGuiRender(FrameInfo &frameInfo) override;
+        void AfterCommandBuffer();
 
         ImTextureID sceneImageView;
         Extent2D Viewport_Extent{800, 800};
