@@ -5,6 +5,7 @@
 #include <vk_pipeline.hpp>
 #include <Material.hpp>
 #include <vk_frame_info.hpp>
+#include <FrameBuffer.hpp>
 
 namespace VectorVertex
 {
@@ -33,7 +34,7 @@ namespace VectorVertex
     protected:
         virtual void CreatePipelineLayout(std::vector<VkDescriptorSetLayout> des_set_layout) = 0;
         void CreatePipeline(const std::string vertex_shader, const std::string fragment_shader);
-        void CreatePipeline(VkRenderPass renderpass,const std::string vertex_shader, const std::string fragment_shader);
+        void CreatePipeline(FrameBuffer& framebuffer, const std::string vertex_shader, const std::string fragment_shader);
 
         Scope<VKPipeline> pipeline;
 

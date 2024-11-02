@@ -1,9 +1,11 @@
 #pragma once
 #include <FrameBuffer.hpp>
+#include <vk_renderer.hpp>
 #include <vulkan/vulkan.h>
 
 namespace VectorVertex
 {
+    VkFormat getVKFormat(FrameBufferFormat format);
     struct VKFrameBufferImageAttachment
     {
         VkImage image;
@@ -27,7 +29,11 @@ namespace VectorVertex
         {
             return this;
         }
-        virtual void* ReadPixel(uint32_t attachment_index, uint32_t x, uint32_t y) override;
+        virtual FrameBufferSpecification GetSpecification() override
+        {
+            return m_Specification;
+        }
+        virtual void *ReadPixel(uint32_t attachment_index, uint32_t x, uint32_t y) override;
         VkRenderPass &getRenderpass() { return m_Renderpass; }
 
     private:

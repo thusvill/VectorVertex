@@ -1,6 +1,5 @@
 #include "vk_framebuffer.hpp"
 #include <GraphicsContext.hpp>
-#include <vk_renderer.hpp>
 #include <vk_swap_chain.hpp>
 #include <imgui_impl_vulkan.h>
 #include <RenderCommand.hpp>
@@ -29,6 +28,7 @@ namespace VectorVertex
             break;
         }
     }
+
     VKFrameBuffer::VKFrameBuffer(FrameBufferSpecification &specification) : m_Specification(specification)
     {
         if (specification.size.height == 0 || specification.size.width == 0)
@@ -39,16 +39,16 @@ namespace VectorVertex
     }
 
     void VKFrameBuffer::Bind()
-{
-    BeginRenderpass();
-}
+    {
+        BeginRenderpass();
+    }
 
-void VKFrameBuffer::Unbind()
-{
-    EndRenderpass();
-}
+    void VKFrameBuffer::Unbind()
+    {
+        EndRenderpass();
+    }
 
-void VKFrameBuffer::BeginRender()
+    void VKFrameBuffer::BeginRender()
     {
         auto commandBuffer = reinterpret_cast<VkCommandBuffer>(RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer());
 
@@ -78,7 +78,7 @@ void VKFrameBuffer::BeginRender()
             1, &barrier);
 
         if (!m_Specification.seperate_renderpass)
-        
+
         {
             VkRenderPassBeginInfo renderPassInfo{};
             renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -384,7 +384,6 @@ void VKFrameBuffer::BeginRender()
             };
             color_attachments.push_back(attachment);
             framebufferAttachments.push_back(color_attachments[i].imageView);
-            
         }
 
         if (std::find(m_Specification.attachments.begin(), m_Specification.attachments.end(), FrameBufferFormat::Depth32) != m_Specification.attachments.end())

@@ -4,9 +4,9 @@
 #include <Entity.hpp>
 #include <RenderCommand.hpp>
 #include <GraphicsContext.hpp>
+#include <vk_framebuffer.hpp>
 namespace VectorVertex
 {
-
 
     void VulkanRenderSystem::CreatePipeline(const std::string vertex_shader, const std::string fragment_shader)
     {
@@ -20,15 +20,18 @@ namespace VectorVertex
         pipeline = std::make_unique<VKPipeline>(pipelineConfig, vertex_shader, fragment_shader);
     }
 
-    void VulkanRenderSystem::CreatePipeline(VkRenderPass renderpass, const std::string vertex_shader, const std::string fragment_shader)
+    void VulkanRenderSystem::CreatePipeline(FrameBuffer &framebuffer, const std::string vertex_shader, const std::string fragment_shader)
     {
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
         VKPipeline::enableAlphaBlending(pipelineConfig);
-        VKPipeline::addAttachment(pipelineConfig, VK_FORMAT_R32_SINT, false);
+        for (int i = 1; i < framebuffer.GetSpecification().attachments.size(); i++)
+        {
+            VKPipeline::addAttachment(pipelineConfig, getVKFormat(framebuffer.GetSpecification().attachments[i]), false);
+        }
 
-        pipelineConfig.renderPass = renderpass;
+        pipelineConfig.renderPass = reinterpret_cast<VKFrameBuffer *>(framebuffer.GetFrameBufferAPI())->getRenderpass();
         pipelineConfig.pipelineLayout = pipelineLayout;
         pipeline = std::make_unique<VKPipeline>(pipelineConfig, vertex_shader, fragment_shader);
         VV_CORE_INFO("Pipeline Created with custom renderpass");

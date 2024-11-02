@@ -143,9 +143,9 @@ namespace VectorVertex
         std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
         VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
         VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(framebuffer->GetFrameBufferAPI())->getRenderpass();
-        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, renderpass);
-        LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, renderpass);
-        VV_CORE_INFO("Renderer Dedicated to a FrameBuffer");
+        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, *framebuffer);
+        LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, *framebuffer);
+        VV_CORE_INFO("Renderer Attached to a FrameBuffer");
     }
 
     void VKRendererAPI::DrawMesh(Entity object, FrameInfo info)
