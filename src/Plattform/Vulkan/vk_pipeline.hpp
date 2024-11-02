@@ -18,7 +18,7 @@ namespace VectorVertex
         VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
         VkPipelineRasterizationStateCreateInfo rasterizationInfo;
         VkPipelineMultisampleStateCreateInfo multisampleInfo;
-        VkPipelineColorBlendAttachmentState colorBlendAttachment;
+        std::vector<VkPipelineColorBlendAttachmentState> colorBlendAttachments{1}; // Array for two attachments
         VkPipelineColorBlendStateCreateInfo colorBlendInfo;
         VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
         std::vector<VkDynamicState> dynamicStateEnables;
@@ -40,10 +40,13 @@ namespace VectorVertex
 
         static void defaultPipelineConfigInfo(PipelineConfigInfo &configInfo);
         static void enableAlphaBlending(PipelineConfigInfo &configInfo);
+        static void addAttachment(PipelineConfigInfo &configInfo, VkFormat format, bool blend = false);
+        static VkColorComponentFlags getColorFormat(VkFormat format);
 
     private:
         static std::vector<char> readFile(const std::string &file_path);
         void CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader);
         VkPipeline graphiscPipeline;
+        
     };
 } // namespace VectorVertex

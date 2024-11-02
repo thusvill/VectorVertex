@@ -167,6 +167,8 @@ namespace VectorVertex
                 m_ActiveScene->OnUpdate();
             }
         }
+
+        
     }
 
     void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
@@ -487,8 +489,7 @@ namespace VectorVertex
             m_OffScreen->Bind();
             m_ActiveScene->RenderScene(frameInfo);
 
-            
-
+            m_OffScreen->Unbind();
             {
                 auto [mx, my] = ImGui::GetMousePos();
                 mx -= m_ViewportBounds[0].x;
@@ -503,17 +504,18 @@ namespace VectorVertex
                 {
                     VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
 
-                    void *intData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
+                    int32_t *intData = reinterpret_cast<int32_t *>(m_OffScreen->ReadPixel(1, mouseX, mouseY));
 
-                    int32_t intValue = *(int32_t *)intData;
+                    int32_t intValue = *intData;
 
                     VV_CORE_TRACE("Pixel integer value: {0}", intValue);
 
                     free(intData);
                 }
             }
-            m_OffScreen->Unbind();
             m_OffScreen->EndRender();
+
+           
 
             sceneImageView = m_OffScreen->GetFrameBufferImage();
         }

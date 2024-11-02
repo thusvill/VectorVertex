@@ -309,19 +309,20 @@ void VKFrameBuffer::BeginRender()
         {
             CreateRenderpass();
         }
-
+        int color_attachments_size;
         if (std::find(m_Specification.attachments.begin(), m_Specification.attachments.end(), FrameBufferFormat::Depth32) != m_Specification.attachments.end())
         {
-            color_attachments.reserve(m_Specification.attachments.size() - 1);
+            color_attachments_size = m_Specification.attachments.size() - 1;
         }
         else
         {
-            color_attachments.reserve(m_Specification.attachments.size());
+            color_attachments_size = m_Specification.attachments.size();
         }
 
         std::vector<VkImageView> framebufferAttachments;
         framebufferAttachments.reserve(m_Specification.attachments.size());
-        for (int i = 0; i < color_attachments.capacity(); i++)
+        VV_CORE_TRACE("color attachments {0}", color_attachments_size);
+        for (int i = 0; i < color_attachments_size; i++)
         {
 
             if (m_Specification.attachments[i] == FrameBufferFormat::None || m_Specification.attachments[i] == FrameBufferFormat::Depth32)
@@ -383,6 +384,7 @@ void VKFrameBuffer::BeginRender()
             };
             color_attachments.push_back(attachment);
             framebufferAttachments.push_back(color_attachments[i].imageView);
+            
         }
 
         if (std::find(m_Specification.attachments.begin(), m_Specification.attachments.end(), FrameBufferFormat::Depth32) != m_Specification.attachments.end())
@@ -431,9 +433,11 @@ void VKFrameBuffer::BeginRender()
             vkCreateImageView(VKDevice::Get().device(), &depthViewInfo, nullptr, &depth_atachment.imageView);
 
             framebufferAttachments.push_back(depth_atachment.imageView);
+            VV_CORE_TRACE("framebuffer attachments {0}", framebufferAttachments.size());
         }
 
         // In create_resources, after creating the images:
+        for (int i = 0; i < color_attachments.size(); i++)
         {
             VkCommandBuffer commandBuffer = VKDevice::Get().beginSingleTimeCommands();
 
@@ -443,7 +447,7 @@ void VKFrameBuffer::BeginRender()
             barrier.newLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
             barrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
             barrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
-            barrier.image = color_attachments[m_Specification.render_image_index].image;
+            barrier.image = color_attachments[i].image;
             barrier.subresourceRange.aspectMask = VK_IMAGE_ASPECT_COLOR_BIT;
             barrier.subresourceRange.baseMipLevel = 0;
             barrier.subresourceRange.levelCount = 1;
@@ -463,7 +467,6 @@ void VKFrameBuffer::BeginRender()
 
             VKDevice::Get().endSingleTimeCommands(commandBuffer);
         }
-        
 
         VkFramebufferCreateInfo framebufferInfo{};
         framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -484,6 +487,8 @@ void VKFrameBuffer::BeginRender()
         framebufferInfo.width = m_Specification.size.width;
         framebufferInfo.height = m_Specification.size.height;
         framebufferInfo.layers = 1;
+
+        VV_CORE_TRACE("framebuffer attachments {0}", framebufferAttachments.size());
 
         vkCreateFramebuffer(VKDevice::Get().device(), &framebufferInfo, nullptr, &m_Framebuffer);
 
@@ -565,7 +570,7 @@ void VKFrameBuffer::BeginRender()
             attachments.push_back(depthAttachment);
         }
         std::vector<VkAttachmentReference> colorAttachmentRefs;
-        for (size_t i = 0; i < colorFormats.capacity(); ++i)
+        for (size_t i = 0; i < colorFormats.size(); ++i)
         {
             VkAttachmentReference colorRef{};
             colorRef.attachment = static_cast<uint32_t>(i);
@@ -621,7 +626,7 @@ void VKFrameBuffer::BeginRender()
         // TODO:make this set o framebuffer creation
         std::array<VkClearValue, 3> clearValues{};
         clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
-        clearValues[1].color.int32[0] = 123;
+        clearValues[1].color.int32[0] = 0;
         clearValues[2].depthStencil = {1.0f, 0};
 
         renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
