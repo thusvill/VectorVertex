@@ -395,8 +395,6 @@ namespace VectorVertex
         imgui_layer.End(frameInfo.command_buffer);
     }
 
-
-
     void EditorLayer::NewScene()
     {
         loading_scene = true;
@@ -484,41 +482,48 @@ namespace VectorVertex
         if (m_ActiveScene->GetMainCamera() != nullptr && !loading_scene)
         {
             cam_control.moveInPlaneXZ(Application::Get().GetNativeWindow(), frameInfo.frame_time, m_ActiveScene->GetMainCamera()->GetComponent<TransformComponent>());
+
             m_OffScreen->BeginRender();
+            m_OffScreen->Bind();
             m_ActiveScene->RenderScene(frameInfo);
 
+            
+
+            {
+                auto [mx, my] = ImGui::GetMousePos();
+                mx -= m_ViewportBounds[0].x;
+                my -= m_ViewportBounds[0].y;
+                glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
+                my = viewportSize.y - my;
+
+                int mouseX = (int)mx;
+                int mouseY = (int)my;
+
+                if (mouseX >= 0 && mouseY >= 0 && mouseX <= (int)viewportSize.x && mouseY <= (int)viewportSize.y)
+                {
+                    VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
+
+                    void *intData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
+
+                    int32_t intValue = *(int32_t *)intData;
+
+                    VV_CORE_TRACE("Pixel integer value: {0}", intValue);
+
+                    free(intData);
+                }
+            }
+            m_OffScreen->Unbind();
             m_OffScreen->EndRender();
 
-            auto [mx, my] = ImGui::GetMousePos();
-            mx -= m_ViewportBounds[0].x;
-            my -= m_ViewportBounds[0].y;
-            glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
-            my = viewportSize.y - my;
-
-            int mouseX = (int)mx;
-            int mouseY = (int)my;
-
-            if (mouseX >= 0 && mouseY >= 0 && mouseX <= (int)viewportSize.x && mouseY <= (int)viewportSize.y)
-            {
-
-                // void *intData = m_OffScreen->ReadPixel(1, mouseX, mouseY);
-
-                // int32_t intValue = *(int32_t *)intData; // Make sure to cast to int32_t for R32_SINT format
-
-                // VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
-
-                // VV_CORE_TRACE("Pixel integer value: {0}", intValue);
-
-                // free(intData);
-            }
             sceneImageView = m_OffScreen->GetFrameBufferImage();
-        }else{
+        }
+        else
+        {
             sceneImageView = nullptr;
         }
     }
     void EditorLayer::AfterCommandBuffer()
     {
-        
     }
 
     void EditorLayer::OnDetach()

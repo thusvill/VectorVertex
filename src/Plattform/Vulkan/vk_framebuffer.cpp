@@ -38,7 +38,17 @@ namespace VectorVertex
         create_resources();
     }
 
-    void VKFrameBuffer::BeginRender()
+    void VKFrameBuffer::Bind()
+{
+    BeginRenderpass();
+}
+
+void VKFrameBuffer::Unbind()
+{
+    EndRenderpass();
+}
+
+void VKFrameBuffer::BeginRender()
     {
         auto commandBuffer = reinterpret_cast<VkCommandBuffer>(RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer());
 
@@ -67,11 +77,8 @@ namespace VectorVertex
             0, nullptr,
             1, &barrier);
 
-        if (m_Specification.seperate_renderpass)
-        {
-            BeginRenderpass();
-        }
-        else
+        if (!m_Specification.seperate_renderpass)
+        
         {
             VkRenderPassBeginInfo renderPassInfo{};
             renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
@@ -105,8 +112,6 @@ namespace VectorVertex
     void VKFrameBuffer::EndRender()
     {
         auto commandBuffer = reinterpret_cast<VkCommandBuffer>(RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer());
-
-        vkCmdEndRenderPass(commandBuffer);
 
         // Transition from COLOR_ATTACHMENT_OPTIMAL to SHADER_READ_ONLY_OPTIMAL
         VkImageMemoryBarrier barrier{};
@@ -181,14 +186,13 @@ namespace VectorVertex
         VkDeviceSize pixelSize = (format == VK_FORMAT_R32_SINT) ? sizeof(int32_t) : sizeof(uint32_t);
         VkDeviceSize bufferSize = pixelSize;
 
-        // Create a staging buffer to hold the pixel data
         VkBuffer stagingBuffer;
         VkDeviceMemory stagingBufferMemory;
 
         VkBufferCreateInfo bufferInfo{};
         bufferInfo.sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
         bufferInfo.size = bufferSize;
-        bufferInfo.usage = VK_BUFFER_USAGE_TRANSFER_DST_BIT; // Only for copying data
+        bufferInfo.usage = VK_BUFFER_USAGE_TRANSFER_DST_BIT;
         bufferInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
 
         if (vkCreateBuffer(device, &bufferInfo, nullptr, &stagingBuffer) != VK_SUCCESS)
@@ -284,9 +288,9 @@ namespace VectorVertex
 
         {
             int pixelData;
-            memcpy(&pixelData, data, bufferSize);
+            memcpy(&pixelData, data, sizeof(int32_t));
 
-            printf("Int value: %f\n", pixelData);
+            printf("Int value: %d\n", pixelData);
         }
         memcpy(result, data, bufferSize);
         vkUnmapMemory(device, stagingBufferMemory);
@@ -459,6 +463,7 @@ namespace VectorVertex
 
             VKDevice::Get().endSingleTimeCommands(commandBuffer);
         }
+        
 
         VkFramebufferCreateInfo framebufferInfo{};
         framebufferInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
@@ -567,6 +572,7 @@ namespace VectorVertex
             colorRef.layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL;
             colorAttachmentRefs.push_back(colorRef);
         }
+        VV_CORE_INFO("Created {} color attachments.", colorAttachmentRefs.size());
 
         VkAttachmentReference depthAttachmentRef{};
         depthAttachmentRef.attachment = static_cast<uint32_t>(colorFormats.size());
@@ -615,7 +621,7 @@ namespace VectorVertex
         // TODO:make this set o framebuffer creation
         std::array<VkClearValue, 3> clearValues{};
         clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
-        // clearValues[1].color = {{0.0f, 0.0f, 0.0f, 0.0f}};
+        clearValues[1].color.int32[0] = 123;
         clearValues[2].depthStencil = {1.0f, 0};
 
         renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
