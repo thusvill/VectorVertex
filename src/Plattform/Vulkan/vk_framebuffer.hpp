@@ -15,6 +15,9 @@ namespace VectorVertex
     public:
         VKFrameBuffer(FrameBufferSpecification &specification);
         ~VKFrameBuffer() = default;
+
+        virtual void Bind() override;
+        virtual void Unbind() override;
         virtual void BeginRender() override;
         virtual void EndRender() override;
         virtual void Resize(Extent2D size) override;

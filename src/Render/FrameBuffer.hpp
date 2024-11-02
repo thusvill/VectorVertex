@@ -20,6 +20,8 @@ namespace VectorVertex
 
     class FrameBuffer{
         public:
+        virtual void Bind()=0;
+        virtual void Unbind()=0;
         virtual void BeginRender()=0;
         virtual void EndRender()=0;
         virtual void Resize(Extent2D size)=0;
