@@ -12,10 +12,10 @@ namespace VectorVertex
         CreatePipeline("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
 
-VulkanLightRenderer::VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts, VkRenderPass renderpass)
+VulkanLightRenderer::VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts, FrameBuffer &framebuffer)
 {
     CreatePipelineLayout(layouts);
-    CreatePipeline(renderpass,"/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
+    CreatePipeline(framebuffer,"/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
 }
 
     VulkanLightRenderer::VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts, std::string vertex_shader, std::string fragment_shader)

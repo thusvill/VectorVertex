@@ -4,6 +4,7 @@
 #include <GraphicsContext.hpp>
 #include <Log.h>
 #include <Entity.hpp>
+#include <FrameBuffer.hpp>
 
 namespace VectorVertex
 {
@@ -12,10 +13,10 @@ namespace VectorVertex
         CreatePipelineLayout(layouts);
         CreatePipeline("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
-    VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, VkRenderPass renderpass)
+    VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, FrameBuffer &framebuffer)
     {
         CreatePipelineLayout(layouts);
-        CreatePipeline(renderpass, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
+        CreatePipeline(framebuffer, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
     }
     VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, std::string vertex_shader, std::string fragment_shader)
     {
