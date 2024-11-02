@@ -26,8 +26,11 @@ namespace VectorVertex
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
         VKPipeline::enableAlphaBlending(pipelineConfig);
+        VKPipeline::addAttachment(pipelineConfig, VK_FORMAT_R32_SINT, false);
+
         pipelineConfig.renderPass = renderpass;
         pipelineConfig.pipelineLayout = pipelineLayout;
         pipeline = std::make_unique<VKPipeline>(pipelineConfig, vertex_shader, fragment_shader);
+        VV_CORE_INFO("Pipeline Created with custom renderpass");
     }
 }
