@@ -266,8 +266,6 @@ namespace VectorVertex
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
             ImGui::Begin("Viewport");
-
-            
             auto viewportOffset = ImGui::GetCursorPos();
 
             ImVec2 windowSize = ImGui::GetContentRegionAvail();
@@ -285,12 +283,12 @@ namespace VectorVertex
             }
 
             ImGui::Image(sceneImageView, windowSize);
-
-            auto bwindowSize = ImGui::GetWindowSize();
+            // auto bwindowSize = ImGui::GetWindowSize();
+            auto bwindowSize = windowSize;
 
             ImVec2 minBound = ImGui::GetWindowPos();
-            // minBound.x += viewportOffset.x;
-            // minBound.y += viewportOffset.y;
+            minBound.x += viewportOffset.x;
+            minBound.y += viewportOffset.y;
 
             ImVec2 maxBound = {minBound.x + bwindowSize.x, minBound.y + bwindowSize.y};
             m_ViewportBounds[0] = {minBound.x, minBound.y};
@@ -491,18 +489,18 @@ namespace VectorVertex
 
             m_OffScreen->Unbind();
             {
+
                 auto [mx, my] = ImGui::GetMousePos();
                 mx -= m_ViewportBounds[0].x;
                 my -= m_ViewportBounds[0].y;
                 glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
-                my = viewportSize.y - my;
+                // my = viewportSize.y - my;
 
                 int mouseX = (int)mx;
                 int mouseY = (int)my;
 
                 if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
                 {
-                    VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
 
                     int32_t *intData = reinterpret_cast<int32_t *>(m_OffScreen->ReadPixel(1, mouseX, mouseY));
 
