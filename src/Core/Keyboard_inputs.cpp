@@ -24,6 +24,7 @@ namespace VectorVertex
 
         if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS && isClickedOnViewport)
         {
+            is_moving = true;
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
             // Get mouse delta movement
@@ -49,6 +50,7 @@ namespace VectorVertex
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
             isClickedOnViewport = false;
+            is_moving = false;
         }
 
         if (glm::dot(rotate, rotate) > std::numeric_limits<float>::epsilon())

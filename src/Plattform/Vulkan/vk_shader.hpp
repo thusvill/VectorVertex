@@ -1,7 +1,5 @@
 #pragma once
 #include <vulkan/vulkan.h>
-#include <vvpch.hpp>
-
 
 namespace VectorVertex
 {
@@ -9,7 +7,8 @@ namespace VectorVertex
     {
     public:
         VKShader() = default;
-        VKShader(const std::string &filepath, VkShaderStageFlagBits stage) :shaderStage(stage)
+
+        VKShader(const std::string &filepath, VkShaderStageFlagBits stage) : shaderStage(stage)
         {
             auto shaderCode = readFile(filepath);
             createShaderModule(shaderCode);

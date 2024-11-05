@@ -29,15 +29,12 @@ namespace VectorVertex
         bool is_viewport_resized = false;
         Ref<Scene> GetActiveScene() { return m_ActiveScene; }
 
-
-    
     public:
-    void NewScene();
-    void SaveScene();
-    void OpenScene(std::string path);
-    void SaveSceneAs(std::string path);
+        void NewScene();
+        void SaveScene();
+        void OpenScene(std::string path);
+        void SaveSceneAs(std::string path);
 
-    
     private:
         Imgui_Layer imgui_layer;
         ImVec2 prev_size;
@@ -53,6 +50,11 @@ namespace VectorVertex
         float frameTime;
         bool loading_scene = false;
         ProjectInfo m_Info;
-        int m_GuizmoType=-1;
+
+        Entity m_HoveredEntity;
+        int m_GuizmoType = -1;
+        bool m_ViewportHovered = false;
+        bool m_ViewportFocused = false;
+        bool m_CameraMoving = false;
     };
 }

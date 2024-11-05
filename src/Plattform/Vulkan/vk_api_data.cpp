@@ -10,7 +10,7 @@ namespace VectorVertex
         s_Instance = this;
     }
 
-    void VulkanAPIData::Init()
+    bool VulkanAPIData::Init()
     {
         VVTextureLibrary::UpdateDescriptors();
         m_global_pool = VKDescriptorPool::Builder(VKDevice::Get())
@@ -45,5 +45,6 @@ namespace VectorVertex
                 .build(m_global_descriptor_sets[i]);
         }
         VV_CORE_INFO("Vulkan API Data Initialized!");
+        return true;
     }
 } // namespace VectorVertex

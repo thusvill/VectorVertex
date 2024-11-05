@@ -14,7 +14,8 @@ namespace VectorVertex
     public:
         VulkanAPIData();
         ~VulkanAPIData() = default;
-        void Init();
+        bool Init();
+        void Clear();
         Scope<VKDescriptorPool> m_global_pool;
         std::vector<Scope<VKBuffer>> m_ubo_buffers;
         std::vector<VkDescriptorSet> m_global_descriptor_sets;

@@ -137,6 +137,7 @@ namespace VectorVertex
 
     void EditorLayer::OnUpdate()
     {
+        m_CameraMoving = cam_control.isMoving();
 
         RunDeferredActions();
         m_ActiveScene->DeletePendingEntities();
@@ -167,6 +168,103 @@ namespace VectorVertex
                 m_ActiveScene->OnUpdate();
             }
         }
+    }
+
+    void EditorLayer::OnEvent(Event &e)
+    {
+        EventDispatcher dispatcher(e);
+        dispatcher.Dispatch<KeyPressedEvent>(VV_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
+        dispatcher.Dispatch<MouseButtonPressedEvent>(VV_BIND_EVENT_FN(EditorLayer::OnMouseButtonPressed));
+    }
+    bool EditorLayer::OnKeyPressed(KeyPressedEvent &e)
+    {
+        if (e.IsRepeat())
+            return false;
+
+        bool control = Input::IsKeyPressed(Key::LeftControl) || Input::IsKeyPressed(Key::RightControl);
+        bool shift = Input::IsKeyPressed(Key::LeftShift) || Input::IsKeyPressed(Key::RightShift);
+        switch (e.GetKeyCode())
+        {
+        case Key::N:
+            if (control)
+            {
+                NewScene();
+            }
+            break;
+        case Key::O:
+            if (control)
+            {
+                OpenScene();
+            }
+            break;
+        case Key::S:
+        {
+            if (control)
+            {
+                if (shift)
+                    SaveSceneAs();
+                else
+                    SaveScene();
+            }
+
+            break;
+        }
+
+        case Key::Q:
+        {
+            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+                m_GuizmoType = -1;
+            break;
+        }
+        case Key::W:
+        {
+            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+                m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
+            break;
+        }
+        case Key::E:
+        {
+            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+                m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+            break;
+        }
+        case Key::R:
+        {
+            if (control)
+            {
+                OpenScene(m_Info.path);
+            }
+
+            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+                m_GuizmoType = ImGuizmo::OPERATION::SCALE;
+
+            break;
+        }
+        case Key::Delete:
+        {
+
+            if (m_SceneHierarchyPanel.getSelectedEntity())
+            {
+                m_SceneHierarchyPanel.setSelectedEntity({});
+                m_ActiveScene->DestroyEntity(m_SceneHierarchyPanel.getSelectedEntity());
+            }
+
+            break;
+        }
+        }
+        return false;
+    }
+
+    bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent &e)
+    {
+        if (e.GetMouseButton() == Mouse::ButtonLeft && !ImGuizmo::IsOver())
+        {
+            if (m_ViewportHovered && m_HoveredEntity)
+            {
+                m_SceneHierarchyPanel.setSelectedEntity(m_HoveredEntity);
+            }
+        }
+        return false;
     }
 
     void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
@@ -267,7 +365,6 @@ namespace VectorVertex
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
             ImGui::Begin("Viewport");
 
-            
             auto viewportOffset = ImGui::GetCursorPos();
 
             ImVec2 windowSize = ImGui::GetContentRegionAvail();
@@ -297,8 +394,8 @@ namespace VectorVertex
             m_ViewportBounds[1] = {maxBound.x, maxBound.y};
 
             {
-
-                cam_control.isClickedOnViewport = glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT);
+                if (m_ViewportHovered)
+                    cam_control.isClickedOnViewport = glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT);
             }
 
             {
@@ -435,6 +532,7 @@ namespace VectorVertex
         if (!path.empty())
         {
             loading_scene = true;
+            // ClearSceneResources();
             m_SceneHierarchyPanel.ResetSelectedEntity();
             VVTextureLibrary::ClearLibrary();
             m_ActiveScene = CreateRef<Scene>("_temp");
