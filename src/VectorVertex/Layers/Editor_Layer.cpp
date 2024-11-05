@@ -285,8 +285,8 @@ namespace VectorVertex
             }
 
             ImGui::Image(sceneImageView, windowSize);
-            // auto bwindowSize = ImGui::GetWindowSize();
-            auto bwindowSize = windowSize;
+
+            auto bwindowSize = ImGui::GetWindowSize();
 
             ImVec2 minBound = ImGui::GetWindowPos();
             // minBound.x += viewportOffset.x;
