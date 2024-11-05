@@ -1,36 +1,39 @@
-#pragma once
-#include <vulkan/vulkan.h>
-<<<<<<< HEAD
 #include <vk_pipeline.hpp>
 #include <Shader.hpp>
-    == == ==
-    =
 #include <vvpch.hpp>
 
-        >>>>>>> parent of 4b0a992(befor change shaders)
-
-                    namespace VectorVertex
+namespace VectorVertex
 {
     class VKShader
     {
     public:
-        VKShader(const std::filesystem::path &filepath);
+        VKShader() = default;
+        VKShader(const std::string &filepath);
+        VKShader(const std::string &filepath, VkShaderStageFlagBits stage) : shaderStage(stage)
+        {
+            auto shaderCode = readFile(filepath);
+            createShaderModule(shaderCode);
+        }
+        ~VKShader()
+        {
+            if (shaderModule != VK_NULL_HANDLE)
+            {
+                vkDestroyShaderModule(VKDevice::Get().device(), shaderModule, nullptr);
+            }
+        }
 
-        virtual void AttachToFramebuffer(FrameBuffer *framebuffer) override;
-        virtual const std::string &GetName() const override { return m_Name; }
+        VkPipelineShaderStageCreateInfo getShaderStageInfo() const
+        {
+            VkPipelineShaderStageCreateInfo shaderStageInfo{};
+            shaderStageInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+            shaderStageInfo.stage = shaderStage;
+            shaderStageInfo.module = shaderModule;
 
-        virtual ~VKShader();
-        virtual void Bind() override;
-        virtual void Unbind() override;
-        virtual void SetInt(const std::string &name, int value) override;
-        virtual void SetIntArray(const std::string &name, int *values, uint32_t count) override;
-        virtual void SetFloat(const std::string &name, float value) override;
-        virtual void SetFloat2(const std::string &name, const glm::vec2 &value) override;
-        virtual void SetFloat3(const std::string &name, const glm::vec3 &value) override;
-        virtual void SetFloat4(const std::string &name, const glm::vec4 &value) override;
-        virtual void SetMat4(const std::string &name, const glm::mat4 &value) override;
+            shaderStageInfo.pName = (shaderStage == VK_SHADER_STAGE_VERTEX_BIT) ? "vertex" : "fragment";
 
-        std::unordered_map<VkShaderStageFlagBits, VkShaderModule> &GetModules() { return m_ShaderModules; }
+            return shaderStageInfo;
+        }
+        VkShaderModule getModule() const { return shaderModule; }
 
     private:
         std::filesystem::path m_FilePath;
