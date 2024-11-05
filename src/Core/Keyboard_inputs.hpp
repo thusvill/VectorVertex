@@ -1,7 +1,9 @@
 #pragma once
+#include <vvpch.hpp>
 #include "vk_window.hpp"
 
 #include <Components.hpp>
+
 namespace VectorVertex
 {
     class KeyboardInputs
@@ -22,12 +24,14 @@ namespace VectorVertex
         };
 
         void moveInPlaneXZ(GLFWwindow *window, float dt, TransformComponent &transform);
+        bool isMoving() {return is_moving;}
 
         KeyMappings keys{};
         float originalSpeed{3.5f};
         float speed_multiplier{3.5f};
         float moveSpeed;
         float lookSpeed{1.f};
+        bool is_moving = false;
         bool isClickedOnViewport = false;
     };
 } // namespace VectorVertex
