@@ -61,9 +61,6 @@ namespace VectorVertex
         {
             return s_RendererAPI;
         }
-        static void ClearResources(){
-            s_RendererAPI->ClearResources();
-        }
 
     private:
         static Scope<RendererAPI> s_RendererAPI;

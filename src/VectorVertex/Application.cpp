@@ -35,7 +35,7 @@ namespace VectorVertex
 
         editor_layer = new EditorLayer(info);
 
-        m_LayerStack.PushLayer(editor_layer);
+        layers.PushLayer(editor_layer);
         editor_layer->SetupImgui();
         VV_CORE_WARN("Initialized!");
     }
@@ -45,12 +45,7 @@ namespace VectorVertex
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
         dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
 
-        for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
-        {
-            if (e.Handled)
-                break;
-            (*it)->OnEvent(e);
-        }
+        //        VV_CORE_TRACE("{0}", e.ToString());
     }
 
     bool Application::OnWindowClose(WindowCloseEvent &e)
@@ -78,7 +73,7 @@ namespace VectorVertex
         // while (m_Running && !m_Window->shouldClose())
         while (m_Running)
         {
-            // m_LayerStack.UpdateAll();
+            // layers.UpdateAll();
 
             auto newTime = std::chrono::high_resolution_clock::now();
             frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
@@ -93,10 +88,10 @@ namespace VectorVertex
                 FrameInfo info{
                     RenderCommand::GetRendererAPI()->GetCurrentFrameIndex(),
                     Application::Get().GetFrameTime(),
-                    RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer(), temp_ubo};
+                    RenderCommand::GetRendererAPI()->GetCurrentCommandBuffer(),temp_ubo
+                };
 
                 editor_layer->OnUpdate();
-
                 editor_layer->OnRender(info);
 
                 RenderCommand::BeginRenderPass();

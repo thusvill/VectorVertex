@@ -8,9 +8,13 @@ layout(location = 1) in vec3 fragPosWorld;
 layout(location = 2) in vec3 fragNormalWorld;
 layout(location = 3) in vec2 fragUV;
 <<<<<<< HEAD
+<<<<<<< HEAD
 layout(location = 4) in flat int fragEnttID;
 =======
 >>>>>>> parent of 3768ff7 (Fixed ViewportBounds)
+=======
+
+>>>>>>> parent of 4b0a992 (befor change shaders)
 
 struct PointLight {
     vec4 position;
@@ -102,5 +106,5 @@ void main() {
     outColor = (vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light())*texture(material_texture, fragUV).rgba;
     //outColor = vec4(1.0, 0.0, 0.0, 1.0);
 
-    outID = fragEnttID;
+    outID = 50;
 }

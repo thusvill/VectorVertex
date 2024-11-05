@@ -69,7 +69,7 @@ namespace VectorVertex
 
         EditorLayer *editor_layer;
 
-        LayerStack m_LayerStack{};
+        LayerStack layers{};
 
         Scope<Window> m_Window;
     };

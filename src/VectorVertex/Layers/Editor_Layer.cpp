@@ -10,13 +10,13 @@ namespace VectorVertex
 {
     EditorLayer::EditorLayer(ProjectInfo _info) : m_Info(_info), Layer("EditorLayer")
     {
-        VV_INFO("[Layer]:EditorLayer Created!");
+        VV_CORE_INFO("[Layer]:EditorLayer Created!");
     }
 
     void EditorLayer::SetupImgui()
     {
         VkInstance instance = VKDevice::Get().getInstance();
-        VV_ASSERT(instance, "Vulkan Instance should not be null!");
+        VV_CORE_ASSERT(instance, "Vulkan Instance should not be null!");
 
         ImguiConfig imguiConfig;
         imguiConfig.instance = instance; // Assign Vulkan instance handle
@@ -169,98 +169,6 @@ namespace VectorVertex
         }
     }
 
-    void EditorLayer::OnEvent(Event &e)
-    {
-        EventDispatcher dispatcher(e);
-        dispatcher.Dispatch<KeyPressedEvent>(VV_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
-        dispatcher.Dispatch<MouseButtonPressedEvent>(VV_BIND_EVENT_FN(EditorLayer::OnMouseButtonPressed));
-    }
-    bool EditorLayer::OnKeyPressed(KeyPressedEvent &e)
-    {
-        if (e.IsRepeat())
-            return false;
-
-        bool control = Input::IsKeyPressed(Key::LeftControl) || Input::IsKeyPressed(Key::RightControl);
-        bool shift = Input::IsKeyPressed(Key::LeftShift) || Input::IsKeyPressed(Key::RightShift);
-        switch (e.GetKeyCode())
-        {
-        case Key::N:
-            if (control)
-            {
-                NewScene();
-            }
-            break;
-        case Key::O:
-            if (control)
-            {
-                OpenScene();
-            }
-            break;
-        case Key::S:
-        {
-            if (control)
-            {
-                if (shift)
-                    SaveSceneAs();
-                else
-                    SaveScene();
-            }
-
-            break;
-        }
-        case Key::Q:
-        {
-            if (!ImGuizmo::IsUsing())
-                m_GuizmoType = -1;
-            break;
-        }
-        case Key::W:
-        {
-            if (!ImGuizmo::IsUsing())
-                m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
-            break;
-        }
-        case Key::E:
-        {
-            if (!ImGuizmo::IsUsing())
-                m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
-            break;
-        }
-        case Key::R:
-        {
-
-            if (!ImGuizmo::IsUsing())
-                m_GuizmoType = ImGuizmo::OPERATION::SCALE;
-
-            break;
-        }
-        case Key::Delete:
-        {
-            
-            
-                
-                if (m_SceneHierarchyPanel.getSelectedEntity())
-                {
-                    m_SceneHierarchyPanel.setSelectedEntity({});
-                    m_ActiveScene->DestroyEntity(m_SceneHierarchyPanel.getSelectedEntity());
-                }
-            
-            break;
-        }
-        }
-        return false;
-    }
-
-    bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent &e)
-    {
-        if(e.GetMouseButton() == Mouse::ButtonLeft && !ImGuizmo::IsOver()){
-            if(m_ViewportHovered && m_HoveredEntity){
-                m_SceneHierarchyPanel.setSelectedEntity(m_HoveredEntity);
-            }
-        }
-        return false;
-    }
-
     void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)
     {
         imgui_layer.Begin();
@@ -379,8 +287,11 @@ namespace VectorVertex
             ImGui::Image(sceneImageView, windowSize);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             m_ViewportHovered = ImGui::IsWindowHovered();
             m_ViewportFocused = ImGui::IsWindowFocused();
+=======
+>>>>>>> parent of 4b0a992 (befor change shaders)
             // auto bwindowSize = ImGui::GetWindowSize();
             auto bwindowSize = windowSize;
 =======
@@ -401,11 +312,31 @@ namespace VectorVertex
             m_ViewportBounds[1] = {maxBound.x, maxBound.y};
 
             {
-                if (m_ViewportHovered)
-                    cam_control.isClickedOnViewport = glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT);
+
+                cam_control.isClickedOnViewport = glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT);
             }
 
             {
+
+                if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
+                {
+                    if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_Q) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
+                    }
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_W) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
+                    }
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_E) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = ImGuizmo::OPERATION::SCALE;
+                    }
+                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+                    {
+                        m_GuizmoType = -1;
+                    }
+                }
 
                 Entity selected_entity = m_SceneHierarchyPanel.getSelectedEntity();
                 if (selected_entity && m_GuizmoType != -1)
@@ -484,7 +415,6 @@ namespace VectorVertex
     void EditorLayer::NewScene()
     {
         loading_scene = true;
-        ClearSceneResources();
         m_SceneHierarchyPanel.ResetSelectedEntity();
         VVTextureLibrary::ClearLibrary();
         m_ActiveScene = CreateRef<Scene>("New Scene");
@@ -494,7 +424,6 @@ namespace VectorVertex
         new_Cam.AddComponent<CameraComponent>().mainCamera = true;
         m_ActiveScene->SetMainCamera(&new_Cam);
         is_viewport_resized = true;
-        m_Info.path = "";
 
         loading_scene = false;
     }
@@ -505,7 +434,6 @@ namespace VectorVertex
         {
             SceneSerializer serializer(m_ActiveScene);
             serializer.Serialize(m_Info.path);
-            VV_INFO("Scene {0} Saved at {1}", m_ActiveScene->GetSceneName(), m_Info.path);
         }
         else
         {
@@ -522,7 +450,6 @@ namespace VectorVertex
         if (!path.empty())
         {
             loading_scene = true;
-            ClearSceneResources();
             m_SceneHierarchyPanel.ResetSelectedEntity();
             VVTextureLibrary::ClearLibrary();
             m_ActiveScene = CreateRef<Scene>("_temp");
@@ -566,11 +493,6 @@ namespace VectorVertex
         }
     }
 
-    void EditorLayer::ClearSceneResources()
-    {
-        RenderCommand::ClearResources();
-    }
-
     void EditorLayer::OnRender(FrameInfo &frameInfo)
     {
 
@@ -597,8 +519,13 @@ namespace VectorVertex
                 {
                     VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
 
-                    int pixelData = *(int*)m_OffScreen->ReadPixel(1, mouseX, mouseY);
-                    m_HoveredEntity = pixelData == -1 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
+                    int32_t *intData = reinterpret_cast<int32_t *>(m_OffScreen->ReadPixel(1, mouseX, mouseY));
+
+                    int32_t intValue = *intData;
+
+                    VV_CORE_TRACE("Pixel integer value: {0}", intValue);
+
+                    free(intData);
                 }
             }
             m_OffScreen->EndRender();
