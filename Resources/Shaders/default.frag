@@ -9,7 +9,6 @@ layout(location = 2) in vec3 fragNormalWorld;
 layout(location = 3) in vec2 fragUV;
 layout(location = 4) in flat int fragEnttID;
 
-
 struct PointLight {
     vec4 position;
     vec4 color;
