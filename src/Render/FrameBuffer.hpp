@@ -12,11 +12,13 @@ namespace VectorVertex
         Depth32,
         R32S
     };
+
+    
     struct FrameBufferSpecification
     {
         Extent2D size;
         std::vector<FrameBufferFormat> attachments;
-        int render_image_index = 0;
+         int render_image_index = 0;
         bool seperate_renderpass = true;
     };
 

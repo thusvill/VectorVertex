@@ -25,6 +25,9 @@ namespace VectorVertex
         void ResetSelectedEntity(){
             m_SelectedEntity = {};
         }
+        void setSelectedEntity(Entity entity){
+            m_SelectedEntity = entity;
+        }
         Entity getSelectedEntity(){
             return m_SelectedEntity;
         }

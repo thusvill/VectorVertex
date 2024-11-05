@@ -285,13 +285,6 @@ namespace VectorVertex
         // Map memory and read data
         void *data;
         vkMapMemory(device, stagingBufferMemory, 0, bufferSize, 0, &data);
-
-        {
-            int pixelData;
-            memcpy(&pixelData, data, sizeof(int32_t));
-
-            printf("Int value: %d\n", pixelData);
-        }
         memcpy(result, data, bufferSize);
         vkUnmapMemory(device, stagingBufferMemory);
 
@@ -623,10 +616,12 @@ namespace VectorVertex
         renderPassInfo.renderArea.extent = m_Specification.size;
 
         // TODO:make this set o framebuffer creation
-        std::array<VkClearValue, 3> clearValues{};
-        clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
-        clearValues[1].color.int32[0] = 0;
-        clearValues[2].depthStencil = {1.0f, 0};
+        std::vector<VkClearValue> clearValues{3};
+         clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
+         clearValues[1].color.int32[0] = -1;
+         clearValues[2].depthStencil = {1.0f, 0};
+        
+        
 
         renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
         renderPassInfo.pClearValues = clearValues.data();

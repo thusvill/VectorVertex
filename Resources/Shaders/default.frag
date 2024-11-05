@@ -7,6 +7,7 @@ layout(location = 0) in vec3 fragColor;
 layout(location = 1) in vec3 fragPosWorld;
 layout(location = 2) in vec3 fragNormalWorld;
 layout(location = 3) in vec2 fragUV;
+layout(location = 4) in flat int fragEnttID;
 
 
 struct PointLight {
@@ -99,5 +100,5 @@ void main() {
     outColor = (vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light())*texture(material_texture, fragUV).rgba;
     //outColor = vec4(1.0, 0.0, 0.0, 1.0);
 
-    outID = 50;
+    outID = fragEnttID;
 }
