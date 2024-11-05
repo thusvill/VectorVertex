@@ -85,8 +85,7 @@ namespace VectorVertex
                                                 pipelineLayout, 1, 1, &data.m_descriptorSet, 0, nullptr);
                     }
                 }
-                
-                obj.GetComponent<MeshComponent>().m_Model->BindWithEntityID(info.command_buffer, (int)obj.GetEntt());
+                obj.GetComponent<MeshComponent>().m_Model->Bind(info.command_buffer);
                 obj.GetComponent<MeshComponent>().m_Model->Draw(info.command_buffer);
             }
         }

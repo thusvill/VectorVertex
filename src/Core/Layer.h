@@ -20,8 +20,7 @@ namespace VectorVertex {
         virtual void OnUpdate(){}
         virtual void OnRender(FrameInfo &frameInfo) {}
         virtual void OnImGuiRender(FrameInfo &frameInfo) {}
-        virtual void OnEvent(Event &e){}
-        const std::string &GetName() const { return m_DebugName; }
+        const std::string& GetName() const {return m_DebugName;}
 
     private:
         std::string m_DebugName;

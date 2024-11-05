@@ -21,9 +21,14 @@ namespace VectorVertex
         recreateSwapChain();
         CreateCommandBuffers();
 
+        VKData.Init();
         MaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
-        recreateRenderers();
+        std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+        VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
+        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
+        LightRenderSystem = CreateRef<VulkanLightRenderer>(layout);
+
         // LightRenderSystem = CreateRef<VulkanRenderSystem>(layout, sizeof(PointLightPushConstantData), "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
 
@@ -140,7 +145,6 @@ namespace VectorVertex
         VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(framebuffer->GetFrameBufferAPI())->getRenderpass();
         MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, *framebuffer);
         LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, *framebuffer);
-        m_attachedFrameBuffer = framebuffer;
         VV_CORE_INFO("Renderer Attached to a FrameBuffer");
     }
 
@@ -203,12 +207,6 @@ namespace VectorVertex
         return m_SwapChain->getImageCount();
     }
 
-    void VKRendererAPI::ClearResources()
-    {
-        
-        recreateRenderers();
-    }
-
     void VKRendererAPI::CreateCommandBuffers()
     {
         auto &vkDevice = VKDevice::Get();
@@ -256,24 +254,6 @@ namespace VectorVertex
                 VV_CORE_ERROR("Swap chain image(or depth) format does not match!");
                 throw std::runtime_error("Swap chain image(or depth) format does not match!");
             }
-        }
-    }
-
-    void VKRendererAPI::recreateRenderers()
-    {
-        VKData.Init();
-        std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
-        VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
-        if (m_attachedFrameBuffer == nullptr)
-        {
-            MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
-            LightRenderSystem = CreateRef<VulkanLightRenderer>(layout);
-        }else
-        {
-            VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(m_attachedFrameBuffer->GetFrameBufferAPI())->getRenderpass();
-            MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, *m_attachedFrameBuffer);
-            LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, *m_attachedFrameBuffer);
-            VV_CORE_INFO("Renderer Attached to a FrameBuffer");
         }
     }
 

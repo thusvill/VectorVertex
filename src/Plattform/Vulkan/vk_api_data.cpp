@@ -12,7 +12,6 @@ namespace VectorVertex
 
     void VulkanAPIData::Init()
     {
-        Clear();
         VVTextureLibrary::UpdateDescriptors();
         m_global_pool = VKDescriptorPool::Builder(VKDevice::Get())
                             .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -46,26 +45,5 @@ namespace VectorVertex
                 .build(m_global_descriptor_sets[i]);
         }
         VV_CORE_INFO("Vulkan API Data Initialized!");
-    }
-    void VulkanAPIData::Clear()
-    {
-
-        if (m_global_pool != nullptr)
-        {
-            m_global_pool->freeDescriptors(m_global_descriptor_sets);
-            m_global_pool->resetPool();
-        }
-        if (m_global_descriptor_sets.size() > 0)
-        {
-            for (auto descriptor_set : m_global_descriptor_sets)
-            {
-                if (descriptor_set != VK_NULL_HANDLE)
-                    vkFreeDescriptorSets(VKDevice::Get().device(), m_global_pool->getPool(), 1, &descriptor_set);
-            }
-        }
-        m_global_descriptor_sets.clear();
-
-        m_ubo_buffers.clear();
-        VV_CORE_INFO("Global Resources Cleared!");
     }
 } // namespace VectorVertex

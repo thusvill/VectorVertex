@@ -56,9 +56,7 @@ namespace VectorVertex
 
         virtual void WindowResized() =0;
 
-        virtual void ClearResources() = 0;
-
-        static API GetRenderAPI()
+            static API GetRenderAPI()
         {
             return s_API;
         }
