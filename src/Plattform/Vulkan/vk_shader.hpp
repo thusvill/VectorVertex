@@ -1,12 +1,6 @@
 #pragma once
 #include <vulkan/vulkan.h>
-<<<<<<< HEAD
-#include <vk_pipeline.hpp>
 #include <Shader.hpp>
-=======
-#include <vvpch.hpp>
-
->>>>>>> parent of 4b0a992 (befor change shaders)
 
 namespace VectorVertex
 {
