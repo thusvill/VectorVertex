@@ -7,6 +7,11 @@
 #include <Entity.hpp>
 #include <SceneSerializer.hpp>
 #include <FrameBuffer.hpp>
+#include <Event.hpp>
+#include <KeyEvent.hpp>
+#include <MouseEvent.hpp>
+#include <Input.hpp>
+
 namespace VectorVertex
 {
     class Scene;
@@ -19,6 +24,7 @@ namespace VectorVertex
         virtual void OnAttach() override;
         virtual void OnDetach() override;
         virtual void OnUpdate() override;
+        virtual void OnEvent(Event &e) override;
         virtual void OnRender(FrameInfo &frameInfo) override;
         virtual void OnImGuiRender(FrameInfo &frameInfo) override;
         void AfterCommandBuffer();
@@ -29,15 +35,16 @@ namespace VectorVertex
         bool is_viewport_resized = false;
         Ref<Scene> GetActiveScene() { return m_ActiveScene; }
 
-
-    
     public:
-    void NewScene();
-    void SaveScene();
-    void OpenScene(std::string path);
-    void SaveSceneAs(std::string path);
+        void NewScene();
+        void SaveScene();
+        void OpenScene(std::string path = "");
+        void SaveSceneAs(std::string path = "");
+        void ClearSceneResources();
 
-    
+        bool OnKeyPressed(KeyPressedEvent &e);
+        bool OnMouseButtonPressed(MouseButtonPressedEvent &e);
+
     private:
         Imgui_Layer imgui_layer;
         ImVec2 prev_size;
@@ -53,6 +60,10 @@ namespace VectorVertex
         float frameTime;
         bool loading_scene = false;
         ProjectInfo m_Info;
-        int m_GuizmoType=-1;
+
+        Entity m_HoveredEntity;
+        int m_GuizmoType = -1;
+        bool m_ViewportHovered =false;
+        bool m_ViewportFocused =false;
     };
 }

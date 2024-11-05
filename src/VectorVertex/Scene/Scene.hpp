@@ -37,6 +37,8 @@ namespace VectorVertex
         Entity *GetMainCamera();
         Extent2D m_ViewportSize{800, 800};
 
+        std::string GetSceneName() { return m_Name; }
+
     private:
         Entity *m_MainCamera;
         void FindANewCamera();

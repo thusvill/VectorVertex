@@ -55,7 +55,10 @@ namespace VectorVertex
             recreateSwapChain();
         }
 
+        virtual void ClearResources() override;
+
     private:
+        FrameBuffer *m_attachedFrameBuffer = nullptr;
         VulkanAPIData VKData{};
         Ref<VulkanMeshRenderer> MeshRenderSystem;
         Ref<VulkanLightRenderer> LightRenderSystem;
@@ -66,6 +69,7 @@ namespace VectorVertex
         void FreeCommandBuffers();
 
         void recreateSwapChain();
+        void recreateRenderers();
 
         VkCommandBuffer VKGetCurrentCommandBuffer() const
         {
