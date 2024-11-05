@@ -285,13 +285,8 @@ namespace VectorVertex
             }
 
             ImGui::Image(sceneImageView, windowSize);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             m_ViewportHovered = ImGui::IsWindowHovered();
             m_ViewportFocused = ImGui::IsWindowFocused();
-=======
->>>>>>> parent of 4b0a992 (befor change shaders)
             // auto bwindowSize = ImGui::GetWindowSize();
             auto bwindowSize = windowSize;
 =======
@@ -517,15 +512,9 @@ namespace VectorVertex
 
                 if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
                 {
-                    VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
 
-                    int32_t *intData = reinterpret_cast<int32_t *>(m_OffScreen->ReadPixel(1, mouseX, mouseY));
-
-                    int32_t intValue = *intData;
-
-                    VV_CORE_TRACE("Pixel integer value: {0}", intValue);
-
-                    free(intData);
+                    int pixelData = *(int*)m_OffScreen->ReadPixel(1, mouseX, mouseY);
+                    m_HoveredEntity = pixelData == -1 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
                 }
             }
             m_OffScreen->EndRender();
