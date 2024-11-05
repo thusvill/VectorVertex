@@ -1,15 +1,20 @@
 #pragma once
 #include <vulkan/vulkan.h>
+<<<<<<< HEAD
 #include <vk_pipeline.hpp>
 #include <Shader.hpp>
+    == == ==
+    =
+#include <vvpch.hpp>
 
-namespace VectorVertex
+        >>>>>>> parent of 4b0a992(befor change shaders)
+
+                    namespace VectorVertex
 {
-    class VKShader : public Shader
+    class VKShader
     {
     public:
         VKShader(const std::filesystem::path &filepath);
-        VKShader(const std::string &name, const std::filesystem::path &vertexSrc, const std::filesystem::path &fragmentSrc);
 
         virtual void AttachToFramebuffer(FrameBuffer *framebuffer) override;
         virtual const std::string &GetName() const override { return m_Name; }
@@ -41,13 +46,13 @@ namespace VectorVertex
         void CompileAndCacheShaders(const std::unordered_map<VkShaderStageFlagBits, std::string> &shaderSources);
         void CreateProgramme(FrameBuffer *framebuffer = nullptr);
 
-        private:
-            VkBuffer uniformBuffer;
-            VkDeviceMemory uniformBufferMemory;
-            std::unordered_map<std::string, size_t> uniformOffsets;
-            std::vector<uint8_t> bufferData;
-            void CreateBuffer();
-            void AllocateMemory(VkPhysicalDevice physicalDevice);
-            void UpdateUniformBuffer();
+    private:
+        VkBuffer uniformBuffer;
+        VkDeviceMemory uniformBufferMemory;
+        std::unordered_map<std::string, size_t> uniformOffsets;
+        std::vector<uint8_t> bufferData;
+        void CreateBuffer();
+        void AllocateMemory(VkPhysicalDevice physicalDevice);
+        void UpdateUniformBuffer();
     };
 }
