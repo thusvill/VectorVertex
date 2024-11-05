@@ -1,6 +1,7 @@
 #pragma once
 #include <vvpch.hpp>
 #include <Base.h>
+#include <filesystem>
 
 namespace VectorVertex
 {
@@ -8,6 +9,7 @@ namespace VectorVertex
     {
     public:
         virtual ~Shader() = default;
+        virtual void AttachToFramebuffer(FrameBuffer *framebuffer) = 0;
         virtual void Bind() = 0;
         virtual void Unbind() = 0;
 
@@ -19,15 +21,9 @@ namespace VectorVertex
         virtual void SetFloat4(const std::string &name, const glm::vec4 &value) = 0;
         virtual void SetMat4(const std::string &name, const glm::mat4 &value) = 0;
 
-        const std::string &GetName() const
-        {
-            return m_Name;
-        }
-        static Ref<Shader> Create(const std::string &filepath);
-        static Ref<Shader> Create(const std::string &name, const std::string &vertexSrc, const std::string &fragmentSrc);
-
-    protected:
-        std::string m_Name;
+        virtual const std::string &GetName() const = 0;
+        static Ref<Shader> Create(const std::filesystem::path &filepath);
+        static Ref<Shader> Create(const std::string &name, const std::filesystem::path &vertexSrc, const std::filesystem::path &fragmentSrc);
     };
 
 }

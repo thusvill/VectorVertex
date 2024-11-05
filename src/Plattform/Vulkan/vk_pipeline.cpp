@@ -6,9 +6,9 @@
 #include <Application.hpp>
 namespace VectorVertex
 {
-    VKPipeline::VKPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader)
+    VKPipeline::VKPipeline(const PipelineConfigInfo &config_info, VKShader &shader)
     {
-        CreateGraphicsPipeline(config_info, vertex_shader, fragment_shader);
+        CreateGraphicsPipeline(config_info, shader);
     }
 
     VKPipeline::~VKPipeline()
@@ -116,7 +116,7 @@ namespace VectorVertex
     {
         VkPipelineColorBlendAttachmentState color_attachment;
 
-        color_attachment.blendEnable = (blend)? VK_TRUE:VK_FALSE;
+        color_attachment.blendEnable = (blend) ? VK_TRUE : VK_FALSE;
         color_attachment.colorWriteMask = getColorFormat(format);
         color_attachment.srcColorBlendFactor = VK_BLEND_FACTOR_SRC_ALPHA;
         color_attachment.dstColorBlendFactor = VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA;
@@ -167,31 +167,31 @@ namespace VectorVertex
         return buffer;
     }
 
-    void VKPipeline::CreateGraphicsPipeline(const PipelineConfigInfo &config_info, const std::string vertex_shader, const std::string fragment_shader)
+    void VKPipeline::CreateGraphicsPipeline(const PipelineConfigInfo &config_info, VKShader &shader)
     {
         assert(config_info.pipelineLayout != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Pipelinelayout provided in config");
         assert(config_info.renderPass != VK_NULL_HANDLE && "Cannot create Graphics pipeline :: no Renderpass provided in config");
 
-        
-        VKShader v_shader(vertex_shader, VK_SHADER_STAGE_VERTEX_BIT);
-        VKShader f_shader(fragment_shader, VK_SHADER_STAGE_FRAGMENT_BIT);
+        // VKShader v_shader(vertex_shader, VK_SHADER_STAGE_VERTEX_BIT);
+        // VKShader f_shader(fragment_shader, VK_SHADER_STAGE_FRAGMENT_BIT);
 
-        VkPipelineShaderStageCreateInfo shaderStages[2];
-        shaderStages[0].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-        shaderStages[0].stage = VK_SHADER_STAGE_VERTEX_BIT;
-        shaderStages[0].module = v_shader.getModule();
-        shaderStages[0].pName = "main";
-        shaderStages[0].flags = 0;
-        shaderStages[0].pNext = nullptr;
-        shaderStages[0].pSpecializationInfo = nullptr;
 
-        shaderStages[1].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-        shaderStages[1].stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-        shaderStages[1].module = f_shader.getModule();
-        shaderStages[1].pName = "main";
-        shaderStages[1].flags = 0;
-        shaderStages[1].pNext = nullptr;
-        shaderStages[1].pSpecializationInfo = nullptr;
+
+        std::vector<VkPipelineShaderStageCreateInfo> shaderStages{};
+        shaderStages.reserve(shader.GetModules().size());
+        for (auto &kv : shader.GetModules())
+        {
+            VkPipelineShaderStageCreateInfo shaderStage{};
+            shaderStage.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+            shaderStage.stage = kv.first;
+            shaderStage.module = kv.second;
+            shaderStage.pName = shader.GetName().c_str();
+            shaderStage.flags = 0;
+            shaderStage.pNext = nullptr;
+            shaderStage.pSpecializationInfo = nullptr;
+
+            shaderStages.push_back(shaderStage);
+        }
 
         auto &bindingDescriptions = config_info.bind_descriptions;
         auto &attributeDescriptions = config_info.attribute_descriptions;
@@ -206,7 +206,7 @@ namespace VectorVertex
         VkGraphicsPipelineCreateInfo pipelineInfo{};
         pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
         pipelineInfo.stageCount = 2;
-        pipelineInfo.pStages = shaderStages;
+        pipelineInfo.pStages = shaderStages.data();
         pipelineInfo.pVertexInputState = &vertexInputInfo;
         pipelineInfo.pInputAssemblyState = &config_info.inputAssemblyInfo;
         pipelineInfo.pViewportState = &config_info.viewportInfo;
@@ -228,7 +228,5 @@ namespace VectorVertex
             throw std::runtime_error("Failed to create graphics pipeline");
         }
     }
-
-
 
 } // namespace VectorVertex

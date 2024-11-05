@@ -10,14 +10,19 @@ find_package(yaml-cpp REQUIRED)
 
 # Set the path to the FBX SDK (inside the src folder)
 set(FBX_SDK_DIR "${CMAKE_SOURCE_DIR}/src/vendor/fbx")
+set(SHADERC_DIR "usr/include/shaderc")
+set(SPIRV_CROSS_INCLUDE_DIRS "/usr/include/spirv_cross")
+
 
 # Include directories
 include_directories(
     ${GLFW_INCLUDE_DIRS}
     ${Vulkan_INCLUDE_DIRS}
+    ${SHADERC_DIR}
+    ${SPIRV_CROSS_INCLUDE_DIRS}
 
     # FBX SDK directory (in src)
-    ${FBX_SDK_DIR}/include  # Path to fbxsdk.h inside the src folder
+    ${FBX_SDK_DIR}/include
 
     # Core directories
     "src/Core"
@@ -75,6 +80,7 @@ target_link_libraries(VectorVertex
     ${Vulkan_LIBRARIES}
     yaml-cpp
     shaderc
+    spirv_cross
 )
 
 # Find the FBX SDK library (in src/vendor/fbx/lib/debug or release)
