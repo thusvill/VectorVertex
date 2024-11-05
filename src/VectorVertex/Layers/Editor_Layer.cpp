@@ -285,8 +285,8 @@ namespace VectorVertex
             }
 
             ImGui::Image(sceneImageView, windowSize);
-
-            auto bwindowSize = ImGui::GetWindowSize();
+            // auto bwindowSize = ImGui::GetWindowSize();
+            auto bwindowSize = windowSize;
 
             ImVec2 minBound = ImGui::GetWindowPos();
             // minBound.x += viewportOffset.x;
@@ -502,7 +502,6 @@ namespace VectorVertex
 
                 if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
                 {
-                    VV_CORE_TRACE("Screen width :{0}, height :{1} \n Mouse x :{2}, y :{3}", viewportSize.x, viewportSize.y, mouseX, mouseY);
 
                     int32_t *intData = reinterpret_cast<int32_t *>(m_OffScreen->ReadPixel(1, mouseX, mouseY));
 
