@@ -1,30 +1,15 @@
 #pragma once
 #include <vulkan/vulkan.h>
+#include <vk_pipeline.hpp>
 #include <Shader.hpp>
 
 namespace VectorVertex
 {
-    class VKShader
+    class VKShader : public Shader
     {
     public:
-<<<<<<< HEAD
         VKShader(const std::filesystem::path &filepath);
         VKShader(const std::string &name, const std::filesystem::path &vertexSrc, const std::filesystem::path &fragmentSrc);
-=======
-        VKShader() = default;
-        VKShader(const std::string &filepath, VkShaderStageFlagBits stage) :shaderStage(stage)
-        {
-            auto shaderCode = readFile(filepath);
-            createShaderModule(shaderCode);
-        }
-        ~VKShader()
-        {
-            if (shaderModule != VK_NULL_HANDLE)
-            {
-                vkDestroyShaderModule(VKDevice::Get().device(), shaderModule, nullptr);
-            }
-        }
->>>>>>> parent of 4b0a992 (befor change shaders)
 
         virtual void AttachToFramebuffer(FrameBuffer *framebuffer) override;
         virtual const std::string &GetName() const override { return m_Name; }
