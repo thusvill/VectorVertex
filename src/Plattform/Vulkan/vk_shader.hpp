@@ -3,9 +3,11 @@
 
 namespace VectorVertex
 {
-    class VKShader
     {
     public:
+        VKShader() = default;
+        VKShader(const std::string &filepath);
+        VKShader(const std::string &filepath, VkShaderStageFlagBits stage) : shaderStage(stage)
         {
             auto shaderCode = readFile(filepath);
             createShaderModule(shaderCode);
