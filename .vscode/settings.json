@@ -76,7 +76,8 @@
     "queue": "cpp",
     "forward_list": "cpp",
     "valarray": "cpp",
-    "rendercommand.hpp": "c"
+    "rendercommand.hpp": "c",
+    "any": "cpp"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

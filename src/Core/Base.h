@@ -18,6 +18,8 @@
 
 #define VV_DEBUG true
 
+#define CACHE_DIR "assets/cache"
+
 #ifdef VV_DEBUG
 #define VV_ENABLE_ASSERTS
 #endif
