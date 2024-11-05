@@ -1,14 +1,11 @@
 #pragma once
 #include <vulkan/vulkan.h>
-#include <Shader.hpp>
 
 namespace VectorVertex
 {
-    class VKShader : public Shader
+    class VKShader
     {
     public:
-        VKShader() = default;
-        VKShader(const std::string &filepath, VkShaderStageFlagBits stage) : shaderStage(stage)
         {
             auto shaderCode = readFile(filepath);
             createShaderModule(shaderCode);
