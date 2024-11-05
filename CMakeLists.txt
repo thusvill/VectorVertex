@@ -7,6 +7,7 @@ find_package(glfw3 REQUIRED)
 find_package(Vulkan REQUIRED)
 find_package(yaml-cpp REQUIRED)
 
+
 # Set the path to the FBX SDK (inside the src folder)
 set(FBX_SDK_DIR "${CMAKE_SOURCE_DIR}/src/vendor/fbx")
 
@@ -73,6 +74,7 @@ target_link_libraries(VectorVertex
     fmt 
     ${Vulkan_LIBRARIES}
     yaml-cpp
+    shaderc
 )
 
 # Find the FBX SDK library (in src/vendor/fbx/lib/debug or release)
