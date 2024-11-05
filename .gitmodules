@@ -4,3 +4,6 @@
 [submodule "src/Render/vendor/ImGuizmo"]
 	path = src/Render/vendor/ImGuizmo
 	url = https://github.com/TheCherno/ImGuizmo.git
+[submodule "src/vendor/shaderc"]
+	path = src/vendor/shaderc
+	url = https://github.com/google/shaderc.git
