@@ -378,10 +378,15 @@ namespace VectorVertex
 
             ImGui::Image(sceneImageView, windowSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
             m_ViewportHovered = ImGui::IsWindowHovered();
             m_ViewportFocused = ImGui::IsWindowFocused();
             // auto bwindowSize = ImGui::GetWindowSize();
             auto bwindowSize = windowSize;
+=======
+
+            auto bwindowSize = ImGui::GetWindowSize();
+>>>>>>> parent of 3768ff7 (Fixed ViewportBounds)
 =======
 
             auto bwindowSize = ImGui::GetWindowSize();

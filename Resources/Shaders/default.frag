@@ -7,7 +7,10 @@ layout(location = 0) in vec3 fragColor;
 layout(location = 1) in vec3 fragPosWorld;
 layout(location = 2) in vec3 fragNormalWorld;
 layout(location = 3) in vec2 fragUV;
+<<<<<<< HEAD
 layout(location = 4) in flat int fragEnttID;
+=======
+>>>>>>> parent of 3768ff7 (Fixed ViewportBounds)
 
 struct PointLight {
     vec4 position;
