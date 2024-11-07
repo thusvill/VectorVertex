@@ -22,6 +22,7 @@ namespace VectorVertex
         void SetContext(const Ref<Scene> &scene);
 
         void OnImGuiRender();
+        void setSelectedEntity(Entity entity);
         void ResetSelectedEntity(){
             m_SelectedEntity = {};
         }

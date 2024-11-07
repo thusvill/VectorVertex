@@ -21,7 +21,7 @@ namespace std
         size_t operator()(VectorVertex::VKModel::Vertex const &vertex) const
         {
             size_t seed = 0;
-            VectorVertex::hashCombine(seed, vertex.position, vertex.color, vertex.normal, vertex.uv);
+            VectorVertex::Utils::hashCombine(seed, vertex.position, vertex.color, vertex.normal, vertex.uv);
             return seed;
         }
     };

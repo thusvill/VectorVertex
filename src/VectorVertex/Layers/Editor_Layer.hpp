@@ -7,6 +7,10 @@
 #include <Entity.hpp>
 #include <SceneSerializer.hpp>
 #include <FrameBuffer.hpp>
+#include <Input.hpp>
+#include <MouseEvent.hpp>
+#include <KeyEvent.hpp>
+
 namespace VectorVertex
 {
     class Scene;
@@ -20,7 +24,8 @@ namespace VectorVertex
         virtual void OnDetach() override;
         virtual void OnUpdate() override;
         virtual void OnRender(FrameInfo &frameInfo) override;
-        virtual void OnImGuiRender(FrameInfo &frameInfo) override;
+        virtual void OnEvent(Event &e) override;
+         virtual void OnImGuiRender(FrameInfo &frameInfo) override;
         void AfterCommandBuffer();
 
         ImTextureID sceneImageView;
@@ -32,8 +37,11 @@ namespace VectorVertex
     public:
         void NewScene();
         void SaveScene();
-        void OpenScene(std::string path);
-        void SaveSceneAs(std::string path);
+        void OpenScene(std::string path = "");
+        void SaveSceneAs(std::string path = "");
+
+        bool OnKeyPressed(KeyPressedEvent& e);
+        bool OnMouseButtonPressed(MouseButtonPressedEvent &e);
 
     private:
         Imgui_Layer imgui_layer;
