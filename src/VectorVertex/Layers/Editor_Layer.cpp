@@ -23,7 +23,8 @@ namespace VectorVertex
         imguiConfig.Device = VKDevice::Get().device();
         imguiConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         imguiConfig.PhysicalDevice = VKDevice::Get().getPhysicalDevice();
-        imguiConfig.graphicsQueue = VKDevice::Get().graphicsQueue();
+        imguiConfig.graphicsQueue 
+        = VKDevice::Get().graphicsQueue();
         imguiConfig.imageCount = RenderCommand::GetRendererAPI()->GetSwapchainImageCount();
 
         imgui_layer.InitializeImgui(imguiConfig, Application::Get().GetNativeWindow());

@@ -35,26 +35,39 @@ namespace VectorVertex
         VkShaderModule getModule() const { return shaderModule; }
 
     private:
-        std::filesystem::path m_FilePath;
-        std::string m_Name;
-        Scope<VKPipeline> m_Pipeline;
+        VkShaderModule shaderModule = VK_NULL_HANDLE;
+        VkShaderStageFlagBits shaderStage;
 
-        std::unordered_map<VkShaderStageFlagBits, std::vector<uint32_t>>
-            m_VulkanSPIRV;
-        std::unordered_map<VkShaderStageFlagBits, VkShaderModule> m_ShaderModules;
+        std::vector<char> readFile(const std::string &filepath)
+        {
+            std::ifstream file(filepath, std::ios::ate | std::ios::binary);
 
-        std::unordered_map<VkShaderStageFlagBits, std::string> PreProcess(const std::string &source);
-        void CreateShaderModule(VkShaderStageFlagBits stage, const std::vector<uint32_t> &code);
-        void CompileAndCacheShaders(const std::unordered_map<VkShaderStageFlagBits, std::string> &shaderSources);
-        void CreateProgramme(FrameBuffer *framebuffer = nullptr);
+            if (!file.is_open())
+            {
+                throw std::runtime_error("failed to open file: " + filepath);
+            }
 
-    private:
-        VkBuffer uniformBuffer;
-        VkDeviceMemory uniformBufferMemory;
-        std::unordered_map<std::string, size_t> uniformOffsets;
-        std::vector<uint8_t> bufferData;
-        void CreateBuffer();
-        void AllocateMemory(VkPhysicalDevice physicalDevice);
-        void UpdateUniformBuffer();
+            size_t fileSize = static_cast<size_t>(file.tellg());
+            std::vector<char> buffer(fileSize);
+
+            file.seekg(0);
+            file.read(buffer.data(), fileSize);
+
+            file.close();
+            return buffer;
+        }
+
+        void createShaderModule(const std::vector<char> &code)
+        {
+            VkShaderModuleCreateInfo createInfo{};
+            createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+            createInfo.codeSize = code.size();
+            createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
+
+            if (vkCreateShaderModule(VKDevice::Get().device(), &createInfo, nullptr, &shaderModule) != VK_SUCCESS)
+            {
+                throw std::runtime_error("failed to create shader module!");
+            }
+        }
     };
 }

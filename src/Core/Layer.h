@@ -8,6 +8,7 @@
 #pragma once
 #include "Base.h"
 #include <vk_frame_info.hpp>
+#include <Event.hpp>
 
 namespace VectorVertex {
     class Layer {
@@ -19,7 +20,8 @@ namespace VectorVertex {
         virtual void OnDetach(){}
         virtual void OnUpdate(){}
         virtual void OnRender(FrameInfo &frameInfo) {}
-        virtual void OnImGuiRender(FrameInfo &frameInfo) {}
+        virtual void OnEvent(Event &e) {}
+         virtual void OnImGuiRender(FrameInfo &frameInfo) {}
         const std::string& GetName() const {return m_DebugName;}
 
     private:

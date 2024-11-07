@@ -226,6 +226,10 @@ namespace VectorVertex
 
         ImGui::End();
     }
+void SceneHierarchy::setSelectedEntity(Entity entity)
+{
+    m_SelectedEntity = entity;
+}
     void SceneHierarchy::DrawEntityNode(Entity entity)
     {
         auto &ID = entity.GetComponent<IDComponent>();
