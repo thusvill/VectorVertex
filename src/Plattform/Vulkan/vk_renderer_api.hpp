@@ -34,6 +34,7 @@ namespace VectorVertex
         virtual void DrawMesh(Entity object, FrameInfo info) override;
         virtual void DrawScene(std::unordered_map<UUID, Entity> objects, FrameInfo &info) override;
         virtual void UpdateObjects(std::unordered_map<UUID, Entity> objects, Entity *camera, FrameInfo &info) override;
+        virtual void ClearResources() override;
 
         virtual void *GetSwapchain() override;
         virtual void *GetRenderpass() override;
@@ -60,7 +61,7 @@ namespace VectorVertex
         Ref<VulkanMeshRenderer> MeshRenderSystem;
         Ref<VulkanLightRenderer> LightRenderSystem;
         std::vector<Ref<VulkanRenderSystem>> RenderSystems;
-        FrameBuffer *m_attachedFrameBuffer;
+        FrameBuffer *m_attachedFrameBuffer = nullptr;
 
         void UploadShaderData(Entity entity);
         void

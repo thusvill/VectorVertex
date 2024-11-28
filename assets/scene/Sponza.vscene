@@ -1,0 +1,60 @@
+Scene: _temp
+Entities:
+  - Entity: 14470148127904276979
+    IDComponent:
+      UUID: 14470148127904276979
+      Name: Camera
+    TransformComponent:
+      Position: [60.8272362, -32.5377121, -6.34412384]
+      Rotation: [-0.121074513, 5.00882816, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 1356686017186274695
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 57.7729988
+      aspect: 1.28163266
+      near: 0.00999999978
+      far: 2000
+      orthoWidth: 0
+      orthoHeight: 0
+      orthoNear: 0
+      orthoFar: 0
+      mainCamera: true
+  - Entity: 1759995897736988790
+    IDComponent:
+      UUID: 1759995897736988790
+      Name: Sponza
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [180, -0, 0]
+      Scale: [0.0500000007, 0.0500000007, 0.0500000007]
+    MaterialComponent:
+      m_ID: 17620510426056597771
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 3604450564976694768
+      m_Name: default
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Textures/prototype_512x512_white.png
+    MeshComponent:
+      m_ID: 6178666765632285431
+      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/Sponza/sponza.obj
+  - Entity: 5798165815936019198
+    IDComponent:
+      UUID: 5798165815936019198
+      Name: Light
+    TransformComponent:
+      Position: [3.96856403, -52.8020554, 0.025283277]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7674150143998457305
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 1, 1]
+      light_intensity: 1000
+      radius: 27.2000008

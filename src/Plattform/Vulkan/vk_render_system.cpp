@@ -14,7 +14,7 @@ namespace VectorVertex
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
-        VKPipeline::enableAlphaBlending(pipelineConfig);
+        VKPipeline::enableAlphaBlending(pipelineConfig, VK_FORMAT_R8G8B8A8_SNORM, 0);
         pipelineConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         pipelineConfig.pipelineLayout = pipelineLayout;
 
@@ -27,11 +27,23 @@ namespace VectorVertex
         assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
         PipelineConfigInfo pipelineConfig{};
         VKPipeline::defaultPipelineConfigInfo(pipelineConfig);
-        VKPipeline::enableAlphaBlending(pipelineConfig);
-        for (int i = 1; i < framebuffer.GetSpecification().attachments.size(); i++)
+        int attachments_count;
+        if(framebuffer.GetSpecification().hasDepth)
+        {
+            attachments_count = framebuffer.GetSpecification().attachments.size() - 1;
+        }
+        else
+        {
+            attachments_count = framebuffer.GetSpecification().attachments.size();
+        }
+
+        
+        for (int i = 1; i < attachments_count; i++)
         {
             VKPipeline::addAttachment(pipelineConfig, getVKFormat(framebuffer.GetSpecification().attachments[i]), false);
+            
         }
+        VKPipeline::enableAlphaBlending(pipelineConfig, getVKFormat(framebuffer.GetSpecification().attachments[0]), 0);
 
         pipelineConfig.renderPass = reinterpret_cast<VKFrameBuffer *>(framebuffer.GetFrameBufferAPI())->getRenderpass();
         pipelineConfig.pipelineLayout = pipelineLayout;

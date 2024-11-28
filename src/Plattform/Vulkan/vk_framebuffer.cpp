@@ -286,15 +286,9 @@ namespace VectorVertex
         void *data;
         vkMapMemory(device, stagingBufferMemory, 0, bufferSize, 0, &data);
 
-        {
-            int pixelData;
-            memcpy(&pixelData, data, sizeof(int32_t));
-
-            printf("Int value: %d\n", pixelData);
-        }
+    
         memcpy(result, data, bufferSize);
         vkUnmapMemory(device, stagingBufferMemory);
-
         // Cleanup
         vkDestroyBuffer(device, stagingBuffer, nullptr);
         vkFreeMemory(device, stagingBufferMemory, nullptr);
@@ -321,7 +315,7 @@ namespace VectorVertex
 
         std::vector<VkImageView> framebufferAttachments;
         framebufferAttachments.reserve(m_Specification.attachments.size());
-        VV_CORE_TRACE("color attachments {0}", color_attachments_size);
+        //VV_CORE_TRACE("color attachments {0}", color_attachments_size);
         for (int i = 0; i < color_attachments_size; i++)
         {
 
@@ -432,7 +426,7 @@ namespace VectorVertex
             vkCreateImageView(VKDevice::Get().device(), &depthViewInfo, nullptr, &depth_atachment.imageView);
 
             framebufferAttachments.push_back(depth_atachment.imageView);
-            VV_CORE_TRACE("framebuffer attachments {0}", framebufferAttachments.size());
+            //VV_CORE_TRACE("framebuffer attachments {0}", framebufferAttachments.size());
         }
 
         // In create_resources, after creating the images:
@@ -487,7 +481,7 @@ namespace VectorVertex
         framebufferInfo.height = m_Specification.size.height;
         framebufferInfo.layers = 1;
 
-        VV_CORE_TRACE("framebuffer attachments {0}", framebufferAttachments.size());
+        //VV_CORE_TRACE("framebuffer attachments {0}", framebufferAttachments.size());
 
         vkCreateFramebuffer(VKDevice::Get().device(), &framebufferInfo, nullptr, &m_Framebuffer);
 
@@ -623,9 +617,9 @@ namespace VectorVertex
         renderPassInfo.renderArea.extent = m_Specification.size;
 
         // TODO:make this set o framebuffer creation
-        std::array<VkClearValue, 3> clearValues{};
+        std::vector<VkClearValue> clearValues{3};
         clearValues[0].color = {{0.17f, 0.17f, 0.17f, 1.0f}};
-        clearValues[1].color.int32[0] = 0;
+        clearValues[1].color.int32[0] = -1;
         clearValues[2].depthStencil = {1.0f, 0};
 
         renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());

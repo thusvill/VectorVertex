@@ -88,6 +88,7 @@ target_link_libraries(VectorVertex
     yaml-cpp
     glslang
  #   spirv-cross-core spirv-cross-reflect
+ spirv-tools
     shaderc
 )
 

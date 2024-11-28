@@ -75,7 +75,7 @@ namespace VectorVertex
                 if (obj.HasComponent<TextureComponent>() && tex != nullptr)
                 {
                     TextureData data = VVTextureLibrary::GetTexture(obj.GetComponent<TextureComponent>().m_ID).data;
-                    if (data.m_descriptorSet == nullptr)
+                    if (data.m_descriptorSet == VK_NULL_HANDLE)
                     {
                         VV_CORE_ERROR("Null Descriptors in Texture :{0}, Entity :{1} ", data.m_Name, obj.GetComponent<IDComponent>().m_Name);
                         // VV_CORE_ASSERT(false, "Texture Descriptorset is NULL!");
@@ -87,7 +87,8 @@ namespace VectorVertex
                                                 pipelineLayout, 1, 1, &data.m_descriptorSet, 0, nullptr);
                     }
                 }
-                obj.GetComponent<MeshComponent>().m_Model->Bind(info.command_buffer);
+                
+                obj.GetComponent<MeshComponent>().m_Model->BindWithEntityID(info.command_buffer, (int)obj.GetEntt());
                 obj.GetComponent<MeshComponent>().m_Model->Draw(info.command_buffer);
             }
         }

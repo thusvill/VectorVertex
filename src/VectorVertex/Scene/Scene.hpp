@@ -28,6 +28,8 @@ namespace VectorVertex
         void OnUpdate();
         void RenderScene(FrameInfo &frameInfo);
 
+        std::string GetSceneName() { return m_Name; }
+
         std::unordered_map<UUID, Entity> &GetEntities() { return m_Entities; }
         //Ref<VulkanRendererSystem> &GetVulkanRenderer() { return m_RendererSystem; }
 

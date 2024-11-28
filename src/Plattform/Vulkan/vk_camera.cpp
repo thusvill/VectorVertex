@@ -29,12 +29,11 @@ namespace VectorVertex
         float right = top * aspectRatio;
         float left = -right;
 
-        orthoWidth = width;
-        orthoHeight = height;
-        orthoNear = near;
-        orthoFar = far;
+        data.orthoWidth = width;
+        data.orthoHeight = height;
+        data.orthoNear = near;
+        data.orthoFar = far;
 
-        // Create the orthographic matrix manually
         projectionMatrix = glm::mat4{1.0f};
         projectionMatrix[0][0] = 2.f / (right - left);
         projectionMatrix[1][1] = 2.f / (bottom - top);
@@ -46,20 +45,25 @@ namespace VectorVertex
 
     void VKCamera::SetPerspectiveProjection(float fovy, float aspect, float near, float far)
     {
-        {
-            fov = fovy;
-            aspect = aspect;
-            near = near;
-            far = far;
-        }
-        assert(glm::abs(aspect - std::numeric_limits<float>::epsilon()) > 0.0f);
-        const float tanHalfFovy = tan(fovy / 2.f);
+
+        data.fov = fovy;
+        data.aspect = aspect;
+        data.near = near;
+        data.far = far;
+
+        SetPerspectiveProjection();
+    }
+
+    void VKCamera::SetPerspectiveProjection()
+    {
+        assert(glm::abs(data.aspect - std::numeric_limits<float>::epsilon()) > 0.0f);
+        const float tanHalfFovy = tan(data.fov / 2.f);
         projectionMatrix = glm::mat4{0.0f};
-        projectionMatrix[0][0] = 1.f / (aspect * tanHalfFovy);
+        projectionMatrix[0][0] = 1.f / (data.aspect * tanHalfFovy);
         projectionMatrix[1][1] = 1.f / (tanHalfFovy);
-        projectionMatrix[2][2] = far / (far - near);
+        projectionMatrix[2][2] = data.far / (data.far - data.near);
         projectionMatrix[2][3] = 1.f;
-        projectionMatrix[3][2] = -(far * near) / (far - near);
+        projectionMatrix[3][2] = -(data.far * data.near) / (data.far - data.near);
     }
 
     void VKCamera::SetViewDirection(glm::vec3 position, glm::vec3 direction, glm::vec3 up)
@@ -101,36 +105,38 @@ namespace VectorVertex
     {
         SetViewDirection(position, target - position, up);
     }
-void VKCamera::RecalculateProjection() {
-    if (m_ProjectionType == ProjectionType::Orthographic) {
-        // Calculate aspect ratio
-        float aspectRatio = orthoWidth / orthoHeight;
-        float top = orthoHeight / 2.0f;
-        float bottom = -top;
-        float right = top * aspectRatio;
-        float left = -right;
+    void VKCamera::RecalculateProjection()
+    {
+        if (data.m_ProjectionType == ProjectionType::Orthographic)
+        {
+            // Calculate aspect ratio
+            float aspectRatio = data.orthoWidth / data.orthoHeight;
+            float top = data.orthoHeight / 2.0f;
+            float bottom = -top;
+            float right = top * aspectRatio;
+            float left = -right;
 
-        // Create the orthographic projection matrix
-        projectionMatrix = glm::mat4{1.0f};
-        projectionMatrix[0][0] = 2.f / (right - left);
-        projectionMatrix[1][1] = 2.f / (bottom - top);
-        projectionMatrix[2][2] = 1.f / (orthoFar - orthoNear);
-        projectionMatrix[3][0] = -(right + left) / (right - left);
-        projectionMatrix[3][1] = -(bottom + top) / (bottom - top);
-        projectionMatrix[3][2] = -orthoNear / (orthoFar - orthoNear);
-    } 
-    else if (m_ProjectionType == ProjectionType::Perspective) {
-        // Perspective projection matrix calculation
-        float tanHalfFovy = tan(fov / 2.f);
-        projectionMatrix = glm::mat4{0.0f};
-        projectionMatrix[0][0] = 1.f / (aspect * tanHalfFovy);
-        projectionMatrix[1][1] = 1.f / (tanHalfFovy);
-        projectionMatrix[2][2] = far / (far - near);
-        projectionMatrix[2][3] = 1.f;
-        projectionMatrix[3][2] = -(far * near) / (far - near);
+            // Create the orthographic projection matrix
+            projectionMatrix = glm::mat4{1.0f};
+            projectionMatrix[0][0] = 2.f / (right - left);
+            projectionMatrix[1][1] = 2.f / (bottom - top);
+            projectionMatrix[2][2] = 1.f / (data.orthoFar - data.orthoNear);
+            projectionMatrix[3][0] = -(right + left) / (right - left);
+            projectionMatrix[3][1] = -(bottom + top) / (bottom - top);
+            projectionMatrix[3][2] = -data.orthoNear / (data.orthoFar - data.orthoNear);
+        }
+        else if (data.m_ProjectionType == ProjectionType::Perspective)
+        {
+            // Perspective projection matrix calculation
+            float tanHalfFovy = tan(data.fov / 2.f);
+            projectionMatrix = glm::mat4{0.0f};
+            projectionMatrix[0][0] = 1.f / (data.aspect * tanHalfFovy);
+            projectionMatrix[1][1] = 1.f / (tanHalfFovy);
+            projectionMatrix[2][2] = data.far / (data.far - data.near);
+            projectionMatrix[2][3] = 1.f;
+            projectionMatrix[3][2] = -(data.far * data.near) / (data.far - data.near);
+        }
     }
-}
-
 
     void VKCamera::SetViewYXZ(glm::vec3 position, glm::vec3 rotation)
     {

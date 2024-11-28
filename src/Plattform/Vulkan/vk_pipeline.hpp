@@ -39,7 +39,7 @@ namespace VectorVertex
         void Bind(VkCommandBuffer commandBUffer);
 
         static void defaultPipelineConfigInfo(PipelineConfigInfo &configInfo);
-        static void enableAlphaBlending(PipelineConfigInfo &configInfo);
+        static void enableAlphaBlending(PipelineConfigInfo &configInfo, VkFormat format, int attachment);
         static void addAttachment(PipelineConfigInfo &configInfo, VkFormat format, bool blend = false);
         static VkColorComponentFlags getColorFormat(VkFormat format);
 

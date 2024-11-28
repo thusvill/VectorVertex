@@ -22,12 +22,17 @@ namespace VectorVertex
             glm::vec3 color;
             glm::vec3 normal{};
             glm::vec2 uv{};
+
+            // Editor Only
+            int enttID = -1;
+
+
             static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions();
             static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
 
             bool operator==(const Vertex &other) const
             {
-                return position == other.position && color == other.color && normal == other.normal && uv == other.uv;
+                return position == other.position && color == other.color && normal == other.normal && uv == other.uv && enttID == other.enttID;
             }
         };
         struct Builder
@@ -52,6 +57,8 @@ namespace VectorVertex
 
         void
         Bind(VkCommandBuffer commandBuffer);
+        void
+        BindWithEntityID(VkCommandBuffer commandBuffer, int entityID);
         void Draw(VkCommandBuffer commandBuffer);
 
         MeshData GetMeshData(){
@@ -73,5 +80,6 @@ namespace VectorVertex
         bool hasIndexBuffer = false;
         Ref<Buffer> indexBuffer;
         uint32_t indexCount;
+        std::vector<Vertex> m_Vertices;
     };
 } // namespace VectorVertex

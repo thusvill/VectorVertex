@@ -61,26 +61,26 @@ namespace VectorVertex
         configInfo.multisampleInfo.alphaToCoverageEnable = VK_FALSE; // Optional
         configInfo.multisampleInfo.alphaToOneEnable = VK_FALSE;      // Optional
 
-        configInfo.colorBlendAttachments[0].colorWriteMask =
-            VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT |
-            VK_COLOR_COMPONENT_A_BIT;
-        configInfo.colorBlendAttachments[0].blendEnable = VK_FALSE;
-        configInfo.colorBlendAttachments[0].srcColorBlendFactor = VK_BLEND_FACTOR_ONE;  // Optional
-        configInfo.colorBlendAttachments[0].dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
-        configInfo.colorBlendAttachments[0].colorBlendOp = VK_BLEND_OP_ADD;             // Optional
-        configInfo.colorBlendAttachments[0].srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE;  // Optional
-        configInfo.colorBlendAttachments[0].dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
-        configInfo.colorBlendAttachments[0].alphaBlendOp = VK_BLEND_OP_ADD;             // Optional
+        // configInfo.colorBlendAttachments[0].colorWriteMask =
+        //     VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT |
+        //     VK_COLOR_COMPONENT_A_BIT;
+        // configInfo.colorBlendAttachments[0].blendEnable = VK_FALSE;
+        // configInfo.colorBlendAttachments[0].srcColorBlendFactor = VK_BLEND_FACTOR_ONE;  // Optional
+        // configInfo.colorBlendAttachments[0].dstColorBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
+        // configInfo.colorBlendAttachments[0].colorBlendOp = VK_BLEND_OP_ADD;             // Optional
+        // configInfo.colorBlendAttachments[0].srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE;  // Optional
+        // configInfo.colorBlendAttachments[0].dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO; // Optional
+        // configInfo.colorBlendAttachments[0].alphaBlendOp = VK_BLEND_OP_ADD;             // Optional
+        configInfo.colorBlendInfo.attachmentCount = 0;
+        configInfo.colorBlendInfo.pAttachments = configInfo.colorBlendAttachments.data();
 
         configInfo.colorBlendInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
         configInfo.colorBlendInfo.logicOpEnable = VK_FALSE;
         configInfo.colorBlendInfo.logicOp = VK_LOGIC_OP_COPY; // Optional
-        configInfo.colorBlendInfo.attachmentCount = configInfo.colorBlendAttachments.size();
-        configInfo.colorBlendInfo.pAttachments = configInfo.colorBlendAttachments.data();
-        configInfo.colorBlendInfo.blendConstants[0] = 0.0f; // Optional
-        configInfo.colorBlendInfo.blendConstants[1] = 0.0f; // Optional
-        configInfo.colorBlendInfo.blendConstants[2] = 0.0f; // Optional
-        configInfo.colorBlendInfo.blendConstants[3] = 0.0f; // Optional
+        configInfo.colorBlendInfo.blendConstants[0] = 0.0f;   // Optional
+        configInfo.colorBlendInfo.blendConstants[1] = 0.0f;   // Optional
+        configInfo.colorBlendInfo.blendConstants[2] = 0.0f;   // Optional
+        configInfo.colorBlendInfo.blendConstants[3] = 0.0f;   // Optional
 
         configInfo.depthStencilInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_DEPTH_STENCIL_STATE_CREATE_INFO;
         configInfo.depthStencilInfo.depthTestEnable = VK_TRUE;
@@ -104,19 +104,17 @@ namespace VectorVertex
         configInfo.bind_descriptions = VKModel::Vertex::getBindingDescriptions();
     }
 
-    void VKPipeline::enableAlphaBlending(PipelineConfigInfo &configInfo)
+    void VKPipeline::enableAlphaBlending(PipelineConfigInfo &configInfo, VkFormat format, int attachment)
     {
 
-        configInfo.colorBlendAttachments[0].blendEnable = VK_TRUE;
-        configInfo.colorBlendAttachments[0].colorWriteMask =
-            VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT |
-            VK_COLOR_COMPONENT_A_BIT;
-        configInfo.colorBlendAttachments[0].srcColorBlendFactor = VK_BLEND_FACTOR_SRC_ALPHA;
-        configInfo.colorBlendAttachments[0].dstColorBlendFactor = VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA;
-        configInfo.colorBlendAttachments[0].colorBlendOp = VK_BLEND_OP_ADD;
-        configInfo.colorBlendAttachments[0].srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE;
-        configInfo.colorBlendAttachments[0].dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO;
-        configInfo.colorBlendAttachments[0].alphaBlendOp = VK_BLEND_OP_ADD;
+        configInfo.colorBlendAttachments[attachment].blendEnable = VK_TRUE;
+        configInfo.colorBlendAttachments[attachment].colorWriteMask = getColorFormat(format);
+        configInfo.colorBlendAttachments[attachment].srcColorBlendFactor = VK_BLEND_FACTOR_SRC_ALPHA;
+        configInfo.colorBlendAttachments[attachment].dstColorBlendFactor = VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA;
+        configInfo.colorBlendAttachments[attachment].colorBlendOp = VK_BLEND_OP_ADD;
+        configInfo.colorBlendAttachments[attachment].srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE;
+        configInfo.colorBlendAttachments[attachment].dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO;
+        configInfo.colorBlendAttachments[attachment].alphaBlendOp = VK_BLEND_OP_ADD;
     }
 
     void VKPipeline::addAttachment(PipelineConfigInfo &configInfo, VkFormat format, bool blend)
@@ -131,6 +129,7 @@ namespace VectorVertex
         color_attachment.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE;
         color_attachment.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO;
         color_attachment.alphaBlendOp = VK_BLEND_OP_ADD;
+
         configInfo.colorBlendAttachments.push_back(color_attachment);
         configInfo.colorBlendInfo.attachmentCount = configInfo.colorBlendAttachments.size();
         configInfo.colorBlendInfo.pAttachments = configInfo.colorBlendAttachments.data();
@@ -181,8 +180,6 @@ namespace VectorVertex
 
         // VKShader v_shader(vertex_shader, VK_SHADER_STAGE_VERTEX_BIT);
         // VKShader f_shader(fragment_shader, VK_SHADER_STAGE_FRAGMENT_BIT);
-
-
 
         std::vector<VkPipelineShaderStageCreateInfo> shaderStages{};
         shaderStages.reserve(shader.getModules().size());

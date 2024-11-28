@@ -6,6 +6,8 @@
 #include <Utils/PlattformUtils.hpp>
 #include <Math/Math.hpp>
 #include <RenderCommand.hpp>
+
+
 namespace VectorVertex
 {
     EditorLayer::EditorLayer(ProjectInfo _info) : m_Info(_info), Layer("EditorLayer")
@@ -23,8 +25,7 @@ namespace VectorVertex
         imguiConfig.Device = VKDevice::Get().device();
         imguiConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         imguiConfig.PhysicalDevice = VKDevice::Get().getPhysicalDevice();
-        imguiConfig.graphicsQueue 
-        = VKDevice::Get().graphicsQueue();
+        imguiConfig.graphicsQueue = VKDevice::Get().graphicsQueue();
         imguiConfig.imageCount = RenderCommand::GetRendererAPI()->GetSwapchainImageCount();
 
         imgui_layer.InitializeImgui(imguiConfig, Application::Get().GetNativeWindow());
@@ -32,8 +33,9 @@ namespace VectorVertex
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-        io.Fonts->AddFontDefault();
-        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", 15.f);
+        float fontSize = 18.0f; // *2.0f;
+        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", fontSize);
+        io.FontDefault = io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", fontSize);
 
         io.Fonts->Build();
 
@@ -104,6 +106,7 @@ namespace VectorVertex
         specs.render_image_index = 0;
         specs.attachments = {FrameBufferFormat::RGBA8, FrameBufferFormat::R32S, FrameBufferFormat::Depth32};
         specs.seperate_renderpass = true;
+        specs.hasDepth = true;
         m_OffScreen = FrameBuffer::Create(specs);
 
         RenderCommand::DedicateToFrameBuffer(m_OffScreen.get());
@@ -170,7 +173,6 @@ namespace VectorVertex
             }
         }
     }
-
     void EditorLayer::OnEvent(Event &e)
     {
         EventDispatcher dispatcher(e);
@@ -181,7 +183,6 @@ namespace VectorVertex
     {
         if (e.IsRepeat())
             return false;
-
         bool control = Input::IsKeyPressed(Key::LeftControl) || Input::IsKeyPressed(Key::RightControl);
         bool shift = Input::IsKeyPressed(Key::LeftShift) || Input::IsKeyPressed(Key::RightShift);
         switch (e.GetKeyCode())
@@ -207,38 +208,30 @@ namespace VectorVertex
                 else
                     SaveScene();
             }
-
             break;
         }
-
         case Key::Q:
         {
-            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+            if (!ImGuizmo::IsUsing())
                 m_GuizmoType = -1;
             break;
         }
         case Key::W:
         {
-            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+            if (!ImGuizmo::IsUsing())
                 m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
             break;
         }
         case Key::E:
         {
-            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+            if (!ImGuizmo::IsUsing())
                 m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
             break;
         }
         case Key::R:
         {
-            if (control)
-            {
-                OpenScene(m_Info.path);
-            }
-
-            if (!ImGuizmo::IsUsing() && !m_CameraMoving)
+            if (!ImGuizmo::IsUsing())
                 m_GuizmoType = ImGuizmo::OPERATION::SCALE;
-
             break;
         }
         case Key::Delete:
@@ -255,7 +248,6 @@ namespace VectorVertex
         }
         return false;
     }
-
     bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent &e)
     {
         if (e.GetMouseButton() == Mouse::ButtonLeft && !ImGuizmo::IsOver())
@@ -364,6 +356,7 @@ namespace VectorVertex
         { // Inside your ImGui rendering loop
 
             ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
+
             ImGui::Begin("Viewport");
 
             auto viewportOffset = ImGui::GetCursorPos();
@@ -383,12 +376,14 @@ namespace VectorVertex
             }
 
             ImGui::Image(sceneImageView, windowSize);
-            // auto bwindowSize = ImGui::GetWindowSize();
+            m_ViewportHovered = ImGui::IsWindowHovered();
+            m_ViewportFocused = ImGui::IsWindowFocused();
+
             auto bwindowSize = windowSize;
 
             ImVec2 minBound = ImGui::GetWindowPos();
-            // minBound.x += viewportOffset.x;
-            // minBound.y += viewportOffset.y;
+            minBound.x += viewportOffset.x;
+            minBound.y += viewportOffset.y;
 
             ImVec2 maxBound = {minBound.x + bwindowSize.x, minBound.y + bwindowSize.y};
             m_ViewportBounds[0] = {minBound.x, minBound.y};
@@ -498,6 +493,7 @@ namespace VectorVertex
     void EditorLayer::NewScene()
     {
         loading_scene = true;
+        ClearSceneResources();
         m_SceneHierarchyPanel.ResetSelectedEntity();
         VVTextureLibrary::ClearLibrary();
         m_ActiveScene = CreateRef<Scene>("New Scene");
@@ -507,6 +503,7 @@ namespace VectorVertex
         new_Cam.AddComponent<CameraComponent>().mainCamera = true;
         m_ActiveScene->SetMainCamera(&new_Cam);
         is_viewport_resized = true;
+        m_Info.path = "";
 
         loading_scene = false;
     }
@@ -517,6 +514,7 @@ namespace VectorVertex
         {
             SceneSerializer serializer(m_ActiveScene);
             serializer.Serialize(m_Info.path);
+            VV_INFO("Scene {0} Saved at {1}", m_ActiveScene->GetSceneName(), m_Info.path);
         }
         else
         {
@@ -533,19 +531,26 @@ namespace VectorVertex
         if (!path.empty())
         {
             loading_scene = true;
-            // ClearSceneResources();
+
             m_SceneHierarchyPanel.ResetSelectedEntity();
-            VVTextureLibrary::ClearLibrary();
+            m_HoveredEntity = Entity();
+
+            ClearSceneResources();
+
             m_ActiveScene = CreateRef<Scene>("_temp");
-            // m_ActiveScene->Init();
             m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+
             SceneSerializer serializer(m_ActiveScene);
             serializer.Deserialize(path);
+
+            
             m_ActiveScene->Init();
+
             VVTextureLibrary::UpdateDescriptors();
-            // std::this_thread::sleep_for(std::chrono::milliseconds(2));
+
             loading_scene = false;
             is_viewport_resized = true;
+
             m_Info.path = path;
         }
     }
@@ -576,6 +581,13 @@ namespace VectorVertex
             m_Info.path = path;
         }
     }
+    void EditorLayer::ClearSceneResources()
+    {
+        RenderCommand::ClearResources();
+        VVTextureLibrary::ClearLibrary();
+        
+        VVTextureLibrary::UpdateDescriptors();
+    }
 
     void EditorLayer::OnRender(FrameInfo &frameInfo)
     {
@@ -594,7 +606,7 @@ namespace VectorVertex
                 mx -= m_ViewportBounds[0].x;
                 my -= m_ViewportBounds[0].y;
                 glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
-                my = viewportSize.y - my;
+                //                my = viewportSize.y - my;
 
                 int mouseX = (int)mx;
                 int mouseY = (int)my;
@@ -602,13 +614,8 @@ namespace VectorVertex
                 if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
                 {
 
-                    int32_t *intData = reinterpret_cast<int32_t *>(m_OffScreen->ReadPixel(1, mouseX, mouseY));
-
-                    int32_t intValue = *intData;
-
-                    VV_CORE_TRACE("Pixel integer value: {0}", intValue);
-
-                    free(intData);
+                    int pixelData = *(int *)m_OffScreen->ReadPixel(1, mouseX, mouseY);
+                    m_HoveredEntity = pixelData == -1 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
                 }
             }
             m_OffScreen->EndRender();

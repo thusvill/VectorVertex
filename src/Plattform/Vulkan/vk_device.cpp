@@ -198,6 +198,11 @@ namespace VectorVertex
 
     VkPhysicalDeviceFeatures deviceFeatures = {};
     deviceFeatures.samplerAnisotropy = VK_TRUE;
+    if (!deviceFeatures.independentBlend)
+    {
+      VV_CORE_INFO("IndependentBlend Available!");
+      deviceFeatures.independentBlend = VK_TRUE;
+    }
 
     VkDeviceCreateInfo createInfo = {};
     createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;

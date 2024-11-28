@@ -1,0 +1,34 @@
+newmtl lambert25SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd germany0WHITE.jpg
+bump  -bm 0.01 germany010b.jpg
+Ni 1.00
+newmtl lambert34SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd brck4pared.jpg
+bump  -bm 0.05 brck49Lb.jpg
+Ni 1.00
+newmtl lambert36SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd wndw107M.jpg
+bump  -bm 2 wndw107Mb.jpg
+Ni 1.00
+newmtl templeRender_blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd -s_0.333333_0.333333_-mm_0_0.935065_oldgold_copy.jpg
+bump  -bm 0.02 -s_0.333333_0.333333_-mm_0_0.403448_oldgoldespecular.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks -s_0.333333_0.333333_-mm_0_0.403448_oldgoldespecular.jpg

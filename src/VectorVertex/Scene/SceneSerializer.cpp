@@ -335,7 +335,6 @@ namespace VectorVertex
                 }
             }
             
-            VVTextureLibrary::UpdateDescriptors();
         }
 
         return true;

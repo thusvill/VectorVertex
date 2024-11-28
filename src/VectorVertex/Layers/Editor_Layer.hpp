@@ -7,9 +7,10 @@
 #include <Entity.hpp>
 #include <SceneSerializer.hpp>
 #include <FrameBuffer.hpp>
-#include <Input.hpp>
-#include <MouseEvent.hpp>
+#include <Event.hpp>
 #include <KeyEvent.hpp>
+#include <MouseEvent.hpp>
+#include <Input.hpp>
 
 namespace VectorVertex
 {
@@ -23,6 +24,7 @@ namespace VectorVertex
         virtual void OnAttach() override;
         virtual void OnDetach() override;
         virtual void OnUpdate() override;
+        
         virtual void OnRender(FrameInfo &frameInfo) override;
         virtual void OnEvent(Event &e) override;
          virtual void OnImGuiRender(FrameInfo &frameInfo) override;
@@ -39,8 +41,8 @@ namespace VectorVertex
         void SaveScene();
         void OpenScene(std::string path = "");
         void SaveSceneAs(std::string path = "");
-
-        bool OnKeyPressed(KeyPressedEvent& e);
+        void ClearSceneResources();
+        bool OnKeyPressed(KeyPressedEvent &e);
         bool OnMouseButtonPressed(MouseButtonPressedEvent &e);
 
     private:

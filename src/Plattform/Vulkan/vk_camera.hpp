@@ -8,7 +8,6 @@ namespace VectorVertex
 {
     class VKCamera
     {
-        
 
     public:
         enum class ProjectionType
@@ -19,12 +18,19 @@ namespace VectorVertex
         struct CameraData
         {
             ProjectionType m_ProjectionType{1};
-            float fov, aspect, near, far;
-            float orthoWidth, orthoHeight, orthoNear, orthoFar;
+            float fov = glm::radians(45.0f);
+            float aspect = 16.0f / 9.0f;
+            float near = 0.1f;
+            float far = 1000.0f;
+            float orthoWidth = 10.0f;
+            float orthoHeight = 10.0f;
+            float orthoNear = -1.0f;
+            float orthoFar = 1.0f;
         };
         void SetOrthographicProjection(float left, float right, float top, float bottom, float near, float far);
         void SetOrthographicProjection(float width, float height, float near, float far);
         void SetPerspectiveProjection(float fovy, float aspect, float near, float far);
+        void SetPerspectiveProjection();
 
         void SetViewDirection(glm::vec3 position, glm::vec3 direction, glm::vec3 up = glm::vec3{.0f, -1.0f, 0.0f});
         void SetViewTarget(glm::vec3 position, glm::vec3 target, glm::vec3 up = glm::vec3{.0f, -1.0f, 0.0f});
@@ -32,13 +38,13 @@ namespace VectorVertex
         void RecalculateProjection();
         void Resize(VkExtent2D new_size)
         {
-            aspect = static_cast<float>(new_size.width) / static_cast<float>(new_size.height);
-            SetPerspectiveProjection(fov, aspect, near, far);
+            data.aspect = static_cast<float>(new_size.width) / static_cast<float>(new_size.height);
+            SetPerspectiveProjection(data.fov, data.aspect, data.near, data.far);
             VV_CORE_INFO("Camera Resized!");
         }
         void SetProjectionType(ProjectionType type)
         {
-            m_ProjectionType = type;
+            data.m_ProjectionType = type;
 
             const char *projectionTypeStrings[] = {"Orthographic", "Perspective"};
             VV_CORE_INFO("Camera Projection Changed to : {0}", projectionTypeStrings[(int)type]);
@@ -55,42 +61,25 @@ namespace VectorVertex
 
         const glm::vec3 GetPosition() const { return glm::vec3(inverseViewMatrix[3]); }
 
-        const ProjectionType GetProjectionType() const { return m_ProjectionType; }
+        const ProjectionType GetProjectionType() const { return data.m_ProjectionType; }
 
-        const CameraData GetCameraData() const {
-            CameraData data;
-            data.m_ProjectionType = m_ProjectionType;
-            data.fov = fov;
-            data.near = near;
-            data.far = far;
-            data.aspect = aspect;
-            data.orthoFar = orthoFar;
-            data.orthoNear = orthoNear;
-            data.orthoHeight = orthoHeight;
-            data.orthoWidth = orthoWidth;
+        CameraData &GetCameraData()
+        {
 
             return data;
-            
         }
 
-        void SetCameraData(CameraData data){
-             m_ProjectionType = data.m_ProjectionType;
-             fov = data.fov;
-             near = data.near;
-             far = data.far;
-             aspect = data.aspect;
-             orthoFar = data.orthoFar;
-             orthoNear = data.orthoNear;
-             orthoHeight = data.orthoHeight;
-             orthoWidth = data.orthoWidth;
+        void SetCameraData(CameraData data)
+        {
+            this->data = data;
         }
 
+        CameraData data;
+        
     private:
-        ProjectionType m_ProjectionType{1};
+        
         glm::mat4 projectionMatrix{1.0f};
         glm::mat4 viewMatrix{1.0f};
         glm::mat4 inverseViewMatrix{1.0f};
-        float fov, aspect, near, far;
-        float orthoWidth, orthoHeight, orthoNear, orthoFar;
     };
 } // namespace VectorVertex

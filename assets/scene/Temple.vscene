@@ -1,0 +1,60 @@
+Scene: New Scene
+Entities:
+  - Entity: 9208351933450788661
+    IDComponent:
+      UUID: 9208351933450788661
+      Name: Light
+    TransformComponent:
+      Position: [6.26378489, -4.9302268, -4.96444654]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 13333130659515921565
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 1, 1]
+      light_intensity: 30
+      radius: 10
+  - Entity: 1248257773612733920
+    IDComponent:
+      UUID: 1248257773612733920
+      Name: Temple
+    TransformComponent:
+      Position: [-0.382062435, 0, 1.22177887]
+      Rotation: [180, 0, 0]
+      Scale: [5, 5, 5]
+    MaterialComponent:
+      m_ID: 15051842738796032117
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 16425637880373268610
+      m_Name: default
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png
+    MeshComponent:
+      m_ID: 119601139069921599
+      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/Free_mini_templeOBJ/Free_mini_temple/obj/objTemple.obj
+  - Entity: 9270441776343849686
+    IDComponent:
+      UUID: 9270441776343849686
+      Name: Camera
+    TransformComponent:
+      Position: [20.4543457, -9.24624062, -11.5001926]
+      Rotation: [-0.231196657, 5.07595205, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 17100593008595511048
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 0.785398185
+      aspect: 1.06727481
+      near: 0.100000001
+      far: 1000
+      orthoWidth: 10
+      orthoHeight: 10
+      orthoNear: -1
+      orthoFar: 1
+      mainCamera: true

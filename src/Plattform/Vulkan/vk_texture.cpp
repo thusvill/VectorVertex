@@ -12,6 +12,7 @@ namespace VectorVertex
     std::unordered_map<uint64_t, Ref<VVTexture>> VVTextureLibrary::m_Textures;
     Scope<VKDescriptorPool> VVTextureLibrary::texture_pool;
     Scope<VKDescriptorSetLayout> VVTextureLibrary::textureImageDescriptorLayout;
+    uint64_t VVTextureLibrary::default_texture_id;
 
     VVTexture::VVTexture(const std::string &path)
     {
@@ -29,7 +30,8 @@ namespace VectorVertex
         {
             vkDestroyImageView(VKDevice::Get().device(), data.m_textureImageView, nullptr);
         }
-        if(data.m_descriptorSet != VK_NULL_HANDLE){
+        if (data.m_descriptorSet != VK_NULL_HANDLE)
+        {
             std::vector<VkDescriptorSet> descriptorSetsToFree = {data.m_descriptorSet};
 
             VVTextureLibrary::texture_pool->freeDescriptors(descriptorSetsToFree);
@@ -122,9 +124,9 @@ namespace VectorVertex
     {
 
         VKDevice::Get().createBuffer(size,
-                            VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
-                            VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
-                            m_stagingBuffer, m_stagingBufferMemory);
+                                     VK_BUFFER_USAGE_TRANSFER_SRC_BIT,
+                                     VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
+                                     m_stagingBuffer, m_stagingBufferMemory);
 
         void *mappedData;
         vkMapMemory(VKDevice::Get().device(), m_stagingBufferMemory, 0, size, 0, &mappedData);
@@ -141,7 +143,7 @@ namespace VectorVertex
 
     void VVTextureLibrary::InitTextureLib()
     {
-        
+
         texture_pool = VKDescriptorPool::Builder(VKDevice::Get())
                            .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
                            .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -153,11 +155,11 @@ namespace VectorVertex
                                            .build();
         VV_CORE_INFO("Initilized Texture Library!");
 
-        if(m_Textures.size() <= 0){
-            uint64_t default_text = GetDefaultTexture();
-        }
-
         UpdateDescriptors();
+
+        default_texture_id = Create("default", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png");
+
+        
     }
 
     uint64_t VVTextureLibrary::Create(std::string name, std::string path)
@@ -198,18 +200,17 @@ namespace VectorVertex
     }
     uint64_t VVTextureLibrary::GetDefaultTexture()
     {
-        return Create("default", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png");
+        return default_texture_id;
     }
     void VVTextureLibrary::DeleteTexture(UUID ID)
-    {   
-            m_Textures.erase(ID);
-        
+    {
+        m_Textures.erase(ID);
     }
     void VVTextureLibrary::UpdateDescriptors()
     {
         if (!VKSwapChain::isWaitingForFence)
         {
-            //VV_CORE_TRACE("Fence Done!");
+            // VV_CORE_TRACE("Fence Done!");
             for (auto &kv : m_Textures)
             {
                 auto imageInfo = VVTextureLibrary::GetTexture(kv.first).getDescriptorImageInfo();
@@ -226,6 +227,33 @@ namespace VectorVertex
     void VVTextureLibrary::ClearLibrary()
     {
         m_Textures.clear();
+        CreateWithUUID(default_texture_id, "default", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png");
         VV_CORE_INFO("Texture Library cleared!");
+    }
+    void VVTextureLibrary::Reset()
+    {
+        ClearLibrary();
+        std::vector<VkDescriptorSet> descs;
+        for (auto &kv : m_Textures)
+        {
+            descs.push_back(GetTexture(kv.first).data.m_descriptorSet);
+        }
+        if (texture_pool)
+        {
+            texture_pool->freeDescriptors(descs);
+            texture_pool->resetPool();
+        }
+        textureImageDescriptorLayout.release();
+        //InitTextureLib();
+        texture_pool = VKDescriptorPool::Builder(VKDevice::Get())
+                           .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
+                           .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)
+                           .setPoolFlags(VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT)
+                           .build();
+
+        textureImageDescriptorLayout = VKDescriptorSetLayout::Builder(VKDevice::Get())
+                                           .addBinding(0, VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VK_SHADER_STAGE_FRAGMENT_BIT)
+                                           .build();
+        VV_CORE_INFO("Initilized Texture Library!");
     }
 }

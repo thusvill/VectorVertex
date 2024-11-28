@@ -88,7 +88,7 @@ namespace VectorVertex
      */
     void VKBuffer::unmap()
     {
-        if (mapped)
+        if (mapped && memory)
         {
             vkUnmapMemory(vkDevice.device(), memory);
             mapped = nullptr;

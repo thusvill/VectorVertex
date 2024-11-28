@@ -7,7 +7,6 @@
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 
-
 #include <Event.hpp>
 #include <ApplicationEvent.hpp>
 #include <GraphicsContext.hpp>
@@ -54,7 +53,7 @@ namespace VectorVertex
             return m_Window.get();
         }
 
-        float GetFrameTime() {return frameTime;}
+        float GetFrameTime() { return frameTime; }
 
     private:
         bool OnWindowClose(WindowCloseEvent &e);
@@ -65,11 +64,10 @@ namespace VectorVertex
 
         static Application *s_Instance;
         bool m_Running = true;
-        
 
         EditorLayer *editor_layer;
 
-        LayerStack layers{};
+        LayerStack m_LayerStack{};
 
         Scope<Window> m_Window;
     };

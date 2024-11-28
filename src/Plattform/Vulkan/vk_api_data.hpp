@@ -13,7 +13,7 @@ namespace VectorVertex
     {
     public:
         VulkanAPIData();
-        ~VulkanAPIData() = default;
+        ~VulkanAPIData();
         bool Init();
         void Clear();
         Scope<VKDescriptorPool> m_global_pool;

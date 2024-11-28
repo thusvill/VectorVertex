@@ -1,9 +1,19 @@
 #include "vk_shader.hpp"
+#include <spirv-tools/optimizer.hpp>
+#include <spirv-tools/libspirv.h>
 #include <shaderc/shaderc.hpp>
 namespace VectorVertex
 {
     namespace Utils
     {
+        void ValidateSPIRV(const std::vector<uint32_t> &spirvBinary)
+        {
+            spvtools::SpirvTools tools(SPV_ENV_VULKAN_1_0);
+            if (!tools.Validate(spirvBinary.data(), spirvBinary.size()))
+            {
+                throw std::runtime_error("SPIR-V validation failed");
+            }
+        }
         void WriteToFile(const std::filesystem::path &filepath, const std::vector<uint32_t> &binaryData)
         {
             try
@@ -153,6 +163,7 @@ namespace VectorVertex
                 result.cbegin(), result.cend());
             cached_path /= path.filename().string() + "." + Utils::ShaderStageToString(stage);
             Utils::WriteToFile(cached_path, spirvBinary);
+            Utils::ValidateSPIRV(spirvBinary);
             VV_CORE_INFO("Shader Compiled : {}", cached_path.string());
         }
     }

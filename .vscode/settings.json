@@ -77,7 +77,10 @@
     "forward_list": "cpp",
     "valarray": "cpp",
     "rendercommand.hpp": "c",
-    "any": "cpp"
+    "any": "cpp",
+    "*.inc": "cpp",
+    "ranges": "cpp",
+    "regex": "cpp"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",

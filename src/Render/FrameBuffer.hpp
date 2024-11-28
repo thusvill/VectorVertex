@@ -18,6 +18,7 @@ namespace VectorVertex
         std::vector<FrameBufferFormat> attachments;
         int render_image_index = 0;
         bool seperate_renderpass = true;
+        bool hasDepth;
     };
 
     class FrameBuffer

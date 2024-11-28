@@ -10,8 +10,18 @@ namespace VectorVertex
         s_Instance = this;
     }
 
+    VulkanAPIData::~VulkanAPIData()
+    {
+        Clear();
+        m_global_pool->freeDescriptors(m_global_descriptor_sets);
+        m_global_pool->~VKDescriptorPool();
+        
+        }
+
     bool VulkanAPIData::Init()
     {
+        Clear();
+        VVTextureLibrary::Reset();
         VVTextureLibrary::UpdateDescriptors();
         m_global_pool = VKDescriptorPool::Builder(VKDevice::Get())
                             .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT)
@@ -46,5 +56,20 @@ namespace VectorVertex
         }
         VV_CORE_INFO("Vulkan API Data Initialized!");
         return true;
+    }
+    void VulkanAPIData::Clear()
+    {
+        if (m_global_pool != nullptr)
+        {
+            m_global_pool->freeDescriptors(m_global_descriptor_sets);
+            m_global_pool->resetPool();
+        }
+        
+        m_global_descriptor_sets.clear();
+        m_ubo_buffers.clear();
+
+        
+        // VVTextureLibrary::ClearLibrary();
+        VV_CORE_INFO("Global Resources Cleared!");
     }
 } // namespace VectorVertex

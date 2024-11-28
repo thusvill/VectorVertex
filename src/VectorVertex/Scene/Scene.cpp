@@ -124,11 +124,12 @@ namespace VectorVertex
 
         m_Camera.SetViewYXZ(m_MainCamera->GetComponent<TransformComponent>().translation, m_MainCamera->GetComponent<TransformComponent>().rotation);
 
-        auto aspectRatio = static_cast<float>(m_ViewportSize.width) / static_cast<float>(m_ViewportSize.height); // renderer.GetAspectRatio();
+        m_Camera.GetCameraData().aspect = static_cast<float>(m_ViewportSize.width) / static_cast<float>(m_ViewportSize.height); // renderer.GetAspectRatio();
         // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
         if (m_Camera.GetProjectionType() == VKCamera::ProjectionType::Perspective)
         {
-            m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
+            //m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
+            m_Camera.SetPerspectiveProjection();
         }
         GlobalUBO ubo{};
         ubo.view = m_MainCamera->GetComponent<CameraComponent>().m_Camera.GetView();

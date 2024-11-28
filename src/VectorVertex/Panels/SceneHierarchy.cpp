@@ -194,7 +194,7 @@ namespace VectorVertex
                 if (ImGui::MenuItem("Mesh Renderer"))
                 {
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj"));
-                    if(!m_SelectedEntity.HasComponent<TextureComponent>())
+                    if (!m_SelectedEntity.HasComponent<TextureComponent>())
                         RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
                     ImGui::CloseCurrentPopup();
                 }
@@ -226,10 +226,10 @@ namespace VectorVertex
 
         ImGui::End();
     }
-void SceneHierarchy::setSelectedEntity(Entity entity)
-{
-    m_SelectedEntity = entity;
-}
+    void SceneHierarchy::setSelectedEntity(Entity entity)
+    {
+        m_SelectedEntity = entity;
+    }
     void SceneHierarchy::DrawEntityNode(Entity entity)
     {
         auto &ID = entity.GetComponent<IDComponent>();
@@ -317,7 +317,19 @@ void SceneHierarchy::setSelectedEntity(Entity entity)
 
                                                ImGui::EndCombo();
                                            }
-                                           ImGui::Checkbox("Is Main Camera", &component.mainCamera); });
+                                           ImGui::Checkbox("Is Main Camera", &component.mainCamera);
+                                           if(ImGui::DragFloat("FOV", &component.m_Camera.GetCameraData().fov, 0.05f, 0.01f, 1000.0f)){
+                                            camera.RecalculateProjection();
+                                           }
+                                           if (ImGui::DragFloat("Near", &component.m_Camera.GetCameraData().near, 0.5f, 0.01f, 1000.0f))
+                                           {
+                                               camera.RecalculateProjection();
+                                           }
+                                           if (ImGui::DragFloat("Far", &component.m_Camera.GetCameraData().far, 0.5f, 0.01f))
+                                           {
+                                               camera.RecalculateProjection();
+                                           }
+                                            });
 
         DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light)
                                            {
@@ -395,7 +407,6 @@ void SceneHierarchy::setSelectedEntity(Entity entity)
                                                  RUN_AFTER_FRAME(mesh.UpdateMesh());
                                                  RUN_AFTER_FRAME(VVTextureLibrary::UpdateDescriptors());
                                              }
-                                         }
-                                     });
+                                         } });
     }
 }

@@ -21,13 +21,14 @@ namespace VectorVertex
         recreateSwapChain();
         CreateCommandBuffers();
 
-        VKData.Init();
         MaterialLibrary::InitMaterialLib();
         VVTextureLibrary::InitTextureLib();
-        std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
-        VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
-        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
-        LightRenderSystem = CreateRef<VulkanLightRenderer>(layout);
+        recreateRenderers();
+        //
+        // std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+        // VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
+        // MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
+        // LightRenderSystem = CreateRef<VulkanLightRenderer>(layout);
 
         // LightRenderSystem = CreateRef<VulkanRenderSystem>(layout, sizeof(PointLightPushConstantData), "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
@@ -137,15 +138,21 @@ namespace VectorVertex
 
     void VKRendererAPI::DedicateToFrameBuffer(FrameBuffer *framebuffer)
     {
-        recreateSwapChain();
-        CreateCommandBuffers();
+        if (framebuffer != nullptr)
+        {
+            recreateSwapChain();
+            CreateCommandBuffers();
 
-        std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
-        VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
-        VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(framebuffer->GetFrameBufferAPI())->getRenderpass();
-        MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, *framebuffer);
-        LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, *framebuffer);
-        VV_CORE_INFO("Renderer Attached to a FrameBuffer");
+            std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
+            VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
+            VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(framebuffer->GetFrameBufferAPI())->getRenderpass();
+            MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, *framebuffer);
+            LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, *framebuffer);
+            m_attachedFrameBuffer = framebuffer;
+            VV_CORE_INFO("Renderer Attached to a FrameBuffer");
+        }else{
+            VV_CORE_ERROR("Cant Attach to a null framebuffer!");
+        }
     }
 
     void VKRendererAPI::DrawMesh(Entity object, FrameInfo info)
@@ -201,7 +208,11 @@ namespace VectorVertex
     {
         return currentFrameIndex;
     }
+    void VKRendererAPI::ClearResources()
+    {
 
+        recreateRenderers();
+    }
     uint32_t VKRendererAPI::GetSwapchainImageCount()
     {
         return m_SwapChain->getImageCount();
@@ -259,27 +270,7 @@ namespace VectorVertex
 
     void VKRendererAPI::recreateRenderers()
     {
-        
-        int dotCount = 0;
-        while (!VKData.Init())
-        {
-            std::cout << "\rInitializing";
-
-            // Add dots
-            for (int i = 0; i < dotCount; ++i)
-            {
-                std::cout << ".";
-            }
-
-            // Flush the output buffer
-            std::cout.flush();
-
-            // Update the dot count
-            dotCount = (dotCount + 1) % (4 + 1); // Loop back to 0 after maxDots
-
-            // Sleep for a short duration to simulate loading
-            std::this_thread::sleep_for(std::chrono::milliseconds(600));
-        }
+        VKData.Init();
 
         std::vector<VkDescriptorSetLayout> layout = {VKData.m_global_set_layout->getDescriptorSetLayout(), VVTextureLibrary::textureImageDescriptorLayout->getDescriptorSetLayout()};
         VV_CORE_TRACE("Layouts befor create render syste: {}", layout.size());
@@ -287,8 +278,10 @@ namespace VectorVertex
         {
             MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
             LightRenderSystem = CreateRef<VulkanLightRenderer>(layout);
-        }else
+        }
+        else
         {
+            
             VkRenderPass &renderpass = reinterpret_cast<VKFrameBuffer *>(m_attachedFrameBuffer->GetFrameBufferAPI())->getRenderpass();
             MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout, *m_attachedFrameBuffer);
             LightRenderSystem = CreateRef<VulkanLightRenderer>(layout, *m_attachedFrameBuffer);
