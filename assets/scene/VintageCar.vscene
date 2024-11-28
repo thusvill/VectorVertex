@@ -1,0 +1,127 @@
+Scene: New Scene
+Entities:
+  - Entity: 7505345196900469246
+    IDComponent:
+      UUID: 7505345196900469246
+      Name: PointLight4
+    TransformComponent:
+      Position: [-0.548879623, -0.975734413, 3.70446467]
+      Rotation: [0, 32.0135536, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 14871347955555421169
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.819322944, 1, 0.536679506]
+      light_intensity: 0.899999976
+      radius: 10
+  - Entity: 13793988500852619726
+    IDComponent:
+      UUID: 13793988500852619726
+      Name: PointLight3
+    TransformComponent:
+      Position: [-3.21230507, -1.04334831, -0.0651476383]
+      Rotation: [0, 34.5171928, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 11568317635961676162
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.975477397, 0.818532825, 1]
+      light_intensity: 1.10000002
+      radius: 10
+  - Entity: 1782949525870107344
+    IDComponent:
+      UUID: 1782949525870107344
+      Name: PointLight2
+    TransformComponent:
+      Position: [-2.25973868, -3.85441804, -3.12094903]
+      Rotation: [0, 35.9065933, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 15344444570368252065
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.517374516, 0.793160498, 1]
+      light_intensity: 6.69999981
+      radius: 10
+  - Entity: 5184249843962787216
+    IDComponent:
+      UUID: 5184249843962787216
+      Name: PointLight
+    TransformComponent:
+      Position: [0.662550688, -3.3461864, 2.52084804]
+      Rotation: [0, 23.6000004, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 18092408612338791854
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 0.846185923, 0.405405402]
+      light_intensity: 6
+      radius: 10
+  - Entity: 17338596222501061450
+    IDComponent:
+      UUID: 17338596222501061450
+      Name: Ground
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [5.78999949, 5.78999949, 5.78999949]
+    MaterialComponent:
+      m_ID: 13743267666027942249
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 8941070032546629933
+      m_Name: default
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Textures/default.png
+    MeshComponent:
+      m_ID: 9352910671039899393
+      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/quad.obj
+  - Entity: 7905818356418001317
+    IDComponent:
+      UUID: 7905818356418001317
+      Name: Car
+    TransformComponent:
+      Position: [1.00185359, 4.47873617e-07, 1.46179962]
+      Rotation: [-179.999893, 32.8194885, 3.23047516e-06]
+      Scale: [2, 2, 2]
+    MaterialComponent:
+      m_ID: 11418699155710227289
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 8941070032546629933
+      m_Name: default
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Textures/default.png
+    MeshComponent:
+      m_ID: 6456065635545608858
+      path: /home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/VintageCar/VintageRacingCar.obj
+  - Entity: 14034090421135456931
+    IDComponent:
+      UUID: 14034090421135456931
+      Name: Camera
+    TransformComponent:
+      Position: [-9.08743286, -6.47829771, 8.88724232]
+      Rotation: [-0.292027026, 2.32779813, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 3988481037029116635
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 51.2000008
+      aspect: 1.28163266
+      near: 0.100000001
+      far: 1000
+      orthoWidth: 10
+      orthoHeight: 10
+      orthoNear: -1
+      orthoFar: 1
+      mainCamera: true

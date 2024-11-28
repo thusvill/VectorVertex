@@ -1,0 +1,50 @@
+# Blender 4.2.0 MTL File: 'VintageRacingCar.blend'
+# www.blender.org
+
+newmtl car
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd E:/sitesuploads/vinage racing car/vintage-racing-car/textures/car_BaseColorAlpha.png
+map_Ns E:/sitesuploads/vinage racing car/vintage-racing-car/textures/car_Roughness.png
+map_refl E:/sitesuploads/vinage racing car/vintage-racing-car/textures/car_Metallic.png
+map_d E:/sitesuploads/vinage racing car/vintage-racing-car/textures/car_BaseColorAlpha.png
+map_Bump -bm 1.000000 E:/sitesuploads/vinage racing car/vintage-racing-car/textures/car_Normal_OpenGL.png
+
+newmtl engine.001
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd E:/sitesuploads/vinage racing car/vintage-racing-car/textures/engine_Base_color.png
+map_Ns E:/sitesuploads/vinage racing car/vintage-racing-car/textures/engine_Roughness.png
+map_refl E:/sitesuploads/vinage racing car/vintage-racing-car/textures/engine_Metallic.png
+map_Bump -bm 1.000000 E:/sitesuploads/vinage racing car/vintage-racing-car/textures/engine_Normal_OpenGL.png
+
+newmtl front_wheel
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd E:/sitesuploads/vinage racing car/vintage-racing-car/textures/front_wheel_Base_color.jpg
+map_Ns E:/sitesuploads/vinage racing car/vintage-racing-car/textures/front_wheel_Roughness.jpg
+map_refl E:/sitesuploads/vinage racing car/vintage-racing-car/textures/front_wheel_Metallic.jpg
+map_Bump -bm 1.000000 E:/sitesuploads/vinage racing car/vintage-racing-car/textures/front_wheel_Normal_OpenGL.jpg
+
+newmtl rear_wheel
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd E:/sitesuploads/vinage racing car/vintage-racing-car/textures/rear_wheel_Base_color2.png
+map_Ns E:/sitesuploads/vinage racing car/vintage-racing-car/textures/rear_wheel_Roughness.png
+map_refl E:/sitesuploads/vinage racing car/vintage-racing-car/textures/rear_wheel_Metallic.png
+map_Bump -bm 1.000000 E:/sitesuploads/vinage racing car/vintage-racing-car/textures/rear_wheel_Normal_OpenGL.png

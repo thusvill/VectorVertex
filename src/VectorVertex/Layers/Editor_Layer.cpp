@@ -212,25 +212,25 @@ namespace VectorVertex
         }
         case Key::Q:
         {
-            if (!ImGuizmo::IsUsing())
+            if (!ImGuizmo::IsUsing() && !cam_control.isClickedOnViewport)
                 m_GuizmoType = -1;
             break;
         }
         case Key::W:
         {
-            if (!ImGuizmo::IsUsing())
+            if (!ImGuizmo::IsUsing() && !cam_control.isClickedOnViewport)
                 m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
             break;
         }
         case Key::E:
         {
-            if (!ImGuizmo::IsUsing())
+            if (!ImGuizmo::IsUsing() && !cam_control.isClickedOnViewport)
                 m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
             break;
         }
         case Key::R:
         {
-            if (!ImGuizmo::IsUsing())
+            if (!ImGuizmo::IsUsing() && !cam_control.isClickedOnViewport)
                 m_GuizmoType = ImGuizmo::OPERATION::SCALE;
             break;
         }
@@ -396,25 +396,7 @@ namespace VectorVertex
 
             {
 
-                if (glfwGetMouseButton(Application::Get().GetNativeWindow(), GLFW_MOUSE_BUTTON_RIGHT) != GLFW_PRESS)
-                {
-                    if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_Q) == GLFW_PRESS)
-                    {
-                        m_GuizmoType = ImGuizmo::OPERATION::TRANSLATE;
-                    }
-                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_W) == GLFW_PRESS)
-                    {
-                        m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
-                    }
-                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_E) == GLFW_PRESS)
-                    {
-                        m_GuizmoType = ImGuizmo::OPERATION::SCALE;
-                    }
-                    else if (glfwGetKey(Application::Get().GetNativeWindow(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
-                    {
-                        m_GuizmoType = -1;
-                    }
-                }
+                
 
                 Entity selected_entity = m_SceneHierarchyPanel.getSelectedEntity();
                 if (selected_entity && m_GuizmoType != -1)
