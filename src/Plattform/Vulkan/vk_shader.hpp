@@ -6,7 +6,8 @@ namespace VectorVertex
 {
     struct VulkanShader
     {
-        std::string name;
+        VulkanShader(const std::string Name):name(Name){}
+        const std::string name;
         VkShaderStageFlagBits stage;
         VkShaderModule module;
     };
@@ -35,7 +36,7 @@ namespace VectorVertex
     private:
         void Load(std::unordered_map<VkShaderStageFlagBits, std::filesystem::path> sources);
         void CompileShader(VkShaderStageFlagBits stage, std::filesystem::path path);
-        
+
         std::vector<VulkanShader> m_Shaders;
 
         std::string LoadShaderSource(const std::string &filepath)
@@ -46,15 +47,19 @@ namespace VectorVertex
                 throw std::runtime_error("Failed to open file: " + filepath);
             }
             size_t fileSize = static_cast<size_t>(file.tellg());
-            std::string buffer(fileSize, '\0'); // Initialize string with file size    file.seekg(0);    file.read(&buffer[0], fileSize); // Read into string data    file.close();    return buffer;}
+            std::string buffer(fileSize, '\0'); // Initialize string with file size
+            file.seekg(0);
+            file.read(&buffer[0], fileSize); // Read into string data
+            file.close();
+            return buffer;
         }
-        VkShaderModule createShaderModule(const std::vector<uint32_t> &code)
+        VkShaderModule createShaderModule(const std::vector<uint8_t> &code)
         {
             VkShaderModule shaderModule;
             VkShaderModuleCreateInfo createInfo{};
             createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
             createInfo.codeSize = code.size();
-            createInfo.pCode = code.data();
+            createInfo.pCode = reinterpret_cast<const uint32_t *>(code.data());
 
             if (vkCreateShaderModule(VKDevice::Get().device(), &createInfo, nullptr, &shaderModule) != VK_SUCCESS)
             {

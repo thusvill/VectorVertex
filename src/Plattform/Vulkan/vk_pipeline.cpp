@@ -6,9 +6,16 @@
 #include <Application.hpp>
 namespace VectorVertex
 {
-    VKPipeline::VKPipeline(const PipelineConfigInfo &config_info, VKShader &shader)
+    VKPipeline::VKPipeline(const PipelineConfigInfo &config_info, Shader *shader)
     {
-        CreateGraphicsPipeline(config_info, shader);
+        VKShader *vkshader = static_cast<VKShader *>(shader->getAPIClass());
+
+        if (!vkshader)
+        {
+            throw std::runtime_error("Shader is not a valid VKShader.");
+        }
+
+        CreateGraphicsPipeline(config_info, *vkshader);
     }
 
     VKPipeline::~VKPipeline()
@@ -185,7 +192,7 @@ namespace VectorVertex
             shaderStage.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
             shaderStage.stage = module.stage;
             shaderStage.module = module.module;
-            shaderStage.pName = module.name.c_str();
+            shaderStage.pName = "main";
             shaderStage.flags = 0;
             shaderStage.pNext = nullptr;
             shaderStage.pSpecializationInfo = nullptr;

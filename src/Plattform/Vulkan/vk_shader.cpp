@@ -63,21 +63,32 @@ namespace VectorVertex
                 return shaderc_shader_kind::shaderc_fragment_shader;
             }
         }
-        std::vector<uint32_t> LoadSPIRVBinary(const std::string &filepath)
+        std::vector<uint8_t> LoadSPIRVBinary(const std::string &filepath)
         {
             std::ifstream file(filepath, std::ios::ate | std::ios::binary);
             if (!file.is_open())
             {
                 throw std::runtime_error("Failed to open SPIR-V file: " + filepath);
             }
+
             size_t fileSize = static_cast<size_t>(file.tellg());
+            file.seekg(0);
+
+            std::cout << "File size: " << fileSize << " bytes" << std::endl;
+
             if (fileSize % 4 != 0)
             {
-                throw std::runtime_error("SPIR-V file size is not aligned to 4 bytes: " + filepath);
+                throw std::runtime_error("SPIR-V file size is not a multiple of 4: " + filepath);
             }
-            std::vector<uint32_t> buffer(fileSize / 4);
-            file.seekg(0);
+
+            std::vector<uint8_t> buffer(fileSize);
+
             file.read(reinterpret_cast<char *>(buffer.data()), fileSize);
+            if (!file)
+            {
+                throw std::runtime_error("Failed to read SPIR-V file: " + filepath);
+            }
+
             file.close();
             return buffer;
         }
@@ -106,19 +117,17 @@ namespace VectorVertex
         {
             std::filesystem::path targetPath = std::filesystem::path(CACHE_DIR) / "shaders" / "vulkan" / (source.second.filename().string() + "." + Utils::ShaderStageToString(source.first));
 
-            if (std::filesystem::exists(targetPath))
+            if (!std::filesystem::exists(targetPath))
             {
-                VulkanShader shader;
-                shader.name = source.second.filename();
-                shader.stage = source.first;
-                shader.module = createShaderModule(Utils::LoadSPIRVBinary(source.second));
 
-                m_Shaders.push_back(shader);
-            }
-            else
-            {
                 CompileShader(source.first, source.second);
             }
+            VulkanShader shader(source.second.stem().string());
+
+            shader.stage = source.first;
+            shader.module = createShaderModule(Utils::LoadSPIRVBinary(targetPath));
+            VV_CORE_INFO("Shader Loaded: {}", shader.name);
+            m_Shaders.push_back(shader);
         }
     }
 
@@ -142,7 +151,7 @@ namespace VectorVertex
         {
             const std::vector<uint32_t> &spirvBinary = std::vector<uint32_t>(
                 result.cbegin(), result.cend());
-            cached_path /= path.filename().string()+"."+Utils::ShaderStageToString(stage);
+            cached_path /= path.filename().string() + "." + Utils::ShaderStageToString(stage);
             Utils::WriteToFile(cached_path, spirvBinary);
             VV_CORE_INFO("Shader Compiled : {}", cached_path.string());
         }
