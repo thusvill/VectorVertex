@@ -6,20 +6,27 @@ project(VectorVertex)
 find_package(glfw3 REQUIRED)
 find_package(Vulkan REQUIRED)
 find_package(yaml-cpp REQUIRED)
+find_package(glslang REQUIRED)
+
+
+add_subdirectory(src/vendor/shaderc)
+
 
 
 # Set the path to the FBX SDK (inside the src folder)
 set(FBX_SDK_DIR "${CMAKE_SOURCE_DIR}/src/vendor/fbx")
-set(SHADERC_DIR "usr/include/shaderc")
+#set(SHADERC_DIR "usr/include/shaderc")
 set(SPIRV_CROSS_INCLUDE_DIRS "/usr/include/spirv_cross")
+
+#add_subdirectory(src/vendor/SPIRV-Cross)
 
 
 # Include directories
 include_directories(
     ${GLFW_INCLUDE_DIRS}
     ${Vulkan_INCLUDE_DIRS}
-    ${SHADERC_DIR}
-    ${SPIRV_CROSS_INCLUDE_DIRS}
+ #   ${SHADERC_DIR}
+    #${SPIRV_CROSS_INCLUDE_DIRS}
 
     # FBX SDK directory (in src)
     ${FBX_SDK_DIR}/include
@@ -79,8 +86,9 @@ target_link_libraries(VectorVertex
     fmt 
     ${Vulkan_LIBRARIES}
     yaml-cpp
+    glslang
+ #   spirv-cross-core spirv-cross-reflect
     shaderc
-    spirv_cross
 )
 
 # Find the FBX SDK library (in src/vendor/fbx/lib/debug or release)

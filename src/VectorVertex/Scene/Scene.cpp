@@ -16,7 +16,7 @@ namespace VectorVertex
     }
     void Scene::Init()
     {
-        RenderCommand::ClearResources();
+        //RenderCommand::ClearResources();
     }
     Scene::~Scene()
     {

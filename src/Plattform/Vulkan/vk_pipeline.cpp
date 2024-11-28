@@ -178,14 +178,14 @@ namespace VectorVertex
 
 
         std::vector<VkPipelineShaderStageCreateInfo> shaderStages{};
-        shaderStages.reserve(shader.GetModules().size());
-        for (auto &kv : shader.GetModules())
+        shaderStages.reserve(shader.getModules().size());
+        for (auto &module : shader.getModules())
         {
             VkPipelineShaderStageCreateInfo shaderStage{};
             shaderStage.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-            shaderStage.stage = kv.first;
-            shaderStage.module = kv.second;
-            shaderStage.pName = shader.GetName().c_str();
+            shaderStage.stage = module.stage;
+            shaderStage.module = module.module;
+            shaderStage.pName = module.name.c_str();
             shaderStage.flags = 0;
             shaderStage.pNext = nullptr;
             shaderStage.pSpecializationInfo = nullptr;
