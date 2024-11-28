@@ -19,7 +19,7 @@ namespace VectorVertex
         pipelineConfig.pipelineLayout = pipelineLayout;
 
         Ref<Shader> shader = Shader::CreateShader(std::filesystem::path(vertex_shader), std::filesystem::path(fragment_shader));
-        pipeline = std::make_unique<VKPipeline>(pipelineConfig, *(VKShader *)shader->getAPIClass());
+        pipeline = std::make_unique<VKPipeline>(pipelineConfig, shader.get());
     }
 
     void VulkanRenderSystem::CreatePipeline(FrameBuffer &framebuffer, const std::string vertex_shader, const std::string fragment_shader)
@@ -38,7 +38,7 @@ namespace VectorVertex
 
         Ref<Shader> shader = Shader::CreateShader(std::filesystem::path(vertex_shader), std::filesystem::path(fragment_shader));
 
-        pipeline = std::make_unique<VKPipeline>(pipelineConfig, *(VKShader*)shader->getAPIClass());
+        pipeline = std::make_unique<VKPipeline>(pipelineConfig, shader.get());
         VV_CORE_INFO("Pipeline Created with custom renderpass");
     }
 }

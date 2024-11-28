@@ -30,7 +30,7 @@ namespace VectorVertex
     class VKPipeline
     {
     public:
-        VKPipeline(const PipelineConfigInfo &config_info, VKShader &shader);
+        VKPipeline(const PipelineConfigInfo &config_info, Shader *shader);
         ~VKPipeline();
 
         VKPipeline(const VKPipeline &) = delete;
