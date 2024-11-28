@@ -17,7 +17,9 @@ namespace VectorVertex
         VKPipeline::enableAlphaBlending(pipelineConfig);
         pipelineConfig.renderPass = reinterpret_cast<VkRenderPass>(RenderCommand::GetRendererAPI()->GetRenderpass());
         pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VKPipeline>(pipelineConfig, vertex_shader, fragment_shader);
+
+        Ref<Shader> shader = Shader::CreateShader(std::filesystem::path(vertex_shader), std::filesystem::path(fragment_shader));
+        pipeline = std::make_unique<VKPipeline>(pipelineConfig, *(VKShader *)shader->getAPIClass());
     }
 
     void VulkanRenderSystem::CreatePipeline(FrameBuffer &framebuffer, const std::string vertex_shader, const std::string fragment_shader)
@@ -33,7 +35,10 @@ namespace VectorVertex
 
         pipelineConfig.renderPass = reinterpret_cast<VKFrameBuffer *>(framebuffer.GetFrameBufferAPI())->getRenderpass();
         pipelineConfig.pipelineLayout = pipelineLayout;
-        pipeline = std::make_unique<VKPipeline>(pipelineConfig, vertex_shader, fragment_shader);
+
+        Ref<Shader> shader = Shader::CreateShader(std::filesystem::path(vertex_shader), std::filesystem::path(fragment_shader));
+
+        pipeline = std::make_unique<VKPipeline>(pipelineConfig, *(VKShader*)shader->getAPIClass());
         VV_CORE_INFO("Pipeline Created with custom renderpass");
     }
 }

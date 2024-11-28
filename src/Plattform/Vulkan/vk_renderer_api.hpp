@@ -59,12 +59,14 @@ namespace VectorVertex
         VulkanAPIData VKData{};
         Ref<VulkanMeshRenderer> MeshRenderSystem;
         Ref<VulkanLightRenderer> LightRenderSystem;
+        std::vector<Ref<VulkanRenderSystem>> RenderSystems;
+        FrameBuffer *m_attachedFrameBuffer;
 
         void UploadShaderData(Entity entity);
         void
         CreateCommandBuffers();
         void FreeCommandBuffers();
-
+        void recreateRenderers();
         void recreateSwapChain();
 
         VkCommandBuffer VKGetCurrentCommandBuffer() const
