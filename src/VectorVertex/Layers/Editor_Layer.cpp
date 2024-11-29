@@ -33,7 +33,7 @@ namespace VectorVertex
         ImGuiIO &io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-        float fontSize = 18.0f; // *2.0f;
+        float fontSize = 14.0f; // *2.0f;
         io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", fontSize);
         io.FontDefault = io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", fontSize);
 
@@ -210,6 +210,15 @@ namespace VectorVertex
             }
             break;
         }
+
+        case Key::D:
+        {
+            if (control)
+                OnDuplicateEntity();
+
+            break;
+        }
+
         case Key::Q:
         {
             if (!ImGuizmo::IsUsing() && !cam_control.isClickedOnViewport)
@@ -258,6 +267,18 @@ namespace VectorVertex
             }
         }
         return false;
+    }
+
+    void EditorLayer::OnDuplicateEntity()
+    {
+        
+
+        Entity selectedEntity = m_SceneHierarchyPanel.getSelectedEntity();
+        if (selectedEntity)
+        {
+            Entity newEntity = m_ActiveScene->Duplicate(selectedEntity);
+            m_SceneHierarchyPanel.setSelectedEntity(newEntity);
+        }
     }
 
     void EditorLayer::OnImGuiRender(FrameInfo &frameInfo)

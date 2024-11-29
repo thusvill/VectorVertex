@@ -20,7 +20,7 @@ namespace VectorVertex
         SceneHierarchy(const Ref<Scene> &scene);
 
         void SetContext(const Ref<Scene> &scene);
-
+        void DuplicateSelectedEntity();
         void OnImGuiRender();
         void setSelectedEntity(Entity entity);
         void ResetSelectedEntity(){

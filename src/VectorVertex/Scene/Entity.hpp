@@ -27,7 +27,13 @@ namespace VectorVertex
             VV_CORE_ASSERT(!HasComponent<T>(), "Entity already have this component!");
             return m_Scene->m_Registry.emplace<T>(m_EntityHandler, std::forward<Args>(args)...);
         }
-
+        template <typename T, typename... Args>
+        T &AddOrReplaceComponent(Args &&...args)
+        {
+            T &component = m_Scene->m_Registry.emplace_or_replace<T>(m_EntityHandler, std::forward<Args>(args)...);
+            m_Scene->OnComponentAdded<T>(*this, component);
+            return component;
+        }
         template <typename T>
         T &GetComponent()
         {
@@ -54,8 +60,6 @@ namespace VectorVertex
         entt::entity GetEntt() { return m_EntityHandler; }
 
         operator bool() const { return m_EntityHandler != entt::null; }
-
-        
 
     private:
         entt::entity m_EntityHandler{entt::null};

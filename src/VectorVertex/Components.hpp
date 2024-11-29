@@ -11,7 +11,7 @@
 
 namespace VectorVertex
 {
-    
+
     struct TextureComponent
     {
         TextureComponent()
@@ -124,7 +124,7 @@ namespace VectorVertex
         float light_intensity = 1.0f;
         float radius = 10.0f;
     };
-    
+
     struct MeshComponent
     {
         MeshComponent() = default;
@@ -159,4 +159,13 @@ namespace VectorVertex
         VKCamera m_Camera;
         bool mainCamera;
     };
+
+    template <typename... Component>
+    struct ComponentGroup
+    {
+    };
+    using AllComponents =
+        ComponentGroup<TransformComponent, MeshComponent, PointLightComponent, CameraComponent,
+                       TextureComponent, MaterialComponent, IDComponent>;
+
 } // namespace VectorVertex

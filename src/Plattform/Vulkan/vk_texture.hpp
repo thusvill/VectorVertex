@@ -102,6 +102,5 @@ namespace VectorVertex
         // static uint64_t default_uuid;
         static Scope<VKDescriptorPool> texture_pool;
         static Scope<VKDescriptorSetLayout> textureImageDescriptorLayout;
-        static uint64_t default_texture_id;
     };
 } // namespace VectorVertex

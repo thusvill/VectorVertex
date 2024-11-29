@@ -20,7 +20,9 @@ namespace VectorVertex
 
         Entity CreateEntity(std::string name);
         Entity CreateEntityWithUUID(UUID id, std::string name);
-        //Entity &GetMainCamera();
+
+        Entity Duplicate(Entity source);
+        // Entity &GetMainCamera();
         void DestroyEntity(Entity entity);
         void DestroyEntityImmidiatly(Entity entity);
         void DeletePendingEntities();
@@ -31,9 +33,10 @@ namespace VectorVertex
         std::string GetSceneName() { return m_Name; }
 
         std::unordered_map<UUID, Entity> &GetEntities() { return m_Entities; }
-        //Ref<VulkanRendererSystem> &GetVulkanRenderer() { return m_RendererSystem; }
+        // Ref<VulkanRendererSystem> &GetVulkanRenderer() { return m_RendererSystem; }
 
-        void SetMainCamera(Entity* camera){
+        void SetMainCamera(Entity *camera)
+        {
             m_MainCamera = camera;
         }
         Entity *GetMainCamera();
@@ -43,16 +46,19 @@ namespace VectorVertex
         Entity *m_MainCamera;
         void FindANewCamera();
 
+        template <typename T>
+        void OnComponentAdded(Entity entity, T &component);
+
     private:
         std::string m_Name;
         entt::registry m_Registry;
         std::unordered_map<UUID, Entity> m_Entities;
         std::unordered_map<UUID, Entity> m_Pending_Delete_Entities;
-        //Ref<VulkanRendererSystem> m_RendererSystem;
-        
+        // Ref<VulkanRendererSystem> m_RendererSystem;
 
         friend class SceneHierarchy;
         friend class SceneSerializer;
         friend class Entity;
     };
+    
 }

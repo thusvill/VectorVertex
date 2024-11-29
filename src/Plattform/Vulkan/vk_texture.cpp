@@ -12,7 +12,6 @@ namespace VectorVertex
     std::unordered_map<uint64_t, Ref<VVTexture>> VVTextureLibrary::m_Textures;
     Scope<VKDescriptorPool> VVTextureLibrary::texture_pool;
     Scope<VKDescriptorSetLayout> VVTextureLibrary::textureImageDescriptorLayout;
-    uint64_t VVTextureLibrary::default_texture_id;
 
     VVTexture::VVTexture(const std::string &path)
     {
@@ -156,10 +155,6 @@ namespace VectorVertex
         VV_CORE_INFO("Initilized Texture Library!");
 
         UpdateDescriptors();
-
-        default_texture_id = Create("default", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png");
-
-        
     }
 
     uint64_t VVTextureLibrary::Create(std::string name, std::string path)
@@ -200,7 +195,8 @@ namespace VectorVertex
     }
     uint64_t VVTextureLibrary::GetDefaultTexture()
     {
-        return default_texture_id;
+        auto count = std::to_string(m_Textures.size() + 1);
+        return Create("default" + count, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png");
     }
     void VVTextureLibrary::DeleteTexture(UUID ID)
     {
@@ -227,7 +223,7 @@ namespace VectorVertex
     void VVTextureLibrary::ClearLibrary()
     {
         m_Textures.clear();
-        CreateWithUUID(default_texture_id, "default", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png");
+
         VV_CORE_INFO("Texture Library cleared!");
     }
     void VVTextureLibrary::Reset()
@@ -244,7 +240,7 @@ namespace VectorVertex
             texture_pool->resetPool();
         }
         textureImageDescriptorLayout.release();
-        //InitTextureLib();
+        // InitTextureLib();
         texture_pool = VKDescriptorPool::Builder(VKDevice::Get())
                            .setMaxSets(VKSwapChain::MAX_FRAMES_IN_FLIGHT * 2)
                            .addPoolSize(VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, VKSwapChain::MAX_FRAMES_IN_FLIGHT)

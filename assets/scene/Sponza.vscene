@@ -1,28 +1,37 @@
 Scene: _temp
 Entities:
-  - Entity: 14470148127904276979
+  - Entity: 10776741468265662949
     IDComponent:
-      UUID: 14470148127904276979
-      Name: Camera
+      UUID: 10776741468265662949
+      Name: new Point Light
     TransformComponent:
-      Position: [60.8272362, -32.5377121, -6.34412384]
-      Rotation: [-0.121074513, 5.00882816, 0]
+      Position: [-58.7771912, -11.686594, 2.01768398]
+      Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
-      m_ID: 1356686017186274695
+      m_ID: 7445560853196357515
       m_Name: ""
       color: [1, 1, 1, 1]
-    CameraComponent:
-      m_ProjectionType: 1
-      fov: 57.7729988
-      aspect: 1.28163266
-      near: 0.00999999978
-      far: 2000
-      orthoWidth: 0
-      orthoHeight: 0
-      orthoNear: 0
-      orthoFar: 0
-      mainCamera: true
+    PointLightComponent:
+      color: [0.995348811, 0.951056004, 0.435175776]
+      light_intensity: 104.199997
+      radius: 10
+  - Entity: 5798165815936019198
+    IDComponent:
+      UUID: 5798165815936019198
+      Name: Light
+    TransformComponent:
+      Position: [6.12430382, -52.8020554, 0.025283277]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7674150143998457305
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 1, 1]
+      light_intensity: 1000
+      radius: 27.2000008
   - Entity: 1759995897736988790
     IDComponent:
       UUID: 1759995897736988790
@@ -36,25 +45,32 @@ Entities:
       m_Name: ""
       color: [1, 1, 1, 1]
     TextureComponent:
-      m_ID: 3604450564976694768
-      m_Name: default
-      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Textures/prototype_512x512_white.png
+      m_ID: 3604450564978994768
+      m_Name: default12
+      m_path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Textures/prototype_512x512_grey1.png
     MeshComponent:
       m_ID: 6178666765632285431
       path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/Sponza/sponza.obj
-  - Entity: 5798165815936019198
+  - Entity: 14470148127904276979
     IDComponent:
-      UUID: 5798165815936019198
-      Name: Light
+      UUID: 14470148127904276979
+      Name: Camera
     TransformComponent:
-      Position: [3.96856403, -52.8020554, 0.025283277]
-      Rotation: [0, 0, 0]
+      Position: [60.8272362, -36.8049545, -6.34412384]
+      Rotation: [-0.237533942, 4.90049362, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
-      m_ID: 7674150143998457305
+      m_ID: 1356686017186274695
       m_Name: ""
       color: [1, 1, 1, 1]
-    PointLightComponent:
-      color: [1, 1, 1]
-      light_intensity: 1000
-      radius: 27.2000008
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 57.7729988
+      aspect: 1.06363642
+      near: 0.00999999978
+      far: 2000
+      orthoWidth: 0
+      orthoHeight: 0
+      orthoNear: 0
+      orthoFar: 0
+      mainCamera: true

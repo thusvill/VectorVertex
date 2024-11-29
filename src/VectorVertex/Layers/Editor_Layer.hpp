@@ -44,6 +44,7 @@ namespace VectorVertex
         void ClearSceneResources();
         bool OnKeyPressed(KeyPressedEvent &e);
         bool OnMouseButtonPressed(MouseButtonPressedEvent &e);
+        void OnDuplicateEntity();
 
     private:
         Imgui_Layer imgui_layer;

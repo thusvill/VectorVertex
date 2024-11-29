@@ -19,6 +19,8 @@
 #define VV_DEBUG true
 
 #define CACHE_DIR "assets/cache"
+#define DEFAULT_TEXTURE "Resources/Textures/prototype_512x512_white.png"
+
 
 #ifdef VV_DEBUG
 #define VV_ENABLE_ASSERTS

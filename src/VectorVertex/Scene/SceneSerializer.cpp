@@ -278,7 +278,7 @@ namespace VectorVertex
 
                         if (auto tComponent = entity["TextureComponent"])
                         {
-                            auto &tc = deserialized_entity.GetORCreateComponent<TextureComponent>();
+                            auto &tc = (deserialized_entity.HasComponent<TextureComponent>()) ? deserialized_entity.GetComponent<TextureComponent>() : deserialized_entity.AddComponent<TextureComponent>(tComponent["m_Name"].as<std::string>(), tComponent["m_path"].as<std::string>());
                             tc.m_ID = tComponent["m_ID"].as<UUID>();
                             VVTextureLibrary::CreateWithUUID(tComponent["m_ID"].as<UUID>(), tComponent["m_Name"].as<std::string>(), tComponent["m_path"].as<std::string>());
                             VVTextureLibrary::UpdateDescriptors();

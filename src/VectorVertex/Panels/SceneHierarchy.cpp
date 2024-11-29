@@ -171,6 +171,18 @@ namespace VectorVertex
             {
                 m_SelectedEntity = m_Context->CreateEntity("new Entity");
             }
+            if (ImGui::MenuItem("Create Box"))
+            {
+                m_SelectedEntity = m_Context->CreateEntity("new Box");
+                RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj"));
+                if (!m_SelectedEntity.HasComponent<TextureComponent>())
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
+            }
+            if (ImGui::MenuItem("Create Point Light"))
+            {
+                m_SelectedEntity = m_Context->CreateEntity("new Point Light");
+                RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<PointLightComponent>());
+            }
             ImGui::EndPopup();
         }
 
@@ -328,8 +340,7 @@ namespace VectorVertex
                                            if (ImGui::DragFloat("Far", &component.m_Camera.GetCameraData().far, 0.5f, 0.01f))
                                            {
                                                camera.RecalculateProjection();
-                                           }
-                                            });
+                                           } });
 
         DrawComponent<PointLightComponent>("Point Light", entity, [](auto &light)
                                            {

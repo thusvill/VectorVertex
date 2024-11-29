@@ -5,6 +5,7 @@
 #include <RenderCommand.hpp>
 #include <vk_api_data.hpp>
 #include <Application.hpp>
+#include <type_traits>
 
 namespace VectorVertex
 {
@@ -16,7 +17,49 @@ namespace VectorVertex
     }
     void Scene::Init()
     {
-        //RenderCommand::ClearResources();
+        // RenderCommand::ClearResources();
+    }
+
+    template <typename... Component>
+    static void CopyComponent(entt::registry &dst, entt::registry &src, const std::unordered_map<UUID, entt::entity> &enttMap)
+    {
+        ([&]()
+         {
+			auto view = src.view<Component>();
+			for (auto srcEntity : view)
+			{
+				entt::entity dstEntity = enttMap.at(src.get<IDComponent>(srcEntity).ID);
+
+				auto& srcComponent = src.get<Component>(srcEntity);
+				dst.emplace_or_replace<Component>(dstEntity, srcComponent);
+			} }(), ...);
+    }
+
+    template <typename... Component>
+    static void CopyComponent(ComponentGroup<Component...>, entt::registry &dst, entt::registry &src, const std::unordered_map<UUID, entt::entity> &enttMap)
+    {
+        CopyComponent<Component...>(dst, src, enttMap);
+    }
+
+    template <typename... Component>
+    static void CopyComponentIfExists(Entity dst, Entity src)
+    {
+        ([&]()
+         {
+			if (src.HasComponent<Component>())
+				dst.AddOrReplaceComponent<Component>(src.GetComponent<Component>()); }(), ...);
+    }
+
+    template <typename... Component>
+    static void CopyComponentIfExists(ComponentGroup<Component...>, Entity dst, Entity src)
+    {
+        CopyComponentIfExists<Component...>(dst, src);
+    }
+    template <typename T>
+    void Scene::OnComponentAdded(Entity entity, T &component)
+    {
+
+        static_assert(sizeof(T) == 0);
     }
     Scene::~Scene()
     {
@@ -44,6 +87,13 @@ namespace VectorVertex
         m_Entities[id] = entity;
 
         return entity;
+    }
+    Entity Scene::Duplicate(Entity source)
+    {
+        std::string name = source.GetComponent<IDComponent>().m_Name;
+        Entity newEntity = CreateEntity(name);
+        CopyComponentIfExists(AllComponents{}, newEntity, source);
+        return newEntity;
     }
     // Entity& Scene::GetMainCamera()
     // {
@@ -128,7 +178,7 @@ namespace VectorVertex
         // camera.SetOrthographicProjection(-aspectRatio, aspectRatio, -1, 1, -1, 1);
         if (m_Camera.GetProjectionType() == VKCamera::ProjectionType::Perspective)
         {
-            //m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
+            // m_Camera.SetPerspectiveProjection(glm::radians(50.f), aspectRatio, 0.1f, 100.f);
             m_Camera.SetPerspectiveProjection();
         }
         GlobalUBO ubo{};
