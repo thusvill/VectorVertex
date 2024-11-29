@@ -156,6 +156,8 @@ namespace VectorVertex
     {
         ImGui::Begin("Scene Hierarchy");
 
+        m_Focused = ImGui::IsWindowFocused();
+
         for (auto entt : m_Context->m_Registry.view<entt::entity>())
         {
             Entity entity{entt, m_Context.get()};
@@ -181,7 +183,7 @@ namespace VectorVertex
             if (ImGui::MenuItem("Create Point Light"))
             {
                 m_SelectedEntity = m_Context->CreateEntity("new Point Light");
-                RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<PointLightComponent>());
+                m_SelectedEntity.AddComponent<PointLightComponent>();
             }
             ImGui::EndPopup();
         }
@@ -249,6 +251,9 @@ namespace VectorVertex
         flags |= ImGuiTreeNodeFlags_SpanAvailWidth;
         bool opened = ImGui::TreeNodeEx((void *)(uint64_t)ID.id, flags, ID.m_Name.c_str());
         bool isEntityDeleted = false;
+
+        m_ItemFocused = ImGui::IsItemFocused();
+
         if (ImGui::IsItemClicked())
         {
 

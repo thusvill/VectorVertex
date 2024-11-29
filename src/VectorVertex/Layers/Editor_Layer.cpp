@@ -214,7 +214,7 @@ namespace VectorVertex
         case Key::D:
         {
             if (control)
-                OnDuplicateEntity();
+                RUN_AFTER_FRAME(OnDuplicateEntity());
 
             break;
         }
@@ -246,10 +246,11 @@ namespace VectorVertex
         case Key::Delete:
         {
 
-            if (m_SceneHierarchyPanel.getSelectedEntity())
+            if (m_SceneHierarchyPanel.getSelectedEntity() && m_SceneHierarchyPanel.m_Focused && m_SceneHierarchyPanel.m_ItemFocused)
             {
-                m_SceneHierarchyPanel.setSelectedEntity({});
+                
                 m_ActiveScene->DestroyEntity(m_SceneHierarchyPanel.getSelectedEntity());
+                m_SceneHierarchyPanel.setSelectedEntity({});
             }
 
             break;

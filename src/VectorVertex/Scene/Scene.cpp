@@ -55,12 +55,8 @@ namespace VectorVertex
     {
         CopyComponentIfExists<Component...>(dst, src);
     }
-    template <typename T>
-    void Scene::OnComponentAdded(Entity entity, T &component)
-    {
+    
 
-        static_assert(sizeof(T) == 0);
-    }
     Scene::~Scene()
     {
     }
@@ -225,4 +221,53 @@ namespace VectorVertex
             }
         }
     }
+
+    template <typename T>
+    void Scene::OnComponentAdded(Entity entity, T &component)
+    {
+
+        static_assert(sizeof(T) == 0);
+    }
+    template <>
+    void Scene::OnComponentAdded<TransformComponent>(Entity entity, TransformComponent &component)
+    {
+        
+    }
+
+    template <>
+    void Scene::OnComponentAdded<MeshComponent>(Entity entity, MeshComponent &component)
+    {
+        
+    }
+
+    template <>
+    void Scene::OnComponentAdded<PointLightComponent>(Entity entity, PointLightComponent &component)
+    {
+        
+    }
+
+    template <>
+    void Scene::OnComponentAdded<CameraComponent>(Entity entity, CameraComponent &component)
+    {
+        
+    }
+
+    template <>
+    void Scene::OnComponentAdded<TextureComponent>(Entity entity, TextureComponent &component)
+    {
+        
+    }
+
+    template <>
+    void Scene::OnComponentAdded<MaterialComponent>(Entity entity, MaterialComponent &component)
+    {
+        
+    }
+
+    // template <>
+    // void Scene::OnComponentAdded<IDComponent>(Entity entity, IDComponent &component)
+    // {
+        
+        
+    // }
 }

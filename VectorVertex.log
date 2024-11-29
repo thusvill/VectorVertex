@@ -1,129 +1,89 @@
-[21:15:37] [info] VV-CORE: DEBUGGING STARTED!
-[21:15:37] [info] VV-CORE: Vulkan Context Created!
-[21:15:37] [info] VV-CORE: Creating window VectorVertex (1600, 900)
-[21:15:38] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
-[21:15:38] [info] VV-CORE: IndependentBlend Available!
-[21:15:38] [info] VV-CORE: Vulkan Render API Created!
-[21:15:38] [info] VV-CORE: Initialized Material Library
-[21:15:38] [info] VV-CORE: Global Resources Cleared!
-[21:15:38] [info] VV-CORE: Texture Library cleared!
-[21:15:38] [info] VV-CORE: Initilized Texture Library!
-[21:15:38] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:7730838866161915835
-[21:15:38] [info] VV-CORE: Vulkan API Data Initialized!
-[21:15:38] [trace] VV-CORE: Layouts befor create render syste: 2
-[21:15:38] [info] VV-CORE: Shader Loaded: default
-[21:15:38] [info] VV-CORE: Shader Loaded: default
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
-The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, the pipeline is being created with fragment output interface state, the pColorBlendState pointer is not NULL, the attachmentCount member of pColorBlendState is not ignored, and the subpass uses color attachments, the attachmentCount member of pColorBlendState must be equal to the colorAttachmentCount used to create subpass (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-renderPass-07609)
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderOutputNotConsumed ] Object 0: handle = 0xea7170000000031, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x9805298c | vkCreateGraphicsPipelines(): pCreateInfos[0] fragment shader writes to output location 1 with no matching attachment
-[21:15:38] [info] VV-CORE: Shader Loaded: point_light
-[21:15:38] [info] VV-CORE: Shader Loaded: point_light
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
-The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, the pipeline is being created with fragment output interface state, the pColorBlendState pointer is not NULL, the attachmentCount member of pColorBlendState is not ignored, and the subpass uses color attachments, the attachmentCount member of pColorBlendState must be equal to the colorAttachmentCount used to create subpass (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-renderPass-07609)
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x9638f80000000036, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x9638f80000000036, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x9638f80000000036, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x9638f80000000036, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x9638f80000000036, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
-[21:15:38] [warning] VV-CORE: Application is Started!
-[21:15:38] [warning] VV-CORE: Initializing ...
-[21:15:38] [info] VV-CORE: [Layer]:ImguiLayer Created!
-[21:15:38] [info] VV-CORE: [Layer]:EditorLayer Created!
-[21:15:38] [info] VV-CORE: Global Resources Cleared!
-[21:15:38] [info] VV-CORE: Texture Library cleared!
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkFreeDescriptorSets-descriptorSetCount-arraylength ] | MessageID = 0xe6d6a7cc | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
+[11:38:34] [info] VV-CORE: DEBUGGING STARTED!
+[11:38:34] [info] VV-CORE: Vulkan Context Created!
+[11:38:34] [info] VV-CORE: Creating window VectorVertex (1600, 900)
+[11:38:34] [error] VV-CORE: Validation Layer: terminator_CreateInstance: Received return code -3 from call to vkCreateInstance in ICD /usr/lib/x86_64-linux-gnu/libvulkan_virtio.so. Skipping this driver.
+[11:38:34] [info] VV-CORE: IndependentBlend Available!
+[11:38:34] [info] VV-CORE: Vulkan Render API Created!
+[11:38:35] [info] VV-CORE: Initialized Material Library
+[11:38:35] [info] VV-CORE: Initilized Texture Library!
+[11:38:35] [info] VV-CORE: Global Resources Cleared!
+[11:38:35] [info] VV-CORE: Texture Library cleared!
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkFreeDescriptorSets-descriptorSetCount-arraylength ] | MessageID = 0xe6d6a7cc | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
 The Vulkan spec states: descriptorSetCount must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkFreeDescriptorSets-descriptorSetCount-arraylength)
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ VUID_Undefined ] | MessageID = 0x79de34d4 | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
-[21:15:38] [info] VV-CORE: Initilized Texture Library!
-[21:15:38] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:7632453846720554791
-[21:15:38] [info] VV-CORE: Vulkan API Data Initialized!
-[21:15:38] [trace] VV-CORE: Layouts befor create render syste: 2
-[21:15:38] [info] VV-CORE: Shader Loaded: default
-[21:15:38] [info] VV-CORE: Shader Loaded: default
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID_Undefined ] | MessageID = 0x79de34d4 | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
+[11:38:35] [info] VV-CORE: Initilized Texture Library!
+[11:38:35] [info] VV-CORE: Vulkan API Data Initialized!
+[11:38:35] [trace] VV-CORE: Layouts befor create render syste: 2
+[11:38:35] [info] VV-CORE: Shader Loaded: default
+[11:38:35] [info] VV-CORE: Shader Loaded: default
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
 The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, the pipeline is being created with fragment output interface state, the pColorBlendState pointer is not NULL, the attachmentCount member of pColorBlendState is not ignored, and the subpass uses color attachments, the attachmentCount member of pColorBlendState must be equal to the colorAttachmentCount used to create subpass (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-renderPass-07609)
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderOutputNotConsumed ] Object 0: handle = 0x67022e000000004b, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x9805298c | vkCreateGraphicsPipelines(): pCreateInfos[0] fragment shader writes to output location 1 with no matching attachment
-[21:15:38] [info] VV-CORE: Shader Loaded: point_light
-[21:15:38] [info] VV-CORE: Shader Loaded: point_light
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderOutputNotConsumed ] Object 0: handle = 0x2e2cd000000002b, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x9805298c | vkCreateGraphicsPipelines(): pCreateInfos[0] fragment shader writes to output location 1 with no matching attachment
+[11:38:35] [info] VV-CORE: Shader Loaded: point_light
+[11:38:35] [info] VV-CORE: Shader Loaded: point_light
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
 The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, the pipeline is being created with fragment output interface state, the pColorBlendState pointer is not NULL, the attachmentCount member of pColorBlendState is not ignored, and the subpass uses color attachments, the attachmentCount member of pColorBlendState must be equal to the colorAttachmentCount used to create subpass (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-renderPass-07609)
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x7f79ad0000000050, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x7f79ad0000000050, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x7f79ad0000000050, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x7f79ad0000000050, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x7f79ad0000000050, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
-[21:15:38] [info] VV-CORE: Texture Library cleared!
-[21:15:38] [info] VV-CORE: Texture Library cleared!
-[21:15:38] [info] VV-CORE: Scene New Scene Created!
-[21:15:38] [info] VV-CORE: Created Material: default ID: 1392883698053808716
-[21:15:38] [info] VV-CORE: Entity Created with name:Camera , ID:5251993405731798131
-[21:15:38] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
-[21:15:38] [info] VV-CORE: Created 2 color attachments.
-[21:15:38] [trace] VV-CORE: Layouts befor create render syste: 2
-[21:15:38] [info] VV-CORE: Shader Loaded: default
-[21:15:38] [info] VV-CORE: Shader Loaded: default
-[21:15:38] [info] VV-CORE: Pipeline Created with custom renderpass
-[21:15:38] [info] VV-CORE: Shader Loaded: point_light
-[21:15:38] [info] VV-CORE: Shader Loaded: point_light
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xe0601f000000008d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xe0601f000000008d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xe0601f000000008d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xe0601f000000008d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xe0601f000000008d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderInputNotProduced ] Object 0: handle = 0x9f1516000000008c, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x47b67c75 | vkCreateGraphicsPipelines(): pCreateInfos[0] Attachment 1 not written by fragment shader; undefined values will be written to attachment
-[21:15:38] [info] VV-CORE: Pipeline Created with custom renderpass
-[21:15:38] [info] VV-CORE: Renderer Attached to a FrameBuffer
-[21:15:38] [warning] VV-CORE: Initialized!
-[21:15:38] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
-[21:15:38] [info] VV-CORE: Created 2 color attachments.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-CoreValidation-DrawState-InvalidImageLayout ] Object 0: handle = 0x5555562a4180, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0xe647ea0000000090, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4dae5635 | vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] command buffer VkCommandBuffer 0x5555562a4180[] expects VkImage 0xe647ea0000000090[] (subresource: aspectMask VK_IMAGE_ASPECT_COLOR_BIT array layer 0, mip level 0) to be in layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL--instead, current layout is VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
-[21:15:38] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 852 at 1.8779342 aspect ratio.
-[21:15:38] [info] VV-CORE: Created 2 color attachments.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-CoreValidation-DrawState-InvalidImageLayout ] Object 0: handle = 0x55555627c040, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0xe2478b00000000a1, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4dae5635 | vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] command buffer VkCommandBuffer 0x55555627c040[] expects VkImage 0xe2478b00000000a1[] (subresource: aspectMask VK_IMAGE_ASPECT_COLOR_BIT array layer 0, mip level 0) to be in layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL--instead, current layout is VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
-[21:15:38] [info] VV-CORE: Extent Resized with WIDTH: 922, HEIGHT 852 at 1.0821596 aspect ratio.
-[21:15:38] [info] VV-CORE: Created 2 color attachments.
-[21:15:38] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-CoreValidation-DrawState-InvalidImageLayout ] Object 0: handle = 0x5555562a4180, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0x1dc49b00000000b2, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4dae5635 | vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] command buffer VkCommandBuffer 0x5555562a4180[] expects VkImage 0x1dc49b00000000b2[] (subresource: aspectMask VK_IMAGE_ASPECT_COLOR_BIT array layer 0, mip level 0) to be in layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL--instead, current layout is VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
-[21:15:45] [info] VV-CORE: Global Resources Cleared!
-[21:15:45] [info] VV-CORE: Texture Library cleared!
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkFreeDescriptorSets-descriptorSetCount-arraylength ] | MessageID = 0xe6d6a7cc | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa21a4e0000000030, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa21a4e0000000030, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa21a4e0000000030, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa21a4e0000000030, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xa21a4e0000000030, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
+[11:38:35] [warning] VV-CORE: Application is Started!
+[11:38:35] [warning] VV-CORE: Initializing ...
+[11:38:35] [info] VV-CORE: [Layer]:ImguiLayer Created!
+[11:38:35] [info] VV-CORE: [Layer]:EditorLayer Created!
+[11:38:35] [info] VV-CORE: Global Resources Cleared!
+[11:38:35] [info] VV-CORE: Texture Library cleared!
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-vkFreeDescriptorSets-descriptorSetCount-arraylength ] | MessageID = 0xe6d6a7cc | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
 The Vulkan spec states: descriptorSetCount must be greater than 0 (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-vkFreeDescriptorSets-descriptorSetCount-arraylength)
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Error: [ VUID_Undefined ] | MessageID = 0x79de34d4 | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
-[21:15:45] [info] VV-CORE: Initilized Texture Library!
-[21:15:45] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:5531069743518224625
-[21:15:45] [info] VV-CORE: Vulkan API Data Initialized!
-[21:15:45] [trace] VV-CORE: Layouts befor create render syste: 2
-[21:15:45] [info] VV-CORE: Shader Loaded: default
-[21:15:45] [info] VV-CORE: Shader Loaded: default
-[21:15:45] [info] VV-CORE: Pipeline Created with custom renderpass
-[21:15:45] [info] VV-CORE: Shader Loaded: point_light
-[21:15:45] [info] VV-CORE: Shader Loaded: point_light
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x984b920000000104, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x984b920000000104, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x984b920000000104, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x984b920000000104, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x984b920000000104, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
-[21:15:45] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderInputNotProduced ] Object 0: handle = 0x5f00dd0000000103, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x47b67c75 | vkCreateGraphicsPipelines(): pCreateInfos[0] Attachment 1 not written by fragment shader; undefined values will be written to attachment
-[21:15:45] [info] VV-CORE: Pipeline Created with custom renderpass
-[21:15:45] [info] VV-CORE: Renderer Attached to a FrameBuffer
-[21:15:45] [info] VV-CORE: Texture Library cleared!
-[21:15:45] [info] VV-CORE: Scene _temp Created!
-[21:15:45] [trace] VV-CORE: Deserializing scene '_temp'
-[21:15:45] [info] VV-CORE: Created Material: default ID: 10186318516790188611
-[21:15:45] [info] VV-CORE: Entity Created with name:Camera , ID:1471060742093421256
-[21:15:45] [info] VV-CORE: Created Material: material_2 ID: 5993108820191575955
-[21:15:45] [info] VV-CORE: Created Material: default ID: 14369946586999844128
-[21:15:45] [info] VV-CORE: Entity Created with name:Supra , ID:8332620127099687413
-[21:15:45] [info] VV-CORE: Created Material: material_4 ID: 6024610442764661302
-[21:16:05] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:17415955228603230046
-[21:16:05] [info] VV-CORE: Default Texture Loaded 17415955228603230046
-[21:16:45] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:230757884726469289
-[21:17:44] [info] VV-CORE: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/supra/supra_a80.obj
-[21:17:44] [info] VV-CORE: Loading OBJ file: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/supra/supra_a80.obj
-[21:17:44] [info] VV-CORE: Created Material: default ID: 12565956211994183737
-[21:17:44] [info] VV-CORE: Entity Created with name:Light 1 , ID:15323951245462784528
-[21:17:44] [info] VV-CORE: Created Material: material_6 ID: 12064305439049733855
-[21:17:44] [info] VV-CORE: Created Material: default ID: 6187899836686650408
-[21:17:44] [info] VV-CORE: Entity Created with name:Ground , ID:6550472847471068842
-[21:17:44] [info] VV-CORE: Created Material: material_8 ID: 4950377439164374037
-[21:17:48] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:16577851920228175552
-[21:17:48] [info] VV-CORE: Default Texture Loaded 16577851920228175552
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID_Undefined ] | MessageID = 0x79de34d4 | vkFreeDescriptorSets(): descriptorSetCount must be greater than 0.
+[11:38:35] [info] VV-CORE: Initilized Texture Library!
+[11:38:35] [info] VV-CORE: Vulkan API Data Initialized!
+[11:38:35] [trace] VV-CORE: Layouts befor create render syste: 2
+[11:38:35] [info] VV-CORE: Shader Loaded: default
+[11:38:35] [info] VV-CORE: Shader Loaded: default
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
+The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, the pipeline is being created with fragment output interface state, the pColorBlendState pointer is not NULL, the attachmentCount member of pColorBlendState is not ignored, and the subpass uses color attachments, the attachmentCount member of pColorBlendState must be equal to the colorAttachmentCount used to create subpass (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-renderPass-07609)
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderOutputNotConsumed ] Object 0: handle = 0x59ffe0000000003d, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x9805298c | vkCreateGraphicsPipelines(): pCreateInfos[0] fragment shader writes to output location 1 with no matching attachment
+[11:38:35] [info] VV-CORE: Shader Loaded: point_light
+[11:38:35] [info] VV-CORE: Shader Loaded: point_light
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ VUID-VkGraphicsPipelineCreateInfo-renderPass-07609 ] | MessageID = 0x583c7182 | vkCreateGraphicsPipelines(): pCreateInfos[0].pColorBlendState->attachmentCount (0) is different than VkRenderPass 0xec4bec000000000b[] pSubpasses[0].colorAttachmentCount (1).
+The Vulkan spec states: If renderPass is not VK_NULL_HANDLE, the pipeline is being created with fragment output interface state, the pColorBlendState pointer is not NULL, the attachmentCount member of pColorBlendState is not ignored, and the subpass uses color attachments, the attachmentCount member of pColorBlendState must be equal to the colorAttachmentCount used to create subpass (https://vulkan.lunarg.com/doc/view/1.3.296.0/linux/1.3-extensions/vkspec.html#VUID-VkGraphicsPipelineCreateInfo-renderPass-07609)
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x89e60f0000000042, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x89e60f0000000042, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x89e60f0000000042, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x89e60f0000000042, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0x89e60f0000000042, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
+[11:38:35] [info] VV-CORE: Texture Library cleared!
+[11:38:35] [info] VV-CORE: Texture Library cleared!
+[11:38:35] [info] VV-CORE: Scene New Scene Created!
+[11:38:35] [info] VV-CORE: Created Material: default ID: 16316087080293148434
+[11:38:35] [info] VV-CORE: Entity Created with name:Camera , ID:15695213125877142299
+[11:38:35] [error] VV-CORE: Failed to initialize ImGui for Vulkan!
+[11:38:35] [info] VV-CORE: Created 2 color attachments.
+[11:38:35] [trace] VV-CORE: Layouts befor create render syste: 2
+[11:38:35] [info] VV-CORE: Shader Loaded: default
+[11:38:35] [info] VV-CORE: Shader Loaded: default
+[11:38:35] [info] VV-CORE: Pipeline Created with custom renderpass
+[11:38:35] [info] VV-CORE: Shader Loaded: point_light
+[11:38:35] [info] VV-CORE: Shader Loaded: point_light
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xb3c7bc000000007f, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 0 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xb3c7bc000000007f, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 1 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xb3c7bc000000007f, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 2 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xb3c7bc000000007f, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 3 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Performance Warning: [ WARNING-Shader-OutputNotConsumed ] Object 0: handle = 0xb3c7bc000000007f, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0xc81ad50e | vkCreateGraphicsPipelines(): pCreateInfos[0].pVertexInputState Vertex attribute at location 4 not consumed by vertex shader.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Warning: [ Undefined-Value-ShaderInputNotProduced ] Object 0: handle = 0x10ac5000000007e, type = VK_OBJECT_TYPE_SHADER_MODULE; | MessageID = 0x47b67c75 | vkCreateGraphicsPipelines(): pCreateInfos[0] Attachment 1 not written by fragment shader; undefined values will be written to attachment
+[11:38:35] [info] VV-CORE: Pipeline Created with custom renderpass
+[11:38:35] [info] VV-CORE: Renderer Attached to a FrameBuffer
+[11:38:35] [warning] VV-CORE: Initialized!
+[11:38:35] [info] VV-CORE: Extent Resized with WIDTH: 800, HEIGHT 800 at 1 aspect ratio.
+[11:38:35] [info] VV-CORE: Created 2 color attachments.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-CoreValidation-DrawState-InvalidImageLayout ] Object 0: handle = 0x555556564350, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0xcc25c90000000082, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4dae5635 | vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] command buffer VkCommandBuffer 0x555556564350[] expects VkImage 0xcc25c90000000082[] (subresource: aspectMask VK_IMAGE_ASPECT_COLOR_BIT array layer 0, mip level 0) to be in layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL--instead, current layout is VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[11:38:35] [info] VV-CORE: Extent Resized with WIDTH: 1600, HEIGHT 860 at 1.8604652 aspect ratio.
+[11:38:35] [info] VV-CORE: Created 2 color attachments.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-CoreValidation-DrawState-InvalidImageLayout ] Object 0: handle = 0x555556467550, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0xec25c90000000093, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4dae5635 | vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] command buffer VkCommandBuffer 0x555556467550[] expects VkImage 0xec25c90000000093[] (subresource: aspectMask VK_IMAGE_ASPECT_COLOR_BIT array layer 0, mip level 0) to be in layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL--instead, current layout is VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[11:38:35] [info] VV-CORE: Extent Resized with WIDTH: 922, HEIGHT 860 at 1.072093 aspect ratio.
+[11:38:35] [info] VV-CORE: Created 2 color attachments.
+[11:38:35] [error] VV-CORE: Validation Layer: Validation Error: [ UNASSIGNED-CoreValidation-DrawState-InvalidImageLayout ] Object 0: handle = 0x555556564350, type = VK_OBJECT_TYPE_COMMAND_BUFFER; Object 1: handle = 0xe4607e00000000a4, type = VK_OBJECT_TYPE_IMAGE; | MessageID = 0x4dae5635 | vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] command buffer VkCommandBuffer 0x555556564350[] expects VkImage 0xe4607e00000000a4[] (subresource: aspectMask VK_IMAGE_ASPECT_COLOR_BIT array layer 0, mip level 0) to be in layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL--instead, current layout is VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[11:38:46] [info] VV-CORE: Created Material: default ID: 14985887729288891238
+[11:38:46] [info] VV-CORE: Entity Created with name:new Entity , ID:17960417289409248991

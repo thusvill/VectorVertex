@@ -31,6 +31,18 @@ namespace VectorVertex
             return this;
         }
 
+        TextureComponent(const TextureComponent &other)
+            : m_ID(other.m_ID) {}
+
+        TextureComponent &operator=(const TextureComponent &other)
+        {
+            if (this != &other)
+            {
+                m_ID = other.m_ID;
+            }
+            return *this;
+        }
+
         uint64_t m_ID;
     };
     struct MaterialComponent
@@ -44,6 +56,19 @@ namespace VectorVertex
         {
             m_ID = MaterialLibrary::createMaterial(name, materialData);
         }
+
+        MaterialComponent(const MaterialComponent &other)
+            : m_ID(other.m_ID){}
+
+        MaterialComponent &operator=(const MaterialComponent &other)
+        {
+            if (this != &other)
+            {
+                m_ID= other.m_ID;
+            }
+            return *this;
+        }
+
         uint64_t m_ID;
     };
     struct IDComponent
@@ -114,6 +139,21 @@ namespace VectorVertex
                                                                       0.0f, invScale.y, 0.0f,
                                                                       0.0f, 0.0f, invScale.z);
         }
+
+        TransformComponent(const TransformComponent &other)
+            : translation(other.translation), rotation(other.rotation), scale(other.scale), rotationQuat(other.rotationQuat) {}
+
+        TransformComponent &operator=(const TransformComponent &other)
+        {
+            if (this != &other)
+            {
+                translation = other.translation;
+                rotation = other.rotation;
+                rotationQuat = other.rotationQuat;
+                scale = other.scale;
+            }
+            return *this;
+        }
     };
 
     struct PointLightComponent
@@ -123,6 +163,20 @@ namespace VectorVertex
         glm::vec3 color = glm::vec3{1.0f};
         float light_intensity = 1.0f;
         float radius = 10.0f;
+
+        PointLightComponent(const PointLightComponent &other)
+            : light_intensity(other.light_intensity), color(other.color), radius(other.radius) {}
+
+        PointLightComponent &operator=(const PointLightComponent &other)
+        {
+            if (this != &other)
+            {
+                light_intensity = other.light_intensity;
+                color = other.color;
+                radius = other.radius;
+            }
+            return *this;
+        }
     };
 
     struct MeshComponent
@@ -144,6 +198,34 @@ namespace VectorVertex
             return m_Model->GetMeshData();
         }
 
+        // Custom copy constructor
+        MeshComponent(const MeshComponent &other)
+            : path(other.path), m_ID(other.m_ID)
+        {
+            if (other.m_Model)
+            {
+                m_Model = VKModel::createModelFromFile(other.path); // Clone the model
+            }
+        }
+
+        // Custom copy assignment operator
+        MeshComponent &operator=(const MeshComponent &other)
+        {
+            if (this == &other)
+                return *this;
+            path = other.path;
+            m_ID = UUID();
+            if (other.m_Model)
+            {
+                m_Model = VKModel::createModelFromFile(other.path); // Clone the model
+            }
+            else
+            {
+                m_Model.reset();
+            }
+            return *this;
+        }
+
         Scope<VKModel> m_Model;
         UUID m_ID;
         std::string path;
@@ -156,6 +238,19 @@ namespace VectorVertex
             mainCamera = is_main;
         }
 
+        CameraComponent(const CameraComponent &other)
+            : m_Camera(other.m_Camera), mainCamera(false) {}
+
+        CameraComponent &operator=(const CameraComponent &other)
+        {
+            if (this != &other)
+            {
+                m_Camera = other.m_Camera;
+                mainCamera = false;
+            }
+            return *this;
+        }
+
         VKCamera m_Camera;
         bool mainCamera;
     };
@@ -166,6 +261,6 @@ namespace VectorVertex
     };
     using AllComponents =
         ComponentGroup<TransformComponent, MeshComponent, PointLightComponent, CameraComponent,
-                       TextureComponent, MaterialComponent, IDComponent>;
+                       TextureComponent, MaterialComponent>;
 
 } // namespace VectorVertex

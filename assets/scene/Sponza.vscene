@@ -1,9 +1,89 @@
 Scene: _temp
 Entities:
+  - Entity: 3295453935812081984
+    IDComponent:
+      UUID: 3295453935812081984
+      Name: Point Light
+    TransformComponent:
+      Position: [28.8256683, -10.3914499, -21.3601894]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.995348811, 0.435175776, 0.435175776]
+      light_intensity: 128
+      radius: 10
+  - Entity: 3923646905588531185
+    IDComponent:
+      UUID: 3923646905588531185
+      Name: Point Light
+    TransformComponent:
+      Position: [21.1238041, -10.3914499, 27.1685314]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.435175776, 0.995348811, 0.534183085]
+      light_intensity: 128
+      radius: 10
+  - Entity: 6824659441505639353
+    IDComponent:
+      UUID: 6824659441505639353
+      Name: Point Light
+    TransformComponent:
+      Position: [10.2090244, -30.2356892, 23.5296173]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.523761272, 0.995348811, 0.435175776]
+      light_intensity: 106.599998
+      radius: 10
+  - Entity: 2777969059165699880
+    IDComponent:
+      UUID: 2777969059165699880
+      Name: Point Light
+    TransformComponent:
+      Position: [-0.734826565, -29.5836372, -19.5925064]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.435175776, 0.995348811, 0.878103256]
+      light_intensity: 106.599998
+      radius: 10
+  - Entity: 8875023011680056274
+    IDComponent:
+      UUID: 8875023011680056274
+      Name: Point Light
+    TransformComponent:
+      Position: [-58.7771912, -29.5836372, 2.01768398]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.995348811, 0.951056004, 0.435175776]
+      light_intensity: 104.199997
+      radius: 10
   - Entity: 10776741468265662949
     IDComponent:
       UUID: 10776741468265662949
-      Name: new Point Light
+      Name: Point Light
     TransformComponent:
       Position: [-58.7771912, -11.686594, 2.01768398]
       Rotation: [0, 0, 0]
@@ -16,12 +96,28 @@ Entities:
       color: [0.995348811, 0.951056004, 0.435175776]
       light_intensity: 104.199997
       radius: 10
+  - Entity: 1018255237000873427
+    IDComponent:
+      UUID: 1018255237000873427
+      Name: Point Light
+    TransformComponent:
+      Position: [53.318409, -10.3914499, 5.05941916]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.68008852, 0.435175776, 0.995348811]
+      light_intensity: 128
+      radius: 10
   - Entity: 5798165815936019198
     IDComponent:
       UUID: 5798165815936019198
       Name: Light
     TransformComponent:
-      Position: [6.12430382, -52.8020554, 0.025283277]
+      Position: [5.05725431, -54.024025, 1.74722767]
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
@@ -30,7 +126,7 @@ Entities:
       color: [1, 1, 1, 1]
     PointLightComponent:
       color: [1, 1, 1]
-      light_intensity: 1000
+      light_intensity: 500
       radius: 27.2000008
   - Entity: 1759995897736988790
     IDComponent:
@@ -51,13 +147,29 @@ Entities:
     MeshComponent:
       m_ID: 6178666765632285431
       path: /home/bios/CLionProjects/VectorVertex/VectorVertex/build/Resources/Models/Sponza/sponza.obj
+  - Entity: 11646121768189730421
+    IDComponent:
+      UUID: 11646121768189730421
+      Name: Point Light
+    TransformComponent:
+      Position: [53.318409, -30.2356892, 5.05941916]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 7445560853196357515
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.68008852, 0.435175776, 0.995348811]
+      light_intensity: 128
+      radius: 10
   - Entity: 14470148127904276979
     IDComponent:
       UUID: 14470148127904276979
       Name: Camera
     TransformComponent:
-      Position: [60.8272362, -36.8049545, -6.34412384]
-      Rotation: [-0.237533942, 4.90049362, 0]
+      Position: [64.8897858, -8.93105316, -6.876441]
+      Rotation: [-0.177867845, 4.90226221, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
       m_ID: 1356686017186274695
@@ -65,8 +177,8 @@ Entities:
       color: [1, 1, 1, 1]
     CameraComponent:
       m_ProjectionType: 1
-      fov: 57.7729988
-      aspect: 1.06363642
+      fov: 58.0229988
+      aspect: 1.27642274
       near: 0.00999999978
       far: 2000
       orthoWidth: 0

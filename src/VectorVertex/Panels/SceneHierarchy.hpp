@@ -30,9 +30,12 @@ namespace VectorVertex
             return m_SelectedEntity;
         }
         bool requestUpdateTextures;
+        bool m_Focused;
+        bool m_ItemFocused;
 
     private:
-        void DrawEntityNode(Entity entity);
+        void
+        DrawEntityNode(Entity entity);
         void DrawComponents(Entity entity);
         Ref<Scene> m_Context;
         Entity m_SelectedEntity;

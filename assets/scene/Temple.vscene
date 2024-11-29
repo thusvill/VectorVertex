@@ -1,12 +1,28 @@
 Scene: _temp
 Entities:
+  - Entity: 7635903985600964294
+    IDComponent:
+      UUID: 7635903985600964294
+      Name: Light
+    TransformComponent:
+      Position: [-0.195728421, -12.8812313, 0.792212725]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 13333130659515921565
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 0.842120051, 0.172093034]
+      light_intensity: 28.7000008
+      radius: 10
   - Entity: 9270441776343849686
     IDComponent:
       UUID: 9270441776343849686
       Name: Camera
     TransformComponent:
-      Position: [20.4543457, -9.24624062, -11.5001926]
-      Rotation: [-0.231196657, 5.07595205, 0]
+      Position: [9.62805653, -13.3529387, -23.2851963]
+      Rotation: [-0.337366968, 5.90846634, 0]
       Scale: [1, 1, 1]
     MaterialComponent:
       m_ID: 17100593008595511048
@@ -15,7 +31,7 @@ Entities:
     CameraComponent:
       m_ProjectionType: 1
       fov: 0.785398185
-      aspect: 1.06363642
+      aspect: 1.27642274
       near: 0.100000001
       far: 1000
       orthoWidth: 10
@@ -55,6 +71,54 @@ Entities:
       m_Name: ""
       color: [1, 1, 1, 1]
     PointLightComponent:
-      color: [1, 1, 1]
+      color: [0.404651165, 0.526489973, 1]
+      light_intensity: 30
+      radius: 10
+  - Entity: 5694388707398757389
+    IDComponent:
+      UUID: 5694388707398757389
+      Name: Light
+    TransformComponent:
+      Position: [-5.38108683, -4.9302268, -6.12026024]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 13333130659515921565
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 0.42790699, 0.954764843]
+      light_intensity: 30
+      radius: 10
+  - Entity: 2290142615462155092
+    IDComponent:
+      UUID: 2290142615462155092
+      Name: Light
+    TransformComponent:
+      Position: [6.26378489, -5.57151985, 5.20422745]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 13333130659515921565
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 0.460465133, 0.460465133]
+      light_intensity: 30
+      radius: 10
+  - Entity: 2178737035437442485
+    IDComponent:
+      UUID: 2178737035437442485
+      Name: Light
+    TransformComponent:
+      Position: [-8.4521389, -4.9302268, 5.56831408]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 13333130659515921565
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.432341814, 1, 0.404651165]
       light_intensity: 30
       radius: 10
