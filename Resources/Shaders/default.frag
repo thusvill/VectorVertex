@@ -91,14 +91,12 @@ vec4 point_light() {
 }
 
 void main() {
-    //outColor = point_light();
     
     DirectionalLight d_light;
     d_light.direction = lightDirection;
     d_light.color = lightColor;
     
-    outColor = (vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0)+ point_light())*texture(material_texture, fragUV).rgba;
-    //outColor = vec4(1.0, 0.0, 0.0, 1.0);
-
+    outColor = (point_light()+vec4(calculateDirectionalLight(d_light, fragNormalWorld, -fragPosWorld), 1.0))*texture(material_texture, fragUV).rgba;
+   
     outID = fragEnttID;
 }
