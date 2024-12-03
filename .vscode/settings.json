@@ -80,7 +80,8 @@
     "any": "cpp",
     "*.inc": "cpp",
     "ranges": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "rendererapi.hpp": "c"
   },
   "cmake.configureOnOpen": true,
   "terminal.explorerKind": "integrated",
