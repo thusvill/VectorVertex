@@ -1,8 +1,8 @@
 #pragma once
 #include "vvpch.hpp"
-#include "vk_window.hpp"
+#include <Plattform/Vulkan/vk_window.hpp>
 
-#include <Components.hpp>
+#include "Components.hpp"
 
 namespace VectorVertex
 {

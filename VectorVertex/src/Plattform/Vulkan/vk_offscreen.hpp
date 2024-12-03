@@ -2,8 +2,8 @@
 #include <vvpch.hpp>
 #include "vk_swap_chain.hpp"
 #include <Core/Log.h>
-#include <imgui.h>
-#include <imgui_impl_vulkan.h>
+#include <imgui/imgui.h>
+#include <imgui/imgui_impl_vulkan.h>
 
 //TODO: Make this as Frame buffer and remove old framebuffer code
 

@@ -28,8 +28,8 @@ ifeq ($(origin AR), default)
   AR = ar
 endif
 RESCOMP = windres
-DEFINES +=
-INCLUDES += -I../VectorVertex/vendor/spdlog/include -I../VectorVertex/src -I../VectorVertex/vendor
+DEFINES += -DSTBI_NO_SIMD
+INCLUDES += -I../VectorVertex/vendor/spdlog/include -I../VectorVertex/src -I../VectorVertex/vendor -I../VectorVertex/vendor/fbx/include -I../VectorVertex/vendor/imgui
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
@@ -45,9 +45,9 @@ ifeq ($(config),debug)
 TARGETDIR = ../bin/VVEditor/Debug
 TARGET = $(TARGETDIR)/VVEditor
 OBJDIR = ../bin-int/VVEditor/Debug
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++17
-LIBS += ../bin/VectorVertex/Debug/libVectorVertex.so
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g -mno-sse2
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++17 -mno-sse2
+LIBS += ../bin/VectorVertex/Debug/libVectorVertex.so -lfmt
 LDDEPS += ../bin/VectorVertex/Debug/libVectorVertex.so
 ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../VectorVertex/Debug'
 
@@ -55,9 +55,9 @@ else ifeq ($(config),release)
 TARGETDIR = ../bin/VVEditor/Release
 TARGET = $(TARGETDIR)/VVEditor
 OBJDIR = ../bin-int/VVEditor/Release
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++17
-LIBS += ../bin/VectorVertex/Release/libVectorVertex.so
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2 -mno-sse2
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++17 -mno-sse2
+LIBS += ../bin/VectorVertex/Release/libVectorVertex.so -lfmt
 LDDEPS += ../bin/VectorVertex/Release/libVectorVertex.so
 ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../VectorVertex/Release' -s
 

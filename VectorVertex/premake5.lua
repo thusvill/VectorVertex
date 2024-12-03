@@ -27,7 +27,6 @@ project "VectorVertex"
         "vendor/entt",
         "vendor/imgui",
         "vendor/SPIRV-Cross/include",
-        "vendor/imgui/backends/vulkan",
         "vendor/ImGuizmo",
         "vendor/yaml-cpp/include",
         "vendor/shaderc/include",
@@ -66,3 +65,7 @@ project "VectorVertex"
     filter "configurations:Release"
         runtime "Release"
         optimize "On"
+
+    filter "action:gmake"
+        buildoptions { "-msse2", "-mavx2" }
+

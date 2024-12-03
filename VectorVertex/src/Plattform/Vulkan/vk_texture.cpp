@@ -2,6 +2,7 @@
 #include "vk_buffer.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
+#define STBI_NO_SIMD
 #include <stb_image.h>
 #include <stdexcept>
 #include <Core/Log.h>

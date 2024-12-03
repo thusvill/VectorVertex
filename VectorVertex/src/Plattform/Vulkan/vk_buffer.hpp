@@ -1,5 +1,5 @@
 #pragma once
-#include <Buffer.hpp>
+#include <Render/Buffer.hpp>
 #include "vk_device.hpp"
 
 namespace VectorVertex
@@ -39,7 +39,7 @@ namespace VectorVertex
             return buffer;
         }
 
-        //VkBuffer getVKBuffer() const { return buffer; }
+        // VkBuffer getVKBuffer() const { return buffer; }
         void *getMappedMemory() const { return mapped; }
         uint32_t getInstanceCount() const { return instanceCount; }
         VkDeviceSize getInstanceSize() const { return instanceSize; }
