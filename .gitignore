@@ -1,2 +1,5 @@
 .vscode/
 build/
+Resources/
+bin/
+bin-int/
