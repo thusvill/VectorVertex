@@ -1,9 +1,9 @@
 #include "Scene.hpp"
 #include "Entity.hpp"
 #include <Core/Log.h>
-#include <vk_frame_info.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
 #include <Render/RenderCommand.hpp>
-#include <vk_api_data.hpp>
+#include <Plattform/Vulkan/vk_api_data.hpp>
 #include <Core/Application.hpp>
 #include <type_traits>
 

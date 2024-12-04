@@ -1,8 +1,8 @@
 #pragma once
 #include "vvpch.hpp"
-#include "vk_window.hpp"
+#include <Plattform/Vulkan/vk_window.hpp>
 
-#include <Components.hpp>
+#include <Core/Components.hpp>
 
 namespace VectorVertex
 {
@@ -24,7 +24,7 @@ namespace VectorVertex
         };
 
         void moveInPlaneXZ(GLFWwindow *window, float dt, TransformComponent &transform);
-        bool isMoving() {return is_moving;}
+        bool isMoving() { return is_moving; }
 
         KeyMappings keys{};
         float originalSpeed{3.5f};

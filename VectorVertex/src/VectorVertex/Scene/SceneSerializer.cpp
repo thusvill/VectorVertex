@@ -4,7 +4,7 @@
 #include <VectorVertex/Scene/Entity.hpp>
 #include <SceneHierarchy.hpp>
 #include <Core/UUID.hpp>
-#include <vk_camera.hpp>
+#include <Plattform/Vulkan/vk_camera.hpp>
 
 namespace YAML
 {

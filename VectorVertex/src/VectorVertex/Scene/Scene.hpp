@@ -1,11 +1,11 @@
 #pragma once
-#include <entt.hpp>
-#include <Components.hpp>
+#include <entt/entt.hpp>
+#include <Core/Components.hpp>
 #include <Core/Base.h>
-#include <vk_offscreen.hpp>
-#include <vk_render_system.hpp>
-#include <vk_frame_info.hpp>
-#include <Keyboard_inputs.hpp>
+#include <Plattform/Vulkan/vk_offscreen.hpp>
+#include <Plattform/Vulkan/vk_render_system.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
+#include <Core/Keyboard_inputs.hpp>
 
 namespace VectorVertex
 {

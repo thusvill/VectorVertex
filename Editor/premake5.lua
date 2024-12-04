@@ -16,10 +16,11 @@ project "VVEditor"
         "%{wks.location}/VectorVertex/vendor/spdlog/include",
         "%{wks.location}/VectorVertex/src",
         "%{wks.location}/VectorVertex/vendor",
+        "%{wks.location}/VectorVertex/vendor/fbx/include",
     }
 
     links {
-        "VectorVertex"
+        "VectorVertex",
     }
 
     filter "configurations:Debug"

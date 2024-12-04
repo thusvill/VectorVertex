@@ -1,6 +1,6 @@
 #include "vk_light_render_system.hpp"
-#include <Components.hpp>
-#include <vk_api_data.hpp>
+#include <Core/Components.hpp>
+#include <Plattform/Vulkan/vk_api_data.hpp>
 #include <Render/GraphicsContext.hpp>
 #include <Core/Log.h>
 #include <VectorVertex/Scene/Entity.hpp>

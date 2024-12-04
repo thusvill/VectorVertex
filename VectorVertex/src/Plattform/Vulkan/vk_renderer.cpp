@@ -2,7 +2,7 @@
 #include <Core/Log.h>
 #include <stdexcept>
 #include <Assert.h>
-#include <vk_texture.hpp>
+#include <Plattform/Vulkan/vk_texture.hpp>
 namespace VectorVertex
 {
 

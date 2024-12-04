@@ -7,12 +7,12 @@
 #include "vk_device.hpp"
 #include "vk_swap_chain.hpp"
 #include <Render/Window.hpp>
-#include <Buffer.hpp>
-#include <vk_api_data.hpp>
-#include <vk_render_system.hpp>
-#include <vk_mesh_render_system.hpp>
-#include <vk_light_render_system.hpp>
-#include <vk_texture.hpp>
+#include <Render/Buffer.hpp>
+#include <Plattform/Vulkan/vk_api_data.hpp>
+#include <Plattform/Vulkan/vk_render_system.hpp>
+#include <Plattform/Vulkan/Render_Systems/vk_mesh_render_system.hpp>
+#include <Plattform/Vulkan/Render_Systems/vk_light_render_system.hpp>
+#include <Plattform/Vulkan/vk_texture.hpp>
 
 namespace VectorVertex
 {

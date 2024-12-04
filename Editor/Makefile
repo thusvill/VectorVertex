@@ -29,7 +29,7 @@ ifeq ($(origin AR), default)
 endif
 RESCOMP = windres
 DEFINES +=
-INCLUDES += -I../VectorVertex/vendor/spdlog/include -I../VectorVertex/src -I../VectorVertex/vendor
+INCLUDES += -I../VectorVertex/vendor/spdlog/include -I../VectorVertex/src -I../VectorVertex/vendor -I../VectorVertex/vendor/fbx/include
 FORCE_INCLUDE +=
 ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
@@ -47,9 +47,9 @@ TARGET = $(TARGETDIR)/VVEditor
 OBJDIR = ../bin-int/VVEditor/Debug
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++17
-LIBS += ../bin/VectorVertex/Debug/libVectorVertex.so
-LDDEPS += ../bin/VectorVertex/Debug/libVectorVertex.so
-ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../VectorVertex/Debug'
+LIBS += ../bin/VectorVertex/Debug/libVectorVertex.a
+LDDEPS += ../bin/VectorVertex/Debug/libVectorVertex.a
+ALL_LDFLAGS += $(LDFLAGS)
 
 else ifeq ($(config),release)
 TARGETDIR = ../bin/VVEditor/Release
@@ -57,9 +57,9 @@ TARGET = $(TARGETDIR)/VVEditor
 OBJDIR = ../bin-int/VVEditor/Release
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++17
-LIBS += ../bin/VectorVertex/Release/libVectorVertex.so
-LDDEPS += ../bin/VectorVertex/Release/libVectorVertex.so
-ALL_LDFLAGS += $(LDFLAGS) -Wl,-rpath,'$$ORIGIN/../../VectorVertex/Release' -s
+LIBS += ../bin/VectorVertex/Release/libVectorVertex.a
+LDDEPS += ../bin/VectorVertex/Release/libVectorVertex.a
+ALL_LDFLAGS += $(LDFLAGS) -s
 
 endif
 

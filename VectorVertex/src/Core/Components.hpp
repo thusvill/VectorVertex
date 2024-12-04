@@ -1,7 +1,7 @@
 #pragma once
-#include <vk_texture.hpp>
-#include <vk_model.hpp>
-#include <vk_camera.hpp>
+#include <Plattform/Vulkan/vk_texture.hpp>
+#include <Plattform/Vulkan/vk_model.hpp>
+#include <Plattform/Vulkan/vk_camera.hpp>
 #include <glm/glm.hpp>
 #include <glm/gtc/quaternion.hpp>
 #include <glm/gtc/matrix_transform.hpp>

@@ -2,10 +2,10 @@
 #include <vvpch.hpp>
 #include "vk_swap_chain.hpp"
 #include <Core/Log.h>
-#include <imgui.h>
-#include <imgui_impl_vulkan.h>
+#include <imgui/imgui.h>
+#include <imgui/imgui_impl_vulkan.h>
 
-//TODO: Make this as Frame buffer and remove old framebuffer code
+// TODO: Make this as Frame buffer and remove old framebuffer code
 
 namespace VectorVertex
 {
@@ -18,9 +18,9 @@ namespace VectorVertex
         void StartRenderpass(VkCommandBuffer commandBuffer);
         void EndRendrepass(VkCommandBuffer commandBuffer);
         void Resize(VkExtent2D new_extent);
-        VkExtent2D getViewSize() {return ViewExtent;}
+        VkExtent2D getViewSize() { return ViewExtent; }
         ImTextureID getFramebufferImage() { return imguiTextureId; }
-        void SetAccordingtoAspectRatio(VkExtent2D& old_extent, VkExtent2D new_extent);
+        void SetAccordingtoAspectRatio(VkExtent2D &old_extent, VkExtent2D new_extent);
 
     private:
         void create_resources();

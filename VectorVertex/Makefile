@@ -38,7 +38,7 @@ ALL_CPPFLAGS += $(CPPFLAGS) -MD -MP $(DEFINES) $(INCLUDES)
 ALL_RESFLAGS += $(RESFLAGS) $(DEFINES) $(INCLUDES)
 LIBS += -lglfw -lfmt -lyaml-cpp -lglslang -lshaderc -lshaderc_combined -lSPIRV-Tools -lvulkan
 LDDEPS +=
-LINKCMD = $(CXX) -o "$@" $(OBJECTS) $(RESOURCES) $(ALL_LDFLAGS) $(LIBS)
+LINKCMD = $(AR) -rcs "$@" $(OBJECTS)
 define PREBUILDCMDS
 endef
 define PRELINKCMDS
@@ -48,19 +48,19 @@ endef
 
 ifeq ($(config),debug)
 TARGETDIR = ../bin/VectorVertex/Debug
-TARGET = $(TARGETDIR)/libVectorVertex.so
+TARGET = $(TARGETDIR)/libVectorVertex.a
 OBJDIR = ../bin-int/VectorVertex/Debug
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -fPIC -g -w -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -fPIC -g -std=c++17 -w -g
-ALL_LDFLAGS += $(LDFLAGS) -shared -Wl,-soname=libVectorVertex.so
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -g -w -g
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -g -std=c++17 -w -g
+ALL_LDFLAGS += $(LDFLAGS)
 
 else ifeq ($(config),release)
 TARGETDIR = ../bin/VectorVertex/Release
-TARGET = $(TARGETDIR)/libVectorVertex.so
+TARGET = $(TARGETDIR)/libVectorVertex.a
 OBJDIR = ../bin-int/VectorVertex/Release
-ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2 -fPIC
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -fPIC -std=c++17
-ALL_LDFLAGS += $(LDFLAGS) -shared -Wl,-soname=libVectorVertex.so -s
+ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -O2
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -O2 -std=c++17
+ALL_LDFLAGS += $(LDFLAGS) -s
 
 endif
 

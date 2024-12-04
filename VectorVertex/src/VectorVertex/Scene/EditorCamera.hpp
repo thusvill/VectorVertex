@@ -1,5 +1,5 @@
 #pragma once
-#include <vk_frame_info.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
 #include <Camera.hpp>
 
 namespace VectorVertex
@@ -10,7 +10,7 @@ namespace VectorVertex
         EditorCamera() = default;
         EditorCamera(float fov, float aspectRatio, float nearClip, float farClip);
 
-        void OnUpdate(FrameInfo& info);
+        void OnUpdate(FrameInfo &info);
         // void OnEvent(Event &e);
 
         inline float GetDistance() const { return m_Distance; }
@@ -39,7 +39,7 @@ namespace VectorVertex
         void UpdateProjection();
         void UpdateView();
 
-        //bool OnMouseScroll(MouseScrolledEvent &e);
+        // bool OnMouseScroll(MouseScrolledEvent &e);
 
         void MousePan(const glm::vec2 &delta);
         void MouseRotate(const glm::vec2 &delta);

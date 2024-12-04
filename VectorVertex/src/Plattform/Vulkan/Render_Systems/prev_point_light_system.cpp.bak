@@ -1,7 +1,7 @@
 #include "vk_point_light_system.hpp"
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
-#include <Components.hpp>
+#include <Core/Components.hpp>
 #include <VectorVertex/Scene/Entity.hpp>
 #include <Renderer.hpp>
 #include <Core/Application.hpp>

@@ -1,5 +1,5 @@
 project "VectorVertex"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
     cppdialect "C++17"
     targetdir "%{wks.location}/bin/%{prj.name}/%{cfg.buildcfg}"
@@ -7,6 +7,10 @@ project "VectorVertex"
 
     pchheader "src/vvpch.hpp"
     pchsource "src/vvpch.cpp"
+
+    flags{
+        "MultiProcessorCompile",
+    }
 
 
     includedirs {
