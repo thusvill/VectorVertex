@@ -1,15 +1,8 @@
 #pragma once
-<<<<<<<< HEAD:VectorVertex/src/Core/Keyboard_inputs.hpp
 #include "vvpch.hpp"
-#include <Plattform/Vulkan/vk_window.hpp>
-
-#include "Components.hpp"
-========
-#include <vvpch.hpp>
 #include "vk_window.hpp"
 
 #include <Components.hpp>
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Core/Keyboard_inputs.hpp
 
 namespace VectorVertex
 {

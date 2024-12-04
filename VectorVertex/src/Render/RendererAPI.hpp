@@ -2,7 +2,7 @@
 #include <vvpch.hpp>
 #include <Core/Base.h>
 #include <glm/glm.hpp>
-#include <Render/Buffer.hpp>
+#include <Buffer.hpp>
 #include <Render/Window.hpp>
 #include <Core/UUID.hpp>
 

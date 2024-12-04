@@ -6,7 +6,7 @@
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
-#include <fbx/include/fbxsdk.h>
+#include <fbxsdk.h>
 
 #include <Render/RendererAPI.hpp>
 
@@ -25,6 +25,7 @@ namespace VectorVertex
 
             // Editor Only
             int enttID = -1;
+
 
             static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions();
             static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
@@ -60,14 +61,13 @@ namespace VectorVertex
         BindWithEntityID(VkCommandBuffer commandBuffer, int entityID);
         void Draw(VkCommandBuffer commandBuffer);
 
-        MeshData GetMeshData()
-        {
+        MeshData GetMeshData(){
             MeshData data;
             data.m_VertexBuffers = vertexBuffer;
             data.m_IndexBuffer = indexBuffer;
             data.m_IndexCount = indexCount;
             data.m_VertexCount = vertexCount;
-
+            
             return data;
         }
 

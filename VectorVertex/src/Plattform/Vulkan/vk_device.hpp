@@ -1,11 +1,7 @@
 #pragma once
 
 #include "vk_window.hpp"
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_device.hpp
 #include <Core/Log.h>
-========
-#include <Log.h>
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_device.hpp
 #include <vvpch.hpp>
 
 namespace VectorVertex
@@ -35,13 +31,8 @@ namespace VectorVertex
 #else
     const bool enableValidationLayers = true;
 #endif
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_device.hpp
     VKDevice() = default;
     VKDevice(GLFWwindow *window);
-========
-VKDevice() = default;
-    VKDevice(GLFWwindow* window);
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_device.hpp
     ~VKDevice();
 
     // Not copyable or movable
@@ -86,22 +77,14 @@ VKDevice() = default;
     VkPhysicalDeviceProperties properties;
     VkInstance instance_;
 
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_device.hpp
     static VKDevice &Get()
     {
-========
-    static VKDevice& Get() {
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_device.hpp
       VV_CORE_ASSERT(s_Device, "Device is NULL!");
       return *s_Device;
     }
 
   private:
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_device.hpp
     static VKDevice *s_Device;
-========
-    static VKDevice* s_Device;
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_device.hpp
     void createInstance();
     void setupDebugMessenger();
     void createSurface();
@@ -132,13 +115,6 @@ VKDevice() = default;
 
     const std::vector<const char *> validationLayers = {"VK_LAYER_KHRONOS_validation"};
     const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_KHR_MAINTENANCE1_EXTENSION_NAME};
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_device.hpp
   };
 
-========
-
-  };
-
-
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_device.hpp
 } // namespace VectorVertex

@@ -39,11 +39,7 @@ namespace VectorVertex
         void Bind(VkCommandBuffer commandBUffer);
 
         static void defaultPipelineConfigInfo(PipelineConfigInfo &configInfo);
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_pipeline.hpp
         static void enableAlphaBlending(PipelineConfigInfo &configInfo, VkFormat format, int attachment);
-========
-        static void enableAlphaBlending(PipelineConfigInfo &configInfo);
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_pipeline.hpp
         static void addAttachment(PipelineConfigInfo &configInfo, VkFormat format, bool blend = false);
         static VkColorComponentFlags getColorFormat(VkFormat format);
 

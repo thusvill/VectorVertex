@@ -1,9 +1,5 @@
 #include "vk_descriptors.hpp"
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_descriptors.cpp
 #include <Core/Log.h>
-========
-#include <Log.h>
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_descriptors.cpp
 
 // std
 #include <cassert>
@@ -123,11 +119,7 @@ namespace VectorVertex
 
     VKDescriptorPool::~VKDescriptorPool()
     {
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_descriptors.cpp
 
-========
-        
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_descriptors.cpp
         vkDestroyDescriptorPool(vkDevice.device(), descriptorPool, nullptr);
     }
 
@@ -162,15 +154,8 @@ namespace VectorVertex
     {
         vkDeviceWaitIdle(vkDevice.device());
         vkResetDescriptorPool(vkDevice.device(), descriptorPool, 0);
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_descriptors.cpp
     }
 
-========
-    
-    }
-
-
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_descriptors.cpp
     VKDescriptorWriter::VKDescriptorWriter(VKDescriptorSetLayout &setLayout, VKDescriptorPool &pool)
         : setLayout{setLayout}, pool{pool} {}
 
@@ -267,30 +252,18 @@ namespace VectorVertex
         bool success = pool.allocateDescriptor(setLayout.getDescriptorSetLayout(), set);
         if (!success)
         {
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_descriptors.cpp
             // VV_CORE_ERROR("Cannot Allocate Descriptor set!");
 
-========
-            //VV_CORE_ERROR("Cannot Allocate Descriptor set!");
-
-            
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_descriptors.cpp
             pool.resetPool();
             success = pool.allocateDescriptor(setLayout.getDescriptorSetLayout(), set);
             if (!success)
             {
                 VV_CORE_ERROR("Cannot allocate descriptor set after reset!");
                 return false;
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_descriptors.cpp
             }
             else
             {
                 // VV_CORE_WARN("Created allocate descriptor set after reset!");
-========
-            }else{
-                //VV_CORE_WARN("Created allocate descriptor set after reset!");
-               
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_descriptors.cpp
             }
         }
         overwrite(set);

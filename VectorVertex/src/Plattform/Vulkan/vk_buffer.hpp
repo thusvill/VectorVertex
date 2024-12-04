@@ -1,9 +1,5 @@
 #pragma once
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp
-#include <Render/Buffer.hpp>
-========
 #include <Buffer.hpp>
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_buffer.hpp
 #include "vk_device.hpp"
 
 namespace VectorVertex
@@ -43,11 +39,7 @@ namespace VectorVertex
             return buffer;
         }
 
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_buffer.hpp
-        // VkBuffer getVKBuffer() const { return buffer; }
-========
         //VkBuffer getVKBuffer() const { return buffer; }
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_buffer.hpp
         void *getMappedMemory() const { return mapped; }
         uint32_t getInstanceCount() const { return instanceCount; }
         VkDeviceSize getInstanceSize() const { return instanceSize; }

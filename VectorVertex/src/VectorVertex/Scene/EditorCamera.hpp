@@ -1,6 +1,6 @@
 #pragma once
-#include <Plattform/Vulkan/vk_frame_info.hpp>
-#include <Render/Camera.hpp>
+#include <vk_frame_info.hpp>
+#include <Camera.hpp>
 
 namespace VectorVertex
 {

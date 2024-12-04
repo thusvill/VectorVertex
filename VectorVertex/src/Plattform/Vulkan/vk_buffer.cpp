@@ -6,11 +6,7 @@
  */
 
 #include "vk_buffer.hpp"
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_buffer.cpp
 #include <Core/Log.h>
-========
-#include <Log.h>
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_buffer.cpp
 
 // std
 #include <cassert>

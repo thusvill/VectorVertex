@@ -8,19 +8,11 @@
 #include <limits>
 #include <set>
 #include <stdexcept>
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_swap_chain.cpp
 #include <Core/Log.h>
 
 namespace VectorVertex
 {
   bool VKSwapChain::isWaitingForFence = false;
-========
-#include <Log.h>
-
-namespace VectorVertex
-{
-  bool VKSwapChain::isWaitingForFence =false;
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_swap_chain.cpp
 
   VKSwapChain::VKSwapChain(VKDevice &deviceRef, VkExtent2D extent)
       : device{deviceRef}, windowExtent{extent}
@@ -107,15 +99,9 @@ namespace VectorVertex
   {
     if (imagesInFlight[*imageIndex] != VK_NULL_HANDLE)
     {
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_swap_chain.cpp
       // isWaitingForFence = true;
       vkWaitForFences(device.device(), 1, &imagesInFlight[*imageIndex], VK_TRUE, UINT64_MAX);
       // isWaitingForFence = false;
-========
-      //isWaitingForFence = true;
-      vkWaitForFences(device.device(), 1, &imagesInFlight[*imageIndex], VK_TRUE, UINT64_MAX);
-      //isWaitingForFence = false;
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_swap_chain.cpp
     }
 
     imagesInFlight[*imageIndex] = inFlightFences[currentFrame];
@@ -276,12 +262,8 @@ namespace VectorVertex
     createInfo.oldSwapchain = oldSwapChain == nullptr ? VK_NULL_HANDLE : oldSwapChain->swapChain;
 
     auto result = vkCreateSwapchainKHR(device.device(), &createInfo, nullptr, &swapChain);
-<<<<<<<< HEAD:VectorVertex/src/Plattform/Vulkan/vk_swap_chain.cpp
     if (result != VK_SUCCESS)
     {
-========
-    if(result != VK_SUCCESS){
->>>>>>>> 400cd19c24c23a0b77a9a6741370ff57828b1ef2:src/Plattform/Vulkan/vk_swap_chain.cpp
       VV_CORE_ERROR("failed to create swap chain!");
       throw std::runtime_error(std::to_string(result));
     }
