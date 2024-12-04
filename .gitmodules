@@ -1,12 +1,12 @@
-[submodule "src/vendor/yaml-cpp"]
-	path = src/vendor/yaml-cpp
+[submodule "VectorVertex/vendor/yaml-cpp"]
+	path = VectorVertex/vendor/yaml-cpp
 	url = https://github.com/TheCherno/yaml-cpp.git
-[submodule "src/Render/vendor/ImGuizmo"]
-	path = src/Render/vendor/ImGuizmo
+[submodule "VectorVertex/src/Render/vendor/ImGuizmo"]
+	path = VectorVertex/src/Render/vendor/ImGuizmo
 	url = https://github.com/TheCherno/ImGuizmo.git
-[submodule "src/vendor/shaderc"]
-	path = src/vendor/shaderc
+[submodule "VectorVertex/vendor/shaderc"]
+	path = VectorVertex/vendor/shaderc
 	url = https://github.com/google/shaderc.git
-[submodule "src/vendor/SPIRV-Cross"]
-	path = src/vendor/SPIRV-Cross
+[submodule "VectorVertex/vendor/SPIRV-Cross"]
+	path = VectorVertex/vendor/SPIRV-Cross
 	url = https://github.com/KhronosGroup/SPIRV-Cross.git
