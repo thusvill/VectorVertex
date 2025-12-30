@@ -1,0 +1,3 @@
+/home/bios/CLionProjects/VectorVertex/VectorVertex/Engine/build/CMakeFiles/VectorVertexEngine.dir
+/home/bios/CLionProjects/VectorVertex/VectorVertex/Engine/build/CMakeFiles/edit_cache.dir
+/home/bios/CLionProjects/VectorVertex/VectorVertex/Engine/build/CMakeFiles/rebuild_cache.dir
