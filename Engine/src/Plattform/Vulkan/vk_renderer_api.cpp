@@ -1,8 +1,8 @@
 #include "vk_renderer_api.hpp"
 
-#include <FrameBuffer.hpp>
-#include <vk_framebuffer.hpp>
-#include <Entity.hpp>
+#include <Render/FrameBuffer.hpp>
+#include <Plattform/Vulkan/vk_framebuffer.hpp>
+#include <Scene/Entity.hpp>
 
 namespace VectorVertex
 {

@@ -8,7 +8,7 @@
 #include <limits>
 #include <set>
 #include <stdexcept>
-#include <Log.h>
+#include <Core/Log.h>
 
 namespace VectorVertex
 {

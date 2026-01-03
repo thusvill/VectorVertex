@@ -1,8 +1,8 @@
 #pragma once
-#include <Base.h>
-#include <RendererAPI.hpp>
-#include <Window.hpp>
-#include <Entity.hpp>
+#include <Core/Base.h>
+#include <Render/RendererAPI.hpp>
+#include <Render/Window.hpp>
+#include <Scene/Entity.hpp>
 namespace VectorVertex
 {
     class RenderCommand

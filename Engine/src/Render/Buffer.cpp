@@ -1,6 +1,6 @@
 #include "Buffer.hpp"
-#include <Renderer.hpp>
-#include <vk_buffer.hpp>
+#include <Render/Renderer.hpp>
+#include <Plattform/Vulkan/vk_buffer.hpp>
 
 
 namespace VectorVertex

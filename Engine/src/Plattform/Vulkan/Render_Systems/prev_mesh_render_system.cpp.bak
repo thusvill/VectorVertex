@@ -2,11 +2,11 @@
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
 #include <iostream>
-#include <Entity.hpp>
-#include <Renderer.hpp>
-#include <GraphicsContext.hpp>
-#include <Application.hpp>
-#include <RenderCommand.hpp>
+#include <Scene/Entity.hpp>
+#include <Render/Renderer.hpp>
+#include <Render/GraphicsContext.hpp>
+#include <Core/Application.hpp>
+#include <Render/RenderCommand.hpp>
 namespace VectorVertex
 {
 

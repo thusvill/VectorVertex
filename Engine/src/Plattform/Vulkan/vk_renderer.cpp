@@ -1,8 +1,8 @@
 #include "vk_renderer.hpp"
-#include <Log.h>
+#include <Core/Log.h>
 #include <stdexcept>
-#include <Assert.h>
-#include <vk_texture.hpp>
+#include <Core/Assert.h>
+#include <Plattform/Vulkan/vk_texture.hpp>
 namespace VectorVertex
 {
 

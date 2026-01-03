@@ -1,7 +1,7 @@
 #pragma once
 
-#include <Log.h>
-#include "vk_texture.hpp"
+#include <Core/Log.h>
+#include <Plattform/Vulkan/vk_texture.hpp>
 #include <glm/glm.hpp>
 #include <unordered_map>
 #include <string>

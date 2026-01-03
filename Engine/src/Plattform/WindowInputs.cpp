@@ -1,8 +1,8 @@
-#include <Input.hpp>
-#include <MouseCodes.hpp>
-#include <KeyCodes.hpp>
-#include <Application.hpp>
-#include <GraphicsContext.hpp>
+#include <Core/Input.hpp>
+#include <Core/MouseCodes.hpp>
+#include <Core/KeyCodes.hpp>
+#include <Core/Application.hpp>
+#include <Render/GraphicsContext.hpp>
 #include <GLFW/glfw3.h>
 
 namespace VectorVertex {

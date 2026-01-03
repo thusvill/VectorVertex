@@ -1,7 +1,7 @@
 #pragma once
 #include <vulkan/vulkan.h>
-#include <Shader.hpp>
-#include <vk_device.hpp>
+#include <Render/Shader.hpp>
+#include <Plattform/Vulkan/vk_device.hpp>
 namespace VectorVertex
 {
     struct VulkanShader

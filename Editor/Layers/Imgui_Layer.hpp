@@ -1,10 +1,10 @@
 #pragma once
 #include <Layer.h>
-#include <vk_pipeline.hpp>
-#include <vk_device.hpp>
-#include <vk_camera.hpp>
-#include <vk_frame_info.hpp>
-#include <vk_renderer.hpp>
+#include <Plattform/Vulkan/vk_pipeline.hpp>
+#include <Plattform/Vulkan/vk_device.hpp>
+#include <Plattform/Vulkan/vk_camera.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
+#include <Plattform/Vulkan/vk_renderer.hpp>
 
 #include <vulkan/vulkan.h>
 #include <imgui/imgui.h>

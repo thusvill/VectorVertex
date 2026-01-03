@@ -1,8 +1,8 @@
 #include "FrameBuffer.hpp"
-#include <Renderer.hpp>
-#include <Log.h>
+#include <Render/Renderer.hpp>
+#include <Core/Log.h>
 
-#include <vk_framebuffer.hpp>
+#include <Plattform/Vulkan/vk_framebuffer.hpp>
 
 namespace VectorVertex
 {

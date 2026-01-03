@@ -1,10 +1,10 @@
 #include "vk_render_system.hpp"
-#include <vk_api_data.hpp>
-#include <Components.hpp>
-#include <Entity.hpp>
-#include <RenderCommand.hpp>
-#include <GraphicsContext.hpp>
-#include <vk_framebuffer.hpp>
+#include <Plattform/Vulkan/vk_api_data.hpp>
+#include <Core/Components.hpp>
+#include <Scene/Entity.hpp>
+#include <Render/RenderCommand.hpp>
+#include <Render/GraphicsContext.hpp>
+#include <Plattform/Vulkan/vk_framebuffer.hpp>
 namespace VectorVertex
 {
 

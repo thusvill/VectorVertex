@@ -1,9 +1,9 @@
 #include "vk_light_render_system.hpp"
-#include <Components.hpp>
-#include <vk_api_data.hpp>
-#include <GraphicsContext.hpp>
-#include <Log.h>
-#include <Entity.hpp>
+#include <Core/Components.hpp>
+#include <Plattform/Vulkan/vk_api_data.hpp>
+#include <Render/GraphicsContext.hpp>
+#include <Core/Log.h>
+#include <Scene/Entity.hpp>
 namespace VectorVertex
 {
     VulkanLightRenderer::VulkanLightRenderer(std::vector<VkDescriptorSetLayout> layouts)

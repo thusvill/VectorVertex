@@ -1,5 +1,5 @@
 #include "vk_model.hpp"
-#include <Utils.hpp>
+#include <Core/Utils.hpp>
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #define GLM_ENABLE_EXPERIMENTAL
@@ -9,8 +9,8 @@
 #include <tiny_obj_loader.h>
 #include <cassert>
 #include <cstring>
-#include <Log.h>
-#include <Application.hpp>
+#include <Core/Log.h>
+
 
 #include <iostream>
 namespace std

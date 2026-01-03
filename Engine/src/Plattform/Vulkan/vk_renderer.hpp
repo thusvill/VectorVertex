@@ -1,11 +1,11 @@
 #pragma once
 #include <Core/vvpch.hpp>
-#include <Log.h>
+#include <Core/Log.h>
 #include "vk_window.hpp"
 #include "vk_device.hpp"
 #include "vk_swap_chain.hpp"
 
-#include <Window.hpp>
+#include <Render/Window.hpp>
 
 namespace VectorVertex
 {

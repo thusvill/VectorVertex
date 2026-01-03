@@ -1,8 +1,8 @@
 #include "vk_offscreen.hpp"
 #include <iostream>
-#include <GraphicsContext.hpp>
-#include <Application.hpp>
-#include <RenderCommand.hpp>
+#include <Render/GraphicsContext.hpp>
+
+#include <Render/RenderCommand.hpp>
 namespace VectorVertex
 {
     VKOffscreen::VKOffscreen(VkExtent2D size) : ViewExtent(size)
@@ -271,7 +271,7 @@ namespace VectorVertex
         vkCreateSampler(VKDevice::Get().device(), &samplerInfo, nullptr, &sampler);
 
         // Step 7: Create the ImGui texture ID from the offscreen image
-        imguiTextureId = ImGui_ImplVulkan_AddTexture(sampler, offscreenImageView, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
+        imguiTextureId = (ImTextureID)ImGui_ImplVulkan_AddTexture(sampler, offscreenImageView, VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
     }
     void VKOffscreen::clean()
     {

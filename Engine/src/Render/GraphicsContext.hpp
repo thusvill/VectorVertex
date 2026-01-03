@@ -1,6 +1,6 @@
 #pragma once
-#include <Base.h>
-#include <Window.hpp>
+#include <Core/Base.h>
+#include <Render/Window.hpp>
 
 namespace VectorVertex {
 

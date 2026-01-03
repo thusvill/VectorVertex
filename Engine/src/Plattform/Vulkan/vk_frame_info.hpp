@@ -3,10 +3,10 @@
 #include "vk_camera.hpp"
 #include "vk_descriptors.hpp"
 #include "vk_renderer.hpp"
-#include <imgui.h>
+
 #include <Core/UUID.hpp>
 #include <vulkan/vulkan.h>
-// #include <Entity.hpp>
+// #include <Scene/Entity.hpp>
 
 namespace VectorVertex
 {

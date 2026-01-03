@@ -1,11 +1,11 @@
 #pragma once
 #include <vulkan/vulkan.h>
 #include <Core/vvpch.hpp>
-#include <vk_descriptors.hpp>
-#include <vk_pipeline.hpp>
-#include <Material.hpp>
-#include <vk_frame_info.hpp>
-#include <FrameBuffer.hpp>
+#include <Plattform/Vulkan/vk_descriptors.hpp>
+#include <Plattform/Vulkan/vk_pipeline.hpp>
+#include <Render/Material.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
+#include <Render/FrameBuffer.hpp>
 
 namespace VectorVertex
 {

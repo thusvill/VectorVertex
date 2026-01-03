@@ -1,12 +1,12 @@
 #pragma once
 #include <Core/vvpch.hpp>
-#include <Base.h>
+#include <Core/Base.h>
 #include <glm/glm.hpp>
-#include <Buffer.hpp>
-#include <Window.hpp>
+#include <Render/Buffer.hpp>
+#include <Render/Window.hpp>
 #include <Core/UUID.hpp>
 
-#include <vk_frame_info.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
 
 namespace VectorVertex
 {

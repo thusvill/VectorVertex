@@ -2,9 +2,9 @@
 #include <Core/vvpch.hpp>
 #include "vk_device.hpp"
 #include "vk_renderer.hpp"
-#include <Linux/LinuxWindow.hpp>
-#include <GraphicsContext.hpp>
-#include <RenderCommand.hpp>
+#include <Plattform/Linux/LinuxWindow.hpp>
+#include <Render/GraphicsContext.hpp>
+#include <Render/RenderCommand.hpp>
 
 namespace VectorVertex
 {

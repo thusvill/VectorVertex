@@ -2,10 +2,10 @@
 #include <glm/gtc/constants.hpp>
 #include <stdexcept>
 #include <Components.hpp>
-#include <Entity.hpp>
-#include <Renderer.hpp>
-#include <Application.hpp>
-#include <RenderCommand.hpp>
+#include <Scene/Entity.hpp>
+#include <Render/Renderer.hpp>
+#include <Core/Application.hpp>
+#include <Render/RenderCommand.hpp>
 namespace VectorVertex
 {
     struct PointLightPushConstants

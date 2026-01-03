@@ -1,5 +1,5 @@
 #include "SceneHierarchy.hpp"
-#include <Entity.hpp>
+#include <Scene/Entity.hpp>
 #include <string.h>
 #include <imgui/imgui_internal.h>
 #include <glm/gtc/type_ptr.hpp>

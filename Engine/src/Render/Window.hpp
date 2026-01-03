@@ -1,8 +1,8 @@
 #pragma once
 #include <GLFW/glfw3.h>
 #include <Core/vvpch.hpp>
-#include <Base.h>
-#include <Event.hpp>
+#include <Core/Base.h>
+#include <Core/Event.hpp>
 namespace VectorVertex
 {
 

@@ -3,7 +3,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <iostream>
-#include <Application.hpp>
+
 namespace VectorVertex
 {
     VKPipeline::VKPipeline(const PipelineConfigInfo &config_info, Shader *shader)

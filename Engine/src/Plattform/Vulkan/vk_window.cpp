@@ -1,6 +1,6 @@
 #include "vk_window.hpp"
 #include <stdexcept>
-#include <Log.h>
+#include <Core/Log.h>
 namespace VectorVertex
 {
     VKWindow::VKWindow(int w, int h, std::string name) : width{w}, height{h}, windowName{name}

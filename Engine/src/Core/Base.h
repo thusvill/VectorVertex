@@ -70,7 +70,7 @@ namespace VectorVertex
 #endif
 
 }
-#include "Log.h"
+#include <Core/Log.h>
 #include "Assert.h"
 
 #endif // GAMEENGINE_BASE_H

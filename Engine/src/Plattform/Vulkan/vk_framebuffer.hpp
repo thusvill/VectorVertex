@@ -1,6 +1,6 @@
 #pragma once
-#include <FrameBuffer.hpp>
-#include <vk_renderer.hpp>
+#include <Render/FrameBuffer.hpp>
+#include <Plattform/Vulkan/vk_renderer.hpp>
 #include <vulkan/vulkan.h>
 
 namespace VectorVertex

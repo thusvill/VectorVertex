@@ -1,10 +1,10 @@
 #pragma once
 #include <Core/vvpch.hpp>
-#include <Base.h>
-#include <Window.hpp>
-#include <RendererAPI.hpp>
-#include <GraphicsContext.hpp>
-#include <vk_frame_info.hpp>
+#include <Core/Base.h>
+#include <Render/Window.hpp>
+#include <Render/RendererAPI.hpp>
+#include <Render/GraphicsContext.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
 
 namespace VectorVertex
 {

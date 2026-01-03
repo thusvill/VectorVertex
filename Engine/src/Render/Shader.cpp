@@ -1,6 +1,6 @@
 #include "Shader.hpp"
-#include <Renderer.hpp>
-#include <vk_shader.hpp>
+#include <Render/Renderer.hpp>
+#include <Plattform/Vulkan/vk_shader.hpp>
 
 namespace VectorVertex
 {

@@ -1,9 +1,9 @@
 #pragma once
 #include <vulkan/vulkan.h>
-#include <Log.h>
-#include <vk_device.hpp>
-#include <vk_frame_info.hpp>
-#include <vk_swap_chain.hpp>
+#include <Core/Log.h>
+#include <Plattform/Vulkan/vk_device.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
+#include <Plattform/Vulkan/vk_swap_chain.hpp>
 
 namespace VectorVertex
 {

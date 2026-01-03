@@ -1,7 +1,7 @@
 #pragma once
-#include <Application.hpp>
-#include <vk_render_system.hpp>
-#include <vk_point_light_system.hpp>
+#include <Core/Application.hpp>
+#include <Plattform/Vulkan/vk_render_system.hpp>
+#include <Plattform/Vulkan/vk_point_light_system.hpp>
 namespace VectorVertex
 {
     class VulkanRendererSystem

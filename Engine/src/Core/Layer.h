@@ -7,8 +7,8 @@
 
 #pragma once
 #include "Base.h"
-#include <vk_frame_info.hpp>
-#include <Event.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
+#include <Core/Event.hpp>
 
 namespace VectorVertex {
     class Layer {

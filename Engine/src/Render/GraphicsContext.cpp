@@ -1,9 +1,9 @@
 #include "GraphicsContext.hpp"
-#include <Base.h>
-#include <RendererAPI.hpp>
-#include <vk_context.hpp>
-#include <Window.hpp>
-#include <Linux/LinuxWindow.hpp>
+#include <Core/Base.h>
+#include <Render/RendererAPI.hpp>
+#include <Plattform/Vulkan/vk_context.hpp>
+#include <Render/Window.hpp>
+#include <Plattform/Linux/LinuxWindow.hpp>
 
 namespace VectorVertex
 {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../vk_pipeline.hpp"
-#include <vk_camera.hpp>
-#include <vk_frame_info.hpp>
+#include <Plattform/Vulkan/vk_camera.hpp>
+#include <Plattform/Vulkan/vk_frame_info.hpp>
 
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE

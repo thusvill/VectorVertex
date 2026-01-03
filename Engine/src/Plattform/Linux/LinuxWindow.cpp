@@ -1,9 +1,9 @@
 #include "LinuxWindow.hpp"
-#include <MouseEvent.hpp>
-#include <KeyEvent.hpp>
-#include <ApplicationEvent.hpp>
-#include <RendererAPI.hpp>
-#include <RenderCommand.hpp>
+#include <Events/MouseEvent.hpp>
+#include <Events/KeyEvent.hpp>
+#include <Events/ApplicationEvent.hpp>
+#include <Render/RendererAPI.hpp>
+#include <Render/RenderCommand.hpp>
 namespace VectorVertex
 {
     static uint8_t s_GLFWWindowCount = 0;

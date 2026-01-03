@@ -1,5 +1,5 @@
 #include "vk_image.hpp"
-#include <Application.hpp>
+
 namespace VectorVertex
 {
     VKImage::VKImage() : image(VK_NULL_HANDLE), imageMemory(VK_NULL_HANDLE)

@@ -1,11 +1,11 @@
 #include "Editor_Layer.hpp"
 #include <glm/gtc/type_ptr.hpp>
-#include <Entity.hpp>
+#include <Scene/Entity.hpp>
 #include <Scene.hpp>
 #include <ImGuizmo/ImGuizmo.h>
 #include <Utils/PlattformUtils.hpp>
 #include <Math/Math.hpp>
-#include <RenderCommand.hpp>
+#include <Render/RenderCommand.hpp>
 
 
 namespace VectorVertex

@@ -2,10 +2,10 @@
 #include "vk_buffer.hpp"
 
 #define STB_IMAGE_IMPLEMENTATION
-#include <stb_image.h>
+#include <vendor/stb/stb_image.h>
 #include <stdexcept>
-#include <Log.h>
-#include <Application.hpp>
+#include <Core/Log.h>
+
 
 namespace VectorVertex
 {
