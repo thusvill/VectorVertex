@@ -41,7 +41,7 @@ target_sources(VectorVertexEngine
 )
 
 target_include_directories(VectorVertexEngine PRIVATE src/vendor/glm)
-target_include_directories(VectorVertexEngine PRIVATE src/vendor/spdlog/include)
+add_subdirectory(src/vendor/spdlog)
 
 target_include_directories(VectorVertexEngine
     PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src"
@@ -65,6 +65,11 @@ target_include_directories(imgui PUBLIC
 target_link_libraries(imgui PUBLIC glfw vulkan)
 target_include_directories(tinyobjloader INTERFACE src/vendor/tinyobjloader)
 
+
+set(YAML_CPP_BUILD_TOOLS OFF CACHE BOOL "" FORCE) 
+set(YAML_CPP_BUILD_TESTS OFF CACHE BOOL "" FORCE) 
+set(YAML_CPP_BUILD_CONTRIB OFF CACHE BOOL "" FORCE)
+set(YAML_CPP_INSTALL OFF CACHE BOOL "" FORCE) 
 add_subdirectory(src/vendor/yaml-cpp)
 
 target_include_directories(VectorVertexEngine PRIVATE ${yaml-cpp_SOURCE_DIR}/include)
@@ -80,7 +85,8 @@ target_link_libraries(VectorVertexEngine
     EnTT::EnTT
     imgui
     tinyobjloader
-    yaml-cpp
+    yaml-cpp::yaml-cpp
+    spdlog::spdlog
 )
 
 
