@@ -14,3 +14,6 @@
 [submodule "Engine/src/vendor/yaml-cpp"]
 	path = Engine/src/vendor/yaml-cpp
 	url = https://github.com/jbeder/yaml-cpp.git
+[submodule "Editor/src/vendor/ImGuizmo"]
+	path = Editor/src/vendor/ImGuizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo.git
