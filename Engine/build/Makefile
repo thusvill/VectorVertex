@@ -1469,30 +1469,6 @@ src/Render/Window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEngine.dir/build.make CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.s
 .PHONY : src/Render/Window.cpp.s
 
-src/Scene/EditorCamera.o: src/Scene/EditorCamera.cpp.o
-.PHONY : src/Scene/EditorCamera.o
-
-# target to build an object file
-src/Scene/EditorCamera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEngine.dir/build.make CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o
-.PHONY : src/Scene/EditorCamera.cpp.o
-
-src/Scene/EditorCamera.i: src/Scene/EditorCamera.cpp.i
-.PHONY : src/Scene/EditorCamera.i
-
-# target to preprocess a source file
-src/Scene/EditorCamera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEngine.dir/build.make CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.i
-.PHONY : src/Scene/EditorCamera.cpp.i
-
-src/Scene/EditorCamera.s: src/Scene/EditorCamera.cpp.s
-.PHONY : src/Scene/EditorCamera.s
-
-# target to generate assembly for a file
-src/Scene/EditorCamera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEngine.dir/build.make CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.s
-.PHONY : src/Scene/EditorCamera.cpp.s
-
 src/Scene/Entity.o: src/Scene/Entity.cpp.o
 .PHONY : src/Scene/Entity.o
 
@@ -2940,9 +2916,6 @@ help:
 	@echo "... src/Render/Window.o"
 	@echo "... src/Render/Window.i"
 	@echo "... src/Render/Window.s"
-	@echo "... src/Scene/EditorCamera.o"
-	@echo "... src/Scene/EditorCamera.i"
-	@echo "... src/Scene/EditorCamera.s"
 	@echo "... src/Scene/Entity.o"
 	@echo "... src/Scene/Entity.i"
 	@echo "... src/Scene/Entity.s"

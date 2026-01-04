@@ -47,7 +47,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/VectorVertex/Engine/src/Render/RendererAPI.cpp" "CMakeFiles/VectorVertexEngine.dir/src/Render/RendererAPI.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/Render/RendererAPI.cpp.o.d"
   "/home/bios/VectorVertex/Engine/src/Render/Shader.cpp" "CMakeFiles/VectorVertexEngine.dir/src/Render/Shader.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/Render/Shader.cpp.o.d"
   "/home/bios/VectorVertex/Engine/src/Render/Window.cpp" "CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.o.d"
-  "/home/bios/VectorVertex/Engine/src/Scene/EditorCamera.cpp" "CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o.d"
   "/home/bios/VectorVertex/Engine/src/Scene/Entity.cpp" "CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o.d"
   "/home/bios/VectorVertex/Engine/src/Scene/Scene.cpp" "CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o.d"
   "/home/bios/VectorVertex/Engine/src/vendor/entt/conan/test_package/test_package.cpp" "CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o" "gcc" "CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o.d"

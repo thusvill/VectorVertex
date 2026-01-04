@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/bios/VectorVertex/Editor/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

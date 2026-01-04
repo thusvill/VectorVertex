@@ -618,24 +618,10 @@ CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Engine/src/Render/Window.cpp -o CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.s
 
-CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
-CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o: /home/bios/VectorVertex/Engine/src/Scene/EditorCamera.cpp
-CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o -c /home/bios/VectorVertex/Engine/src/Scene/EditorCamera.cpp
-
-CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/VectorVertex/Engine/src/Scene/EditorCamera.cpp > CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.i
-
-CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Engine/src/Scene/EditorCamera.cpp -o CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.s
-
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o: /home/bios/VectorVertex/Engine/src/Scene/Entity.cpp
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o -c /home/bios/VectorVertex/Engine/src/Scene/Entity.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.i: cmake_force
@@ -649,7 +635,7 @@ CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o: /home/bios/VectorVertex/Engine/src/Scene/Scene.cpp
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o -c /home/bios/VectorVertex/Engine/src/Scene/Scene.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.i: cmake_force
@@ -663,7 +649,7 @@ CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/entt/conan/test_package/test_package.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/entt/conan/test_package/test_package.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.i: cmake_force
@@ -677,7 +663,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_packag
 CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/glm.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/glm.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.i: cmake_force
@@ -691,7 +677,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/glm/glm/detail/glm.cpp.s: cmake_for
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -705,7 +691,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_glfw.cpp.
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_null.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_null.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.i: cmake_force
@@ -719,7 +705,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_null.cpp.
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl2.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl2.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.cpp.i: cmake_force
@@ -733,7 +719,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl2.c
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -747,7 +733,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_opengl3.c
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.i: cmake_force
@@ -761,7 +747,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/backends/imgui_impl_vulkan.cp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.i: cmake_force
@@ -775,7 +761,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_demo.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_demo.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.i: cmake_force
@@ -789,7 +775,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_demo.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.i: cmake_force
@@ -803,7 +789,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.i: cmake_force
@@ -817,7 +803,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_tables.cpp.s: cmake_for
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.i: cmake_force
@@ -831,7 +817,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/imgui/imgui_widgets.cpp.s: cmake_fo
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/async.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/async.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.i: cmake_force
@@ -845,7 +831,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/async.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/bundled_fmtlib_format.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/bundled_fmtlib_format.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cpp.i: cmake_force
@@ -859,7 +845,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/bundled_fmtlib_format.cp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/cfg.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/cfg.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.i: cmake_force
@@ -873,7 +859,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/cfg.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/color_sinks.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/color_sinks.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.i: cmake_force
@@ -887,7 +873,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/color_sinks.cpp.s: cmake
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/file_sinks.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/file_sinks.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.i: cmake_force
@@ -901,7 +887,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/file_sinks.cpp.s: cmake_
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/spdlog.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/spdlog.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.i: cmake_force
@@ -915,7 +901,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/spdlog.cpp.s: cmake_forc
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/stdout_sinks.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/spdlog/src/stdout_sinks.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.i: cmake_force
@@ -929,7 +915,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/spdlog/src/stdout_sinks.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/binary.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/binary.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.i: cmake_force
@@ -943,7 +929,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/binary.cpp.s: cmake_fo
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.cpp.i: cmake_force
@@ -957,7 +943,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilder.c
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderadapter.cpp.i: cmake_force
@@ -971,7 +957,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/contrib/graphbuilderad
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/convert.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/convert.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.i: cmake_force
@@ -985,7 +971,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/convert.cpp.s: cmake_f
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/depthguard.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/depthguard.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.i: cmake_force
@@ -999,7 +985,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/depthguard.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/directives.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/directives.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.i: cmake_force
@@ -1013,7 +999,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/directives.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emit.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emit.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.i: cmake_force
@@ -1027,7 +1013,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emit.cpp.s: cmake_forc
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitfromevents.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitfromevents.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.i: cmake_force
@@ -1041,7 +1027,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitfromevents.cpp.s: 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitter.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitter.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.i: cmake_force
@@ -1055,7 +1041,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitter.cpp.s: cmake_f
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitterstate.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitterstate.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.i: cmake_force
@@ -1069,7 +1055,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterstate.cpp.s: cm
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitterutils.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitterutils.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.i: cmake_force
@@ -1083,7 +1069,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/emitterutils.cpp.s: cm
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/exceptions.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/exceptions.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.i: cmake_force
@@ -1097,7 +1083,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exceptions.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/exp.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/exp.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.i: cmake_force
@@ -1111,7 +1097,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/exp.cpp.s: cmake_force
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/fptostring.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/fptostring.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.i: cmake_force
@@ -1125,7 +1111,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/fptostring.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/memory.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/memory.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.i: cmake_force
@@ -1139,7 +1125,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/memory.cpp.s: cmake_fo
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/node.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/node.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.i: cmake_force
@@ -1153,7 +1139,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node.cpp.s: cmake_forc
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/node_data.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/node_data.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.i: cmake_force
@@ -1167,7 +1153,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/node_data.cpp.s: cmake
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodebuilder.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodebuilder.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.i: cmake_force
@@ -1181,7 +1167,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodebuilder.cpp.s: cma
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodeevents.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodeevents.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.i: cmake_force
@@ -1195,7 +1181,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/nodeevents.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/null.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/null.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.i: cmake_force
@@ -1209,7 +1195,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/null.cpp.s: cmake_forc
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/ostream_wrapper.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/ostream_wrapper.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.i: cmake_force
@@ -1223,7 +1209,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/ostream_wrapper.cpp.s:
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/parse.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/parse.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.i: cmake_force
@@ -1237,7 +1223,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parse.cpp.s: cmake_for
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/parser.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/parser.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.i: cmake_force
@@ -1251,7 +1237,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/parser.cpp.s: cmake_fo
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/regex_yaml.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/regex_yaml.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.i: cmake_force
@@ -1265,7 +1251,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/regex_yaml.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanner.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanner.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.i: cmake_force
@@ -1279,7 +1265,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanner.cpp.s: cmake_f
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanscalar.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanscalar.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.i: cmake_force
@@ -1293,7 +1279,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scanscalar.cpp.s: cmak
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scantag.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scantag.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.i: cmake_force
@@ -1307,7 +1293,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantag.cpp.s: cmake_f
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scantoken.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scantoken.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.i: cmake_force
@@ -1321,7 +1307,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/scantoken.cpp.s: cmake
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/simplekey.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/simplekey.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.i: cmake_force
@@ -1335,7 +1321,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/simplekey.cpp.s: cmake
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/singledocparser.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/singledocparser.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.i: cmake_force
@@ -1349,7 +1335,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/singledocparser.cpp.s:
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/stream.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/stream.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.i: cmake_force
@@ -1363,7 +1349,7 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/stream.cpp.s: cmake_fo
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: CMakeFiles/VectorVertexEngine.dir/flags.make
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/tag.cpp
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: CMakeFiles/VectorVertexEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o -MF CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o.d -o CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o -c /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/tag.cpp
 
 CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.i: cmake_force
@@ -1415,7 +1401,6 @@ VectorVertexEngine_OBJECTS = \
 "CMakeFiles/VectorVertexEngine.dir/src/Render/RendererAPI.cpp.o" \
 "CMakeFiles/VectorVertexEngine.dir/src/Render/Shader.cpp.o" \
 "CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.o" \
-"CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o" \
 "CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o" \
 "CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o" \
 "CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o" \
@@ -1512,7 +1497,6 @@ libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Render/Renderer.c
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Render/RendererAPI.cpp.o
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Render/Shader.cpp.o
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.o
-libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/vendor/entt/conan/test_package/test_package.cpp.o
@@ -1568,7 +1552,7 @@ libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/s
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/build.make
 libVectorVertexEngine.a: CMakeFiles/VectorVertexEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Linking CXX static library libVectorVertexEngine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bios/VectorVertex/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Linking CXX static library libVectorVertexEngine.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/VectorVertexEngine.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VectorVertexEngine.dir/link.txt --verbose=$(VERBOSE)
 

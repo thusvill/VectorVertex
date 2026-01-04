@@ -77,8 +77,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/VectorVertexEngine.dir/src/Render/Shader.cpp.o.d"
   "CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.o"
   "CMakeFiles/VectorVertexEngine.dir/src/Render/Window.cpp.o.d"
-  "CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o"
-  "CMakeFiles/VectorVertexEngine.dir/src/Scene/EditorCamera.cpp.o.d"
   "CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o"
   "CMakeFiles/VectorVertexEngine.dir/src/Scene/Entity.cpp.o.d"
   "CMakeFiles/VectorVertexEngine.dir/src/Scene/Scene.cpp.o"
