@@ -1,5 +1,5 @@
 #pragma once
-#include <Layer.h>
+#include <Core/Layer.h>
 #include <Plattform/Vulkan/vk_pipeline.hpp>
 #include <Plattform/Vulkan/vk_device.hpp>
 #include <Plattform/Vulkan/vk_camera.hpp>
@@ -7,9 +7,9 @@
 #include <Plattform/Vulkan/vk_renderer.hpp>
 
 #include <vulkan/vulkan.h>
-#include <imgui/imgui.h>
-#include <imgui/imgui_impl_vulkan.h>
-#include <imgui/imgui_impl_glfw.h>
+#include <imgui.h>
+#include <imgui_impl_vulkan.h>
+#include <imgui_impl_glfw.h>
 #include <GLFW/glfw3.h>
 
 namespace VectorVertex

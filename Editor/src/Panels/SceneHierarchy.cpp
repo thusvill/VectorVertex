@@ -1,9 +1,9 @@
 #include "SceneHierarchy.hpp"
 #include <Scene/Entity.hpp>
 #include <string.h>
-#include <imgui/imgui_internal.h>
+#include <imgui_internal.h>
 #include <glm/gtc/type_ptr.hpp>
-#include <Utils/PlattformUtils.hpp>
+#include <Core/Utils/PlattformUtils.hpp>
 
 namespace VectorVertex
 {
@@ -25,7 +25,7 @@ namespace VectorVertex
         ImGui::PushMultiItemsWidths(3, ImGui::CalcItemWidth());
         ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{0, 0});
 
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+        float lineHeight = ImGui::GetFrameHeight(); //GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
         ImVec2 buttonSize = {lineHeight + 3.0f, lineHeight};
 
         ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{0.8f, 0.1f, 0.15f, 1.0f});
@@ -100,7 +100,7 @@ namespace VectorVertex
             ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
 
             ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(4, 4));
-            float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+            float lineHight = ImGui::GetFrameHeight(); //GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
             ImGui::Separator();
             bool open = ImGui::TreeNodeEx((void *)typeid(T).hash_code(), ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_AllowOverlap | ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_SpanAvailWidth | ImGuiTreeNodeFlags_FramePadding, name.c_str());
             ImGui::PopStyleVar();
@@ -176,7 +176,7 @@ namespace VectorVertex
             if (ImGui::MenuItem("Create Box"))
             {
                 m_SelectedEntity = m_Context->CreateEntity("new Box");
-                RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj"));
+                RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/VectorVertex/Resources/Models/cube.obj"));
                 if (!m_SelectedEntity.HasComponent<TextureComponent>())
                     RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
             }
@@ -207,7 +207,7 @@ namespace VectorVertex
             {
                 if (ImGui::MenuItem("Mesh Renderer"))
                 {
-                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Models/cube.obj"));
+                    RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<MeshComponent>("/home/bios/VectorVertex/Resources/Models/cube.obj"));
                     if (!m_SelectedEntity.HasComponent<TextureComponent>())
                         RUN_AFTER_FRAME(m_SelectedEntity.AddComponent<TextureComponent>());
                     ImGui::CloseCurrentPopup();
@@ -368,7 +368,7 @@ namespace VectorVertex
                                             auto &texture = VVTextureLibrary::GetTexture(component.m_ID);
                                             DrawTextfield("Name ##TextureName", texture.data.m_Name, texture.data.m_ID);
                                             ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
-                                            float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                            float lineHight = ImGui::GetFrameHeight(); //GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
                                             // ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
                                             // if(ImGui::Button("New ##NewTexture")){
                                                 
@@ -389,7 +389,7 @@ namespace VectorVertex
                                                 }
                                             }
                                             contentRegionAvailable = ImGui::GetContentRegionAvail();
-                                            lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                            lineHight = ImGui::GetFrameHeight();//GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
                                             ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
                                             if (ImGui::Button("... ##Texture", ImVec2(lineHight, lineHight)))
                                             {
@@ -412,7 +412,7 @@ namespace VectorVertex
                                              }
                                          }
                                          ImVec2 contentRegionAvailable = ImGui::GetContentRegionAvail();
-                                         float lineHight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+                                         float lineHight = ImGui::GetFrameHeight(); //GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
                                          ImGui::SameLine(contentRegionAvailable.x - lineHight * 0.5f);
                                          if (ImGui::Button("... ##Mesh", ImVec2(lineHight, lineHight)))
                                          {

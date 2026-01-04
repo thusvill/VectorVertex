@@ -1,3 +1,4 @@
 /home/bios/VectorVertex/Editor/build/CMakeFiles/VectorVertexEditor.dir
+/home/bios/VectorVertex/Editor/build/CMakeFiles/imgui.dir
 /home/bios/VectorVertex/Editor/build/CMakeFiles/edit_cache.dir
 /home/bios/VectorVertex/Editor/build/CMakeFiles/rebuild_cache.dir

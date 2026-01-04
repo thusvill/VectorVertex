@@ -2,17 +2,24 @@ cmake_minimum_required(VERSION 3.20)
 project(VectorVertexEngine LANGUAGES C CXX)
 
 
+
+find_package(PkgConfig REQUIRED)
+find_package(LibXml2 REQUIRED)
+find_package(X11 REQUIRED)
+
+
 add_library(VectorVertexEngine STATIC)
 
-set(FBXSDK_ROOT ${CMAKE_SOURCE_DIR}/src/vendor/fbxsdk)
+set(FBXSDK_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/src/vendor/fbxsdk)
 
 find_library(FBXSDK_LIB
     NAMES fbxsdk
     PATHS ${FBXSDK_ROOT}/lib/release
     NO_DEFAULT_PATH
+    REQUIRED
 )
 
-target_include_directories(VectorVertexEngine PRIVATE
+target_include_directories(VectorVertexEngine PUBLIC
     ${FBXSDK_ROOT}/include
 )
 
@@ -75,18 +82,31 @@ add_subdirectory(src/vendor/yaml-cpp)
 target_include_directories(VectorVertexEngine PRIVATE ${yaml-cpp_SOURCE_DIR}/include)
 
 
-
+target_link_options(VectorVertexEngine INTERFACE 
+    "-Wl,--copy-dt-needed-entries"
+    "-Wl,-rpath-link,/usr/lib"
+    "-Wl,--allow-shlib-undefined"
+    )
 
 
 target_link_libraries(VectorVertexEngine
-    ${FBXSDK_LIB}
-    pthread
-    dl
-    EnTT::EnTT
-    imgui
-    tinyobjloader
-    yaml-cpp::yaml-cpp
-    spdlog::spdlog
+    PUBLIC
+        ${FBXSDK_LIB}    
+        imgui            
+        EnTT::EnTT
+        tinyobjloader
+        yaml-cpp::yaml-cpp
+        spdlog::spdlog
+        glfw             
+        vulkan      
+        shaderc_shared    
+        SPIRV-Tools
+        #LibXml2::LibXml2
+        xml2
+        X11               
+    PRIVATE
+        pthread
+        dl
 )
 
 

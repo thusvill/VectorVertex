@@ -11,14 +11,14 @@ namespace VectorVertex
     VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts)
     {
         CreatePipelineLayout(layouts);
-        // CreatePipeline("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
-        CreatePipeline("/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag");
+        // CreatePipeline("/home/bios/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/VectorVertex/Resources/Shaders/default.frag.spv");
+        CreatePipeline("/home/bios/VectorVertex/Resources/Shaders/default.vert", "/home/bios/VectorVertex/Resources/Shaders/default.frag");
     }
     VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, FrameBuffer &framebuffer)
     {
         CreatePipelineLayout(layouts);
-        // CreatePipeline(framebuffer, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag.spv");
-        CreatePipeline(framebuffer, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.vert", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/default.frag");
+        // CreatePipeline(framebuffer, "/home/bios/VectorVertex/Resources/Shaders/default.vert.spv", "/home/bios/VectorVertex/Resources/Shaders/default.frag.spv");
+        CreatePipeline(framebuffer, "/home/bios/VectorVertex/Resources/Shaders/default.vert", "/home/bios/VectorVertex/Resources/Shaders/default.frag");
     }
     VulkanMeshRenderer::VulkanMeshRenderer(std::vector<VkDescriptorSetLayout> layouts, std::string vertex_shader, std::string fragment_shader)
     {

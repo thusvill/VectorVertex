@@ -1,15 +1,15 @@
 #pragma once
 #include <Core/Application.hpp>
-#include <Layer.h>
+#include <Core/Layer.h>
 #include "Imgui_Layer.hpp"
 #include <Render/Material.hpp>
-#include <SceneHierarchy.hpp>
+#include <Panels/SceneHierarchy.hpp>
 #include <Scene/Entity.hpp>
 #include <SceneSerializer.hpp>
 #include <Render/FrameBuffer.hpp>
 #include <Core/Event.hpp>
-#include <KeyEvent.hpp>
-#include <MouseEvent.hpp>
+#include <Events/KeyEvent.hpp>
+#include <Events/MouseEvent.hpp>
 #include <Core/Input.hpp>
 
 namespace VectorVertex

@@ -6,9 +6,17 @@
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
-#include <fbxsdk.h>
+// #include <fbxsdk.h>
 
 #include <Render/RendererAPI.hpp>
+
+namespace fbxsdk {
+    class FbxManager;
+    class FbxNode;
+    class FbxScene;
+    class FbxImporter;
+}
+
 
 namespace VectorVertex
 {
@@ -38,12 +46,12 @@ namespace VectorVertex
         {
             std::vector<Vertex> vertices;
             std::vector<uint32_t> indices;
-            FbxManager *sdkManager;
+            fbxsdk::FbxManager *sdkManager;
 
             void
             loadModel(const std::string &filepath);
             void loadFBX(const std::string &fbx_path);
-            void ProcessNode(FbxNode *node, std::unordered_map<Vertex, uint32_t> &uniqueVertex);
+            void ProcessNode(fbxsdk::FbxNode *node, std::unordered_map<Vertex, uint32_t> &uniqueVertex);
         };
         VKModel(const Builder &builder);
         ~VKModel();

@@ -6,5 +6,5 @@
 [11:48:58] [info] VV-CORE: Vulkan API Data Initialized!
 [11:48:58] [info] VV-CORE: Initialized Material Library
 [11:48:58] [info] VV-CORE: Initilized Texture Library!
-[11:48:58] [info] VV-CORE: Created Texture from:/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:3011795656511840835
+[11:48:58] [info] VV-CORE: Created Texture from:/home/bios/VectorVertex/Resources/Textures/prototype_512x512_grey2.png as:default with UUID:3011795656511840835
 [11:48:58] [trace] VV-CORE: Layouts befor create render syste: 2

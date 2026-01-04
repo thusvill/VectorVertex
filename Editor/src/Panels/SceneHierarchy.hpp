@@ -1,5 +1,5 @@
 #pragma once
-#include <Scene.hpp>
+#include <Scene/Scene.hpp>
 #include <Scene/Entity.hpp>
 #include <functional>
 #include <queue>

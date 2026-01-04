@@ -158,16 +158,16 @@ namespace VectorVertex
     {
       vkGetPhysicalDeviceProperties(device, &properties);
       std::cout << properties.deviceID << " : " << properties.deviceName << std::endl;
-      // if (isDeviceSuitable(device))
-      // {
-      //   physicalDevice = device;
-      //   break;
-      // }
+      if (isDeviceSuitable(device))
+      {
+        physicalDevice = device;
+        break;
+      }
     }
     std::cout << " " << std::endl;
     std::cout << " " << std::endl;
     std::cout << " " << std::endl;
-    physicalDevice = devices[1]; // set nvidia driver
+    //physicalDevice = devices[1]; // set nvidia driver
 
     if (physicalDevice == VK_NULL_HANDLE)
     {

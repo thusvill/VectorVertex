@@ -179,222 +179,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Core/Application.cpp.o: /home/bios/VectorV
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -874,7 +658,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Core/Application.cpp.o: /home/bios/VectorV
   /usr/include/c++/15.2.1/list \
   /usr/include/c++/15.2.1/locale \
   /usr/include/c++/15.2.1/map \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -948,7 +731,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Core/Application.cpp.o: /home/bios/VectorV
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -1012,222 +794,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Core/Keyboard_inputs.cpp.o: /home/bios/Vec
   /home/bios/VectorVertex/Engine/src/Render/Material.hpp \
   /home/bios/VectorVertex/Engine/src/Render/RendererAPI.hpp \
   /home/bios/VectorVertex/Engine/src/Render/Window.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -1692,7 +1258,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Core/Keyboard_inputs.cpp.o: /home/bios/Vec
   /usr/include/c++/15.2.1/iterator \
   /usr/include/c++/15.2.1/limits \
   /usr/include/c++/15.2.1/locale \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -1764,7 +1329,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Core/Keyboard_inputs.cpp.o: /home/bios/Vec
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -4949,222 +4513,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Linux/LinuxWindow.cpp.o: /home/b
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -5644,7 +4992,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Linux/LinuxWindow.cpp.o: /home/b
   /usr/include/c++/15.2.1/list \
   /usr/include/c++/15.2.1/locale \
   /usr/include/c++/15.2.1/map \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -5718,7 +5065,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Linux/LinuxWindow.cpp.o: /home/b
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -5931,222 +5277,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/Render_Systems/vk_light_r
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -6626,7 +5756,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/Render_Systems/vk_light_r
   /usr/include/c++/15.2.1/list \
   /usr/include/c++/15.2.1/locale \
   /usr/include/c++/15.2.1/map \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -6700,7 +5829,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/Render_Systems/vk_light_r
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -6913,222 +6041,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_re
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -7608,7 +6520,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_re
   /usr/include/c++/15.2.1/list \
   /usr/include/c++/15.2.1/locale \
   /usr/include/c++/15.2.1/map \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -7682,7 +6593,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/Render_Systems/vk_mesh_re
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -9644,222 +8554,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/vk_context.cpp.o: /home/b
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -10339,7 +9033,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/vk_context.cpp.o: /home/b
   /usr/include/c++/15.2.1/list \
   /usr/include/c++/15.2.1/locale \
   /usr/include/c++/15.2.1/map \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -10413,7 +9106,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/vk_context.cpp.o: /home/b
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -11790,222 +10482,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: /ho
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_def.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxexternaldocreflistener.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatisticsfbx.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudio.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocument.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlimitsutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxdeformationsevaluator.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h \
-  /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl \
   /home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp \
@@ -12485,7 +10961,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: /ho
   /usr/include/c++/15.2.1/list \
   /usr/include/c++/15.2.1/locale \
   /usr/include/c++/15.2.1/map \
-  /usr/include/c++/15.2.1/math.h \
   /usr/include/c++/15.2.1/memory \
   /usr/include/c++/15.2.1/mutex \
   /usr/include/c++/15.2.1/new \
@@ -12559,7 +11034,6 @@ CMakeFiles/VectorVertexEngine.dir/src/Plattform/Vulkan/vk_framebuffer.cpp.o: /ho
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
-  /usr/include/malloc.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -42793,17 +41267,363 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/common.inl:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Linux/LinuxWindow.cpp:
+/usr/include/c++/15.2.1/bits/unique_ptr.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/vec1.hpp:
+
+/usr/include/c++/15.2.1/bits/stl_tree.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/registry-inl.h:
+
+/usr/include/c++/15.2.1/bits/stl_tempbuf.h:
+
+/usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/15.2.1/bits/stl_pair.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h:
+
+/usr/include/c++/15.2.1/bits/stl_uninitialized.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/component_wise.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/compatibility.hpp:
+
+/usr/include/shaderc/shaderc.h:
+
+/usr/include/c++/15.2.1/bits/sstream.tcc:
+
+/usr/include/c++/15.2.1/bits/streambuf_iterator.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h:
+
+/usr/include/c++/15.2.1/bits/specfun.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avxvnniint16intrin.h:
+
+/usr/include/c++/15.2.1/bits/shared_ptr_base.h:
+
+/usr/include/c++/15.2.1/bits/random.h:
+
+/usr/include/c++/15.2.1/bits/exception_defines.h:
+
+/usr/include/c++/15.2.1/bits/quoted_string.h:
+
+/usr/include/ctype.h:
+
+/usr/include/c++/15.2.1/bits/ostream_insert.h:
+
+/usr/include/c++/15.2.1/bits/ostream.tcc:
+
+/usr/include/c++/15.2.1/bits/localefwd.h:
+
+/usr/include/c++/15.2.1/bits/locale_facets_nonio.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512ifmaintrin.h:
+
+/usr/include/c++/15.2.1/bits/locale_facets.h:
+
+/usr/include/bits/siginfo-arch.h:
+
+/usr/include/c++/15.2.1/bits/locale_conv.h:
+
+/usr/include/c++/15.2.1/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/15.2.1/bits/locale_classes.tcc:
+
+/usr/include/c++/15.2.1/bits/invoke.h:
+
+/usr/include/c++/15.2.1/bits/hashtable.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vbmi2vlintrin.h:
+
+/usr/include/c++/15.2.1/bits/fs_fwd.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h:
+
+/usr/include/c++/15.2.1/bits/hash_bytes.h:
+
+/usr/include/c++/15.2.1/bits/fstream.tcc:
+
+/home/bios/VectorVertex/Engine/src/Scene/Entity.cpp:
+
+/usr/include/c++/15.2.1/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/15.2.1/bits/cpp_type_traits.h:
+
+/usr/include/c++/15.2.1/bits/codecvt.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h:
+
+/usr/include/c++/15.2.1/bits/char_traits.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/chrono.h:
+
+/usr/include/bits/types/struct_timeval.h:
+
+/usr/include/c++/15.2.1/bits/basic_string.tcc:
+
+/usr/include/c++/15.2.1/bits/atomic_base.h:
+
+/usr/include/c++/15.2.1/bits/fs_ops.h:
+
+/usr/include/c++/15.2.1/bits/allocator.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxtransposeintrin.h:
+
+/usr/include/c++/15.2.1/ext/atomicity.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/enqcmdintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_ulp.hpp:
 
 /usr/include/c++/15.2.1/bits/allocated_ptr.h:
 
 /usr/include/c++/15.2.1/bits/stream_iterator.h:
 
+/usr/include/c++/15.2.1/bits/align.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x4.hpp:
+
+/usr/include/c++/15.2.1/backward/binders.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h:
+
+/usr/include/c++/15.2.1/backward/auto_ptr.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/emitter.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/pattern_formatter.h:
+
+/usr/include/c++/15.2.1/atomic:
+
+/usr/include/c++/15.2.1/bits/algorithmfwd.h:
+
+/usr/include/c++/15.2.1/bits/memoryfwd.h:
+
+/usr/include/c++/15.2.1/array:
+
+/home/bios/VectorVertex/Engine/src/Render/Renderer.hpp:
+
+/usr/include/bits/xopen_lim.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int1_sized.hpp:
+
+/usr/include/c++/15.2.1/ext/numeric_traits.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_buffer.cpp:
+
+/usr/include/c++/15.2.1/bits/string_view.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/noexcept.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/usr/include/bits/typesizes.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vnniintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h:
+
+/usr/include/bits/types/wint_t.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/graph/dot.hpp:
+
+/usr/include/c++/15.2.1/bits/std_thread.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h:
+
+/usr/include/bits/types/struct_FILE.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/compute_vector_relational.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/matrix_decompose.hpp:
+
+/usr/include/bits/types/locale_t.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/config/version.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h:
+
+/usr/include/c++/15.2.1/queue:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_packing.inl:
+
+/usr/include/bits/types/__locale_t.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h:
+
+/usr/include/c++/15.2.1/bits/utility.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/serializeintrin.h:
+
+/usr/include/bits/types/FILE.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x3.hpp:
+
+/usr/include/c++/15.2.1/bits/move.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/vector_angle.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int3.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitterutils.cpp:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Linux/LinuxWindow.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/euler_angles.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h:
+
+/usr/include/bits/timex.h:
+
+/usr/include/bits/time64.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsaveoptintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x3.hpp:
+
+/usr/include/bits/thread-shared-types.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/vector_query.hpp:
+
+/usr/include/c++/15.2.1/bits/parse_numbers.h:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/c++/15.2.1/bits/stl_construct.h:
+
+/usr/include/bits/getopt_core.h:
+
+/usr/include/c++/15.2.1/bits/istream.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h:
+
+/usr/include/bits/struct_mutex.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_integer.hpp:
+
+/usr/include/c++/15.2.1/bits/fs_dir.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint1.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/src/color_sinks.cpp:
+
+/usr/include/bits/setjmp.h:
+
+/usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_common.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_reciprocal.inl:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/transform2.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h:
+
+/usr/include/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/mixed_product.inl:
+
+/usr/include/bits/mathcalls.h:
+
+/home/bios/VectorVertex/Engine/src/Core/UUID.hpp:
+
+/usr/include/vk_video/vulkan_video_codec_vp9std.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/bits/locale.h:
+
+/usr/include/c++/15.2.1/iomanip:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/polar_coordinates.inl:
+
+/usr/include/bits/local_lim.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/ostream.h:
+
+/usr/include/bits/fp-fast.h:
+
+/usr/include/bits/byteswap.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/poly/fwd.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/range.hpp:
+
+/usr/include/assert.h:
+
+/usr/include/asm/types.h:
+
+/usr/include/asm/bitsperlong.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/logger-inl.h:
+
+/usr/include/c++/15.2.1/bits/basic_ios.h:
+
+/usr/include/malloc.h:
+
+/usr/include/c++/15.2.1/bits/stl_vector.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_common.inl:
+
+/usr/include/sys/single_threaded.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h:
+
+/usr/include/alloca.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Linux/LinuxWindow.cpp:
+
+/usr/include/c++/15.2.1/bits/unordered_set.h:
+
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/spdlog.h:
 
 /usr/include/errno.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/ostream.h:
+/usr/include/bits/stdio_lim.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/ostr.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512convertintrin.h:
+
+/usr/include/c++/15.2.1/bits/functexcept.h:
+
+/usr/include/c++/15.2.1/bits/stl_algobase.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_double_precision.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/format.h:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/include/X11/extensions/randr.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/node/detail/node_data.h:
 
@@ -42813,21 +41633,41 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/sink.h:
 
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_exponential.hpp:
+
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/common.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.h:
 
 /usr/include/c++/15.2.1/cstring:
 
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/memory.hpp:
+
+/usr/include/bits/types/struct_sched_param.h:
+
+/usr/include/c++/15.2.1/bits/stl_list.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/geometric.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float4_precision.hpp:
+
 /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxlistener.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/vec4.hpp:
+
+/usr/include/c++/15.2.1/bits/list.tcc:
 
 /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanscalar.cpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamera.h:
 
-/usr/include/c++/15.2.1/bits/list.tcc:
+/usr/include/linux/close_range.h:
+
+/usr/include/bits/uintn-identity.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/vec2.hpp:
 
@@ -42837,23 +41677,39 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/dual_quaternion.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/vec1.hpp:
-
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/packing.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/epsilon.inl:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/matrix_transform.inl:
 
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x4.hpp:
+
 /usr/include/c++/15.2.1/concepts:
+
+/usr/include/c++/15.2.1/bits/charconv.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_projection.hpp:
 
 /usr/include/stdc-predef.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_clip_space.inl:
 
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_clip_space.hpp:
+
+/usr/include/c++/15.2.1/bits/basic_ios.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int3_sized.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h:
+
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_relational.inl:
 
 /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainer.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int1.hpp:
 
@@ -42869,303 +41725,13 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_trigonometric.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_float.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/fmt.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_double.hpp:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_model.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_common.hpp:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h:
-
-/usr/include/GL/gl.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_quat.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/glm.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x3.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/fwd.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avxvnniint8intrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_half.inl:
-
-/home/bios/VectorVertex/Engine/src/Render/Window.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_trigonometric.inl:
-
-/usr/include/c++/15.2.1/system_error:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_packing.inl:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/time_members.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/regex_yaml.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_integer.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h:
-
-/usr/include/c++/15.2.1/bits/fs_path.h:
-
-/usr/include/sys/ucontext.h:
-
-/usr/include/c++/15.2.1/cstddef:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/geometric.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float3_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/log_msg_buffer.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float2_precision.hpp:
-
-/usr/include/linux/limits.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool2_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodeevents.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x2_precision.hpp:
-
 /usr/include/c++/15.2.1/bits/valarray_after.h:
 
 /usr/include/c++/15.2.1/bit:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/waitpkgintrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodeevents.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_uint_sized.hpp:
-
-/usr/include/c++/15.2.1/vector:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_int_sized.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h:
-
-/usr/include/stdint.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool1.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec3.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec2.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x2.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/compute_vector_decl.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/matrix.hpp:
-
-/usr/include/bits/libc-header-start.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/organizer.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512cdintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/registry.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/integer.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint1.hpp:
-
-/usr/include/c++/15.2.1/bits/fs_dir.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat4x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h:
-
-/usr/include/c++/15.2.1/bits/quoted_string.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_matrix.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/vector_angle.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int3.hpp:
-
-/usr/include/c++/15.2.1/bits/move.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitterutils.cpp:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Linux/LinuxWindow.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_transform.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_integer.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/config/macro.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/gradient_paint.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x3_precision.hpp:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_transform.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x2_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x3_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_quat.hpp:
-
-/usr/include/bits/stdint-intn.h:
-
-/usr/include/bits/wctype-wchar.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_precision.inl:
-
-/home/bios/VectorVertex/Engine/src/Core/Utils/PlattformUtils.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/epsilon.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/sparse_set.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x2_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x4_precision.hpp:
-
-/usr/include/c++/15.2.1/numeric:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x3.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/serializeintrin.h:
-
-/usr/include/bits/types/FILE.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h:
-
-/usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl2.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat3x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int3x2_sized.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x4.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/ostream_wrapper.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x4.hpp:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxint8intrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mm_malloc.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/fptostring.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_space_YCoCg.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint2x4_sized.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x2_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/orthonormalize.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x4.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/async_logger.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint4_sized.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/imconfig.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/packing.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x2.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x4.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/constants.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float1_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/transform.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_geometric.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/vec3.hpp:
-
-/usr/include/bits/types/struct___jmp_buf_tag.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x2_precision.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/easing.inl:
 
@@ -43173,193 +41739,63 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/_fixes.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/any.hpp:
-
 /usr/include/bits/types/__mbstate_t.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x2_precision.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/any.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/vector_relational.hpp:
+/usr/include/bits/stdint-least.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/quaternion.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h:
+/home/bios/VectorVertex/Engine/src/Render/Flags.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h:
+/usr/include/GLFW/glfw3.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/exponential.hpp:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512bitalgintrin.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/graph/fwd.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/container.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/matrix_access.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/type_traits.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_encoding.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x4.hpp:
-
-/usr/include/vk_video/vulkan_video_codec_h265std_encode.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h:
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/periodic_worker.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x3_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmaterialconverter.h:
+
+/usr/include/c++/15.2.1/bits/unordered_map.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/sparse_set.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/emitter.hpp:
 
-/usr/include/c++/15.2.1/bits/stl_tree.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxusernotification.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool2.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_precision.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x4_precision.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxbf16intrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/backtracer.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_common.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_exponential.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int4x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec4.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h:
-
-/usr/include/bits/sigstksz.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/mixed_product.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/format.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodebuilder.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/Render_Systems/vk_light_render_system.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/factory.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanner.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h:
-
-/home/bios/VectorVertex/Engine/src/Core/UUID.cpp:
-
-/usr/include/bits/types/sigval_t.h:
-
-/usr/include/c++/15.2.1/ctime:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_clip_space.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxwriter.h:
-
-/usr/include/c++/15.2.1/climits:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsaveoptintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x3.hpp:
-
-/usr/include/bits/time64.h:
-
-/usr/include/bits/stat.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x2_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/src/stdout_sinks.cpp:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_swap_chain.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsavecintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h:
-
-/usr/include/c++/15.2.1/limits:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintscale.h:
-
-/usr/include/c++/15.2.1/bits/codecvt.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/poly/poly.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/tag.cpp:
-
-/usr/include/c++/15.2.1/streambuf:
-
-/home/bios/VectorVertex/Engine/src/Core/Event.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/_vectorize.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h:
-
-/usr/include/shaderc/shaderc.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxbitset.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_vector_relational.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h:
+/home/bios/VectorVertex/Engine/src/Core/Utils/PlattformUtils.cpp:
 
 /home/bios/VectorVertex/Engine/src/Render/RendererAPI.hpp:
 
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_matrix.inl:
+
 /usr/include/GL/glext.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x3.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/resource/resource.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/contrib/graphbuilder.h:
+
+/usr/include/c++/15.2.1/bits/ostream.h:
 
 /usr/include/bits/environments.h:
 
@@ -43367,53 +41803,55 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/process/scheduler.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h:
-
 /usr/include/c++/15.2.1/debug/debug.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/poly/fwd.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmath.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacterpose.h:
+/usr/include/c++/15.2.1/bits/erase_if.h:
 
-/usr/include/bits/byteswap.h:
+/home/bios/VectorVertex/Engine/src/Scene/Entity.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/collectionstack.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat2x3.hpp:
+
+/usr/include/bits/types/error_t.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementation.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/component.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint4x2.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxtypes.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/config/version.h:
-
-/usr/include/bits/types/locale_t.h:
-
-/usr/include/c++/15.2.1/queue:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_packing.inl:
-
-/home/bios/VectorVertex/Engine/src/Scene/Scene.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevaluator.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/pointer.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/round.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x2.inl:
 
-/usr/include/c++/15.2.1/set:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat3x2.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double3_precision.hpp:
+/usr/include/bits/types/sigval_t.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h:
+/usr/include/c++/15.2.1/ctime:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/color_space.inl:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/node.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h:
+/usr/include/libintl.h:
 
-/home/bios/VectorVertex/Engine/src/Render/FrameBuffer.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/_vectorize.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/utility.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxtrimnurbssurface.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/container.hpp:
 
-/usr/include/bits/types/__locale_t.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/type_traits.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/exponential.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx6.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/movdirintrin.h:
 
@@ -43423,21 +41861,13 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/adl_pointer.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/locator/locator.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/matrix_interpolation.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat3x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/hashed_string.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/enum.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/range.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h:
+/home/bios/VectorVertex/Engine/src/Render/Window.hpp:
 
-/home/bios/VectorVertex/Engine/src/Core/Application.cpp:
+/home/bios/VectorVertex/Engine/src/Core/Layer.cpp:
 
 /usr/include/linux/falloc.h:
 
@@ -43453,125 +41883,167 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/associated_min_max.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/setup.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x2_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/ident.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/fwd.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/runtime_view.hpp:
-
-/usr/include/c++/15.2.1/chrono:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_projection.hpp:
-
-/usr/include/c++/15.2.1/bits/charconv.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x3.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/node.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h:
-
-/usr/include/c++/15.2.1/map:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxalloc.h:
-
-/usr/include/c++/15.2.1/bits/sstream.tcc:
-
-/usr/include/c++/15.2.1/bits/streambuf_iterator.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtime.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/ranges.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/random.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vnniintrin.h:
+/usr/include/bits/endianness.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxenvironment.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/locator/locator.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxthread.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/matrix_interpolation.hpp:
 
-/usr/include/bits/typesizes.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat3x4.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_half.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/hashed_string.hpp:
 
-/usr/include/c++/15.2.1/tr1/gamma.tcc:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x4_precision.hpp:
+
+/usr/include/c++/15.2.1/bits/requires_hosted.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/parser.cpp:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512cdintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/registry.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/integer.inl:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/fwd.hpp:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_device.hpp:
+/usr/include/c++/15.2.1/cfloat:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/delegate.hpp:
+/usr/include/bits/atomic_wide_counter.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/sm4intrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/null.cpp:
 
-/home/bios/VectorVertex/Engine/src/Scene/Scene.cpp:
+/usr/include/c++/15.2.1/bits/enable_special_members.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h:
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/ostream_wrapper.cpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x4.hpp:
 
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double3_precision.hpp:
 
-/usr/include/endian.h:
+/usr/include/c++/15.2.1/set:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/graph/flow.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/gradient_paint.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x3_precision.hpp:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_trigonometric.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double2.hpp:
+
+/usr/include/c++/15.2.1/system_error:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/container/table.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint4.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x3_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/normalize_dot.hpp:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vp2intersectvlintrin.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h:
+/usr/include/c++/15.2.1/ext/concurrence.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int2x2.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_geometric.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/resource/cache.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/vec3.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h:
+/usr/include/bits/types/struct___jmp_buf_tag.h:
 
-/usr/include/c++/15.2.1/bits/atomic_lockfree_defines.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxredblacktree.h:
 
-/usr/include/c++/15.2.1/cassert:
+/usr/include/c++/15.2.1/cerrno:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint2_sized.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/type_info.hpp:
 
-/usr/include/c++/15.2.1/bits/stringfwd.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_vector_relational.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/rotate_vector.inl:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/vector_relational.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/iterator.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x2_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int4_sized.hpp:
+/usr/include/c++/15.2.1/bits/stl_function.h:
 
-/usr/include/linux/errno.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/pkuintrin.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_reciprocal.inl:
+/usr/include/c++/15.2.1/bits/chrono.h:
+
+/usr/include/bits/types/__sigval_t.h:
+
+/usr/include/sys/select.h:
+
+/home/bios/VectorVertex/Engine/src/Core/LayerStack.cpp:
+
+/usr/include/c++/15.2.1/limits:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyfbx5.h:
+
+/usr/include/c++/15.2.1/bits/unique_lock.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h:
+
+/home/bios/VectorVertex/Engine/src/Render/Buffer.hpp:
+
+/usr/include/c++/15.2.1/bits/cxxabi_forced.h:
+
+/usr/include/c++/15.2.1/bits/stl_heap.h:
+
+/usr/include/c++/15.2.1/cstdio:
+
+/usr/include/c++/15.2.1/bits/basic_string.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxint8intrin.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mm_malloc.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/fptostring.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_space_YCoCg.hpp:
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_shader.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/node.hpp:
-
-/usr/include/libintl.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/type_traits.hpp:
-
 /usr/include/c++/15.2.1/functional:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x4.inl:
 
-/home/bios/VectorVertex/Engine/src/Core/LayerStack.h:
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_model.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_float.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_double.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/logger.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/log_msg.h:
+
+/usr/include/c++/15.2.1/chrono:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/runtime_view.hpp:
+
+/usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/matrix.hpp:
+
+/usr/include/bits/libc-header-start.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/organizer.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/sigh.hpp:
 
@@ -43579,49 +42051,57 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_render_system.hpp:
 
+/usr/include/asm/posix_types_64.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/registry.hpp:
+
 /home/bios/VectorVertex/Engine/src/Core/Base.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxtileintrin.h:
+/usr/include/bits/time.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/matrix_integer.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double3.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h:
+/usr/include/bits/types.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double1_precision.hpp:
+/usr/include/c++/15.2.1/cstdlib:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int3x4.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/constants.inl:
 
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/factory.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxopticalreference.h:
 
-/usr/include/c++/15.2.1/ext/alloc_traits.h:
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_camera.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h:
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/log_msg-inl.h:
+
+/usr/include/c++/15.2.1/bits/stl_algo.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint3.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/imconfig.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint4_sized.hpp:
 
 /home/bios/VectorVertex/Engine/src/Render/Shader.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512bitalgintrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/log_msg_buffer.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/graph/fwd.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float2_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/matrix_access.hpp:
+/usr/include/linux/limits.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float4.hpp:
+/home/bios/VectorVertex/Engine/src/Render/FrameBuffer.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h:
+/usr/include/c++/15.2.1/bits/stl_numeric.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h:
+/usr/include/c++/15.2.1/string_view:
 
-/usr/include/bits/stdlib-float.h:
-
-/home/bios/VectorVertex/Engine/src/Scene/Entity.hpp:
-
-/usr/include/c++/15.2.1/bits/erase_if.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/collectionstack.h:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/messages_members.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxtimecode.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/group.hpp:
 
@@ -43633,15 +42113,31 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/shaderc/status.h:
 
+/home/bios/VectorVertex/Engine/src/Events/MouseEvent.hpp:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x2.hpp:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_window.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/version.h:
+
+/usr/include/c++/15.2.1/iterator:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/integer.hpp:
+
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/process/process.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat4x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/family.hpp:
-
 /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintparent.h:
+
+/usr/include/c++/15.2.1/bits/stl_iterator.h:
+
+/usr/include/c++/15.2.1/bits/refwrap.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/matrix_decompose.inl:
 
 /usr/include/bits/statx.h:
 
@@ -43655,69 +42151,79 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/associated_min_max.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/compute_vector_relational.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxref.h:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/matrix_decompose.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int1_sized.hpp:
-
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/c++/15.2.1/ext/numeric_traits.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h:
-
-/home/bios/VectorVertex/Engine/src/Render/Material.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x3_sized.hpp:
-
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/resolve.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h:
 
 /home/bios/VectorVertex/Engine/src/Core/Keyboard_inputs.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/integer.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/src/stdout_sinks.cpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/node/detail/node.h:
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_swap_chain.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h:
+/usr/include/bits/stat.h:
 
-/home/bios/VectorVertex/Engine/src/Events/ApplicationEvent.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/graph/dot.hpp:
-
-/usr/include/bits/types/struct_timespec.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int2_sized.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_window.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/container/fwd.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_geometric.inl:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_renderer.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfolder.h:
-
-/usr/include/c++/15.2.1/ratio:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x2_precision.hpp:
 
 /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h:
+/usr/include/c++/15.2.1/ratio:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdiv.h:
+
+/usr/include/c++/15.2.1/bits/std_mutex.h:
+
+/usr/include/bits/errno.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/fwd.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_common.inl:
+
+/usr/include/c++/15.2.1/bits/node_handle.h:
+
+/usr/include/bits/flt-eval-method.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_window.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx2intrin.h:
+
+/usr/include/c++/15.2.1/bits/stl_relops.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x2_precision.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/orthonormalize.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x4.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/async_logger.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationfilter.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int2x4.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/integer.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/container/fwd.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_common.hpp:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/tuple.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avxintrin.h:
+
+/usr/include/c++/15.2.1/memory:
+
+/home/bios/VectorVertex/Engine/src/Core/Math/Math.hpp:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/c++/15.2.1/bits/exception.h:
+
+/usr/include/bits/uio_lim.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_texture.cpp:
+
+/home/bios/VectorVertex/Engine/src/Core/Layer.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x4.hpp:
 
@@ -43729,49 +42235,51 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/bits/uses_allocator.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/setup.hpp:
 
-/usr/include/bits/types/error_t.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/ident.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat2x3.hpp:
+/home/bios/VectorVertex/Engine/src/Core/LayerStack.h:
 
-/usr/include/c++/15.2.1/bits/stl_raw_storage_iter.h:
-
-/usr/include/bits/ss_flags.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_relational.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x3_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxprogress.h:
-
-/usr/include/linux/close_range.h:
-
-/usr/include/bits/uintn-identity.h:
-
-/usr/include/c++/15.2.1/cfloat:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h:
-
-/home/bios/VectorVertex/Engine/src/Render/GraphicsContext.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcharptrset.h:
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_descriptors.hpp:
 
+/usr/include/c++/15.2.1/algorithm:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h:
+
 /home/bios/VectorVertex/Engine/src/Core/Assert.h:
+
+/usr/include/c++/15.2.1/bits/stl_multimap.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/process/fwd.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxclock.h:
 
-/usr/include/c++/15.2.1/bits/stl_multimap.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/rotate_vector.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/iterator.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int4_sized.hpp:
+
+/usr/include/linux/errno.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_reciprocal.inl:
+
+/usr/include/c++/15.2.1/cassert:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint2_sized.hpp:
+
+/usr/include/c++/15.2.1/bits/stringfwd.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/ulp.hpp:
+
+/usr/include/c++/15.2.1/bits/nested_exception.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/base.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/snapshot.hpp:
 
@@ -43779,101 +42287,55 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/type_traits:
 
-/home/bios/VectorVertex/Engine/src/Core/UUID.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x3.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/mixed_product.inl:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/glm.hpp:
 
-/usr/include/bits/mathcalls.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x3.inl:
+
+/usr/include/c++/15.2.1/bits/new_allocator.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.hpp:
 
 /usr/include/vk_video/vulkan_video_codec_h265std.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float3_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x2.hpp:
+/usr/include/c++/15.2.1/bits/this_thread_sleep.h:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_framebuffer.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint3_sized.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x4.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/stdout_color_sinks.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h:
+/home/bios/VectorVertex/Engine/src/Core/Event.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/bit.inl:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_pipeline.hpp:
-
-/usr/include/c++/15.2.1/condition_variable:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int2x3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec1.inl:
-
-/home/bios/VectorVertex/Engine/src/Core/Application.hpp:
-
-/usr/include/c++/15.2.1/initializer_list:
-
-/home/bios/VectorVertex/Engine/src/Render/Window.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/type_info.hpp:
-
-/usr/include/c++/15.2.1/cerrno:
-
-/home/bios/VectorVertex/Engine/src/Core/Layer.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxpair.h:
-
-/usr/include/c++/15.2.1/backward/binders.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/random.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacter.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/fwd.hpp:
 
-/usr/include/c++/15.2.1/bits/stl_iterator.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxdeformer.h:
 
-/usr/include/c++/15.2.1/bits/refwrap.h:
+/home/bios/VectorVertex/Engine/src/Scene/Scene.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/matrix_decompose.inl:
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/c++/15.2.1/bits/stl_deque.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec1.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/config/macro.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/projection.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x4_precision.hpp:
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_offscreen.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h:
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/null_mutex.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/optimum_pow.hpp:
+/usr/include/bits/stdint-uintn.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/quaternion.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool3.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/fwd.hpp:
-
-/usr/include/bits/errno.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/policy.hpp:
-
-/usr/include/bits/types/wint_t.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_encoding.inl:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxfp8intrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/common.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/algorithm.hpp:
+/usr/include/asm/errno.h:
 
 /home/bios/VectorVertex/Engine/src/Core/Utils.hpp:
 
@@ -43881,93 +42343,151 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettingspath.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/pca.inl:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_packing.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h:
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/time_members.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat2x2.hpp:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxtileintrin.h:
 
-/usr/include/KHR/khrplatform.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/matrix_integer.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmesh.h:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_frame_info.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/color_space.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorxrefuserlib.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/type_trait.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_double_precision.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/storage.hpp:
 
-/usr/include/c++/15.2.1/bits/stl_algobase.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/meta.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float1_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h:
+/usr/include/bits/sigcontext.h:
 
-/usr/include/bits/types/sigset_t.h:
+/usr/include/c++/15.2.1/bits/stl_set.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/simplekey.cpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/extended_min_max.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint2x2_sized.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/template.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x3.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec4.hpp:
+/usr/include/c++/15.2.1/tr1/special_function_util.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec1.hpp:
 
 /usr/include/linux/sched/types.h:
 
 /home/bios/VectorVertex/Engine/src/Render/RenderCommand.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcachedeffect.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec4.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vbmi2vlintrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x2.hpp:
 
-/usr/include/c++/15.2.1/bits/fs_fwd.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcontainertemplate.h:
 
-/usr/include/c++/15.2.1/bits/hashtable.h:
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scantag.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h:
+/usr/include/bits/types/clockid_t.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h:
+/usr/include/bits/stdint-intn.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/resource/resource.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_quat.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x3.hpp:
+/usr/include/bits/wctype-wchar.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/registry-inl.h:
+/home/bios/VectorVertex/Engine/src/Render/GraphicsContext.hpp:
 
-/usr/include/c++/15.2.1/bits/stl_tempbuf.h:
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_device.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/delegate.hpp:
 
-/home/bios/VectorVertex/Engine/src/Events/KeyEvent.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/transform.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/immintrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x4.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_offscreen.cpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x3.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x2.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxloadingstrategy.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint2x4_sized.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_common.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/streamcharsource.h:
 
-/home/bios/VectorVertex/Engine/src/Core/Layer.h:
+/usr/include/bits/mathcalls-macros.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double2.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstring.h:
+/usr/include/bits/fp-logb.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/noexcept.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avxvnniint8intrin.h:
 
-/usr/include/bits/types/__fpos_t.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_half.inl:
 
-/usr/include/c++/15.2.1/bits/string_view.tcc:
+/home/bios/VectorVertex/Engine/src/Render/Window.cpp:
+
+/usr/include/c++/15.2.1/bits/stl_bvector.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/type_ptr.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxfiletexture.h:
+
+/usr/include/asm-generic/types.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat2x4.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/imstb_truetype.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_device.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/_noise.hpp:
+
+/usr/include/c++/15.2.1/bits/postypes.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x3_precision.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x4.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x4_precision.hpp:
+
+/usr/include/c++/15.2.1/numeric:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmemorypool.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/bit.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/compressed_pair.hpp:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_pipeline.hpp:
+
+/usr/include/c++/15.2.1/condition_variable:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int2x3.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double3x4.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_trigonometric.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/fwd.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/simplekey.cpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stdarg.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxvertexcachedeformer.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x2.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x3_precision.hpp:
 
@@ -43979,493 +42499,87 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_reciprocal.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/common.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_encoding.hpp:
-
-/home/bios/VectorVertex/Engine/src/Render/Buffer.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat4x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/Core/Input.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_trigonometric.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/fwd.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/rotate_vector.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/mpmc_blocking_q.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/tuple.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avxintrin.h:
-
-/usr/include/c++/15.2.1/memory:
-
-/home/bios/VectorVertex/Engine/src/Core/Math/Math.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2satcvtintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_ulp.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxmovrsintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/context.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h:
-
-/usr/include/c++/15.2.1/locale:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalstate.h:
-
-/home/bios/VectorVertex/Engine/src/Events/MouseEvent.hpp:
-
-/usr/include/bits/types/struct_itimerspec.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_common.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h:
-
-/usr/include/c++/15.2.1/bits/unique_lock.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxthumbnail.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/color_space.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertytypes.h:
-
-/usr/include/stdlib.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/constants.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/type_trait.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/logger.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/log_msg.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_packing.hpp:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_texture.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h:
-
-/usr/include/c++/15.2.1/bits/stl_stack.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mwaitxintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/tweakme.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h:
-
-/home/bios/VectorVertex/Engine/src/Core/Log.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_integer.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/imgui/imstb_truetype.h:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_device.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h:
-
-/usr/include/c++/15.2.1/filesystem:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/wrap.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/basic_file_sink.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/bundled/chrono.h:
-
-/usr/include/c++/15.2.1/bits/char_traits.h:
-
-/usr/include/bits/waitstatus.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h:
-
-/usr/include/c++/15.2.1/random:
-
-/usr/include/linux/posix_types.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h:
-
-/usr/include/c++/15.2.1/bits/align.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x4.hpp:
-
 /usr/include/bits/types/cookie_io_functions_t.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h:
+/usr/include/c++/15.2.1/bits/alloc_traits.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_constants.inl:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsavesintrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/mixin.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double4x4.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h:
+/usr/include/vk_video/vulkan_video_codec_h265std_encode.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerial.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/storage.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/template.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/meta.hpp:
+/usr/include/bits/types/struct_statx.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h:
+/usr/include/c++/15.2.1/bits/uniform_int_dist.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/simd/platform.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_constants.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h:
+/usr/include/c++/15.2.1/tr1/ell_integral.tcc:
 
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/rotating_file_sink.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat4x4.hpp:
 
-/usr/include/vulkan/vk_platform.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/family.hpp:
 
-/home/bios/VectorVertex/Engine/src/Render/GraphicsContext.cpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x4_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x2.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_transform.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x2_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/functions.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x2.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h:
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_framebuffer.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int4x2.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x3.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalsettings.h:
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/regex_yaml.h:
 
-/usr/include/bits/getopt_core.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_integer.inl:
 
-/usr/include/c++/15.2.1/bits/istream.tcc:
-
-/home/bios/VectorVertex/Engine/src/Render/Renderer.hpp:
-
-/usr/include/c++/15.2.1/array:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/compressed_pair.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/bit.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/transform2.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiobase.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float3x4_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/projection.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/euler_angles.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcharacternodename.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaxissystem.h:
-
-/usr/include/c++/15.2.1/cstdlib:
-
-/usr/include/bits/types.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/periodic_worker.h:
-
-/usr/include/features.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_exponential.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_context.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512bf16intrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h:
-
-/usr/include/c++/15.2.1/list:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_common.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat3x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h:
-
-/home/bios/VectorVertex/Engine/src/Render/Buffer.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float2.hpp:
-
-/usr/include/c++/15.2.1/bits/shared_ptr.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h:
-
-/usr/include/c++/15.2.1/stdexcept:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/string_cast.hpp:
-
-/home/bios/VectorVertex/Engine/src/Render/Renderer.cpp:
-
-/usr/include/c++/15.2.1/ext/aligned_buffer.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool3_precision.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint3_sized.hpp:
-
-/usr/include/c++/15.2.1/bits/this_thread_sleep.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/stdout_color_sinks.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/enum.hpp:
-
-/usr/include/bits/pthreadtypes-arch.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxgroupname.h:
-
-/usr/include/c++/15.2.1/algorithm:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_camera.hpp:
-
-/usr/include/c++/15.2.1/istream:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/string_cast.inl:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_window.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x2.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/version.h:
-
-/usr/include/c++/15.2.1/iterator:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h:
-
-/usr/include/GLFW/glfw3.h:
-
-/usr/include/alloca.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/asm-generic/int-ll64.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h:
-
-/usr/include/vulkan/vulkan.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/dispatcher.hpp:
-
-/usr/include/asm-generic/posix_types.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat2x4.hpp:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/c++/15.2.1/cstdio:
-
-/usr/include/c++/15.2.1/bits/basic_string.h:
-
-/usr/include/asm/bitsperlong.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/logger-inl.h:
-
-/usr/include/c++/15.2.1/bits/basic_ios.h:
-
-/usr/include/malloc.h:
-
-/usr/include/asm/errno.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/registry.hpp:
-
-/usr/include/asm/posix_types_64.h:
-
-/usr/include/asm/types.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/range.hpp:
-
-/usr/include/assert.h:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/null.cpp:
-
-/usr/include/c++/15.2.1/bits/enable_special_members.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
-
-/usr/include/bits/cpu-set.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h:
-
-/usr/include/bits/endian.h:
-
-/usr/include/bits/endianness.h:
-
-/usr/include/bits/floatn-common.h:
-
-/usr/include/X11/extensions/randr.h:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/ctype_base.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/bits/fp-fast.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_relational.hpp:
-
-/usr/include/linux/stddef.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectmetadata.h:
 
 /usr/include/bits/iscanonical.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/parser.cpp:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/15.2.1/bits/requires_hosted.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/polar_coordinates.inl:
-
-/usr/include/bits/local_lim.h:
-
-/usr/include/bits/locale.h:
-
-/usr/include/c++/15.2.1/iomanip:
-
-/usr/include/bits/long-double.h:
+/usr/include/bits/math-vector.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_geometric.hpp:
 
-/usr/include/bits/math-vector.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_transform.inl:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_texture.cpp:
+/usr/include/c++/15.2.1/bits/range_access.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/streamcharsource.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x3_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxreader.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float2x3.hpp:
 
-/usr/include/bits/fp-logb.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint2.hpp:
 
-/usr/include/bits/mathcalls-macros.h:
+/usr/include/c++/15.2.1/bits/fs_path.h:
 
-/usr/include/vk_video/vulkan_video_codec_vp9std.h:
+/usr/include/sys/ucontext.h:
 
-/usr/include/bits/posix2_lim.h:
+/usr/include/c++/15.2.1/cstddef:
 
-/usr/include/bits/pthread_stack_min-dynamic.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2convertintrin.h:
 
-/usr/include/bits/pthreadtypes.h:
+/usr/include/bits/types/mbstate_t.h:
 
-/usr/include/bits/sched.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x4.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskin.h:
 
-/usr/include/c++/15.2.1/tr1/hypergeometric.tcc:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x4_precision.hpp:
 
-/usr/include/bits/select.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_common.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_reciprocal.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/src/color_sinks.cpp:
-
-/usr/include/bits/setjmp.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/quaternion.hpp:
-
-/home/bios/VectorVertex/Engine/src/Render/Flags.hpp:
-
-/usr/include/bits/stdint-least.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/null_mutex.h:
-
-/usr/include/bits/stdint-uintn.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/ostr.h:
-
-/usr/include/bits/stdio_lim.h:
-
-/usr/include/bits/struct_mutex.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_integer.hpp:
-
-/usr/include/bits/thread-shared-types.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/vector_query.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double3.hpp:
-
-/usr/include/bits/time.h:
-
-/usr/include/c++/15.2.1/bits/stl_vector.h:
-
-/usr/include/bits/timex.h:
-
-/usr/include/bits/types/__FILE.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/scalar_multiplication.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h:
-
-/usr/include/bits/types/__fpos64_t.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgobo.h:
 
 /usr/include/bits/types/__sigset_t.h:
 
@@ -44473,325 +42587,219 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/spirv-tools/libspirv.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scantag.h:
+/usr/include/c++/15.2.1/bits/version.h:
 
-/usr/include/bits/types/clockid_t.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat4x3.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2convertintrin.h:
+/usr/include/asm-generic/int-ll64.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x4.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/epsilon.hpp:
 
-/usr/include/bits/types/mbstate_t.h:
+/usr/include/vk_video/vulkan_video_codec_h265std_decode.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/memory.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxtakeinfo.h:
 
-/usr/include/c++/15.2.1/bits/stl_list.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec4.inl:
 
-/usr/include/bits/types/struct_sched_param.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x3.hpp:
 
-/usr/include/bits/types/struct_timeval.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/compute_vector_decl.hpp:
 
-/usr/include/bits/flt-eval-method.h:
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_texture.hpp:
 
-/usr/include/c++/15.2.1/bits/node_handle.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_packing.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/simd/platform.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/packing.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x2.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_integer.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec3.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec2.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool1.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec3.hpp:
+
+/usr/include/c++/15.2.1/bits/streambuf.tcc:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/stddef.h:
+
+/usr/include/bits/cpu-set.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_int_sized.hpp:
+
+/usr/include/stdint.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxclonemanager.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xmmintrin.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcamerastereo.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_uint_sized.hpp:
+
+/usr/include/c++/15.2.1/vector:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/signal/dispatcher.hpp:
+
+/usr/include/asm-generic/posix_types.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_constants.inl:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsavesintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/mixin.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/waitpkgintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_double2x2.hpp:
+
+/usr/include/c++/15.2.1/bits/exception_ptr.h:
+
+/usr/include/c++/15.2.1/bits/vector.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool2_precision.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/quaternion.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat2x2.hpp:
+
+/usr/include/KHR/khrplatform.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/pca.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiopluginregistry.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat4x4.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool4.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstringlist.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometrybase.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl2.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat3x3.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int3x2_sized.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool4_precision.hpp:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512satcvtintrin.h:
 
 /usr/include/bits/types/time_t.h:
 
-/usr/include/bits/types/timer_t.h:
+/usr/include/c++/15.2.1/ext/aligned_buffer.h:
 
-/usr/include/bits/uio_lim.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool3_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h:
+/usr/include/linux/stddef.h:
 
-/usr/include/bits/waitflags.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_relational.hpp:
 
-/usr/include/bits/wchar.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxfp8intrin.h:
 
-/usr/include/bits/posix1_lim.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/common.hpp:
 
-/usr/include/bits/wordsize.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/algorithm.hpp:
 
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_buffer.cpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double4_precision.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/emitter.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/pattern_formatter.h:
-
-/usr/include/c++/15.2.1/atomic:
-
-/usr/include/c++/15.2.1/backward/auto_ptr.h:
-
-/usr/include/c++/15.2.1/bits/algorithmfwd.h:
-
-/usr/include/c++/15.2.1/bits/memoryfwd.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsbegin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxvideo.h:
-
-/usr/include/c++/15.2.1/bits/alloc_traits.h:
-
-/usr/include/c++/15.2.1/bits/allocator.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxtransposeintrin.h:
-
-/usr/include/c++/15.2.1/ext/atomicity.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/enqcmdintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_ulp.hpp:
-
-/usr/include/c++/15.2.1/bits/atomic_base.h:
-
-/usr/include/c++/15.2.1/bits/fs_ops.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int3_sized.hpp:
-
-/usr/include/c++/15.2.1/bits/basic_ios.tcc:
-
-/usr/include/c++/15.2.1/bits/basic_string.tcc:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/pkuintrin.h:
-
-/usr/include/c++/15.2.1/bits/chrono.h:
-
-/usr/include/c++/15.2.1/bits/stl_function.h:
-
-/usr/include/bits/types/__sigval_t.h:
-
-/usr/include/sys/select.h:
-
-/home/bios/VectorVertex/Engine/src/Core/LayerStack.cpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitter.cpp:
-
-/usr/include/bits/mathcalls-narrow.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h:
-
-/usr/include/c++/15.2.1/bits/concept_check.h:
-
-/usr/include/c++/15.2.1/bits/cpp_type_traits.h:
-
-/usr/include/c++/15.2.1/bits/cxxabi_init_exception.h:
-
-/usr/include/bits/posix_opt.h:
-
-/usr/include/c++/15.2.1/bits/exception.h:
-
-/usr/include/c++/15.2.1/bits/exception_defines.h:
-
-/usr/include/c++/15.2.1/bits/random.h:
-
-/usr/include/c++/15.2.1/bits/exception_ptr.h:
-
-/usr/include/c++/15.2.1/bits/fstream.tcc:
-
-/home/bios/VectorVertex/Engine/src/Scene/Entity.cpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512convertintrin.h:
-
-/usr/include/c++/15.2.1/bits/functexcept.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/bmiintrin.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_transform.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h:
-
-/usr/include/c++/15.2.1/bits/functional_hash.h:
-
-/usr/include/c++/15.2.1/bits/hash_bytes.h:
-
-/usr/include/c++/15.2.1/bits/hashtable_policy.h:
-
-/usr/include/c++/15.2.1/bits/invoke.h:
-
-/usr/include/c++/15.2.1/bits/ios_base.h:
-
-/usr/include/c++/15.2.1/bits/locale_classes.tcc:
-
-/usr/include/bits/siginfo-arch.h:
-
-/usr/include/c++/15.2.1/bits/locale_conv.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512ifmaintrin.h:
-
-/usr/include/c++/15.2.1/bits/locale_facets.h:
-
-/usr/include/c++/15.2.1/bits/locale_facets_nonio.h:
-
-/usr/include/c++/15.2.1/bits/locale_facets_nonio.tcc:
-
-/usr/include/c++/15.2.1/bits/localefwd.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/ulp.hpp:
-
-/usr/include/c++/15.2.1/bits/nested_exception.h:
-
-/usr/include/c++/15.2.1/bits/new_allocator.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/contrib/graphbuilder.h:
-
-/usr/include/c++/15.2.1/bits/ostream.h:
-
-/usr/include/c++/15.2.1/bits/ostream.tcc:
-
-/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/ranges.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float3.hpp:
+/home/bios/VectorVertex/Engine/src/Core/UUID.cpp:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
-/usr/include/c++/15.2.1/bits/ostream_insert.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float3.hpp:
 
-/usr/include/sys/single_threaded.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/ranges.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_common.inl:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float4.hpp:
 
-/usr/include/bits/struct_rwlock.h:
+/usr/include/bits/wchar.h:
 
-/usr/include/c++/15.2.1/bits/parse_numbers.h:
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/resource/cache.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/_noise.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollection.h:
 
-/usr/include/c++/15.2.1/bits/postypes.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int4.hpp:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/wmmintrin.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/optimum_pow.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxmarker.h:
 
-/usr/include/c++/15.2.1/bits/ptr_traits.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint4.hpp:
 
-/usr/include/ctype.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_half.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h:
-
-/usr/include/c++/15.2.1/bits/random.tcc:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int2x4.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/integer.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_float4x3_precision.hpp:
-
-/usr/include/c++/15.2.1/bits/range_access.h:
-
-/usr/include/c++/15.2.1/bits/shared_ptr_atomic.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avxvnniint16intrin.h:
-
-/usr/include/c++/15.2.1/bits/shared_ptr_base.h:
-
-/usr/include/c++/15.2.1/bits/specfun.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h:
-
-/usr/include/c++/15.2.1/typeinfo:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h:
-
-/usr/include/c++/15.2.1/bits/std_abs.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_vec1.hpp:
-
-/usr/include/c++/15.2.1/tr1/special_function_util.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_relational.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x4.hpp:
-
-/usr/include/c++/15.2.1/bits/std_function.h:
-
-/usr/include/c++/15.2.1/bits/std_mutex.h:
-
-/usr/include/c++/15.2.1/bits/std_thread.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/log_msg-inl.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_uint3.hpp:
-
-/usr/include/c++/15.2.1/bits/stl_algo.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/component_wise.inl:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/compatibility.hpp:
-
-/usr/include/shaderc/shaderc.h:
-
-/usr/include/c++/15.2.1/bits/stl_bvector.h:
-
-/usr/include/c++/15.2.1/bits/stl_construct.h:
-
-/usr/include/bits/types/clock_t.h:
-
-/usr/include/c++/15.2.1/bits/stl_deque.h:
-
-/usr/include/c++/15.2.1/bits/cxxabi_forced.h:
-
-/usr/include/c++/15.2.1/bits/stl_heap.h:
-
-/usr/include/c++/15.2.1/bits/stl_iterator_base_funcs.h:
-
-/usr/include/c++/15.2.1/string_view:
-
-/usr/include/c++/15.2.1/bits/stl_numeric.h:
-
-/usr/include/c++/15.2.1/bits/stl_pair.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx2intrin.h:
-
-/usr/include/c++/15.2.1/bits/stl_relops.h:
-
-/usr/include/bits/sigcontext.h:
-
-/usr/include/c++/15.2.1/bits/stl_set.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/extended_min_max.hpp:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint2x2_sized.hpp:
-
-/usr/include/c++/15.2.1/bits/stl_uninitialized.h:
-
-/usr/include/c++/15.2.1/bits/streambuf.tcc:
-
-/usr/include/bits/types/struct_statx.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_constants.hpp:
-
-/usr/include/c++/15.2.1/tr1/ell_integral.tcc:
-
-/usr/include/c++/15.2.1/bits/uniform_int_dist.h:
-
-/usr/include/c++/15.2.1/bits/unique_ptr.h:
-
-/usr/include/c++/15.2.1/bits/unordered_map.h:
-
-/usr/include/c++/15.2.1/bits/unordered_set.h:
-
-/usr/include/c++/15.2.1/bits/utility.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_relational.inl:
+/usr/include/c++/15.2.1/bits/ios_base.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/round.inl:
 
-/usr/include/c++/15.2.1/bits/vector.tcc:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_relational.inl:
 
-/usr/include/c++/15.2.1/bits/version.h:
+/usr/include/c++/15.2.1/initializer_list:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vp2intersectvlintrin.h:
+/home/bios/VectorVertex/Engine/src/Core/Application.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int2x2.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_float.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometry.h:
+/usr/include/GL/gl.h:
 
-/usr/include/c++/15.2.1/ext/concurrence.h:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_quat.inl:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_renderer.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_geometric.inl:
+
+/usr/include/c++/15.2.1/bits/hashtable_policy.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxbf16intrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/backtracer.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_common.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/fmt/fmt.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxcallbacks.h:
+
+/usr/include/bits/endian.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_float.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double1_precision.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int3x4.hpp:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/bmiintrin.h:
+
+/usr/include/c++/15.2.1/bits/functional_hash.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxdualquaternion.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/quaternion_transform.hpp:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++io.h:
+
+/usr/include/c++/15.2.1/climits:
 
 /usr/include/c++/15.2.1/clocale:
 
@@ -44805,6 +42813,8 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/cstdint:
 
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtablebase.h:
+
 /usr/include/c++/15.2.1/cwctype:
 
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/fmt_helper.h:
@@ -44817,6 +42827,10 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/exception:
 
+/usr/include/c++/15.2.1/bits/std_abs.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacephong.h:
+
 /usr/include/c++/15.2.1/ext/string_conversions.h:
 
 /usr/include/spirv-tools/optimizer.hpp:
@@ -44825,13 +42839,17 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x2.hpp:
 
+/usr/include/c++/15.2.1/filesystem:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsymbol.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512fp16vlintrin.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool1_precision.hpp:
 
-/usr/include/c++/15.2.1/bits/deque.tcc:
-
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/utility.hpp:
+
+/usr/include/c++/15.2.1/bits/deque.tcc:
 
 /usr/include/c++/15.2.1/fstream:
 
@@ -44851,11 +42869,27 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/features-time64.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/qualifier.hpp:
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/string_cast.inl:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h:
+/usr/include/c++/15.2.1/istream:
 
-/usr/include/c++/15.2.1/math.h:
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlodgroup.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_context.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimlayer.h:
+
+/usr/include/c++/15.2.1/locale:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/context.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxperipheral.h:
+
+/usr/include/c++/15.2.1/map:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/node.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxscene.h:
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_camera.cpp:
 
@@ -44883,9 +42917,29 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/norm.inl:
 
+/usr/include/c++/15.2.1/stdexcept:
+
+/usr/include/c++/15.2.1/bits/shared_ptr.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_float2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxaudiolayer.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/string_cast.hpp:
+
+/home/bios/VectorVertex/Engine/src/Render/Renderer.cpp:
+
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/io.inl:
 
 /usr/include/c++/15.2.1/stdlib.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/tag.cpp:
+
+/usr/include/c++/15.2.1/streambuf:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/poly/poly.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgenericnode.h:
 
 /usr/include/c++/15.2.1/thread:
 
@@ -44894,6 +42948,12 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 /usr/include/c++/15.2.1/tr1/beta_function.tcc:
 
 /usr/include/c++/15.2.1/tr1/exp_integral.tcc:
+
+/usr/include/c++/15.2.1/tr1/gamma.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/core/type_traits.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxobject.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat3x3.hpp:
 
@@ -44921,27 +42981,17 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/utility:
 
-/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl3_loader.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h:
-
-/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/file_helper.h:
-
 /usr/include/unistd.h:
 
 /usr/include/c++/15.2.1/cctype:
 
 /usr/include/c++/15.2.1/version:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h:
-
-/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
-
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/basic_file.h:
 
-/usr/include/vk_video/vulkan_video_codec_h264std_encode.h:
-
 /home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/entity/entity.hpp:
+
+/usr/include/vk_video/vulkan_video_codec_h264std_encode.h:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++allocator.h:
 
@@ -44957,9 +43007,25 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/gthr-default.h:
 
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/opt_random.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_bool3.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxproceduralgeometry.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/prfchiintrin.h:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/graph/flow.hpp:
+
+/usr/include/endian.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/func_exponential.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxproceduraltexture.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int4x4.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_double4.hpp:
 
@@ -44977,6 +43043,14 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/limits.h:
 
+/usr/include/c++/15.2.1/random:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/bits/waitstatus.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxquaternion.h:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/shaintrin.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_transform.hpp:
@@ -44993,9 +43067,19 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/pthread.h:
 
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcameraswitcher.h:
+
 /usr/include/stdio.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_space_YCoCg.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/constants.hpp:
+
+/usr/include/stdlib.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/color_encoding.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxline.h:
 
 /usr/include/string.h:
 
@@ -45033,9 +43117,9 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/c++/15.2.1/cwchar:
 
-/usr/include/sched.h:
-
 /usr/include/c++/15.2.1/debug/assertions.h:
+
+/usr/include/sched.h:
 
 /usr/include/vk_video/vulkan_video_codec_vp9std_decode.h:
 
@@ -45045,15 +43129,17 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /usr/include/wchar.h:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h:
-
-/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_renderer_api.cpp:
-
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/intersect.inl:
 
 /usr/include/wctype.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/float.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/limits.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_int2_sized.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintposition.h:
 
 /usr/include/vulkan/vulkan_core.h:
 
@@ -45073,6 +43159,12 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/ansicolor_sink.h:
 
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/wrap.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/basic_file_sink.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxhik2fbxcharacter.h:
+
 /home/bios/VectorVertex/Engine/src/Core/Math/Math.cpp:
 
 /home/bios/VectorVertex/Engine/src/Core/Utils/PlattformUtils.hpp:
@@ -45080,6 +43172,14 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 /home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/node/impl.h:
 
 /home/bios/VectorVertex/Engine/src/Core/MouseCodes.hpp:
+
+/home/bios/VectorVertex/Engine/src/Events/KeyEvent.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxset.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/Render_Systems/vk_light_render_system.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxpatch.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/circular_q.h:
 
@@ -45101,11 +43201,385 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_framebuffer.cpp:
 
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxarch.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxnew.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxstdcompliant.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxarray.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxcontainerallocators.h:
+
+/usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxdynamicarray.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/round.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/emitter.cpp:
+
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/include/c++/15.2.1/bits/concept_check.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxfile.h:
+
+/usr/include/c++/15.2.1/ext/alloc_traits.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxhashmap.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxintrusivelist.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmap.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/mwaitxintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxmultimap.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/immintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/base/fbxstatus.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_offscreen.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/rotate_vector.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacelambert.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxclassid.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxconnectionpoint.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxdatatypes.h:
+
+/home/bios/VectorVertex/Engine/src/Render/Material.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint3x3_sized.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/mpmc_blocking_q.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbs.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxemitter.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxeventhandler.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_ulp.hpp:
+
+/usr/include/vulkan/vulkan.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmanager.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/amxmovrsintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxmodule.h:
+
+/usr/include/asm-generic/errno.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxmediaclip.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/random.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugincontainer.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxproperty.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrootnodeutility.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurve.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertyhandle.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertypage.h:
+
+/usr/include/c++/15.2.1/bits/stl_stack.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxqueryevent.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/tweakme.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingdirectory.h:
+
+/home/bios/VectorVertex/Engine/src/Core/Log.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxstatistics.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_integer.inl:
+
+/home/bios/VectorVertex/Engine/src/Core/Application.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxscopedloadingfilename.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxplugin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxskeleton.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxstream.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector2.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxsystemunit.h:
+
+/usr/include/c++/15.2.1/typeinfo:
+
+/usr/include/asm-generic/errno-base.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxxref.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/include/yaml-cpp/node/detail/node.h:
+
+/home/bios/VectorVertex/Engine/src/Events/ApplicationEvent.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtableentry.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxvector4.h:
+
+/usr/include/bits/sigstksz.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxatomic.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxoperatorentryview.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/sync/fbxsync.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_nsend.h:
+
+/usr/include/bits/waitflags.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fbxsdk_version.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbx/fbxio.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxfiletokens.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/sinks/rotating_file_sink.h:
+
+/usr/include/vulkan/vk_platform.h:
+
+/home/bios/VectorVertex/Engine/src/Render/GraphicsContext.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxglobalcamerasettings.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/functions.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxpropertydef.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int4x2.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxgloballightsettings.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbximporter.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/fbxquery.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/fileio/fbxiosettings.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvefilters.h:
+
+/usr/include/bits/ss_flags.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_relational.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintrotation.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimcurvenode.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessorshaderdependency.h:
+
+/usr/include/bits/floatn.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimevalclassic.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimstack.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/animation/fbxanimutilities.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512bf16intrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraint.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintaim.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintcustom.h:
+
+/usr/include/c++/15.2.1/list:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_common.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintsinglechainik.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxconstraintutils.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/constraint/fbxcontrolset.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxcollectionexclusive.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdisplaylayer.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/wmmintrin.h:
+
+/usr/include/c++/15.2.1/bits/ptr_traits.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxdocumentinfo.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxlibrary.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxobjectfilter.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/scalar_multiplication.hpp:
+
+/usr/include/bits/types/__fpos64_t.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxpose.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxreference.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionnode.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshape.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_opengl3_loader.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/spdlog/include/spdlog/details/file_helper.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxblendshapechannel.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcache.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxtexture.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxaffinematrix.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_common.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxcluster.h:
+
+/usr/include/shaderc/shaderc.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxgeometryweightedmap.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsavecintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayer.h:
+
+/usr/include/c++/15.2.1/bits/random.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlayercontainer.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxtransforms.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxlight.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnode.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/entt/src/entt/meta/policy.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnull.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbscurve.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/scanner.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnurbssurface.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/yaml-cpp/src/nodebuilder.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxshape.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxsubdeformer.h:
+
+/usr/include/c++/15.2.1/tr1/hypergeometric.tcc:
+
+/usr/include/bits/select.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxweightedmapping.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingoperator.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/type_mat2x4.hpp:
+
+/usr/include/c++/15.2.1/bits/std_function.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/arch/fbxdebug.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_relational.hpp:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_renderer_api.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingsentryview.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxbindingtable.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/sm4intrin.h:
+
+/home/bios/VectorVertex/Engine/src/Scene/Scene.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/fbxselectionset.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxentryview.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbximplementationutils.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/mixed_product.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxlayeredtexture.h:
+
+/home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_frame_info.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxpropertyentryview.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2satcvtintrin.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsemanticentryview.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxshadingconventions.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/bit.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxsurfacematerialutils.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxgeometryconverter.h:
+
+/usr/include/bits/types/sigset_t.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxmanipulators.h:
+
+/home/bios/VectorVertex/Engine/src/Render/Buffer.cpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxnamehandler.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/mat4x2.hpp:
+
+/home/bios/VectorVertex/Engine/src/Core/Input.hpp:
+
+/usr/include/features.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxprocessor.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategy.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategybase.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/color_space.inl:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxrenamingstrategyutilities.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/normalize_dot.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/utils/fbxscenecheckutility.h:
+
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/hash.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/vector_ulp.inl:
 
 /home/bios/VectorVertex/Engine/src/vendor/tinyobjloader/tiny_obj_loader.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/geometry/fbxnodeattribute.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/detail/qualifier.hpp:
+
+/usr/include/c++/15.2.1/math.h:
 
 /home/bios/VectorVertex/Engine/src/Plattform/Vulkan/vk_pipeline.cpp:
 
@@ -45201,9 +43675,9 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_int4x4_sized.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h:
-
 /usr/include/c++/15.2.1/bits/locale_facets.tcc:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/core/math/fbxmatrix.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtx/quaternion.inl:
 
@@ -45239,9 +43713,9 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/gtc/noise.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint2x3.hpp:
-
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_packing.hpp:
+
+/home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint2x3.hpp:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/matrix_uint4x4_sized.hpp:
 
@@ -45255,11 +43729,11 @@ CMakeFiles/VectorVertexEngine.dir/src/vendor/yaml-cpp/src/tag.cpp.o: /home/bios/
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_reciprocal.hpp:
 
-/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h:
-
 /usr/include/c++/15.2.1/bits/locale_classes.h:
 
 /usr/include/linux/types.h:
+
+/home/bios/VectorVertex/Engine/src/vendor/fbxsdk/include/fbxsdk/scene/shading/fbxconstantentryview.h:
 
 /home/bios/VectorVertex/Engine/src/vendor/glm/glm/ext/scalar_ulp.inl:
 

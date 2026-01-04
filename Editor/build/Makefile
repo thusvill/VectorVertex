@@ -129,6 +129,163 @@ VectorVertexEditor/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/build
 .PHONY : VectorVertexEditor/fast
 
+#=============================================================================
+# Target rules for targets named imgui
+
+# Build rule for target.
+imgui: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imgui
+.PHONY : imgui
+
+# fast build rule for target.
+imgui/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/build
+.PHONY : imgui/fast
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.o: home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.o
+
+# target to build an object file
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.o
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.i: home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.i
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.s: home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.cpp.s
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.o: home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.o
+
+# target to build an object file
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.o
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.i: home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.i
+
+# target to preprocess a source file
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.i
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.s: home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.s
+
+# target to generate assembly for a file
+home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.cpp.s
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.o: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.o
+
+# target to build an object file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.o
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.i: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.i
+
+# target to preprocess a source file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.i
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.s: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.s
+
+# target to generate assembly for a file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.cpp.s
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.o: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.o
+
+# target to build an object file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.o
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.i: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.i
+
+# target to preprocess a source file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.i
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.s: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.cpp.s
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.o: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.o
+
+# target to build an object file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.o
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.i: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.i
+
+# target to preprocess a source file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.i
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.s: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.cpp.s
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.o: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.o
+
+# target to build an object file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.o
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.o
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.i: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.i
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.i
+
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.s: home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgui.dir/build.make CMakeFiles/imgui.dir/home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.s
+.PHONY : home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.cpp.s
+
 src/EditorCamera.o: src/EditorCamera.cpp.o
 .PHONY : src/EditorCamera.o
 
@@ -273,6 +430,126 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/vendor/ImGuizmo/GraphEditor.o: src/vendor/ImGuizmo/GraphEditor.cpp.o
+.PHONY : src/vendor/ImGuizmo/GraphEditor.o
+
+# target to build an object file
+src/vendor/ImGuizmo/GraphEditor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o
+.PHONY : src/vendor/ImGuizmo/GraphEditor.cpp.o
+
+src/vendor/ImGuizmo/GraphEditor.i: src/vendor/ImGuizmo/GraphEditor.cpp.i
+.PHONY : src/vendor/ImGuizmo/GraphEditor.i
+
+# target to preprocess a source file
+src/vendor/ImGuizmo/GraphEditor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.i
+.PHONY : src/vendor/ImGuizmo/GraphEditor.cpp.i
+
+src/vendor/ImGuizmo/GraphEditor.s: src/vendor/ImGuizmo/GraphEditor.cpp.s
+.PHONY : src/vendor/ImGuizmo/GraphEditor.s
+
+# target to generate assembly for a file
+src/vendor/ImGuizmo/GraphEditor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.s
+.PHONY : src/vendor/ImGuizmo/GraphEditor.cpp.s
+
+src/vendor/ImGuizmo/ImCurveEdit.o: src/vendor/ImGuizmo/ImCurveEdit.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.o
+
+# target to build an object file
+src/vendor/ImGuizmo/ImCurveEdit.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.cpp.o
+
+src/vendor/ImGuizmo/ImCurveEdit.i: src/vendor/ImGuizmo/ImCurveEdit.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.i
+
+# target to preprocess a source file
+src/vendor/ImGuizmo/ImCurveEdit.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.cpp.i
+
+src/vendor/ImGuizmo/ImCurveEdit.s: src/vendor/ImGuizmo/ImCurveEdit.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.s
+
+# target to generate assembly for a file
+src/vendor/ImGuizmo/ImCurveEdit.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImCurveEdit.cpp.s
+
+src/vendor/ImGuizmo/ImGradient.o: src/vendor/ImGuizmo/ImGradient.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGradient.o
+
+# target to build an object file
+src/vendor/ImGuizmo/ImGradient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGradient.cpp.o
+
+src/vendor/ImGuizmo/ImGradient.i: src/vendor/ImGuizmo/ImGradient.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGradient.i
+
+# target to preprocess a source file
+src/vendor/ImGuizmo/ImGradient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGradient.cpp.i
+
+src/vendor/ImGuizmo/ImGradient.s: src/vendor/ImGuizmo/ImGradient.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGradient.s
+
+# target to generate assembly for a file
+src/vendor/ImGuizmo/ImGradient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGradient.cpp.s
+
+src/vendor/ImGuizmo/ImGuizmo.o: src/vendor/ImGuizmo/ImGuizmo.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.o
+
+# target to build an object file
+src/vendor/ImGuizmo/ImGuizmo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.cpp.o
+
+src/vendor/ImGuizmo/ImGuizmo.i: src/vendor/ImGuizmo/ImGuizmo.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.i
+
+# target to preprocess a source file
+src/vendor/ImGuizmo/ImGuizmo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.cpp.i
+
+src/vendor/ImGuizmo/ImGuizmo.s: src/vendor/ImGuizmo/ImGuizmo.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.s
+
+# target to generate assembly for a file
+src/vendor/ImGuizmo/ImGuizmo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImGuizmo.cpp.s
+
+src/vendor/ImGuizmo/ImSequencer.o: src/vendor/ImGuizmo/ImSequencer.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImSequencer.o
+
+# target to build an object file
+src/vendor/ImGuizmo/ImSequencer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o
+.PHONY : src/vendor/ImGuizmo/ImSequencer.cpp.o
+
+src/vendor/ImGuizmo/ImSequencer.i: src/vendor/ImGuizmo/ImSequencer.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImSequencer.i
+
+# target to preprocess a source file
+src/vendor/ImGuizmo/ImSequencer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.i
+.PHONY : src/vendor/ImGuizmo/ImSequencer.cpp.i
+
+src/vendor/ImGuizmo/ImSequencer.s: src/vendor/ImGuizmo/ImSequencer.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImSequencer.s
+
+# target to generate assembly for a file
+src/vendor/ImGuizmo/ImSequencer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/VectorVertexEditor.dir/build.make CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.s
+.PHONY : src/vendor/ImGuizmo/ImSequencer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +559,25 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... VectorVertexEditor"
+	@echo "... imgui"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.o"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.i"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_glfw.s"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.o"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.i"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/backends/imgui_impl_vulkan.s"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.o"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.i"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui.s"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.o"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.i"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_draw.s"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.o"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.i"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_tables.s"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.o"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.i"
+	@echo "... home/bios/VectorVertex/Engine/src/vendor/imgui/imgui_widgets.s"
 	@echo "... src/EditorCamera.o"
 	@echo "... src/EditorCamera.i"
 	@echo "... src/EditorCamera.s"
@@ -300,6 +596,21 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/vendor/ImGuizmo/GraphEditor.o"
+	@echo "... src/vendor/ImGuizmo/GraphEditor.i"
+	@echo "... src/vendor/ImGuizmo/GraphEditor.s"
+	@echo "... src/vendor/ImGuizmo/ImCurveEdit.o"
+	@echo "... src/vendor/ImGuizmo/ImCurveEdit.i"
+	@echo "... src/vendor/ImGuizmo/ImCurveEdit.s"
+	@echo "... src/vendor/ImGuizmo/ImGradient.o"
+	@echo "... src/vendor/ImGuizmo/ImGradient.i"
+	@echo "... src/vendor/ImGuizmo/ImGradient.s"
+	@echo "... src/vendor/ImGuizmo/ImGuizmo.o"
+	@echo "... src/vendor/ImGuizmo/ImGuizmo.i"
+	@echo "... src/vendor/ImGuizmo/ImGuizmo.s"
+	@echo "... src/vendor/ImGuizmo/ImSequencer.o"
+	@echo "... src/vendor/ImGuizmo/ImSequencer.i"
+	@echo "... src/vendor/ImGuizmo/ImSequencer.s"
 .PHONY : help
 
 

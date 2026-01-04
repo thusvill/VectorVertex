@@ -1,10 +1,10 @@
 #include "Editor_Layer.hpp"
 #include <glm/gtc/type_ptr.hpp>
 #include <Scene/Entity.hpp>
-#include <Scene.hpp>
+#include <Scene/Scene.hpp>
 #include <ImGuizmo/ImGuizmo.h>
-#include <Utils/PlattformUtils.hpp>
-#include <Math/Math.hpp>
+#include <Core/Utils/PlattformUtils.hpp>
+#include <Core/Math/Math.hpp>
 #include <Render/RenderCommand.hpp>
 
 
@@ -40,7 +40,7 @@ namespace VectorVertex
         io.Fonts->Build();
 
         VkCommandBuffer command_buffer = VKDevice::Get().beginSingleTimeCommands(); // Vulkan-specific setup
-        ImGui_ImplVulkan_CreateFontsTexture();
+        // ImGui_ImplVulkan_CreateFontsTexture();  This happens automatically in new IMGUI
         VKDevice::Get().endSingleTimeCommands(command_buffer);
         // ImGui_ImplVulkan_DestroyFontUploadObjects();
         {
@@ -624,11 +624,11 @@ namespace VectorVertex
             }
             m_OffScreen->EndRender();
 
-            sceneImageView = m_OffScreen->GetFrameBufferImage();
+            sceneImageView = (ImTextureID)(uint64_t)m_OffScreen->GetFrameBufferImage();
         }
         else
         {
-            sceneImageView = nullptr;
+            sceneImageView = (ImTextureID)0;
         }
     }
     void EditorLayer::AfterCommandBuffer()

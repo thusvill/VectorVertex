@@ -71,15 +71,15 @@ namespace VectorVertex
         //     VV_CORE_ERROR("Failed to initialize ImGui for Vulkan!");
         //     return;
         // }
-        init_info.RenderPass = config.renderPass;
+        
         init_info.PhysicalDevice = config.PhysicalDevice;
         init_info.Device = config.Device;
         init_info.Queue = config.graphicsQueue;
         init_info.DescriptorPool = imguiPool;
         init_info.MinImageCount = 3;
         init_info.ImageCount = config.imageCount;
-
-        init_info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
+        init_info.UseDynamicRendering = true;
+        
 
         if (ImGui_ImplVulkan_Init(&init_info) != VK_SUCCESS)
         {

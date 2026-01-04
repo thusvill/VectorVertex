@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bios/VectorVertex/Editor/../Engine/src
+CXX_INCLUDES = -I/home/bios/VectorVertex/Editor/src -I/home/bios/VectorVertex/Editor/../Engine/src -I/home/bios/VectorVertex/Editor/src/vendor -I/home/bios/VectorVertex/Editor/../Engine/src/vendor/entt/single_include -I/home/bios/VectorVertex/Editor/../Engine/src/vendor/yaml-cpp/include -I/home/bios/VectorVertex/Editor/../Engine/src/vendor/imgui -I/home/bios/VectorVertex/Editor/../Engine/src/vendor/imgui/backends
 
 CXX_FLAGS = 
 

@@ -156,6 +156,76 @@ CMakeFiles/VectorVertexEditor.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEditor.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Editor/src/main.cpp -o CMakeFiles/VectorVertexEditor.dir/src/main.cpp.s
 
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o: CMakeFiles/VectorVertexEditor.dir/flags.make
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o: /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/GraphEditor.cpp
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o: CMakeFiles/VectorVertexEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o -MF CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o.d -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o -c /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/GraphEditor.cpp
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/GraphEditor.cpp > CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.i
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/GraphEditor.cpp -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.s
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o: CMakeFiles/VectorVertexEditor.dir/flags.make
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o: /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImCurveEdit.cpp
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o: CMakeFiles/VectorVertexEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o -MF CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o.d -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o -c /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImCurveEdit.cpp
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImCurveEdit.cpp > CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.i
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImCurveEdit.cpp -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.s
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o: CMakeFiles/VectorVertexEditor.dir/flags.make
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o: /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGradient.cpp
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o: CMakeFiles/VectorVertexEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o -MF CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o.d -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o -c /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGradient.cpp
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGradient.cpp > CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.i
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGradient.cpp -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.s
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o: CMakeFiles/VectorVertexEditor.dir/flags.make
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o: /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGuizmo.cpp
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o: CMakeFiles/VectorVertexEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o -MF CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o.d -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o -c /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGuizmo.cpp
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGuizmo.cpp > CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.i
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGuizmo.cpp -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.s
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o: CMakeFiles/VectorVertexEditor.dir/flags.make
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o: /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImSequencer.cpp
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o: CMakeFiles/VectorVertexEditor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o -MF CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o.d -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o -c /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImSequencer.cpp
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImSequencer.cpp > CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.i
+
+CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImSequencer.cpp -o CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.s
+
 # Object files for target VectorVertexEditor
 VectorVertexEditor_OBJECTS = \
 "CMakeFiles/VectorVertexEditor.dir/src/EditorCamera.cpp.o" \
@@ -163,7 +233,12 @@ VectorVertexEditor_OBJECTS = \
 "CMakeFiles/VectorVertexEditor.dir/src/Layers/Imgui_Layer.cpp.o" \
 "CMakeFiles/VectorVertexEditor.dir/src/Panels/SceneHierarchy.cpp.o" \
 "CMakeFiles/VectorVertexEditor.dir/src/SceneSerializer.cpp.o" \
-"CMakeFiles/VectorVertexEditor.dir/src/main.cpp.o"
+"CMakeFiles/VectorVertexEditor.dir/src/main.cpp.o" \
+"CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o" \
+"CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o" \
+"CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o" \
+"CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o" \
+"CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o"
 
 # External object files for target VectorVertexEditor
 VectorVertexEditor_EXTERNAL_OBJECTS =
@@ -174,10 +249,17 @@ VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/Layers/Imgui_Layer.cpp
 VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/Panels/SceneHierarchy.cpp.o
 VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/SceneSerializer.cpp.o
 VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/main.cpp.o
+VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o
+VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o
+VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o
+VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o
+VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o
 VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/build.make
 VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/compiler_depend.ts
+VectorVertexEditor: /home/bios/VectorVertex/Editor/../Engine/build/libVectorVertexEngine.a
+VectorVertexEditor: libimgui.a
 VectorVertexEditor: CMakeFiles/VectorVertexEditor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable VectorVertexEditor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/bios/VectorVertex/Editor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable VectorVertexEditor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VectorVertexEditor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

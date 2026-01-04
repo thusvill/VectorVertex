@@ -30,7 +30,7 @@ namespace VectorVertex
         // MeshRenderSystem = CreateRef<VulkanMeshRenderer>(layout);
         // LightRenderSystem = CreateRef<VulkanLightRenderer>(layout);
 
-        // LightRenderSystem = CreateRef<VulkanRenderSystem>(layout, sizeof(PointLightPushConstantData), "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Shaders/point_light.frag.spv");
+        // LightRenderSystem = CreateRef<VulkanRenderSystem>(layout, sizeof(PointLightPushConstantData), "/home/bios/VectorVertex/Resources/Shaders/point_light.vert.spv", "/home/bios/VectorVertex/Resources/Shaders/point_light.frag.spv");
     }
 
     bool VKRendererAPI::BeginFrame()

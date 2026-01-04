@@ -2,7 +2,7 @@
 #include <fstream>
 #include <yaml-cpp/yaml.h>
 #include <Scene/Entity.hpp>
-#include <SceneHierarchy.hpp>
+#include <Panels/SceneHierarchy.hpp>
 #include <Core/UUID.hpp>
 #include <Plattform/Vulkan/vk_camera.hpp>
 

@@ -11,6 +11,7 @@
 #include <cstring>
 #include <Core/Log.h>
 
+#include <fbxsdk.h>
 
 #include <iostream>
 namespace std

@@ -14,6 +14,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/bios/VectorVertex/Editor/src/Panels/SceneHierarchy.cpp" "CMakeFiles/VectorVertexEditor.dir/src/Panels/SceneHierarchy.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/Panels/SceneHierarchy.cpp.o.d"
   "/home/bios/VectorVertex/Editor/src/SceneSerializer.cpp" "CMakeFiles/VectorVertexEditor.dir/src/SceneSerializer.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/SceneSerializer.cpp.o.d"
   "/home/bios/VectorVertex/Editor/src/main.cpp" "CMakeFiles/VectorVertexEditor.dir/src/main.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/main.cpp.o.d"
+  "/home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/GraphEditor.cpp" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/GraphEditor.cpp.o.d"
+  "/home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImCurveEdit.cpp" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImCurveEdit.cpp.o.d"
+  "/home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGradient.cpp" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGradient.cpp.o.d"
+  "/home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImGuizmo.cpp" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImGuizmo.cpp.o.d"
+  "/home/bios/VectorVertex/Editor/src/vendor/ImGuizmo/ImSequencer.cpp" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o" "gcc" "CMakeFiles/VectorVertexEditor.dir/src/vendor/ImGuizmo/ImSequencer.cpp.o.d"
   "" "VectorVertexEditor" "gcc" "CMakeFiles/VectorVertexEditor.dir/link.d"
   )
 

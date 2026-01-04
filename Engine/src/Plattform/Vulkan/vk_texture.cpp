@@ -196,7 +196,7 @@ namespace VectorVertex
     uint64_t VVTextureLibrary::GetDefaultTexture()
     {
         auto count = std::to_string(m_Textures.size() + 1);
-        return Create("default" + count, "/home/bios/CLionProjects/VectorVertex/VectorVertex/Resources/Textures/prototype_512x512_white.png");
+        return Create("default" + count, "/home/bios/VectorVertex/Resources/Textures/prototype_512x512_white.png");
     }
     void VVTextureLibrary::DeleteTexture(UUID ID)
     {
