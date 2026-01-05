@@ -1,0 +1,111 @@
+Scene: New Scene
+Entities:
+  - Entity: 5819113064152543479
+    IDComponent:
+      UUID: 5819113064152543479
+      Name: new Point Light
+    TransformComponent:
+      Position: [0.1338324, -0.9347263, 0.013320919]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 11241372023561315806
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.572093, 1, 0.62383986]
+      light_intensity: 0.4
+      radius: 10
+  - Entity: 466015793564290560
+    IDComponent:
+      UUID: 466015793564290560
+      Name: new Point Light
+    TransformComponent:
+      Position: [0.44545126, -0.68252283, 0.51771605]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 11241372023561315806
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [0.43255812, 0.7387128, 1]
+      light_intensity: 0.4
+      radius: 10
+  - Entity: 4443530354240899685
+    IDComponent:
+      UUID: 4443530354240899685
+      Name: new Point Light
+    TransformComponent:
+      Position: [-0.23419654, -0.66643137, -0.56389433]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 11241372023561315806
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    PointLightComponent:
+      color: [1, 0.9422823, 0.572093]
+      light_intensity: 0.4
+      radius: 10
+  - Entity: 18407792454204239216
+    IDComponent:
+      UUID: 18407792454204239216
+      Name: Car
+    TransformComponent:
+      Position: [-0.07219915, 0, -0.09802894]
+      Rotation: [-9.2743656e-05, -46.723385, -179.9999]
+      Scale: [0.24300006, 0.24300006, 0.24300006]
+    MaterialComponent:
+      m_ID: 6047157568392987250
+      m_Name: ""
+      color: [0.5860465, 0.5860465, 0.5860465, 1]
+    TextureComponent:
+      m_ID: 16383561284815385014
+      m_Name: default2
+      m_path: /home/bios/VectorVertex/Resources/Models/supar5/textures/Taillight.png
+    MeshComponent:
+      m_ID: 16005400927527026897
+      path: /home/bios/VectorVertex/Resources/Models/VintageCar/VintageRacingCar.obj
+  - Entity: 8829313195112340749
+    IDComponent:
+      UUID: 8829313195112340749
+      Name: new Box
+    TransformComponent:
+      Position: [8.318504e-07, -0.0002595786, -1.4465698e-05]
+      Rotation: [0, 0, 0]
+      Scale: [3, 1, 3]
+    MaterialComponent:
+      m_ID: 2335377664096601059
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    TextureComponent:
+      m_ID: 12479089184034997200
+      m_Name: default1
+      m_path: /home/bios/VectorVertex/Resources/Textures/prototype_512x512_white.png
+    MeshComponent:
+      m_ID: 13468451258259870963
+      path: /home/bios/VectorVertex/Resources/Models/quad.obj
+  - Entity: 2752222295486208637
+    IDComponent:
+      UUID: 2752222295486208637
+      Name: Camera
+    TransformComponent:
+      Position: [4.1070075, -0.92108756, -1.1866543]
+      Rotation: [-0.2327586, 5.015926, 0]
+      Scale: [1, 1, 1]
+    MaterialComponent:
+      m_ID: 12080655856762782423
+      m_Name: ""
+      color: [1, 1, 1, 1]
+    CameraComponent:
+      m_ProjectionType: 1
+      fov: 0.7853982
+      aspect: 0.7327236
+      near: 0.1
+      far: 1000
+      orthoWidth: 10
+      orthoHeight: 10
+      orthoNear: -1
+      orthoFar: 1
+      mainCamera: true

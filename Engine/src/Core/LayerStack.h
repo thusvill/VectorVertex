@@ -19,7 +19,19 @@ namespace VectorVertex {
             {
                 m_Layers[i]->OnUpdate();
             }
-                }
+        }
+        void RenderAll(FrameInfo &frameInfo){
+            for (size_t i = 0; i < m_Layers.size(); i++)
+            {
+                m_Layers[i]->OnRender(frameInfo);
+            }
+        }
+        void ImGuiRenderAll(FrameInfo &frameInfo){
+            for (size_t i = 0; i < m_Layers.size(); i++)
+            {
+                m_Layers[i]->OnImGuiRender(frameInfo);
+            }
+        }
 
         std::vector<Layer*>::iterator begin() { return m_Layers.begin(); }
         std::vector<Layer*>::iterator end() { return m_Layers.end(); }

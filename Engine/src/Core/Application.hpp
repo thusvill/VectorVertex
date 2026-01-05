@@ -41,6 +41,8 @@ namespace VectorVertex
         std::string project_name;
         void run();
         void OnEvent(Event &e);
+        void PushLayer(Layer *layer);
+        
 
         static Application &Get() { return *s_Instance; }
 

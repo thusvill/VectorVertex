@@ -8,7 +8,7 @@
 namespace VectorVertex
 {
 
-  VKDevice* VKDevice::s_Device = nullptr;
+  VKDevice *VKDevice::s_Device = nullptr;
 
   // local callback functions
   static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
@@ -57,7 +57,7 @@ namespace VectorVertex
   }
 
   // class member functions
-  VKDevice::VKDevice(GLFWwindow* window) : window{window}
+  VKDevice::VKDevice(GLFWwindow *window) : window{window}
   {
     VV_CORE_ASSERT(!s_Device, "Device already created!");
     s_Device = this;
@@ -96,7 +96,7 @@ namespace VectorVertex
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
     appInfo.pEngineName = "VectorVertex Engine";
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
-    appInfo.apiVersion = VK_API_VERSION_1_0;
+    appInfo.apiVersion = VK_API_VERSION_1_3;
 
     VkInstanceCreateInfo createInfo = {};
     createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
@@ -167,7 +167,7 @@ namespace VectorVertex
     std::cout << " " << std::endl;
     std::cout << " " << std::endl;
     std::cout << " " << std::endl;
-    //physicalDevice = devices[1]; // set nvidia driver
+    // physicalDevice = devices[1]; // set nvidia driver
 
     if (physicalDevice == VK_NULL_HANDLE)
     {
@@ -225,6 +225,13 @@ namespace VectorVertex
     {
       createInfo.enabledLayerCount = 0;
     }
+
+    // Dynamic Rendering
+    VkPhysicalDeviceDynamicRenderingFeatures dynamic_rendering_features{};
+    dynamic_rendering_features.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DYNAMIC_RENDERING_FEATURES;
+    dynamic_rendering_features.dynamicRendering = VK_TRUE;
+
+    createInfo.pNext = &dynamic_rendering_features;
 
     if (vkCreateDevice(physicalDevice, &createInfo, nullptr, &device_) != VK_SUCCESS)
     {

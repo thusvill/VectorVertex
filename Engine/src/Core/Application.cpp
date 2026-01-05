@@ -31,13 +31,11 @@ namespace VectorVertex
         m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 
         VV_CORE_WARN("Application is Started!");
-        VV_CORE_WARN("Initializing ...");
 
         // editor_layer = new EditorLayer(info);
 
         // m_LayerStack.PushLayer(editor_layer);
         // editor_layer->SetupImgui();
-        VV_CORE_WARN("Initialized!");
     }
     void Application::OnEvent(Event &e)
     {
@@ -51,6 +49,14 @@ namespace VectorVertex
                 break;
             (*it)->OnEvent(e);
         }
+    }
+
+    void Application::PushLayer(Layer *layer)
+    {
+        
+            m_LayerStack.PushLayer(layer);
+            layer->OnAttach();
+        
     }
 
     bool Application::OnWindowClose(WindowCloseEvent &e)
@@ -78,7 +84,7 @@ namespace VectorVertex
         // while (m_Running && !m_Window->shouldClose())
         while (m_Running)
         {
-            // m_LayerStack.UpdateAll();
+            
 
             auto newTime = std::chrono::high_resolution_clock::now();
             frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
@@ -97,10 +103,13 @@ namespace VectorVertex
 
                 // editor_layer->OnUpdate();
                 // editor_layer->OnRender(info);
+                m_LayerStack.UpdateAll();
+                m_LayerStack.RenderAll(info);
 
                 RenderCommand::BeginRenderPass();
 
                 // editor_layer->OnImGuiRender(info);
+                m_LayerStack.ImGuiRenderAll(info);
 
                 RenderCommand::EndRenderPass();
                 RenderCommand::EndFrame();

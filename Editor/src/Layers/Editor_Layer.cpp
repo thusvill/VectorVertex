@@ -34,8 +34,8 @@ namespace VectorVertex
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
         float fontSize = 14.0f; // *2.0f;
-        io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Bold.ttf", fontSize);
-        io.FontDefault = io.Fonts->AddFontFromFileTTF("Resources/Fonts/Roboto/Roboto-Regular.ttf", fontSize);
+        io.Fonts->AddFontFromFileTTF("/home/bios/VectorVertex/Resources/Fonts/Roboto/Roboto-Bold.ttf", fontSize);
+        io.FontDefault = io.Fonts->AddFontFromFileTTF("/home/bios/VectorVertex/Resources/Fonts/Roboto/Roboto-Regular.ttf", fontSize);
 
         io.Fonts->Build();
 
